@@ -14,15 +14,8 @@
         {% endif %}
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
-    {% if jekyll.environment == 'development' %}
     <link rel="stylesheet" href="/assets/css/materialize.min.css">
     <link rel="stylesheet" href="/assets/css/icons.css">
-    {% else %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-    <link rel="stylesheet" href="/assets/css/icons.css">
-    {% endif %}
-
     {% for css in layout.css %}
         {% if css contains "//" %}
         <link rel="stylesheet" href="{{css}}">
