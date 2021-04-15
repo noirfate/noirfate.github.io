@@ -1,0 +1,60 @@
+---
+layout: page
+css: [
+    "page.css",
+    "post.css",
+    "syntax.css",
+    "article-category.css"
+]
+js: [
+    "materialize.min.js",
+    "post.min.js",
+    "particles.min.js",
+    "main.min.js",
+    "search.min.js",
+    "gen-category.min.js"
+]
+---
+<div id="post-info">
+    <ul class="collapsible hoverable" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header grey lighten-4">
+                <span>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+                    {{page.date | date: "%d/%m/%Y %H:%M"}}<br />
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <span>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+                    {% for cat in page.categories %}
+                    {% capture test %}{{cat | slice: 0}}{% endcapture %}
+                    {% capture testup %}{{cat | slice: 0 | upcase}}{% endcapture %}
+                    <a href="/categories#{{cat | slugify}}{% if test == testup %}_cap{% endif %}"
+                        target="_blank">
+                        <div class="chip">{{cat}}</div>
+                    </a>
+                    {% endfor %}
+                </span>
+                <span>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+                    {% for tag in page.tags %}
+                    {% capture test %}{{tag | slice: 0}}{% endcapture %}
+                    {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
+                    <a href="/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}" target="_blank">
+                        <div class="chip">{{tag}}</div>
+                    </a>
+                    {% endfor %}
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="divider"></div>
+<div id="post-content" class="row">
+    <div class="col s12">
+        {{ content }}
+    </div>
+</div>
+<hr>
+

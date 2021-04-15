@@ -1,1 +1,45 @@
-theme: jekyll-theme-architect
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# 以下为自定义的全局变量，可以在 HTML 文件中引用，
+# 比如代码：<h1>{{ site.title }}</h1> 
+# 将会展示为设定的值，也可以自行添加其他自定义全局变量。
+title: noirfate # 网站的标题
+description: > # 网站的描述，可能会出现在搜索引擎展示结果中
+  noirfate's blog
+url: "https://noirfate.github.io" # 网站地址
+github_repo: "https://github.com/noirfate/noirfate.github.io"
+github_profile: "https://github.com/noirfate" # GitHub 个人主页
+user: "noirfate" # 用于侧栏展示的名字
+user_email: "xxx@xxx.com" # 侧栏展示的联系方式
+paginate: 5 # 主页展示的博客文章数量
+nick_name: "noirfate" # 昵称
+english_name: "noirfate"
+repository: noirfate/noirfate.github.io
+
+# jekyll 相关配置
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - COPYING
+  - vendor
+sass:
+  style: compressed
+lang: zh_CN
+future: true
+permalink: /:year/:month/:day/:title
+theme: jekyll-theme-slate

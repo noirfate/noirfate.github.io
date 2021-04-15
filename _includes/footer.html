@@ -1,0 +1,73 @@
+</main>
+
+<footer class="page-footer teal">
+    <div class="footer-copyright">
+        <div class="container">
+            Copyright &#xA9; {{"now" | date: "%Y"}} {{site.title}}. All rights reserved. Powered by
+            <a href={{site.github_repo}}>noirfate</a>.
+        </div>
+    </div>
+    <!-- 右下角功能按钮 -->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large blue z-depth-4">
+            <i class="large material-icons">apps</i>
+        </a>
+        <ul>
+            <li class="category-btn hide">
+                <!-- 文章目录按钮 -->
+                <a class="sidenav-trigger btn-floating blue lighten-2" data-target="category">
+                    <i class="material-icons">format_list_bulleted</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating blue lighten-2" href="javascript: searchInput.focus()">
+                    <i class="material-icons">search</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating blue lighten-2" href="javascript: scrollTo(0, 0);">
+                    <i class="material-icons">publish</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating blue lighten-2" href="javascript: scrollTo(0, document.body.clientHeight);">
+                    <i class="material-icons">file_download</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 文章目录侧栏 -->
+    <ul id="category" class="hide sidenav no-autoinit grey lighten-4 grey-text text-darken-3">
+        <li>
+            <p class="center-align">目录</p>
+        </li>
+    </ul>
+</footer>
+
+{% for js in layout.js %}
+    {% if js contains "//" %}
+        {% if jekyll.environment == 'production' %}
+        <script src="{{js}}"></script>
+        {% else %}
+        <script src="/assets/js/min/{{ js | split:'/' | last }}"></script>
+        {% endif %}
+    {% else %}
+    <script src="/assets/js/min/{{js}}"></script>
+    {% endif %}
+{% endfor %}
+
+{% for js in page.js %}
+    {% if js contains "//" %}
+        {% if jekyll.environment == 'production' %}
+        <script src="{{js}}"></script>
+        {% else %}
+        <script src="/assets/js/min/{{ js | split:'/' | last }}"></script>
+        {% endif %}
+    {% else %}
+    <script src="/assets/js/min/{{js}}"></script>
+    {% endif %}
+{% endfor %}
+
+</body>
+
+</html>
