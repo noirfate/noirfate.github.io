@@ -5,7 +5,7 @@ var len = imgs.length;
 // 格式化显示所有文章图片
 for (let i = 0; i < len; i++) {
     imgs[i].classList.add('materialboxed');
-    imgs[i].classList.add('z-depth-4');
+    imgs[i].classList.add('z-depth-0');
 }
 
 // 初始化侧栏目录插件
