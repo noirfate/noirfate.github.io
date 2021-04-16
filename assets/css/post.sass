@@ -4,6 +4,10 @@
   font-family: 'Source Code Pro'
   src: url(/assets/fonts/SourceCodePro-Regular.ttf)
 
+@font-face
+  font-family: 'myfont'
+  src: url(/assets/fonts/RuiZiYunZiKuWeiTiGB.ttf)
+
 @mixin transition($args...)
   -webkit-transition: $args
   -moz-transition: $args
@@ -12,6 +16,7 @@
   transition: $args
 
 main
+  font-family: myfont
   strong
     font-weight: bold
   .page-title

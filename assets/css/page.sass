@@ -1,7 +1,11 @@
 ---
 ---
+@font-face
+  font-family: 'myfont'
+  src: url(/assets/fonts/RuiZiYunZiKuWeiTiGB.ttf)
+
 body
-  font-family: auto
+  font-family: myfont
   display: flex
   min-height: 100vh
   flex-direction: column
@@ -100,13 +104,13 @@ header
       font-weight: bold
       line-height: 80px
       margin-top: 1em
-      font-family: cursive
+      font-family: myfont
     .head-message
       margin: 0
       font-size: 32px
       font-weight: bold
       font-style: italic
-      font-family: cursive
+      font-family: myfont
     .nav-wrapper
       height: 60%
       .container
@@ -213,7 +217,7 @@ footer
   .row
     margin-bottom: 0px
   .footer-message
-    font-family: cursive
+    font-family: myfont
     font-size: 1.6rem
     font-weight: bold
     margin: 0
