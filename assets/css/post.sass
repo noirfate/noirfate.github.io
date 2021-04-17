@@ -6,7 +6,7 @@
 
 @font-face
   font-family: 'myfont'
-  src: url(/assets/fonts/RuiZiYunZiKuWeiTiGB.ttf)
+  src: url(/assets/fonts/RuiZiYunZiKuLiBianTiGBK.ttf)
 
 @mixin transition($args...)
   -webkit-transition: $args
@@ -33,7 +33,12 @@
     color: #e0491f
 
 main
-  font-family: myfont
+  font-family: "Helvetica Neue",Helvetica,Arial,myfont,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif
+  a 
+    font-size: 18px
+    color: #e0491f
+  li
+    font-size: 18px
   strong
     font-weight: bold
   .page-title
@@ -45,7 +50,7 @@ main
     .divider
       margin: 10px 0
     p
-      font-size: 18px
+      font-size: 20px
       img
         max-height: 60vh
         max-width: 90%
@@ -115,6 +120,12 @@ main
         @include transition(all .3s ease-in-out)
 
   #post-content
+    p
+      letter-spacing: 1.5px
+      word-spacing: 2px
+    li
+      letter-spacing: 1px
+      word-spacing: 1.5px
     table, th, td
       border: 1px solid #ccc
     table

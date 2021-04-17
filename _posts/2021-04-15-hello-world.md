@@ -11,6 +11,15 @@ excerpt: Hello World
 * TOC
 {:toc}
 
+# 安装github pages本地调试环境
+```bash
+apt install ruby ruby-dev ruby-bundler
+gem install jekyll
+cd github_blog
+bundle install
+bundle exec jekyll serve --host 0.0.0.0
+```
+
 # Hello World
 hello
 ## test 2
