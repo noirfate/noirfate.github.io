@@ -75,6 +75,11 @@ excerpt: useful git repository
 - [二进制分析修改调试工具miasm](https://github.com/cea-sec/miasm)
 - [二进制分析框架barf - 支持Z3和CVC4符号执行工具](https://github.com/programa-stic/barf-project)
 - [逆向分析工具panda](https://github.com/panda-re/panda)
+- [二进制模拟执行框架qiling](https://github.com/qilingframework/qiling)
+- [在docker里运行安卓程序](https://github.com/aind-containers/aind)
+- [通过virtualbox虚机进行系统跟踪调试工具icebox](https://github.com/thalium/icebox)
+- [arm固件模拟平台工具armx](https://github.com/therealsaumil/armx)
+- [s2e符号执行平台](https://github.com/S2E/qemu)
 
 ### binary改写
 
@@ -144,8 +149,15 @@ excerpt: useful git repository
 
 ### AFL/LibFuzzer系
 
+- [afl++ - 集成了多种对afl的改进](https://github.com/AFLplusplus/AFLplusplus)
 - [onefuzz - CI/CD fuzz服务](https://github.com/microsoft/onefuzz)
+- [kafl - 使用intel pt加速](https://github.com/IntelLabs/kAFL)
 - [redqueen - kafl+符号执行](https://github.com/RUB-SysSec/redqueen)
+- [symcc - 在编译时插入符号执行代码从而加快符号执行的速度，可以和afl结合使用](https://github.com/eurecom-s3/symcc)
+- [memlock-fuzz - 基于内存使用指导的fuzzer](https://github.com/wcventure/MemLock-Fuzz)
+- [aflnet - 利用afl进行网络协议fuzz](https://github.com/aflnet/aflnet)
+- [manul - 并行fuzzer](https://github.com/mxmssh/manul)
+- [periscope - fuzz硬件和OS之间的接口](https://github.com/securesystemslab/periscope)
 
 ### Syzkaller系
 
@@ -155,8 +167,24 @@ excerpt: useful git repository
 ### sanitizer
 
 - [ktsan - kernel thread sanitizer](https://github.com/google/ktsan)
+- [qasan - asan based on qemu](https://github.com/andreafioraldi/qasan)
+- [centos-kasan - 为centos7内核提供asan支持](https://github.com/kernelim/centos-kasan)
+- [drsancov - 在DynamoRIO中实现asan功能](https://github.com/googleprojectzero/DrSancov)
 
 ### 其他
 
 - [intel PT工具](https://github.com/nyx-fuzz/libxdc)
 - [magma - fuzzer性能评测工具](https://github.com/HexHive/magma)
+- [FuzzGen - 通过分析对库函数api的使用，自动生成fuzz库函数的代码](https://github.com/HexHive/FuzzGen)
+- [fisy-fuzz - 文件系统fuzzer](https://github.com/0xricksanchez/fisy-fuzz)
+- [frankenstein - 为无线固件提供fuzz的虚拟环境](https://github.com/seemoo-lab/frankenstein)
+- [vfuzz - 集成多种反馈机制的fuzzer](https://github.com/guidovranken/vfuzz)
+- [二进制动态插桩资料收集](https://github.com/alphaSeclab/DBI-Stuff)
+- [fuzzer性能测试](https://github.com/google/fuzzbench)
+- [ltp - linux内核自动化测试](https://github.com/linux-test-project/ltp)
+- [atfuzzer - 安卓AT命令fuzzer](https://github.com/Imtiazkarimik23/ATFuzzer)
+- [deepstate - 类似gtest的单元测试框架，支持符号执行、afl等](https://github.com/trailofbits/deepstate)
+- [google的fuzz tutorials](https://github.com/google/fuzzing)
+- [fuzzit - 集成测试框架](https://github.com/fuzzitdev/fuzzit)
+- [fuzzing meetup会议资料](https://github.com/FuzzTesting/BayAreaMeetup)
+- [virtme - 轻量级内核虚拟化，方便测试内核](https://github.com/amluto/virtme)
