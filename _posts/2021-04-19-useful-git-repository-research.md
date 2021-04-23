@@ -7,7 +7,7 @@ date: 2021-04-19 18:00
 excerpt: useful git repository (研究篇)
 ---
 
-# Useful Git Repository
+# Useful Git Repository (研究篇)
 
 > 学习记录存档，不定时更新
 
@@ -92,6 +92,7 @@ excerpt: useful git repository (研究篇)
 - [协议逆向工具netzob](https://github.com/netzob/netzob)
 - [动态二进制分析框架triton，支持符号执行、污点追踪等](https://github.com/JonathanSalwan/Triton)
 - [二进制分析框架angr](https://github.com/angr/angr)
+- [firmware_slap - 固件漏洞挖掘工具](https://github.com/ChrisTheCoolHut/Firmware_Slap)
 
 ### binary改写
 
