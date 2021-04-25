@@ -93,6 +93,9 @@ excerpt: useful git repository (研究篇)
 - [动态二进制分析框架triton，支持符号执行、污点追踪等](https://github.com/JonathanSalwan/Triton)
 - [二进制分析框架angr](https://github.com/angr/angr)
 - [firmware_slap - 固件漏洞挖掘工具](https://github.com/ChrisTheCoolHut/Firmware_Slap)
+- [nexmon - wifi固件调试修改工具](https://github.com/seemoo-lab/nexmon)
+- [objection - android&ios应用逆向审计工具](https://github.com/sensepost/objection)
+- [syscall-intercept - linux下用户态syscall hook工具](https://github.com/pmem/syscall_intercept)
 
 ### binary改写
 
@@ -137,6 +140,7 @@ excerpt: useful git repository (研究篇)
 - [membugtool - 使用pin检测程序的堆相关的内存错误](https://github.com/joxeankoret/membugtool)
 - [symbiotic - 源码检查工具](https://github.com/staticafi/symbiotic)
 - [kcov - 程序运行覆盖度收集工具](https://github.com/SimonKagstrom/kcov)
+- [ehtrace - win下进程tracing工具](https://github.com/K2/EhTrace)
 
 ### 调试工具
 
@@ -292,3 +296,4 @@ excerpt: useful git repository (研究篇)
 - [formatfuzzer - 基于010editor模板生成样本进行fuzz](https://github.com/uds-se/FormatFuzzer)
 - [bonsai - 编译器fuzz](https://github.com/vasumv/bonsai-fuzzing)
 - [regexploit - fuzz正则表达式解析引擎](https://github.com/doyensec/regexploit)
+- [moflow - 混合执行fuzz工具](https://github.com/moflow/moflow)
