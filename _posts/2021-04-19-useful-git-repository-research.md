@@ -144,6 +144,7 @@ excerpt: useful git repository (研究篇)
 - [静态分析工具收集](https://github.com/analysis-tools-dev/static-analysis)
 - [flare-vm - win虚机用来分析恶意软件](https://github.com/fireeye/flare-vm)
 - [bpftrace - 基于ebpf的linux系统trace工具](https://github.com/iovisor/bpftrace)
+- [uftrace - linux下用户态进程函数调用跟踪，程序编译时需要-pg](https://github.com/namhyung/uftrace) [使用gdb或r2跟踪](https://reverseengineering.stackexchange.com/questions/19971/how-to-see-all-functions-that-called-with-debugger)
 
 ### 调试工具
 
