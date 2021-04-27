@@ -141,6 +141,9 @@ excerpt: useful git repository (研究篇)
 - [symbiotic - 源码检查工具](https://github.com/staticafi/symbiotic)
 - [kcov - 程序运行覆盖度收集工具](https://github.com/SimonKagstrom/kcov)
 - [ehtrace - win下进程tracing工具](https://github.com/K2/EhTrace)
+- [静态分析工具收集](https://github.com/analysis-tools-dev/static-analysis)
+- [flare-vm - win虚机用来分析恶意软件](https://github.com/fireeye/flare-vm)
+- [bpftrace - 基于ebpf的linux系统trace工具](https://github.com/iovisor/bpftrace)
 
 ### 调试工具
 
@@ -160,6 +163,11 @@ excerpt: useful git repository (研究篇)
 - [ROP查找工具Ropper](https://github.com/sashs/Ropper)
 - [bugid - win下bug分类工具，类似exploitable](https://github.com/SkyLined/BugId)
 - [rex - crash分析工具](https://github.com/angr/rex)
+- [cyberbrain - python调试工具](https://github.com/laike9m/Cyberbrain)
+- [ipcdump - linux下的ipc跟踪工具](https://github.com/guardicore/ipcdump)
+- [procdump - linux下的触发进程coredump的工具](https://github.com/microsoft/ProcDump-for-Linux)
+- [jobexplorer - 查看win下所有job对象](https://github.com/zodiacon/JobExplorer)
+- [systemexplorer - win系统查看工具](https://github.com/zodiacon/SystemExplorer)
 
 ### 其他
 
@@ -173,6 +181,7 @@ excerpt: useful git repository (研究篇)
 - [anc侧信道攻击工具](https://github.com/vusec/revanc)
 - [glibc tcache利用方法](https://github.com/StarCross-Tech/heap_exploit_2.31)
 - [使用qemu运行macos](https://github.com/kholia/OSX-KVM)
+- [obfuscator - 基于llvm pass的代码混淆工具](https://github.com/thebabush/dumb-obfuscator)
 
 ## Fuzz
 
@@ -297,3 +306,6 @@ excerpt: useful git repository (研究篇)
 - [bonsai - 编译器fuzz](https://github.com/vasumv/bonsai-fuzzing)
 - [regexploit - fuzz正则表达式解析引擎](https://github.com/doyensec/regexploit)
 - [moflow - 混合执行fuzz工具](https://github.com/moflow/moflow)
+- [hyper-v漏洞fuzz研究资料](https://github.com/shogunlab/awesome-hyper-v-exploitation)
+- [fuzz论文集](https://github.com/0xricksanchez/paper_collection)
+- [loadlibrary - 把dll移植到linux下的工具](https://github.com/taviso/loadlibrary)
