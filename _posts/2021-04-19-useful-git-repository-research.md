@@ -236,6 +236,7 @@ excerpt: useful git repository (研究篇)
 - [libfuzzer培训](https://github.com/Dor1s/libfuzzer-workshop)
 - [oss-fuzz - google的开源软件fuzz框架](https://github.com/google/oss-fuzz)
 - [sockfuzzer - xnu网络协议栈fuzz](https://github.com/googleprojectzero/SockFuzzer)
+- [afl_ghidra_emu - afl和ghidra模拟执行集成fuzz](https://github.com/airbus-cyber/afl_ghidra_emu)
 
 ### Syzkaller系
 
