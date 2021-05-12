@@ -53,6 +53,7 @@ excerpt: useful git repository (研究篇)
 - [基于tcp的linux内核调试模块kgdboe](https://github.com/sysprogs/kgdboe)
 - [gdb前端cgdb 适合源码调试](https://github.com/cgdb/cgdb)
 - [gdb可利用性检测插件exploitable](https://github.com/jfoote/exploitable)
+- [gdb堆GUI工具](https://github.com/gand3lf/heappy)
 
 ### 逆向分析工具
 
@@ -162,6 +163,7 @@ excerpt: useful git repository (研究篇)
 - [动态插桩工具frida](https://github.com/frida/frida)
 - [cisco asa调试工具](https://github.com/nccgroup/asatools)
 - [ROP查找工具Ropper](https://github.com/sashs/Ropper)
+- [JOP查找工具](https://github.com/Bw3ll/JOP_ROCKET/)
 - [bugid - win下bug分类工具，类似exploitable](https://github.com/SkyLined/BugId)
 - [rex - crash分析工具](https://github.com/angr/rex)
 - [cyberbrain - python调试工具](https://github.com/laike9m/Cyberbrain)

@@ -69,6 +69,7 @@ excerpt: useful git repository (攻防篇)
 - [marshalsec - java远程利用工具，如jndi](https://github.com/mbechler/marshalsec)
 - [kubesploit - k8s渗透工具](https://github.com/cyberark/kubesploit)
 - [dwn - docker渗透工具集](https://github.com/sensepost/dwn)
+- [hopla - burpsuite补全插件](https://github.com/synacktiv/HopLa)
 
 ### 持久化工具
 
@@ -165,6 +166,7 @@ excerpt: useful git repository (攻防篇)
 - [vmare vgpu漏洞](https://github.com/Comsecuris/vgpu_shader_pocs)
 - [l1tf - guest读取host内存CVE-2018-3646](https://github.com/gregvish/l1tf-poc)
 - [virtualbox vgpu漏洞](https://github.com/niklasb/3dpwn)
+- [qemu nvme漏洞利用](https://github.com/hustdebug/scavenger)
 
 ### side channel
 
@@ -244,6 +246,7 @@ excerpt: useful git repository (攻防篇)
 - [sandboxed-api - 为c/c++库提供沙箱保护](https://github.com/google/sandboxed-api)
 - [linux内核加固地图](https://github.com/a13xp0p0v/linux-kernel-defence-map)
 - [nsjail - linux进程隔离工具](https://github.com/google/nsjail)
+- [chestnut - linux进程动态sandbox工具](https://github.com/chestnut-sandbox/Chestnut)
 
 ### 集群防护
 
