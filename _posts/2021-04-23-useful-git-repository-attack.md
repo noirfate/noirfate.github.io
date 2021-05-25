@@ -131,6 +131,7 @@ excerpt: useful git repository (攻防篇)
 - [github上的poc收集](https://github.com/nomi-sec/PoC-in-GitHub)
 - [exploitdb](https://github.com/offensive-security/exploitdb)
 - [cve poc列表](https://github.com/qazbnm456/awesome-cve-poc)
+- [web poc列表](https://github.com/EdgeSecurityTeam/Vulnerability)
 
 ### win
 
@@ -140,6 +141,7 @@ excerpt: useful git repository (攻防篇)
 - [bluekeep - win rdp漏洞CVE-2019-0708](https://github.com/Ekultek/BlueKeep)
 - [win内核漏洞列表](https://github.com/SecWiki/windows-kernel-exploits)
 - [eternalblue - ms17-010](https://github.com/worawit/MS17-010)
+- [http.sys uaf - CVE-2021-31166](https://github.com/0vercl0k/CVE-2021-31166)
 
 ### linux
 
@@ -188,6 +190,8 @@ excerpt: useful git repository (攻防篇)
 - [flink未授权rce](https://github.com/LandGrey/flink-unauth-rce)
 - [grimm收集的漏洞列表](https://github.com/grimm-co/NotQuite0DayFriday)
 - [qemu设备模拟利用模板](https://github.com/farazsth98/hypervisor_exploit_templates)
+- [exiftool命令执行漏洞CVE-2021-22204](https://github.com/se162xg/CVE-2021-22204) [分析](https://blog.bricked.tech/posts/exiftool/)
+- [mysql任意文件读取](https://github.com/Gifts/Rogue-MySql-Server) [分析](https://paper.seebug.org/1112/)
 
 ## 研究资料
 
@@ -255,6 +259,7 @@ excerpt: useful git repository (攻防篇)
 - [firekube - 基于firecracker的k8s](https://github.com/weaveworks/wks-quickstart-firekube)
 - [kata-containers - 基于轻量级虚机的容器](https://github.com/kata-containers/kata-containers)
 - [starboard - k8s安全扫描工具](https://github.com/aquasecurity/starboard)
+- [kube-linter - k8s yaml安全检查工具](https://github.com/stackrox/kube-linter)
 
 ### 其他
 

@@ -54,6 +54,7 @@ excerpt: useful git repository (研究篇)
 - [gdb前端cgdb 适合源码调试](https://github.com/cgdb/cgdb)
 - [gdb可利用性检测插件exploitable](https://github.com/jfoote/exploitable)
 - [gdb堆GUI工具](https://github.com/gand3lf/heappy)
+- [gdb使用技巧](https://wizardforcel.gitbooks.io/100-gdb-tips/content/show-version.html)
 
 ### 逆向分析工具
 
@@ -313,3 +314,4 @@ excerpt: useful git repository (研究篇)
 - [hyper-v漏洞fuzz研究资料](https://github.com/shogunlab/awesome-hyper-v-exploitation)
 - [fuzz论文集](https://github.com/0xricksanchez/paper_collection)
 - [loadlibrary - 把dll移植到linux下的工具](https://github.com/taviso/loadlibrary)
+- [hyntrospect - hyper-v emulated device fuzzer](https://github.com/googleprojectzero/Hyntrospect)
