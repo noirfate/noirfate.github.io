@@ -55,6 +55,7 @@ excerpt: useful git repository (研究篇)
 - [gdb可利用性检测插件exploitable](https://github.com/jfoote/exploitable)
 - [gdb堆GUI工具](https://github.com/gand3lf/heappy)
 - [gdb使用技巧](https://wizardforcel.gitbooks.io/100-gdb-tips/content/show-version.html)
+- [堆分析工具heapinspect](https://github.com/matrix1001/heapinspect)
 
 ### 逆向分析工具
 
@@ -80,7 +81,7 @@ excerpt: useful git repository (研究篇)
 - [逆向分析工具panda](https://github.com/panda-re/panda)
 - [二进制模拟执行框架qiling](https://github.com/qilingframework/qiling)
 - [在docker里运行安卓程序](https://github.com/aind-containers/aind)
-- [通过virtualbox虚机进行系统跟踪调试工具icebox](https://github.com/thalium/icebox)
+- [通过virtualbox虚机进行系统跟踪调试工具icebox](https://github.com/thalium/icebox) [getStart](https://thalium.github.io/blog/posts/getting_started/) [posts](https://thalium.github.io/blog/posts/)
 - [arm固件模拟平台工具armx](https://github.com/therealsaumil/armx)
 - [s2e符号执行平台](https://github.com/S2E/qemu)
 - [污点追踪工具taintgrind](https://github.com/wmkhoo/taintgrind)
@@ -147,6 +148,7 @@ excerpt: useful git repository (研究篇)
 - [flare-vm - win虚机用来分析恶意软件](https://github.com/fireeye/flare-vm)
 - [bpftrace - 基于ebpf的linux系统trace工具](https://github.com/iovisor/bpftrace)
 - [uftrace - linux下用户态进程函数调用跟踪，程序编译时需要-pg](https://github.com/namhyung/uftrace) [使用gdb或r2跟踪](https://reverseengineering.stackexchange.com/questions/19971/how-to-see-all-functions-that-called-with-debugger)
+- [多平台固件提取工具BIOSUtilities](https://github.com/platomav/BIOSUtilities)
 
 ### 调试工具
 
@@ -186,6 +188,7 @@ excerpt: useful git repository (研究篇)
 - [glibc tcache利用方法](https://github.com/StarCross-Tech/heap_exploit_2.31)
 - [使用qemu运行macos](https://github.com/kholia/OSX-KVM)
 - [obfuscator - 基于llvm pass的代码混淆工具](https://github.com/thebabush/dumb-obfuscator)
+- [fpvi-scsb侧信道攻击](https://github.com/vusec/fpvi-scsb) [文章](https://www.vusec.net/projects/fpvi-scsb/)
 
 ## Fuzz
 

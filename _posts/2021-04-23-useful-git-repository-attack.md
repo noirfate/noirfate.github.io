@@ -39,6 +39,7 @@ excerpt: useful git repository (攻防篇)
 - [rpcview - win下查看rpc的工具](https://github.com/silverf0x/RpcView)
 - [docker-bech-security - docker安全配置检查，类似CIS Docker Benchmark](https://github.com/docker/docker-bench-security)
 - [openssh-seseeion-key-recovery - openssh会话密钥恢复](https://github.com/fox-it/OpenSSH-Session-Key-Recovery)
+- [al-khaser - 使用各种病毒技术测试杀毒软件的检测能力](https://github.com/LordNoteworthy/al-khaser)
 
 ### 远控工具
 
@@ -105,6 +106,7 @@ excerpt: useful git repository (攻防篇)
 - [ccat - 各大云服务厂商容器渗透工具](https://github.com/RhinoSecurityLabs/ccat)
 - [kubstriker - k8s安全扫描工具](https://github.com/vchinnipilli/kubestriker)
 - [whaler - 从docker镜像推导出dockerfile](https://github.com/P3GLEG/Whaler)
+- [dive - docker镜像分析工具](https://github.com/wagoodman/dive) [docker镜像分析](https://theartofmachinery.com/2021/03/18/reverse_engineering_a_docker_image.html)
 
 ### 其他
 
@@ -230,6 +232,7 @@ excerpt: useful git repository (攻防篇)
 - [linux kernel hacking学习](https://github.com/xcellerator/linux_kernel_hacking)
 - [trailofbits发表的文章集](https://github.com/trailofbits/publications)
 - [c++程序分析逆向调试资料](https://github.com/MattPD/cpplinks)
+- [开源软件依赖查询](https://deps.dev/)
 
 ## 防护
 
