@@ -241,6 +241,7 @@ excerpt: useful git repository (研究篇)
 - [jazzer - 基于libfuzzer的java fuzz工具](https://github.com/CodeIntelligenceTesting/jazzer)
 - [libfuzzer培训](https://github.com/Dor1s/libfuzzer-workshop)
 - [oss-fuzz - google的开源软件fuzz框架](https://github.com/google/oss-fuzz)
+- [clusterfuzz - google开源的分布式fuzz基础设施](https://github.com/google/clusterfuzz)
 - [sockfuzzer - xnu网络协议栈fuzz](https://github.com/googleprojectzero/SockFuzzer)
 - [afl_ghidra_emu - afl和ghidra模拟执行集成fuzz](https://github.com/airbus-cyber/afl_ghidra_emu)
 
@@ -318,3 +319,12 @@ excerpt: useful git repository (研究篇)
 - [fuzz论文集](https://github.com/0xricksanchez/paper_collection)
 - [loadlibrary - 把dll移植到linux下的工具](https://github.com/taviso/loadlibrary)
 - [hyntrospect - hyper-v emulated device fuzzer](https://github.com/googleprojectzero/Hyntrospect)
+
+## static analysis
+
+### codeql
+
+- [codeql database](https://lgtm.com/)
+- [codeql github course](https://lab.github.com/githubtraining/codeql-u-boot-challenge-\(cc++\))
+- [codeql cons and tutorials](https://github.com/github/securitylab)
+- [codeql document](https://codeql.github.com/docs/)
