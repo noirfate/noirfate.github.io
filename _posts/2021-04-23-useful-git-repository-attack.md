@@ -124,6 +124,7 @@ excerpt: useful git repository (攻防篇)
 - [vulhub - 漏洞靶场](https://github.com/vulhub/vulhub)
 - [pwin - 逃逸pin沙箱](https://github.com/zhechkoz/PwIN)
 - [kdu - win内核驱动工具](https://github.com/hfiref0x/KDU)
+- [hashcat - hash破解工具](https://github.com/hashcat/hashcat) [主页](https://hashcat.net/hashcat/)
 
 ## POC
 
@@ -144,6 +145,8 @@ excerpt: useful git repository (攻防篇)
 - [win内核漏洞列表](https://github.com/SecWiki/windows-kernel-exploits)
 - [eternalblue - ms17-010](https://github.com/worawit/MS17-010)
 - [http.sys uaf - CVE-2021-31166](https://github.com/0vercl0k/CVE-2021-31166)
+- [使用winafl挖gdi漏洞 - CVE-2021-1665](https://www.mcafee.com/blogs/other-blogs/mcafee-labs/analyzing-cve-2021-1665-remote-code-execution-vulnerability-in-windows-gdi/)
+- [win信息泄露 - CVE-2021-31955](https://github.com/mavillon1/CVE-2021-31955-POC)
 
 ### linux
 
@@ -233,6 +236,7 @@ excerpt: useful git repository (攻防篇)
 - [trailofbits发表的文章集](https://github.com/trailofbits/publications)
 - [c++程序分析逆向调试资料](https://github.com/MattPD/cpplinks)
 - [开源软件依赖查询](https://deps.dev/)
+- [kvm安全介绍](https://github.com/rafaeldtinoco/howtos)
 
 ## 防护
 
@@ -245,6 +249,9 @@ excerpt: useful git repository (攻防篇)
 - [tyton - linux内核rootkit检测](https://github.com/nbulischeck/tyton)
 - [agentsmith - 主机信息收集工具](https://github.com/bytedance/AgentSmith-HIDS)
 - [tracee - 基于ebpf的系统监控工具](https://github.com/aquasecurity/tracee)
+- [wfh - win下进程dll、com劫持检测工具](https://github.com/ConsciousHacker/WFH)
+- [各平台利用缓解措施合集](https://github.com/nccgroup/exploit_mitigations)
+- [win下防进程注入的内核模块](https://github.com/rajiv2790/FalconEye)
 
 ### 软件防护
 

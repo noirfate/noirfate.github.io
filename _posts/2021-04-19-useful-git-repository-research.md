@@ -42,6 +42,7 @@ excerpt: useful git repository (研究篇)
 - [Ghidra pathdiff插件](https://github.com/threatrack/ghidra-patchdiff-correlator)
 - [Ghidra脚本](https://github.com/ghidraninja/ghidra_scripts)
 - [Ghidra插件 - 对象结构恢复](https://github.com/grimm-co/GEARSHIFT)
+- [使用ghidra生成cpg拱jorenio分析](https://github.com/joernio/ghidra2cpg) [joren是类似codeql的代码分析工具](https://joern.io/)
 
 ### GDB扩展
 
@@ -109,6 +110,7 @@ excerpt: useful git repository (研究篇)
 - [retrowrite - 为binary添加asan插桩，只支持x86_64、必须没有被strip](https://github.com/HexHive/retrowrite)
 - [syzygy - win下插桩工具集](https://github.com/google/syzygy)
 - [LIEF - 分析修改多平台的binary](https://github.com/lief-project/LIEF)
+- [titan-dex - 安卓字节码修改工具](https://github.com/baidu/titan-dex)
 
 ### 反编译工具
 
@@ -174,6 +176,7 @@ excerpt: useful git repository (研究篇)
 - [procdump - linux下的触发进程coredump的工具](https://github.com/microsoft/ProcDump-for-Linux)
 - [jobexplorer - 查看win下所有job对象](https://github.com/zodiacon/JobExplorer)
 - [systemexplorer - win系统查看工具](https://github.com/zodiacon/SystemExplorer)
+- [hyperdbg - win下基于虚拟化辅助的用户、内核态调试工具](https://github.com/HyperDbg/HyperDbg)
 
 ### 其他
 
@@ -189,6 +192,8 @@ excerpt: useful git repository (研究篇)
 - [使用qemu运行macos](https://github.com/kholia/OSX-KVM)
 - [obfuscator - 基于llvm pass的代码混淆工具](https://github.com/thebabush/dumb-obfuscator)
 - [fpvi-scsb侧信道攻击](https://github.com/vusec/fpvi-scsb) [文章](https://www.vusec.net/projects/fpvi-scsb/)
+- [jaeger - 代码埋点统计工具](https://github.com/jaegertracing/jaeger)
+- [skywalking - 代码埋点统计工具](https://github.com/apache/skywalking)
 
 ## Fuzz
 
@@ -244,6 +249,8 @@ excerpt: useful git repository (研究篇)
 - [clusterfuzz - google开源的分布式fuzz基础设施](https://github.com/google/clusterfuzz)
 - [sockfuzzer - xnu网络协议栈fuzz](https://github.com/googleprojectzero/SockFuzzer)
 - [afl_ghidra_emu - afl和ghidra模拟执行集成fuzz](https://github.com/airbus-cyber/afl_ghidra_emu)
+- [manufuzzer - macos下二进制覆盖度反馈fuzz](https://github.com/ant4g0nist/ManuFuzzer)
+- [autoharness - 自动生成测试用例](https://github.com/parikhakshat/autoharness)
 
 ### Syzkaller系
 
