@@ -139,18 +139,15 @@ excerpt: useful git repository (研究篇)
 - [通过深度学习的方法猜测无符号信息二进制程序中的函数名](https://github.com/tech-srl/Nero)
 - [恶意程序检测工具capa](https://github.com/fireeye/capa)
 - [虚拟机插桩库libvmi](https://github.com/libvmi/libvmi)
-- [SVF - 源码分析工具](https://github.com/SVF-tools/SVF)
 - [微软开发的攻击面分析工具](https://github.com/microsoft/AttackSurfaceAnalyzer)
-- [tripledoggy - 使用符号执行进行源码分析的工具](https://github.com/GoSSIP-SJTU/TripleDoggy)
 - [membugtool - 使用pin检测程序的堆相关的内存错误](https://github.com/joxeankoret/membugtool)
-- [symbiotic - 源码检查工具](https://github.com/staticafi/symbiotic)
 - [kcov - 程序运行覆盖度收集工具](https://github.com/SimonKagstrom/kcov)
 - [ehtrace - win下进程tracing工具](https://github.com/K2/EhTrace)
-- [静态分析工具收集](https://github.com/analysis-tools-dev/static-analysis)
 - [flare-vm - win虚机用来分析恶意软件](https://github.com/fireeye/flare-vm)
 - [bpftrace - 基于ebpf的linux系统trace工具](https://github.com/iovisor/bpftrace)
 - [uftrace - linux下用户态进程函数调用跟踪，程序编译时需要-pg](https://github.com/namhyung/uftrace) [使用gdb或r2跟踪](https://reverseengineering.stackexchange.com/questions/19971/how-to-see-all-functions-that-called-with-debugger)
 - [多平台固件提取工具BIOSUtilities](https://github.com/platomav/BIOSUtilities)
+- [FACT - 固件分析工具](https://github.com/fkie-cad/FACT_core)
 
 ### 调试工具
 
@@ -194,6 +191,7 @@ excerpt: useful git repository (研究篇)
 - [fpvi-scsb侧信道攻击](https://github.com/vusec/fpvi-scsb) [文章](https://www.vusec.net/projects/fpvi-scsb/)
 - [jaeger - 代码埋点统计工具](https://github.com/jaegertracing/jaeger)
 - [skywalking - 代码埋点统计工具](https://github.com/apache/skywalking)
+- [hallucinate - 跨平台插桩流量解密工具](https://github.com/SySS-Research/hallucinate/)
 
 ## Fuzz
 
@@ -251,6 +249,8 @@ excerpt: useful git repository (研究篇)
 - [afl_ghidra_emu - afl和ghidra模拟执行集成fuzz](https://github.com/airbus-cyber/afl_ghidra_emu)
 - [manufuzzer - macos下二进制覆盖度反馈fuzz](https://github.com/ant4g0nist/ManuFuzzer)
 - [autoharness - 自动生成测试用例](https://github.com/parikhakshat/autoharness)
+- [wtf - 具有跨平台、覆盖度反馈、快照等特性的fuzzer](https://github.com/0vercl0k/wtf) [用例1](http://blog.ret2.io/2021/07/21/wtf-snapshot-fuzzing/) [用例2](https://doar-e.github.io/blog/2021/07/15/building-a-new-snapshot-fuzzer-fuzzing-ida/)
+- [hAFL1 - use kafl to fuzz hyper-v](https://github.com/SB-GC-Labs/hAFL1)
 
 ### Syzkaller系
 
@@ -326,6 +326,7 @@ excerpt: useful git repository (研究篇)
 - [fuzz论文集](https://github.com/0xricksanchez/paper_collection)
 - [loadlibrary - 把dll移植到linux下的工具](https://github.com/taviso/loadlibrary)
 - [hyntrospect - hyper-v emulated device fuzzer](https://github.com/googleprojectzero/Hyntrospect)
+- [osiris - 微处理器侧信道fuzz工具](https://github.com/cispa/osiris)
 
 ## static analysis
 
@@ -335,3 +336,11 @@ excerpt: useful git repository (研究篇)
 - [codeql github course](https://lab.github.com/githubtraining/codeql-u-boot-challenge-\(cc++\))
 - [codeql cons and tutorials](https://github.com/github/securitylab)
 - [codeql document](https://codeql.github.com/docs/)
+
+### 源码分析工具
+
+- [gokart - go语言静态代码分析](https://github.com/praetorian-inc/gokart)
+- [SVF - c/c++程序分析工具](https://github.com/SVF-tools/SVF)
+- [tripledoggy - 基于clang static analyzer框架使用符号执行进行源码分析的工具](https://github.com/GoSSIP-SJTU/TripleDoggy)
+- [symbiotic - 使用符号执行对源码进行分析](https://github.com/staticafi/symbiotic)
+- [静态分析工具收集](https://github.com/analysis-tools-dev/static-analysis)

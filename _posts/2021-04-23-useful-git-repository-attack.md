@@ -27,6 +27,8 @@ excerpt: useful git repository (攻防篇)
 - [masscan-nmap - masscan扫描端口并用nmap识别服务](https://github.com/7dog7/masscan_to_nmap)
 - [nuclei - 漏洞扫描工具](https://github.com/projectdiscovery/nuclei)
 - [tsunami - 漏洞扫描工具](https://github.com/google/tsunami-security-scanner)
+- [cotopaxi - iot协议扫描工具](https://github.com/Samsung/cotopaxi)
+- [rengine - 网站漏洞扫描工具](https://github.com/yogeshojha/rengine)
 
 ### 本地扫描工具
 
@@ -40,6 +42,7 @@ excerpt: useful git repository (攻防篇)
 - [docker-bech-security - docker安全配置检查，类似CIS Docker Benchmark](https://github.com/docker/docker-bench-security)
 - [openssh-seseeion-key-recovery - openssh会话密钥恢复](https://github.com/fox-it/OpenSSH-Session-Key-Recovery)
 - [al-khaser - 使用各种病毒技术测试杀毒软件的检测能力](https://github.com/LordNoteworthy/al-khaser)
+- [pspy - 本地提权辅助工具](https://github.com/DominicBreuker/pspy)
 
 ### 远控工具
 
@@ -125,6 +128,8 @@ excerpt: useful git repository (攻防篇)
 - [pwin - 逃逸pin沙箱](https://github.com/zhechkoz/PwIN)
 - [kdu - win内核驱动工具](https://github.com/hfiref0x/KDU)
 - [hashcat - hash破解工具](https://github.com/hashcat/hashcat) [主页](https://hashcat.net/hashcat/)
+- [数据库相关渗透利用方法](https://github.com/nixawk/pentest-wiki/tree/master/2.Vulnerability-Assessment/Database-Assessment)
+- [BruteShark - 网络流量分析工具，可提权凭证、文件等](https://github.com/odedshimon/BruteShark)
 
 ## POC
 
@@ -161,6 +166,9 @@ excerpt: useful git repository (攻防篇)
 - [vsock漏洞CVE-2021-26708](https://github.com/jordan9001/vsock_poc)
 - [linux sudo提权漏洞CVE-2021-3156](https://github.com/worawit/CVE-2021-3156)
 - [ubuntu overlayfs 提权CVE-2021-3493](https://ssd-disclosure.com/ssd-advisory-overlayfs-pe/)
+- [cve-2021-22555 - 内核提权](https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html)
+- [cve-2021-3490 - 内核提权](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
+- [CVE-2020-27348 - snap命令注入和沙箱逃逸](https://blog.ret2.io/2021/08/04/snapcraft-injection/)
 
 ### container
 
@@ -237,6 +245,7 @@ excerpt: useful git repository (攻防篇)
 - [c++程序分析逆向调试资料](https://github.com/MattPD/cpplinks)
 - [开源软件依赖查询](https://deps.dev/)
 - [kvm安全介绍](https://github.com/rafaeldtinoco/howtos)
+- [云原生安全资料](https://github.com/brant-ruan/awesome-cloud-native-security)
 
 ## 防护
 
