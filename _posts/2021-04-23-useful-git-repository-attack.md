@@ -43,6 +43,7 @@ excerpt: useful git repository (攻防篇)
 - [openssh-seseeion-key-recovery - openssh会话密钥恢复](https://github.com/fox-it/OpenSSH-Session-Key-Recovery)
 - [al-khaser - 使用各种病毒技术测试杀毒软件的检测能力](https://github.com/LordNoteworthy/al-khaser)
 - [pspy - 本地提权辅助工具](https://github.com/DominicBreuker/pspy)
+- [slither - 智能合约代码安全扫描工具](https://github.com/crytic/slither)
 
 ### 远控工具
 
@@ -67,13 +68,15 @@ excerpt: useful git repository (攻防篇)
 - [winpwn - 基于powershell的win渗透工具](https://github.com/S3cur3Th1sSh1t/WinPwn)
 - [springbootvulexploit - sprintboot框架渗透](https://github.com/LandGrey/SpringBootVulExploit)
 - [jmet - java jms渗透工具](https://github.com/matthiaskaiser/jmet)
-- [mjet - java jmx利用工具](https://github.com/raystyle/mjet)
+- [mjet - java jmxrmi利用工具](https://github.com/mogwailabs/mjet)
 - [discover - 基于bash的渗透框架](https://github.com/leebaird/discover)
 - [mimikatz - win渗透工具](https://github.com/gentilkiwi/mimikatz)
 - [marshalsec - java远程利用工具，如jndi](https://github.com/mbechler/marshalsec)
 - [kubesploit - k8s渗透工具](https://github.com/cyberark/kubesploit)
 - [dwn - docker渗透工具集](https://github.com/sensepost/dwn)
 - [hopla - burpsuite补全插件](https://github.com/synacktiv/HopLa)
+- [java rmi利用工具](https://github.com/qtc-de/remote-method-guesser)
+- [Nebula - 公有云渗透框架](https://github.com/gl4ssesbo1/Nebula)
 
 ### 持久化工具
 
@@ -96,6 +99,7 @@ excerpt: useful git repository (攻防篇)
 - [photon - 爬虫工具](https://github.com/s0md3v/Photon)
 - [linux kernel cve列表](https://github.com/nluedtke/linux_kernel_cves) [网站](https://linuxkernelcves.com/cves)
 - [cve-pylib - 从redhat数据库中获取cve信息](https://github.com/RedHatProductSecurity/cve-pylib)
+- [每日安全信息](https://github.com/xqx12/daily-info)
 
 ### 云原生渗透工具
 
@@ -110,6 +114,12 @@ excerpt: useful git repository (攻防篇)
 - [kubstriker - k8s安全扫描工具](https://github.com/vchinnipilli/kubestriker)
 - [whaler - 从docker镜像推导出dockerfile](https://github.com/P3GLEG/Whaler)
 - [dive - docker镜像分析工具](https://github.com/wagoodman/dive) [docker镜像分析](https://theartofmachinery.com/2021/03/18/reverse_engineering_a_docker_image.html)
+- [kubescape - k8s安全扫描基于nsa最佳实践](https://github.com/armosec/kubescape)
+- [pacu - awk后渗透工具](https://github.com/RhinoSecurityLabs/pacu)
+- [Nebula - 云后渗透工具框架](https://github.com/gl4ssesbo1/Nebula)
+- [aws IAM提权漏洞利用靶场](https://github.com/BishopFox/iam-vulnerable)
+- [PMapper - aws IAM权限风险排查](https://github.com/nccgroup/PMapper)
+- [whoc - 在容器中偷取主机runc的镜像](https://github.com/twistlock/whoc)
 
 ### 其他
 
@@ -130,6 +140,7 @@ excerpt: useful git repository (攻防篇)
 - [hashcat - hash破解工具](https://github.com/hashcat/hashcat) [主页](https://hashcat.net/hashcat/)
 - [数据库相关渗透利用方法](https://github.com/nixawk/pentest-wiki/tree/master/2.Vulnerability-Assessment/Database-Assessment)
 - [BruteShark - 网络流量分析工具，可提权凭证、文件等](https://github.com/odedshimon/BruteShark)
+- [针对不同代理解析特性进行的攻击](https://github.com/GrrrDog/weird_proxies)
 
 ## POC
 
@@ -163,7 +174,7 @@ excerpt: useful git repository (攻防篇)
 - [dirtycow漏洞CVE-2016-5195](https://github.com/scumjr/dirtycow-vdso) [官方](https://github.com/dirtycow/dirtycow.github.io)
 - [linux内核漏洞列表](https://github.com/SecWiki/linux-kernel-exploits)
 - [linux waitid系统调用提权漏洞CVE-2017-5123](https://github.com/nongiach/CVE)
-- [vsock漏洞CVE-2021-26708](https://github.com/jordan9001/vsock_poc)
+- [vsock漏洞CVE-2021-26708](https://github.com/jordan9001/vsock_poc) [bypass lkrg](https://a13xp0p0v.github.io/2021/08/25/lkrg-bypass.html)
 - [linux sudo提权漏洞CVE-2021-3156](https://github.com/worawit/CVE-2021-3156)
 - [ubuntu overlayfs 提权CVE-2021-3493](https://ssd-disclosure.com/ssd-advisory-overlayfs-pe/)
 - [cve-2021-22555 - 内核提权](https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html)

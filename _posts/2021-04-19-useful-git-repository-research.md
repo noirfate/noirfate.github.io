@@ -43,6 +43,7 @@ excerpt: useful git repository (研究篇)
 - [Ghidra脚本](https://github.com/ghidraninja/ghidra_scripts)
 - [Ghidra插件 - 对象结构恢复](https://github.com/grimm-co/GEARSHIFT)
 - [使用ghidra生成cpg拱jorenio分析](https://github.com/joernio/ghidra2cpg) [joren是类似codeql的代码分析工具](https://joern.io/)
+- [ghidra2frida - use frida to extend ghidra](https://github.com/federicodotta/ghidra2frida)
 
 ### GDB扩展
 
@@ -57,6 +58,7 @@ excerpt: useful git repository (研究篇)
 - [gdb堆GUI工具](https://github.com/gand3lf/heappy)
 - [gdb使用技巧](https://wizardforcel.gitbooks.io/100-gdb-tips/content/show-version.html)
 - [堆分析工具heapinspect](https://github.com/matrix1001/heapinspect)
+- [gdbgui - 基于浏览器的gdb界面](https://github.com/cs01/gdbgui)
 
 ### 逆向分析工具
 
@@ -174,6 +176,7 @@ excerpt: useful git repository (研究篇)
 - [jobexplorer - 查看win下所有job对象](https://github.com/zodiacon/JobExplorer)
 - [systemexplorer - win系统查看工具](https://github.com/zodiacon/SystemExplorer)
 - [hyperdbg - win下基于虚拟化辅助的用户、内核态调试工具](https://github.com/HyperDbg/HyperDbg)
+- [ropium - 通过语义查找rop](https://github.com/Boyan-MILANOV/ropium)
 
 ### 其他
 
@@ -220,7 +223,8 @@ excerpt: useful git repository (研究篇)
 - [afl-unicorn - 为afl增加unicorn支持](https://github.com/Battelle/afl-unicorn)
 - [kleefl - 使用符号执行为afl生成样本](https://github.com/julieeen/kleefl)
 - [aflgo - 可以指定要fuzz的程序路径的afl](https://github.com/aflgo/aflgo)
-- [kafl - 基于qemu和intel pt的内核fuzz](https://github.com/RUB-SysSec/kAFL)
+- [kafl - 基于qemu和intel pt的内核fuzzer](https://github.com/RUB-SysSec/kAFL)
+- [Nyx - 基于kafl支持快照的fuzzer](https://github.com/RUB-SysSec/Nyx)
 - [afl.rs - 使用afl来fuzz rust代码](https://github.com/rust-fuzz/afl.rs)
 - [honggfuzz - 与afl类似的fuzzer](https://github.com/google/honggfuzz)
 - [honeybee - 快速inter pt库，可集成进honggfuzz](https://github.com/trailofbits/Honeybee)
@@ -251,6 +255,7 @@ excerpt: useful git repository (研究篇)
 - [autoharness - 自动生成测试用例](https://github.com/parikhakshat/autoharness)
 - [wtf - 具有跨平台、覆盖度反馈、快照等特性的fuzzer](https://github.com/0vercl0k/wtf) [用例1](http://blog.ret2.io/2021/07/21/wtf-snapshot-fuzzing/) [用例2](https://doar-e.github.io/blog/2021/07/15/building-a-new-snapshot-fuzzer-fuzzing-ida/)
 - [hAFL1 - use kafl to fuzz hyper-v](https://github.com/SB-GC-Labs/hAFL1)
+- [Igor - 利用fuzz的方法精简分类crash样本](https://github.com/HexHive/Igor)
 
 ### Syzkaller系
 
@@ -258,6 +263,7 @@ excerpt: useful git repository (研究篇)
 - [Agamotto - 使用checkpoint提高虚机fuzz效率](https://github.com/securesystemslab/agamotto)
 - [harbian - 增加权重、状态和webui](https://github.com/hardenedlinux/harbian-qa)
 - [moonshine - 为syzkaller生成seed](https://github.com/shankarapailoor/moonshine)
+- [vaultfuzzer - 基于syzkaller改进，cov过滤、pc权重等、llvm编译](https://hardenedvault.net/2021/09/13/vaultfuzzer.html)
 
 ### sanitizer
 

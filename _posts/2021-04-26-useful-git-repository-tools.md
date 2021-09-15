@@ -91,7 +91,8 @@ excerpt: useful git repository (工具篇)
 - [x11docker - 支持图形界面的docker](https://github.com/mviereck/x11docker)
 - [diffoscope - 支持多格式的diff工具](https://diffoscope.org/)
 - [asciify - 把图片转换成ascii字符](https://github.com/RameshAditya/asciify)
-
+- [提供web vnc访问的ubuntu容器镜像](https://github.com/fcwu/docker-ubuntu-vnc-desktop)
+- [copytranslator - 复制粘贴翻译助手](https://github.com/CopyTranslator/CopyTranslator)
 
 
 
