@@ -35,8 +35,23 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 
 以下是我对公有云的攻击方法及手段的一些初步和简陋的梳理，一些通用手段就不再列在其中了，主要写一些跟云相关的内容
 
-PS: 安全只有两种，一种是没有被别人搞所以安全，一种是自己幻想自己安全
+### 案例
+> 安全只有两种，一种是没有被别人攻击所以安全，一种是自己幻想自己安全
 
+* 通过伪造目标节点的证书签名请求获取其证书，通过证书控制节点
+  * [Hacking Kubelet on Google Kubernetes Engine](https://www.4armed.com/blog/hacking-kubelet-on-gke/)
+  * [GKE Kubelet TLS Bootstrap Privilege Escalation](https://rhinosecuritylabs.com/cloud-security/kubelet-tls-bootstrap-privilege-escalation/)
+* 使用serverless函数监控目标的对象存储桶，当监控到有新文件上传时，修改上传的文件。这种攻击手法利用的是时间差，很多服务在运行时需要执行用户对象存储桶中的文件，从用户上传文件到服务拉取文件之间需要一小段时间，攻击者如果能在这段时间内修改用户上传的文件，则可实施攻击
+  * [Resource Injection in CloudFormation Templates](https://rhinosecuritylabs.com/aws/cloud-malware-cloudformation-injection/)
+* 利用IAM弱配置
+  * [Investigating PrivEsc Methods in AWS](https://labs.bishopfox.com/tech-blog/privilege-escalation-in-aws)
+  * [Privilege Escalation in Google Cloud Platform – Part 1 (IAM)](https://rhinosecuritylabs.com/gcp/privilege-escalation-google-cloud-platform-part-1/)
+* 容器/k8s逃逸
+  * [Cross-Account Container Takeover in Azure Container Instances](https://unit42.paloaltonetworks.com/azure-container-instances/)
+  * [Hacking DigitalOcean's New Kubernetes Service](https://www.4armed.com/blog/hacking-digitalocean-kubernetes/)
+* agent漏洞或未授权访问
+  * [Agent Exposes Azure Customers To Unauthorized Code Execution](https://www.wiz.io/blog/secret-agent-exposes-azure-customers-to-unauthorized-code-execution)
+  
 ## 侦察 (Reconnaissance)
 
 * 开源情报
@@ -134,4 +149,4 @@ PS: 安全只有两种，一种是没有被别人搞所以安全，一种是自�
 
 * 云存储
   * 很多云服务在运行时都依赖云存储服务，假设可以在云服务的虚机上执行任意代码，但是这个虚机在内网连不出来，那么可以尝试去连对象存储服务，该服务通常内外网均可访问
-
+	* 如果攻击者具备虚机的操作权限，但无法登陆目标虚机，又不想使用重置密码或卸载磁盘等易被感知的操作，则可通过导出虚机为镜像，然后通过镜像创建新的虚机，再对新的虚机进行重置密码或硬盘卸载的操作

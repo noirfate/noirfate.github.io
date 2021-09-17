@@ -163,6 +163,7 @@ excerpt: useful git repository (攻防篇)
 - [http.sys uaf - CVE-2021-31166](https://github.com/0vercl0k/CVE-2021-31166)
 - [使用winafl挖gdi漏洞 - CVE-2021-1665](https://www.mcafee.com/blogs/other-blogs/mcafee-labs/analyzing-cve-2021-1665-remote-code-execution-vulnerability-in-windows-gdi/)
 - [win信息泄露 - CVE-2021-31955](https://github.com/mavillon1/CVE-2021-31955-POC)
+- [word rce - CVE-2021-40444](https://github.com/klezVirus/CVE-2021-40444)
 
 ### linux
 
@@ -216,6 +217,7 @@ excerpt: useful git repository (攻防篇)
 - [qemu设备模拟利用模板](https://github.com/farazsth98/hypervisor_exploit_templates)
 - [exiftool命令执行漏洞CVE-2021-22204](https://github.com/se162xg/CVE-2021-22204) [分析](https://blog.bricked.tech/posts/exiftool/)
 - [mysql任意文件读取](https://github.com/Gifts/Rogue-MySql-Server) [分析](https://paper.seebug.org/1112/)
+- [azure omi agent rce](https://github.com/horizon3ai/CVE-2021-38647)
 
 ## 研究资料
 
