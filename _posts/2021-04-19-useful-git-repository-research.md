@@ -195,6 +195,7 @@ excerpt: useful git repository (研究篇)
 - [jaeger - 代码埋点统计工具](https://github.com/jaegertracing/jaeger)
 - [skywalking - 代码埋点统计工具](https://github.com/apache/skywalking)
 - [hallucinate - 跨平台插桩流量解密工具](https://github.com/SySS-Research/hallucinate/)
+- [waydroid - 在docker中运行安卓](https://github.com/waydroid/waydroid)
 
 ## Fuzz
 

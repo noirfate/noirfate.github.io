@@ -51,6 +51,10 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * [Hacking DigitalOcean's New Kubernetes Service](https://www.4armed.com/blog/hacking-digitalocean-kubernetes/)
 * agent漏洞或未授权访问
   * [Agent Exposes Azure Customers To Unauthorized Code Execution](https://www.wiz.io/blog/secret-agent-exposes-azure-customers-to-unauthorized-code-execution)
+* 命令注入
+  * [Azure CSV Injection Vulnerability](https://rhinosecuritylabs.com/azure/cloud-security-risks-part-1-azure-csv-injection-vulnerability/)
+  * [CSV Injection in AWS CloudTrail](https://rhinosecuritylabs.com/aws/cloud-security-csv-injection-aws-cloudtrail/)
+  * [AWS WorkSpaces Remote Code Execution](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/?__cf_chl_jschl_tk__=pmd_XcEFdL6Sp_PtLOYR.E6GQyPehV7m3LXviDvdyKbv.qI-1632281490-0-gqNtZGzNAfujcnBszQhR)
   
 ## 侦察 (Reconnaissance)
 

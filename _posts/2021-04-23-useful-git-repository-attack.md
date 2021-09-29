@@ -141,6 +141,7 @@ excerpt: useful git repository (攻防篇)
 - [数据库相关渗透利用方法](https://github.com/nixawk/pentest-wiki/tree/master/2.Vulnerability-Assessment/Database-Assessment)
 - [BruteShark - 网络流量分析工具，可提权凭证、文件等](https://github.com/odedshimon/BruteShark)
 - [针对不同代理解析特性进行的攻击](https://github.com/GrrrDog/weird_proxies)
+- [domain borrow](https://xlab.tencent.com/cn/2021/05/14/domain-borrowing/)
 
 ## POC
 
@@ -194,6 +195,7 @@ excerpt: useful git repository (攻防篇)
 - [l1tf - guest读取host内存CVE-2018-3646](https://github.com/gregvish/l1tf-poc)
 - [virtualbox vgpu漏洞](https://github.com/niklasb/3dpwn)
 - [qemu nvme漏洞利用](https://github.com/hustdebug/scavenger)
+- [vcenter RCE - CVE-2021-22005](https://securityaffairs.co/wordpress/122686/hacking/cve-2021-22005-exploit-vmware-vcenter.html?utm_source=feedly&utm_medium=rss&utm_campaign=cve-2021-22005-exploit-vmware-vcenter)
 
 ### side channel
 
@@ -201,6 +203,7 @@ excerpt: useful git repository (攻防篇)
 - [igpu leak - gpu信息泄露CVE-2019-14615](https://github.com/HE-Wenjian/iGPU-Leak)
 - [ridl - cpu侧信道攻击](https://github.com/vusec/ridl)
 - [meltdown](https://github.com/paboldin/meltdown-exploit)
+- [saddns - 利用ICMP频率限制探测端口和TxID](https://github.com/seclab-ucr/SADDNS)
 
 ### 其他
 
@@ -218,6 +221,8 @@ excerpt: useful git repository (攻防篇)
 - [exiftool命令执行漏洞CVE-2021-22204](https://github.com/se162xg/CVE-2021-22204) [分析](https://blog.bricked.tech/posts/exiftool/)
 - [mysql任意文件读取](https://github.com/Gifts/Rogue-MySql-Server) [分析](https://paper.seebug.org/1112/)
 - [azure omi agent rce](https://github.com/horizon3ai/CVE-2021-38647)
+- [vscode命令执行CVE-2020-17148](https://www.shielder.it/advisories/remote-command-execution-in-visual-studio-code-remote-development-extension/)
+- [npm cli路径穿越](https://robertchen.cc/blog/2021/09/20/npm-rce)
 
 ## 研究资料
 
