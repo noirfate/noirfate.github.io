@@ -182,6 +182,7 @@ excerpt: useful git repository (攻防篇)
 - [cve-2021-22555 - 内核提权](https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html)
 - [cve-2021-3490 - 内核提权](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
 - [CVE-2020-27348 - snap命令注入和沙箱逃逸](https://blog.ret2.io/2021/08/04/snapcraft-injection/)
+- [CVE-2020-11710 - kong admin api未授权访问](https://github.com/RandomRobbieBF/kong-pwn)
 
 ### container
 
