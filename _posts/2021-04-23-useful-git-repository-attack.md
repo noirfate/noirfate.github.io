@@ -120,6 +120,7 @@ excerpt: useful git repository (攻防篇)
 - [aws IAM提权漏洞利用靶场](https://github.com/BishopFox/iam-vulnerable)
 - [PMapper - aws IAM权限风险排查](https://github.com/nccgroup/PMapper)
 - [whoc - 在容器中偷取主机runc的镜像](https://github.com/twistlock/whoc)
+- [nsenter to container](https://github.com/jpetazzo/nsenter)
 
 ### 其他
 
@@ -152,6 +153,7 @@ excerpt: useful git repository (攻防篇)
 - [exploitdb](https://github.com/offensive-security/exploitdb)
 - [cve poc列表](https://github.com/qazbnm456/awesome-cve-poc)
 - [web poc列表](https://github.com/EdgeSecurityTeam/Vulnerability)
+- [sploitus - exploit搜索引擎](https://sploitus.com/)
 
 ### win
 
