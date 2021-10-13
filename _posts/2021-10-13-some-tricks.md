@@ -89,6 +89,166 @@ do { youtube-dl --proxy 127.0.0.1:1081 --socket-timeout 10 --yes-playlist --embe
     proxy = http://127.0.0.1:1080
 ```
 
+## 使用bash实现netstat功能
+```shell
+#!/bin/bash
+convert_ipv4()
+{
+local_ip=`echo $3 | awk '{split($0,a,":");gsub("[A-F0-9][A-F0-9]"," 0x&",a[1]);n=split(a[1],ip);for(i=n;i>1;i--) printf("%d.",strtonum(ip[i]));printf("%d:",strtonum(ip[i]));sub("[A-F0-9]+","0x&",a[2]);printf("%d",strtonum(a[2]));}'`
+remote_ip=`echo $4 | awk '{split($0,a,":");gsub("[A-F0-9][A-F0-9]"," 0x&",a[1]);n=split(a[1],ip);for(i=n;i>1;i--) printf("%d.",strtonum(ip[i]));printf("%d:",strtonum(ip[i]));sub("[A-F0-9]+","0x&",a[2]);if(strtonum(a[2]) == 0) printf("*\n");else printf("%d\n",strtonum(a[2]));}'`
+if [ $1 == "udp" ];then case $5 in 01)state="ESTABLISHED";;*)state="-";;esac;else
+case $5 in
+01)state="ESTABLISHED"
+;;
+02)state="SYN_SENT"
+;;
+03)state="SYN_RECV"
+;;
+04)state="FIN_WAIT1"
+;;
+05)state="FIN_WAIT2"
+;;
+06)state="TIME_WAIT"
+;;
+07)state="CLOSE"
+;;
+08)state="CLOSE_WAIT"
+;;
+09)state="LAST_ACK"
+;;
+0A)state="LISTEN"
+;;
+0B)state="CLOSING"
+;;
+*)state="UNKNOW"
+;;
+esac
+fi
+dirs=`find /proc/ -maxdepth 1 -type d`
+find=`for dir in $dirs;do if [ -d $dir/fd ] && ls $dir/fd -l | grep ${11};then echo $dir;break;fi;done`
+pid=${find##*/}
+find=`ls /proc/$pid/exe -l 2>/dev/null`
+cmd=${find##*/}
+if [ -z $pid ];then echo "$1 $local_ip $remote_ip $state -" | awk '{printf("%-30s%-30s%-30s%-30s%-30s\n",$1,$2,$3,$4,$5)}';else
+echo "$1 $local_ip $remote_ip $state $pid/$cmd" | awk '{printf("%-30s%-30s%-30s%-30s%-30s\n",$1,$2,$3,$4,$5)}';fi
+}
+convert_ipv6()
+{
+local_ip=`echo $3 | awk '{split($0,a,":");b=substr(a[1],25,8);gsub("[A-F0-9][A-F0-9]"," 0x&",b);n=split(b,ip);if(ip[1] ~/01/) {printf("%s:","127.0.0.1");sub("[A-F0-9]+","0x&",a[2]);printf("%d\n",strtonum(a[2]));} else {for(i=n;i>1;i--) printf("%d.",strtonum(ip[i]));printf("%d:",strtonum(ip[i]));sub("[A-F0-9]+","0x&",a[2]);printf("%d\n",strtonum(a[2]));}}'`
+remote_ip=`echo $4 | awk '{split($0,a,":");b=substr(a[1],25,8);gsub("[A-F0-9][A-F0-9]"," 0x&",b);n=split(b,ip);if(ip[1] ~/01/) {printf("%s:","127.0.0.1");sub("[A-F0-9]+","0x&",a[2]);printf("%d\n",strtonum(a[2]));} else {for(i=n;i>1;i--) printf("%d.",strtonum(ip[i]));printf("%d:",strtonum(ip[i]));sub("[A-F0-9]+","0x&",a[2]);if(strtonum(a[2]) == 0) printf("*\n");else printf("%d\n",strtonum(a[2]));}}'`
+if [ $1 == "udp" ];then case $5 in 01)state="ESTABLISHED";;*)state="-";;esac;else
+case $5 in
+01)state="ESTABLISHED"
+;;
+02)state="SYN_SENT"
+;;
+03)state="SYN_RECV"
+;;
+04)state="FIN_WAIT1"
+;;
+05)state="FIN_WAIT2"
+;;
+06)state="TIME_WAIT"
+;;
+07)state="CLOSE"
+;;
+08)state="CLOSE_WAIT"
+;;
+09)state="LAST_ACK"
+;;
+0A)state="LISTEN"
+;;
+0B)state="CLOSING"
+;;
+*)state="UNKNOW"
+;;
+esac
+fi
+dirs=`find /proc/ -maxdepth 1 -type d`
+find=`for dir in $dirs;do if [ -d $dir/fd ] && ls $dir/fd -l | grep ${11};then echo $dir;break;fi;done`
+pid=${find##*/}
+find=`ls /proc/$pid/exe -l 2>/dev/null`
+cmd=${find##*/}
+if [ -z $pid ];then echo "$1 $local_ip $remote_ip $state -" | awk '{printf("%-30s%-30s%-30s%-30s%-30s\n",$1,$2,$3,$4,$5)}';else
+echo "$1 $local_ip $remote_ip $state $pid/$cmd" | awk '{printf("%-30s%-30s%-30s%-30s%-30s\n",$1,$2,$3,$4,$5)}';fi
+}
+convert_route()
+{
+iface=$1
+dest=`echo $2 | awk '{b=$0;gsub("[A-F0-9][A-F0-9]"," 0x&",b);n=split(b,ip);for(i=n;i>1;i--) printf("%d.",strtonum(ip[i]));printf("%d",strtonum(ip[i]));}'`
+gateway=`echo $3 | awk '{b=$0;gsub("[A-F0-9][A-F0-9]"," 0x&",b);n=split(b,ip);for(i=n;i>1;i--) printf("%d.",strtonum(ip[i]));printf("%d",strtonum(ip[i]));}'`
+flags=`echo $4 | awk '{printf("%d",strtonum($0));}'`
+mask=`echo $8 | awk '{b=$0;gsub("[A-F0-9][A-F0-9]"," 0x&",b);n=split(b,ip);for(i=n;i>1;i--) printf("%d.",strtonum(ip[i]));printf("%d",strtonum(ip[i]));}'`
+case $flags in
+1)state='U'
+;;
+3)state='UG'
+;;
+*)state=$flags
+;;
+esac
+if [ $gateway == "0.0.0.0" ];then gateway='*';fi
+case $dest in
+"169.254.0.0")dest='link-local'
+;;
+"127.0.0.0")dest='loopback'
+;;
+"0.0.0.0")dest='default'
+;;
+*)
+;;
+esac
+awk 'BEGIN {printf("%-30s%-30s%-30s%-30s%-30s\n","'$dest'","'$gateway'","'$mask'","'$state'","'$iface'");}'
+}
+print_tcp()
+{
+if [ -f /proc/net/tcp ];then cat /proc/net/tcp | while read line;do case $line in sl*);;*)convert_ipv4 tcp $line;;esac;done;fi
+if [ -f /proc/net/tcp6 ];then cat /proc/net/tcp6 | while read line;do case $line in sl*);;*)convert_ipv6 tcp $line;;esac;done;fi
+}
+print_udp()
+{
+if [ -f /proc/net/udp ];then cat /proc/net/udp | while read line;do case $line in sl*);;*)convert_ipv4 udp $line;;esac;done;fi
+if [ -f /proc/net/udp6 ];then cat /proc/net/udp6 | while read line;do case $line in sl*);;*)convert_ipv6 udp $line;;esac;done;fi
+}
+print_title()
+{
+echo "begin" | awk '{printf("%-30s%-30s%-30s%-30s%-30s\n","protocol","local_address","remote_address","state","process")}'
+}
+print_title_route()
+{
+echo "ROUTE"
+awk 'BEGIN {printf("%-30s%-30s%-30s%-30s%-30s\n","Destination","Gateway","Genmask","Flags","Iface");}'
+print_route
+echo -e "\nARP"
+if [ -f /proc/net/arp ];then cat /proc/net/arp;fi
+}
+print_route()
+{
+if [ -f /proc/net/route ];then cat /proc/net/route | while read line;do case $line in I*);;*)convert_route $line;;esac;done;fi
+}
+print_help()
+{
+echo "usage:"
+echo " `basename $0` -[a(all) p(protocol like tcp,udp) r(route) h(help)]"
+}
+while getopts arhp: option
+do
+case $option in
+a) print_title;print_tcp;print_udp
+;;
+r) print_title_route
+;;
+h) print_help
+;;
+p) case $OPTARG in tcp)print_title;print_tcp;;udp)print_title;print_udp;;*)echo "[-p] protocol should be tcp|udp";;esac
+;;
+*) print_help
+;;
+esac
+done
+if [ $# -eq 0 ];then print_help;fi
+```
+
 # 系统
 
 ## 编写独立内核模块
