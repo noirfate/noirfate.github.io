@@ -78,6 +78,17 @@ youtube-dl --proxy 127.0.0.1:1080 --sub-lang en --write-auto-sub --sub-format sr
 do { youtube-dl --proxy 127.0.0.1:1081 --socket-timeout 10 --yes-playlist --embed-subs -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 --sub-lang en --write-auto-sub https://www.youtube.com/playlist?list=PLLHTzKZzVU9eaEyErdV26ikyolxOsz6mq } while(! $?)
 ```
 
+## Github Desktop配置代理
+配置文件在`C:\users\<username>\.gitconfig`
+```
+[http]
+    proxy = http://127.0.0.1:1080
+[https]
+    proxy = http://127.0.0.1:1080
+[git]
+    proxy = http://127.0.0.1:1080
+```
+
 # 系统
 
 ## 编写独立内核模块
