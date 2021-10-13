@@ -37,10 +37,51 @@ appimagetool-x86_64.AppImage appdir_test test.appimage
 ./test.appimage --appimage-extract-and-run
 ```
 
+## 使用bash实现curl下载功能
+```shell
+function __curl() {
+  read proto server path <<<$(echo ${1//// })
+  DOC=/${path// //}
+  HOST=${server//:*}
+  PORT=${server//*:}
+  [[ x"${HOST}" == x"${PORT}" ]] && PORT=80
+
+  exec 3<>/dev/tcp/${HOST}/$PORT
+  echo -en "GET ${DOC} HTTP/1.0\r\nHost: ${HOST}\r\n\r\n" >&3
+  (while read line; do
+   [[ "$line" == $'\r' ]] && break
+  done && cat) <&3
+  exec 3>&-
+}
+# 保存上述函数到curl.sh
+. curl.sh
+# 下载
+__curl http://www.google.com/favicon.ico > mine.ico
+```
+
+## 使用youtube-dl
+
+- 下载视频列表
+```shell
+# 例
+youtube-dl --proxy 127.0.0.1:1080 --yes-playlist --embed-subs -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "https://www.youtube.com/watch?v=fNxaJsNG3-s&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S"
+```
+
+- 下载视频列表的字幕
+```shell
+# 例
+youtube-dl --proxy 127.0.0.1:1080 --sub-lang en --write-auto-sub --sub-format srt --skip-download --yes-playlist "https://www.youtube.com/watch?v=fNxaJsNG3-s&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S"
+```
+
+- 失败重试
+```shell
+do { youtube-dl --proxy 127.0.0.1:1081 --socket-timeout 10 --yes-playlist --embed-subs -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 --sub-lang en --write-auto-sub https://www.youtube.com/playlist?list=PLLHTzKZzVU9eaEyErdV26ikyolxOsz6mq } while(! $?)
+```
+
 # 系统
 
 ## 编写独立内核模块
-> `struct module`结构保存在`.gnu.linkonce.this_module`段中，模块名称和内核版本保存在`.modinfo`段中
+> `struct module`结构保存在`.gnu.linkonce.this_module`段中，模块名称和内核版本保存在`.modinfo`段中<br>
 > 参考：<https://itnext.io/a-standalone-linux-kernel-module-df54283d4803>
 
 - 找出init和exit函数在`struct module`中的偏移
@@ -176,6 +217,28 @@ Contents of section .modinfo:
  0070 6c6f6164 2000                        load .
 ```
 
+## 识别PCI设备
+
+- 通过lspci找到要查看的设备
+```shell
+lspci
+00:00.0 Host bridge: Intel Corporation 440FX - 82441FX PMC [Natoma] (rev 02)
+00:01.0 ISA bridge: Intel Corporation 82371SB PIIX3 ISA [Natoma/Triton II]
+00:01.1 IDE interface: Intel Corporation 82371SB PIIX3 IDE [Natoma/Triton II]
+00:01.2 USB controller: Intel Corporation 82371SB PIIX3 USB [Natoma/Triton II] (rev 01)
+00:01.3 Bridge: Intel Corporation 82371AB/EB/MB PIIX4 ACPI (rev 03)
+00:02.0 VGA compatible controller: Cirrus Logic GD 5446
+```
+
+- 查看厂商号和设备号
+```shell
+lspci -s -n 00:02.0
+00:02.0 0300: 1013:00b8
+#1013为厂商号，00b8为设备号
+```
+
+- 使用厂商号和设备号去网站查询<http://pci-ids.ucw.cz/mods/PC/1013/00b8>
+
 # 容器
 
 ## 不使用docker进入正在运行的容器
@@ -185,7 +248,7 @@ nsenter --target $PID --mount --uts --ipc --net --pid
 ```
 
 ## 直接挂载docker镜像
-> 仅支持overlayFS，可使用`docker info | grep "Storage Driver"`来查看，例如`Storage Driver: overlay2`
+> 仅支持overlayFS，可使用`docker info | grep "Storage Driver"`来查看，例如`Storage Driver: overlay2`<br>
 > 原理参考：<https://docs.docker.com/storage/storagedriver/overlayfs-driver/#how-the-overlay2-driver-works>
 
 - 获取容器镜像信息
@@ -209,6 +272,6 @@ mount -t overlay overlay -o lowerdir=$lowerdir,upperdir=$upperdir,workdir=$workd
 
 # 网站
 
-- https://data.stats.gov.cn (国家数据)
-- https://apps.evozi.com/apk-downloader/  (从google play上下载apk)
-- https://medium.com/marketingdatascience/selenium%E6%95%99%E5%AD%B8-%E4%B8%80-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webdriver-send-keys-988816ce9bed (使用webdriver模拟网页操作）
+- <https://data.stats.gov.cn> (国家数据)
+- <https://apps.evozi.com/apk-downloader/>  (从google play上下载apk)
+- <https://medium.com/marketingdatascience/selenium%E6%95%99%E5%AD%B8-%E4%B8%80-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webdriver-send-keys-988816ce9bed> (使用webdriver模拟网页操作）
