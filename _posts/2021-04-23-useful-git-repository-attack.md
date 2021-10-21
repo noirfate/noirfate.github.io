@@ -44,6 +44,7 @@ excerpt: useful git repository (攻防篇)
 - [al-khaser - 使用各种病毒技术测试杀毒软件的检测能力](https://github.com/LordNoteworthy/al-khaser)
 - [pspy - 本地提权辅助工具](https://github.com/DominicBreuker/pspy)
 - [slither - 智能合约代码安全扫描工具](https://github.com/crytic/slither)
+- [snyk - 开源组件漏洞扫描工具](https://github.com/snyk/snyk)
 
 ### 远控工具
 
@@ -143,6 +144,8 @@ excerpt: useful git repository (攻防篇)
 - [BruteShark - 网络流量分析工具，可提权凭证、文件等](https://github.com/odedshimon/BruteShark)
 - [针对不同代理解析特性进行的攻击](https://github.com/GrrrDog/weird_proxies)
 - [domain borrow](https://xlab.tencent.com/cn/2021/05/14/domain-borrowing/)
+- [L0phtCrack密码爆破工具](https://gitlab.com/l0phtcrack/l0phtcrack)
+- [hydra密码爆破工具](https://github.com/vanhauser-thc/thc-hydra)
 
 ## POC
 

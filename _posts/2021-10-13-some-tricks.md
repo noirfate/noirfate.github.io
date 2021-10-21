@@ -249,6 +249,19 @@ done
 if [ $# -eq 0 ];then print_help;fi
 ```
 
+## Source Insight4添加自定义parser
+
+- 例1：标记未识别的结构<br>
+	1. 初始分析后未识别`QXLRam`结构<br>
+	![](/assets/img/si4_parsing1.png)
+	2. 打开`File Type Options`，点击`Language`<br>
+	![](/assets/img/si4_parsing2.png)
+	3. 点击`Properties`<br>
+	![](/assets/img/si4_parsing3.png)
+	4. 开启正则解析，添加解析规则，匹配`\(.*\)`中的内容为指定类型的`symbol`，在`Source Insight`正则表达式中，`\w`表示空格，也可选择`perl`类型的正则<br>
+	![](/assets/img/si4_parsing4.png)
+	5. 重新解析后，识别出`QXLRam`结构<br>
+
 # 系统
 
 ## 编写独立内核模块
@@ -410,6 +423,34 @@ lspci -s -n 00:02.0
 
 - 使用厂商号和设备号去网站查询<http://pci-ids.ucw.cz/mods/PC/1013/00b8>
 
+## 编译发行版安装包
+
+- yum/dnf
+```shell
+pkg=xxx
+pkg_ver=`rpm -qa | grep $pkg`
+yumdownloader --source $pkg or dnf download --source $pkg
+yum-builddep $pkg or dnf builddep $pkg
+rpm -i xxx
+cd rpmbuild;rpmbuild -bb SPECS/xxx.spec
+```
+
+- apt
+```shell
+pkg=xxx
+pkg_ver=`dpkg -l | grep $pkg`
+apt-get source $pkg
+tar xf xxx.orig.tar.xz
+tar xf xxx.debian.tar.xz
+apt build-dep $pkg
+#debian目录下:
+#changelog记录的版本更迭信息，包括修复的CVE
+#control记录了依赖信息
+#rules为编译脚本
+mv debian xxx/
+cd xxx;dpkg-buildpackage -rfakeroot -b -uc -us or debuild -b -uc -us
+```
+
 # 容器
 
 ## 不使用docker进入正在运行的容器
@@ -446,3 +487,4 @@ mount -t overlay overlay -o lowerdir=$lowerdir,upperdir=$upperdir,workdir=$workd
 - <https://data.stats.gov.cn> (国家数据)
 - <https://apps.evozi.com/apk-downloader/>  (从google play上下载apk)
 - <https://medium.com/marketingdatascience/selenium%E6%95%99%E5%AD%B8-%E4%B8%80-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webdriver-send-keys-988816ce9bed> (使用webdriver模拟网页操作）
+- <https://chaipip.com/>（ip地址位置查询）

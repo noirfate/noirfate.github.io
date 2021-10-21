@@ -247,7 +247,7 @@ excerpt: useful git repository (研究篇)
 - [mopt-afl - 使用粒子群算法优化afl](https://github.com/puppet-meteor/MOpt-AFL)
 - [afl相关fuzzer整理](https://github.com/Microsvuln/Awesome-AFL)
 - [jazzer - 基于libfuzzer的java fuzz工具](https://github.com/CodeIntelligenceTesting/jazzer)
-- [libfuzzer培训](https://github.com/Dor1s/libfuzzer-workshop)
+- [libfuzzer培训](https://github.com/Dor1s/libfuzzer-workshop) [libfuzzer doc](https://llvm.org/docs/LibFuzzer.html)
 - [oss-fuzz - google的开源软件fuzz框架](https://github.com/google/oss-fuzz)
 - [clusterfuzz - google开源的分布式fuzz基础设施](https://github.com/google/clusterfuzz)
 - [sockfuzzer - xnu网络协议栈fuzz](https://github.com/googleprojectzero/SockFuzzer)
@@ -257,6 +257,7 @@ excerpt: useful git repository (研究篇)
 - [wtf - 具有跨平台、覆盖度反馈、快照等特性的fuzzer](https://github.com/0vercl0k/wtf) [用例1](http://blog.ret2.io/2021/07/21/wtf-snapshot-fuzzing/) [用例2](https://doar-e.github.io/blog/2021/07/15/building-a-new-snapshot-fuzzer-fuzzing-ida/)
 - [hAFL1 - use kafl to fuzz hyper-v](https://github.com/SB-GC-Labs/hAFL1)
 - [Igor - 利用fuzz的方法精简分类crash样本](https://github.com/HexHive/Igor)
+- [stateafl - afl网络协议fuzzer](https://github.com/stateafl/stateafl)
 
 ### Syzkaller系
 
