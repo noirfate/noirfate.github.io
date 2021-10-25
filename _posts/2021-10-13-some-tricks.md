@@ -451,6 +451,19 @@ mv debian xxx/
 cd xxx;dpkg-buildpackage -rfakeroot -b -uc -us or debuild -b -uc -us
 ```
 
+## 使用inputrc补全历史命令
+```shell
+#在/etc/inputrc最后增加下面几行
+"\e[A": history-search-backward # up
+"\e[B": history-search-forward # down
+"e[1~": beginning-of-line # home 
+"e[2~": insert-last-argument # insert 
+"e[3~": delete-char # delete 
+"e[4~": end-of-line # end 
+"e[5~": backward-kill-word # page up 
+"e[6~": kill-word # page down 
+```
+
 # 容器
 
 ## 不使用docker进入正在运行的容器
