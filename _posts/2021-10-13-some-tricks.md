@@ -451,6 +451,29 @@ mv debian xxx/
 cd xxx;dpkg-buildpackage -rfakeroot -b -uc -us or debuild -b -uc -us
 ```
 
+## 下载archive.org上保存的网站
+
+[wayback-machine-downloader](https://github.com/hartator/wayback-machine-downloader)
+```shell
+# 由于下载下来的网页中引用的资源都是网站的url，无法离线访问，需要对url做替换
+# 假设下载网站为http://www.test.com
+gem install wayback_machine_downloader
+wayback_machine_downloader http://www.test.com -c 4
+# 替换test.com为本地链接
+cd websites/www.test.com
+find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.test.com/./g' {} \; # 替换第一层
+find . -maxdepth 2 -mindepth 2 -name "*.html" -exec sed -i 's/http:\/\/www.test.com/../g' {} \; # 替换第二层
+# 以此类推
+# 如果引用了其他子域名，比如a.test.com
+cd ../..
+wayback_machine_downloader http://www.a.test.com -c 4
+mv websites/www.a.test.com websites/www.test.com/a.test
+cd websites/www.test.com
+find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.test.com/.\/a.test/g' {} \; # 替换第一层
+find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.test.com/..\/a.test/g' {} \; # 替换第一层
+# 以此类推
+```
+
 # 容器
 
 ## 不使用docker进入正在运行的容器

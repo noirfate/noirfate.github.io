@@ -86,6 +86,7 @@ excerpt: useful git repository (攻防篇)
 - [rootkit培训](https://github.com/NoviceLive/research-rootkit)
 - [brootkit - 使用bash实现的rootkit工具](https://github.com/cloudsec/brootkit)
 - [免杀webshell](https://github.com/LandGrey/webshell-detect-bypass)
+- [Diamorphine - 基于linux内核模块的rootkit](https://github.com/m0nad/Diamorphine)
 
 ### OSINT(开源情报)工具
 
@@ -229,6 +230,7 @@ excerpt: useful git repository (攻防篇)
 - [azure omi agent rce](https://github.com/horizon3ai/CVE-2021-38647)
 - [vscode命令执行CVE-2020-17148](https://www.shielder.it/advisories/remote-command-execution-in-visual-studio-code-remote-development-extension/)
 - [npm cli路径穿越](https://robertchen.cc/blog/2021/09/20/npm-rce)
+- [CVE-2021-22205 - Gitlab RCE](https://github.com/mr-r3bot/Gitlab-CVE-2021-22205) [无需登陆版1](https://github.com/projectdiscovery/nuclei-templates/blob/master/cves/2021/CVE-2021-22205.yaml) [无需登陆版2](https://github.com/RedTeamWing/CVE-2021-22205/blob/master/CVE-2021-22205.py) [原理](https://devcraft.io/2021/05/04/exiftool-arbitrary-code-execution-cve-2021-22204.html) [靶场](https://github.com/vulhub/vulhub/tree/master/gitlab/CVE-2021-22205)
 
 ## 研究资料
 

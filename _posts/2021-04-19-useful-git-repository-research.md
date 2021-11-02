@@ -44,6 +44,7 @@ excerpt: useful git repository (研究篇)
 - [Ghidra插件 - 对象结构恢复](https://github.com/grimm-co/GEARSHIFT)
 - [使用ghidra生成cpg拱jorenio分析](https://github.com/joernio/ghidra2cpg) [joren是类似codeql的代码分析工具](https://joern.io/)
 - [ghidra2frida - use frida to extend ghidra](https://github.com/federicodotta/ghidra2frida)
+- [kaiju - CERT开发的插件](https://github.com/CERTCC/kaiju)
 
 ### GDB扩展
 
