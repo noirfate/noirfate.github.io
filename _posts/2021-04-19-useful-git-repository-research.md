@@ -103,6 +103,7 @@ excerpt: useful git repository (研究篇)
 - [nexmon - wifi固件调试修改工具](https://github.com/seemoo-lab/nexmon)
 - [objection - android&ios应用逆向审计工具](https://github.com/sensepost/objection)
 - [syscall-intercept - linux下用户态syscall hook工具](https://github.com/pmem/syscall_intercept)
+- [angry-gadget - 使用angr列出执行/bin/sh的约束条件](https://github.com/ChrisTheCoolHut/angry_gadget)
 
 ### binary改写
 
@@ -250,6 +251,8 @@ excerpt: useful git repository (研究篇)
 - [jazzer - 基于libfuzzer的java fuzz工具](https://github.com/CodeIntelligenceTesting/jazzer)
 - [libfuzzer培训](https://github.com/Dor1s/libfuzzer-workshop) [libfuzzer doc](https://llvm.org/docs/LibFuzzer.html)
 - [oss-fuzz - google的开源软件fuzz框架](https://github.com/google/oss-fuzz)
+- [oss-fuzz-lite - google开源的CICD fuzzer](https://github.com/google/clusterfuzzlite)
+- [oss-sydr-fuzz - oss-fuzz加符号执行](https://github.com/ispras/oss-sydr-fuzz)
 - [clusterfuzz - google开源的分布式fuzz基础设施](https://github.com/google/clusterfuzz)
 - [sockfuzzer - xnu网络协议栈fuzz](https://github.com/googleprojectzero/SockFuzzer)
 - [afl_ghidra_emu - afl和ghidra模拟执行集成fuzz](https://github.com/airbus-cyber/afl_ghidra_emu)
@@ -259,6 +262,7 @@ excerpt: useful git repository (研究篇)
 - [hAFL1 - use kafl to fuzz hyper-v](https://github.com/SB-GC-Labs/hAFL1)
 - [Igor - 利用fuzz的方法精简分类crash样本](https://github.com/HexHive/Igor)
 - [stateafl - afl网络协议fuzzer](https://github.com/stateafl/stateafl)
+- [aflsmart - afl结合peach模板](https://github.com/aflsmart/aflsmart)
 
 ### Syzkaller系
 
@@ -355,3 +359,4 @@ excerpt: useful git repository (研究篇)
 - [symbiotic - 使用符号执行对源码进行分析](https://github.com/staticafi/symbiotic)
 - [静态分析工具收集](https://github.com/analysis-tools-dev/static-analysis)
 - [weggli - c++源码分析工具](https://github.com/googleprojectzero/weggli)
+- [joern - 利用cpg进行源码分析](https://github.com/joernio/joern)

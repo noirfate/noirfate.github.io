@@ -474,6 +474,10 @@ find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.tes
 # 以此类推
 ```
 
+## python打包与反编译
+
+[python打包与反编译](https://saucer-man.com/information_security/825.html)
+
 # 容器
 
 ## 不使用docker进入正在运行的容器

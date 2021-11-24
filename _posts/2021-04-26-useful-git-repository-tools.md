@@ -45,6 +45,8 @@ excerpt: useful git repository (工具篇)
 - [lk - 嵌入式Linux内核](https://github.com/littlekernel/lk)
 - [win-virtio - win下的virtio驱动](https://github.com/virtio-win/kvm-guest-drivers-windows)
 - [kaitai-struct - 多语言的文件格式解析工具](https://github.com/kaitai-io/kaitai_struct)
+- [Sourcetrail - 跨平台源码阅读工具](https://github.com/CoatiSoftware/Sourcetrail)
+- [codequery - 跨平台源码阅读工具](https://github.com/ruben2020/codequery)
 
 ## 静态工具
 
@@ -93,6 +95,9 @@ excerpt: useful git repository (工具篇)
 - [asciify - 把图片转换成ascii字符](https://github.com/RameshAditya/asciify)
 - [提供web vnc访问的ubuntu容器镜像](https://github.com/fcwu/docker-ubuntu-vnc-desktop)
 - [copytranslator - 复制粘贴翻译助手](https://github.com/CopyTranslator/CopyTranslator)
+- [docker-wine - 在docker中运行wine](https://github.com/scottyhardy/docker-wine)
+- [kube-prompt - kubectl交互式工具](https://github.com/c-bata/kube-prompt)
+- [docker-wechat - docker微信](https://github.com/top-bettercode/docker-wechat)
 
 
 

@@ -78,6 +78,7 @@ excerpt: useful git repository (攻防篇)
 - [hopla - burpsuite补全插件](https://github.com/synacktiv/HopLa)
 - [java rmi利用工具](https://github.com/qtc-de/remote-method-guesser)
 - [Nebula - 公有云渗透框架](https://github.com/gl4ssesbo1/Nebula)
+- [faraday - 集成式渗透框架](https://github.com/infobyte/faraday)
 
 ### 持久化工具
 
@@ -87,6 +88,7 @@ excerpt: useful git repository (攻防篇)
 - [brootkit - 使用bash实现的rootkit工具](https://github.com/cloudsec/brootkit)
 - [免杀webshell](https://github.com/LandGrey/webshell-detect-bypass)
 - [Diamorphine - 基于linux内核模块的rootkit](https://github.com/m0nad/Diamorphine)
+- [pe_to_shellcode - 把pe文件变成shellcode](https://github.com/hasherezade/pe_to_shellcode)
 
 ### OSINT(开源情报)工具
 
@@ -147,6 +149,7 @@ excerpt: useful git repository (攻防篇)
 - [domain borrow](https://xlab.tencent.com/cn/2021/05/14/domain-borrowing/)
 - [L0phtCrack密码爆破工具](https://gitlab.com/l0phtcrack/l0phtcrack)
 - [hydra密码爆破工具](https://github.com/vanhauser-thc/thc-hydra)
+- [hacktricks - 渗透技巧合集](https://github.com/carlospolop/hacktricks)
 
 ## POC
 
@@ -189,11 +192,16 @@ excerpt: useful git repository (攻防篇)
 - [cve-2021-3490 - 内核提权](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
 - [CVE-2020-27348 - snap命令注入和沙箱逃逸](https://blog.ret2.io/2021/08/04/snapcraft-injection/)
 - [CVE-2020-11710 - kong admin api未授权访问](https://github.com/RandomRobbieBF/kong-pwn)
+- [CVE-2021-34886 - ebpf类型混淆漏洞](https://github.com/HexRabbit/CVE-writeup/tree/master/CVE-2021-34886)
+- [CVE-2021-33909 - Sequoia 内核提权](https://github.com/ChrisTheCoolHut/CVE-2021-33909) [crash](https://github.com/Liang2580/CVE-2021-33909)
+- [CVE-2020-8835 - bpf本地提权](https://github.com/noirfate/bpf-lpe) [分析](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
 
 ### container
 
 - [fdpasser - 容器外非root账户利用容器中的root账户进行提权](https://github.com/FSecureLABS/fdpasser)
 - [runc漏洞CVE-2019-5736](https://github.com/Frichetten/CVE-2019-5736-PoC) [另一个](https://github.com/q3k/cve-2019-5736-poc)
+- [CVE-2015-2925 - bind mount escape](https://github.com/kagami/docker_cve-2015-2925)
+- [CVE-2017-1002101 CVE-2021-25741 - k8s subpath escape](http://blog.nsfocus.net/cve-2017-1002101/) [offical](https://kubernetes.io/blog/2018/04/04/fixing-subpath-volume-vulnerability/) [cve-2017-1002101](https://github.com/bgeesaman/subpath-exploit)
 
 ### virtualization
 
@@ -231,6 +239,7 @@ excerpt: useful git repository (攻防篇)
 - [vscode命令执行CVE-2020-17148](https://www.shielder.it/advisories/remote-command-execution-in-visual-studio-code-remote-development-extension/)
 - [npm cli路径穿越](https://robertchen.cc/blog/2021/09/20/npm-rce)
 - [CVE-2021-22205 - Gitlab RCE](https://github.com/mr-r3bot/Gitlab-CVE-2021-22205) [无需登陆版1](https://github.com/projectdiscovery/nuclei-templates/blob/master/cves/2021/CVE-2021-22205.yaml) [无需登陆版2](https://github.com/RedTeamWing/CVE-2021-22205/blob/master/CVE-2021-22205.py) [原理](https://devcraft.io/2021/05/04/exiftool-arbitrary-code-execution-cve-2021-22204.html) [靶场](https://github.com/vulhub/vulhub/tree/master/gitlab/CVE-2021-22205)
+- [python命令注入方式](https://semgrep.dev/docs/cheat-sheets/python-command-injection/)
 
 ## 研究资料
 
@@ -272,6 +281,8 @@ excerpt: useful git repository (攻防篇)
 - [开源软件依赖查询](https://deps.dev/)
 - [kvm安全介绍](https://github.com/rafaeldtinoco/howtos)
 - [云原生安全资料](https://github.com/brant-ruan/awesome-cloud-native-security)
+- [KCon会议ppt](https://github.com/knownsec/KCon)
+- [macos/ios系统漏洞](https://github.com/houjingyi233/macOS-iOS-system-security)
 
 ## 防护
 
