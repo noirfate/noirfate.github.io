@@ -25,12 +25,15 @@ excerpt: Cloud Security
 
 ## k8s知识
 
+- 架构
+![](/assets/img/cs2.png)
+![](/assets/img/cs3.png)
 - [Kubernetes指南](https://feisky.gitbooks.io/kubernetes)
 - [kubernetes中文指南](https://jimmysong.io/kubernetes-handbook)
 - [kubernetes RBAC介绍](https://www.cncf.io/wp-content/uploads/2020/08/2020_04_Introduction-to-Kubernetes-RBAC.pdf)
-- [历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
-- [历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
-- [历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
+- [kubernetes历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
+- [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
+- [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
 - user namespace逃逸问题
 	- k8s默认没有用docker的seccomp规则,在启动的容器中可以通过unshare -mr bash获得全部的cap,再通过mount cgroup逃逸
 	- 可用 seccomp.security.alpha.kubernetes.io/pod: runtime/default 配置禁用unshare [参考](https://snyk.io/blog/kernel-privilege-escalation/)
@@ -48,7 +51,7 @@ excerpt: Cloud Security
 - [docker的init进程](https://shareinto.github.io/2019/01/30/docker-init(1)/)
 - [k8s审计工具介绍](https://fuckcloudnative.io/posts/tools-and-methods-for-auditing-kubernetes-rbac-policies/)
 - [利用user namespace增强安全性](https://kinvolk.io/blog/2020/12/improving-kubernetes-and-container-security-with-user-namespaces/)
-
+- [云原生安全书的相关源码](https://github.com/Metarget/cloud-native-security-book)
 
 ## 云原生攻击
 
@@ -60,9 +63,26 @@ excerpt: Cloud Security
 - [win silo容器逃逸](https://unit42.paloaltonetworks.com/what-i-learned-from-reverse-engineering-windows-containers/) [其他1](https://unit42.paloaltonetworks.com/windows-server-containers-vulnerabilities/) [其他2](https://unit42.paloaltonetworks.com/siloscape/)
 - [利用Linux内核漏洞实现Docker逃逸](https://paper.seebug.org/1602/)
 - [Container Escape in 2021](https://conference.hitb.org/hitbsecconf2021sin/materials/D2T2%20-%20Ccntainer%20Escape%20in%202021%20-%20Li%20Qiang.pdf)
-- [kata逃逸](https://wohin.me/kata-containerstao-yi-yan-jiu/)
+- [kata逃逸](https://wohin.me/kata-containerstao-yi-yan-jiu/) [POC](https://github.com/Metarget/cloud-native-security-book/tree/main/code/0304-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%94%BB%E5%87%BB/02-%E5%AE%89%E5%85%A8%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8)
 - [AWS跨账号读写桶](https://www.wiz.io/blog/black-hat-2021-aws-cross-account-vulnerabilities-how-isolated-is-your-cloud-environment) [PPT](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Breaking-The-Isolation-Cross-Account-AWS-Vulnerabilities.pdf)
 - [ChaosDB Explained: Azure's Cosmos DB Vulnerability](https://www.wiz.io/blog/chaosdb-explained-azures-cosmos-db-vulnerability-walkthrough)
+- [Kubernetes Pod Escape Using Log Mounts](https://blog.aquasec.com/kubernetes-security-pod-escape-log-mounts) [POC](https://github.com/danielsagi/kube-pod-escape)
+- [gcp dhcp takeover code exec](https://github.com/irsl/gcp-dhcp-takeover-code-exec)
+- [jwt token伪造](https://medium.com/@sajan.dhakate/exploiting-json-web-token-jwt-73d172b5bc02)
+- AWS IAM提权
+	- [privilege escalation in aws](https://labs.bishopfox.com/tech-blog/privilege-escalation-in-aws)
+	- [aws iam privilege escalation playground](https://labs.bishopfox.com/tech-blog/iam-vulnerable-an-aws-iam-privilege-escalation-playground)
+	- [iam-vulnerable](https://github.com/BishopFox/iam-vulnerable)
+	- [Pmapper](https://github.com/nccgroup/PMapper)
+	- [aws privilege escalation methods mitigation](https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/)
+	- [cloudsplaining](https://github.com/salesforce/cloudsplaining/ )
+	- [aws-assessment-tools](https://labs.bishopfox.com/tech-blog/iam-vulnerable-assessing-the-aws-assessment-tools)
+- [azure 容器逃逸](https://unit42.paloaltonetworks.com/azure-container-instances/)
+- [在容器中偷取主机runc](https://github.com/twistlock/whoc)
+- [azure omi agent rce](https://www.wiz.io/blog/secret-agent-exposes-azure-customers-to-unauthorized-code-execution)
+- [azure利用service principal提权](https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5 )
+- [digitalocean k8s逃逸](https://www.4armed.com/blog/hacking-digitalocean-kubernetes/)
+- [普罗未授权访问](https://jfrog.com/blog/dont-let-prometheus-steal-your-fire/)
 
 ## 云原生工具
 
@@ -80,20 +100,101 @@ excerpt: Cloud Security
 - [dive - docker镜像分析工具](https://github.com/wagoodman/dive) [docker镜像分析](https://theartofmachinery.com/2021/03/18/reverse_engineering_a_docker_image.html)
 - [krew - kubectl插件管理工具](https://github.com/kubernetes-sigs/krew/)
 - [rakkess - kubectl权限检查工具](https://github.com/corneliusweig/rakkess)
+- [pacu - AWS后渗透工具](https://rhinosecuritylabs.com/aws/pacu-open-source-aws-exploitation-framework/)
+- [gcphound - GCP渗透工具](https://desi-jarvis.medium.com/gcphound-a-swiss-army-knife-offensive-toolkit-for-google-cloud-platform-gcp-fb9e18b959b4)
+- [cloudgoat - aws靶场](https://github.com/RhinoSecurityLabs/cloudgoat)
+- 云资源关系可视化
+	- [awspx](https://github.com/FSecureLABS/awspx)
+	- [Stormspotter](https://github.com/Azure/Stormspotter)
 
 ## CVE
 
+- [CVE-2015-2925: 利用kernel bind mount漏洞逃逸](https://github.com/kagami/docker_cve-2015-2925)
 - [CVE-2017-1002101: k8s subpath mount符号链接逃逸](http://blog.nsfocus.net/cve-2017-1002101/) [POC](https://github.com/bgeesaman/subpath-exploit)
+- [CVE-2018-15664: docker cp symlink-race attack](http://mayoterry.com/index.php/archives/69.html) [POC](https://github.com/Metarget/cloud-native-security-book/tree/main/code/0302-%E5%BC%80%E5%8F%91%E4%BE%A7%E6%94%BB%E5%87%BB/02-CVE-2018-15664/symlink_race)
 - [CVE-2018-1002100 CVE-2019-1002101: kubectl cp路径穿越](https://unit42.paloaltonetworks.com/disclosing-directory-traversal-vulnerability-kubernetes-copy-cve-2019-1002101/) [CVE-2018-1002100](https://hansmi.ch/articles/2018-04-openshift-s2i-security)
 - [CVE-2018-1002105: k8s apiserver <=> kubelet连接保持提权漏洞](https://paper.seebug.org/757/#1)
+- [CVE-2019-5736: docker runc覆盖逃逸](https://unit42.paloaltonetworks.com/breaking-docker-via-runc-explaining-cve-2019-5736/) [POC](https://github.com/BBRathnayaka/POC-CVE-2019-5736)
+- [CVE-2019-9512: HTTP/2 DOS](https://github.com/Metarget/cloud-native-security-book/tree/main/code/0404-K8s%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB)
+- [CVE-2019-9946: k8s 利用hostport进行中间人攻击](http://blog.champtar.fr/CVE-2019-9946/)
+- [CVE-2019-13139: docker build exec](https://staaldraad.github.io/post/2019-07-16-cve-2019-13139-docker-build/)
+- [cve-2019-11247: 通过访问namespace api endpoint，越权增删改查全局CRD资源](https://www.stackrox.io/blog/how-to-remediate-kubernetes-security-vulnerability-cve-2019-11247/)
 - [CVE-2019-11250: Bearer tokens are revealed in logs](https://github.com/kubernetes/kubernetes/issues/81114)
 - [CVE-2019-11253: Kubernetes API Server YAML Parsing Remote DOS](https://gist.github.com/bgeesaman/0e0349e94cd22c48bf14d8a9b7d6b8f2)
+- [CVE-2019-14271: docker cp libnss_files.so escape](https://unit42.paloaltonetworks.com/docker-patched-the-most-severe-copy-vulnerability-to-date-with-cve-2019-14271/) [POC](https://github.com/Metarget/cloud-native-security-book/tree/main/code/0302-%E5%BC%80%E5%8F%91%E4%BE%A7%E6%94%BB%E5%87%BB/03-CVE-2019-14271)
+- [CVE-2019-16884: AppArmor bypass via malicious image](https://github.com/opencontainers/runc/issues/2128)
+- [CVE-2019–18801: envoy heap overflow](https://blog.envoyproxy.io/exploiting-an-envoy-heap-vulnerability-96173d41792)
+- [CVE-2020-8554: k8s service流量劫持](https://unit42.paloaltonetworks.com/cve-2020-8554/)
 - [CVE-2020-8555: k8s controler SSRF](https://medium.com/@BreizhZeroDayHunters/when-its-not-only-about-a-kubernetes-cve-8f6b448eafa8)
+- [CVE-2020-8557: Node disk DOS by writing to container /etc/hosts](https://github.com/kubernetes/kubernetes/issues/93032)
+- [CVE-2020-8558: route_localnet漏洞](https://github.com/tabbysable/POC-2020-8558)
 - [CVE-2020-8561: k8s apiserver SSRF](https://hackerone.com/reports/941178) [公告](https://groups.google.com/g/kubernetes-security-announce/c/RV2IhwcrQsY)
 - [CVE-2020-15157: container image SSRF](https://darkbit.io/blog/cve-2020-15157-containerdrip)
+- [CVE-2020-15257: containerd-shim abstract namespace unix socket](https://research.nccgroup.com/2020/12/10/abstract-shimmer-cve-2020-15257-host-networking-is-root-equivalent-again/) [POC1](https://github.com/nccgroup/abstractshimmer) [POC2](https://www.cdxy.me/?p=837)
 - [CVE-2021-3847: overlayfs文件安全属性拷贝问题](https://www.openwall.com/lists/oss-security/2021/10/14/3)
 - [CVE-2021-25741: k8s subpath mount符号链接条件竞争逃逸](https://sysdig.com/blog/cve-2021-25741-kubelet-falco/)
 - [CVE-2021-27075: Azure虚机上的普通用户可以访问VM extenstion中的敏感信息](https://www.intezer.com/blog/cloud-security/cve-2021-27075-microsoft-azure-vulnerability-allows-privilege-escalation-and-leak-of-data/)
 - [CVE-2021-28112: AWS workspace client 命令注入RCE](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/)
+- [CVE-2021-30465: docker runc mount TOCTOU](https://www.kingkk.com/2021/06/runc%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%EF%BC%88CVE-2021-30465%EF%BC%89/) [其他](https://hackmd.io/@mauilion/By2CV2MtO)
 - [CVE-2021-41091: 利用/var/lib/docker下可setuid执行程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558)
 
+# QEMU
+
+## 知识
+
+- [QEMU 源码分析](https://airbus-seclab.github.io/qemu_blog/)
+- [QEMU 博客](https://airbus-seclab.github.io/qemu_blog/)
+
+## 漏洞
+
+- [QEMU Heap Overflow in SDHCI Component](https://starlabs.sg/advisories/21-3409/)
+- [QEMU Misuse Error Handling逃逸](https://github.com/hustdebug/scavenger)
+- [QEMU Virglrenderer逃逸](https://i.blackhat.com/asia-20/Thursday/asia-20-Shao-3D-Red-Pill-A-Guest-To-Host-Escape-On-QEMUKVM-Virtio-Device-wp.pdf)
+- [QEMU vGPU逃逸](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Another-Road-Leads-To-The-Host-From-A-Message-To-VM-Escape-On-Nvidia-VGPU.pdf)
+
+# KERNEL
+
+## 知识
+
+- [kvm安全](https://github.com/rafaeldtinoco/howtos)
+
+## 博客
+
+- [project zero](https://googleprojectzero.blogspot.com/)
+- [Aleph Research](https://alephsecurity.com/)
+- [Alexander Popov](https://a13xp0p0v.github.io/)
+
+## CVE
+
+- [CVE-2016-5195: Dirty Cow](https://github.com/dirtycow/dirtycow.github.io/wiki/PoCs)
+- [CVE-2020-8835: 利用ebpf verification漏洞提权](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
+- [CVE-2020-12351/CVE-2020-12352: BleedingTooth: Linux Bluetooth Zero-Click Remote Code Execution](https://github.com/google/security-research/tree/master/pocs/linux/bleedingtooth)
+- [CVE-2021-3178: nfs leak](https://bugzilla.redhat.com/show_bug.cgi?id=1918179)
+- [CVE-2021-3493: overlayfs file capability eop](https://ssd-disclosure.com/ssd-advisory-overlayfs-pe/)
+- [CVE-2021-20226: a reference counting bug which leads to local privilege escalation in io_uring](https://flattsecurity.medium.com/cve-2021-20226-a-reference-counting-bug-which-leads-to-local-privilege-escalation-in-io-uring-e946bd69177a)
+- [CVE-2021-22543: KVM VM_IO|VM_PFNMAP vma mishandling](https://github.com/google/security-research/security/advisories/GHSA-7wq5-phmq-m584)
+- [CVE-2021-22555: Heap Out-Of-Bounds Write in xt_compat_target_from_user](https://github.com/google/security-research/tree/master/pocs/linux/cve-2021-22555)
+- [CVE-2021-29657: AMD KVM Guest Escape](https://googleprojectzero.blogspot.com/2021/06/an-epyc-escape-case-study-of-kvm.html)
+- [CVE-2021-33909: fs/seq_file提权](https://www.qualys.com/2021/07/20/cve-2021-33909/sequoia-local-privilege-escalation-linux.txt) [POC](https://github.com/Liang2580/CVE-2021-33909)
+- [CVE-2021-43267: tipc eop](https://haxx.in/posts/pwning-tipc/)
+
+# APP
+
+- [利用sudo程序在logrotate.d目录下产生coredump，从而提权](https://www.openwall.com/lists/oss-security/2021/10/20/2)
+- [ubuntu apport提权](https://flattsecurity.medium.com/cve-2020-15702-race-condition-vulnerability-in-handling-of-pid-by-apport-4047f2e00a67) [其他](https://alephsecurity.com/2021/02/16/apport-lpe/)
+
+# DEVELOP
+
+- GCC 11 内存检测
+	- [part1](https://developers.redhat.com/blog/2021/04/30/detecting-memory-management-bugs-with-gcc-11-part-1-understanding-dynamic-allocation/)
+	- [part2](https://developers.redhat.com/blog/2021/05/05/detecting-memory-management-bugs-with-gcc-11-part-2-deallocation-functions/)
+	- [static analysis](https://developers.redhat.com/blog/2021/01/28/static-analysis-updates-in-gcc-11/)
+- JAVA沙箱
+	- [沙箱逃逸](https://tersesystems.com/blog/2015/12/29/sandbox-experiment/) [其他](https://c0d3p1ut0s.github.io/%E6%94%BB%E5%87%BBJava%E6%B2%99%E7%AE%B1/)
+	- [黑名单扩展](http://pro-grade.sourceforge.net/)
+
+# ATTACK
+
+- [ATTCK](https://attack.mitre.org/versions/v9/)
+- [Microsoft Enterprise Cloud Red Teaming](https://download.microsoft.com/download/C/1/9/C1990DBA-502F-4C2A-848D-392B93D9B9C3/Microsoft_Enterprise_Cloud_Red_Teaming.pdf)
+- [Fireeye Redteam Operations](https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/pf/ms/ds-red-team-operations.pdf)

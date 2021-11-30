@@ -89,6 +89,7 @@ excerpt: useful git repository (攻防篇)
 - [免杀webshell](https://github.com/LandGrey/webshell-detect-bypass)
 - [Diamorphine - 基于linux内核模块的rootkit](https://github.com/m0nad/Diamorphine)
 - [pe_to_shellcode - 把pe文件变成shellcode](https://github.com/hasherezade/pe_to_shellcode)
+- [memit - run elf from memory](https://github.com/liamg/memit)
 
 ### OSINT(开源情报)工具
 
