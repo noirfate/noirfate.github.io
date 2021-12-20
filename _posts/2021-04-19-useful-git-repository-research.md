@@ -263,6 +263,9 @@ excerpt: useful git repository (研究篇)
 - [Igor - 利用fuzz的方法精简分类crash样本](https://github.com/HexHive/Igor)
 - [stateafl - afl网络协议fuzzer](https://github.com/stateafl/stateafl)
 - [aflsmart - afl结合peach模板](https://github.com/aflsmart/aflsmart)
+- [StochFuzz - 动态二进制重写](https://github.com/ZhangZhuoSJTU/StochFuzz)
+- [afl-dyninst - afl使用dyninst二进制重写](https://github.com/talos-vulndev/afl-dyninst)
+- [e9afl - afl使用e9patch二进制重写](https://github.com/GJDuck/e9afl)
 
 ### Syzkaller系
 
@@ -341,7 +344,8 @@ excerpt: useful git repository (研究篇)
 - [loadlibrary - 把dll移植到linux下的工具](https://github.com/taviso/loadlibrary)
 - [hyntrospect - hyper-v emulated device fuzzer](https://github.com/googleprojectzero/Hyntrospect)
 - [osiris - 微处理器侧信道fuzz工具](https://github.com/cispa/osiris)
-- [owfuzz - wifi protocol fuzzer](https://github.com/alipay/Owfuzz)
+- [owfuzz - wifi protocol fuzzer](https://github.com/alipay/Owfuzz) [PPT](https://i.blackhat.com/EU-21/Wednesday/EU-21-Cao-Hongjian-Owfuzz-WiFi-Nightmare.pdf)
+- [restler-fuzzer - rest api fuzzer powered by microsoft](https://github.com/microsoft/restler-fuzzer)
 
 ## static analysis
 
@@ -361,3 +365,4 @@ excerpt: useful git repository (研究篇)
 - [静态分析工具收集](https://github.com/analysis-tools-dev/static-analysis)
 - [weggli - c++源码分析工具](https://github.com/googleprojectzero/weggli)
 - [joern - 利用cpg进行源码分析](https://github.com/joernio/joern)
+- [code2flow - 动态语言调用执行流，支持python、js、ruby、php](https://github.com/scottrogowski/code2flow)

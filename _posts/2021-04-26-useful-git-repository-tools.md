@@ -47,6 +47,8 @@ excerpt: useful git repository (工具篇)
 - [kaitai-struct - 多语言的文件格式解析工具](https://github.com/kaitai-io/kaitai_struct)
 - [Sourcetrail - 跨平台源码阅读工具](https://github.com/CoatiSoftware/Sourcetrail)
 - [codequery - 跨平台源码阅读工具](https://github.com/ruben2020/codequery)
+- [jc - jsonifies cmd output to json](https://github.com/kellyjonbrazil/jc)
+- [开源包依赖查询](https://deps.dev/)
 
 ## 静态工具
 

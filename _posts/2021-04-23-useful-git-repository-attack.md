@@ -151,6 +151,7 @@ excerpt: useful git repository (攻防篇)
 - [L0phtCrack密码爆破工具](https://gitlab.com/l0phtcrack/l0phtcrack)
 - [hydra密码爆破工具](https://github.com/vanhauser-thc/thc-hydra)
 - [hacktricks - 渗透技巧合集](https://github.com/carlospolop/hacktricks)
+- [ADenum - 域用户枚举](https://github.com/SecuProject/ADenum)
 
 ## POC
 
@@ -175,6 +176,7 @@ excerpt: useful git repository (攻防篇)
 - [使用winafl挖gdi漏洞 - CVE-2021-1665](https://www.mcafee.com/blogs/other-blogs/mcafee-labs/analyzing-cve-2021-1665-remote-code-execution-vulnerability-in-windows-gdi/)
 - [win信息泄露 - CVE-2021-31955](https://github.com/mavillon1/CVE-2021-31955-POC)
 - [word rce - CVE-2021-40444](https://github.com/klezVirus/CVE-2021-40444)
+- [ms-officecmd命令注入RCE](https://positive.security/blog/ms-officecmd-rce)
 
 ### linux
 
@@ -284,6 +286,7 @@ excerpt: useful git repository (攻防篇)
 - [云原生安全资料](https://github.com/brant-ruan/awesome-cloud-native-security)
 - [KCon会议ppt](https://github.com/knownsec/KCon)
 - [macos/ios系统漏洞](https://github.com/houjingyi233/macOS-iOS-system-security)
+- [域渗透cheat sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
 
 ## 防护
 
@@ -299,6 +302,7 @@ excerpt: useful git repository (攻防篇)
 - [wfh - win下进程dll、com劫持检测工具](https://github.com/ConsciousHacker/WFH)
 - [各平台利用缓解措施合集](https://github.com/nccgroup/exploit_mitigations)
 - [win下防进程注入的内核模块](https://github.com/rajiv2790/FalconEye)
+- [alcatraz - hypervisor sandbox to prevent escapes from QEMU/KVM](https://github.com/kkamagui/alcatraz)
 
 ### 软件防护
 

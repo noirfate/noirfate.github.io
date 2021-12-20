@@ -18,6 +18,8 @@ excerpt: Cloud Security
 - [intezer](https://www.intezer.com/blog/cloud-security/)
 - [rhinosecuritylabs](https://rhinosecuritylabs.com/blog/)
 - [wiz](https://www.wiz.io/blog)
+- [champtar](https://blog.champtar.fr/)
+- [Cloud Service Provider security mistakes](https://github.com/SummitRoute/csp_security_mistakes)
 
 ## 开源情报
 
@@ -83,6 +85,13 @@ excerpt: Cloud Security
 - [azure利用service principal提权](https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5 )
 - [digitalocean k8s逃逸](https://www.4armed.com/blog/hacking-digitalocean-kubernetes/)
 - [普罗未授权访问](https://jfrog.com/blog/dont-let-prometheus-steal-your-fire/)
+- [A review of Azure Sphere vulnerabilities](https://blog.talosintelligence.com/2021/11/a-review-of-azure-sphere.html)
+- [Azure privilege escalation via azure api permissions abuse](https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48)
+- [部署后门api-server pod](https://www.cdxy.me/?p=839)
+- [GCP AppSheet SSRF](https://nechudav.blogspot.com/2021/12/ssrf-vulnerability-in-appsheet-google.html)
+- [GCP metadata MITM escape](https://blog.champtar.fr/Metadata_MITM_root_EKS_GKE/)
+- [Amazon WorkSpaces Eltima SDK win提权漏洞](https://www.sentinelone.com/labs/usb-over-ethernet-multiple-privilege-escalation-vulnerabilities-in-aws-and-other-major-cloud-services/)
+- [AWS SageMaker Jupyter Notebook Instance Takeover](https://blog.lightspin.io/aws-sagemaker-notebook-takeover-vulnerability)
 
 ## 云原生工具
 
@@ -124,26 +133,32 @@ excerpt: Cloud Security
 - [CVE-2019-14271: docker cp libnss_files.so escape](https://unit42.paloaltonetworks.com/docker-patched-the-most-severe-copy-vulnerability-to-date-with-cve-2019-14271/) [POC](https://github.com/Metarget/cloud-native-security-book/tree/main/code/0302-%E5%BC%80%E5%8F%91%E4%BE%A7%E6%94%BB%E5%87%BB/03-CVE-2019-14271)
 - [CVE-2019-16884: AppArmor bypass via malicious image](https://github.com/opencontainers/runc/issues/2128)
 - [CVE-2019–18801: envoy heap overflow](https://blog.envoyproxy.io/exploiting-an-envoy-heap-vulnerability-96173d41792)
-- [CVE-2020-8554: k8s service流量劫持](https://unit42.paloaltonetworks.com/cve-2020-8554/)
-- [CVE-2020-8555: k8s controler SSRF](https://medium.com/@BreizhZeroDayHunters/when-its-not-only-about-a-kubernetes-cve-8f6b448eafa8)
-- [CVE-2020-8557: Node disk DOS by writing to container /etc/hosts](https://github.com/kubernetes/kubernetes/issues/93032)
+- [CVE-2020-8554: k8s service流量劫持](https://unit42.paloaltonetworks.com/cve-2020-8554/) [POC](https://hackerone.com/reports/764986)
+- [CVE-2020-8555: k8s controler SSRF](https://medium.com/@BreizhZeroDayHunters/when-its-not-only-about-a-kubernetes-cve-8f6b448eafa8) [其他](https://hackerone.com/reports/776017)
+- [CVE-2020-8557: Node disk DOS by writing to container /etc/hosts](https://github.com/kubernetes/kubernetes/issues/93032) [其他](https://hackerone.com/reports/867699)
 - [CVE-2020-8558: route_localnet漏洞](https://github.com/tabbysable/POC-2020-8558)
 - [CVE-2020-8561: k8s apiserver SSRF](https://hackerone.com/reports/941178) [公告](https://groups.google.com/g/kubernetes-security-announce/c/RV2IhwcrQsY)
+- [CVE-2020-14343: k8s test-infra yaml.load exec](https://hackerone.com/reports/1051192)
 - [CVE-2020-15157: container image SSRF](https://darkbit.io/blog/cve-2020-15157-containerdrip)
 - [CVE-2020-15257: containerd-shim abstract namespace unix socket](https://research.nccgroup.com/2020/12/10/abstract-shimmer-cve-2020-15257-host-networking-is-root-equivalent-again/) [POC1](https://github.com/nccgroup/abstractshimmer) [POC2](https://www.cdxy.me/?p=837)
+- [CVE-2021-3121: Out Of Bounds in protobuf unmarshalling](https://hackerone.com/reports/1073363)
 - [CVE-2021-3847: overlayfs文件安全属性拷贝问题](https://www.openwall.com/lists/oss-security/2021/10/14/3)
+- [cve-2021-25738: k8s java client parse yaml exec](https://j0vsec.com/post/cve-2021-25738/) [POC](https://github.com/jordyv/poc-snakeyaml)
 - [CVE-2021-25741: k8s subpath mount符号链接条件竞争逃逸](https://sysdig.com/blog/cve-2021-25741-kubelet-falco/)
+- [CVE-2021-25742: k8s ingress-nginx read local file](https://hackerone.com/reports/1249583)
 - [CVE-2021-27075: Azure虚机上的普通用户可以访问VM extenstion中的敏感信息](https://www.intezer.com/blog/cloud-security/cve-2021-27075-microsoft-azure-vulnerability-allows-privilege-escalation-and-leak-of-data/)
 - [CVE-2021-28112: AWS workspace client 命令注入RCE](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/)
 - [CVE-2021-30465: docker runc mount TOCTOU](https://www.kingkk.com/2021/06/runc%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%EF%BC%88CVE-2021-30465%EF%BC%89/) [其他](https://hackmd.io/@mauilion/By2CV2MtO)
 - [CVE-2021-41091: 利用/var/lib/docker下可setuid执行程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558)
+- [CVE-2021-43784: runc netlink message int16 overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=2241)
 
-# QEMU
+# QEMU/HyperV
 
 ## 知识
 
 - [QEMU 源码分析](https://airbus-seclab.github.io/qemu_blog/)
 - [QEMU 博客](https://airbus-seclab.github.io/qemu_blog/)
+- [HyperV攻击面](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Mobius-Band-Explore-Hyper-V-Attack-Interface-Through-Vulnerabilities-Internals.pdf)
 
 ## 漏洞
 
@@ -163,6 +178,7 @@ excerpt: Cloud Security
 - [project zero](https://googleprojectzero.blogspot.com/)
 - [Aleph Research](https://alephsecurity.com/)
 - [Alexander Popov](https://a13xp0p0v.github.io/)
+- [pwn2own 2021 ubuntu lpe](https://flatt.tech/assets/reports/210401_pwn2own/whitepaper.pdf)
 
 ## CVE
 
@@ -176,12 +192,14 @@ excerpt: Cloud Security
 - [CVE-2021-22555: Heap Out-Of-Bounds Write in xt_compat_target_from_user](https://github.com/google/security-research/tree/master/pocs/linux/cve-2021-22555)
 - [CVE-2021-29657: AMD KVM Guest Escape](https://googleprojectzero.blogspot.com/2021/06/an-epyc-escape-case-study-of-kvm.html)
 - [CVE-2021-33909: fs/seq_file提权](https://www.qualys.com/2021/07/20/cve-2021-33909/sequoia-local-privilege-escalation-linux.txt) [POC](https://github.com/Liang2580/CVE-2021-33909)
+- [CVE-2021-42008: 6pack driver提权](https://syst3mfailure.io/sixpack-slab-out-of-bounds)
 - [CVE-2021-43267: tipc eop](https://haxx.in/posts/pwning-tipc/)
 
 # APP
 
 - [利用sudo程序在logrotate.d目录下产生coredump，从而提权](https://www.openwall.com/lists/oss-security/2021/10/20/2)
 - [ubuntu apport提权](https://flattsecurity.medium.com/cve-2020-15702-race-condition-vulnerability-in-handling-of-pid-by-apport-4047f2e00a67) [其他](https://alephsecurity.com/2021/02/16/apport-lpe/)
+- [CVE-2021-21220: chrome v8 pwn2own 2021](https://www.zerodayinitiative.com/blog/2021/12/6/two-birds-with-one-stone-an-introduction-to-v8-and-jit-exploitation) [Part2](https://www.zerodayinitiative.com/blog/2021/12/8/understanding-the-root-cause-of-cve-2021-21220-a-chrome-bug-from-pwn2own-2021)
 
 # DEVELOP
 
