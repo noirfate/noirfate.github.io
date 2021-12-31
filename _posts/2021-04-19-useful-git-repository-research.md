@@ -346,6 +346,7 @@ excerpt: useful git repository (研究篇)
 - [osiris - 微处理器侧信道fuzz工具](https://github.com/cispa/osiris)
 - [owfuzz - wifi protocol fuzzer](https://github.com/alipay/Owfuzz) [PPT](https://i.blackhat.com/EU-21/Wednesday/EU-21-Cao-Hongjian-Owfuzz-WiFi-Nightmare.pdf)
 - [restler-fuzzer - rest api fuzzer powered by microsoft](https://github.com/microsoft/restler-fuzzer)
+- [基于kvm的内核快照实现](https://github.com/SmoothHacker/LateRegistration)
 
 ## static analysis
 

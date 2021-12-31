@@ -92,6 +92,8 @@ excerpt: Cloud Security
 - [GCP metadata MITM escape](https://blog.champtar.fr/Metadata_MITM_root_EKS_GKE/)
 - [Amazon WorkSpaces Eltima SDK win提权漏洞](https://www.sentinelone.com/labs/usb-over-ethernet-multiple-privilege-escalation-vulnerabilities-in-aws-and-other-major-cloud-services/)
 - [AWS SageMaker Jupyter Notebook Instance Takeover](https://blog.lightspin.io/aws-sagemaker-notebook-takeover-vulnerability)
+- [Azure app service source code leak](https://www.wiz.io/blog/azure-app-service-source-code-leak)
+- [Cloud security breaches and vulnerabilities 2021 in review](https://blog.christophetd.fr/cloud-security-breaches-and-vulnerabilities-2021-in-review/)
 
 ## 云原生工具
 

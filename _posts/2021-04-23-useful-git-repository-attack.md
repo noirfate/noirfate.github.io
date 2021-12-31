@@ -152,6 +152,11 @@ excerpt: useful git repository (攻防篇)
 - [hydra密码爆破工具](https://github.com/vanhauser-thc/thc-hydra)
 - [hacktricks - 渗透技巧合集](https://github.com/carlospolop/hacktricks)
 - [ADenum - 域用户枚举](https://github.com/SecuProject/ADenum)
+- [log4j burp扫描插件](https://github.com/pochubs/Log4j2Scan-1)
+- [jndi扫描工具](https://github.com/EmYiQing/JNDIScan)
+- [缓存投毒漏洞挖掘介绍](https://youst.in/posts/cache-key-normalization-denial-of-service/) [Part2](https://youst.in/posts/cache-poisoning-at-scale/)
+- [蓝牙BLE协议抓包篡改工具](https://github.com/virtualabs/btlejack)
+- [使用ssrf漏洞攻击java rmi](https://blog.tneitzel.eu/posts/01-attacking-java-rmi-via-ssrf/)
 
 ## POC
 
@@ -177,6 +182,7 @@ excerpt: useful git repository (攻防篇)
 - [win信息泄露 - CVE-2021-31955](https://github.com/mavillon1/CVE-2021-31955-POC)
 - [word rce - CVE-2021-40444](https://github.com/klezVirus/CVE-2021-40444)
 - [ms-officecmd命令注入RCE](https://positive.security/blog/ms-officecmd-rce)
+- [nopac - CVE-2021-42287/CVE-2021-42278 Scanner & Exploiter](https://github.com/cube0x0/noPac)
 
 ### linux
 
@@ -243,6 +249,8 @@ excerpt: useful git repository (攻防篇)
 - [npm cli路径穿越](https://robertchen.cc/blog/2021/09/20/npm-rce)
 - [CVE-2021-22205 - Gitlab RCE](https://github.com/mr-r3bot/Gitlab-CVE-2021-22205) [无需登陆版1](https://github.com/projectdiscovery/nuclei-templates/blob/master/cves/2021/CVE-2021-22205.yaml) [无需登陆版2](https://github.com/RedTeamWing/CVE-2021-22205/blob/master/CVE-2021-22205.py) [原理](https://devcraft.io/2021/05/04/exiftool-arbitrary-code-execution-cve-2021-22204.html) [靶场](https://github.com/vulhub/vulhub/tree/master/gitlab/CVE-2021-22205)
 - [python命令注入方式](https://semgrep.dev/docs/cheat-sheets/python-command-injection/)
+- [CVE-2021-4061 - chrome v8类型混淆](https://github.com/msrkp/exploits/tree/main/CVE-2021-4061)
+- [CVE-2021-22337 - 华为手机touchscreen信息泄漏导致恢复出按键信息](https://labs.taszk.io/articles/post/ouchscreen/)
 
 ## 研究资料
 
