@@ -49,6 +49,7 @@ excerpt: useful git repository (工具篇)
 - [codequery - 跨平台源码阅读工具](https://github.com/ruben2020/codequery)
 - [jc - jsonifies cmd output to json](https://github.com/kellyjonbrazil/jc)
 - [开源包依赖查询](https://deps.dev/)
+- [mold - 高性能链接器](https://github.com/rui314/mold)
 
 ## 静态工具
 
@@ -100,6 +101,7 @@ excerpt: useful git repository (工具篇)
 - [docker-wine - 在docker中运行wine](https://github.com/scottyhardy/docker-wine)
 - [kube-prompt - kubectl交互式工具](https://github.com/c-bata/kube-prompt)
 - [docker-wechat - docker微信](https://github.com/top-bettercode/docker-wechat)
+- [ssh隧道使用教程](https://github.com/opsdisk/the_cyber_plumbers_handbooks)
 
 
 

@@ -30,6 +30,14 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 ![](/assets/img/k8s-matrix.png)
 * 阿里云的[云上容器攻防矩阵](https://developer.aliyun.com/article/765449)
 ![](/assets/img/aliyun_matrix.png)
+* 腾讯云鼎发布的云安全攻防矩阵
+![](/assets/img/yunding1.png)
+* 腾讯云鼎发布的云原生安全攻防全景图
+![](/assets/img/yunding2.png)
+* 腾讯云鼎发布的云服务器攻防矩阵(https://zhuanlan.zhihu.com/p/455523946)
+![](/assets/img/yunding3.jpg)
+* 腾讯云鼎发布的对象存储攻防矩阵(https://www.freebuf.com/articles/database/290463.html)
+![](/assets/img/yunding4.png)
 
 [红蓝对抗](https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/pf/ms/ds-red-team-operations.pdf)也是最近很火的一个概念，被很多企业采用。现在的企业基本上都认识到**漏洞是不可避免的，没有攻不破的系统**，那如何提升和检验企业目前的安全性呢？红蓝对抗就是一个很好的方式，红队行动(攻击方)在传统渗透测试的基础上更加注重模拟真实的攻击，比如使用一些隐藏手段等等，以此来检验蓝军的监测和防守能力，不仅仅是单纯的发现和利用漏洞。同样的，对企业而言，单纯利用红蓝对抗来修补漏洞并不能真正提高企业的防御能力，真正需要提升的是防守团队监测与阻断攻击的能力以及企业的安全架构
 
@@ -49,13 +57,17 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 * 容器/k8s逃逸
   * [Cross-Account Container Takeover in Azure Container Instances](https://unit42.paloaltonetworks.com/azure-container-instances/)
   * [Hacking DigitalOcean's New Kubernetes Service](https://www.4armed.com/blog/hacking-digitalocean-kubernetes/)
+  * [AWS SageMaker Jupyter Notebook Instance Takeover](https://blog.lightspin.io/aws-sagemaker-notebook-takeover-vulnerability)
 * agent漏洞或未授权访问
   * [Agent Exposes Azure Customers To Unauthorized Code Execution](https://www.wiz.io/blog/secret-agent-exposes-azure-customers-to-unauthorized-code-execution)
 * 命令注入
   * [Azure CSV Injection Vulnerability](https://rhinosecuritylabs.com/azure/cloud-security-risks-part-1-azure-csv-injection-vulnerability/)
   * [CSV Injection in AWS CloudTrail](https://rhinosecuritylabs.com/aws/cloud-security-csv-injection-aws-cloudtrail/)
   * [AWS WorkSpaces Remote Code Execution](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/?__cf_chl_jschl_tk__=pmd_XcEFdL6Sp_PtLOYR.E6GQyPehV7m3LXviDvdyKbv.qI-1632281490-0-gqNtZGzNAfujcnBszQhR)
-  
+  * [AWS exploit lambda trigger via S3 filename](https://sysdig.com/blog/exploit-mitigate-aws-lambdas-mitre/)
+* SSRF
+	* [SSRF vulnerability in AppSheet](https://nechudav.blogspot.com/2021/12/ssrf-vulnerability-in-appsheet-google.html)
+	
 ## 侦察 (Reconnaissance)
 
 * 开源情报
@@ -77,6 +89,8 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
       * 建立vpc endpoint，服务向租户暴露指定端口，租户只能访问到这个端口，无法访问服务资源vpc中的其他端口，风险较小
       * 把服务放在公共区，云厂商基本都使用了SDN(软件定义网络)，会在每个region中划出一个或多个网段，其中的服务对同region下的所有租户开放，例如dns。云服务开发人员可能会在此区域部署敏感服务，自认为别人不知道，但在租户vpc中就可以扫描出来
       * 把服务虚机的网卡挂在租户vpc中，这样租户就可以访问到绑定在该网卡上的服务端口。如果服务开发人员把不想让租户访问到的端口绑定在0.0.0.0上，就会造成风险
+  * 寻找SSRF注入点，通过SSRF访问metadata或者进行内网扫描
+  * 云服务API授权校验漏洞，一般调用云服务API都需要认证，比如token或aksk，通过认证后对该用户有没有权限操作所访问的资源则可能存在校验漏洞，使无权访问该资源的用户有能力操作它，这种情况通常发生在请求body里包含资源ID时
 * 供应链
   * 开源镜像，一般云厂商都会提供开源镜像，比如pip mirror、apt mirror等等，如果官方源被污染了，那么云厂商都会受到影响。[参考](https://github.com/ffffffff0x/Dork-Admin#2020%E4%BE%9B%E5%BA%94%E9%93%BE%E6%94%BB%E5%87%BB%E4%BA%8B%E4%BB%B6)
   * 容器镜像，云厂商一般都会提供docker容器镜像，如果污染了云厂商或租户的的docker registry，则会产生较大风险
@@ -97,9 +111,11 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 * 云服务
   * 利用云服务自身的功能执行代码，例如DevOps、AI模型训练推理、大数据map-reduce、Serverless等等
   * 利用云服务未授权或漏洞执行代码，例如云服务rpc命令注入
+  * 利用云服务agent漏洞进行本地提权，例如安全防护软件
 * 开源组件漏洞
   * 利用云服务使用的开源组件中的漏洞，比如redis、mysql、jenkins、fastjson、docker、git等等
   * 利用java反序列化，很多java组件支持RMI等远程加载对象并执行的功能，如果配置不当则会导致RCE，例如JMX
+  * 利用云服务发布的SDK中的漏洞，往往云服务自身也会使用这些SDK
 
 ## 权限提升 (Privilege Escalation)
 
@@ -124,11 +140,12 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * 由于多个虚机共用一台物理机，故可利用cpu、gpu、memory的侧信道攻击技术收集同物理机上其他虚机的信息
 * openstack metadata
   * 通过<span>http://169.254.169.254</span>访问metadata，可以收集到主机的信息，甚至敏感信息(常见于user_data中) [参考1](https://pumascan.com/resources/cloud-security-instance-metadata/) [参考2](https://github.com/irsl/gcp-dhcp-takeover-code-exec)
-* 私有服务
+* 云服务资源
   * 在大部分情况下，租户在使用云服务时，用的是云服务的资源，即云服务分配虚机给租户用，租户只能访问虚机上开放的端口，但无法控制虚机。还有一部分服务支持使用租户自己的资源部署，即服务提供容器镜像或虚机镜像给租户用。虽然一般情况下服务提供的镜像不会包含敏感文件，但是镜像中运行的程序在跟管理节点通信的时候可能包含敏感信息，即使是使用https传输，但由于虚机是租户完全可控的，故可通过逆向调试得到明文(如使用gcore获取进程内存，然后用strings + grep查看其中的明文信息)
+  * 很多时候云服务会在本地存储服务账号凭证，假如攻击者通过漏洞进入云服务虚机，可从本地文件、bash_history中获取凭证
 * 暴力破解
 * 未授权访问
-  * 很多未授权访问均可获得敏感信息，比如hadoop、hbase、zookeeper、SpringBoot Actuator、环境变量等等
+  * 很多未授权访问均可获得敏感信息，比如hadoop、hbase、zookeeper、SpringBoot Actuator、etcd、 Elasticsearch、环境变量等等
   * 如果可在服务提供的pod中执行代码，且pod没做安全加固，那么就可以得到k8s的security token，通过它便可进行容器逃逸或控制k8s集群
 
 ## 横向移动 (Lateral Movement)
@@ -154,3 +171,5 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 * 云存储
   * 很多云服务在运行时都依赖云存储服务，假设可以在云服务的虚机上执行任意代码，但是这个虚机在内网连不出来，那么可以尝试去连对象存储服务，该服务通常内外网均可访问
 	* 如果攻击者具备虚机的操作权限，但无法登陆目标虚机，又不想使用重置密码或卸载磁盘等易被感知的操作，则可通过导出虚机为镜像，然后通过镜像创建新的虚机，再对新的虚机进行重置密码或硬盘卸载的操作
+* API网关
+  * 如果发现SSRF漏洞，但无法出网，可借助API网关作为跳板，大部分内部服务器都可以访问云上自建的API网关，创建一个API网关把后端指向自己的server即可让内网服务器访问到自己在外网的server

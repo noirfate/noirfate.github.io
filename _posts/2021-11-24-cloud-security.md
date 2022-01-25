@@ -20,6 +20,7 @@ excerpt: Cloud Security
 - [wiz](https://www.wiz.io/blog)
 - [champtar](https://blog.champtar.fr/)
 - [Cloud Service Provider security mistakes](https://github.com/SummitRoute/csp_security_mistakes)
+- [Azure RedTeam](https://github.com/rootsecdev/Azure-Red-Team#stealing-tokens-from-az-powershell)
 
 ## 开源情报
 
@@ -94,6 +95,8 @@ excerpt: Cloud Security
 - [AWS SageMaker Jupyter Notebook Instance Takeover](https://blog.lightspin.io/aws-sagemaker-notebook-takeover-vulnerability)
 - [Azure app service source code leak](https://www.wiz.io/blog/azure-app-service-source-code-leak)
 - [Cloud security breaches and vulnerabilities 2021 in review](https://blog.christophetd.fr/cloud-security-breaches-and-vulnerabilities-2021-in-review/)
+- [VMWare Workspace One Access SSRF](https://blog.assetnote.io/2022/01/17/workspace-one-access-ssrf/)
+- [AWS exploit lambda trigger via S3 filename](https://sysdig.com/blog/exploit-mitigate-aws-lambdas-mitre/)
 
 ## 云原生工具
 
@@ -145,7 +148,7 @@ excerpt: Cloud Security
 - [CVE-2020-15257: containerd-shim abstract namespace unix socket](https://research.nccgroup.com/2020/12/10/abstract-shimmer-cve-2020-15257-host-networking-is-root-equivalent-again/) [POC1](https://github.com/nccgroup/abstractshimmer) [POC2](https://www.cdxy.me/?p=837)
 - [CVE-2021-3121: Out Of Bounds in protobuf unmarshalling](https://hackerone.com/reports/1073363)
 - [CVE-2021-3847: overlayfs文件安全属性拷贝问题](https://www.openwall.com/lists/oss-security/2021/10/14/3)
-- [cve-2021-25738: k8s java client parse yaml exec](https://j0vsec.com/post/cve-2021-25738/) [POC](https://github.com/jordyv/poc-snakeyaml)
+- [CVE-2021-25738: k8s java client parse yaml exec](https://j0vsec.com/post/cve-2021-25738/) [POC](https://github.com/jordyv/poc-snakeyaml)
 - [CVE-2021-25741: k8s subpath mount符号链接条件竞争逃逸](https://sysdig.com/blog/cve-2021-25741-kubelet-falco/)
 - [CVE-2021-25742: k8s ingress-nginx read local file](https://hackerone.com/reports/1249583)
 - [CVE-2021-27075: Azure虚机上的普通用户可以访问VM extenstion中的敏感信息](https://www.intezer.com/blog/cloud-security/cve-2021-27075-microsoft-azure-vulnerability-allows-privilege-escalation-and-leak-of-data/)

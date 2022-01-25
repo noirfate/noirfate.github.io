@@ -262,6 +262,29 @@ if [ $# -eq 0 ];then print_help;fi
 	![](/assets/img/si4_parsing4.png)
 	5. 重新解析后，识别出`QXLRam`结构<br>
 
+## tmux
+
+- 会话
+	- 创建新会话，直接`tmux`或者指定会话名称`tmux new -s xxx`
+	- 退出会话`ctrl b + d` (ctrl b松开再按d，以下同理)
+	- 重连会话，直接`tmux a`进入第一个会话，或者`tmux a -t xxx`进入xxx会话
+	- 列出所有会话`tmux ls`
+- 窗口
+	- 复制模式`ctrl b + [`，在复制模式中可以上下翻页，可以搜索`ctrl + s`，按`q`退出
+	- 粘贴复制模式中复制的文本`ctrl b + ]`
+	- 新建窗口`ctrl b + c`
+	- 关闭当前窗口`ctrl b + &`
+	- 切换窗口，到指定窗口`ctrl b + 0~9`，到上一窗口`ctrl b + p`，到下一窗口`ctrl b + n`
+	- 打开窗口列表`ctrl b + w`
+- 面板
+	- 上下分屏`ctrl b + "`
+	- 左右分屏`ctrl b + %`
+	- 关闭当前面板`ctrl b + x`
+	- 把当前面板移动到新窗口`ctrl b + !`
+	- 方向键切换面板`ctrl b + 上下左右`
+- 参考
+	- <http://louiszhai.github.io/2017/09/30/tmux/>
+	
 # 系统
 
 ## 编写独立内核模块

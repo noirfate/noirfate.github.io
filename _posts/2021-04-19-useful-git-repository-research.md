@@ -198,6 +198,7 @@ excerpt: useful git repository (研究篇)
 - [skywalking - 代码埋点统计工具](https://github.com/apache/skywalking)
 - [hallucinate - 跨平台插桩流量解密工具](https://github.com/SySS-Research/hallucinate/)
 - [waydroid - 在docker中运行安卓](https://github.com/waydroid/waydroid)
+- [reflutter - 逆向调试flutter app工具](https://github.com/ptswarm/reFlutter)
 
 ## Fuzz
 
@@ -266,6 +267,9 @@ excerpt: useful git repository (研究篇)
 - [StochFuzz - 动态二进制重写](https://github.com/ZhangZhuoSJTU/StochFuzz)
 - [afl-dyninst - afl使用dyninst二进制重写](https://github.com/talos-vulndev/afl-dyninst)
 - [e9afl - afl使用e9patch二进制重写](https://github.com/GJDuck/e9afl)
+- [fuzz-introspector - fuzz性能分析工具](https://github.com/ossf/fuzz-introspector)
+- [fuzzware - 固件模拟fuzz](https://github.com/fuzzware-fuzzer/fuzzware) [路由器固件模拟分析教程](https://secnigma.wordpress.com/2022/01/18/a-beginners-guide-into-router-hacking-and-firmware-emulation/)
+- [aflteam - 程序分解并行fuzzer](https://github.com/MelbourneFuzzingHub/aflteam)
 
 ### Syzkaller系
 

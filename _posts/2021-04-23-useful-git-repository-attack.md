@@ -171,18 +171,19 @@ excerpt: useful git repository (攻防篇)
 
 ### win
 
-- [smbghost - win下smb协议漏洞CVE-2020-0796](https://github.com/ZecOps/CVE-2020-0796-RCE-POC)
+- [CVE-2020-0796 - smbghost - win下smb协议漏洞](https://github.com/ZecOps/CVE-2020-0796-RCE-POC)
 - [win下符号链接测试工具](https://github.com/googleprojectzero/symboliclink-testing-tools)
-- [wmi提权 - CVE-2020-0683](https://github.com/padovah4ck/CVE-2020-0683)
-- [bluekeep - win rdp漏洞CVE-2019-0708](https://github.com/Ekultek/BlueKeep)
+- [CVE-2020-0683 - wmi提权](https://github.com/padovah4ck/CVE-2020-0683)
+- [CVE-2019-0708 - bluekeep - win rdp漏洞](https://github.com/Ekultek/BlueKeep)
 - [win内核漏洞列表](https://github.com/SecWiki/windows-kernel-exploits)
-- [eternalblue - ms17-010](https://github.com/worawit/MS17-010)
-- [http.sys uaf - CVE-2021-31166](https://github.com/0vercl0k/CVE-2021-31166)
-- [使用winafl挖gdi漏洞 - CVE-2021-1665](https://www.mcafee.com/blogs/other-blogs/mcafee-labs/analyzing-cve-2021-1665-remote-code-execution-vulnerability-in-windows-gdi/)
-- [win信息泄露 - CVE-2021-31955](https://github.com/mavillon1/CVE-2021-31955-POC)
-- [word rce - CVE-2021-40444](https://github.com/klezVirus/CVE-2021-40444)
+- [ms17-010 - eternalblue](https://github.com/worawit/MS17-010)
+- [CVE-2021-1665 - 使用winafl挖gdi漏洞](https://www.mcafee.com/blogs/other-blogs/mcafee-labs/analyzing-cve-2021-1665-remote-code-execution-vulnerability-in-windows-gdi/)
+- [CVE-2021-31955 - win信息泄露](https://github.com/mavillon1/CVE-2021-31955-POC)
+- [CVE-2021-40444 - word rce](https://github.com/klezVirus/CVE-2021-40444)
 - [ms-officecmd命令注入RCE](https://positive.security/blog/ms-officecmd-rce)
 - [nopac - CVE-2021-42287/CVE-2021-42278 Scanner & Exploiter](https://github.com/cube0x0/noPac)
+- [CVE-2021-31166 - win http协议栈RCE](https://github.com/antx-code/CVE-2021-31166)
+- [CVE-2022-21907 - win http协议栈RCE](https://github.com/antx-code/CVE-2022-21907)
 
 ### linux
 
