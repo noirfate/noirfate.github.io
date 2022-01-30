@@ -497,9 +497,55 @@ find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.tes
 # 以此类推
 ```
 
+## 追踪库函数调用
+程序在运行的时候会调用动态链接库中的函数，可使用`nm -D [target]`查看程序调用的库函数或库函数的导出函数
+### gdb
+```
+#!/usr/bin/env python3
+import gdb
+import re
+
+breakpoints = []
+gdb.execute('rbreak', to_string=True)
+gdb.execute('run', to_string=True)
+try:
+    while True:
+        a = gdb.execute('continue', to_string=True)
+        reg = gdb.execute('info registers rip', to_string=True)
+        b = reg.split()[1][2:]
+        f = reg.split()[3]
+        c = gdb.execute('info breakpoints', to_string=True).split('\n')
+        d = [s for s in c if b in s]
+        if len(d) > 1:
+            sys.exit(1)
+        e = d[0].split()[0].split('.')[0]
+        gdb.execute('disable breakpoints ' + e)
+        breakpoints.append(f)
+except:
+    f = open("output", "w+")
+    [f.write(b + '\n') for b in breakpoints]
+    f.close()
+```
+保存上述脚本为trace.py，使用gdb打开目标程序，执行`source trace.py`，之后会在当前目录下生成output，每个函数只记录一次，不会重复记录相同函数的多次调用
+
+### uftrace
+[文档](https://uftrace.github.io/slide/)
+[代码](https://github.com/namhyung/uftrace)
+如果编译的时候添加了-pg，可直接使用`uftrace [target]`，否则就用`uftrace -P . [target]`
+- `-k`: 追踪内核函数调用，`-K 2`: 只显示两层
+- `-A func@arg`: 打印函数参数，如`-A strrchr@arg1/s`，不加`/s`则显示地址，加了就会显示地址所指向的字符串，可同时添加多个`-A`，如`-A strrchr@arg1/s -A strrchr@arg2`
+- `-R func`: 打印函数返回值，如跟踪程序获取环境变量`uftrace -P . -R getenv -A getenv@arg1/s [target]`
+
 ## python打包与反编译
 
 [python打包与反编译](https://saucer-man.com/information_security/825.html)
+
+## 监控进程网络流量
+安装bpftrace镜像`docker run -tdi -v /usr/src:/usr/src:ro -v /lib/modules/:/lib/modules:ro -v /sys/kernel/debug/:/sys/kernel/debug:rw --net=host --pid=host --privileged quay.io/iovisor/bpftrace:latest`
+[监控进程网络流量](https://www.gcardone.net/2020-07-31-per-process-bandwidth-monitoring-on-Linux-with-bpftrace/)
+
+## 各版本内核源码
+[内核源码](https://elixir.bootlin.com/linux/latest/source)
 
 # 容器
 

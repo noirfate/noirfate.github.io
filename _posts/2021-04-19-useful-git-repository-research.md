@@ -148,7 +148,7 @@ excerpt: useful git repository (研究篇)
 - [kcov - 程序运行覆盖度收集工具](https://github.com/SimonKagstrom/kcov)
 - [ehtrace - win下进程tracing工具](https://github.com/K2/EhTrace)
 - [flare-vm - win虚机用来分析恶意软件](https://github.com/fireeye/flare-vm)
-- [bpftrace - 基于ebpf的linux系统trace工具](https://github.com/iovisor/bpftrace)
+- [bpftrace - 基于ebpf的linux系统trace工具](https://github.com/iovisor/bpftrace) [介绍](https://d1.awsstatic.com/events/reinvent/2019/REPEAT_1_BPF_performance_analysis_at_Netflix_OPN303-R1.pdf)
 - [uftrace - linux下用户态进程函数调用跟踪，程序编译时需要-pg](https://github.com/namhyung/uftrace) [使用gdb或r2跟踪](https://reverseengineering.stackexchange.com/questions/19971/how-to-see-all-functions-that-called-with-debugger)
 - [多平台固件提取工具BIOSUtilities](https://github.com/platomav/BIOSUtilities)
 - [FACT - 固件分析工具](https://github.com/fkie-cad/FACT_core)
@@ -199,6 +199,7 @@ excerpt: useful git repository (研究篇)
 - [hallucinate - 跨平台插桩流量解密工具](https://github.com/SySS-Research/hallucinate/)
 - [waydroid - 在docker中运行安卓](https://github.com/waydroid/waydroid)
 - [reflutter - 逆向调试flutter app工具](https://github.com/ptswarm/reFlutter)
+- [linux kernel hacking](https://github.com/xcellerator/linux_kernel_hacking)
 
 ## Fuzz
 
@@ -351,6 +352,7 @@ excerpt: useful git repository (研究篇)
 - [owfuzz - wifi protocol fuzzer](https://github.com/alipay/Owfuzz) [PPT](https://i.blackhat.com/EU-21/Wednesday/EU-21-Cao-Hongjian-Owfuzz-WiFi-Nightmare.pdf)
 - [restler-fuzzer - rest api fuzzer powered by microsoft](https://github.com/microsoft/restler-fuzzer)
 - [基于kvm的内核快照实现](https://github.com/SmoothHacker/LateRegistration)
+- [javascript-raider - v8 fuzzer](https://github.com/freingruber/JavaScript-Raider)
 
 ## static analysis
 

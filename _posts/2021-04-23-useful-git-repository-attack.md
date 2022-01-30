@@ -205,6 +205,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2021-34886 - ebpf类型混淆漏洞](https://github.com/HexRabbit/CVE-writeup/tree/master/CVE-2021-34886)
 - [CVE-2021-33909 - Sequoia 内核提权](https://github.com/ChrisTheCoolHut/CVE-2021-33909) [crash](https://github.com/Liang2580/CVE-2021-33909)
 - [CVE-2020-8835 - bpf本地提权](https://github.com/noirfate/bpf-lpe) [分析](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
+- [CVE-2021-4034 - pkexec提权](https://github.com/signfind/CVE-2021-4034) [文章](https://www.qualys.com/2022/01/25/cve-2021-4034/pwnkit.txt)
 
 ### container
 
@@ -252,6 +253,7 @@ excerpt: useful git repository (攻防篇)
 - [python命令注入方式](https://semgrep.dev/docs/cheat-sheets/python-command-injection/)
 - [CVE-2021-4061 - chrome v8类型混淆](https://github.com/msrkp/exploits/tree/main/CVE-2021-4061)
 - [CVE-2021-22337 - 华为手机touchscreen信息泄漏导致恢复出按键信息](https://labs.taszk.io/articles/post/ouchscreen/)
+- [CVE-2021-46088 - zabbix admin用户rce](https://github.com/paalbra/zabbix-zbxsec-7)
 
 ## 研究资料
 
@@ -296,6 +298,7 @@ excerpt: useful git repository (攻防篇)
 - [KCon会议ppt](https://github.com/knownsec/KCon)
 - [macos/ios系统漏洞](https://github.com/houjingyi233/macOS-iOS-system-security)
 - [域渗透cheat sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
+- [域名接管](https://www.hackerone.com/application-security/guide-subdomain-takeovers)
 
 ## 防护
 

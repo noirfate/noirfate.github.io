@@ -67,6 +67,8 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * [AWS exploit lambda trigger via S3 filename](https://sysdig.com/blog/exploit-mitigate-aws-lambdas-mitre/)
 * SSRF
 	* [SSRF vulnerability in AppSheet](https://nechudav.blogspot.com/2021/12/ssrf-vulnerability-in-appsheet-google.html)
+	* [A Case Study of the Capital One Data Breach](https://web.mit.edu/smadnick/www/wp/2020-16.pdf)
+	* [AWS CloudFormation XXE](https://orca.security/resources/blog/aws-cloudformation-vulnerability/)
 	
 ## 侦察 (Reconnaissance)
 
@@ -79,7 +81,7 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 
 * 有效账户
   * 用户AK/SK、Token、Password
-  * 云服务凭证，云服务本身也是云平台上的租户，攻击者如果掌握了泄露的云服务的账号密码、AK/SK等，就可以控制云服务的资源，进而拿到使用该云服务的租户的资源，甚至拿下云管理平台
+  * 云服务凭证，云服务本身也可能是云平台上的租户，攻击者如果掌握了泄露的云服务的账号密码、AK/SK等，就可以控制云服务的资源，进而拿到使用该云服务的租户的资源，甚至拿下云管理平台
 * 对外服务
   * 通过资产收集发现暴露在公网的服务存在的漏洞或未授权
   * 云上租户区可访问的云服务
@@ -91,6 +93,9 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
       * 把服务虚机的网卡挂在租户vpc中，这样租户就可以访问到绑定在该网卡上的服务端口。如果服务开发人员把不想让租户访问到的端口绑定在0.0.0.0上，就会造成风险
   * 寻找SSRF注入点，通过SSRF访问metadata或者进行内网扫描
   * 云服务API授权校验漏洞，一般调用云服务API都需要认证，比如token或aksk，通过认证后对该用户有没有权限操作所访问的资源则可能存在校验漏洞，使无权访问该资源的用户有能力操作它，这种情况通常发生在请求body里包含资源ID时
+  * 利用云服务的功能或架构进行攻击
+  	* 云服务把自身安装在用户完全可控的资源中，则可能在文件或进程中泄漏服务自身的敏感信息
+  	* 利用云服务提供的功能实施攻击，很多云服务提供给用户较多的功能，可以上传插件、执行脚本等等，可利用这些功能控制服务所在的容器或虚机以及使用SSRF进行内网探测等
 * 供应链
   * 开源镜像，一般云厂商都会提供开源镜像，比如pip mirror、apt mirror等等，如果官方源被污染了，那么云厂商都会受到影响。[参考](https://github.com/ffffffff0x/Dork-Admin#2020%E4%BE%9B%E5%BA%94%E9%93%BE%E6%94%BB%E5%87%BB%E4%BA%8B%E4%BB%B6)
   * 容器镜像，云厂商一般都会提供docker容器镜像，如果污染了云厂商或租户的的docker registry，则会产生较大风险

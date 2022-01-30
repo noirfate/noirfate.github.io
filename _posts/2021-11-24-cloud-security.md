@@ -97,6 +97,9 @@ excerpt: Cloud Security
 - [Cloud security breaches and vulnerabilities 2021 in review](https://blog.christophetd.fr/cloud-security-breaches-and-vulnerabilities-2021-in-review/)
 - [VMWare Workspace One Access SSRF](https://blog.assetnote.io/2022/01/17/workspace-one-access-ssrf/)
 - [AWS exploit lambda trigger via S3 filename](https://sysdig.com/blog/exploit-mitigate-aws-lambdas-mitre/)
+- [利用ebpf逃逸](https://drivertom.blogspot.com/2022/01/ebpfdocker.html) [文章](https://security.tencent.com/index.php/blog/msg/206)
+- [AWS CloudFormation XXE](https://orca.security/resources/blog/aws-cloudformation-vulnerability/)
+- [利用内核模块进行逃逸](https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.8_privileged_container_escaping)
 
 ## 云原生工具
 
@@ -199,6 +202,7 @@ excerpt: Cloud Security
 - [CVE-2021-33909: fs/seq_file提权](https://www.qualys.com/2021/07/20/cve-2021-33909/sequoia-local-privilege-escalation-linux.txt) [POC](https://github.com/Liang2580/CVE-2021-33909)
 - [CVE-2021-42008: 6pack driver提权](https://syst3mfailure.io/sixpack-slab-out-of-bounds)
 - [CVE-2021-43267: tipc eop](https://haxx.in/posts/pwning-tipc/)
+- [CVE-2022-0185: fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
 
 # APP
 
