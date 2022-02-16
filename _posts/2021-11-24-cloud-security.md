@@ -97,7 +97,7 @@ excerpt: Cloud Security
 - [Cloud security breaches and vulnerabilities 2021 in review](https://blog.christophetd.fr/cloud-security-breaches-and-vulnerabilities-2021-in-review/)
 - [VMWare Workspace One Access SSRF](https://blog.assetnote.io/2022/01/17/workspace-one-access-ssrf/)
 - [AWS exploit lambda trigger via S3 filename](https://sysdig.com/blog/exploit-mitigate-aws-lambdas-mitre/)
-- [利用ebpf逃逸](https://drivertom.blogspot.com/2022/01/ebpfdocker.html) [文章](https://security.tencent.com/index.php/blog/msg/206)
+- [利用ebpf逃逸](https://drivertom.blogspot.com/2022/01/ebpfdocker.html) [代码](https://github.com/TomAPU/bpfcronescape/) [文章](https://security.tencent.com/index.php/blog/msg/206)
 - [AWS CloudFormation XXE](https://orca.security/resources/blog/aws-cloudformation-vulnerability/)
 - [利用内核模块进行逃逸](https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.8_privileged_container_escaping)
 
@@ -123,6 +123,7 @@ excerpt: Cloud Security
 - 云资源关系可视化
 	- [awspx](https://github.com/FSecureLABS/awspx)
 	- [Stormspotter](https://github.com/Azure/Stormspotter)
+- [kubectl-trace - 在k8s集群中执行bpf](https://github.com/iovisor/kubectl-trace)
 
 ## CVE
 
@@ -151,13 +152,14 @@ excerpt: Cloud Security
 - [CVE-2020-15257: containerd-shim abstract namespace unix socket](https://research.nccgroup.com/2020/12/10/abstract-shimmer-cve-2020-15257-host-networking-is-root-equivalent-again/) [POC1](https://github.com/nccgroup/abstractshimmer) [POC2](https://www.cdxy.me/?p=837)
 - [CVE-2021-3121: Out Of Bounds in protobuf unmarshalling](https://hackerone.com/reports/1073363)
 - [CVE-2021-3847: overlayfs文件安全属性拷贝问题](https://www.openwall.com/lists/oss-security/2021/10/14/3)
+- [CVE-2021-21284: docker使用--userns-remap时，容器中的root用户如果能够修改/var/lib/docker/<remapping>则可以提权](https://github.com/moby/moby/security/advisories/GHSA-7452-xqpj-6rpc)
 - [CVE-2021-25738: k8s java client parse yaml exec](https://j0vsec.com/post/cve-2021-25738/) [POC](https://github.com/jordyv/poc-snakeyaml)
 - [CVE-2021-25741: k8s subpath mount符号链接条件竞争逃逸](https://sysdig.com/blog/cve-2021-25741-kubelet-falco/)
 - [CVE-2021-25742: k8s ingress-nginx read local file](https://hackerone.com/reports/1249583)
 - [CVE-2021-27075: Azure虚机上的普通用户可以访问VM extenstion中的敏感信息](https://www.intezer.com/blog/cloud-security/cve-2021-27075-microsoft-azure-vulnerability-allows-privilege-escalation-and-leak-of-data/)
 - [CVE-2021-28112: AWS workspace client 命令注入RCE](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/)
 - [CVE-2021-30465: docker runc mount TOCTOU](https://www.kingkk.com/2021/06/runc%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%EF%BC%88CVE-2021-30465%EF%BC%89/) [其他](https://hackmd.io/@mauilion/By2CV2MtO)
-- [CVE-2021-41091: 利用/var/lib/docker下可setuid执行程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558)
+- [CVE-2021-41091: 利用/var/lib/docker下setuid程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558) [利用](https://www.cyberark.com/resources/threat-research-blog/how-docker-made-me-more-capable-and-the-host-less-secure)
 - [CVE-2021-43784: runc netlink message int16 overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=2241)
 
 # QEMU/HyperV
@@ -174,6 +176,7 @@ excerpt: Cloud Security
 - [QEMU Misuse Error Handling逃逸](https://github.com/hustdebug/scavenger)
 - [QEMU Virglrenderer逃逸](https://i.blackhat.com/asia-20/Thursday/asia-20-Shao-3D-Red-Pill-A-Guest-To-Host-Escape-On-QEMUKVM-Virtio-Device-wp.pdf)
 - [QEMU vGPU逃逸](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Another-Road-Leads-To-The-Host-From-A-Message-To-VM-Escape-On-Nvidia-VGPU.pdf)
+- [QEMU QMP migrate任意命令执行](https://cxsecurity.com/issue/WLB-2022020039)
 
 # KERNEL
 

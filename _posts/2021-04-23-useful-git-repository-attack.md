@@ -299,6 +299,7 @@ excerpt: useful git repository (攻防篇)
 - [macos/ios系统漏洞](https://github.com/houjingyi233/macOS-iOS-system-security)
 - [域渗透cheat sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
 - [域名接管](https://www.hackerone.com/application-security/guide-subdomain-takeovers)
+- [openssf公布的开源软件重要性分值](https://github.com/ossf/criticality_score)
 
 ## 防护
 
@@ -315,6 +316,7 @@ excerpt: useful git repository (攻防篇)
 - [各平台利用缓解措施合集](https://github.com/nccgroup/exploit_mitigations)
 - [win下防进程注入的内核模块](https://github.com/rajiv2790/FalconEye)
 - [alcatraz - hypervisor sandbox to prevent escapes from QEMU/KVM](https://github.com/kkamagui/alcatraz)
+- [sysmon - linux系统监控](https://github.com/Sysinternals/SysmonForLinux/) [微软配置](https://github.com/microsoft/MSTIC-Sysmon)
 
 ### 软件防护
 
