@@ -300,6 +300,7 @@ excerpt: useful git repository (攻防篇)
 - [域渗透cheat sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
 - [域名接管](https://www.hackerone.com/application-security/guide-subdomain-takeovers)
 - [openssf公布的开源软件重要性分值](https://github.com/ossf/criticality_score)
+- [mongodb nosql注入](http://ghostlulz.com/nosql-injection/)
 
 ## 防护
 

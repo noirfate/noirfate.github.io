@@ -14,17 +14,20 @@ excerpt: EBPF Introduction
 # 原理
 
 > 参考：
-> EBPF学习资料：https://github.com/DavadDi/bpf_study
-> EBPF功能对应的内核版本：https://github.com/iovisor/bcc/blob/master/docs/kernel-versions.md
-> EBPF查看工具bpftool(从内核中剥离出来的独立版本)：https://github.com/libbpf/bpftool
-> EBPF查看kernel hook：https://blog.tofile.dev/2021/07/07/ebpf-hooks.html
-> EBPF USDT原理：https://leezhenghui.github.io/linux/2019/03/05/exploring-usdt-on-linux.html
+> EBPF学习资料：https://github.com/DavadDi/bpf_study<br>
+> EBPF功能对应的内核版本：https://github.com/iovisor/bcc/blob/master/docs/kernel-versions.md<br>
+> EBPF查看工具bpftool(从内核中剥离出来的独立版本)：https://github.com/libbpf/bpftool<br>
+> EBPF查看kernel hook：https://blog.tofile.dev/2021/07/07/ebpf-hooks.html<br>
+> EBPF USDT原理：https://leezhenghui.github.io/linux/2019/03/05/exploring-usdt-on-linux.html<br>
 
 ## 架构
 
+- bpf架构
 ![](/assets/img/ebpf_1.png)
-![](/assets/img/ebpf_2.png)
 ![](/assets/img/ebpf_3.png)
+- bpf功能对应的内核版本
+![](/assets/img/ebpf_2.png)
+
 
 ## 插桩点
 
@@ -43,12 +46,10 @@ format:
         field:unsigned char common_flags;       offset:2;       size:1; signed:0;
         field:unsigned char common_preempt_count;       offset:3;       size:1; signed:0;
         field:int common_pid;   offset:4;       size:4; signed:1;
-
         field:int __syscall_nr; offset:8;       size:4; signed:1;
         field:unsigned int fd;  offset:16;      size:8; signed:0;
         field:char * buf;       offset:24;      size:8; signed:0;
         field:size_t count;     offset:32;      size:8; signed:0;
-
 print fmt: "fd: 0x%08lx, buf: 0x%08lx, count: 0x%08lx", ((unsigned long)(REC->fd)), ((unsigned long)(REC->buf)), ((unsigned long)(REC->count))
 ```
 - work
