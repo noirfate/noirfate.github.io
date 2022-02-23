@@ -284,6 +284,26 @@ if [ $# -eq 0 ];then print_help;fi
 	- 方向键切换面板`ctrl b + 上下左右`
 - 参考
 	- <http://louiszhai.github.io/2017/09/30/tmux/>
+
+## IDEA 无限续期
+> 参考：https://zhile.io/<br>
+> ide-eval-resetter针对2021.2.2以下版本适用，最新版https://plugins.zhile.io/files/ide-eval-resetter-2.3.5-c80a1d.zip<br>
+> IDEA java：https://download-cdn.jetbrains.com/idea/ideaIU-2021.1.3.exe<br>
+> IDEA go：https://download-cdn.jetbrains.com/go/goland-2021.1.3.exe<br>
+
+- 下载IDEA、安装、启动，选择30天试用
+- 安装`IDEA Eval Reset`插件
+	- 进入`File->Settings`，选中`Plugins`<br>
+	![](/assets/img/idea1.png)
+	- 添加自定义仓库`https://plugins.zhile.io`<br>
+	![](/assets/img/idea2.png)
+	- 在`Marketplace`里搜索`idea eval`安装<br>
+	![](/assets/img/idea3.png)
+- 安装后会在`help`菜单最后增加`Eval Reset`，点击之后在下方勾选`Auto Reset`即可
+
+## apt 忽略GPG校验
+- apt-get --allow-unauthenticated update
+- 修改sources.list，在deb后面增加一个标识，`deb [trusted=yes]`
 	
 # 系统
 

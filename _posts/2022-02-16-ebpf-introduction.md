@@ -13,10 +13,10 @@ excerpt: EBPF Introduction
 
 # 原理
 
-> 参考：
+> 参考：<br>
 > EBPF学习资料：https://github.com/DavadDi/bpf_study<br>
 > EBPF功能对应的内核版本：https://github.com/iovisor/bcc/blob/master/docs/kernel-versions.md<br>
-> EBPF查看工具bpftool(从内核中剥离出来的独立版本)：https://github.com/libbpf/bpftool<br>
+> EBPF查看工具bpftool(二进制：https://github.com/libbpf/libbpf-bootstrap/tree/master/tools、从内核中剥离出来的源码：https://github.com/libbpf/bpftool)<br>
 > EBPF查看kernel hook：https://blog.tofile.dev/2021/07/07/ebpf-hooks.html<br>
 > EBPF USDT原理：https://leezhenghui.github.io/linux/2019/03/05/exploring-usdt-on-linux.html<br>
 
@@ -35,7 +35,7 @@ excerpt: EBPF Introduction
 
 #### tracepoint
 tracepoint用于开发者主动在代码中添加的埋点
-- tracepoint格式
+- tracepoint格式<br>
 所有的tracepoint可在`/sys/kernel/debug/tracing/events`下面找到
 ```
 cat /sys/kernel/debug/tracing/events/syscalls/sys_enter_read/format
@@ -53,15 +53,15 @@ format:
 print fmt: "fd: 0x%08lx, buf: 0x%08lx, count: 0x%08lx", ((unsigned long)(REC->fd)), ((unsigned long)(REC->buf)), ((unsigned long)(REC->count))
 ```
 - work
-	- 在内核编译时，在tracepoint的位置添加无用指令，比如nop，在函数末尾添加tracepoint处理函数，它会遍历所有注册的tracepoint回调函数
-	- 在运行时，当一个tracepoint被启用时，会往tracepoint回调函数数组中增添一个回调函数，把nop重写为jmp指令，跳转到编译时在函数末尾添加的tracepoint处理函数
+	- 内核编译时，会在tracepoint的位置添加无用指令，比如nop，在函数末尾添加tracepoint处理函数，它会遍历所有注册的tracepoint回调函数
+	- 运行时，当一个tracepoint被启用时，会往tracepoint回调函数数组中增添一个回调函数，把nop重写为jmp指令，跳转到编译时在函数末尾添加的tracepoint处理函数
 	- 当一个tracer禁用tracepoint时，会在tracepoint回调函数数组中删除对应的回调函数，当数组为空时，重写jmp指令为nop
-- raw tracepoint
+- raw tracepoint<br>
 raw tracepoint的引入避免了构造稳定的tracepoint参数的开销，形式上类似kprobe，入参只有当时的寄存器信息`struct pt_regs`
 
 #### USDT
 USDT(User-level Statically-Defined Tracing)，开发者为自己的用户态程序自定义的tracepoint，常用的如DTrace。可以使用`readelf -n`查看使用USDT程序的.note段中关于USDT probe的信息
-- work
+- work<br>
 编译时会在USDT埋点处放置nop指令，uprobe用户态程序读取目标二进制中保存的USDT信息，使用uprobe进行插桩
 - 使用usdt观测mysql慢查询：<https://www.modb.pro/db/57028>
 
@@ -86,7 +86,7 @@ kprobe可实时的对任意内核函数及其偏移进行插桩，ebpf支持两�
 	- 当函数返回时，触发kretprobe_trampoline，它会调用kretprobe处理函数
 	- 恢复原先的返回地址并执行
 	- 当不需要kretprobe时，移除kprobe
-- blacklist
+- blacklist<br>
 可通过`cat /sys/kernel/debug/kprobes/blacklist`查看kprobe无法插桩的函数，或者查看源码中的NOKPROBE_SYMBOL
 - 利用kprobe获得内核函数地址
 ```c
@@ -124,12 +124,13 @@ bpftrace -e 'uretprobe:/bin/bash:readline { printf("readline: \"%s\"\n", str(ret
 - 使用bcc工具bpflist可以查看正在使用bpf的进程，它通过查看/proc/$pid/fd目录下的符号链接名称是否包含bpf来判断该进程是否使用了bpf
 
 # 使用
+> ebpf学习笔记：https://blog.gmem.cc/ebpf<br>
 
 ## BCC
-> 源码：https://github.com/iovisor/bcc/
-> 安装：https://github.com/iovisor/bcc/blob/master/INSTALL.md
-> helper：https://man7.org/linux/man-pages/man7/bpf-helpers.7.html
-> 一些坑：http://chenlingpeng.github.io/2020/08/13/ebpf-code-skill/
+> 源码：https://github.com/iovisor/bcc/<br>
+> 安装：https://github.com/iovisor/bcc/blob/master/INSTALL.md<br>
+> helper：https://man7.org/linux/man-pages/man7/bpf-helpers.7.html<br>
+> 一些坑：http://chenlingpeng.github.io/2020/08/13/ebpf-code-skill/<br>
 
 ### 注意事项
 
@@ -180,8 +181,8 @@ b.trace_print()
 ```
 
 ### 欺骗cron
-> 使用eBPF容器逃逸：https://security.tencent.com/index.php/blog/msg/206、https://github.com/TomAPU/bpfcronescape
-> 在ubuntu 18.04上，cron会使用三次stat(实际syscall为newstat和newfstat)，两次read，均需要对其修改
+> 使用eBPF容器逃逸：https://security.tencent.com/index.php/blog/msg/206、https://github.com/TomAPU/bpfcronescape<br>
+> 在ubuntu 18.04上，cron会使用三次stat(实际syscall为newstat和newfstat)，两次read，均需要对其修改<br>
 
 ![](/assets/img/ebpf_4.png)
 
@@ -380,3 +381,5 @@ b = BPF(text=prog)
 b.trace_print()
 ```
 
+## libbpf
+> 参考：https://nakryiko.com/posts/<br>

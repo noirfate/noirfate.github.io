@@ -100,6 +100,8 @@ excerpt: Cloud Security
 - [利用ebpf逃逸](https://drivertom.blogspot.com/2022/01/ebpfdocker.html) [代码](https://github.com/TomAPU/bpfcronescape/) [文章](https://security.tencent.com/index.php/blog/msg/206)
 - [AWS CloudFormation XXE](https://orca.security/resources/blog/aws-cloudformation-vulnerability/)
 - [利用内核模块进行逃逸](https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.8_privileged_container_escaping)
+- [Hunting for bugs in VMware: View Planner and vRealize Business for Cloud](https://swarm.ptsecurity.com/hunting-for-bugs-in-vmware-view-planner-and-vrealize-business-for-cloud/)
+- [JWT token攻击手法](https://redhuntlabs.com/wp-content/uploads/2022/02/A-Practical-Guide-to-Attacking-JWT-JSON-Web-Tokens.pdf)
 
 ## 云原生工具
 

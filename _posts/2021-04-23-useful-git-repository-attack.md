@@ -254,6 +254,8 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2021-4061 - chrome v8类型混淆](https://github.com/msrkp/exploits/tree/main/CVE-2021-4061)
 - [CVE-2021-22337 - 华为手机touchscreen信息泄漏导致恢复出按键信息](https://labs.taszk.io/articles/post/ouchscreen/)
 - [CVE-2021-46088 - zabbix admin用户rce](https://github.com/paalbra/zabbix-zbxsec-7)
+- [CVE-2021-44521 - cassandra UDF命令执行](https://jfrog.com/blog/cve-2021-44521-exploiting-apache-cassandra-user-defined-functions-for-remote-code-execution/)
+- [cve-2021-44731 - snap-confine提权漏洞](https://www.qualys.com/2022/02/17/cve-2021-44731/oh-snap-more-lemmings.txt)
 
 ## 研究资料
 
@@ -301,6 +303,7 @@ excerpt: useful git repository (攻防篇)
 - [域名接管](https://www.hackerone.com/application-security/guide-subdomain-takeovers)
 - [openssf公布的开源软件重要性分值](https://github.com/ossf/criticality_score)
 - [mongodb nosql注入](http://ghostlulz.com/nosql-injection/)
+- [漏洞信息搜索](https://sca.analysiscenter.veracode.com/vulnerability-database/search)
 
 ## 防护
 
