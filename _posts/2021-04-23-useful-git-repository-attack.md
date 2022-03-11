@@ -157,6 +157,8 @@ excerpt: useful git repository (攻防篇)
 - [缓存投毒漏洞挖掘介绍](https://youst.in/posts/cache-key-normalization-denial-of-service/) [Part2](https://youst.in/posts/cache-poisoning-at-scale/)
 - [蓝牙BLE协议抓包篡改工具](https://github.com/virtualabs/btlejack)
 - [使用ssrf漏洞攻击java rmi](https://blog.tneitzel.eu/posts/01-attacking-java-rmi-via-ssrf/)
+- [jenkins密码破解工具](https://github.com/rabbitmask/Jenkins_Credentials_Crack)
+- [恶意mysql server](https://github.com/rmb122/rogue_mysql_server)
 
 ## POC
 
@@ -184,28 +186,42 @@ excerpt: useful git repository (攻防篇)
 - [nopac - CVE-2021-42287/CVE-2021-42278 Scanner & Exploiter](https://github.com/cube0x0/noPac)
 - [CVE-2021-31166 - win http协议栈RCE](https://github.com/antx-code/CVE-2021-31166)
 - [CVE-2022-21907 - win http协议栈RCE](https://github.com/antx-code/CVE-2022-21907)
+- [CNVD-2022-10270 - win提权](https://github.com/Ryze-T/CNVD-2022-10270-LPE)
 
 ### linux
 
 - [chw00t - chroot逃逸](https://github.com/earthquake/chw00t)
 - [几个可用于提权的linux内核漏洞](https://github.com/bcoles/kernel-exploits)
-- [blueborne - 蓝牙漏洞CVE-2017-0781](https://github.com/ArmisSecurity/blueborne)
-- [bluedroid - 蓝牙漏洞CVE-2017-13281](https://github.com/JiounDai/Bluedroid)
 - [16~17年的几个linux内核漏洞](https://github.com/xairy/kernel-exploits)
-- [dirtycow漏洞CVE-2016-5195](https://github.com/scumjr/dirtycow-vdso) [官方](https://github.com/dirtycow/dirtycow.github.io)
 - [linux内核漏洞列表](https://github.com/SecWiki/linux-kernel-exploits)
-- [linux waitid系统调用提权漏洞CVE-2017-5123](https://github.com/nongiach/CVE)
-- [vsock漏洞CVE-2021-26708](https://github.com/jordan9001/vsock_poc) [bypass lkrg](https://a13xp0p0v.github.io/2021/08/25/lkrg-bypass.html)
-- [linux sudo提权漏洞CVE-2021-3156](https://github.com/worawit/CVE-2021-3156)
-- [ubuntu overlayfs 提权CVE-2021-3493](https://ssd-disclosure.com/ssd-advisory-overlayfs-pe/)
-- [cve-2021-22555 - 内核提权](https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html)
-- [cve-2021-3490 - 内核提权](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
+- [CVE-2016-5195 - dirtycow漏洞](https://github.com/scumjr/dirtycow-vdso) [官方](https://github.com/dirtycow/dirtycow.github.io)
+- [CVE-2017-0781 - blueborne - 蓝牙漏洞](https://github.com/ArmisSecurity/blueborne)
+- [CVE-2017-5123 - linux waitid系统调用提权漏洞](https://github.com/nongiach/CVE)
+- [CVE-2017-13281 - bluedroid - 蓝牙漏洞](https://github.com/JiounDai/Bluedroid)
+- [CVE-2020-8835 - 利用ebpf verification漏洞提权](https://github.com/noirfate/bpf-lpe) [文章](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
+- [CVE-2020-12351/CVE-2020-12352 - BleedingTooth: Linux Bluetooth Zero-Click Remote Code Execution](https://github.com/google/security-research/tree/master/pocs/linux/bleedingtooth)
 - [CVE-2020-27348 - snap命令注入和沙箱逃逸](https://blog.ret2.io/2021/08/04/snapcraft-injection/)
 - [CVE-2020-11710 - kong admin api未授权访问](https://github.com/RandomRobbieBF/kong-pwn)
-- [CVE-2021-34886 - ebpf类型混淆漏洞](https://github.com/HexRabbit/CVE-writeup/tree/master/CVE-2021-34886)
-- [CVE-2021-33909 - Sequoia 内核提权](https://github.com/ChrisTheCoolHut/CVE-2021-33909) [crash](https://github.com/Liang2580/CVE-2021-33909)
-- [CVE-2020-8835 - bpf本地提权](https://github.com/noirfate/bpf-lpe) [分析](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
+- [CVE-2021-3178 - nfs leak](https://bugzilla.redhat.com/show_bug.cgi?id=1918179)
+- [CVE-2021-3490 - ebpf内核提权](https://github.com/chompie1337/Linux_LPE_eBPF_CVE-2021-3490) [文章](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
+- [CVE-2021-26708- vsock漏洞](https://github.com/jordan9001/vsock_poc) [bypass lkrg](https://a13xp0p0v.github.io/2021/08/25/lkrg-bypass.html)
+- [CVE-2021-3156 - linux sudo提权漏洞](https://github.com/worawit/CVE-2021-3156)
+- [CVE-2021-3493 - ubuntu overlayfs 提权](https://ssd-disclosure.com/ssd-advisory-overlayfs-pe/)
 - [CVE-2021-4034 - pkexec提权](https://github.com/signfind/CVE-2021-4034) [文章](https://www.qualys.com/2022/01/25/cve-2021-4034/pwnkit.txt)
+- [CVE-2021-20226 - a reference counting bug which leads to local privilege escalation in io_uring](https://flattsecurity.medium.com/cve-2021-20226-a-reference-counting-bug-which-leads-to-local-privilege-escalation-in-io-uring-e946bd69177a)
+- [CVE-2021-22543 - KVM VM_IO|VM_PFNMAP vma mishandling](https://github.com/google/security-research/security/advisories/GHSA-7wq5-phmq-m584)
+- [CVE-2021-22555 - Heap Out-Of-Bounds Write in xt_compat_target_from_user](https://github.com/google/security-research/tree/master/pocs/linux/cve-2021-22555)
+- [CVE-2021-23134 - NFC UAF](https://ruia-ruia.github.io/NFC-UAF/)
+- [CVE-2021-26708 - vsock本地提权](https://github.com/hardenedvault/vault_range_poc) [文章](https://a13xp0p0v.github.io/2021/02/09/CVE-2021-26708.html)
+- [CVE-2021-29657 - AMD KVM Guest Escape](https://googleprojectzero.blogspot.com/2021/06/an-epyc-escape-case-study-of-kvm.html)
+- [CVE-2021-33909 - fs/seq_file提权](https://www.qualys.com/2021/07/20/cve-2021-33909/sequoia-local-privilege-escalation-linux.txt) [POC](https://github.com/Liang2580/CVE-2021-33909)
+- [CVE-2021-34886 - ebpf类型混淆漏洞](https://github.com/HexRabbit/CVE-writeup/tree/master/CVE-2021-34886)
+- [CVE-2021-41073 - io_uring类型混淆漏洞提权](https://github.com/chompie1337/Linux_LPE_io_uring_CVE-2021-41073)
+- [CVE-2021-42008 - 6pack driver提权](https://syst3mfailure.io/sixpack-slab-out-of-bounds)
+- [CVE-2021-43267 - tipc eop](https://haxx.in/posts/pwning-tipc/)
+- [CVE-2022-0185 - fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
+- [CVE-2022-0847 - 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability)
+- [CVE-2022-25636 - netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 
 ### container
 
@@ -230,6 +246,7 @@ excerpt: useful git repository (攻防篇)
 - [ridl - cpu侧信道攻击](https://github.com/vusec/ridl)
 - [meltdown](https://github.com/paboldin/meltdown-exploit)
 - [saddns - 利用ICMP频率限制探测端口和TxID](https://github.com/seclab-ucr/SADDNS)
+- [Spectre-BHB](https://github.com/vusec/bhi-spectre-bhb)
 
 ### 其他
 
@@ -255,7 +272,9 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2021-22337 - 华为手机touchscreen信息泄漏导致恢复出按键信息](https://labs.taszk.io/articles/post/ouchscreen/)
 - [CVE-2021-46088 - zabbix admin用户rce](https://github.com/paalbra/zabbix-zbxsec-7)
 - [CVE-2021-44521 - cassandra UDF命令执行](https://jfrog.com/blog/cve-2021-44521-exploiting-apache-cassandra-user-defined-functions-for-remote-code-execution/)
-- [cve-2021-44731 - snap-confine提权漏洞](https://www.qualys.com/2022/02/17/cve-2021-44731/oh-snap-more-lemmings.txt)
+- [CVE-2021-44731 - snap-confine提权漏洞](https://www.qualys.com/2022/02/17/cve-2021-44731/oh-snap-more-lemmings.txt)
+- [CVE-2022-22947 - Spring Cloud Gateway RCE](https://github.com/lucksec/Spring-Cloud-Gateway-CVE-2022-22947)
+- [10个不被注意的Python安全问题](https://blog.sonarsource.com/10-unknown-security-pitfalls-for-python)
 
 ## 研究资料
 
@@ -304,6 +323,7 @@ excerpt: useful git repository (攻防篇)
 - [openssf公布的开源软件重要性分值](https://github.com/ossf/criticality_score)
 - [mongodb nosql注入](http://ghostlulz.com/nosql-injection/)
 - [漏洞信息搜索](https://sca.analysiscenter.veracode.com/vulnerability-database/search)
+- [安全会议PPT集合](https://github.com/FeeiCN/Security-PPT)
 
 ## 防护
 
@@ -321,6 +341,7 @@ excerpt: useful git repository (攻防篇)
 - [win下防进程注入的内核模块](https://github.com/rajiv2790/FalconEye)
 - [alcatraz - hypervisor sandbox to prevent escapes from QEMU/KVM](https://github.com/kkamagui/alcatraz)
 - [sysmon - linux系统监控](https://github.com/Sysinternals/SysmonForLinux/) [微软配置](https://github.com/microsoft/MSTIC-Sysmon)
+- [wazuh - 主机监控平台](https://github.com/wazuh/wazuh)
 
 ### 软件防护
 

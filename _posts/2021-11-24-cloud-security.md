@@ -21,6 +21,7 @@ excerpt: Cloud Security
 - [champtar](https://blog.champtar.fr/)
 - [Cloud Service Provider security mistakes](https://github.com/SummitRoute/csp_security_mistakes)
 - [Azure RedTeam](https://github.com/rootsecdev/Azure-Red-Team#stealing-tokens-from-az-powershell)
+- [orca](https://orca.security/resources/blog/)
 
 ## 开源情报
 
@@ -102,6 +103,10 @@ excerpt: Cloud Security
 - [利用内核模块进行逃逸](https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.8_privileged_container_escaping)
 - [Hunting for bugs in VMware: View Planner and vRealize Business for Cloud](https://swarm.ptsecurity.com/hunting-for-bugs-in-vmware-view-planner-and-vrealize-business-for-cloud/)
 - [JWT token攻击手法](https://redhuntlabs.com/wp-content/uploads/2022/02/A-Practical-Guide-to-Attacking-JWT-JSON-Web-Tokens.pdf)
+- [AWS S3桶利用方法](https://mp.weixin.qq.com/s/2TVG58L_thQoGb2e9jpKMA)
+- [Azure Automation Service窃取其他租户凭证](https://orca.security/resources/blog/autowarp-microsoft-azure-automation-service-vulnerability/)
+- [Apiary SSRF to get Oracle Cloud Metadata](https://orca.security/resources/blog/oracle-server-side-request-forgery-ssrf-attack-metadata/)
+- [GKE Autopilot Vulnerabilities](https://unit42.paloaltonetworks.com/gke-autopilot-vulnerabilities/)
 
 ## 云原生工具
 
@@ -163,6 +168,7 @@ excerpt: Cloud Security
 - [CVE-2021-30465: docker runc mount TOCTOU](https://www.kingkk.com/2021/06/runc%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%EF%BC%88CVE-2021-30465%EF%BC%89/) [其他](https://hackmd.io/@mauilion/By2CV2MtO)
 - [CVE-2021-41091: 利用/var/lib/docker下setuid程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558) [利用](https://www.cyberark.com/resources/threat-research-blog/how-docker-made-me-more-capable-and-the-host-less-secure)
 - [CVE-2021-43784: runc netlink message int16 overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=2241)
+- [CVE-2022-0492: 利用unshare+cgroup逃逸](https://unit42.paloaltonetworks.com/cve-2022-0492-cgroups/) [分析](http://terenceli.github.io/%E6%8A%80%E6%9C%AF/2022/03/06/cve-2022-0492)
 
 # QEMU/HyperV
 
@@ -196,24 +202,34 @@ excerpt: Cloud Security
 ## CVE
 
 - [CVE-2016-5195: Dirty Cow](https://github.com/dirtycow/dirtycow.github.io/wiki/PoCs)
-- [CVE-2020-8835: 利用ebpf verification漏洞提权](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
+- [CVE-2017-0781： blueborne - 蓝牙漏洞](https://github.com/ArmisSecurity/blueborne)
+- [CVE-2017-5123： linux waitid系统调用提权漏洞](https://github.com/nongiach/CVE)
+- [CVE-2017-13281： bluedroid - 蓝牙漏洞](https://github.com/JiounDai/Bluedroid)
+- [CVE-2020-8835: 利用ebpf verification漏洞提权](https://github.com/noirfate/bpf-lpe) [文章](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
 - [CVE-2020-12351/CVE-2020-12352: BleedingTooth: Linux Bluetooth Zero-Click Remote Code Execution](https://github.com/google/security-research/tree/master/pocs/linux/bleedingtooth)
 - [CVE-2021-3178: nfs leak](https://bugzilla.redhat.com/show_bug.cgi?id=1918179)
-- [CVE-2021-3493: overlayfs file capability eop](https://ssd-disclosure.com/ssd-advisory-overlayfs-pe/)
+- [CVE-2021-3490： ebpf内核提权](https://github.com/chompie1337/Linux_LPE_eBPF_CVE-2021-3490) [文章](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
 - [CVE-2021-20226: a reference counting bug which leads to local privilege escalation in io_uring](https://flattsecurity.medium.com/cve-2021-20226-a-reference-counting-bug-which-leads-to-local-privilege-escalation-in-io-uring-e946bd69177a)
 - [CVE-2021-22543: KVM VM_IO|VM_PFNMAP vma mishandling](https://github.com/google/security-research/security/advisories/GHSA-7wq5-phmq-m584)
 - [CVE-2021-22555: Heap Out-Of-Bounds Write in xt_compat_target_from_user](https://github.com/google/security-research/tree/master/pocs/linux/cve-2021-22555)
+- [CVE-2021-23134: NFC UAF](https://ruia-ruia.github.io/NFC-UAF/)
+- [CVE-2021-26708: vsock本地提权](https://github.com/hardenedvault/vault_range_poc) [文章](https://a13xp0p0v.github.io/2021/02/09/CVE-2021-26708.html)
 - [CVE-2021-29657: AMD KVM Guest Escape](https://googleprojectzero.blogspot.com/2021/06/an-epyc-escape-case-study-of-kvm.html)
 - [CVE-2021-33909: fs/seq_file提权](https://www.qualys.com/2021/07/20/cve-2021-33909/sequoia-local-privilege-escalation-linux.txt) [POC](https://github.com/Liang2580/CVE-2021-33909)
+- [CVE-2021-34886: ebpf类型混淆漏洞](https://github.com/HexRabbit/CVE-writeup/tree/master/CVE-2021-34886)
+- [CVE-2021-41073: io_uring类型混淆漏洞提权](https://github.com/chompie1337/Linux_LPE_io_uring_CVE-2021-41073)
 - [CVE-2021-42008: 6pack driver提权](https://syst3mfailure.io/sixpack-slab-out-of-bounds)
 - [CVE-2021-43267: tipc eop](https://haxx.in/posts/pwning-tipc/)
 - [CVE-2022-0185: fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
+- [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability)
+- [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 
 # APP
 
 - [利用sudo程序在logrotate.d目录下产生coredump，从而提权](https://www.openwall.com/lists/oss-security/2021/10/20/2)
 - [ubuntu apport提权](https://flattsecurity.medium.com/cve-2020-15702-race-condition-vulnerability-in-handling-of-pid-by-apport-4047f2e00a67) [其他](https://alephsecurity.com/2021/02/16/apport-lpe/)
 - [CVE-2021-21220: chrome v8 pwn2own 2021](https://www.zerodayinitiative.com/blog/2021/12/6/two-birds-with-one-stone-an-introduction-to-v8-and-jit-exploitation) [Part2](https://www.zerodayinitiative.com/blog/2021/12/8/understanding-the-root-cause-of-cve-2021-21220-a-chrome-bug-from-pwn2own-2021)
+- [JDBC RCE](http://tttang.com/archive/1462/)
 
 # DEVELOP
 
@@ -224,6 +240,9 @@ excerpt: Cloud Security
 - JAVA沙箱
 	- [沙箱逃逸](https://tersesystems.com/blog/2015/12/29/sandbox-experiment/) [其他](https://c0d3p1ut0s.github.io/%E6%94%BB%E5%87%BBJava%E6%B2%99%E7%AE%B1/)
 	- [黑名单扩展](http://pro-grade.sourceforge.net/)
+- Go语言
+	- [go books](https://github.com/dariubs/GoBooks)
+	- [go语言设计与实现](https://draveness.me/golang/)
 
 # ATTACK
 

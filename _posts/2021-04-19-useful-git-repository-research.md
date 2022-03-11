@@ -357,6 +357,9 @@ excerpt: useful git repository (研究篇)
 - [restler-fuzzer - rest api fuzzer powered by microsoft](https://github.com/microsoft/restler-fuzzer)
 - [基于kvm的内核快照实现](https://github.com/SmoothHacker/LateRegistration)
 - [javascript-raider - v8 fuzzer](https://github.com/freingruber/JavaScript-Raider)
+- [apicraft - 通过对SDK头文件和目标程序的分析，自动构建fuzz driver](https://github.com/occia/apicraft)
+- [GFuzz - 针对go并发channel的fuzzer](https://github.com/system-pclub/GFuzz) [论文](https://songlh.github.io/paper/gfuzz.pdf)
+- [wfuzz - web fuzzer](https://github.com/xmendez/wfuzz)
 
 ## static analysis
 
@@ -366,6 +369,9 @@ excerpt: useful git repository (研究篇)
 - [codeql github course](https://lab.github.com/githubtraining/codeql-u-boot-challenge-\(cc++\))
 - [codeql cons and tutorials](https://github.com/github/securitylab)
 - [codeql document](https://codeql.github.com/docs/)
+- [使用csa和codeql对mysql cluster进行分析1](https://www.zerodayinitiative.com/blog/2022/2/10/mindshare-when-mysql-cluster-encounters-taint-analysis)
+- [使用csa和codeql对mysql cluster进行分析2](https://www.zerodayinitiative.com/blog/2022/2/22/clang-checkers-and-codeql-queries-for-detecting-untrusted-pointer-derefs-and-tainted-loop-conditions)
+- [CodeQL 数据流分析/污点分析 笔记（上篇）](https://eternalsakura13.com/2022/02/08/codeql_flow_analyze/)
 
 ### 源码分析工具
 
@@ -377,3 +383,4 @@ excerpt: useful git repository (研究篇)
 - [weggli - c++源码分析工具](https://github.com/googleprojectzero/weggli)
 - [joern - 利用cpg进行源码分析](https://github.com/joernio/joern)
 - [code2flow - 动态语言调用执行流，支持python、js、ruby、php](https://github.com/scottrogowski/code2flow)
+- [GCatch - 通过静态分析找出go的并发bug](https://github.com/system-pclub/GCatch)
