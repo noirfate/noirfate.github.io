@@ -26,8 +26,7 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 
 **知识梳理的好处就是可交流、可复制、可分解，伴随着ATT&CK的普及，越来越多的人或企业也开始使用它来描述攻击威胁，如：**
 
-* 微软的[Threat matrix for Kubernetes](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)<br>
-![](/assets/img/k8s-matrix.png)
+![](/assets/img/k8s-matrix1.png)
 {: style="width: 100%;" class="center"}
 *Fig. 1. 微软的[Threat matrix for Kubernetes](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)*
 {:.image-caption}
