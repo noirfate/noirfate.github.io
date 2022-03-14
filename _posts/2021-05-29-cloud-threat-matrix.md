@@ -29,6 +29,8 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 * 微软的[Threat matrix for Kubernetes](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)<br>
 ![](/assets/img/k8s-matrix.png)
 {: style="width: 100%;" class="center"}
+*Fig. 1. 微软的[Threat matrix for Kubernetes](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)*
+{:.image-caption}
 * 阿里云的[云上容器攻防矩阵](https://developer.aliyun.com/article/765449)<br>
 ![](/assets/img/aliyun_matrix.png)
 {: style="width: 100%;" class="center"}
@@ -37,13 +39,13 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 {: style="width: 100%;" class="center"}
 * 腾讯云鼎发布的云原生安全攻防全景图<br>
 ![](/assets/img/yunding2.png)
-{: style="width: 50%;" class="center"}
+{: style="width: 10%;" class="center"}
 * 腾讯云鼎发布的云服务器攻防矩阵(https://zhuanlan.zhihu.com/p/455523946)<br>
 ![](/assets/img/yunding3.jpg)
-{: style="width: 50%;" class="center"}
+{: style="width: 10%;" class="center"}
 * 腾讯云鼎发布的对象存储攻防矩阵(https://www.freebuf.com/articles/database/290463.html)<br>
 ![](/assets/img/yunding4.png)
-{: style="width: 50%;" class="center"}
+{: style="width: 10%;" class="center"}
 
 [红蓝对抗](https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/pf/ms/ds-red-team-operations.pdf)也是最近很火的一个概念，被很多企业采用。现在的企业基本上都认识到**漏洞是不可避免的，没有攻不破的系统**，那如何提升和检验企业目前的安全性呢？红蓝对抗就是一个很好的方式，红队行动(攻击方)在传统渗透测试的基础上更加注重模拟真实的攻击，比如使用一些隐藏手段等等，以此来检验蓝军的监测和防守能力，不仅仅是单纯的发现和利用漏洞。同样的，对企业而言，单纯利用红蓝对抗来修补漏洞并不能真正提高企业的防御能力，真正需要提升的是防守团队监测与阻断攻击的能力以及企业的安全架构
 

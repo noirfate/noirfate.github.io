@@ -275,6 +275,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2021-44731 - snap-confine提权漏洞](https://www.qualys.com/2022/02/17/cve-2021-44731/oh-snap-more-lemmings.txt)
 - [CVE-2022-22947 - Spring Cloud Gateway RCE](https://github.com/lucksec/Spring-Cloud-Gateway-CVE-2022-22947)
 - [10个不被注意的Python安全问题](https://blog.sonarsource.com/10-unknown-security-pitfalls-for-python)
+- [JWT认证设计漏洞](https://medium.com/@sandh0t/the-bad-twin-a-peculiar-case-of-jwt-exploitation-scenario-1efa03e891c0)
 
 ## 研究资料
 
