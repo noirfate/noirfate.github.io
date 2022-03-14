@@ -159,7 +159,7 @@ excerpt: Cloud Security
 - [CVE-2020-15257: containerd-shim abstract namespace unix socket](https://research.nccgroup.com/2020/12/10/abstract-shimmer-cve-2020-15257-host-networking-is-root-equivalent-again/) [POC1](https://github.com/nccgroup/abstractshimmer) [POC2](https://www.cdxy.me/?p=837)
 - [CVE-2021-3121: Out Of Bounds in protobuf unmarshalling](https://hackerone.com/reports/1073363)
 - [CVE-2021-3847: overlayfs文件安全属性拷贝问题](https://www.openwall.com/lists/oss-security/2021/10/14/3)
-- [CVE-2021-21284: docker使用--userns-remap时，容器中的root用户如果能够修改/var/lib/docker/<remapping>则可以提权](https://github.com/moby/moby/security/advisories/GHSA-7452-xqpj-6rpc)
+- [CVE-2021-21284: docker使用--userns-remap时，容器中的root用户如果能够修改`/var/lib/docker/<remapping>`则可以提权](https://github.com/moby/moby/security/advisories/GHSA-7452-xqpj-6rpc)
 - [CVE-2021-25738: k8s java client parse yaml exec](https://j0vsec.com/post/cve-2021-25738/) [POC](https://github.com/jordyv/poc-snakeyaml)
 - [CVE-2021-25741: k8s subpath mount符号链接条件竞争逃逸](https://sysdig.com/blog/cve-2021-25741-kubelet-falco/)
 - [CVE-2021-25742: k8s ingress-nginx read local file](https://hackerone.com/reports/1249583)
