@@ -29,6 +29,7 @@ excerpt: useful git repository (攻防篇)
 - [tsunami - 漏洞扫描工具](https://github.com/google/tsunami-security-scanner)
 - [cotopaxi - iot协议扫描工具](https://github.com/Samsung/cotopaxi)
 - [rengine - 网站漏洞扫描工具](https://github.com/yogeshojha/rengine)
+- [escapture - 使用ebpf uprobe抓取ssl流量](https://github.com/ehids/ecapture)
 
 ### 本地扫描工具
 
@@ -343,6 +344,7 @@ excerpt: useful git repository (攻防篇)
 - [alcatraz - hypervisor sandbox to prevent escapes from QEMU/KVM](https://github.com/kkamagui/alcatraz)
 - [sysmon - linux系统监控](https://github.com/Sysinternals/SysmonForLinux/) [微软配置](https://github.com/microsoft/MSTIC-Sysmon)
 - [wazuh - 主机监控平台](https://github.com/wazuh/wazuh)
+- [ehids - 使用ebpf进行监控](https://github.com/ehids/ehids-agent)
 
 ### 软件防护
 

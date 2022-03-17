@@ -249,6 +249,12 @@ done
 if [ $# -eq 0 ];then print_help;fi
 ```
 
+## 查看所有namespace下的连接
+```
+REL: https://unix.stackexchange.com/questions/203723/how-can-i-list-all-connections-to-my-host-including-those-to-lxc-guests
+find /proc/ 2>/dev/null | grep tcp | grep -v task | grep -v sys/net | xargs grep -v rem_address 2>/dev/null | awk '{x=strtonum("0x"substr($3,index($3,":")-2,2)); y=strtonum("0x"substr($4,index($4,":")-2,2)); for (i=5; i>0; i-=2) x = x"."strtonum("0x"substr($3,i,2)); for (i=5; i>0; i-=2) y = y"."strtonum("0x"substr($4,i,2))}{printf ("%s\t:%s\t ----> \t %s\t:%s\t%s\n",x,strtonum("0x"substr($3,index($3,":")+1,4)),y,strtonum("0x"substr($4,index($4,":")+1,4)),$1)}' | sort | uniq --check-chars=25
+```
+
 ## Source Insight4添加自定义parser
 
 - 例1：标记未识别的结构<br>
@@ -304,7 +310,10 @@ if [ $# -eq 0 ];then print_help;fi
 ## apt 忽略GPG校验
 - apt-get --allow-unauthenticated update
 - 修改sources.list，在deb后面增加一个标识，`deb [trusted=yes]`
-	
+
+## 读取浏览器数据，解密密码
+[工具](https://github.com/moonD4rk/HackBrowserData)
+
 # 系统
 
 ## 编写独立内核模块

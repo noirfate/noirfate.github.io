@@ -45,6 +45,7 @@ excerpt: useful git repository (研究篇)
 - [使用ghidra生成cpg拱jorenio分析](https://github.com/joernio/ghidra2cpg) [joren是类似codeql的代码分析工具](https://joern.io/)
 - [ghidra2frida - use frida to extend ghidra](https://github.com/federicodotta/ghidra2frida)
 - [kaiju - CERT开发的插件](https://github.com/CERTCC/kaiju)
+- [efiseek - efi分析插件](https://github.com/retrage/efiSeek/tree/efi-xplorer)
 
 ### GDB扩展
 
@@ -200,6 +201,7 @@ excerpt: useful git repository (研究篇)
 - [waydroid - 在docker中运行安卓](https://github.com/waydroid/waydroid)
 - [reflutter - 逆向调试flutter app工具](https://github.com/ptswarm/reFlutter)
 - [linux kernel hacking](https://github.com/xcellerator/linux_kernel_hacking)
+- [自己编写bootloader](https://de-engineer.github.io/Understanding-booting-process-and-writing-own-os/)
 
 ## Fuzz
 
