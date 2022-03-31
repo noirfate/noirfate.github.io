@@ -160,6 +160,8 @@ excerpt: useful git repository (攻防篇)
 - [使用ssrf漏洞攻击java rmi](https://blog.tneitzel.eu/posts/01-attacking-java-rmi-via-ssrf/)
 - [jenkins密码破解工具](https://github.com/rabbitmask/Jenkins_Credentials_Crack)
 - [恶意mysql server](https://github.com/rmb122/rogue_mysql_server)
+- [Linux内核保护机制绕过](https://mp.weixin.qq.com/s/gSTbXW6M72QYtVPoZswhyw)
+- [各种语言反弹shell生成器](https://github.com/0dayCTF/reverse-shell-generator) [网站](https://www.revshells.com/)
 
 ## POC
 
@@ -198,6 +200,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2016-5195 - dirtycow漏洞](https://github.com/scumjr/dirtycow-vdso) [官方](https://github.com/dirtycow/dirtycow.github.io)
 - [CVE-2017-0781 - blueborne - 蓝牙漏洞](https://github.com/ArmisSecurity/blueborne)
 - [CVE-2017-5123 - linux waitid系统调用提权漏洞](https://github.com/nongiach/CVE)
+- [CVE-2019-13272 - ptrace_link漏洞本地提权](https://github.com/jas502n/CVE-2019-13272)
 - [CVE-2017-13281 - bluedroid - 蓝牙漏洞](https://github.com/JiounDai/Bluedroid)
 - [CVE-2020-8835 - 利用ebpf verification漏洞提权](https://github.com/noirfate/bpf-lpe) [文章](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
 - [CVE-2020-12351/CVE-2020-12352 - BleedingTooth: Linux Bluetooth Zero-Click Remote Code Execution](https://github.com/google/security-research/tree/master/pocs/linux/bleedingtooth)
@@ -221,8 +224,11 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2021-42008 - 6pack driver提权](https://syst3mfailure.io/sixpack-slab-out-of-bounds)
 - [CVE-2021-43267 - tipc eop](https://haxx.in/posts/pwning-tipc/)
 - [CVE-2022-0185 - fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
-- [CVE-2022-0847 - 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability)
+- [CVE-2022-0847 - 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc)
+- [CVE-2022-0995 - watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
 - [CVE-2022-25636 - netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
+- [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
+
 
 ### container
 
@@ -277,6 +283,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-22947 - Spring Cloud Gateway RCE](https://github.com/lucksec/Spring-Cloud-Gateway-CVE-2022-22947)
 - [10个不被注意的Python安全问题](https://blog.sonarsource.com/10-unknown-security-pitfalls-for-python)
 - [JWT认证设计漏洞](https://medium.com/@sandh0t/the-bad-twin-a-peculiar-case-of-jwt-exploitation-scenario-1efa03e891c0)
+- [CVE-2022-0337 - 浏览器泄漏系统环境变量](https://github.com/Puliczek/CVE-2022-0337-PoC-Google-Chrome-Microsoft-Edge-Opera)
 
 ## 研究资料
 
@@ -326,6 +333,7 @@ excerpt: useful git repository (攻防篇)
 - [mongodb nosql注入](http://ghostlulz.com/nosql-injection/)
 - [漏洞信息搜索](https://sca.analysiscenter.veracode.com/vulnerability-database/search)
 - [安全会议PPT集合](https://github.com/FeeiCN/Security-PPT)
+- [NCCGroup Research](https://research.nccgroup.com/)
 
 ## 防护
 

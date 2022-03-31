@@ -22,6 +22,7 @@ excerpt: Cloud Security
 - [Cloud Service Provider security mistakes](https://github.com/SummitRoute/csp_security_mistakes)
 - [Azure RedTeam](https://github.com/rootsecdev/Azure-Red-Team#stealing-tokens-from-az-powershell)
 - [orca](https://orca.security/resources/blog/)
+- [netspi](https://www.netspi.com/blog/technical/cloud-penetration-testing/)
 
 ## 开源情报
 
@@ -107,6 +108,11 @@ excerpt: Cloud Security
 - [Azure Automation Service窃取其他租户凭证](https://orca.security/resources/blog/autowarp-microsoft-azure-automation-service-vulnerability/)
 - [Apiary SSRF to get Oracle Cloud Metadata](https://orca.security/resources/blog/oracle-server-side-request-forgery-ssrf-attack-metadata/)
 - [GKE Autopilot Vulnerabilities](https://unit42.paloaltonetworks.com/gke-autopilot-vulnerabilities/)
+- [Azure hybrid workers runas提权](https://www.netspi.com/blog/technical/cloud-penetration-testing/abusing-azure-hybrid-workers-for-privilege-escalation/)
+- [使用CDN绕过原站防护](https://blog.ryanjarv.sh/2022/03/16/bypassing-wafs-with-alternate-domain-routing.html)
+- [azure攻击手法](https://cloudbrothers.info/en/azure-dominance-paths/)
+- [针对azure的npm包供应链攻击](https://jfrog.com/blog/large-scale-npm-attack-targets-azure-developers-with-malicious-packages/)
+- [如何寻找Azure上的越权攻击](https://docs.google.com/presentation/d/1vVpNezQ1uVS3_PQ_beYH-cQR6qrvGcMP8MWV7LA-nKU/mobilepresent?slide=id.p)
 
 ## 云原生工具
 
@@ -131,6 +137,7 @@ excerpt: Cloud Security
 	- [awspx](https://github.com/FSecureLABS/awspx)
 	- [Stormspotter](https://github.com/Azure/Stormspotter)
 - [kubectl-trace - 在k8s集群中执行bpf](https://github.com/iovisor/kubectl-trace)
+- [kube-prompt - kubectl交互式工具](https://github.com/c-bata/kube-prompt)
 
 ## CVE
 
@@ -153,7 +160,9 @@ excerpt: Cloud Security
 - [CVE-2020-8555: k8s controler SSRF](https://medium.com/@BreizhZeroDayHunters/when-its-not-only-about-a-kubernetes-cve-8f6b448eafa8) [其他](https://hackerone.com/reports/776017)
 - [CVE-2020-8557: Node disk DOS by writing to container /etc/hosts](https://github.com/kubernetes/kubernetes/issues/93032) [其他](https://hackerone.com/reports/867699)
 - [CVE-2020-8558: route_localnet漏洞](https://github.com/tabbysable/POC-2020-8558)
+- [CVE-2020-8559: 恶意kubelet返回302给apiserver，控制node的攻击者可在任意pod中执行代码](https://github.com/tdwyer/CVE-2020-8559) [分析](http://blog.nsfocus.net/cve-2020-8559/)
 - [CVE-2020-8561: k8s apiserver SSRF](https://hackerone.com/reports/941178) [公告](https://groups.google.com/g/kubernetes-security-announce/c/RV2IhwcrQsY)
+- [CVE-2020-10749: 利用ipv6路由广播实施k8s中间人攻击](https://github.com/knqyf263/CVE-2020-10749)
 - [CVE-2020-14343: k8s test-infra yaml.load exec](https://hackerone.com/reports/1051192)
 - [CVE-2020-15157: container image SSRF](https://darkbit.io/blog/cve-2020-15157-containerdrip)
 - [CVE-2020-15257: containerd-shim abstract namespace unix socket](https://research.nccgroup.com/2020/12/10/abstract-shimmer-cve-2020-15257-host-networking-is-root-equivalent-again/) [POC1](https://github.com/nccgroup/abstractshimmer) [POC2](https://www.cdxy.me/?p=837)
@@ -169,6 +178,8 @@ excerpt: Cloud Security
 - [CVE-2021-41091: 利用/var/lib/docker下setuid程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558) [利用](https://www.cyberark.com/resources/threat-research-blog/how-docker-made-me-more-capable-and-the-host-less-secure)
 - [CVE-2021-43784: runc netlink message int16 overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=2241)
 - [CVE-2022-0492: 利用unshare+cgroup逃逸](https://unit42.paloaltonetworks.com/cve-2022-0492-cgroups/) [分析](http://terenceli.github.io/%E6%8A%80%E6%9C%AF/2022/03/06/cve-2022-0492)
+- [CVE-2022-21701: istio gateway提权不完全分析之模板覆盖](http://noahblog.360.cn/abuse-gateway-api-attack-kubernetes/)
+- [CVE-2022-23648: containerd cri plugin容器镜像路径穿越漏洞](https://bugs.chromium.org/p/project-zero/issues/detail?id=2244)
 
 # QEMU/HyperV
 
@@ -204,6 +215,7 @@ excerpt: Cloud Security
 - [CVE-2016-5195: Dirty Cow](https://github.com/dirtycow/dirtycow.github.io/wiki/PoCs)
 - [CVE-2017-0781： blueborne - 蓝牙漏洞](https://github.com/ArmisSecurity/blueborne)
 - [CVE-2017-5123： linux waitid系统调用提权漏洞](https://github.com/nongiach/CVE)
+- [CVE-2019-13272 - ptrace_link漏洞本地提权](https://github.com/jas502n/CVE-2019-13272)
 - [CVE-2017-13281： bluedroid - 蓝牙漏洞](https://github.com/JiounDai/Bluedroid)
 - [CVE-2020-8835: 利用ebpf verification漏洞提权](https://github.com/noirfate/bpf-lpe) [文章](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
 - [CVE-2020-12351/CVE-2020-12352: BleedingTooth: Linux Bluetooth Zero-Click Remote Code Execution](https://github.com/google/security-research/tree/master/pocs/linux/bleedingtooth)
@@ -221,8 +233,10 @@ excerpt: Cloud Security
 - [CVE-2021-42008: 6pack driver提权](https://syst3mfailure.io/sixpack-slab-out-of-bounds)
 - [CVE-2021-43267: tipc eop](https://haxx.in/posts/pwning-tipc/)
 - [CVE-2022-0185: fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
-- [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability)
+- [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc)
+- [CVE-2022-0995: watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
 - [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
+- [CVE-2022-27666：ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 
 # APP
 

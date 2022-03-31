@@ -50,6 +50,7 @@ excerpt: useful git repository (工具篇)
 - [jc - jsonifies cmd output to json](https://github.com/kellyjonbrazil/jc)
 - [开源包依赖查询](https://deps.dev/)
 - [mold - 高性能链接器](https://github.com/rui314/mold)
+- [difft - 基于代码语法的diff工具](https://github.com/Wilfred/difftastic)
 
 ## 静态工具
 
@@ -81,6 +82,7 @@ excerpt: useful git repository (工具篇)
 - [netdata - 实时的系统性能监控工具](https://github.com/netdata/netdata)
 - [bcc - 使用ebpf的linux系统工具集](https://github.com/iovisor/bcc)
 - [bottom - 跨平台的系统监控工具](https://github.com/ClementTsang/bottom)
+- [nsntrace - 进程流量抓取工具](https://github.com/nsntrace/nsntrace)
 
 ## 其他
 
@@ -103,6 +105,7 @@ excerpt: useful git repository (工具篇)
 - [docker-wechat - docker微信](https://github.com/top-bettercode/docker-wechat)
 - [ssh隧道使用教程](https://github.com/opsdisk/the_cyber_plumbers_handbooks)
 - [HackBrowserData - 导出浏览器所有数据](https://github.com/moonD4rk/HackBrowserData)
+
 
 
 

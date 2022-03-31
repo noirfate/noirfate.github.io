@@ -383,3 +383,4 @@ b.trace_print()
 
 ## libbpf
 > 参考：https://nakryiko.com/posts/<br>
+> CO-RE支持：https://github.com/aquasecurity/btfhub

@@ -24,6 +24,8 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * 过程即攻击行动的执行过程，根据时间线把攻击涉及到的战术阶段中所使用的技术串联起来，可用于复盘、防御和攻击模拟，例如[PDF](https://attack.mitre.org/docs/APT3_Adversary_Emulation_Plan.pdf)
   ![](/assets/img/attck_pro.jpg)
 
+[ATT&CK框架各个技术点对应测试样例](https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/Indexes/Indexes-Markdown/index.md)
+
 **知识梳理的好处就是可交流、可复制、可分解，伴随着ATT&CK的普及，越来越多的人或企业也开始使用它来描述攻击威胁，如：**
 
 ![](/assets/img/k8s-matrix.png)
@@ -125,6 +127,8 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * 有些url貌似不能访问，但可通过修改User-Agent或host文件进行访问
 * 使用ID获取凭证
 	* 云服务通常使用UUID来作为资源的唯一标识，并且可能会使用这个UUID来作为认证凭据，虽然理论上UUID只有用户知晓，也不可能被爆破，但用户可能会泄露UUID。当攻击者拿到UUID时，就可以通过认证并控制用户的资源 [参考](https://andresriancho.com/wp-content/uploads/2019/06/whitepaper-internet-scale-analysis-of-aws-cognito-security.pdf)
+* 内部服务挂到公网
+	* 有些时候为了方便，会把内部网站开放到公网，通过IP扫描，可发现重定向头`Location`的内容为内部域名，修改host，绑定IP和内部域名，则可访问。进一步可以进行泛扫，把域名列表和IP列表一一绑定进行测试
 
 ## 执行 (Execution)
 
@@ -163,6 +167,7 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * 由于多个虚机共用一台物理机，故可利用cpu、gpu、memory的侧信道攻击技术收集同物理机上其他虚机的信息
 * openstack metadata
   * 通过<span>http://169.254.169.254</span>访问metadata，可以收集到主机的信息，甚至敏感信息(常见于user_data中) [参考1](https://pumascan.com/resources/cloud-security-instance-metadata/) [参考2](https://github.com/irsl/gcp-dhcp-takeover-code-exec)
+  * 通过读取`/run/cloud-init/instance-data.json`获取metadata，`/var/lib/cloud/instance/user-data.txt`获取userdata
 * 云服务资源
   * 在大部分情况下，租户在使用云服务时，用的是云服务的资源，即云服务分配虚机给租户用，租户只能访问虚机上开放的端口，但无法控制虚机。还有一部分服务支持使用租户自己的资源部署，即服务提供容器镜像或虚机镜像给租户用。虽然一般情况下服务提供的镜像不会包含敏感文件，但是镜像中运行的程序在跟管理节点通信的时候可能包含敏感信息，即使是使用https传输，但由于虚机是租户完全可控的，故可通过逆向调试得到明文(如使用gcore获取进程内存，然后用strings + grep查看其中的明文信息)
   * 很多时候云服务会在本地存储服务账号凭证，假如攻击者通过漏洞进入云服务虚机，可从本地文件、bash_history中获取凭证

@@ -277,6 +277,8 @@ excerpt: useful git repository (研究篇)
 - [honggfuzz-rs - 利用honggfuzz来fuzz rust代码](https://github.com/rust-fuzz/honggfuzz-rs)
 - [beacon-fuzz - fuzz以太网区块链](https://github.com/sigp/beacon-fuzz) [文章](https://fuzzinglabs.com/wp-content/uploads/2022/02/Beaconfuzz_OffensiveCon2022_patrick_ventuzelo.pdf)
 - [SNPSFuzzer - 利用snapshot记录网络协议的各个阶段，然后针对单个阶段进行fuzz，暂未开源](https://arxiv.org/pdf/2202.03643.pdf)
+- [Fitm - 中间人覆盖度反馈fuzzer，可同时fuzz客户端和服务端](https://github.com/FGSect/FitM)
+- [K-Scheduler - afl样本选择优化](https://github.com/Dongdongshe/K-Scheduler) [文章](https://arxiv.org/pdf/2203.12064.pdf)
 
 ### Syzkaller系
 
@@ -343,6 +345,7 @@ excerpt: useful git repository (研究篇)
 - [bpf-fuzzer - 把bpf验证移到用户态进行fuzz](https://github.com/iovisor/bpf-fuzzer)
 - [fuzz-lightyear - swagger api fuzzer](https://github.com/Yelp/fuzz-lightyear)
 - [atheris - fuzz python code](https://github.com/google/atheris)
+- [Frelatage - python覆盖度反馈fuzz](https://github.com/Rog3rSm1th/Frelatage)
 - [jsfuzz - fuzz js](https://github.com/fuzzitdev/jsfuzz)
 - [JQF - fuzz java](https://github.com/rohanpadhye/JQF)
 - [jackalope - win和mac下的覆盖度反馈黑盒fuzz](https://github.com/googleprojectzero/Jackalope)
@@ -374,6 +377,7 @@ excerpt: useful git repository (研究篇)
 - [使用csa和codeql对mysql cluster进行分析1](https://www.zerodayinitiative.com/blog/2022/2/10/mindshare-when-mysql-cluster-encounters-taint-analysis)
 - [使用csa和codeql对mysql cluster进行分析2](https://www.zerodayinitiative.com/blog/2022/2/22/clang-checkers-and-codeql-queries-for-detecting-untrusted-pointer-derefs-and-tainted-loop-conditions)
 - [CodeQL 数据流分析/污点分析 笔记（上篇）](https://eternalsakura13.com/2022/02/08/codeql_flow_analyze/)
+- [深入理解CodeQL](https://github.com/ASTTeam/CodeQL)
 
 ### 源码分析工具
 
@@ -386,3 +390,4 @@ excerpt: useful git repository (研究篇)
 - [joern - 利用cpg进行源码分析](https://github.com/joernio/joern)
 - [code2flow - 动态语言调用执行流，支持python、js、ruby、php](https://github.com/scottrogowski/code2flow)
 - [GCatch - 通过静态分析找出go的并发bug](https://github.com/system-pclub/GCatch)
+- [codecat - 支持多语言的规则匹配代码扫描工具](https://github.com/CoolerVoid/codecat)
