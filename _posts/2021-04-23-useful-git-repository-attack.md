@@ -106,6 +106,7 @@ excerpt: useful git repository (攻防篇)
 - [linux kernel cve列表](https://github.com/nluedtke/linux_kernel_cves) [网站](https://linuxkernelcves.com/cves)
 - [cve-pylib - 从redhat数据库中获取cve信息](https://github.com/RedHatProductSecurity/cve-pylib)
 - [每日安全信息](https://github.com/xqx12/daily-info)
+- [BugBountyScanner - 子域名、服务扫描](https://github.com/chvancooten/BugBountyScanner)
 
 ### 云原生渗透工具
 
@@ -229,7 +230,6 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-25636 - netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 
-
 ### container
 
 - [fdpasser - 容器外非root账户利用容器中的root账户进行提权](https://github.com/FSecureLABS/fdpasser)
@@ -284,6 +284,9 @@ excerpt: useful git repository (攻防篇)
 - [10个不被注意的Python安全问题](https://blog.sonarsource.com/10-unknown-security-pitfalls-for-python)
 - [JWT认证设计漏洞](https://medium.com/@sandh0t/the-bad-twin-a-peculiar-case-of-jwt-exploitation-scenario-1efa03e891c0)
 - [CVE-2022-0337 - 浏览器泄漏系统环境变量](https://github.com/Puliczek/CVE-2022-0337-PoC-Google-Chrome-Microsoft-Edge-Opera)
+- [git相关漏洞](https://github.com/justinsteven/advisories)
+- [CVE-2021-21234 - springboot actuator logview任意文件读](https://github.com/xiaojiangxl/CVE-2021-21234)
+- [CVE-2022-22954 - VMware Workspace ONE Access Server-side Template Injection RCE](https://github.com/aniqfakhrul/CVE-2022-22954)
 
 ## 研究资料
 

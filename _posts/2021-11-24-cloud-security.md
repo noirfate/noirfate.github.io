@@ -23,6 +23,7 @@ excerpt: Cloud Security
 - [Azure RedTeam](https://github.com/rootsecdev/Azure-Red-Team#stealing-tokens-from-az-powershell)
 - [orca](https://orca.security/resources/blog/)
 - [netspi](https://www.netspi.com/blog/technical/cloud-penetration-testing/)
+- [集锦](https://github.com/pen4uin/awesome-cloud-native-security)
 
 ## 开源情报
 
@@ -113,6 +114,8 @@ excerpt: Cloud Security
 - [azure攻击手法](https://cloudbrothers.info/en/azure-dominance-paths/)
 - [针对azure的npm包供应链攻击](https://jfrog.com/blog/large-scale-npm-attack-targets-azure-developers-with-malicious-packages/)
 - [如何寻找Azure上的越权攻击](https://docs.google.com/presentation/d/1vVpNezQ1uVS3_PQ_beYH-cQR6qrvGcMP8MWV7LA-nKU/mobilepresent?slide=id.p)
+- [EverNote SSRF leak GCP metadata](https://blog.neolex.dev/13/)
+- [AWS RDS PostgreSQL log_fdw插件任意文件读](https://blog.lightspin.io/aws-rds-critical-security-vulnerability)
 
 ## 云原生工具
 

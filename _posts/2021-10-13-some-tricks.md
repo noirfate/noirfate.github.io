@@ -325,6 +325,19 @@ lrwxrwxrwx 1 root root 7 Mar 21 09:06 /bin/ln -> /tmp/ln
 ## 利用网络命名空间抓取指定进程流量
 [nsntrace](https://github.com/nsntrace/nsntrace)
 
+## 跨平台、开源录屏软件
+[OBS Studio](https://obsproject.com/)
+
+## csv to markdown table
+[csvtomd](https://github.com/mplewis/csvtomd)
+```
+pip3 install csvtomd
+csvtomd [csv_file]
+```
+
+## win下文本搜索工具，支持压缩文件及各种文档
+[dngrep](https://dngrep.github.io/)
+
 # 系统
 
 ## 编写独立内核模块
@@ -426,6 +439,13 @@ rmmod standalone
 ```
 
 ## 修改内核模块版本号
+> 可直接使用https://github.com/yaxinsn/vermagic修改
+> `vermagic`不可短改长，可以长改短，修改`/lib/modules/$(uname -r)/build/include/linux/vermagic.h`中的VERMAGIC_STRING，预留些空格，以防目标机器的`vermagic`过长
+
+- 查看本机`vermagic`
+```shell
+modinfo $(lsmod | awk '{print $1}' | tail -1) | grep vermagic
+```
 
 - 查看`example.ko`模块的版本信息
 ```shell

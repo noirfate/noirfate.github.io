@@ -88,6 +88,9 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 	* [SSRF vulnerability in AppSheet](https://nechudav.blogspot.com/2021/12/ssrf-vulnerability-in-appsheet-google.html)
 	* [A Case Study of the Capital One Data Breach](https://web.mit.edu/smadnick/www/wp/2020-16.pdf)
 	* [AWS CloudFormation XXE](https://orca.security/resources/blog/aws-cloudformation-vulnerability/)
+	* [EverNote SSRF leak GCP metadata](https://blog.neolex.dev/13/)
+* 服务漏洞
+	* [AWS RDS PostgreSQL log_fdw插件任意文件读](https://blog.lightspin.io/aws-rds-critical-security-vulnerability)
 	
 ## 侦察 (Reconnaissance)
 

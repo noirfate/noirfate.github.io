@@ -105,6 +105,7 @@ excerpt: useful git repository (研究篇)
 - [objection - android&ios应用逆向审计工具](https://github.com/sensepost/objection)
 - [syscall-intercept - linux下用户态syscall hook工具](https://github.com/pmem/syscall_intercept)
 - [angry-gadget - 使用angr列出执行/bin/sh的约束条件](https://github.com/ChrisTheCoolHut/angry_gadget)
+- [matt - 动态符号执行工具](https://github.com/trailofbits/maat)
 
 ### binary改写
 
@@ -365,6 +366,7 @@ excerpt: useful git repository (研究篇)
 - [apicraft - 通过对SDK头文件和目标程序的分析，自动构建fuzz driver](https://github.com/occia/apicraft)
 - [GFuzz - 针对go并发channel的fuzzer](https://github.com/system-pclub/GFuzz) [论文](https://songlh.github.io/paper/gfuzz.pdf)
 - [wfuzz - web fuzzer](https://github.com/xmendez/wfuzz)
+- [rewind - Snapshot-based coverage-guided windows kernel fuzzer](https://github.com/quarkslab/rewind)
 
 ## static analysis
 
