@@ -109,13 +109,15 @@ excerpt: Cloud Security
 - [Azure Automation Service窃取其他租户凭证](https://orca.security/resources/blog/autowarp-microsoft-azure-automation-service-vulnerability/)
 - [Apiary SSRF to get Oracle Cloud Metadata](https://orca.security/resources/blog/oracle-server-side-request-forgery-ssrf-attack-metadata/)
 - [GKE Autopilot Vulnerabilities](https://unit42.paloaltonetworks.com/gke-autopilot-vulnerabilities/)
-- [Azure hybrid workers runas提权](https://www.netspi.com/blog/technical/cloud-penetration-testing/abusing-azure-hybrid-workers-for-privilege-escalation/)
+- [Azure hybrid workers part1 runas提权](https://www.netspi.com/blog/technical/cloud-penetration-testing/abusing-azure-hybrid-workers-for-privilege-escalation/)
+- [Azure hybrid workers part2 跨租户信息窃取](https://www.netspi.com/blog/technical/cloud-penetration-testing/abusing-azure-hybrid-workers-part-2/)
 - [使用CDN绕过原站防护](https://blog.ryanjarv.sh/2022/03/16/bypassing-wafs-with-alternate-domain-routing.html)
 - [azure攻击手法](https://cloudbrothers.info/en/azure-dominance-paths/)
 - [针对azure的npm包供应链攻击](https://jfrog.com/blog/large-scale-npm-attack-targets-azure-developers-with-malicious-packages/)
 - [如何寻找Azure上的越权攻击](https://docs.google.com/presentation/d/1vVpNezQ1uVS3_PQ_beYH-cQR6qrvGcMP8MWV7LA-nKU/mobilepresent?slide=id.p)
 - [EverNote SSRF leak GCP metadata](https://blog.neolex.dev/13/)
 - [AWS RDS PostgreSQL log_fdw插件任意文件读](https://blog.lightspin.io/aws-rds-critical-security-vulnerability)
+- [AWS VPN Client TOCTOU任意文件写](https://rhinosecuritylabs.com/aws/cve-2022-25165-aws-vpn-client/)
 
 ## 云原生工具
 
