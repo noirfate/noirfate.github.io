@@ -46,6 +46,7 @@ excerpt: useful git repository (研究篇)
 - [ghidra2frida - use frida to extend ghidra](https://github.com/federicodotta/ghidra2frida)
 - [kaiju - CERT开发的插件](https://github.com/CERTCC/kaiju)
 - [efiseek - efi分析插件](https://github.com/retrage/efiSeek/tree/efi-xplorer)
+- [BinAbsInspector - 二进制漏洞挖掘插件](https://github.com/KeenSecurityLab/BinAbsInspector)
 
 ### GDB扩展
 
