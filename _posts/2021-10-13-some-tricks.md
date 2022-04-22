@@ -338,6 +338,17 @@ csvtomd [csv_file]
 ## win下文本搜索工具，支持压缩文件及各种文档
 [dngrep](https://dngrep.github.io/)
 
+## gdb使用技巧
+> online-doc: https://sourceware.org/gdb/onlinedocs/gdb/
+
+- [layout快捷键](https://sourceware.org/gdb/onlinedocs/gdb/TUI-Keys.html#TUI-Keys)、[layout命令](https://sourceware.org/gdb/onlinedocs/gdb/TUI-Commands.html#TUI-Commands)、`winheight name +/-count`增大减小窗口大小
+- [print设置](https://sourceware.org/gdb/onlinedocs/gdb/Print-Settings.html#Print-Settings)、`set print pretty on`缩进显示结构、`set print demangle on`显示c++原始结构名
+- 禁用线程切换`set scheduler-locking on`
+
+## systemd日志查看
+- 查找units，`systemctl list-units cron*`
+- 显示unit日志，`journalctl -xefu cron`(`x[catalog], e[end], f[follow], u[unit]`)
+
 # 系统
 
 ## 编写独立内核模块
