@@ -288,6 +288,8 @@ excerpt: useful git repository (攻防篇)
 - [git相关漏洞](https://github.com/justinsteven/advisories)
 - [CVE-2021-21234 - springboot actuator logview任意文件读](https://github.com/xiaojiangxl/CVE-2021-21234)
 - [CVE-2022-22954 - VMware Workspace ONE Access Server-side Template Injection RCE](https://github.com/aniqfakhrul/CVE-2022-22954)
+- [Postgresql 渗透总结](https://tttang.com/archive/1547/)
+- [CVE-2022-21449 - jdk15以上ECDSA签名验证漏洞，可任意伪造](https://github.com/khalednassar/CVE-2022-21449-TLS-PoC) [文章](https://neilmadden.blog/2022/04/19/psychic-signatures-in-java/)
 
 ## 研究资料
 

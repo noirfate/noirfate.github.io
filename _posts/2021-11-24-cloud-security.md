@@ -119,6 +119,7 @@ excerpt: Cloud Security
 - [EverNote SSRF leak GCP metadata](https://blog.neolex.dev/13/)
 - [AWS RDS PostgreSQL log_fdw插件任意文件读](https://blog.lightspin.io/aws-rds-critical-security-vulnerability)
 - [AWS VPN Client TOCTOU任意文件写](https://rhinosecuritylabs.com/aws/cve-2022-25165-aws-vpn-client/)
+- [AWS log4shell热补容器逃逸](https://unit42.paloaltonetworks.com/aws-log4shell-hot-patch-vulnerabilities/)
 
 ## 云原生工具
 

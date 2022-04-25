@@ -281,6 +281,7 @@ excerpt: useful git repository (研究篇)
 - [SNPSFuzzer - 利用snapshot记录网络协议的各个阶段，然后针对单个阶段进行fuzz，暂未开源](https://arxiv.org/pdf/2202.03643.pdf)
 - [Fitm - 中间人覆盖度反馈fuzzer，可同时fuzz客户端和服务端](https://github.com/FGSect/FitM)
 - [K-Scheduler - afl样本选择优化](https://github.com/Dongdongshe/K-Scheduler) [文章](https://arxiv.org/pdf/2203.12064.pdf)
+- [GraphFuzz - library api fuzzer](https://github.com/hgarrereyn/GraphFuzz)
 
 ### Syzkaller系
 
@@ -381,6 +382,7 @@ excerpt: useful git repository (研究篇)
 - [使用csa和codeql对mysql cluster进行分析2](https://www.zerodayinitiative.com/blog/2022/2/22/clang-checkers-and-codeql-queries-for-detecting-untrusted-pointer-derefs-and-tainted-loop-conditions)
 - [CodeQL 数据流分析/污点分析 笔记（上篇）](https://eternalsakura13.com/2022/02/08/codeql_flow_analyze/)
 - [深入理解CodeQL](https://github.com/ASTTeam/CodeQL)
+- [从java源码构建数据库无需编译](https://github.com/waderwu/extractor-java)
 
 ### 源码分析工具
 

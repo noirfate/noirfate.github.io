@@ -60,10 +60,15 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 
 [红蓝对抗](https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/pf/ms/ds-red-team-operations.pdf)也是最近很火的一个概念，被很多企业采用。现在的企业基本上都认识到**漏洞是不可避免的，没有攻不破的系统**，那如何提升和检验企业目前的安全性呢？红蓝对抗就是一个很好的方式，红队行动(攻击方)在传统渗透测试的基础上更加注重模拟真实的攻击，比如使用一些隐藏手段等等，以此来检验蓝军的监测和防守能力，不仅仅是单纯的发现和利用漏洞。同样的，对企业而言，单纯利用红蓝对抗来修补漏洞并不能真正提高企业的防御能力，真正需要提升的是防守团队监测与阻断攻击的能力以及企业的安全架构
 
+**Kill Chain and TTPs**
+![](/assets/img/kill_chain.png)
+![](/assets/img/kill_chain_ttps.png)
+
+
 以下是我对公有云的攻击方法及手段的一些初步和简陋的梳理，一些通用手段就不再列在其中了，主要写一些跟云相关的内容
 
 ### 案例
-> 安全只有两种，一种是没有被别人攻击所以安全，一种是自己幻想自己安全
+> The More You Know, The More You Know You Don’t Know
 
 * 通过伪造目标节点的证书签名请求获取其证书，通过证书控制节点
   * [Hacking Kubelet on Google Kubernetes Engine](https://www.4armed.com/blog/hacking-kubelet-on-gke/)
@@ -77,6 +82,7 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * [Cross-Account Container Takeover in Azure Container Instances](https://unit42.paloaltonetworks.com/azure-container-instances/)
   * [Hacking DigitalOcean's New Kubernetes Service](https://www.4armed.com/blog/hacking-digitalocean-kubernetes/)
   * [AWS SageMaker Jupyter Notebook Instance Takeover](https://blog.lightspin.io/aws-sagemaker-notebook-takeover-vulnerability)
+  * [AWS log4shell热补容器逃逸](https://unit42.paloaltonetworks.com/aws-log4shell-hot-patch-vulnerabilities/)
 * agent漏洞或未授权访问
   * [Agent Exposes Azure Customers To Unauthorized Code Execution](https://www.wiz.io/blog/secret-agent-exposes-azure-customers-to-unauthorized-code-execution)
 * 命令注入

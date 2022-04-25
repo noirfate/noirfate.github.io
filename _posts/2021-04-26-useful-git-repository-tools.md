@@ -51,6 +51,7 @@ excerpt: useful git repository (工具篇)
 - [开源包依赖查询](https://deps.dev/)
 - [mold - 高性能链接器](https://github.com/rui314/mold)
 - [difft - 基于代码语法的diff工具](https://github.com/Wilfred/difftastic)
+- [magic-trace - 类似perf但使用intel pt跟踪程序](https://github.com/janestreet/magic-trace)
 
 ## 静态工具
 
