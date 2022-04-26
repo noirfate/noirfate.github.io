@@ -16,6 +16,25 @@ excerpt: Kubernetes Security Research
 ## 概览
 ![](/assets/img/k8s_sec1.jpg)
 
+## 威胁分析
+
+### 伪造欺骗
+
+### 篡改
+
+### 抵赖
+
+### 拒绝服务
+
+- 触发代码中的`panic`函数
+- 触发死循环
+- 触发channel堵塞
+- 触发死锁
+
+### 信息泄露
+
+### 权限提升
+
 ## 组件
 
 ### kubectl
@@ -69,6 +88,8 @@ storageclasses              |  sc
 
 ### kubelet
 kubelet 是在每个 Node 节点上运行的主要 “节点代理”，接受通过各种机制（主要是通过 apiserver）提供的一组 PodSpec，并确保这些 PodSpec 中描述的容器处于运行状态且运行状况良好
+![](/assets/img/k8s_sec6.jpg)
+![](/assets/img/k8s_sec7.png)
 
 #### 命令行/配置
 > 修改`/etc/systemd/system/kubelet.service.d/10-kubeadm.conf`变更启动参数，执行`systemctl daemon-reload`加载新配置，重启`systemctl restart kubelet`
@@ -89,8 +110,26 @@ kubelet监听在10250端口，开放了一些API，可通过HTTPS访问。主要
 
 ##### Manager
 
-- PLEG (Pod Lifecycle Events Generator)：定期检查节点上Pod运行情况，如果发现感兴趣的变化，PLEG就会把这种变化包装成Event发送给Kubelet的主同步机制syncLoop去处理
+- [PLEG](https://developers.redhat.com/blog/2019/11/13/pod-lifecycle-event-generator-understanding-the-pleg-is-not-healthy-issue-in-kubernetes)：定期检查节点上Pod运行情况，如果发现感兴趣的变化，PLEG就会把这种变化包装成Event发送给Kubelet的主同步机制syncLoop去处理
 ![](/assets/img/k8s_sec2.png)
+	- 在`SyncLoop`中检查`PLEG`的健康状态，如果超过3分钟没有更新则报错
+	![](/assets/img/k8s_sec3.png)
+	- `kubelet.go:NewMainKubelet`中创建`pleg.NewGenericPLEG`，默认1秒`relist`一次更新pod状态
+	![](/assets/img/k8s_sec4.png)
+	- `relist`调用`runtime.GetPods`获取`pod`的状态(Running、Existed、Unknow、NonExisted)
+	![](/assets/img/k8s_sec5.png)
+	- `SyncLoop`消费`PLEG`消息，执行相应处理
+	- [其他分析文章](https://wenfeng-gao.github.io/post/k8s-pleg-source-code-analysis/)
+
+- [PodConfig](https://developpaper.com/kubelet-source-code-analysis-monitoring-pod-changes/)：持续监测本地manifest、manifest url、apiserver处的Pod配置变化，主要代码实现在`config`目录下
+![](/assets/img/k8s_sec6.png)
+	- [Pod删除时发生了什么](https://wenfeng-gao.github.io/post/source-code-kubelet-what-happened-to-kubelet-when-pod-is-deleted/)
+- SyncLoop
+	- configCh
+	![](/assets/img/k8s_sec8.png)
+	- plegCh
+	获取`PLEG`消息，如果消息不是`ContainerRemoved`则调用`handler.HandlePodSyncs`，回收`Pod`中停止的容器。比如用`docker stop`停止一个容器，`plegCh`就会返回`ContainerDied`消息，`kubelet`会重启这个容器
+
 
 #### 漏洞
 
