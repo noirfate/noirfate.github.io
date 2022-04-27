@@ -42,38 +42,39 @@ kubernetes命令行管理工具
 
 #### 命令行/配置
 - 资源缩写
-resource                    |  abbreviation
-----------------------------|--------------
-componentstatuses           |  cs
-configmaps                  |  cm
-endpoints                   |  ep
-events                      |  ev
-limitranges                 |  limits
-namespaces                  |  ns
-nodes                       |  no
-persistentvolumeclaims      |  pvc
-persistentvolumes           |  pv
-pods                        |  po
-replicationcontrollers      |  rc
-resourcequotas              |  quota
-serviceaccounts             |  sa
-services                    |  svc
-customresourcedefinitions   |  crd,crds
-controllerrevisions         |  apps
-daemonsets                  |  ds
-deployments                 |  deploy
-replicasets                 |  rs
-statefulsets                |  sts
-horizontalpodautoscalers    |  hpa
-cronjobs                    |  cj
-certificatesigningrequests  |  csr
-events                      |  ev
-ingresses                   |  ing
-networkpolicies             |  netpol
-poddisruptionbudgets        |  pdb
-podsecuritypolicies         |  psp
-priorityclasses             |  pc
-storageclasses              |  sc
+
+| resource                  |  abbreviation |
+| :----------:              |   :-------:   |
+|componentstatuses          |  cs           |
+|configmaps                 |  cm           |
+|endpoints                  |  ep           |
+|events                     |  ev           |
+|limitranges                |  limits       |
+|namespaces                 |  ns           |
+|nodes                      |  no           |
+|persistentvolumeclaims     |  pvc          |
+|persistentvolumes          |  pv           |
+|pods                       |  po           |
+|replicationcontrollers     |  rc           |
+|resourcequotas             |  quota        |
+|serviceaccounts            |  sa           |
+|services                   |  svc          |
+|customresourcedefinitions  |  crd,crds     |
+|controllerrevisions        |  apps         |
+|daemonsets                 |  ds           |
+|deployments                |  deploy       |
+|replicasets                |  rs           |
+|statefulsets               |  sts          |
+|horizontalpodautoscalers   |  hpa          |
+|cronjobs                   |  cj           |
+|certificatesigningrequests |  csr          |
+|events                     |  ev           |
+|ingresses                  |  ing          |
+|networkpolicies            |  netpol       |
+|poddisruptionbudgets       |  pdb          |
+|podsecuritypolicies        |  psp          |
+|priorityclasses            |  pc           |
+|storageclasses             |  sc           |
 
 #### 插件
 > https://krew.sigs.k8s.io/plugins/
