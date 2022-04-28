@@ -22,11 +22,12 @@ excerpt: Kubernetes Security Research
 
 #### 漏洞案例
 
-- CVE-2017-1002101
-容器A和容器B都挂载相同的`hostPath`，容器A先启动并在`hostPath`下创建指向`/`的符号链接`rootLink`，设置容器B的`hostPath`的`subPath`为`rootLink`，当启动容器B后，`kubelet`会把宿主机`/`挂载到容器B中
+##### [CVE-2017-1002101](https://noirfate.github.io/2022/04/18/k8s-env#cve-2017-1002101)
+容器A和容器B都挂载相同的`hostPath`，容器A先启动并在`hostPath`下创建指向`/`的符号链接`rootLink`，设置容器B的`hostPath`的`subPath`为`rootLink`，当启动容器B后，`kubelet`会把宿主机`/`挂载到容器B中<br>
 
-- CVE-2021-25741
-CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后会调用`mount`，而`mount`会跟随符号链接，这会产生TOCTOU漏洞。通过`renameat2(AT_FDCWD, source, AT_FDCWD, dest, RENAME_EXCHANGE)`系统调用在校验后`mount`前修改路径为符号链接
+##### [CVE-2021-25741](https://noirfate.github.io/2022/04/18/k8s-env#cve-2021-25741)
+CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后会调用`mount`，而`mount`会跟随符号链接，这会产生TOCTOU漏洞。通过`renameat2(AT_FDCWD, source, AT_FDCWD, dest, RENAME_EXCHANGE)`系统调用在校验后`mount`前修改路径为符号链接<br>
+
 ![](/assets/img/cve-2017-1002101-fix.jpeg)
 *Fig. CVE-2017-1002101 Fix*
 {:.image-caption}
@@ -104,17 +105,18 @@ kubelet监听在10250端口，开放了一些API，可通过HTTPS访问。主要
 - [PodConfig](https://developpaper.com/kubelet-source-code-analysis-monitoring-pod-changes/)：持续监测本地manifest、manifest url、apiserver处的Pod配置变化，主要代码实现在`config`目录下
 ![](/assets/img/k8s_sec6.png)
 	- [Pod删除时发生了什么](https://wenfeng-gao.github.io/post/source-code-kubelet-what-happened-to-kubelet-when-pod-is-deleted/)
-- [SyncLoop](https://www.alibabacloud.com/blog/understanding-the-kubelet-core-execution-frame_593904)，[参考1](https://www.cnblogs.com/luozhiyun/p/13736569.html)
-![](/assets/img/k8s_sec9.png)
+- [SyncLoop](https://www.alibabacloud.com/blog/understanding-the-kubelet-core-execution-frame_593904)
 ![](/assets/img/k8s_sec10.png)
 	- configCh
+	接收`PodConfig`消息，根据消息内容执行`syncPod`
 	![](/assets/img/k8s_sec8.png)
 	- plegCh
-	获取`PLEG`消息，如果消息不是`ContainerRemoved`则调用`handler.HandlePodSyncs`，回收`Pod`中停止的容器。比如用`docker stop`停止一个容器，`plegCh`就会返回`ContainerDied`消息，`kubelet`会重启这个容器
+	接收`PLEG`消息，如果消息不是`ContainerRemoved`则调用`handler.HandlePodSyncs`，回收`Pod`中停止的容器。比如用`docker stop`停止一个容器，`plegCh`就会返回`ContainerDied`消息，`kubelet`会重启这个容器
 	- syncCh
 	计时器，每秒触发去同步`Pod`配置
 	- houseKeepingCh
 	计时器，每两秒触发，调用`HandlePodCleanups`回收停止的`Pod`的资源
+	- [其他分析文章](https://www.cnblogs.com/luozhiyun/p/13736569.html)
 
 
 #### 漏洞

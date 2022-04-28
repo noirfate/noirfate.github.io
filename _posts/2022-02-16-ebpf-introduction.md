@@ -144,7 +144,7 @@ bpftrace -e 'uretprobe:/bin/bash:readline { printf("readline: \"%s\"\n", str(ret
 
 ### 获取容器中执行的命令
 首先通过`/proc/1/ns/pid`获得主机的`pid namespace`，然后对execve进行插桩，判断执行进程的`pid namespace`，如果与主机不同，则打印出来
-```
+```python
 #!/usr/bin/python3
 import os
 from bcc import BPF
@@ -191,7 +191,7 @@ b.trace_print()
 - 调用`fstat`查看`/etc/crontab`的修改时间，修改返回的`struct stat`结构中的mtime，欺骗cron进程认为该文件已被修改
 - 调用`read`读取`/etc/crontab`的内容，修改返回的数据，添加自己的命令
 
-```
+```python
 #!/usr/bin/python3
 from bcc import BPF
 

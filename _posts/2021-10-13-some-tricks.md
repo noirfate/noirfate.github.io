@@ -37,6 +37,10 @@ appimagetool-x86_64.AppImage appdir_test test.appimage
 ./test.appimage --appimage-extract-and-run
 ```
 
+## python打包与反编译
+
+[python打包与反编译](https://saucer-man.com/information_security/825.html)
+
 ## 使用bash实现curl下载功能
 ```shell
 function __curl() {
@@ -351,8 +355,32 @@ csvtomd [csv_file]
 - 查找units，`systemctl list-units cron*`
 - 显示unit日志，`journalctl -xefu cron`(`x[catalog], e[end], f[follow], u[unit]`)
 
-## 在线高清放大图片
-<https://www.upscale.media/>
+## 在线图片编辑工具
+[AI放大](https://www.upscale.media)
+[图片编辑转换](https://www.img2go.com/zh)
+
+## 下载archive.org上保存的网站
+
+[wayback-machine-downloader](https://github.com/hartator/wayback-machine-downloader)
+```shell
+# 由于下载下来的网页中引用的资源都是网站的url，无法离线访问，需要对url做替换
+# 假设下载网站为http://www.test.com
+gem install wayback_machine_downloader
+wayback_machine_downloader http://www.test.com -c 4
+# 替换test.com为本地链接
+cd websites/www.test.com
+find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.test.com/./g' {} \; # 替换第一层
+find . -maxdepth 2 -mindepth 2 -name "*.html" -exec sed -i 's/http:\/\/www.test.com/../g' {} \; # 替换第二层
+# 以此类推
+# 如果引用了其他子域名，比如a.test.com
+cd ../..
+wayback_machine_downloader http://www.a.test.com -c 4
+mv websites/www.a.test.com websites/www.test.com/a.test
+cd websites/www.test.com
+find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.test.com/.\/a.test/g' {} \; # 替换第一层
+find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.test.com/..\/a.test/g' {} \; # 替换第一层
+# 以此类推
+```
 
 # 系统
 
@@ -550,33 +578,10 @@ mv debian xxx/
 cd xxx;dpkg-buildpackage -rfakeroot -b -uc -us or debuild -b -uc -us
 ```
 
-## 下载archive.org上保存的网站
-
-[wayback-machine-downloader](https://github.com/hartator/wayback-machine-downloader)
-```shell
-# 由于下载下来的网页中引用的资源都是网站的url，无法离线访问，需要对url做替换
-# 假设下载网站为http://www.test.com
-gem install wayback_machine_downloader
-wayback_machine_downloader http://www.test.com -c 4
-# 替换test.com为本地链接
-cd websites/www.test.com
-find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.test.com/./g' {} \; # 替换第一层
-find . -maxdepth 2 -mindepth 2 -name "*.html" -exec sed -i 's/http:\/\/www.test.com/../g' {} \; # 替换第二层
-# 以此类推
-# 如果引用了其他子域名，比如a.test.com
-cd ../..
-wayback_machine_downloader http://www.a.test.com -c 4
-mv websites/www.a.test.com websites/www.test.com/a.test
-cd websites/www.test.com
-find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.test.com/.\/a.test/g' {} \; # 替换第一层
-find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.test.com/..\/a.test/g' {} \; # 替换第一层
-# 以此类推
-```
-
 ## 追踪库函数调用
 程序在运行的时候会调用动态链接库中的函数，可使用`nm -D [target]`查看程序调用的库函数或库函数的导出函数
 ### gdb
-```
+```python
 #!/usr/bin/env python3
 import gdb
 import re
@@ -611,10 +616,6 @@ except:
 - `-k`: 追踪内核函数调用，`-K 2`: 只显示两层
 - `-A func@arg`: 打印函数参数，如`-A strrchr@arg1/s`，不加`/s`则显示地址，加了就会显示地址所指向的字符串，可同时添加多个`-A`，如`-A strrchr@arg1/s -A strrchr@arg2`
 - `-R func`: 打印函数返回值，如跟踪程序获取环境变量`uftrace -P . -R getenv -A getenv@arg1/s [target]`
-
-## python打包与反编译
-
-[python打包与反编译](https://saucer-man.com/information_security/825.html)
 
 ## 监控进程网络流量
 安装bpftrace镜像`docker run -tdi -v /usr/src:/usr/src:ro -v /lib/modules/:/lib/modules:ro -v /sys/kernel/debug/:/sys/kernel/debug:rw --net=host --pid=host --privileged quay.io/iovisor/bpftrace:latest`

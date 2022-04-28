@@ -40,16 +40,6 @@ excerpt: Cloud Security
 - [kubernetes历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
 - [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
 - [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
-- user namespace逃逸问题
-	- k8s默认没有用docker的seccomp规则,在启动的容器中可以通过unshare -mr bash获得全部的cap,再通过mount cgroup逃逸
-	- 可用 seccomp.security.alpha.kubernetes.io/pod: runtime/default 配置禁用unshare [参考](https://snyk.io/blog/kernel-privilege-escalation/)
-	- 可通过禁用user namespace来防止逃逸`echo 0 > /proc/sys/user/max_user_namespaces` [参考](https://www.stigviewer.com/stig/red_hat_enterprise_linux_8/2020-11-25/finding/V-230548)
-	- [user namespace man](https://man7.org/linux/man-pages/man7/user_namespaces.7.html)
-- [cloudformation injection](https://rhinosecuritylabs.com/aws/cloud-malware-cloudformation-injection/)
-	- 服务从S3桶下载执行模板或代码
-	- 攻击者为具有S3桶读写权限的IAM子用户
-	- 攻击者创建函数，当其他用户上传模板和代码时触发
-	- 在触发函数中修改其他用户上传的文件，只有修改的操作早于服务从S3桶下载，即可完成注入攻击
 - k8s pod安全策略
 	- [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 	- [pod安全配置介绍](https://medium.com/kubernetes-tutorials/defining-privileges-and-access-control-settings-for-pods-and-containers-in-kubernetes-2cef08fc62b7) [其他](https://fuckcloudnative.io/posts/security-best-practices-for-kubernetes-pods/)
@@ -61,6 +51,16 @@ excerpt: Cloud Security
 
 ## 云原生攻击
 
+- user namespace逃逸问题
+	- k8s默认没有用docker的seccomp规则,在启动的容器中可以通过unshare -mr bash获得全部的cap,再通过mount cgroup逃逸
+	- 可用 seccomp.security.alpha.kubernetes.io/pod: runtime/default 配置禁用unshare [参考](https://snyk.io/blog/kernel-privilege-escalation/)
+	- 可通过禁用user namespace来防止逃逸`echo 0 > /proc/sys/user/max_user_namespaces` [参考](https://www.stigviewer.com/stig/red_hat_enterprise_linux_8/2020-11-25/finding/V-230548)
+	- [user namespace man](https://man7.org/linux/man-pages/man7/user_namespaces.7.html)
+- [cloudformation injection](https://rhinosecuritylabs.com/aws/cloud-malware-cloudformation-injection/)
+	- 服务从S3桶下载执行模板或代码
+	- 攻击者为具有S3桶读写权限的IAM子用户
+	- 攻击者创建函数，当其他用户上传模板和代码时触发
+	- 在触发函数中修改其他用户上传的文件，只有修改的操作早于服务从S3桶下载，即可完成注入攻击
 - [通过伪造节点的证书签名请求获取证书访问集群（有csr权限）](https://www.4armed.com/blog/hacking-kubelet-on-gke/) [另一篇](https://rhinosecuritylabs.com/cloud-security/kubelet-tls-bootstrap-privilege-escalation/) [参考](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/)
 ![](/assets/img/cs1.png)
 - [红蓝对抗中的云原生漏洞挖掘及利用实录](https://mp.weixin.qq.com/s/Aq8RrH34PTkmF8lKzdY38g)
@@ -228,7 +228,7 @@ excerpt: Cloud Security
 - [CVE-2021-3178: nfs leak](https://bugzilla.redhat.com/show_bug.cgi?id=1918179)
 - [CVE-2021-3490： ebpf内核提权](https://github.com/chompie1337/Linux_LPE_eBPF_CVE-2021-3490) [文章](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
 - [CVE-2021-20226: a reference counting bug which leads to local privilege escalation in io_uring](https://flattsecurity.medium.com/cve-2021-20226-a-reference-counting-bug-which-leads-to-local-privilege-escalation-in-io-uring-e946bd69177a)
-- [CVE-2021-22543: KVM VM_IO|VM_PFNMAP vma mishandling](https://github.com/google/security-research/security/advisories/GHSA-7wq5-phmq-m584)
+- [CVE-2021-22543: KVM VM_IO,VM_PFNMAP vma mishandling](https://github.com/google/security-research/security/advisories/GHSA-7wq5-phmq-m584)
 - [CVE-2021-22555: Heap Out-Of-Bounds Write in xt_compat_target_from_user](https://github.com/google/security-research/tree/master/pocs/linux/cve-2021-22555)
 - [CVE-2021-23134: NFC UAF](https://ruia-ruia.github.io/NFC-UAF/)
 - [CVE-2021-26708: vsock本地提权](https://github.com/hardenedvault/vault_range_poc) [文章](https://a13xp0p0v.github.io/2021/02/09/CVE-2021-26708.html)
