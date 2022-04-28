@@ -177,7 +177,7 @@ excerpt: Cloud Security
 - [CVE-2021-3847: overlayfs文件安全属性拷贝问题](https://www.openwall.com/lists/oss-security/2021/10/14/3)
 - [CVE-2021-21284: docker使用--userns-remap时，容器中的root用户如果能够修改`/var/lib/docker/<remapping>`则可以提权](https://github.com/moby/moby/security/advisories/GHSA-7452-xqpj-6rpc)
 - [CVE-2021-25738: k8s java client parse yaml exec](https://j0vsec.com/post/cve-2021-25738/) [POC](https://github.com/jordyv/poc-snakeyaml)
-- [CVE-2021-25741: k8s subpath mount符号链接条件竞争逃逸](https://sysdig.com/blog/cve-2021-25741-kubelet-falco/)
+- [CVE-2021-25741: k8s subpath mount符号链接条件竞争逃逸](https://github.com/Betep0k/CVE-2021-25741) [文章1](https://sysdig.com/blog/cve-2021-25741-kubelet-falco/) [文章2](https://security.googleblog.com/2021/12/exploring-container-security-storage.html)
 - [CVE-2021-25742: k8s ingress-nginx read local file](https://hackerone.com/reports/1249583)
 - [CVE-2021-28112: AWS workspace client 命令注入RCE](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/)
 - [CVE-2021-30465: docker runc mount TOCTOU](https://www.kingkk.com/2021/06/runc%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%EF%BC%88CVE-2021-30465%EF%BC%89/) [其他](https://hackmd.io/@mauilion/By2CV2MtO)

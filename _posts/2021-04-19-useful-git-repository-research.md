@@ -124,6 +124,7 @@ excerpt: useful git repository (研究篇)
 - [java反编译工具jadx](https://github.com/skylot/jadx)
 - [反汇编工具ddisasm - 可以准确的再编译回去](https://github.com/GrammaTech/ddisasm)
 - [字节码反编译工具GDA - 支持apk、dex、jar等](https://github.com/charles2gan/GDA-android-reversing-Tool)
+- [ILSpy - .net反编译工具](https://github.com/icsharpcode/ILSpy)
 
 ### 分析工具
 
@@ -396,3 +397,4 @@ excerpt: useful git repository (研究篇)
 - [code2flow - 动态语言调用执行流，支持python、js、ruby、php](https://github.com/scottrogowski/code2flow)
 - [GCatch - 通过静态分析找出go的并发bug](https://github.com/system-pclub/GCatch)
 - [codecat - 支持多语言的规则匹配代码扫描工具](https://github.com/CoolerVoid/codecat)
+- [IncreLux - 发现linux内核UBI(Use Before Initialization)漏洞](https://github.com/seclab-ucr/IncreLux)

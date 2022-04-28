@@ -344,10 +344,15 @@ csvtomd [csv_file]
 - [layout快捷键](https://sourceware.org/gdb/onlinedocs/gdb/TUI-Keys.html#TUI-Keys)、[layout命令](https://sourceware.org/gdb/onlinedocs/gdb/TUI-Commands.html#TUI-Commands)、`winheight name +/-count`增大减小窗口大小
 - [print设置](https://sourceware.org/gdb/onlinedocs/gdb/Print-Settings.html#Print-Settings)、`set print pretty on`缩进显示结构、`set print demangle on`显示c++原始结构名
 - 禁用线程切换`set scheduler-locking on`
+- 查找函数符号`info functions XXX`
+- [显示源码](https://sourceware.org/gdb/onlinedocs/gdb/List.html#List)，设置显示行数`set listsize count`
 
 ## systemd日志查看
 - 查找units，`systemctl list-units cron*`
 - 显示unit日志，`journalctl -xefu cron`(`x[catalog], e[end], f[follow], u[unit]`)
+
+## 在线高清放大图片
+<https://www.upscale.media/>
 
 # 系统
 

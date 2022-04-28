@@ -290,6 +290,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-22954 - VMware Workspace ONE Access Server-side Template Injection RCE](https://github.com/aniqfakhrul/CVE-2022-22954)
 - [Postgresql 渗透总结](https://tttang.com/archive/1547/)
 - [CVE-2022-21449 - jdk15以上ECDSA签名验证漏洞，可任意伪造](https://github.com/khalednassar/CVE-2022-21449-TLS-PoC) [文章](https://neilmadden.blog/2022/04/19/psychic-signatures-in-java/)
+- [CVE-2022-0543 - redis Lua沙盒绕过命令执行](https://github.com/aodsec/CVE-2022-0543)
 
 ## 研究资料
 
