@@ -120,6 +120,8 @@ excerpt: Cloud Security
 - [AWS RDS PostgreSQL log_fdw插件任意文件读](https://blog.lightspin.io/aws-rds-critical-security-vulnerability)
 - [AWS VPN Client TOCTOU任意文件写](https://rhinosecuritylabs.com/aws/cve-2022-25165-aws-vpn-client/)
 - [AWS log4shell热补容器逃逸](https://unit42.paloaltonetworks.com/aws-log4shell-hot-patch-vulnerabilities/)
+- [Azure PostgreSQL服务跨租户数据窃取](https://www.wiz.io/blog/wiz-research-discovers-extrareplica-cross-account-database-vulnerability-in-azure-postgresql/)
+- [Exploitation of an SSRF vulnerability against EC2 IMDSv2](https://www.yassineaboukir.com//blog/exploitation-of-an-SSRF-vulnerability-against-EC2-IMDSv2/)
 
 ## 云原生工具
 
@@ -145,6 +147,7 @@ excerpt: Cloud Security
 	- [Stormspotter](https://github.com/Azure/Stormspotter)
 - [kubectl-trace - 在k8s集群中执行bpf](https://github.com/iovisor/kubectl-trace)
 - [kube-prompt - kubectl交互式工具](https://github.com/c-bata/kube-prompt)
+- [TerraformGoat - 利用terraform构建公有云靶场环境](https://github.com/HXSecurity/TerraformGoat)
 
 ## CVE
 

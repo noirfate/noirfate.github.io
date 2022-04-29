@@ -107,6 +107,9 @@ excerpt: useful git repository (研究篇)
 - [syscall-intercept - linux下用户态syscall hook工具](https://github.com/pmem/syscall_intercept)
 - [angry-gadget - 使用angr列出执行/bin/sh的约束条件](https://github.com/ChrisTheCoolHut/angry_gadget)
 - [matt - 动态符号执行工具](https://github.com/trailofbits/maat)
+- [ScyllaHide - 反反调试工具](https://github.com/x64dbg/ScyllaHide)
+- [sems - 沙箱、虚拟化环境检测工具](https://github.com/AlicanAkyol/sems)
+- [imvirt - 虚拟化环境监测工具](https://github.com/DE-IBH/imvirt)
 
 ### binary改写
 

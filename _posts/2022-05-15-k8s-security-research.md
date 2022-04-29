@@ -35,7 +35,7 @@ CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后�
 *Fig. CVE-2021-25741 TOCTOU*
 {:.image-caption}
 
-#### 挖掘方法
+#### 挖掘思路
 > 此类问题集中在`kubelet`组件中
 
 - 处理路径时是否follow符号链接
@@ -46,7 +46,7 @@ CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后�
 
 #### 漏洞案例
 
-#### 挖掘方法
+#### 挖掘思路
 
 - 触发代码中的`panic`函数
 - 触发死循环
@@ -57,13 +57,13 @@ CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后�
 
 #### 漏洞案例
 
-#### 挖掘方法
+#### 挖掘思路
 
 ### 权限提升
 
 #### 漏洞案例
 
-#### 挖掘方法
+#### 挖掘思路
 
 ## 组件分析
 
@@ -107,17 +107,15 @@ kubelet监听在10250端口，开放了一些API，可通过HTTPS访问。主要
 	- [Pod删除时发生了什么](https://wenfeng-gao.github.io/post/source-code-kubelet-what-happened-to-kubelet-when-pod-is-deleted/)
 - [SyncLoop](https://www.alibabacloud.com/blog/understanding-the-kubelet-core-execution-frame_593904)
 ![](/assets/img/k8s_sec10.png)
-	- configCh
-	接收`PodConfig`消息，根据消息内容执行`syncPod`
+	- configCh：接收`PodConfig`消息，根据消息内容执行`syncPod`
 	![](/assets/img/k8s_sec8.png)
-	- plegCh
-	接收`PLEG`消息，如果消息不是`ContainerRemoved`则调用`handler.HandlePodSyncs`，回收`Pod`中停止的容器。比如用`docker stop`停止一个容器，`plegCh`就会返回`ContainerDied`消息，`kubelet`会重启这个容器
-	- syncCh
-	计时器，每秒触发去同步`Pod`配置
-	- houseKeepingCh
-	计时器，每两秒触发，调用`HandlePodCleanups`回收停止的`Pod`的资源
+	- plegCh：接收`PLEG`消息，如果消息不是`ContainerRemoved`则调用`handler.HandlePodSyncs`，回收`Pod`中停止的容器。比如用`docker stop`停止一个容器，`plegCh`就会返回`ContainerDied`消息，`kubelet`会重启这个容器
+	- syncCh：计时器，每秒触发去同步`Pod`配置
+	- houseKeepingCh：计时器，每两秒触发，调用`HandlePodCleanups`回收停止的`Pod`的资源
 	- [其他分析文章](https://www.cnblogs.com/luozhiyun/p/13736569.html)
 
 
 #### 漏洞
 
+- [CVE-2017-1002101](#CVE-2017-1002101)
+- [CVE-2021-25741](#CVE-2021-25741)

@@ -103,7 +103,8 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 * 开源情报
   * 在互联网上收集针对云厂商的公开情报。[参考](https://github.com/jivoi/awesome-osint) [安全信息流](https://i.hacking8.com/)
   * 通常云厂商都有ASN(自治系统号)，可通过它收集相关资产信息，例如[阿里的资产](https://i.hacking8.com/src/detail/Alibaba)
-  * 利用网络空间测绘工具，如Shodan、fofa、ZoomEye
+  * 利用网络空间测绘工具，如Shodan、fofa、ZoomEye、Censys
+  * 根据域名、组织名、哈希来查询证书信息，如[crt.sh](https://crt.sh/)。一些服务在用证书认证的时候使用CN字段作为用户标识，在没有证书的情况下可以通过查询证书信息来获取CN
 
 ## 初始访问 (Initial Access)
 
@@ -162,6 +163,7 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * 使用特权容器或者CAP\_ADMIN
   * docker daemon开启了远程访问
   * 容器内使用root账户运行
+  * 容器使用宿主机网络，或者容器内可以访问到宿主机的监听在任意地址的端口，比如22
 * 提权程序
   * 利用SUID程序，find / -perm 4000
   * 通过sudo -l查看是否存在可利用的提权脚本，有时开发人员会做一些掩耳盗铃的事情，虽然服务默认使用了低权限账号，但为了执行某些特权操作而在文件系统中提供了提权脚本(假装别人不知道)
@@ -190,7 +192,10 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 * VPC
   * 利用可控VPC与其他VPC之间的连接(peering、endpoint)进行横移
 * 云服务
-  * 云服务运行业务所使用的资源虽然也在租户区，但防火墙配置可能不同，可以云服务的vpc为跳板继续深入。如serverless服务，就是利用服务资源执行函数，即用户函数的运行环境是在服务的vpc中
+  * 云服务运行业务所使用的资源虽然也在租户区，但防火墙配置可能不同，可以云服务的vpc为跳板继续深入。如serverless服务，就是利用服务资源执行函数，即用户函数的运行环境是在服务的vpc中。真实案例如[Azure PostgreSQL服务跨租户数据窃取](https://www.wiz.io/blog/wiz-research-discovers-extrareplica-cross-account-database-vulnerability-in-azure-postgresql/)：
+  	* A managed cloud service that provides customers a dedicated virtual machine instance within an internal cloud environment
+  	* A service that would allow us to execute code, either as part of the standard functionality of the service or through a newly discovered vulnerability. If we could execute code using a vulnerability, we would be more likely to find a less strict environment, since the service developers likely did not expect users to run their code there
+  	* Service nature should be of high value, used by many and contain sensitive information
 * k8s
   * 利用k8s的证书、token等控制整个集群
 
