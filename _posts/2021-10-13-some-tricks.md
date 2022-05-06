@@ -382,6 +382,9 @@ find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.tes
 # 以此类推
 ```
 
+## typora windows破解版
+<https://www.fahai.org/index.php/archives/166/>
+
 # 系统
 
 ## 编写独立内核模块
