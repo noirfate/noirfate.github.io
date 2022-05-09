@@ -208,6 +208,7 @@ excerpt: useful git repository (研究篇)
 - [reflutter - 逆向调试flutter app工具](https://github.com/ptswarm/reFlutter)
 - [linux kernel hacking](https://github.com/xcellerator/linux_kernel_hacking)
 - [自己编写bootloader](https://de-engineer.github.io/Understanding-booting-process-and-writing-own-os/)
+- [检测是否使用了Hypervisor-assisted Hooking](https://github.com/momo5502/ept-hook-detection)
 
 ## Fuzz
 

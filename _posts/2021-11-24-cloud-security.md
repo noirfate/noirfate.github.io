@@ -123,6 +123,7 @@ excerpt: Cloud Security
 - [Azure PostgreSQL服务跨租户数据窃取](https://www.wiz.io/blog/wiz-research-discovers-extrareplica-cross-account-database-vulnerability-in-azure-postgresql/)
 - [Exploitation of an SSRF vulnerability against EC2 IMDSv2](https://www.yassineaboukir.com//blog/exploitation-of-an-SSRF-vulnerability-against-EC2-IMDSv2/)
 - [在有创建pod权限时，即使没有查看secrets的权限，也可以在pod中挂载任意secret](https://suraj.io/post/2021/05/access-k8s-secrets/)
+- [GCP IAM提权利用脚本](https://github.com/RhinoSecurityLabs/GCP-IAM-Privilege-Escalation)
 
 ## 云原生工具
 
