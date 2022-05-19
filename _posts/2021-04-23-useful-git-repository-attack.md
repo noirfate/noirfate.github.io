@@ -23,13 +23,14 @@ excerpt: useful git repository (攻防篇)
 - [wifite2 - wifi扫描攻击工具](https://github.com/derv82/wifite2)
 - [dirmap - web目录扫描工具](https://github.com/H4ckForJob/dirmap)
 - [feroxbuster - web文本扫描工具](https://github.com/epi052/feroxbuster)
-- [xray - web漏洞扫描工具](https://github.com/chaitin/xray)
+- [xray - web漏洞扫描工具](https://github.com/chaitin/xray) [破解](https://github.com/TryHello/xray_free_crack)
 - [masscan-nmap - masscan扫描端口并用nmap识别服务](https://github.com/7dog7/masscan_to_nmap)
 - [nuclei - 漏洞扫描工具](https://github.com/projectdiscovery/nuclei)
 - [tsunami - 漏洞扫描工具](https://github.com/google/tsunami-security-scanner)
 - [cotopaxi - iot协议扫描工具](https://github.com/Samsung/cotopaxi)
 - [rengine - 网站漏洞扫描工具](https://github.com/yogeshojha/rengine)
 - [escapture - 使用ebpf uprobe抓取ssl流量](https://github.com/ehids/ecapture)
+- [jfscan - 集成masscan,nmap,nuclei的扫描工具](https://github.com/nullt3r/jfscan)
 
 ### 本地扫描工具
 
@@ -107,6 +108,7 @@ excerpt: useful git repository (攻防篇)
 - [cve-pylib - 从redhat数据库中获取cve信息](https://github.com/RedHatProductSecurity/cve-pylib)
 - [每日安全信息](https://github.com/xqx12/daily-info)
 - [BugBountyScanner - 子域名、服务扫描](https://github.com/chvancooten/BugBountyScanner)
+- [开源情报工具收集汇总](https://dhiyaneshgeek.github.io/red/teaming/2022/04/28/reconnaissance-red-teaming/)
 
 ### 云原生渗透工具
 
@@ -293,6 +295,7 @@ excerpt: useful git repository (攻防篇)
 - [Postgresql 渗透总结](https://tttang.com/archive/1547/)
 - [CVE-2022-21449 - jdk15以上ECDSA签名验证漏洞，可任意伪造](https://github.com/khalednassar/CVE-2022-21449-TLS-PoC) [文章](https://neilmadden.blog/2022/04/19/psychic-signatures-in-java/)
 - [CVE-2022-0543 - redis Lua沙盒绕过命令执行](https://github.com/aodsec/CVE-2022-0543)
+- [python uaf利用](https://github.com/kn32/python-buffered-reader-exploit) [文章](https://pwn.win/2022/05/11/python-buffered-reader.html)
 
 ## 研究资料
 

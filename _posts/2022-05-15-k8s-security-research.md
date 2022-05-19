@@ -12,6 +12,7 @@ excerpt: Kubernetes Security Research
 {:toc}
 
 # k8s安全研究
+> [安全公告](https://groups.google.com/g/kubernetes-security-announce)
 
 ## 概览
 ![](/assets/img/k8s_sec1.jpg)

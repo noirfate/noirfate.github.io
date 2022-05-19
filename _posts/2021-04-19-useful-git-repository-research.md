@@ -110,6 +110,7 @@ excerpt: useful git repository (研究篇)
 - [ScyllaHide - 反反调试工具](https://github.com/x64dbg/ScyllaHide)
 - [sems - 沙箱、虚拟化环境检测工具](https://github.com/AlicanAkyol/sems)
 - [imvirt - 虚拟化环境监测工具](https://github.com/DE-IBH/imvirt)
+- [emba - 固件漏洞分析工具](https://github.com/e-m-b-a/emba)
 
 ### binary改写
 

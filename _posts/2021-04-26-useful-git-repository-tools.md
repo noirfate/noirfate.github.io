@@ -109,6 +109,8 @@ excerpt: useful git repository (工具篇)
 - [dngrep - win下文本搜索工具，支持搜索压缩文件及各种文档](https://dngrep.github.io/)
 - [gobypass - go写的免杀loader](https://github.com/huadema/Gobypass)
 - [frp - 反代工具](https://github.com/fatedier/frp)
+- [playwright - web自动化工具](https://github.com/microsoft/playwright)
+- [resh - shell历史搜索工具](https://github.com/curusarn/resh)
 
 
 
