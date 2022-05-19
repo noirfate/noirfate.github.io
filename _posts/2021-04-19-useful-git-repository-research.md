@@ -375,6 +375,7 @@ excerpt: useful git repository (研究篇)
 - [GFuzz - 针对go并发channel的fuzzer](https://github.com/system-pclub/GFuzz) [论文](https://songlh.github.io/paper/gfuzz.pdf)
 - [wfuzz - web fuzzer](https://github.com/xmendez/wfuzz)
 - [rewind - Snapshot-based coverage-guided windows kernel fuzzer](https://github.com/quarkslab/rewind)
+- [内核fuzz为何低效](https://www.cs.ucr.edu/~zhiyunq/pub/icse22_dependency_measurement.pdf)
 
 ## static analysis
 

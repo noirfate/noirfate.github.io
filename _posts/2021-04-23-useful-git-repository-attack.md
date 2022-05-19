@@ -296,6 +296,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-21449 - jdk15以上ECDSA签名验证漏洞，可任意伪造](https://github.com/khalednassar/CVE-2022-21449-TLS-PoC) [文章](https://neilmadden.blog/2022/04/19/psychic-signatures-in-java/)
 - [CVE-2022-0543 - redis Lua沙盒绕过命令执行](https://github.com/aodsec/CVE-2022-0543)
 - [python uaf利用](https://github.com/kn32/python-buffered-reader-exploit) [文章](https://pwn.win/2022/05/11/python-buffered-reader.html)
+- [linux把内核页映射进用户态的利用方法](https://vul.360.net/archives/391?continueFlag=2065c4d6bed3a8e7a80c495d7066e013)
 
 ## 研究资料
 
