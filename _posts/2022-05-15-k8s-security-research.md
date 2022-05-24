@@ -31,10 +31,12 @@ excerpt: Kubernetes Security Research
 
 ##### [CVE-2021-25741](https://noirfate.github.io/2022/04/18/k8s-env#cve-2021-25741)
 CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后会调用`mount`，而`mount`会跟随符号链接，这会产生TOCTOU漏洞。通过`renameat2(AT_FDCWD, source, AT_FDCWD, dest, RENAME_EXCHANGE)`系统调用在校验后`mount`前修改路径为符号链接
-<br>
+
+- CVE-2017-1002101修复
 ![](/assets/img/cve-2017-1002101-fix.jpeg)
 *Fig. CVE-2017-1002101 Fix*
 {:.image-caption}
+- CVE-2021-25741漏洞
 ![](/assets/img/cve-2021-25741-toctou.png)
 *Fig. CVE-2021-25741 TOCTOU*
 {:.image-caption}
