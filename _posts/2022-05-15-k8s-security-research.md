@@ -30,7 +30,8 @@ excerpt: Kubernetes Security Research
 `kubctl cp`从容器拷贝到宿主机时，调用容器中的`tar`命令对文件进行打包，然后在宿主机解压，解压时没有对文件路径进行校验，攻击者可构造恶意`tar`导致路径穿越覆盖宿主机上的任意文件
 
 ##### [CVE-2021-25741](https://noirfate.github.io/2022/04/18/k8s-env#cve-2021-25741)
-CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后会调用`mount`，而`mount`会跟随符号链接，这会产生TOCTOU漏洞。通过`renameat2(AT_FDCWD, source, AT_FDCWD, dest, RENAME_EXCHANGE)`系统调用在校验后`mount`前修改路径为符号链接<br>
+CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后会调用`mount`，而`mount`会跟随符号链接，这会产生TOCTOU漏洞。通过`renameat2(AT_FDCWD, source, AT_FDCWD, dest, RENAME_EXCHANGE)`系统调用在校验后`mount`前修改路径为符号链接
+<br>
 ![](/assets/img/cve-2017-1002101-fix.jpeg)
 *Fig. CVE-2017-1002101 Fix*
 {:.image-caption}
