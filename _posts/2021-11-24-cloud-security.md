@@ -24,6 +24,7 @@ excerpt: Cloud Security
 - [orca](https://orca.security/resources/blog/)
 - [netspi](https://www.netspi.com/blog/technical/cloud-penetration-testing/)
 - [集锦](https://github.com/pen4uin/awesome-cloud-native-security)
+- [从0开始k8s攻防](https://github.com/neargle/my-re0-k8s-security)
 
 ## 开源情报
 
