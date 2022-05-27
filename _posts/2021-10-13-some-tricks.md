@@ -356,8 +356,9 @@ csvtomd [csv_file]
 - 显示unit日志，`journalctl -xefu cron`(`x[catalog], e[end], f[follow], u[unit]`)
 
 ## 在线图片编辑工具
-[AI放大](https://www.upscale.media)
-[图片编辑转换](https://www.img2go.com/zh)
+- [AI放大](https://www.upscale.media)
+- [图片编辑转换](https://www.img2go.com/zh)
+- [Gif压缩](https://docsmall.com/gif-compress)
 
 ## 下载archive.org上保存的网站
 
