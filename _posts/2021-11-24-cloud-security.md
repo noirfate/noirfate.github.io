@@ -151,6 +151,7 @@ excerpt: Cloud Security
 - [kubectl-trace - 在k8s集群中执行bpf](https://github.com/iovisor/kubectl-trace)
 - [kube-prompt - kubectl交互式工具](https://github.com/c-bata/kube-prompt)
 - [TerraformGoat - 利用terraform构建公有云靶场环境](https://github.com/HXSecurity/TerraformGoat)
+- [k9s - k8s终端UI工具](https://github.com/derailed/k9s/)
 
 ## CVE
 
