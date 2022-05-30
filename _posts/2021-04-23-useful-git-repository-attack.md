@@ -165,6 +165,8 @@ excerpt: useful git repository (攻防篇)
 - [恶意mysql server](https://github.com/rmb122/rogue_mysql_server)
 - [Linux内核保护机制绕过](https://mp.weixin.qq.com/s/gSTbXW6M72QYtVPoZswhyw)
 - [各种语言反弹shell生成器](https://github.com/0dayCTF/reverse-shell-generator) [网站](https://www.revshells.com/)
+- [Awesome-Redteam](https://github.com/Threekiii/Awesome-Redteam)
+- [CyberChef - 编解码、加解密工具](https://github.com/gchq/CyberChef) [在线](https://gchq.github.io/CyberChef)
 
 ## POC
 
