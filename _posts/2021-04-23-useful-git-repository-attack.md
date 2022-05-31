@@ -196,6 +196,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-21907 - win http协议栈RCE](https://github.com/antx-code/CVE-2022-21907)
 - [CNVD-2022-10270 - win提权](https://github.com/Ryze-T/CNVD-2022-10270-LPE)
 - [7z本地提权](https://github.com/kagancapar/CVE-2022-29072)
+- [Follina word命令执行](https://github.com/chvancooten/follina.py) [说明](https://gist.github.com/tothi/66290a42896a97920055e50128c9f040)
 
 ### linux
 
