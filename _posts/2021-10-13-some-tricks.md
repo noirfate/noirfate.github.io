@@ -63,24 +63,31 @@ function __curl() {
 __curl http://www.google.com/favicon.ico > mine.ico
 ```
 
-## 使用youtube-dl
+## 视频下载转换剪辑
+> 使用yt-dlp代替youtube-dl，下载速度会有很大提升
 
 - 下载视频列表
 ```shell
 # 例
-youtube-dl --proxy 127.0.0.1:1080 --yes-playlist --embed-subs -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "https://www.youtube.com/watch?v=fNxaJsNG3-s&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S"
+yt-dlp --proxy 127.0.0.1:1080 --yes-playlist --embed-subs -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "https://www.youtube.com/watch?v=fNxaJsNG3-s&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S"
 ```
 
 - 下载视频列表的字幕
 ```shell
 # 例
-youtube-dl --proxy 127.0.0.1:1080 --sub-lang en --write-auto-sub --sub-format srt --skip-download --yes-playlist "https://www.youtube.com/watch?v=fNxaJsNG3-s&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S"
+yt-dlp --proxy 127.0.0.1:1080 --sub-lang en --write-auto-sub --sub-format srt --skip-download --yes-playlist "https://www.youtube.com/watch?v=fNxaJsNG3-s&list=PLQY2H8rRoyvzDbLUZkbudP-MFQZwNmU4S"
 ```
 
 - 失败重试
 ```shell
-do { youtube-dl --proxy 127.0.0.1:1081 --socket-timeout 10 --yes-playlist --embed-subs -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 --sub-lang en --write-auto-sub https://www.youtube.com/playlist?list=PLLHTzKZzVU9eaEyErdV26ikyolxOsz6mq } while(! $?)
+do { yt-dlp --proxy 127.0.0.1:1081 --socket-timeout 10 --yes-playlist --embed-subs -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 --sub-lang en --write-auto-sub https://www.youtube.com/playlist?list=PLLHTzKZzVU9eaEyErdV26ikyolxOsz6mq } while(! $?)
 ```
+
+- Axiom集成了ffmpeg和youtube-dl并提供了UI界面，可用它方便的下载转换剪辑视频
+  - 下载Axiom: https://github.com/MattMcManis/Axiom/releases
+  - 解压
+  - 下载yt-dlp.exe: https://github.com/yt-dlp/yt-dlp/releases
+  - 用yt-dlp替换Axiom的youtube-dl
 
 ## Github Desktop配置代理
 配置文件在`C:\users\<username>\.gitconfig`
