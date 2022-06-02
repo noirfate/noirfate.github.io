@@ -81,6 +81,7 @@ excerpt: useful git repository (攻防篇)
 - [java rmi利用工具](https://github.com/qtc-de/remote-method-guesser)
 - [Nebula - 公有云渗透框架](https://github.com/gl4ssesbo1/Nebula)
 - [faraday - 集成式渗透框架](https://github.com/infobyte/faraday)
+- [yakit - 网络安全单兵工具](https://github.com/yaklang/yakit)
 
 ### 持久化工具
 
