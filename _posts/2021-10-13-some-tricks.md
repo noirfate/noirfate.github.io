@@ -64,7 +64,8 @@ __curl http://www.google.com/favicon.ico > mine.ico
 ```
 
 ## 视频下载转换剪辑
-> 使用yt-dlp代替youtube-dl，下载速度会有很大提升
+> 使用yt-dlp替代youtube-dl，下载速度会有很大提升
+> 使用[lux](https://github.com/iawia002/lux)替代you-get
 
 - 下载视频列表
 ```shell
