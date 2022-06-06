@@ -47,6 +47,7 @@ excerpt: useful git repository (研究篇)
 - [kaiju - CERT开发的插件](https://github.com/CERTCC/kaiju)
 - [efiseek - efi分析插件](https://github.com/retrage/efiSeek/tree/efi-xplorer)
 - [BinAbsInspector - 二进制漏洞挖掘插件](https://github.com/KeenSecurityLab/BinAbsInspector)
+- [ghostrings - 恢复go字符串](https://github.com/nccgroup/ghostrings) [文章](https://research.nccgroup.com/2022/05/20/tool-release-ghostrings/)
 
 ### GDB扩展
 
