@@ -125,6 +125,10 @@ excerpt: Cloud Security
 - [Exploitation of an SSRF vulnerability against EC2 IMDSv2](https://www.yassineaboukir.com//blog/exploitation-of-an-SSRF-vulnerability-against-EC2-IMDSv2/)
 - [在有创建pod权限时，即使没有查看secrets的权限，也可以在pod中挂载任意secret](https://suraj.io/post/2021/05/access-k8s-secrets/)
 - [GCP IAM提权利用脚本](https://github.com/RhinoSecurityLabs/GCP-IAM-Privilege-Escalation)
+- [GCP IAP认证绕过，攻击者使用被害者的Oauth Client ID和任意Secret创建IAP，当被害者访问攻击者的URL时在中间一次redirect时会泄露被害者的token](https://www.seblu.de/2021/12/iap-bypass.html)
+- [GCP Dataflow虚机上JMX服务RCE](https://mbrancato.github.io/2021/12/28/rce-dataflow.html)
+- [GCP ASM Istio多集群部署时，control plane会使用istio-system中的secret，其中保存了集群的kubeconfig，通过修改kubeconfig增加exec即可在control plane执行任意代码](https://lf.lc/vrp/203177829/)
+- [GCP Cloud Shell命令注入](https://docs.google.com/document/d/1-TTCS6fS6kvFUkoJmX4Udr-czQ79lSUVXiWsiAED_bs/edit#)
 
 ## 云原生工具
 
@@ -250,6 +254,7 @@ excerpt: Cloud Security
 - [CVE-2022-0995: watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
 - [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666：ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
+- [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 
 # APP
 
@@ -265,8 +270,44 @@ excerpt: Cloud Security
 	- [part2](https://developers.redhat.com/blog/2021/05/05/detecting-memory-management-bugs-with-gcc-11-part-2-deallocation-functions/)
 	- [static analysis](https://developers.redhat.com/blog/2021/01/28/static-analysis-updates-in-gcc-11/)
 - JAVA沙箱
-	- [沙箱逃逸](https://tersesystems.com/blog/2015/12/29/sandbox-experiment/) [其他](https://c0d3p1ut0s.github.io/%E6%94%BB%E5%87%BBJava%E6%B2%99%E7%AE%B1/)
+	- [沙箱逃逸](https://tersesystems.com/blog/2015/12/29/sandbox-experiment/) [其他1](https://c0d3p1ut0s.github.io/%E6%94%BB%E5%87%BBJava%E6%B2%99%E7%AE%B1/) [其他2](https://www.mi1k7ea.com/2020/05/03/%E6%B5%85%E6%9E%90Java%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/)
 	- [黑名单扩展](http://pro-grade.sourceforge.net/)
+	- [权限风险说明]( https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html)
+	- [java cgroup](https://github.com/haosdent/jcgroup)
+	- 黑名单示例
+	```
+	{
+    (java.io.FilePermission "<<ALL FILES>>" "read,write,delete,execute")
+    (java.net.SocketPermission "*:1-" "connect,accept,listen,resolve")
+    (java.net.URLPermission "http:*" "*:*")
+    (java.net.URLPermission "https:*" "*:*")
+    (java.net.NetPermission "*")
+    (java.lang.RuntimePermission "createClassLoader")
+    (java.lang.RuntimePermission "setContextClassLoader")
+    (java.lang.RuntimePermission "closeClassLoader")
+    (java.lang.RuntimePermission "setSecurityManager")
+    (java.lang.RuntimePermission "createSecurityManager")
+    (java.lang.RuntimePermission "loadLibrary.*")
+    (java.lang.RuntimePermission "exitVM.*")
+    (java.lang.RuntimePermission "shutdownHooks")
+    (java.lang.RuntimePermission "setIO")
+    (java.lang.RuntimePermission "modifyThread")
+    (java.lang.RuntimePermission "stopThread")
+    (java.lang.RuntimePermission "modifyThreadGroup")
+    (java.lang.RuntimePermission "readFileDescriptor")
+    (java.lang.RuntimePermission "writeFileDescriptor)
+    (java.lang.RuntimePermission "defineClassInPackage.*")
+    (java.lang.RuntimePermission "setDefaultUncaughtExceptionHandler")
+    (java.lang.RuntimePermission "usePolicy")
+    (java.lang.RuntimePermission "accessDeclareMembers")
+    (java.lang.RuntimePermission "getProtectionDomain")
+    (java.lang.RuntimePermission "getenv.*")
+    (java.lang.RuntimePermission "setFactory")
+    (java.lang.reflect.ReflectPermission "suppressAccessChecks")
+    (java.util.PropertyPermission "*" "read,write")
+    (java.awt.AWTPermission "*")
+  }
+	```
 - Go语言
 	- [go books](https://github.com/dariubs/GoBooks)
 	- [go语言设计与实现](https://draveness.me/golang/)

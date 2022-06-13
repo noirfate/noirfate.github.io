@@ -290,6 +290,7 @@ excerpt: useful git repository (研究篇)
 - [Fitm - 中间人覆盖度反馈fuzzer，可同时fuzz客户端和服务端](https://github.com/FGSect/FitM)
 - [K-Scheduler - afl样本选择优化](https://github.com/Dongdongshe/K-Scheduler) [文章](https://arxiv.org/pdf/2203.12064.pdf)
 - [GraphFuzz - library api fuzzer](https://github.com/hgarrereyn/GraphFuzz)
+- [honggfuzz-rs - 利用honggfuzz来fuzz rust](https://github.com/rust-fuzz/honggfuzz-rs)
 
 ### Syzkaller系
 
@@ -298,6 +299,7 @@ excerpt: useful git repository (研究篇)
 - [harbian - 增加权重、状态和webui](https://github.com/hardenedlinux/harbian-qa)
 - [moonshine - 为syzkaller生成seed](https://github.com/shankarapailoor/moonshine)
 - [vaultfuzzer - 基于syzkaller改进，cov过滤、pc权重等、llvm编译](https://hardenedvault.net/2021/09/13/vaultfuzzer.html)
+- [raw-gadget - use raw gadget to fuzz usb system](https://github.com/xairy/raw-gadget) [slides](https://docs.google.com/presentation/d/1sArf2cN5tAOaovlaL3KBPNDjYOk8P6tRrzfkclsbO_c/edit#slide=id.g1925acbbf3_0_0)
 
 ### sanitizer
 
@@ -378,6 +380,7 @@ excerpt: useful git repository (研究篇)
 - [wfuzz - web fuzzer](https://github.com/xmendez/wfuzz)
 - [rewind - Snapshot-based coverage-guided windows kernel fuzzer](https://github.com/quarkslab/rewind)
 - [内核fuzz为何低效](https://www.cs.ucr.edu/~zhiyunq/pub/icse22_dependency_measurement.pdf)
+- [sfuzz - 针对RISC-V二进制的覆盖度反馈fuzz](https://github.com/seal9055/sfuzz/) [blog](https://seal9055.com/blog/?p=sfuzz&d=fuzzing)
 
 ## static analysis
 

@@ -238,6 +238,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-25636 - netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 - [CVE-2022-29799/29800 - Nimbuspwn，dbus提权](https://www.microsoft.com/security/blog/2022/04/26/microsoft-finds-new-elevation-of-privilege-linux-vulnerability-nimbuspwn/) [检测](https://github.com/jfrog/nimbuspwn-tools)
+- [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 
 ### container
 
