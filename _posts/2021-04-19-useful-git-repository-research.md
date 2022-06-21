@@ -212,6 +212,8 @@ excerpt: useful git repository (研究篇)
 - [自己编写bootloader](https://de-engineer.github.io/Understanding-booting-process-and-writing-own-os/)
 - [检测是否使用了Hypervisor-assisted Hooking](https://github.com/momo5502/ept-hook-detection)
 - [SHELF - 用户态加载执行静态ELF](https://github.com/ulexec/SHELF-Loading)
+- [取证工具集合](https://github.com/cugu/awesome-forensics)
+- [leaven - conert c to go without cgo](https://github.com/andybalholm/leaven)
 
 ## Fuzz
 

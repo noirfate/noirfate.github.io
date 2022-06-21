@@ -29,10 +29,13 @@ excerpt: Cloud Security
 ## 开源情报
 
 - [hacking8](https://i.hacking8.com/)
+- [osv - 开源软件漏洞库](https://osv.dev/)
+- [漏洞信息搜索](https://sca.analysiscenter.veracode.com/vulnerability-database/search)
+- [漏洞利用搜索](https://sploitus.com/)
 
-## k8s知识
+## 云原生知识
 
-- 架构
+- k8s架构
 ![](/assets/img/cs2.png)
 ![](/assets/img/cs3.png)
 - [Kubernetes指南](https://feisky.gitbooks.io/kubernetes)
@@ -49,6 +52,8 @@ excerpt: Cloud Security
 - [k8s审计工具介绍](https://fuckcloudnative.io/posts/tools-and-methods-for-auditing-kubernetes-rbac-policies/)
 - [利用user namespace增强安全性](https://kinvolk.io/blog/2020/12/improving-kubernetes-and-container-security-with-user-namespaces/)
 - [云原生安全书的相关源码](https://github.com/Metarget/cloud-native-security-book)
+- [云原生术语](https://glossary.cncf.io/abstraction/)
+- [通过k8s软件物料清单查询漏洞](https://security.googleblog.com/2022/06/sbom-in-action-finding-vulnerabilities.html)
 
 ## 云原生攻击
 
@@ -129,6 +134,7 @@ excerpt: Cloud Security
 - [GCP Dataflow虚机上JMX服务RCE](https://mbrancato.github.io/2021/12/28/rce-dataflow.html)
 - [GCP ASM Istio多集群部署时，control plane会使用istio-system中的secret，其中保存了集群的kubeconfig，通过修改kubeconfig增加exec即可在control plane执行任意代码](https://lf.lc/vrp/203177829/)
 - [GCP Cloud Shell命令注入](https://docs.google.com/document/d/1-TTCS6fS6kvFUkoJmX4Udr-czQ79lSUVXiWsiAED_bs/edit#)
+- [Azure synapse sudo提权](https://medium.com/tenable-techblog/microsoft-azure-synapse-pwnalytics-87c99c036291)
 
 ## 云原生工具
 
@@ -148,7 +154,7 @@ excerpt: Cloud Security
 - [rakkess - kubectl权限检查工具](https://github.com/corneliusweig/rakkess)
 - [pacu - AWS后渗透工具](https://rhinosecuritylabs.com/aws/pacu-open-source-aws-exploitation-framework/)
 - [gcphound - GCP渗透工具](https://desi-jarvis.medium.com/gcphound-a-swiss-army-knife-offensive-toolkit-for-google-cloud-platform-gcp-fb9e18b959b4)
-- [cloudgoat - aws靶场](https://github.com/RhinoSecurityLabs/cloudgoat)
+- [cloudgoat - aws靶场](https://github.com/RhinoSecurityLabs/cloudgoat) [使用样例](https://dhiyaneshgeek.github.io/cloud/security/2022/06/15/aws-misconfigurations/)
 - 云资源关系可视化
 	- [awspx](https://github.com/FSecureLABS/awspx)
 	- [Stormspotter](https://github.com/Azure/Stormspotter)

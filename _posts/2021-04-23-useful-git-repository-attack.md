@@ -198,6 +198,7 @@ excerpt: useful git repository (攻防篇)
 - [CNVD-2022-10270 - win提权](https://github.com/Ryze-T/CNVD-2022-10270-LPE)
 - [7z本地提权](https://github.com/kagancapar/CVE-2022-29072)
 - [Follina word命令执行](https://github.com/chvancooten/follina.py) [说明](https://gist.github.com/tothi/66290a42896a97920055e50128c9f040)
+- [利用callback执行shellcode](https://github.com/aahmad097/AlternativeShellcodeExec) [文章](https://marcoramilli.com/2022/06/15/running-shellcode-through-windows-callbacks/)
 
 ### linux
 
@@ -264,6 +265,7 @@ excerpt: useful git repository (攻防篇)
 - [meltdown](https://github.com/paboldin/meltdown-exploit)
 - [saddns - 利用ICMP频率限制探测端口和TxID](https://github.com/seclab-ucr/SADDNS)
 - [Spectre-BHB](https://github.com/vusec/bhi-spectre-bhb)
+- [hertzbleed - 利用CPU动态升降频特性进行侧信道攻击](https://www.hertzbleed.com/)
 
 ### 其他
 
@@ -302,6 +304,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-0543 - redis Lua沙盒绕过命令执行](https://github.com/aodsec/CVE-2022-0543)
 - [python uaf利用](https://github.com/kn32/python-buffered-reader-exploit) [文章](https://pwn.win/2022/05/11/python-buffered-reader.html)
 - [linux把内核页映射进用户态的利用方法](https://vul.360.net/archives/391?continueFlag=2065c4d6bed3a8e7a80c495d7066e013)
+- [curl漏洞挖掘](https://haxatron.gitbook.io/vulnerability-research/vr2)
 
 ## 研究资料
 
@@ -371,6 +374,7 @@ excerpt: useful git repository (攻防篇)
 - [sysmon - linux系统监控](https://github.com/Sysinternals/SysmonForLinux/) [微软配置](https://github.com/microsoft/MSTIC-Sysmon)
 - [wazuh - 主机监控平台](https://github.com/wazuh/wazuh)
 - [ehids - 使用ebpf进行监控](https://github.com/ehids/ehids-agent)
+- [VED - 内核加固及漏洞利用防护](https://github.com/hardenedvault/ved)
 
 ### 软件防护
 
