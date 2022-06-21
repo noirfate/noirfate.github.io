@@ -112,15 +112,15 @@ func untarAll(reader io.Reader, destFile, prefix string) error {
     tarReader := tar.NewReader(reader)
     for {
         header, err := tarReader.Next()
-				...
-				// mode是文件类型，用它来判断是否为普通文件还是符号链接
-				// destFile是文件保存的目标路径，例如：kubectl cp test:/etc/hosts /tmp，/tmp即为destFile
-				// header.Name为tar包中的文件名
-				// outFileName为目标文件名，如果outFileName不在`destFile`的路径内，就会发生路径穿越
+        ...
+        // mode是文件类型，用它来判断是否为普通文件还是符号链接
+        // destFile是文件保存的目标路径，例如：kubectl cp test:/etc/hosts /tmp，/tmp即为destFile
+        // header.Name为tar包中的文件名
+        // outFileName为目标文件名，如果outFileName不在`destFile`的路径内，就会发生路径穿越
         mode := header.FileInfo().Mode()
         outFileName := path.Join(destFile, header.Name[len(prefix):])
         baseName := path.Dir(outFileName)
-				...
+        ...
         // 处理符号链接的情况，之后的漏洞都出在对符号链接的处理上
         if mode&os.ModeSymlink != 0 {
             err := os.Symlink(header.Linkname, outFileName)
@@ -129,11 +129,11 @@ func untarAll(reader io.Reader, destFile, prefix string) error {
             }
         } else {
             outFile, err := os.Create(outFileName)
-						...
+            ...
             if _, err := io.Copy(outFile, tarReader); err != nil {
                 return err
             }
-						...
+            ...
         }
     }
 		...
@@ -178,7 +178,7 @@ func untarAll(reader io.Reader, destFile, prefix string) error {
 > tar有两个修改已有tar包的功能，`-u`是`update`，`-r`是`append`
 
 - 创建恶意tar包
-```
+```bash
 #!/bin/sh
 # 创建符号链接并打包
 mkdir ./baddir
@@ -199,7 +199,7 @@ echo "[*] Done!"
 - 虽然使用`tar`命令解压会报错，但`kubectl`的解压是自己实现的，可以正常解压
 ![](/assets/img/kubectl_path_escape5.png)
 - 在tar包中创建同名文件
-```
+```bash
 echo "one" > foo
 tar -cf test.tar foo
 echo "two" > foo
@@ -376,6 +376,11 @@ func untarAll(reader io.Reader, destFile, prefix string) error {
 
 执行
 ![](/assets/img/kubectl_path_escape14.png)
+
+##### 漏洞修复
+
+修复方式为禁止重名符号链接和把创建符号链接放到最后，这样就可以防止修改符号链接或往符号链接指向的文件写数据
+![](/assets/img/cve-2019-11251-patch.png)
 
 ### 回顾
 
