@@ -47,6 +47,7 @@ excerpt: useful git repository (攻防篇)
 - [pspy - 本地提权辅助工具](https://github.com/DominicBreuker/pspy)
 - [slither - 智能合约代码安全扫描工具](https://github.com/crytic/slither)
 - [snyk - 开源组件漏洞扫描工具](https://github.com/snyk/snyk)
+- [floss - 恶意软件字符串提取](https://github.com/mandiant/flare-floss)
 
 ### 远控工具
 
@@ -168,6 +169,7 @@ excerpt: useful git repository (攻防篇)
 - [各种语言反弹shell生成器](https://github.com/0dayCTF/reverse-shell-generator) [网站](https://www.revshells.com/)
 - [Awesome-Redteam](https://github.com/Threekiii/Awesome-Redteam)
 - [CyberChef - 编解码、加解密工具](https://github.com/gchq/CyberChef) [在线](https://gchq.github.io/CyberChef)
+- [MSSQL 渗透指南](https://github.com/Ignitetechnologies/MSSQL-Pentest-Cheatsheet)
 
 ## POC
 
@@ -179,6 +181,7 @@ excerpt: useful git repository (攻防篇)
 - [cve poc列表](https://github.com/qazbnm456/awesome-cve-poc)
 - [web poc列表](https://github.com/EdgeSecurityTeam/Vulnerability)
 - [sploitus - exploit搜索引擎](https://sploitus.com/)
+- [区块链poc列表](https://github.com/Rivaill/CryptoVulhub)
 
 ### win
 
@@ -355,6 +358,7 @@ excerpt: useful git repository (攻防篇)
 - [漏洞信息搜索](https://sca.analysiscenter.veracode.com/vulnerability-database/search)
 - [安全会议PPT集合](https://github.com/FeeiCN/Security-PPT)
 - [NCCGroup Research](https://research.nccgroup.com/)
+- [智能合约安全研究资料](https://github.com/saeidshirazi/Awesome-Smart-Contract-Security)
 
 ## 防护
 

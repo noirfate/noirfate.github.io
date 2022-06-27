@@ -214,6 +214,7 @@ excerpt: useful git repository (研究篇)
 - [SHELF - 用户态加载执行静态ELF](https://github.com/ulexec/SHELF-Loading)
 - [取证工具集合](https://github.com/cugu/awesome-forensics)
 - [leaven - conert c to go without cgo](https://github.com/andybalholm/leaven)
+- [DHook - java交互式自定义动态hook工具](https://github.com/keven1z/DHook)
 
 ## Fuzz
 
@@ -293,6 +294,7 @@ excerpt: useful git repository (研究篇)
 - [K-Scheduler - afl样本选择优化](https://github.com/Dongdongshe/K-Scheduler) [文章](https://arxiv.org/pdf/2203.12064.pdf)
 - [GraphFuzz - library api fuzzer](https://github.com/hgarrereyn/GraphFuzz)
 - [honggfuzz-rs - 利用honggfuzz来fuzz rust](https://github.com/rust-fuzz/honggfuzz-rs)
+- [AlphaFuzzplusplus - 为afl++添加基于蒙特卡洛树搜索算法的种子选择策略](https://github.com/zzyyrr/AlphaFuzzplusplus)
 
 ### Syzkaller系
 
@@ -312,6 +314,7 @@ excerpt: useful git repository (研究篇)
 - [cmpcov - c/c++插桩工具，用来提取程序中有关数据比较的信息](https://github.com/googleprojectzero/CompareCoverage)
 - [bitype - 类型混淆检测](https://github.com/bin2415/Bitype)
 - [vzkernel - 集成asan的3.10内核](https://github.com/OpenVZ/vzkernel)
+- [FuZZan - 比ASAN占用内存更小](https://github.com/HexHive/FuZZan)
 
 ### 其他
 

