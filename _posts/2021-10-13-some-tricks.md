@@ -421,6 +421,9 @@ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch ${fil
 git push --all --force
 ```
 
+## chrome允许访问显示证书错误的网站
+在网页空白处输入`thisisunsafe`即可
+
 # 系统
 
 ## 编写独立内核模块

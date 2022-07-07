@@ -32,6 +32,8 @@ excerpt: Cloud Security
 - [osv - 开源软件漏洞库](https://osv.dev/)
 - [漏洞信息搜索](https://sca.analysiscenter.veracode.com/vulnerability-database/search)
 - [漏洞利用搜索](https://sploitus.com/)
+- [云服务商漏洞搜索引擎](https://www.cloudvulndb.org/results?q=)
+- [2022 top25漏洞类型](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html)
 
 ## 云原生知识
 
@@ -40,6 +42,7 @@ excerpt: Cloud Security
 ![](/assets/img/cs3.png)
 - [Kubernetes指南](https://feisky.gitbooks.io/kubernetes)
 - [kubernetes中文指南](https://jimmysong.io/kubernetes-handbook)
+- [kubernetes图书](https://lib.jimmysong.io/)
 - [kubernetes RBAC介绍](https://www.cncf.io/wp-content/uploads/2020/08/2020_04_Introduction-to-Kubernetes-RBAC.pdf)
 - [kubernetes历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
 - [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
@@ -54,6 +57,7 @@ excerpt: Cloud Security
 - [云原生安全书的相关源码](https://github.com/Metarget/cloud-native-security-book)
 - [云原生术语](https://glossary.cncf.io/abstraction/)
 - [通过k8s软件物料清单查询漏洞](https://security.googleblog.com/2022/06/sbom-in-action-finding-vulnerabilities.html)
+- [kubeconfig执行命令及读取文件安全隐患](https://banzaicloud.com/blog/kubeconfig-security/)
 
 ## 云原生攻击
 
@@ -137,6 +141,8 @@ excerpt: Cloud Security
 - [Azure synapse sudo提权](https://medium.com/tenable-techblog/microsoft-azure-synapse-pwnalytics-87c99c036291)
 - [AWS Cognito错误配置，允许创建新用户，从而获取AWS凭证](https://notsosecure.com/hacking-aws-cognito-misconfigurations)
 - [Azure 利用docker remote api逃逸dynamics container sandbox](https://hencohen10.medium.com/microsoft-dynamics-container-sandbox-rce-via-unauthenticated-docker-remote-api-20-000-bounty-7f726340a93b)
+- [Azure Fabric服务利用其数据收集agent的读写文件TOCTOU漏洞写入主机任意文件导致容器逃逸](https://unit42.paloaltonetworks.com/fabricscape-cve-2022-30137/)
+- [AWS workspace client 命令注入RCE CVE-2021-28112](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/)
 
 ## 云原生工具
 
@@ -184,7 +190,7 @@ excerpt: Cloud Security
 - [CVE-2019–18801: envoy heap overflow](https://blog.envoyproxy.io/exploiting-an-envoy-heap-vulnerability-96173d41792)
 - [CVE-2019-1002101: kubectl cp没有处理好符号链接导致任意文件写](https://unit42.paloaltonetworks.com/disclosing-directory-traversal-vulnerability-kubernetes-copy-cve-2019-1002101/) [POC](https://github.com/brompwnie/CVE-2019-1002101-Helpers)
 - [CVE-2020-8554: k8s service流量劫持](https://unit42.paloaltonetworks.com/cve-2020-8554/) [POC](https://hackerone.com/reports/764986)
-- [CVE-2020-8555: k8s controler SSRF](https://medium.com/@BreizhZeroDayHunters/when-its-not-only-about-a-kubernetes-cve-8f6b448eafa8) [其他](https://hackerone.com/reports/776017)
+- [CVE-2020-8555: k8s controller SSRF](https://medium.com/@BreizhZeroDayHunters/when-its-not-only-about-a-kubernetes-cve-8f6b448eafa8) [其他](https://hackerone.com/reports/776017)
 - [CVE-2020-8557: Node disk DOS by writing to container /etc/hosts](https://github.com/kubernetes/kubernetes/issues/93032) [其他](https://hackerone.com/reports/867699)
 - [CVE-2020-8558: route_localnet漏洞](https://github.com/tabbysable/POC-2020-8558)
 - [CVE-2020-8559: 恶意kubelet返回302给apiserver，控制node的攻击者可在任意pod中执行代码](https://github.com/tdwyer/CVE-2020-8559) [分析](http://blog.nsfocus.net/cve-2020-8559/)
@@ -198,8 +204,7 @@ excerpt: Cloud Security
 - [CVE-2021-21284: docker使用--userns-remap时，容器中的root用户如果能够修改`/var/lib/docker/<remapping>`则可以提权](https://github.com/moby/moby/security/advisories/GHSA-7452-xqpj-6rpc)
 - [CVE-2021-25738: k8s java client parse yaml exec](https://j0vsec.com/post/cve-2021-25738/) [POC](https://github.com/jordyv/poc-snakeyaml)
 - [CVE-2021-25741: k8s subpath mount符号链接条件竞争逃逸](https://github.com/Betep0k/CVE-2021-25741) [文章1](https://sysdig.com/blog/cve-2021-25741-kubelet-falco/) [文章2](https://security.googleblog.com/2021/12/exploring-container-security-storage.html)
-- [CVE-2021-25742: k8s ingress-nginx read local file](https://hackerone.com/reports/1249583)
-- [CVE-2021-28112: AWS workspace client 命令注入RCE](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/)
+- [CVE-2021-25742: k8s ingress-nginx read local file](https://hackerone.com/reports/1249583) [文章](https://blog.lightspin.io/kubernetes-nginx-ingress-controller-vulnerabilities)
 - [CVE-2021-30465: docker runc mount TOCTOU](https://www.kingkk.com/2021/06/runc%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%EF%BC%88CVE-2021-30465%EF%BC%89/) [其他](https://hackmd.io/@mauilion/By2CV2MtO)
 - [CVE-2021-41091: 利用/var/lib/docker下setuid程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558) [利用](https://www.cyberark.com/resources/threat-research-blog/how-docker-made-me-more-capable-and-the-host-less-secure)
 - [CVE-2021-43784: runc netlink message int16 overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=2241)
@@ -235,6 +240,7 @@ excerpt: Cloud Security
 - [Aleph Research](https://alephsecurity.com/)
 - [Alexander Popov](https://a13xp0p0v.github.io/)
 - [pwn2own 2021 ubuntu lpe](https://flatt.tech/assets/reports/210401_pwn2own/whitepaper.pdf)
+- [modprobe内核利用方法](https://sam4k.com/like-techniques-modprobe_path/)
 
 ## CVE
 

@@ -94,6 +94,9 @@ excerpt: useful git repository (攻防篇)
 - [Diamorphine - 基于linux内核模块的rootkit](https://github.com/m0nad/Diamorphine)
 - [pe_to_shellcode - 把pe文件变成shellcode](https://github.com/hasherezade/pe_to_shellcode)
 - [memit - run elf from memory](https://github.com/liamg/memit)
+- [mimic - 通过重命名进程进行隐藏](https://github.com/emptymonkey/mimic)
+- [TripleCross - ebpf rootkit](https://github.com/h3xduck/TripleCross)
+- [pamspy - 利用uprobe hook pam获取密码](https://github.com/citronneur/pamspy)
 
 ### OSINT(开源情报)工具
 
@@ -359,6 +362,7 @@ excerpt: useful git repository (攻防篇)
 - [安全会议PPT集合](https://github.com/FeeiCN/Security-PPT)
 - [NCCGroup Research](https://research.nccgroup.com/)
 - [智能合约安全研究资料](https://github.com/saeidshirazi/Awesome-Smart-Contract-Security)
+- [攻击者常用搜索引擎](https://github.com/edoardottt/awesome-hacker-search-engines)
 
 ## 防护
 

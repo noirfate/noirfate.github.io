@@ -113,6 +113,7 @@ excerpt: useful git repository (工具篇)
 - [playwright - web自动化工具](https://github.com/microsoft/playwright)
 - [resh - shell历史搜索工具](https://github.com/curusarn/resh)
 - [slidev - 用markdown写ppt](https://github.com/slidevjs/slidev)
+- [cypress - web自动化工具](https://github.com/cypress-io/cypress)
 
 
 

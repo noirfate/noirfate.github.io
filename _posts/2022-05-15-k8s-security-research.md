@@ -17,67 +17,26 @@ excerpt: Kubernetes Security Research
 ## 概览
 ![](/assets/img/k8s_sec1.jpg)
 
-## 威胁分析
+## 配置安全
 
-### 容器逃逸
+### 基线检查
 
-#### 漏洞案例
+#### 文档
 
-##### [CVE-2017-1002101](https://noirfate.github.io/2022/04/18/k8s-env#cve-2017-1002101)
-容器A和容器B都挂载相同的`hostPath`，容器A先启动并在`hostPath`下创建指向`/`的符号链接`rootLink`，设置容器B的`hostPath`的`subPath`为`rootLink`，当启动容器B后，`kubelet`会把宿主机`/`挂载到容器B中<br>
+- [Rancher_Benchmark_Assessment v2.4](https://releases.rancher.com/documents/security/2.4/Rancher_Benchmark_Assessment.pdf)
+- [CIS Google Kubernetes Engine (GKE) Benchmark v1.0.0](https://github.com/cismirror/old-benchmarks-archive/blob/master/CIS%20Google%20Kubernetes%20Engine%20(GKE)%20Benchmark%20v1.0.0.pdf)
 
-##### [CVE-2018-1002100](https://noirfate.github.io/2022/04/18/k8s-env#cve-2018-1002100)
-`kubctl cp`从容器拷贝到宿主机时，调用容器中的`tar`命令对文件进行打包，然后在宿主机解压，解压时没有对文件路径进行校验，攻击者可构造恶意`tar`导致路径穿越覆盖宿主机上的任意文件
+#### 工具
 
-##### [CVE-2021-25741](https://noirfate.github.io/2022/04/18/k8s-env#cve-2021-25741)
-CVE-2017-1002101的修复策略不完善，如下图所示，在校验完成后会调用`mount`，而`mount`会跟随符号链接，这会产生TOCTOU漏洞。通过`renameat2(AT_FDCWD, source, AT_FDCWD, dest, RENAME_EXCHANGE)`系统调用在校验后`mount`前修改路径为符号链接
+- [kubernetes-cis-benchmark](https://github.com/neuvector/kubernetes-cis-benchmark)
+- [kube-bench](https://github.com/aquasecurity/kube-bench)
+- [rbac检查工具介绍](https://icloudnative.io/posts/tools-and-methods-for-auditing-kubernetes-rbac-policies/)
 
-######
-![](/assets/img/cve-2017-1002101-fix.jpeg)
-*Fig. CVE-2017-1002101 Fix*
-{:.image-caption}
-######
-![](/assets/img/cve-2021-25741-toctou.png)
-*Fig. CVE-2021-25741 TOCTOU*
-{:.image-caption}
+### 利用方法
 
-#### 挖掘思路
-> 此类问题集中在`kubelet`组件中
+- [kubeconfig命令执行](https://banzaicloud.com/blog/kubeconfig-security/)
 
-- 处理路径时是否follow符号链接
-- 处理路径时是否存在路径穿越问题
-- 检查路径时是否存在`TOCTOU`的问题
-
-### 拒绝服务
-
-#### 漏洞案例
-
-#### 挖掘思路
-
-- 触发代码中的`panic`函数
-- 触发死循环
-- 触发channel堵塞
-- 触发死锁
-
-### 信息泄露
-
-#### 漏洞案例
-
-#### 挖掘思路
-
-### 权限提升
-
-#### 漏洞案例
-
-##### [CVE-2018-1002105](https://noirfate.github.io/2022/04/18/k8s-env#cve-2018-1002105)
-当用户具备名字空间A中的`pods/exec`权限时，可构造错误的`pods/exec`请求给`kube-apiserver`，它会把请求转发给`kubelet`，但由于没有判断返回值，导致`kube-apiserver`和`kubelet`的连接依旧存在。攻击者通过复用该连接，可在该`kubelet`掌管的所有`pod`中执行任意命令
-![](/assets/img/k8s_sec11.png)
-
-#### 挖掘思路
-
-- kube-apiserver的proxy代理通道是否存在滥用的可能
-
-## 组件分析
+## 组件安全
 
 ### kubectl
 Kubernetes命令行工具，使得你可以对Kubernetes集群运行命令，如使用kubectl来部署应用、监测和管理集群资源以及查看日志等等
@@ -87,10 +46,20 @@ Kubernetes命令行工具，使得你可以对Kubernetes集群运行命令，如
 
 #### 漏洞
 
-- [CVE-2018-1002100](#cve-2018-1002100)
+- [CVE-2018-1002100 kubectl cp path escape](https://github.com/noirfate/k8s_debug/tree/main/CVE-2018-1002100)
+- [CVE-2019-1002101 kubectl cp path escape](https://github.com/noirfate/k8s_debug/tree/main/CVE-2019-1002101)
+- [CVE-2019-11246 kubectl cp path escape](https://github.com/noirfate/k8s_debug/tree/main/CVE-2019-11246)
+- [CVE-2019-11249 kubectl cp path escape](https://github.com/noirfate/k8s_debug/tree/main/CVE-2019-11249)
+- [CVE-2019-11251 kubectl cp path escape](https://github.com/noirfate/k8s_debug/tree/main/CVE-2019-11251)
+
+#### 挖掘思路
+对于客户端漏洞，主要攻击方式为构造恶意的服务端，目前已发现的漏洞都是`kubectl cp`的路径穿越漏洞，恶意的服务端为恶意容器，作为`kubectl`的主要交互对象`kube-apiserver`，目前尚未有通过恶意的`kube-apiserver`来攻击`kubectl`的案例。大体思路如下：
+
+- 恶意容器
+- 恶意`kube-apiserver`
 
 ### kubelet
-kubelet 是在每个 Node 节点上运行的主要 “节点代理”，接受通过各种机制（主要是通过 apiserver）提供的一组 PodSpec，并确保这些 PodSpec 中描述的容器处于运行状态且运行状况良好
+kubelet是在每个Node节点上运行的主要 “节点代理”，接受通过各种机制（主要是通过 apiserver）提供的一组PodSpec，并确保这些PodSpec中描述的容器处于运行状态且运行状况良好
 ![](/assets/img/k8s_sec6.jpg)
 ![](/assets/img/k8s_sec7.png)
 
@@ -136,14 +105,20 @@ kubelet监听在10250端口，开放了一些API，可通过HTTPS访问。主要
 	- houseKeepingCh：计时器，每两秒触发，调用`HandlePodCleanups`回收停止的`Pod`的资源
 	- [其他分析文章](https://www.cnblogs.com/luozhiyun/p/13736569.html)
 
-
 #### 漏洞
 
-- [CVE-2017-1002101](#cve-2017-1002101)
-- [CVE-2021-25741](#cve-2021-25741)
+- [CVE-2017-1002101 hostPath symbol link path escape](https://github.com/noirfate/k8s_debug/tree/main/CVE-2017-1002101)
+- [CVE-2021-25741 subpath TOCTOU](https://github.com/noirfate/k8s_debug/tree/main/CVE-2021-25741)
+
+#### 挖掘思路
+`kubelet`为部署在节点的服务，用于管理`pod`生命周期，已发现的漏洞均是在创建`pod`时挂载宿主机目录导致的路径穿越，大体思路如下：
+
+- 与`kubelet`相关的`pod`配置
+- 恶意`kube-apiserver`
+- 恶意`webhook`控制器
 
 ### kube-apiserver
-Kubernetes API 服务器验证并配置 API 对象的数据， 这些对象包括 pods、services、replicationcontrollers 等。 API 服务器为 REST 操作提供服务，并为集群的共享状态提供前端， 所有其他组件都通过该前端进行交互
+Kubernetes API服务器验证并配置API对象的数据， 这些对象包括pods、services、replicationcontrollers等。 API服务器为REST操作提供服务，并为集群的共享状态提供前端，所有其他组件都通过该前端进行交互
 
 #### 命令行/配置
 
@@ -151,10 +126,64 @@ Kubernetes API 服务器验证并配置 API 对象的数据， 这些对象包�
 - `--anonymous-auth`，默认是`true`，允许匿名请求，用户名为`system:anonymous`，用户组为`system:unauthenticated`
 - `--enable-bootstrap-token-auth`，启用以允许将`kube-system`名字空间中类型为`bootstrap.kubernetes.io/token`的`Secret`用于TLS引导身份验证
 - `--token-auth-file`，设置认证令牌，该令牌长期有效，在不重启的情况下无法修改，文件格式为`csv`，内容为`token,user,uid,"group1,group2,group3"`
+- `--log-dir`, 设置日志存储路径，需配合`--logtostderr=false`使用，之后可使用restapi访问日志`https://ip:port/logs/`
 
 #### 代码
 > RootPath: staging/src/k8s.io/apiserver
 
 #### 漏洞
 
-- [CVE-2018-1002105](#cve-2018-1002105)
+- [CVE-2018-1002105 kube-apiserver do not properly close kubelet proxy connection](https://github.com/noirfate/k8s_debug/tree/main/CVE-2018-1002105)
+- [CVE-2019-9512: HTTP/2 DOS](https://github.com/Metarget/cloud-native-security-book/tree/main/code/0404-K8s%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB)
+- [CVE-2019-11250 kube-apiserver token revealed in log](https://github.com/noirfate/k8s_debug/tree/main/CVE-2019-11250)
+- [CVE-2019-11253 kube-apiserver yaml parser dos](https://github.com/noirfate/k8s_debug/tree/main/CVE-2019-11253)
+- [CVE-2020-8559 kube-apiserver follow kubelet redirect request](https://github.com/noirfate/k8s_debug/tree/main/CVE-2020-8559)
+- [CVE-2020-8561: k8s apiserver SSRF](https://hackerone.com/reports/941178)
+
+#### 挖掘思路
+`kube-apiserver`为K8S核心服务，负责认证、鉴权、配置等功能，所有其他组件都通过该前端进行交互，已发现的两个严重漏洞都与`kubelet`有关，在有节点控制权的情况下实现控制整个集群；两个拒绝服务漏洞都与依赖库有关，一个是go的http2实现，一个是yaml解析；日志泄露凭证的问题，实际是越权问题，即在只有查看日志的权限或者再加上设置日志级别的权限时，可以控制整个集群；SSRF漏洞实际上和webhook有关，K8S允许配置各种扩展控制器，通过http协议进行交互。大体思路如下：
+
+- 恶意`kubelet`
+- 日志泄露敏感信息
+- 越权问题，即通过创建对象等方法实现权限作用域的变化
+- 供应链漏洞
+- 恶意`webhook`控制器
+- SSRF漏洞
+
+### kube-controller-manager
+Kubernetes控制器管理器是一个守护进程，内嵌随Kubernetes一起发布的核心控制回路。在Kubernetes中，每个控制器是一个控制回路，通过API服务器监视集群的共享状态，并尝试进行更改以将当前状态转为期望状态。目前，Kubernetes自带的控制器例子包括副本控制器、节点控制器、命名空间控制器和服务账号控制器等
+
+#### 命令行/配置
+
+#### 代码
+
+#### 漏洞
+
+- [CVE-2020-8555 kube-controller-manager SSRF](https://github.com/noirfate/k8s_debug/tree/main/CVE-2020-8555)
+
+#### 挖掘思路
+该组件已知漏洞较少，主要为SSRF漏洞，大体思路如下：
+
+- SSRF漏洞
+
+## 插件安全
+
+### ingress-nginx
+
+#### 命令行/配置
+
+#### 代码
+> https://github.com/kubernetes/ingress-nginx
+
+#### 漏洞
+
+- [CVE-2021-25742 snippet command execution](https://github.com/noirfate/k8s_debug/tree/main/CVE-2021-25742)
+- [CVE-2021-25745,CVE-2021-25746,CVE-2021-25748](https://blog.lightspin.io/kubernetes-nginx-ingress-controller-vulnerabilities)
+
+#### 挖掘思路
+已知漏洞都是通过对ingress的配置影响nginx配置，导致代码执行、敏感信息泄露等漏洞
+
+## 供应链安全
+
+### SBOM to Vulns
+> https://security.googleblog.com/2022/06/sbom-in-action-finding-vulnerabilities.html

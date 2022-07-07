@@ -161,6 +161,7 @@ excerpt: useful git repository (研究篇)
 - [uftrace - linux下用户态进程函数调用跟踪，程序编译时需要-pg](https://github.com/namhyung/uftrace) [使用gdb或r2跟踪](https://reverseengineering.stackexchange.com/questions/19971/how-to-see-all-functions-that-called-with-debugger)
 - [多平台固件提取工具BIOSUtilities](https://github.com/platomav/BIOSUtilities)
 - [FACT - 固件分析工具](https://github.com/fkie-cad/FACT_core)
+- [polytracker - 针对c/c++的数据流执行流分析工具](https://github.com/trailofbits/polytracker)
 
 ### 调试工具
 
@@ -215,6 +216,8 @@ excerpt: useful git repository (研究篇)
 - [取证工具集合](https://github.com/cugu/awesome-forensics)
 - [leaven - conert c to go without cgo](https://github.com/andybalholm/leaven)
 - [DHook - java交互式自定义动态hook工具](https://github.com/keven1z/DHook)
+- [libbpfgo - 使用go写bpf程序](https://github.com/aquasecurity/libbpfgo)
+- [md5碰撞](https://github.com/corkami/collisions)
 
 ## Fuzz
 
@@ -400,6 +403,7 @@ excerpt: useful git repository (研究篇)
 - [CodeQL 数据流分析/污点分析 笔记（上篇）](https://eternalsakura13.com/2022/02/08/codeql_flow_analyze/)
 - [深入理解CodeQL](https://github.com/ASTTeam/CodeQL)
 - [从java源码构建数据库无需编译](https://github.com/waderwu/extractor-java)
+- [使用codeql寻找CVE-2022-22980的利用路径](https://infosecwriteups.com/analyzing-cve-2022-22980-to-discover-a-real-exploitable-path-in-the-source-code-review-process-with-145d97717656)
 
 ### 源码分析工具
 
@@ -414,3 +418,4 @@ excerpt: useful git repository (研究篇)
 - [GCatch - 通过静态分析找出go的并发bug](https://github.com/system-pclub/GCatch)
 - [codecat - 支持多语言的规则匹配代码扫描工具](https://github.com/CoolerVoid/codecat)
 - [IncreLux - 发现linux内核UBI(Use Before Initialization)漏洞](https://github.com/seclab-ucr/IncreLux)
+- [tabby - java静态代码分析工具](https://github.com/wh1t3p1g/tabby)
