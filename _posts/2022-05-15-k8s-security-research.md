@@ -166,6 +166,22 @@ Kubernetes控制器管理器是一个守护进程，内嵌随Kubernetes一起发
 
 - SSRF漏洞
 
+### kube-proxy
+`kube-proxy`是一个网络代理服务，运行在每一个K8S节点上，负责维护`pod`间通信、`node`间通信以及和外部的通信等等的网络规则
+
+#### 命令行/配置
+
+#### 代码
+
+#### 漏洞
+
+- [CVE-2020-8558: route_localnet漏洞](https://github.com/tabbysable/POC-2020-8558)
+
+#### 挖掘思路
+该组件已知漏洞较少，主要为网络配置上的安全问题，大体思路如下：
+
+- 不安全的网络配置
+
 ## 插件安全
 
 ### ingress-nginx
