@@ -58,6 +58,8 @@ excerpt: Cloud Security
 - [云原生术语](https://glossary.cncf.io/abstraction/)
 - [通过k8s软件物料清单查询漏洞](https://security.googleblog.com/2022/06/sbom-in-action-finding-vulnerabilities.html)
 - [kubeconfig执行命令及读取文件安全隐患](https://banzaicloud.com/blog/kubeconfig-security/)
+- [golang安全审计](https://www.elttam.com/blog/golang-codereview/)
+- [k8s安全最佳实践](https://sysdig.com/learn-cloud-native/kubernetes-security/kubernetes-security-101/)
 
 ## 云原生攻击
 
@@ -143,6 +145,8 @@ excerpt: Cloud Security
 - [Azure 利用docker remote api逃逸dynamics container sandbox](https://hencohen10.medium.com/microsoft-dynamics-container-sandbox-rce-via-unauthenticated-docker-remote-api-20-000-bounty-7f726340a93b)
 - [Azure Fabric服务利用其数据收集agent的读写文件TOCTOU漏洞写入主机任意文件导致容器逃逸](https://unit42.paloaltonetworks.com/fabricscape-cve-2022-30137/)
 - [AWS workspace client 命令注入RCE CVE-2021-28112](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/)
+- [AWS EKS服务k8s集群IAM认证越权](https://blog.lightspin.io/exploiting-eks-authentication-vulnerability-in-aws-iam-authenticator)
+- [利用Google客户端的APIKey访问隐藏API](https://www.ezequiel.tech/p/75k-google-services-mix-up.html)
 
 ## 云原生工具
 
@@ -170,6 +174,8 @@ excerpt: Cloud Security
 - [kube-prompt - kubectl交互式工具](https://github.com/c-bata/kube-prompt)
 - [TerraformGoat - 利用terraform构建公有云靶场环境](https://github.com/HXSecurity/TerraformGoat)
 - [k9s - k8s终端UI工具](https://github.com/derailed/k9s/)
+- [kuboard-spray - k8s图形化安装](https://github.com/eip-work/kuboard-spray)
+- [kubeeye - k8s审计工具](https://github.com/kubesphere/kubeeye)
 
 ## CVE
 
@@ -209,7 +215,7 @@ excerpt: Cloud Security
 - [CVE-2021-41091: 利用/var/lib/docker下setuid程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558) [利用](https://www.cyberark.com/resources/threat-research-blog/how-docker-made-me-more-capable-and-the-host-less-secure)
 - [CVE-2021-43784: runc netlink message int16 overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=2241)
 - [CVE-2022-0492: 利用unshare+cgroup逃逸](https://unit42.paloaltonetworks.com/cve-2022-0492-cgroups/) [分析](http://terenceli.github.io/%E6%8A%80%E6%9C%AF/2022/03/06/cve-2022-0492)
-- [CVE-2022-21701: istio gateway提权不完全分析之模板覆盖](http://noahblog.360.cn/abuse-gateway-api-attack-kubernetes/)
+- [CVE-2022-21701: istio gateway提权不完全分析之模板覆盖](http://noahblog.360.cn/abuse-gateway-api-attack-kubernetes/) [yaml多行注释](https://yaml-multiline.info/)
 - [CVE-2022-23648: containerd cri plugin容器镜像路径穿越漏洞](https://bugs.chromium.org/p/project-zero/issues/detail?id=2244)
 
 # QEMU/HyperV

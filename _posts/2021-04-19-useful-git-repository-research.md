@@ -48,6 +48,7 @@ excerpt: useful git repository (研究篇)
 - [efiseek - efi分析插件](https://github.com/retrage/efiSeek/tree/efi-xplorer)
 - [BinAbsInspector - 二进制漏洞挖掘插件](https://github.com/KeenSecurityLab/BinAbsInspector)
 - [ghostrings - 恢复go字符串](https://github.com/nccgroup/ghostrings) [文章](https://research.nccgroup.com/2022/05/20/tool-release-ghostrings/)
+- [用ghidra和semgrep对二进制做静态代码分析](https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/)
 
 ### GDB扩展
 
@@ -218,6 +219,8 @@ excerpt: useful git repository (研究篇)
 - [DHook - java交互式自定义动态hook工具](https://github.com/keven1z/DHook)
 - [libbpfgo - 使用go写bpf程序](https://github.com/aquasecurity/libbpfgo)
 - [md5碰撞](https://github.com/corkami/collisions)
+- [机器学习攻击](https://research.nccgroup.com/2022/07/06/whitepaper-practical-attacks-on-machine-learning-systems/)
+- [使用lief进行二进制混淆](https://github.com/romainthomas/the-poor-mans-obfuscator) [文章](https://www.romainthomas.fr/publication/22-pst-the-poor-mans-obfuscator/)
 
 ## Fuzz
 
