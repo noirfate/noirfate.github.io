@@ -39,18 +39,38 @@ excerpt: Kubernetes Security Research
 
 ### 风险
 
+#### kubectl authentication helpers execute command
+> https://banzaicloud.com/blog/kubeconfig-security/
+
+- Prerequisites
+	- attacker control the kubeconfig
+- Flow
+while cluster manager service use user provided kubeconfig to manage user's k8s cluster, a malicious user can use kubectl authentication helpers to execute arbitrary command when kubeconfig is loaded
+	- exec helper
+	```
+	- name: my-user
+  user:
+    exec:
+      args: [...]
+      command: ...
+      env: {...}
+	```
+	- gcp helper
+	```
+	- name: my-user
+  user:
+    auth-provider:
+      config:
+        cmd-args: ...
+        cmd-path: ...
+      name: gcp
+	```
+
 #### kube-apiserver unauthenticated access
 - Prerequisites
 	- `--insecure-port` is not set to 0
 - Flow
-```
-                  ┌─────────────────┐
-                  │                 │
-┌──────────┐      │  kube-apiserver │
-│ attacker ├─────►│      8080       │
-└──────────┘      │                 │
-                  └─────────────────┘
-```
+attacker access kube-apiserver insecure port, such as 8080
 
 
 ## 组件安全
