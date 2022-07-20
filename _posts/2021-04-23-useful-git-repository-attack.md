@@ -173,6 +173,7 @@ excerpt: useful git repository (攻防篇)
 - [Awesome-Redteam](https://github.com/Threekiii/Awesome-Redteam)
 - [CyberChef - 编解码、加解密工具](https://github.com/gchq/CyberChef) [在线](https://gchq.github.io/CyberChef)
 - [MSSQL 渗透指南](https://github.com/Ignitetechnologies/MSSQL-Pentest-Cheatsheet)
+- [Groovy注入](https://xz.aliyun.com/t/8231)
 
 ## POC
 

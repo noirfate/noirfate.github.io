@@ -221,6 +221,7 @@ excerpt: useful git repository (研究篇)
 - [md5碰撞](https://github.com/corkami/collisions)
 - [机器学习攻击](https://research.nccgroup.com/2022/07/06/whitepaper-practical-attacks-on-machine-learning-systems/)
 - [使用lief进行二进制混淆](https://github.com/romainthomas/the-poor-mans-obfuscator) [文章](https://www.romainthomas.fr/publication/22-pst-the-poor-mans-obfuscator/)
+- [pyarmor - python代码混淆工具](https://github.com/dashingsoft/pyarmor)
 
 ## Fuzz
 

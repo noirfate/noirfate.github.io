@@ -31,10 +31,26 @@ excerpt: Kubernetes Security Research
 - [kubernetes-cis-benchmark](https://github.com/neuvector/kubernetes-cis-benchmark)
 - [kube-bench](https://github.com/aquasecurity/kube-bench)
 - [rbac检查工具介绍](https://icloudnative.io/posts/tools-and-methods-for-auditing-kubernetes-rbac-policies/)
+- [镜像签名工具](https://github.com/sigstore/cosign)
 
-### 利用方法
+#### Golang
 
-- [kubeconfig命令执行](https://banzaicloud.com/blog/kubeconfig-security/)
+- [go语言常见安全问题](https://www.elttam.com/blog/golang-codereview/)
+
+### 风险
+
+#### kube-apiserver unauthenticated access
+- Prerequisites
+	- `--insecure-port` is not set to 0
+- Flow
+                  ┌─────────────────┐
+                  │                 │
+┌──────────┐      │  kube-apiserver │
+│ attacker ├─────►│      8080       │
+└──────────┘      │                 │
+                  └─────────────────┘
+
+
 
 ## 组件安全
 
@@ -67,9 +83,13 @@ kubelet是在每个Node节点上运行的主要 “节点代理”，接受通�
 > 修改`/etc/systemd/system/kubelet.service.d/10-kubeadm.conf`变更启动参数，执行`systemctl daemon-reload`加载新配置，重启`systemctl restart kubelet`
 
 - `--enable-debugging-handlers`，默认是`true`，关闭它则不能通过`kubelet`进入容器执行命令或查看日志了，相关代码见`pkg/kubelet/server.go:InstallDebuggingHandlers`
-- `--anonymous-auth`，默认是`true`，允许匿名访问
-- `--authorization-mode`，没有设置`--config`时默认是`AlwaysAllow`，设置了则为`Webhook`，`Webhook`使用`apiserver`的`SubjectAccessReview`进行鉴权
+- `--anonymous-auth`，默认是`true`，允许匿名访问，须设置成false
+- `--authorization-mode`，没有设置`--config`时默认是`AlwaysAllow`，须设置为`Webhook`，`Webhook`使用`apiserver`的`SubjectAccessReview`进行鉴权
 - `--bootstrap-kubeconfig`，`kubelet`使用`bootstrap-token`向`apiserver`申请证书，生成配置，[官方文档](https://kubernetes.io/zh/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/)、[参考1](https://suraj.io/post/add-new-k8s-node-bootstrap-token/)、[参考2](https://suraj.io/post/2021/02/k8s-bootstrap-token/)
+- `--read-only-port`，默认是10255，无认证，须设置为0，禁用只读访问
+- `--streaming-connection-idle-timeout`，空闲连接超时默认为4小时，可能会造成拒绝服务，建议设置为5m
+- `--protect-kernel-defaults`，设置为true，禁止kubelet修改内核参数
+- `--feature-gates=RotateKubeletServerCertificate=true`，kubelet在证书即将到期前自动发送csr请求，申请新证书
 
 #### 代码
 > RootPath: pkg/kubelet
@@ -127,6 +147,19 @@ Kubernetes API服务器验证并配置API对象的数据， 这些对象包括po
 - `--enable-bootstrap-token-auth`，启用以允许将`kube-system`名字空间中类型为`bootstrap.kubernetes.io/token`的`Secret`用于TLS引导身份验证
 - `--token-auth-file`，设置认证令牌，该令牌长期有效，在不重启的情况下无法修改，文件格式为`csv`，内容为`token,user,uid,"group1,group2,group3"`
 - `--log-dir`, 设置日志存储路径，需配合`--logtostderr=false`使用，之后可使用restapi访问日志`https://ip:port/logs/`
+- `--basic-auth-file`, 启用静态Basic认证，设置时指定cvs文件，格式为`password,username,uid`
+- `--token-auth-file`，启用静态Token认证，设置时指定cvs文件，格式为`token,username,uid`
+- `--authorization-mode`, 设置鉴权模式，若为`AlwaysAllow`则忽略鉴权，若包含`Node`则允许节点的kubelet读取secrets、configmap等信息，[参考](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/node/)
+- `--enable-admission-plugins`，设置准入控制器，不能包含`AlwaysAdmit`，[参考](https://moelove.info/2021/11/30/%E7%90%86%E6%B8%85-Kubernetes-%E4%B8%AD%E7%9A%84%E5%87%86%E5%85%A5%E6%8E%A7%E5%88%B6Admission-Controller/)
+- `--enable-admission-plugins`包含`PodSecurityPolicy`，启用pod安全策略插件
+- `--enable-admission-plugins`包含`NodeRestriction`，限制kubelet只能操作自身节点的资源
+- `--disable-admission-plugins`显式禁用`ServiceAccount`，`ServiceAccount`是默认加载的准入控制器，在创建pod时它会自动往pod中注入secret volume，[参考](https://pradeeploganathan.com/kubernetes/introduction-to-kubernetes-admission-controllers/)
+- `--insecure-port`，设置非安全端口为0，否则会造成未授权访问
+- `--profiling`，设置为`false`，禁止输出性能调试信息
+- `--audit-log-xxx`，设置审计日志相关参数，记录审计信息
+- `--audit-policy-file`，设置审计策略，[参考](https://docs.datadoghq.com/integrations/kubernetes_audit_logs/#configuration)
+- `--service-account-lookup`，设置为`true`，在校验凭证前首先确认该`service account`是否有效，防止被删除的`service account`的凭证通过认证
+- `--service-account-key-file`，设置`service account`签名证书的公钥，若不设置，默认使用`kube-apiserver`的TLS证书
 
 #### 代码
 > RootPath: staging/src/k8s.io/apiserver
@@ -155,6 +188,12 @@ Kubernetes控制器管理器是一个守护进程，内嵌随Kubernetes一起发
 
 #### 命令行/配置
 
+- `--profiling`，设置为`false`，禁止输出性能调试信息
+- `--bind-address`，设置为`127.0.0.1`防止外部请求，`controller-manager`默认监听10252端口，无认证，提供health和metrics信息访问
+- `--use-service-account-credentials`，设置为`true`，为每个控制器分配独立的`service account token`，否则所有控制器将使用`controller-manager`自身的凭证
+- `--service-account-private-key-file`，指定独立的`service account`凭证加解密证书私钥
+- `--feature-gates=RotateKubeletServerCertificate=true`，由于kubelet的证书是由`controller-manager`签发，设置该参数启用kubelet证书到期轮转功能
+
 #### 代码
 
 #### 漏洞
@@ -165,6 +204,20 @@ Kubernetes控制器管理器是一个守护进程，内嵌随Kubernetes一起发
 该组件已知漏洞较少，主要为SSRF漏洞，大体思路如下：
 
 - SSRF漏洞
+
+### kube-scheduler
+Kubernetes调度器是一个控制面进程，负责将Pods指派到节点上。调度器基于约束和可用资源为调度队列中每个Pod确定其可合法放置的节点。调度器之后对所有合法的节点进行排序，将Pod绑定到一个合适的节点
+
+#### 命令行/配置
+
+- `--profiling`，设置为`false`，禁止输出性能调试信息
+- `--bind-address`，设置为`127.0.0.1`防止外部请求，`kube-scheduler`默认监听10251端口，无认证，提供health和metrics信息访问
+
+#### 代码
+
+#### 漏洞
+
+#### 挖掘思路
 
 ### kube-proxy
 `kube-proxy`是一个网络代理服务，运行在每一个K8S节点上，负责维护`pod`间通信、`node`间通信以及和外部的通信等等的网络规则

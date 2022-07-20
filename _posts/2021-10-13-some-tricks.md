@@ -424,6 +424,13 @@ git push --all --force
 ## chrome允许访问显示证书错误的网站
 在网页空白处输入`thisisunsafe`即可
 
+## mysql客户端读取本地文件
+- [使用伪造的server，在客户端连接时读取](https://github.com/rmb122/rogue_mysql_server)
+- 使用正常的mysql server，先创建表`create table test(data blob)`，然后执行`load data local infile "file:///etc/passwd" into test`读取文件，`load data local infile "file:///" into test`读取目录，此时须注意客户端连接到的数据库要是test表所在的数据库，如`{ip}:{port}/{dbname}`
+
+## 文本绘制流程图
+<https://asciiflow.com/#/>
+
 # 系统
 
 ## 编写独立内核模块

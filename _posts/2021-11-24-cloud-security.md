@@ -43,7 +43,7 @@ excerpt: Cloud Security
 - [Kubernetes指南](https://feisky.gitbooks.io/kubernetes)
 - [kubernetes中文指南](https://jimmysong.io/kubernetes-handbook)
 - [kubernetes图书](https://lib.jimmysong.io/)
-- [kubernetes RBAC介绍](https://www.cncf.io/wp-content/uploads/2020/08/2020_04_Introduction-to-Kubernetes-RBAC.pdf)
+- [kubernetes RBAC介绍](https://www.cncf.io/wp-content/uploads/2020/08/2020_04_Introduction-to-Kubernetes-RBAC.pdf) [AuthN](http://arthurchiao.art/blog/cracking-k8s-authn/) [AuthZ](http://arthurchiao.art/blog/cracking-k8s-authz-rbac/)
 - [kubernetes历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
 - [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
 - [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
@@ -60,6 +60,11 @@ excerpt: Cloud Security
 - [kubeconfig执行命令及读取文件安全隐患](https://banzaicloud.com/blog/kubeconfig-security/)
 - [golang安全审计](https://www.elttam.com/blog/golang-codereview/)
 - [k8s安全最佳实践](https://sysdig.com/learn-cloud-native/kubernetes-security/kubernetes-security-101/)
+- [arthurchiao](http://arthurchiao.art/)
+- [moelove](https://moelove.info/)
+- [datadoghq - 云平台安全配置规则](https://docs.datadoghq.com/security_platform/default_rules/)
+- [kubelet认证流程](https://www.jianshu.com/p/bb973ab1029b)
+- [bridgecrew - 云平台安全配置规则](https://docs.bridgecrew.io/docs)
 
 ## 云原生攻击
 
@@ -147,6 +152,8 @@ excerpt: Cloud Security
 - [AWS workspace client 命令注入RCE CVE-2021-28112](https://rhinosecuritylabs.com/aws/cve-2021-38112-aws-workspaces-rce/)
 - [AWS EKS服务k8s集群IAM认证越权](https://blog.lightspin.io/exploiting-eks-authentication-vulnerability-in-aws-iam-authenticator)
 - [利用Google客户端的APIKey访问隐藏API](https://www.ezequiel.tech/p/75k-google-services-mix-up.html)
+- [Azure site recovery tool dll hijacking](https://medium.com/tenable-techblog/microsoft-azure-site-recovery-dll-hijacking-cd8cc34ef80c)
+- [GCP mysql数据库导出注入代码实现RCE](https://www.ezequiel.tech/2020/08/dropping-shell-in.html)
 
 ## 云原生工具
 
