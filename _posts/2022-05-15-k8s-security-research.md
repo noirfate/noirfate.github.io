@@ -13,6 +13,7 @@ excerpt: Kubernetes Security Research
 
 # k8s安全研究
 > [安全公告](https://groups.google.com/g/kubernetes-security-announce)
+> [NSA K8s加固指南](https://github.com/rootsongjc/kubernetes-hardening-guidance/blob/main/kubernetes-hardening-guidance-english.md)
 
 ## 概览
 ![](/assets/img/k8s_sec1.jpg)
@@ -46,35 +47,26 @@ excerpt: Kubernetes Security Research
 	- attacker control the kubeconfig
 - Flow<br>
 while cluster manager service use user provided kubeconfig to manage user's k8s cluster, a malicious user can use kubectl authentication helpers to execute arbitrary command when kubeconfig is loaded
-	- exec helper<br>
-```yaml
-user:
-  exec:
-    args: [...]
-    command: ...
-    env: {...}
-```
-	- gcp helper<br>
-```yaml
-user:
-  auth-provider:
-    config:
-      cmd-args: ...
-      cmd-path: ...
-    name: gcp
-```
+	- exec helper
+	- gcp helper
+- Defence<br>
+validate yaml
 
 #### kube-apiserver unauthenticated access
 - Prerequisites
 	- `--insecure-port` is not set to 0
 - Flow<br>
 attacker access kube-apiserver insecure port, such as 8080
+- Defence<br>
+`--insecure-port` set to 0
 
 #### kube-apiserver anonymous access
 - Prerequisites
 	- `--anonymous-auth` not set or set to true
 - Flow<br>
 attacker can access kube-apiserver without credentials
+- Defence<br>
+`--anonymous-auth` set to false
 
 #### kubelet unauthenticated access
 > https://github.com/cyberark/kubeletctl
@@ -82,7 +74,8 @@ attacker can access kube-apiserver without credentials
 - Prerequisites
 	- `--anonymous-auth` not set or set to true
 	- `--read-only-port` not set to 0
-	- `--authorization-mode` not set to `Webhook`
+	- `--authorization-mode` not set to Webhook
+	- pod network can access host network
 - Flow<br>
 when attacker can access kubelet, such as run commands or trigger ssrf in pod, he can fetch metrics information from 10255, control node from 10250
 	- get all pods information<br>
@@ -92,6 +85,33 @@ curl -sk --connect-timeout 5 https://${ip}:10250/pods
 	- select privileged container to execute command<br>
 ```shell
 curl -sk --connect-timeout 5 https://${ip}:10250/run/${namespace}/${pod}/${container} -d "cmd=xxx"
+```
+- Defence<br>
+	- `--anonymous-auth` set to false, `--read-only-port` set to 0, `--authorization-mode` set to Webhook
+	- use networkpolicy, [reference](https://raesene.github.io/blog/2018/03/25/kubernetes-network-policies/)
+	- use iptables
+```shell
+# deny container access host
+iptables -I INPUT -s ${container_net} -p tcp -m multiport --dports 10250:10255 -j DROP
+# deny container access other node
+iptables -I FORWARD -s ${container_net} -p tcp -m multiport --dports 10250:10255 -m state --state NEW -j DROP
+```
+
+#### metadata access
+- Prerequisites
+	- attacker can run commands or trigger ssrf in pod
+	- pod network can access 169.254.169.254
+- Flow<br>
+```shell
+curl -sk --connect-timeout 5 http://169.254.169.254/openstack/latest/meta_data.json
+curl -sk --connect-timeout 5 http://169.254.169.254/openstack/latest/network_data.json
+curl -sk --connect-timeout 5 http://169.254.169.254/openstack/latest/user_data
+```
+- Defence<br>
+	- use networkpolicy
+	- use iptables
+```shell
+iptables -I INPUT -s ${container_net} -d 169.254.169.254 -j DROP
 ```
 
 ## 组件安全
