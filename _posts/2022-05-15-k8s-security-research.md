@@ -48,7 +48,6 @@ excerpt: Kubernetes Security Research
 while cluster manager service use user provided kubeconfig to manage user's k8s cluster, a malicious user can use kubectl authentication helpers to execute arbitrary command when kubeconfig is loaded
 	- exec helper<br>
 	```yaml
-	- name: my-user
   user:
     exec:
       args: [...]
@@ -57,7 +56,6 @@ while cluster manager service use user provided kubeconfig to manage user's k8s 
 	```
 	- gcp helper<br>
 	```yaml
-	- name: my-user
   user:
     auth-provider:
       config:
@@ -76,7 +74,7 @@ attacker access kube-apiserver insecure port, such as 8080
 - Prerequisites
 	- `--anonymous-auth` not set or set to true
 - Flow
-
+attacker can access kube-apiserver without credentials
 
 ## 组件安全
 
