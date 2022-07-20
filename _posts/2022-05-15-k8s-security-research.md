@@ -44,12 +44,12 @@ excerpt: Kubernetes Security Research
 	- `--insecure-port` is not set to 0
 - Flow
 ```
-                  +-----------------+
-                  |                 |
-+----------+      |  kube-apiserver |
-| attacker +----->|      8080       |
-+----------+      |                 |
-                  +-----------------+
+                  ┌─────────────────┐
+                  │                 │
+┌──────────┐      │  kube-apiserver │
+│ attacker ├─────►│      8080       │
+└──────────┘      │                 │
+                  └─────────────────┘
 ```
 
 
