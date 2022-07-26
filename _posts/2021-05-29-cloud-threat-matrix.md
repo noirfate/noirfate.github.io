@@ -139,7 +139,9 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 	* 云服务通常使用UUID来作为资源的唯一标识，并且可能会使用这个UUID来作为认证凭据，虽然理论上UUID只有用户知晓，也不可能被爆破，但用户可能会泄露UUID。当攻击者拿到UUID时，就可以通过认证并控制用户的资源 [参考](https://andresriancho.com/wp-content/uploads/2019/06/whitepaper-internet-scale-analysis-of-aws-cognito-security.pdf)
 * 内部服务挂到公网
 	* 有些时候为了方便，会把内部网站开放到公网，通过IP扫描，可发现重定向头`Location`的内容为内部域名，修改host，绑定IP和内部域名，则可访问。进一步可以进行泛扫，把域名列表和IP列表一一绑定进行测试
-
+* 内部使用公网IP段
+	* 若云厂商把自己内部使用的IP地址设置为公网IP，则存在暴露风险，如租户设置SNAT网关，如果网关节点路由配置不当，则会把租户访问的公网IP路由到内部节点
+	
 ## 执行 (Execution)
 
 * 云API

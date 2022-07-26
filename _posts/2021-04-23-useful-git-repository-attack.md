@@ -97,6 +97,7 @@ excerpt: useful git repository (攻防篇)
 - [mimic - 通过重命名进程进行隐藏](https://github.com/emptymonkey/mimic)
 - [TripleCross - ebpf rootkit](https://github.com/h3xduck/TripleCross)
 - [pamspy - 利用uprobe hook pam获取密码](https://github.com/citronneur/pamspy)
+- [reveng_rtkit - linux 5.11 rootkit](https://github.com/reveng007/reveng_rtkit)
 
 ### OSINT(开源情报)工具
 
@@ -248,6 +249,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 - [CVE-2022-29799/29800 - Nimbuspwn，dbus提权](https://www.microsoft.com/security/blog/2022/04/26/microsoft-finds-new-elevation-of-privilege-linux-vulnerability-nimbuspwn/) [检测](https://github.com/jfrog/nimbuspwn-tools)
 - [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
+- [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC)
 
 ### container
 
