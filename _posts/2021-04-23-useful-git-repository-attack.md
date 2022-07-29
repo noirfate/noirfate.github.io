@@ -175,6 +175,7 @@ excerpt: useful git repository (攻防篇)
 - [CyberChef - 编解码、加解密工具](https://github.com/gchq/CyberChef) [在线](https://gchq.github.io/CyberChef)
 - [MSSQL 渗透指南](https://github.com/Ignitetechnologies/MSSQL-Pentest-Cheatsheet)
 - [Groovy注入](https://xz.aliyun.com/t/8231)
+- [url path parser漏洞](https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf)
 
 ## POC
 
@@ -247,7 +248,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-0995 - watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
 - [CVE-2022-25636 - netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
-- [CVE-2022-29799/29800 - Nimbuspwn，dbus提权](https://www.microsoft.com/security/blog/2022/04/26/microsoft-finds-new-elevation-of-privilege-linux-vulnerability-nimbuspwn/) [检测](https://github.com/jfrog/nimbuspwn-tools)
+- [CVE-2022-29799/29800 - Nimbuspwn，dbus提权](https://www.microsoft.com/security/blog/2022/04/26/microsoft-finds-new-elevation-of-privilege-linux-vulnerability-nimbuspwn/) [POC](https://github.com/Immersive-Labs-Sec/nimbuspwn) [检测](https://github.com/jfrog/nimbuspwn-tools)
 - [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC)
 

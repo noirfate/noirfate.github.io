@@ -242,7 +242,7 @@ excerpt: Cloud Security
 - [QEMU Virglrenderer逃逸](https://i.blackhat.com/asia-20/Thursday/asia-20-Shao-3D-Red-Pill-A-Guest-To-Host-Escape-On-QEMUKVM-Virtio-Device-wp.pdf)
 - [QEMU vGPU逃逸](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Another-Road-Leads-To-The-Host-From-A-Message-To-VM-Escape-On-Nvidia-VGPU.pdf)
 - [QEMU QMP migrate任意命令执行](https://cxsecurity.com/issue/WLB-2022020039)
-- [Matryoshka Trap: Recursive MMIO Flaws](https://qiuhao.org/Matryoshka_Trap.pdf) [poc](https://github.com/QiuhaoLi/CVE-2021-3929-3947)
+- [Matryoshka Trap: Recursive MMIO Flaws](https://qiuhao.org/Matryoshka_Trap.pdf) [poc](https://github.com/QiuhaoLi/CVE-2021-3929-3947) [blackhat](https://i.blackhat.com/Asia-22/Thursday-Materials/AS-22-Qiuhao-Recursive-MMIO-final.pdf)
 
 # KERNEL
 

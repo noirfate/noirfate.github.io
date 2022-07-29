@@ -23,6 +23,7 @@ excerpt: useful git repository (工具篇)
 - [twingan - 现实人像和动漫人像相互转换](https://github.com/jerryli27/TwinGAN)
 - [deepo - 深度学习allinone镜像](https://github.com/ufoym/deepo)
 - [minigo - 开源的AlphaGo实现](https://github.com/tensorflow/minigo)
+- [cnocr - python ocr中文识别](https://github.com/breezedeus/cnocr)
 
 ## 开发工具
 
@@ -53,6 +54,7 @@ excerpt: useful git repository (工具篇)
 - [difft - 基于代码语法的diff工具](https://github.com/Wilfred/difftastic)
 - [magic-trace - 类似perf但使用intel pt跟踪程序](https://github.com/janestreet/magic-trace)
 - [excalidraw - 开源思维导图工具](https://excalidraw.com/)
+- [drawio - 开源流程图工具](https://github.com/jgraph/drawio) [docker](https://github.com/jgraph/docker-drawio) [desktop](https://github.com/jgraph/drawio-desktop/releases/tag/v19.0.3)
 
 ## 静态工具
 

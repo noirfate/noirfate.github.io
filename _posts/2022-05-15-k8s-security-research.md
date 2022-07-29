@@ -12,11 +12,157 @@ excerpt: Kubernetes Security Research
 {:toc}
 
 # k8s安全研究
-> [安全公告](https://groups.google.com/g/kubernetes-security-announce)
+> [安全公告](https://groups.google.com/g/kubernetes-security-announce)<br>
 > [NSA K8s加固指南](https://github.com/rootsongjc/kubernetes-hardening-guidance/blob/main/kubernetes-hardening-guidance-english.md)
 
 ## 概览
+> 以1.24.3为准
+
 ![](/assets/img/k8s_sec1.jpg)
+
+```
+--------------------------------------------------------------------------------
+Language                      files          blank        comment           code
+--------------------------------------------------------------------------------
+Go                            14881         500867         923675        3838672
+JSON                            446              3              0         890813
+YAML                           1294            678           1208         132792
+Bourne Shell                    334           6349          12339          31217
+Markdown                        441           9213              0          25855
+Protocol Buffers                115           5562          18585          11532
+PO File                          12           1873          13413          11291
+Assembly                         93           2555           2583           9584
+PowerShell                        7            392           1017           2470
+make                             60            539            895           1999
+C/C++ Header                      1            399           4367            839
+Bourne Again Shell               12             89             74            773
+Lua                               1             30             26            453
+sed                               4              4             32            445
+Dockerfile                       49            214            705            436
+Python                            7            119            159            412
+ANTLR Grammar                     1             31             17            138
+C                                 5             40             68            133
+TOML                              5             24             86             74
+INI                               1              2              0             10
+HTML                              3              0              0              3
+DOS Batch                         1              2             17              2
+--------------------------------------------------------------------------------
+SUM:                          17773         528985         979266        4959943
+--------------------------------------------------------------------------------
+```
+
+### 目录结构
+
+| 目录          |  说明        |
+| :----------:  |   :-------:  |
+| api/          | 存放 OpenAPI/Swagger 的 spec 文件，包括 JSON、Protocol 的定义等 |
+| build/        | 存放构建相关的脚本 |
+| cmd/          | 存放可执行文件的入口代码，每一个可执行文件都会对应有一个`main`函数 |
+| hack/         | 存放与构建、测试相关的脚本 |
+| pkg/          | 存放核心库代码，可被项目内部或外部，直接引用 |
+| plugin/       | 存放 kubernetes 的插件，例如认证插件、授权插件等 |
+| staging/      | 存放部分核心库的暂存代码，也就是还没有集成到`pkg`目录的代码 |
+| test/         | 存放测试工具，以及测试数据 |
+| third_party/  | 存放第三方工具、代码或其他组件 |
+| vendor/       | 存放项目依赖的库代码，一般为第三方库代码 |
+
+### 组件介绍
+
+#### client
+
+- kubectl
+	- kuberntes官方提供的命令行工具
+	- 以命令行的方式与kube-apiserver组件交互，通信协议是HTTP/JSON，发送HTTP请求到kube-apiserver，kube-apiserver处理并返回结果给kubectl。kubectl将接收到的结果进行展示
+- client-go
+	- 通过编程的方式与kube-apiserver进行交互，实现与kubectl相同的功能
+	- Kubernetes系统的其他组件与kube-apiserver通信的方式都是基于client-go实现
+
+#### master components
+
+- kube-apiserver
+	- Kubernetes集群中的所有组件都通过kube-apiserver组件操作资源对象
+	- Kubernetes系统中的所有资源对象都封装成RESTful风格的API接口进行管理
+	- kube-apiserver是集群中唯一与etcd进行交互的核心组件
+	- kube-apiserver拥有丰富的安全访问机制
+- kube-controller-manager
+	- 负责管理Kubernetes集群中的Node、Pod、Service、Endpoint、Namespace、ServiceAccount、ResourceQuota等
+	- 当某个节点意外宕机时，Controller Manager会及时发现并执行自动化修复流程，确保集群始终处于预期的工作状态
+	- 管理各种控制器，如DeploymentControllers控制器、StatefulSet控制器、Namespace控制器及PersistentVolume控制器等
+	- 控制器通过kube-apiserver提供的接口实时监控整个集群每个资源对象的当前状态，确保系统的实际状态将收敛到期望状态
+- kube-scheduler
+	- Kubernetes集群的默认调度器，监控整个集群的Pod资源对象和Node资源对象，当监控到新的Pod资源对象时，会通过调度算法为其选择最优节点
+  - 调度策略分为预选调度和优选调度两种，预选调度负责找出候选节点，优选调度负责找出最合适的候选节点分，此外Kubernetes还支持优先级调度、抢占机制及亲和性调度等功能
+
+#### node components
+
+- kubelet
+	- 运行在Node节点上，主要负责所在节点上的Pod资源对象的管理，例如Pod资源对象的创建、修改、监控、删除、驱逐及Pod生命周期管理等
+	- 定期监控所在节点的资源使用状态并上报给kube-apiserver组件，这些数据可以帮助kube-scheduler调度器为Pod资源对象预选节点
+	- 对所在节点的镜像和容器做清理工作，保证节点上的镜像不会占满磁盘空间、释放已删除容器的相关资源
+	- 实现了3种开放接口
+		- Container Runtime Interface(CRI): 定义了一套容器运行时接口，基于grpc通信，使kubelet与容器运行时解耦，由于docker不是基于CRI实现的，kubelet又把docker封装了一层，即dockershim
+		- Container Network Interface(CNI): 定义了一套容器网络接口，容器创建时通过CNI插件配置网络，仅负责容器创建时的网络分配和容器删除时释放网络资源
+		- Container Storage Interface(CSI)：定义了一套容器存储接口，容器创建时通过CSI插件配置存储卷
+- kube-proxy
+	- 运行在Node节点上，是Node节点的网络代理
+	- 监控kube-apiserver的Service和Endpoint资源变化，并通过iptables/ipvs等配置网络规则，为一组Pod提供统一的TCP/UDP流量转发和负载均衡功能
+	- 用来完成Pod-to-Service和External-to-Service网络治理，即对于某个IP:Port的请求，负责将其转发给专用网络上的相应服务或应用程序
+	- 与其他负载均衡服务的区别在于，kube-proxy只向Kubernetes服务及其后端Pod发送请求
+
+### 编译构建
+
+#### 普通编译
+
+```
++++ [0728 16:14:59] Building go targets for linux/amd64
+    k8s.io/kubernetes/hack/make-rules/helpers/go2make (non-static)
++++ [0728 16:15:09] Building go targets for linux/amd64
+    k8s.io/kubernetes/vendor/k8s.io/code-generator/cmd/prerelease-lifecycle-gen (non-static)
++++ [0728 16:15:13] Generating prerelease lifecycle code for 26 targets
++++ [0728 16:15:15] Building go targets for linux/amd64
+    k8s.io/kubernetes/vendor/k8s.io/code-generator/cmd/deepcopy-gen (non-static)
++++ [0728 16:15:17] Generating deepcopy code for 236 targets
++++ [0728 16:15:22] Building go targets for linux/amd64
+    k8s.io/kubernetes/vendor/k8s.io/code-generator/cmd/defaulter-gen (non-static)
++++ [0728 16:15:23] Generating defaulter code for 92 targets
++++ [0728 16:15:31] Building go targets for linux/amd64
+    k8s.io/kubernetes/vendor/k8s.io/code-generator/cmd/conversion-gen (non-static)
++++ [0728 16:15:33] Generating conversion code for 129 targets
++++ [0728 16:15:49] Building go targets for linux/amd64
+    k8s.io/kubernetes/vendor/k8s.io/kube-openapi/cmd/openapi-gen (non-static)
++++ [0728 16:15:55] Generating openapi code for KUBE
++++ [0728 16:16:13] Generating openapi code for AGGREGATOR
++++ [0728 16:16:14] Generating openapi code for APIEXTENSIONS
++++ [0728 16:16:16] Generating openapi code for CODEGEN
++++ [0728 16:16:17] Generating openapi code for SAMPLEAPISERVER
++++ [0728 16:16:18] Building go targets for linux/amd64
+    k8s.io/kubernetes/cmd/kube-proxy (static)
+    k8s.io/kubernetes/cmd/kube-apiserver (static)
+    k8s.io/kubernetes/cmd/kube-controller-manager (static)
+    k8s.io/kubernetes/cmd/kubelet (non-static)
+    k8s.io/kubernetes/cmd/kubeadm (static)
+    k8s.io/kubernetes/cmd/kube-scheduler (static)
+    k8s.io/kubernetes/vendor/k8s.io/component-base/logs/kube-log-runner (static)
+    k8s.io/kubernetes/vendor/k8s.io/kube-aggregator (non-static)
+    k8s.io/kubernetes/vendor/k8s.io/apiextensions-apiserver (non-static)
+    k8s.io/kubernetes/cluster/gce/gci/mounter (non-static)
+    k8s.io/kubernetes/cmd/kubectl (static)
+    k8s.io/kubernetes/cmd/kubectl-convert (non-static)
+    k8s.io/kubernetes/cmd/gendocs (non-static)
+    k8s.io/kubernetes/cmd/genkubedocs (non-static)
+    k8s.io/kubernetes/cmd/genman (non-static)
+    k8s.io/kubernetes/cmd/genyaml (non-static)
+    k8s.io/kubernetes/cmd/genswaggertypedocs (non-static)
+    k8s.io/kubernetes/cmd/linkcheck (non-static)
+    k8s.io/kubernetes/vendor/github.com/onsi/ginkgo/ginkgo (non-static)
+    k8s.io/kubernetes/test/e2e/e2e.test (test)
+    k8s.io/kubernetes/test/conformance/image/go-runner (non-static)
+    k8s.io/kubernetes/cmd/kubemark (static)
+    k8s.io/kubernetes/vendor/github.com/onsi/ginkgo/ginkgo (non-static)
+    k8s.io/kubernetes/test/e2e_node/e2e_node.test (test)
+```
+
+![](/assets/img/k8s_normal_make.svg)
 
 ## 配置安全
 
@@ -50,7 +196,7 @@ while cluster manager service use user provided kubeconfig to manage user's k8s 
 	- exec helper
 	- gcp helper
 - Defence<br>
-validate yaml
+validate yaml and disable auth-provider
 
 #### kube-apiserver unauthenticated access
 - Prerequisites
@@ -86,7 +232,7 @@ curl -sk --connect-timeout 5 --cert ./${kubelet_cert} --key ./${kubelet_cert_key
 
 #### kube-apiserver unauthorized access
 - Prerequisites
-	- `--authorization-mode`, 设置为`AlwaysAllow`
+	- `--authorization-mode` set to `AlwaysAllow`
 - Flow<br>
 ```shell
 curl -sk --connect-timeout 5 -H "Authorization: Bearer $token" https://${apiserver}/api/v1/pods
@@ -216,10 +362,11 @@ make hostPath readonly via 'volumeMounts: {"readOnly": true}', [reference](https
 	- unsafe setcap binary
 	- unsafe system, has exploitable cve
 	- unsafe suid binary
+	- unsafe runtime capabilities
 - Flow<br>
 use vulnerabilities to escalate privilege
 - Defence<br>
-	- run container as normal user
+	- run container with normal user and default capabilities
 	- set '"securityContext": {"allowPrivilegeEscalation": false}'
 
 #### kernel vulnerabilities
@@ -264,9 +411,6 @@ use docker.sock or remote api to create privileged container
 ### kubectl
 Kubernetes命令行工具，使得你可以对Kubernetes集群运行命令，如使用kubectl来部署应用、监测和管理集群资源以及查看日志等等
 
-#### 代码
-> RootPath: pkg/kubectl
-
 #### 漏洞
 
 - [CVE-2018-1002100 kubectl cp path escape](https://github.com/noirfate/k8s_debug/tree/main/CVE-2018-1002100)
@@ -298,8 +442,6 @@ kubelet是在每个Node节点上运行的主要 “节点代理”，接受通�
 - `--protect-kernel-defaults`，设置为true，禁止kubelet修改内核参数
 - `--feature-gates=RotateKubeletServerCertificate=true`，kubelet在证书即将到期前自动发送csr请求，申请新证书
 
-#### 代码
-> RootPath: pkg/kubelet
 
 ##### Server
 kubelet监听在10250端口，开放了一些API，可通过HTTPS访问。主要代码在`server/server.go`中，`NewServer`函数负责创建服务，主要包含三个部分：
@@ -368,9 +510,6 @@ Kubernetes API服务器验证并配置API对象的数据， 这些对象包括po
 - `--service-account-lookup`，设置为`true`，在校验凭证前首先确认该`service account`是否有效，防止被删除的`service account`的凭证通过认证
 - `--service-account-key-file`，设置`service account`签名证书的公钥，若不设置，默认使用`kube-apiserver`的TLS证书
 
-#### 代码
-> RootPath: staging/src/k8s.io/apiserver
-
 #### 漏洞
 
 - [CVE-2018-1002105 kube-apiserver do not properly close kubelet proxy connection](https://github.com/noirfate/k8s_debug/tree/main/CVE-2018-1002105)
@@ -401,8 +540,6 @@ Kubernetes控制器管理器是一个守护进程，内嵌随Kubernetes一起发
 - `--service-account-private-key-file`，指定独立的`service account`凭证加解密证书私钥
 - `--feature-gates=RotateKubeletServerCertificate=true`，由于kubelet的证书是由`controller-manager`签发，设置该参数启用kubelet证书到期轮转功能
 
-#### 代码
-
 #### 漏洞
 
 - [CVE-2020-8555 kube-controller-manager SSRF](https://github.com/noirfate/k8s_debug/tree/main/CVE-2020-8555)
@@ -420,8 +557,6 @@ Kubernetes调度器是一个控制面进程，负责将Pods指派到节点上。
 - `--profiling`，设置为`false`，禁止输出性能调试信息
 - `--bind-address`，设置为`127.0.0.1`防止外部请求，`kube-scheduler`默认监听10251端口，无认证，提供health和metrics信息访问
 
-#### 代码
-
 #### 漏洞
 
 #### 挖掘思路
@@ -430,8 +565,6 @@ Kubernetes调度器是一个控制面进程，负责将Pods指派到节点上。
 `kube-proxy`是一个网络代理服务，运行在每一个K8S节点上，负责维护`pod`间通信、`node`间通信以及和外部的通信等等的网络规则
 
 #### 命令行/配置
-
-#### 代码
 
 #### 漏洞
 
@@ -447,9 +580,6 @@ Kubernetes调度器是一个控制面进程，负责将Pods指派到节点上。
 ### ingress-nginx
 
 #### 命令行/配置
-
-#### 代码
-> https://github.com/kubernetes/ingress-nginx
 
 #### 漏洞
 
