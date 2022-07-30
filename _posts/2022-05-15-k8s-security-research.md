@@ -117,6 +117,53 @@ SUM:                          17773         528985         979266        4959943
 #### 镜像编译
 ![](/assets/img/k8s_make_image.svg)
 
+### 代码分析
+
+#### kubectl
+
+#### kubelet
+![](/assets/img/k8s_sec6.png)
+![](/assets/img/k8s_sec7.png)
+
+##### Server
+kubelet监听在10250端口，开放了一些API，可通过HTTPS访问。主要代码在`server/server.go`中，`NewServer`函数负责创建服务，主要包含三个部分：
+- InstallAuthFilter：认证授权，大部分为自动生成的代码
+- InstallDefaultHandlers：默认API，`/healthz、/pods、/stats/[summary, {podName}/{containerName}, {namespace}/{podName}/{uid}/{containerName}]、metrics`
+- InstallDebuggingHandlers：调试API，默认开启，`/run、/exec、/attach、/portForward、/logs(读取/var/log目录下的文件)、/containerLogs、/runningpods、/debug/pprof/[profile, symbol, cmdline, trace]`
+
+##### Manager
+
+- [PLEG](https://developers.redhat.com/blog/2019/11/13/pod-lifecycle-event-generator-understanding-the-pleg-is-not-healthy-issue-in-kubernetes)：定期检查节点上Pod运行情况，如果发现感兴趣的变化，PLEG就会把这种变化包装成Event发送给Kubelet的主同步机制syncLoop去处理
+![](/assets/img/k8s_sec2.png)
+	- 在`SyncLoop`中检查`PLEG`的健康状态，如果超过3分钟没有更新则报错
+	![](/assets/img/k8s_sec3.png)
+	- `kubelet.go:NewMainKubelet`中创建`pleg.NewGenericPLEG`，默认1秒`relist`一次更新pod状态
+	![](/assets/img/k8s_sec4.png)
+	- `relist`调用`runtime.GetPods`获取`pod`的状态(Running、Existed、Unknow、NonExisted)
+	![](/assets/img/k8s_sec5.png)
+	- `SyncLoop`消费`PLEG`消息，执行相应处理
+	- [其他分析文章](https://wenfeng-gao.github.io/post/k8s-pleg-source-code-analysis/)
+
+- [PodConfig](https://developpaper.com/kubelet-source-code-analysis-monitoring-pod-changes/)：持续监测本地manifest、manifest url、apiserver处的Pod配置变化，主要代码实现在`config`目录下
+![](/assets/img/k8s_sec6.png)
+	- [Pod删除时发生了什么](https://wenfeng-gao.github.io/post/source-code-kubelet-what-happened-to-kubelet-when-pod-is-deleted/)
+- [SyncLoop](https://www.alibabacloud.com/blog/understanding-the-kubelet-core-execution-frame_593904)
+![](/assets/img/k8s_sec10.png)
+	- configCh：接收`PodConfig`消息，根据消息内容执行`syncPod`
+	![](/assets/img/k8s_sec8.png)
+	- plegCh：接收`PLEG`消息，如果消息不是`ContainerRemoved`则调用`handler.HandlePodSyncs`，回收`Pod`中停止的容器。比如用`docker stop`停止一个容器，`plegCh`就会返回`ContainerDied`消息，`kubelet`会重启这个容器
+	- syncCh：计时器，每秒触发去同步`Pod`配置
+	- houseKeepingCh：计时器，每两秒触发，调用`HandlePodCleanups`回收停止的`Pod`的资源
+	- [其他分析文章](https://www.cnblogs.com/luozhiyun/p/13736569.html)
+
+#### kube-apiserver
+
+#### kube-controller-manager
+
+#### kube-scheduler
+
+#### kube-proxy
+
 ## 配置安全
 
 ### 基线检查
@@ -380,8 +427,6 @@ Kubernetes命令行工具，使得你可以对Kubernetes集群运行命令，如
 
 ### kubelet
 kubelet是在每个Node节点上运行的主要 “节点代理”，接受通过各种机制（主要是通过 apiserver）提供的一组PodSpec，并确保这些PodSpec中描述的容器处于运行状态且运行状况良好
-![](/assets/img/k8s_sec6.jpg)
-![](/assets/img/k8s_sec7.png)
 
 #### 命令行/配置
 > 修改`/etc/systemd/system/kubelet.service.d/10-kubeadm.conf`变更启动参数，执行`systemctl daemon-reload`加载新配置，重启`systemctl restart kubelet`
@@ -394,38 +439,6 @@ kubelet是在每个Node节点上运行的主要 “节点代理”，接受通�
 - `--streaming-connection-idle-timeout`，空闲连接超时默认为4小时，可能会造成拒绝服务，建议设置为5m
 - `--protect-kernel-defaults`，设置为true，禁止kubelet修改内核参数
 - `--feature-gates=RotateKubeletServerCertificate=true`，kubelet在证书即将到期前自动发送csr请求，申请新证书
-
-
-##### Server
-kubelet监听在10250端口，开放了一些API，可通过HTTPS访问。主要代码在`server/server.go`中，`NewServer`函数负责创建服务，主要包含三个部分：
-- InstallAuthFilter：认证授权，大部分为自动生成的代码
-- InstallDefaultHandlers：默认API，`/healthz、/pods、/stats/[summary, {podName}/{containerName}, {namespace}/{podName}/{uid}/{containerName}]、metrics`
-- InstallDebuggingHandlers：调试API，默认开启，`/run、/exec、/attach、/portForward、/logs(读取/var/log目录下的文件)、/containerLogs、/runningpods、/debug/pprof/[profile, symbol, cmdline, trace]`
-
-##### Manager
-
-- [PLEG](https://developers.redhat.com/blog/2019/11/13/pod-lifecycle-event-generator-understanding-the-pleg-is-not-healthy-issue-in-kubernetes)：定期检查节点上Pod运行情况，如果发现感兴趣的变化，PLEG就会把这种变化包装成Event发送给Kubelet的主同步机制syncLoop去处理
-![](/assets/img/k8s_sec2.png)
-	- 在`SyncLoop`中检查`PLEG`的健康状态，如果超过3分钟没有更新则报错
-	![](/assets/img/k8s_sec3.png)
-	- `kubelet.go:NewMainKubelet`中创建`pleg.NewGenericPLEG`，默认1秒`relist`一次更新pod状态
-	![](/assets/img/k8s_sec4.png)
-	- `relist`调用`runtime.GetPods`获取`pod`的状态(Running、Existed、Unknow、NonExisted)
-	![](/assets/img/k8s_sec5.png)
-	- `SyncLoop`消费`PLEG`消息，执行相应处理
-	- [其他分析文章](https://wenfeng-gao.github.io/post/k8s-pleg-source-code-analysis/)
-
-- [PodConfig](https://developpaper.com/kubelet-source-code-analysis-monitoring-pod-changes/)：持续监测本地manifest、manifest url、apiserver处的Pod配置变化，主要代码实现在`config`目录下
-![](/assets/img/k8s_sec6.png)
-	- [Pod删除时发生了什么](https://wenfeng-gao.github.io/post/source-code-kubelet-what-happened-to-kubelet-when-pod-is-deleted/)
-- [SyncLoop](https://www.alibabacloud.com/blog/understanding-the-kubelet-core-execution-frame_593904)
-![](/assets/img/k8s_sec10.png)
-	- configCh：接收`PodConfig`消息，根据消息内容执行`syncPod`
-	![](/assets/img/k8s_sec8.png)
-	- plegCh：接收`PLEG`消息，如果消息不是`ContainerRemoved`则调用`handler.HandlePodSyncs`，回收`Pod`中停止的容器。比如用`docker stop`停止一个容器，`plegCh`就会返回`ContainerDied`消息，`kubelet`会重启这个容器
-	- syncCh：计时器，每秒触发去同步`Pod`配置
-	- houseKeepingCh：计时器，每两秒触发，调用`HandlePodCleanups`回收停止的`Pod`的资源
-	- [其他分析文章](https://www.cnblogs.com/luozhiyun/p/13736569.html)
 
 #### 漏洞
 
