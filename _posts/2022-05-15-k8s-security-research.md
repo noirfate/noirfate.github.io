@@ -112,57 +112,10 @@ SUM:                          17773         528985         979266        4959943
 ### 编译构建
 
 #### 普通编译
-
-```
-+++ [0728 16:14:59] Building go targets for linux/amd64
-    k8s.io/kubernetes/hack/make-rules/helpers/go2make (non-static)
-+++ [0728 16:15:09] Building go targets for linux/amd64
-    k8s.io/kubernetes/vendor/k8s.io/code-generator/cmd/prerelease-lifecycle-gen (non-static)
-+++ [0728 16:15:13] Generating prerelease lifecycle code for 26 targets
-+++ [0728 16:15:15] Building go targets for linux/amd64
-    k8s.io/kubernetes/vendor/k8s.io/code-generator/cmd/deepcopy-gen (non-static)
-+++ [0728 16:15:17] Generating deepcopy code for 236 targets
-+++ [0728 16:15:22] Building go targets for linux/amd64
-    k8s.io/kubernetes/vendor/k8s.io/code-generator/cmd/defaulter-gen (non-static)
-+++ [0728 16:15:23] Generating defaulter code for 92 targets
-+++ [0728 16:15:31] Building go targets for linux/amd64
-    k8s.io/kubernetes/vendor/k8s.io/code-generator/cmd/conversion-gen (non-static)
-+++ [0728 16:15:33] Generating conversion code for 129 targets
-+++ [0728 16:15:49] Building go targets for linux/amd64
-    k8s.io/kubernetes/vendor/k8s.io/kube-openapi/cmd/openapi-gen (non-static)
-+++ [0728 16:15:55] Generating openapi code for KUBE
-+++ [0728 16:16:13] Generating openapi code for AGGREGATOR
-+++ [0728 16:16:14] Generating openapi code for APIEXTENSIONS
-+++ [0728 16:16:16] Generating openapi code for CODEGEN
-+++ [0728 16:16:17] Generating openapi code for SAMPLEAPISERVER
-+++ [0728 16:16:18] Building go targets for linux/amd64
-    k8s.io/kubernetes/cmd/kube-proxy (static)
-    k8s.io/kubernetes/cmd/kube-apiserver (static)
-    k8s.io/kubernetes/cmd/kube-controller-manager (static)
-    k8s.io/kubernetes/cmd/kubelet (non-static)
-    k8s.io/kubernetes/cmd/kubeadm (static)
-    k8s.io/kubernetes/cmd/kube-scheduler (static)
-    k8s.io/kubernetes/vendor/k8s.io/component-base/logs/kube-log-runner (static)
-    k8s.io/kubernetes/vendor/k8s.io/kube-aggregator (non-static)
-    k8s.io/kubernetes/vendor/k8s.io/apiextensions-apiserver (non-static)
-    k8s.io/kubernetes/cluster/gce/gci/mounter (non-static)
-    k8s.io/kubernetes/cmd/kubectl (static)
-    k8s.io/kubernetes/cmd/kubectl-convert (non-static)
-    k8s.io/kubernetes/cmd/gendocs (non-static)
-    k8s.io/kubernetes/cmd/genkubedocs (non-static)
-    k8s.io/kubernetes/cmd/genman (non-static)
-    k8s.io/kubernetes/cmd/genyaml (non-static)
-    k8s.io/kubernetes/cmd/genswaggertypedocs (non-static)
-    k8s.io/kubernetes/cmd/linkcheck (non-static)
-    k8s.io/kubernetes/vendor/github.com/onsi/ginkgo/ginkgo (non-static)
-    k8s.io/kubernetes/test/e2e/e2e.test (test)
-    k8s.io/kubernetes/test/conformance/image/go-runner (non-static)
-    k8s.io/kubernetes/cmd/kubemark (static)
-    k8s.io/kubernetes/vendor/github.com/onsi/ginkgo/ginkgo (non-static)
-    k8s.io/kubernetes/test/e2e_node/e2e_node.test (test)
-```
-
 ![](/assets/img/k8s_normal_make.svg)
+
+#### 镜像编译
+![](/assets/img/k8s_make_image.svg)
 
 ## 配置安全
 
