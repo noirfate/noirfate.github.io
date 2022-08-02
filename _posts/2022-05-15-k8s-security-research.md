@@ -122,14 +122,17 @@ SUM:                          17773         528985         979266        4959943
 #### kubectl
 
 #### kubelet
-![](/assets/img/k8s_sec6.png)
 ![](/assets/img/k8s_sec7.png)
 
+##### init
+通过`NewMainKubelet`函数创建`kubelet`对象并初始化各种`manager`
+![](/assets/img/kubelet_init.svg)
+
 ##### Server
-kubelet监听在10250端口，开放了一些API，可通过HTTPS访问。主要代码在`server/server.go`中，`NewServer`函数负责创建服务，主要包含三个部分：
-- InstallAuthFilter：认证授权，大部分为自动生成的代码
-- InstallDefaultHandlers：默认API，`/healthz、/pods、/stats/[summary, {podName}/{containerName}, {namespace}/{podName}/{uid}/{containerName}]、metrics`
-- InstallDebuggingHandlers：调试API，默认开启，`/run、/exec、/attach、/portForward、/logs(读取/var/log目录下的文件)、/containerLogs、/runningpods、/debug/pprof/[profile, symbol, cmdline, trace]`
+kubelet server监听在10250/10255端口，开放了一些API，可通过HTTP/HTTPS访问。主要代码在`server/server.go`中，`NewServer`函数负责创建服务，主要包含三个部分：
+- InstallDefaultHandlers：默认API，`/healthz、/pods、/stats/[summary, {podName}/{containerName}, {namespace}/{podName}/{uid}/{containerName}]、/metrics`
+- InstallDebuggingHandlers：调试API，默认开启，`/run、/exec、/attach、/portForward、/logs(读取/var/log目录下的文件)、/containerLogs、/runningpods、/debug/pprof/[profile, symbol, cmdline, trace]`、/debug/flags/v
+![](/assets/img/kubelet_server.svg)
 
 ##### Manager
 
