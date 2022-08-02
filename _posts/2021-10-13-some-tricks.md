@@ -403,6 +403,7 @@ find . -maxdepth 1 -mindepth 1 -name "*.html" -exec sed -i 's/http:\/\/www.a.tes
 
 ## typora windows破解版
 <https://www.fahai.org/index.php/archives/166/>
+<https://github.com/shuhongfan/TyporaCrack>
 
 ## 反弹shell显示优化
 - 服务端监听`nc -lv 8888`

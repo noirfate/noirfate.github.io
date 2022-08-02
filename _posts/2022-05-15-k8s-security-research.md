@@ -126,7 +126,7 @@ SUM:                          17773         528985         979266        4959943
 
 ##### init
 通过`NewMainKubelet`函数创建`kubelet`对象并初始化各种`manager`
-![](/assets/img/kubelet_init.svg)
+![](/assets/img/kubelet_init.png)
 
 ##### Server
 kubelet server监听在10250/10255端口，开放了一些API，可通过HTTP/HTTPS访问。主要代码在`server/server.go`中，`NewServer`函数负责创建服务，主要包含三个部分：
