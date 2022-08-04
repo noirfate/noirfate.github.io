@@ -135,6 +135,17 @@ kubelet server监听在10250/10255端口，开放了一些API，可通过HTTP/HT
 ![](/assets/img/kubelet_server.svg)
 
 ##### Manager
+kubelet包含各种Manager来进行状态管理，在`syncLoop`中处理状态变更产生的各种事件
+- imageManager用来管理镜像
+- serverCertificateManager用来管理kubelet证书，实现证书自动轮转
+- oomWatcher用来监控内存使用
+- resourceAnalyzer用来收集卷使用数据
+- volumeManager用来管理Pod所使用的卷
+- statusManager用来和apiserver同步pod的状态
+- PLEG用来监控pod的生命周期
+- podManager用来管理pod
+
+![](/assets/img/kubelet_module.svg)
 
 - [PLEG](https://developers.redhat.com/blog/2019/11/13/pod-lifecycle-event-generator-understanding-the-pleg-is-not-healthy-issue-in-kubernetes)：定期检查节点上Pod运行情况，如果发现感兴趣的变化，PLEG就会把这种变化包装成Event发送给Kubelet的主同步机制syncLoop去处理
 ![](/assets/img/k8s_sec2.png)
