@@ -176,6 +176,7 @@ excerpt: useful git repository (攻防篇)
 - [MSSQL 渗透指南](https://github.com/Ignitetechnologies/MSSQL-Pentest-Cheatsheet)
 - [Groovy注入](https://xz.aliyun.com/t/8231)
 - [url path parser漏洞](https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf)
+- [GTFOBins](https://gtfobins.github.io/)
 
 ## POC
 

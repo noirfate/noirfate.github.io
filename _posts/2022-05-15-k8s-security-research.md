@@ -15,7 +15,7 @@ excerpt: Kubernetes Security Research
 > [安全公告](https://groups.google.com/g/kubernetes-security-announce)<br>
 > [NSA K8s加固指南](https://github.com/rootsongjc/kubernetes-hardening-guidance/blob/main/kubernetes-hardening-guidance-english.md)
 
-## 概览
+## 基础架构
 > 以1.24.3为准
 
 ![](/assets/img/k8s_sec1.jpg)
@@ -109,6 +109,192 @@ SUM:                          17773         528985         979266        4959943
 	- 用来完成Pod-to-Service和External-to-Service网络治理，即对于某个IP:Port的请求，负责将其转发给专用网络上的相应服务或应用程序
 	- 与其他负载均衡服务的区别在于，kube-proxy只向Kubernetes服务及其后端Pod发送请求
 
+### 认证鉴权
+![](/assets/img/k8s_auth.png)
+![](/assets/img/authn-authz-example.png)
+
+#### API Handler
+负责提供服务，接收请求<br>
+请求会先到`FullHandlerChain`，它是一个`director`对象
+```go
+// staging/src/k8s.io/apiserver/pkg/server/handler.go
+func NewAPIServerHandler(name string, s runtime.NegotiatedSerializer, handlerChainBuilder HandlerChainBuilderFn, notFoundHandler http.Handler) *APIServerHandler {
+	// ...
+	director := director{
+		name:               name,
+		goRestfulContainer: gorestfulContainer,
+		nonGoRestfulMux:    nonGoRestfulMux,
+	}
+	return &APIServerHandler{
+		FullHandlerChain:   handlerChainBuilder(director),
+		GoRestfulContainer: gorestfulContainer,
+		NonGoRestfulMux:    nonGoRestfulMux,
+		Director:           director,
+	}
+}
+```
+如果`goRestfulContainer的 WebServices`的`RootPath`是`/apis`，或者请求前缀与`RootPath`匹配，则进入`Restful`处理链路
+```go
+// ServeHTTP makes it an http.Handler
+func (a *APIServerHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	a.FullHandlerChain.ServeHTTP(w, r)
+}
+func (d director) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	path := req.URL.Path
+
+	// check to see if our webservices want to claim this path
+	for _, ws := range d.goRestfulContainer.RegisteredWebServices() {
+		switch {
+		case ws.RootPath() == "/apis":
+			// if we are exactly /apis or /apis/, then we need special handling in loop.
+			// normally these are passed to the nonGoRestfulMux, but if discovery is enabled, it will go directly.
+			// We can't rely on a prefix match since /apis matches everything (see the big comment on Director above)
+			if path == "/apis" || path == "/apis/" {
+				klog.V(5).Infof("%v: %v %q satisfied by gorestful with webservice %v", d.name, req.Method, path, ws.RootPath())
+				// don't use servemux here because gorestful servemuxes get messed up when removing webservices
+				// TODO fix gorestful, remove TPRs, or stop using gorestful
+				d.goRestfulContainer.Dispatch(w, req)
+				return
+			}
+		case strings.HasPrefix(path, ws.RootPath()):
+			// ensure an exact match or a path boundary match
+			if len(path) == len(ws.RootPath()) || path[len(ws.RootPath())] == '/' {
+				klog.V(5).Infof("%v: %v %q satisfied by gorestful with webservice %v", d.name, req.Method, path, ws.RootPath())
+				// don't use servemux here because gorestful servemuxes get messed up when removing webservices
+				// TODO fix gorestful, remove TPRs, or stop using gorestful
+				d.goRestfulContainer.Dispatch(w, req)
+				return
+			}
+		}
+	}
+	// if we didn't find a match, then we just skip gorestful altogether
+	klog.V(5).Infof("%v: %v %q satisfied by nonGoRestful", d.name, req.Method, path)
+	d.nonGoRestfulMux.ServeHTTP(w, req)
+}
+```
+
+#### Authentication (AuthN)
+在TLS连接建立后，会进行认证处理，如果请求认证失败，会拒绝该请求并返回401错误码；如果认证成功，将进行到鉴权的部分，[参考](http://arthurchiao.art/blog/cracking-k8s-authn/)<br>
+![](/assets/img/auth-chain.png)
+
+- 用户类型
+	- `service account`：k8s管理的用户，该用户由k8s自己创建维护并由其中的app所使用，存储在`secret`中
+	- `normal user`：k8s外部用户，由k8s管理创建，通过静态token、证书等方式认证
+- 凭证类型
+	- `static token`：静态凭证，在`kube-apiserver`启动时指定`--token-auth-file`
+	- `证书`：向`kube-apiserver`发送证书签名请求获取签名证书，[参考](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/certificate-signing-requests/)
+	- `serviceaccount token`：`kubectl create sa testsa`
+	- 其他：LDAP or OIDC
+
+#### Authorization (AuthZ)
+Kubernetes支持多种的鉴权模式，例如，ABAC模式，RBAC模式和Webhook模式等，[参考](http://arthurchiao.art/blog/cracking-k8s-authz-rbac/)<br>
+![](/assets/img/rbac_elem.png)
+
+##### Subject
+```yaml
+subjects:
+- kind: User
+  name: "test_user"
+- kind: ServiceAccount
+  name: default
+  namespace: kube-system
+```
+![](/assets/img/rbac-subjects.png)
+
+##### Resource
+Resource即API URI的简称，如`pods`就是`/api/v1/namespaces/${namespace}/pods`<br>
+```yaml
+resources:
+- pods
+- pods/log
+- serviceaccounts
+```
+
+##### Operation
+即`verb`，表示对`resource`的操作权限
+- read-only: get, list, watch
+- write-update-delete: create, patch, delete
+```yaml
+verbs:
+- get
+- list
+- watch
+```
+
+##### apiGroups
+- `built-in`: ""
+- `custom`: like "cilium.io"
+![](/assets/img/rbac-apigroup.png)
+
+##### Rules
+把`apiGroups`、`resources`、`verbs`组合在一起形成一条规则
+![](/assets/img/rbac-rule.png)
+```yaml
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - services
+  - endpoints
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+```
+
+##### Role
+把一条或多条规则组合在一起形成一个角色
+![](/assets/img/rbac-role.png)
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: viewer
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+```
+
+##### RoleBinding
+把`Role`赋予给`subject`
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: role-binding-for-app1
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: viewer
+subjects:
+- kind: ServiceAccount
+  name: sa-for-app1
+  namespace: default
+```
+
+##### ClusterRole
+`ClusterRole`、`ClusterRoleBinding`类似`Role`和`RoleBinding`，区别在于`Role`必须指定`namespace`，而`ClusterRole`是全局的
+
+#### Admission
+- 首先进入变更准入控制器`Mutating Admission`，它可以修改被它接受的对象，这就引出了它的另一个作用，将相关资源作为请求处理的一部分进行变更
+- 再进入验证准入控制器`Validating Admission`，它只能进行验证，不能进行任何资源数据的修改操作
+
+##### 内置控制器
+`kube-apiserver --help |grep admission-plugins`，[参考](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#what-does-each-admission-controller-do)
+
+##### 动态控制器
+使用`MutatingAdmissionWebhook`和`ValidatingAdmissionWebhook`指定自己搭建的HTTP服务器来处理`kube-apiserver`发来的`AdmissionReview`
+- `Mutating Webhook`的处理是串行的，而`Validating Webhook`是并行处理的
+- `Mutating Webhook`虽然处理是串行的，但是并不保证顺序
+- 注意对`Mutating Webhook`的处理做到幂等性，以免结果不符合预期
+- 请求处理时，注意要处理资源对象的所有API版本
+
 ### 编译构建
 
 #### 普通编译
@@ -136,14 +322,14 @@ kubelet server监听在10250/10255端口，开放了一些API，可通过HTTP/HT
 
 ##### Manager
 kubelet包含各种Manager来进行状态管理，在`syncLoop`中处理状态变更产生的各种事件
-- imageManager用来管理镜像
-- serverCertificateManager用来管理kubelet证书，实现证书自动轮转
-- oomWatcher用来监控内存使用
-- resourceAnalyzer用来收集卷使用数据
-- volumeManager用来管理Pod所使用的卷
-- statusManager用来和apiserver同步pod的状态
-- PLEG用来监控pod的生命周期
-- podManager用来管理pod
+- `imageManager`用来管理镜像
+- `serverCertificateManager`用来管理kubelet证书，实现证书自动轮转
+- `oomWatcher`用来监控内存使用
+- `resourceAnalyzer`用来收集卷使用数据
+- `volumeManager`用来管理Pod所使用的卷
+- `statusManager`用来和apiserver同步pod的状态
+- `PLEG`用来监控pod的生命周期
+- `podManager`用来管理pod
 
 ![](/assets/img/kubelet_module.svg)
 
