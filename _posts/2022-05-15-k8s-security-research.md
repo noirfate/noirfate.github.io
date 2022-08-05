@@ -133,7 +133,7 @@ func NewAPIServerHandler(name string, s runtime.NegotiatedSerializer, handlerCha
 	}
 }
 ```
-如果`goRestfulContainer的 WebServices`的`RootPath`是`/apis`，或者请求前缀与`RootPath`匹配，则进入`Restful`处理链路
+如果`goRestfulContainer`的`WebServices`的`RootPath`是`/apis`，或者请求前缀与`RootPath`匹配，则进入`Restful`处理链路
 ```go
 // ServeHTTP makes it an http.Handler
 func (a *APIServerHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -191,6 +191,7 @@ Kubernetes支持多种的鉴权模式，例如，ABAC模式，RBAC模式和Webho
 ![](/assets/img/rbac_elem.png)
 
 ##### Subject
+访问者
 ```yaml
 subjects:
 - kind: User
@@ -211,9 +212,7 @@ resources:
 ```
 
 ##### Operation
-即`verb`，表示对`resource`的操作权限
-- read-only: get, list, watch
-- write-update-delete: create, patch, delete
+即`verb`，表示对`resource`的操作权限，`read-only`包括`get/list/watch`，`write-update-delete`包括`create/patch/delete`
 ```yaml
 verbs:
 - get
