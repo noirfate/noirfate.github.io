@@ -42,9 +42,9 @@ excerpt: Identity Confusion in WebView-based Mobile App-in-app Ecosystems
 - 拼多多小程序在打开`url`时，微信会检查这个`url`是否在白名单内，但微信未能正确解析`url`，导致白名单绕过。比如白名单里面的一个链接为`weixin.com`，那么攻击者通过用户名密码的方式来指定URL时，如`https://weixin.com:abc@malicious.com`，它实际访问的是`malicious.com`，但在检查白名单的时候被解析成`weixin.com`，从而绕过了白名单检查
 - 通过第一个漏洞，拼多多小程序打开了由攻击者指定的恶意链接，加载了恶意网页，当在这个网页中去调用拼多多提供的`Web Service API`时，拼多多小程序没有做认证，使得攻击者可以通过调用拼多多提供的API来获取微信颁发给拼多多小程序的凭证
 - 通过拼多多小程序的凭证，攻击者可以调用微信的隐藏API，`addDownloadTask`，在安卓系统中下载并安装任意apk
+![](/assets/img/app9.png)
 
-
-### 域名混淆建模
+### 域名混淆
 
 #### 基于时间差的混淆
 如前文所述，小程序都是基于网页开发的，即运行在`WebView`中，而`WebView`在加载网页时会调用两类线程，一个是内容加载线程`Browser Thread`，另一个是渲染线程`Render Thread`。同时主app也会有三类线程，一个是运行小程序`WebView`的线程，一个是做身份检查的线程，还有一个是执行API的线程。以上的五类线程都是异步的，在执行时会存在时间差，利用这个时间差就可以进行身份混淆攻击
@@ -60,7 +60,7 @@ excerpt: Identity Confusion in WebView-based Mobile App-in-app Ecosystems
 #### 基于页帧的混淆
 如果一个页面包含多个iframe页帧，那么主app取到的域名永远是主页面的域名。如果攻击者能够以某种方式（比如在线广告）把自己的网页以iframe的方式嵌入到白名单域名网页时，就可以白名单域名的身份调用隐藏特权API了
 
-### AppID混淆建模
+### AppID混淆
 #### URL白名单匹配缺陷
 URL白名单是由小程序开发者提供，而匹配算法是主app提供，这时就会存在认知偏差。比如，小程序开发者认为是严格的模式匹配，而主app却使用了`endswith`、正则等其他方式来匹配。在用`endswith`匹配时，白名单域名为`weixin.com`，使用`abcdweixin.com`就可以通过白名单检查
 #### URL解析缺陷
