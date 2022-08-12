@@ -23,8 +23,9 @@ excerpt: Cloud Security
 - [Azure RedTeam](https://github.com/rootsecdev/Azure-Red-Team#stealing-tokens-from-az-powershell)
 - [orca](https://orca.security/resources/blog/)
 - [netspi](https://www.netspi.com/blog/technical/cloud-penetration-testing/)
-- [集锦](https://github.com/pen4uin/awesome-cloud-native-security)
+- [awesome cloud security](https://github.com/teamssix/awesome-cloud-security)
 - [从0开始k8s攻防](https://github.com/neargle/my-re0-k8s-security)
+- [云安全知识库](https://cloudsec.huoxian.cn/docs/information)
 
 ## 开源情报
 
@@ -104,6 +105,7 @@ excerpt: Cloud Security
 - [Azure 容器逃逸](https://unit42.paloaltonetworks.com/azure-container-instances/)
 - [在容器中偷取主机runc](https://github.com/twistlock/whoc)
 - [Azure omi agent rce](https://www.wiz.io/blog/secret-agent-exposes-azure-customers-to-unauthorized-code-execution)
+- [Azure omi LPE](https://www.wiz.io/blog/omi-returns-lpe-technical-analysis/)
 - [Azure利用service principal提权](https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5 )
 - [Azure虚机上的普通用户可以访问VM extenstion中的敏感信息](https://www.intezer.com/blog/cloud-security/cve-2021-27075-microsoft-azure-vulnerability-allows-privilege-escalation-and-leak-of-data/)
 - [digitalocean k8s逃逸](https://www.4armed.com/blog/hacking-digitalocean-kubernetes/)
@@ -136,7 +138,8 @@ excerpt: Cloud Security
 - [如何寻找Azure上的越权攻击](https://docs.google.com/presentation/d/1vVpNezQ1uVS3_PQ_beYH-cQR6qrvGcMP8MWV7LA-nKU/mobilepresent?slide=id.p)
 - [EverNote SSRF leak GCP metadata](https://blog.neolex.dev/13/)
 - [AWS RDS PostgreSQL log_fdw插件任意文件读](https://blog.lightspin.io/aws-rds-critical-security-vulnerability)
-- [AWS VPN Client TOCTOU任意文件写](https://rhinosecuritylabs.com/aws/cve-2022-25165-aws-vpn-client/)
+- [AWS VPN Client TOCTOU任意文件写](https://rhinosecuritylabs.com/aws/cve-2022-25165-aws-vpn-client/) [POC](https://github.com/RhinoSecurityLabs/CVEs/tree/master/CVE-2022-25166) [pritunl vpn](https://rhinosecuritylabs.com/penetration-testing/cve-2022-25372-local-privilege-escalation-in-pritunl-vpn-client/)
+- [AWS VPN Client Information Disclosure Via UNC Path](https://github.com/RhinoSecurityLabs/CVEs/tree/master/CVE-2022-25165)
 - [AWS log4shell热补容器逃逸](https://unit42.paloaltonetworks.com/aws-log4shell-hot-patch-vulnerabilities/)
 - [Azure PostgreSQL服务跨租户数据窃取](https://www.wiz.io/blog/wiz-research-discovers-extrareplica-cross-account-database-vulnerability-in-azure-postgresql/)
 - [Exploitation of an SSRF vulnerability against EC2 IMDSv2](https://www.yassineaboukir.com//blog/exploitation-of-an-SSRF-vulnerability-against-EC2-IMDSv2/)
@@ -145,7 +148,7 @@ excerpt: Cloud Security
 - [GCP IAP认证绕过，攻击者使用被害者的Oauth Client ID和任意Secret创建IAP，当被害者访问攻击者的URL时在中间一次redirect时会泄露被害者的token](https://www.seblu.de/2021/12/iap-bypass.html)
 - [GCP Dataflow虚机上JMX服务RCE](https://mbrancato.github.io/2021/12/28/rce-dataflow.html)
 - [GCP ASM Istio多集群部署时，control plane会使用istio-system中的secret，其中保存了集群的kubeconfig，通过修改kubeconfig增加exec即可在control plane执行任意代码](https://lf.lc/vrp/203177829/)
-- [GCP Cloud Shell命令注入](https://docs.google.com/document/d/1-TTCS6fS6kvFUkoJmX4Udr-czQ79lSUVXiWsiAED_bs/edit#)
+- [GCP Cloud Shell命令注入](https://docs.google.com/document/d/1-TTCS6fS6kvFUkoJmX4Udr-czQ79lSUVXiWsiAED_bs/edit#) [另一个](https://bugra.ninja/posts/cloudshell-command-injection/)
 - [Azure synapse sudo提权](https://medium.com/tenable-techblog/microsoft-azure-synapse-pwnalytics-87c99c036291)
 - [AWS Cognito错误配置，允许创建新用户，从而获取AWS凭证](https://notsosecure.com/hacking-aws-cognito-misconfigurations)
 - [Azure 利用docker remote api逃逸dynamics container sandbox](https://hencohen10.medium.com/microsoft-dynamics-container-sandbox-rce-via-unauthenticated-docker-remote-api-20-000-bounty-7f726340a93b)
@@ -184,6 +187,7 @@ excerpt: Cloud Security
 - [k9s - k8s终端UI工具](https://github.com/derailed/k9s/)
 - [kuboard-spray - k8s图形化安装](https://github.com/eip-work/kuboard-spray)
 - [kubeeye - k8s审计工具](https://github.com/kubesphere/kubeeye)
+- [kubeclarity - 镜像sbom分析和漏洞扫描工具](https://github.com/openclarity/kubeclarity)
 
 ## CVE
 
@@ -263,12 +267,12 @@ excerpt: Cloud Security
 - [CVE-2016-5195: Dirty Cow](https://github.com/dirtycow/dirtycow.github.io/wiki/PoCs)
 - [CVE-2017-0781： blueborne - 蓝牙漏洞](https://github.com/ArmisSecurity/blueborne)
 - [CVE-2017-5123： linux waitid系统调用提权漏洞](https://github.com/nongiach/CVE)
-- [CVE-2019-13272 - ptrace_link漏洞本地提权](https://github.com/jas502n/CVE-2019-13272)
+- [CVE-2019-13272: ptrace_link漏洞本地提权](https://github.com/jas502n/CVE-2019-13272)
 - [CVE-2017-13281： bluedroid - 蓝牙漏洞](https://github.com/JiounDai/Bluedroid)
 - [CVE-2020-8835: 利用ebpf verification漏洞提权](https://github.com/noirfate/bpf-lpe) [文章](https://www.zerodayinitiative.com/blog/2020/4/8/cve-2020-8835-linux-kernel-privilege-escalation-via-improper-ebpf-program-verification)
 - [CVE-2020-12351/CVE-2020-12352: BleedingTooth: Linux Bluetooth Zero-Click Remote Code Execution](https://github.com/google/security-research/tree/master/pocs/linux/bleedingtooth)
 - [CVE-2021-3178: nfs leak](https://bugzilla.redhat.com/show_bug.cgi?id=1918179)
-- [CVE-2021-3490： ebpf内核提权](https://github.com/chompie1337/Linux_LPE_eBPF_CVE-2021-3490) [文章](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
+- [CVE-2021-3490: ebpf内核提权](https://github.com/chompie1337/Linux_LPE_eBPF_CVE-2021-3490) [文章](https://www.graplsecurity.com/post/kernel-pwning-with-ebpf-a-love-story)
 - [CVE-2021-20226: a reference counting bug which leads to local privilege escalation in io_uring](https://flattsecurity.medium.com/cve-2021-20226-a-reference-counting-bug-which-leads-to-local-privilege-escalation-in-io-uring-e946bd69177a)
 - [CVE-2021-22543: KVM VM_IO,VM_PFNMAP vma mishandling](https://github.com/google/security-research/security/advisories/GHSA-7wq5-phmq-m584)
 - [CVE-2021-22555: Heap Out-Of-Bounds Write in xt_compat_target_from_user](https://github.com/google/security-research/tree/master/pocs/linux/cve-2021-22555)
@@ -283,10 +287,11 @@ excerpt: Cloud Security
 - [CVE-2022-0185: fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
 - [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc)
 - [CVE-2022-0995: watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
+- [CVE-2022-23222: ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 - [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666：ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
-- [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
-- [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC)
+- [CVE-2022-29968: io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
+- [CVE-2022-34918: netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC)
 
 # APP
 

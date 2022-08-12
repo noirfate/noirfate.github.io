@@ -302,6 +302,7 @@ excerpt: useful git repository (研究篇)
 - [GraphFuzz - library api fuzzer](https://github.com/hgarrereyn/GraphFuzz)
 - [honggfuzz-rs - 利用honggfuzz来fuzz rust](https://github.com/rust-fuzz/honggfuzz-rs)
 - [AlphaFuzzplusplus - 为afl++添加基于蒙特卡洛树搜索算法的种子选择策略](https://github.com/zzyyrr/AlphaFuzzplusplus)
+- [libafl - 用rust实现的afl库](https://github.com/AFLplusplus/LibAFL) [论文](https://www.s3.eurecom.fr/docs/ccs22_fioraldi.pdf)
 
 ### Syzkaller系
 
@@ -311,6 +312,7 @@ excerpt: useful git repository (研究篇)
 - [moonshine - 为syzkaller生成seed](https://github.com/shankarapailoor/moonshine)
 - [vaultfuzzer - 基于syzkaller改进，cov过滤、pc权重等、llvm编译](https://hardenedvault.net/2021/09/13/vaultfuzzer.html)
 - [raw-gadget - use raw gadget to fuzz usb system](https://github.com/xairy/raw-gadget) [slides](https://docs.google.com/presentation/d/1sArf2cN5tAOaovlaL3KBPNDjYOk8P6tRrzfkclsbO_c/edit#slide=id.g1925acbbf3_0_0)
+- [GREBE - 通过对bug report的分析引导fuzzer发现新的漏洞](https://github.com/markakd/GREBE)
 
 ### sanitizer
 

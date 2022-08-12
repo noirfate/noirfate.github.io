@@ -176,7 +176,8 @@ excerpt: useful git repository (攻防篇)
 - [MSSQL 渗透指南](https://github.com/Ignitetechnologies/MSSQL-Pentest-Cheatsheet)
 - [Groovy注入](https://xz.aliyun.com/t/8231)
 - [url path parser漏洞](https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf)
-- [GTFOBins](https://gtfobins.github.io/)
+- [GTFOBins - 可用于提权的命令](https://gtfobins.github.io/)
+- [Browser-Powered Desync Attacks: A New Frontier in HTTP Request Smuggling](https://portswigger.net/research/browser-powered-desync-attacks)
 
 ## POC
 
@@ -247,10 +248,11 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-0543 - redis沙箱逃逸只影响debian](https://github.com/z92g/CVE-2022-0543)
 - [CVE-2022-0847 - 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc)
 - [CVE-2022-0995 - watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
+- [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 - [CVE-2022-25636 - netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 - [CVE-2022-29799/29800 - Nimbuspwn，dbus提权](https://www.microsoft.com/security/blog/2022/04/26/microsoft-finds-new-elevation-of-privilege-linux-vulnerability-nimbuspwn/) [POC](https://github.com/Immersive-Labs-Sec/nimbuspwn) [检测](https://github.com/jfrog/nimbuspwn-tools)
-- [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
+- [CVE-2022-29968 - io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC)
 
 ### container
@@ -317,6 +319,7 @@ excerpt: useful git repository (攻防篇)
 - [python uaf利用](https://github.com/kn32/python-buffered-reader-exploit) [文章](https://pwn.win/2022/05/11/python-buffered-reader.html)
 - [linux把内核页映射进用户态的利用方法](https://vul.360.net/archives/391?continueFlag=2065c4d6bed3a8e7a80c495d7066e013)
 - [curl漏洞挖掘](https://haxatron.gitbook.io/vulnerability-research/vr2)
+- [mysql利用](https://github.com/fnmsd/MySQL_Fake_Server) [读文件](https://m0d9.me/2021/04/20/Jdbc%E7%A2%8E%E7%A2%8E%E5%BF%B5/) [SSRF](https://blog.csdn.net/fnmsd/article/details/117436182) [反序列化](https://m0d9.me/2021/04/20/Jdbc-%E7%A2%8E%E7%A2%8E%E5%BF%B5%E4%BA%8C%EF%BC%9AMySQL-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/) [内存数据库](https://m0d9.me/2021/04/26/Jdbc%E7%A2%8E%E7%A2%8E%E5%BF%B5%E4%B8%89%EF%BC%9A%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93/) [JDBC Attack](https://github.com/su18/JDBC-Attack)
 
 ## 研究资料
 
