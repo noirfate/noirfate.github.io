@@ -303,6 +303,7 @@ excerpt: useful git repository (研究篇)
 - [honggfuzz-rs - 利用honggfuzz来fuzz rust](https://github.com/rust-fuzz/honggfuzz-rs)
 - [AlphaFuzzplusplus - 为afl++添加基于蒙特卡洛树搜索算法的种子选择策略](https://github.com/zzyyrr/AlphaFuzzplusplus)
 - [libafl - 用rust实现的afl库](https://github.com/AFLplusplus/LibAFL) [论文](https://www.s3.eurecom.fr/docs/ccs22_fioraldi.pdf)
+- [wasm runtime fuzzer](https://github.com/ha1vk/blackhat_wasm)
 
 ### Syzkaller系
 

@@ -158,6 +158,7 @@ excerpt: Cloud Security
 - [利用Google客户端的APIKey访问隐藏API](https://www.ezequiel.tech/p/75k-google-services-mix-up.html)
 - [Azure site recovery tool dll hijacking](https://medium.com/tenable-techblog/microsoft-azure-site-recovery-dll-hijacking-cd8cc34ef80c)
 - [GCP mysql数据库导出注入代码实现RCE](https://www.ezequiel.tech/2020/08/dropping-shell-in.html)
+- [GCP Azure postgresql vulnerabilities](https://www.wiz.io/blog/the-cloud-has-an-isolation-problem-postgresql-vulnerabilities)
 
 ## 云原生工具
 
@@ -188,6 +189,7 @@ excerpt: Cloud Security
 - [kuboard-spray - k8s图形化安装](https://github.com/eip-work/kuboard-spray)
 - [kubeeye - k8s审计工具](https://github.com/kubesphere/kubeeye)
 - [kubeclarity - 镜像sbom分析和漏洞扫描工具](https://github.com/openclarity/kubeclarity)
+- [rbac-police - k8s提权检查](https://github.com/PaloAltoNetworks/rbac-police)
 
 ## CVE
 
@@ -238,6 +240,7 @@ excerpt: Cloud Security
 - [QEMU 博客](https://airbus-seclab.github.io/qemu_blog/)
 - [HyperV攻击面](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Mobius-Band-Explore-Hyper-V-Attack-Interface-Through-Vulnerabilities-Internals.pdf)
 - [QEMU issues](https://gitlab.com/qemu-project/qemu/-/issues)
+- [HyperV vGPU漏洞](https://i.blackhat.com/USA-22/Thursday/US-22-Hong-DirectX-The-New-Hyper-V-Attack-Surface.pdf)
 
 ## 漏洞
 
@@ -285,7 +288,7 @@ excerpt: Cloud Security
 - [CVE-2021-42008: 6pack driver提权](https://syst3mfailure.io/sixpack-slab-out-of-bounds)
 - [CVE-2021-43267: tipc eop](https://haxx.in/posts/pwning-tipc/)
 - [CVE-2022-0185: fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
-- [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc)
+- [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc) [自动提权](https://github.com/EagleTube/CVE-2022-0847)
 - [CVE-2022-0995: watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
 - [CVE-2022-23222: ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 - [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
