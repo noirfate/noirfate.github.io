@@ -359,10 +359,10 @@ kubelet包含各种Manager来进行状态管理，在`syncLoop`中处理状态�
 ![](/assets/img/k8s_sec12.png)
 
 kube-apiserver包含三种APIServer和bootstrap-controller<br>
-- aggregatorServer：负责处理 apiregistration.k8s.io 组下的APIService资源请求，同时将来自用户的请求拦截转发给aggregated server
-- kubeAPIServer：负责对请求的一些通用处理，包括：认证、鉴权以及各个内建资源(pod, deployment，service and etc)的REST服务等
-- apiExtensionsServer：负责CustomResourceDefinition（CRD）apiResources以及apiVersions的注册，同时处理CRD以及相应CustomResource（CR）的REST请求(如果对应CR不能被处理的话则会返回404)，也是apiserver Delegation的最后一环
-- bootstrap-controller：主要负责Kubernetes default apiserver service的创建以及管理，包括命名空间（如default、kube-system等）、service endpoint、clusterIP等
+- `aggregatorServer`：负责处理 apiregistration.k8s.io 组下的APIService资源请求，同时将来自用户的请求拦截转发给aggregated server
+- `kubeAPIServer`：负责对请求的一些通用处理，包括：认证、鉴权以及各个内建资源(pod, deployment，service and etc)的REST服务等
+- `apiExtensionsServer`：负责CustomResourceDefinition（CRD）apiResources以及apiVersions的注册，同时处理CRD以及相应CustomResource（CR）的REST请求(如果对应CR不能被处理的话则会返回404)，也是apiserver Delegation的最后一环
+- `bootstrap-controller`：主要负责Kubernetes default apiserver service的创建以及管理，包括命名空间（如default、kube-system等）、service endpoint、clusterIP等
 
 ##### kubeAPIServer
 kubeAPIServer是整个Kubernetes apiserver的核心，主要提供对内建API Resources的操作请求，为Kubernetes中各API Resources注册路由信息，同时暴露RESTful API，使集群中以及集群外的服务都可以通过RESTful API操作Kubernetes中的资源<br>
@@ -375,7 +375,7 @@ kubeAPIServer核心的功能：<br>
 当请求到达kube-apiserver时，kube-apiserver首先会执行注册的过滤器链，当过滤完成后，请求会通过route进入到对应的handler中，handler中的操作主要是通过RESTStorage与etcd交互
 ![](/assets/img/k8s_sec13.png)
 代码执行流程<br>
-![](/assets/img/apiserver.drawio.svg)
+![](/assets/img/apiserver.svg)
 
 #### kube-controller-manager
 
