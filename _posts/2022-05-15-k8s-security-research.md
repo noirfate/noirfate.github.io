@@ -389,10 +389,19 @@ kubeAPIServer核心的功能：<br>
 ![](/assets/img/k8s_sec14.png)
 当请求到达kube-apiserver时，kube-apiserver首先会执行注册的过滤器链，当过滤完成后，请求会通过route进入到对应的handler中，handler中的操作主要是通过RESTStorage与etcd交互
 ![](/assets/img/k8s_sec13.png)
-代码执行流程<br>
+代码执行流程
 ![](/assets/img/apiserver.svg)
 
 ##### apiExtensionsServer
+apiExtensionsServer主要负责CustomResourceDefinition（CRD）apiResources以及apiVersions的注册，同时处理CRD以及相应CustomResource（CR）的REST请求(如果对应CR不能被处理的话则会返回404)，也是apiserver Delegation的最后一环
+- `openapiController`：将crd资源的变化同步至提供的 OpenAPI 文档，可通过访问/openapi/v2进行查看
+- `crdController`：负责将crd信息注册到apiVersions和apiResources中，两者的信息可通过`kubectl api-versions`和`kubectl api-resources`查看
+- `namingController`：检查crd obj中是否有命名冲突，可在crd.status.conditions中查看
+- `establishingController`：检查crd是否处于正常状态，可在crd.status.conditions中查看
+- `nonStructuralSchemaController`：检查crd obj结构是否正常，可在crd.status.conditions中查看
+- `apiApprovalController`：检查crd是否遵循kubernetes API声明策略，可在crd.status.conditions中查看
+- `finalizingController`：类似于finalizes的功能，与CRs的删除有关
+![](/assets/img/apiextension.svg))
 
 #### kube-controller-manager
 
