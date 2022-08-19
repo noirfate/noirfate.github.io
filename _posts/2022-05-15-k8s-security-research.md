@@ -358,11 +358,26 @@ kubelet包含各种Manager来进行状态管理，在`syncLoop`中处理状态�
 #### kube-apiserver
 ![](/assets/img/k8s_sec12.png)
 
-kube-apiserver包含三种APIServer和bootstrap-controller<br>
+kube-apiserver包含三种APIServer和一个bootstrap-controller，三种APIServer在`CreateServerChain()`中创建，并通过delegation串联在一起<br>
 - `aggregatorServer`：负责处理 apiregistration.k8s.io 组下的APIService资源请求，同时将来自用户的请求拦截转发给aggregated server
 - `kubeAPIServer`：负责对请求的一些通用处理，包括：认证、鉴权以及各个内建资源(pod, deployment，service and etc)的REST服务等
 - `apiExtensionsServer`：负责CustomResourceDefinition（CRD）apiResources以及apiVersions的注册，同时处理CRD以及相应CustomResource（CR）的REST请求(如果对应CR不能被处理的话则会返回404)，也是apiserver Delegation的最后一环
 - `bootstrap-controller`：主要负责Kubernetes default apiserver service的创建以及管理，包括命名空间（如default、kube-system等）、service endpoint、clusterIP等
+- `go-restful`：APISserver就是一个实现了REST API的WebServer，最终使用golang的net/http库中的Server运行起来的，按照`go-restful`原理包含以下组件
+	- `Container`：一个Container包含多个WebService
+	- `WebService`：一个WebService包含多条route
+	- `Route`：一条route包含一个method、一个具体的path和一个响应的handler
+
+##### aggregatorServer
+aggregator是APIServer的一种扩展，可以让APISserver和外部的APIServer进行联动，`CreateServerChain()`最终返回的Server对象就是aggregatorServer。在创建AggregatorServer时，KubeAPIServer和APIExtensions中的资源组，即GroupVersion，会被转换成Aggregator的APIService对象，注册到Aggregator中，并且整个APIServer的入口，其实是Aggregator的GenericAPIServer <br>
+- `apiserviceRegistrationController`：负责根据APIService定义的aggregated server service构建代理，并讲处理函数注册到对应的URI上
+- `availableConditionController`：维护APIServices的可用状态，包括其引用Service是否可用等等
+- `autoRegistrationController`：内部定义了一个队列，用来保存添加进来的APIService对象，这些APIService可能是KubeAPIServer或者APIExtensions APIServer转换过来的，也可能是通过APIService的API直接添加进来的，然后在kube-apiserver-autoregistration PostStartHook中启动这个Controller，通过不断轮询，将队列中的APIService取出，然后调用apiservice对应的API，将他们添加或者更新到etcd数据库中，固化下来
+- `crdRegistrationController`：将APIExtensions APIServer中定义的CRD对象转换成APIService，注册到autoRegistrationController的队列中
+- `openAPIAggregationController`：将APIServices资源的变化同步至提供的OpenAPI文档
+![](/assets/img/aggregator.svg)
+在创建完aggregatorServer后，启动Server，根据注册的APIService分发api请求到内部或外部的APIServer
+![](/assets/img/aggregator_run.svg)
 
 ##### kubeAPIServer
 kubeAPIServer是整个Kubernetes apiserver的核心，主要提供对内建API Resources的操作请求，为Kubernetes中各API Resources注册路由信息，同时暴露RESTful API，使集群中以及集群外的服务都可以通过RESTful API操作Kubernetes中的资源<br>
@@ -370,12 +385,14 @@ kubeAPIServer核心的功能：<br>
 - 调用DefaultBuildHandlerChain注册过滤器链，包括认证、鉴权等检查操作
 - 调用InstallLegacyAPI将核心API Resources添加到路由中，在apiserver中即是以/api开头的resource
 - 调用InstallAPIs将扩展的API Resources添加到路由中，在apiserver中即是以/apis开头的resource
-- 调用NonBlockingRun启动HTTP服务
+
 ![](/assets/img/k8s_sec14.png)
 当请求到达kube-apiserver时，kube-apiserver首先会执行注册的过滤器链，当过滤完成后，请求会通过route进入到对应的handler中，handler中的操作主要是通过RESTStorage与etcd交互
 ![](/assets/img/k8s_sec13.png)
 代码执行流程<br>
 ![](/assets/img/apiserver.svg)
+
+##### apiExtensionsServer
 
 #### kube-controller-manager
 
