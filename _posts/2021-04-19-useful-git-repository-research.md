@@ -49,6 +49,7 @@ excerpt: useful git repository (研究篇)
 - [BinAbsInspector - 二进制漏洞挖掘插件](https://github.com/KeenSecurityLab/BinAbsInspector)
 - [ghostrings - 恢复go字符串](https://github.com/nccgroup/ghostrings) [文章](https://research.nccgroup.com/2022/05/20/tool-release-ghostrings/)
 - [用ghidra和semgrep对二进制做静态代码分析](https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/)
+- [Ghidrathon - 为Ghidra提供python3支持](https://github.com/mandiant/Ghidrathon)
 
 ### GDB扩展
 
@@ -113,6 +114,7 @@ excerpt: useful git repository (研究篇)
 - [sems - 沙箱、虚拟化环境检测工具](https://github.com/AlicanAkyol/sems)
 - [imvirt - 虚拟化环境监测工具](https://github.com/DE-IBH/imvirt)
 - [emba - 固件漏洞分析工具](https://github.com/e-m-b-a/emba)
+- [magnifier - 交互式逆向软件](https://github.com/trailofbits/magnifier) [介绍](https://blog.trailofbits.com/2022/08/25/magnifier-an-experiment-with-interactive-decompilation/)
 
 ### binary改写
 

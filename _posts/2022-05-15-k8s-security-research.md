@@ -401,7 +401,7 @@ apiExtensionsServer主要负责CustomResourceDefinition（CRD）apiResources以�
 - `nonStructuralSchemaController`：检查crd obj结构是否正常，可在crd.status.conditions中查看
 - `apiApprovalController`：检查crd是否遵循kubernetes API声明策略，可在crd.status.conditions中查看
 - `finalizingController`：类似于finalizes的功能，与CRs的删除有关
-![](/assets/img/apiextension.svg))
+![](/assets/img/apiextension.svg)
 
 #### kube-controller-manager
 

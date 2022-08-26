@@ -98,6 +98,7 @@ excerpt: useful git repository (攻防篇)
 - [TripleCross - ebpf rootkit](https://github.com/h3xduck/TripleCross)
 - [pamspy - 利用uprobe hook pam获取密码](https://github.com/citronneur/pamspy)
 - [reveng_rtkit - linux 5.11 rootkit](https://github.com/reveng007/reveng_rtkit)
+- [go-memexec - run binary in memory](https://github.com/amenzhinsky/go-memexec)
 
 ### OSINT(开源情报)工具
 
@@ -178,6 +179,8 @@ excerpt: useful git repository (攻防篇)
 - [url path parser漏洞](https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf)
 - [GTFOBins - 可用于提权的命令](https://gtfobins.github.io/)
 - [Browser-Powered Desync Attacks: A New Frontier in HTTP Request Smuggling](https://portswigger.net/research/browser-powered-desync-attacks)
+- [红队渗透日记](https://github.com/ihebski/A-Red-Teamer-diaries)
+- [python安全](https://github.com/bit4woo/python_sec)
 
 ## POC
 
@@ -210,6 +213,7 @@ excerpt: useful git repository (攻防篇)
 - [7z本地提权](https://github.com/kagancapar/CVE-2022-29072)
 - [Follina word命令执行](https://github.com/chvancooten/follina.py) [说明](https://gist.github.com/tothi/66290a42896a97920055e50128c9f040)
 - [利用callback执行shellcode](https://github.com/aahmad097/AlternativeShellcodeExec) [文章](https://marcoramilli.com/2022/06/15/running-shellcode-through-windows-callbacks/)
+- [warbird-hook - 使用warbird执行加密的shellcode，绕过patchguard](https://github.com/KiFilterFiberContext/warbird-hook)
 
 ### linux
 
@@ -320,6 +324,8 @@ excerpt: useful git repository (攻防篇)
 - [linux把内核页映射进用户态的利用方法](https://vul.360.net/archives/391?continueFlag=2065c4d6bed3a8e7a80c495d7066e013)
 - [curl漏洞挖掘](https://haxatron.gitbook.io/vulnerability-research/vr2)
 - [mysql利用](https://github.com/fnmsd/MySQL_Fake_Server) [读文件](https://m0d9.me/2021/04/20/Jdbc%E7%A2%8E%E7%A2%8E%E5%BF%B5/) [SSRF](https://blog.csdn.net/fnmsd/article/details/117436182) [反序列化](https://m0d9.me/2021/04/20/Jdbc-%E7%A2%8E%E7%A2%8E%E5%BF%B5%E4%BA%8C%EF%BC%9AMySQL-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/) [内存数据库](https://m0d9.me/2021/04/26/Jdbc%E7%A2%8E%E7%A2%8E%E5%BF%B5%E4%B8%89%EF%BC%9A%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93/) [JDBC Attack](https://github.com/su18/JDBC-Attack)
+- [java snakeyaml反序列化漏洞](https://tttang.com/archive/1591/)
+- [pyyaml反序列化漏洞](https://github.com/bit4woo/code2sec.com/blob/master/Python%20PyYAML%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C%E5%92%8Cpayload%E6%9E%84%E9%80%A0.md)
 
 ## 研究资料
 
@@ -392,6 +398,7 @@ excerpt: useful git repository (攻防篇)
 - [wazuh - 主机监控平台](https://github.com/wazuh/wazuh)
 - [ehids - 使用ebpf进行监控](https://github.com/ehids/ehids-agent)
 - [VED - 内核加固及漏洞利用防护](https://github.com/hardenedvault/ved)
+- [OpenArk - win反rootkit工具](https://github.com/BlackINT3/OpenArk)
 
 ### 软件防护
 
