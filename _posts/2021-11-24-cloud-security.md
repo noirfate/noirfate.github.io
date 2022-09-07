@@ -159,6 +159,7 @@ excerpt: Cloud Security
 - [Azure site recovery tool dll hijacking](https://medium.com/tenable-techblog/microsoft-azure-site-recovery-dll-hijacking-cd8cc34ef80c)
 - [GCP mysql数据库导出注入代码实现RCE](https://www.ezequiel.tech/2020/08/dropping-shell-in.html)
 - [GCP Azure postgresql vulnerabilities](https://www.wiz.io/blog/the-cloud-has-an-isolation-problem-postgresql-vulnerabilities)
+- [postgresql使用security definer提权](https://www.cybertec-postgresql.com/en/abusing-security-definer-functions/)
 
 ## 云原生工具
 
@@ -290,11 +291,12 @@ excerpt: Cloud Security
 - [CVE-2022-0185: fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
 - [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc) [自动提权](https://github.com/EagleTube/CVE-2022-0847)
 - [CVE-2022-0995: watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
+- [CVE-2022-2639: openvswitch reserve_sfa_size越界访问](https://github.com/veritas501/CVE-2022-2639-PipeVersion)
 - [CVE-2022-23222: ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 - [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666：ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 - [CVE-2022-29968: io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
-- [CVE-2022-34918: netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC)
+- [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC) [USMA利用方法](https://tttang.com/archive/1706/) [USMA利用代码](https://github.com/veritas501/CVE-2022-34918/tree/master/poc_fs_context_cred_common/src)
 
 # APP
 

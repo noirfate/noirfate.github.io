@@ -115,6 +115,7 @@ excerpt: useful git repository (研究篇)
 - [imvirt - 虚拟化环境监测工具](https://github.com/DE-IBH/imvirt)
 - [emba - 固件漏洞分析工具](https://github.com/e-m-b-a/emba)
 - [magnifier - 交互式逆向软件](https://github.com/trailofbits/magnifier) [介绍](https://blog.trailofbits.com/2022/08/25/magnifier-an-experiment-with-interactive-decompilation/)
+- [medusa ](https://github.com/Ch0pin/medusa)
 
 ### binary改写
 
@@ -165,6 +166,8 @@ excerpt: useful git repository (研究篇)
 - [多平台固件提取工具BIOSUtilities](https://github.com/platomav/BIOSUtilities)
 - [FACT - 固件分析工具](https://github.com/fkie-cad/FACT_core)
 - [polytracker - 针对c/c++的数据流执行流分析工具](https://github.com/trailofbits/polytracker)
+- [medusa - 安卓应用分析工具](https://github.com/Ch0pin/medusa)
+- [appshark - 安卓应用污点追踪漏洞分析工具](https://github.com/bytedance/appshark)
 
 ### 调试工具
 
@@ -306,6 +309,7 @@ excerpt: useful git repository (研究篇)
 - [AlphaFuzzplusplus - 为afl++添加基于蒙特卡洛树搜索算法的种子选择策略](https://github.com/zzyyrr/AlphaFuzzplusplus)
 - [libafl - 用rust实现的afl库](https://github.com/AFLplusplus/LibAFL) [论文](https://www.s3.eurecom.fr/docs/ccs22_fioraldi.pdf)
 - [wasm runtime fuzzer](https://github.com/ha1vk/blackhat_wasm)
+- [cryptofuzz - fuzz加密库](https://github.com/guidovranken/cryptofuzz)
 
 ### Syzkaller系
 
@@ -428,3 +432,4 @@ excerpt: useful git repository (研究篇)
 - [codecat - 支持多语言的规则匹配代码扫描工具](https://github.com/CoolerVoid/codecat)
 - [IncreLux - 发现linux内核UBI(Use Before Initialization)漏洞](https://github.com/seclab-ucr/IncreLux)
 - [tabby - java静态代码分析工具](https://github.com/wh1t3p1g/tabby)
+- [mate - 根据c/c++程序代码属性图发现漏洞](https://github.com/GaloisInc/MATE)

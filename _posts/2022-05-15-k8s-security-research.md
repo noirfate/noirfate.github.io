@@ -404,6 +404,16 @@ apiExtensionsServer主要负责CustomResourceDefinition（CRD）apiResources以�
 ![](/assets/img/apiextension.svg)
 
 #### kube-controller-manager
+kube-controller-manager是k8s集群的大脑，由一些列控制器组成，如：Replication Controller、Node Controller、Daemon Controller、Deployment Controller等等。每一个控制器都基于client-go库实现对apiserver资源的监控，当资源更改时执行对应的回调函数
+##### start代码执行流程
+![](/assets/img/controller_manager.svg)
+##### Controller实现逻辑
+![](/assets/img/custom_controller.jpg)
+- 向Informer注册需要处理的Resource的Handler
+- 当Resource出现更改时，Informer调用Handler，Handler把任务项加入处理队列中
+- workers（处理线程）从处理队列中读取任务项并进行处理
+##### Deployment Controller源码分析
+![](/assets/img/deployment_controller.svg)
 
 #### kube-scheduler
 
