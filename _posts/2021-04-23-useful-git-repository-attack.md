@@ -31,6 +31,7 @@ excerpt: useful git repository (攻防篇)
 - [rengine - 网站漏洞扫描工具](https://github.com/yogeshojha/rengine)
 - [escapture - 使用ebpf uprobe抓取ssl流量](https://github.com/ehids/ecapture)
 - [jfscan - 集成masscan,nmap,nuclei的扫描工具](https://github.com/nullt3r/jfscan)
+- [dirsearch - 发现webserver路径](https://github.com/maurosoria/dirsearch)
 
 ### 本地扫描工具
 
@@ -116,6 +117,9 @@ excerpt: useful git repository (攻防篇)
 - [每日安全信息](https://github.com/xqx12/daily-info)
 - [BugBountyScanner - 子域名、服务扫描](https://github.com/chvancooten/BugBountyScanner)
 - [开源情报工具收集汇总](https://dhiyaneshgeek.github.io/red/teaming/2022/04/28/reconnaissance-red-teaming/)
+- [APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
+- [osint框架](https://osintframework.com/)
+- [安全rss](https://github.com/brant-ruan/infosec-feeds)
 
 ### 云原生渗透工具
 
@@ -404,6 +408,7 @@ excerpt: useful git repository (攻防篇)
 - [ehids - 使用ebpf进行监控](https://github.com/ehids/ehids-agent)
 - [VED - 内核加固及漏洞利用防护](https://github.com/hardenedvault/ved)
 - [OpenArk - win反rootkit工具](https://github.com/BlackINT3/OpenArk)
+- [Elkeid - 字节跳动开源的主机防护软件](https://github.com/bytedance/Elkeid)
 
 ### 软件防护
 

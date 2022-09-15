@@ -310,6 +310,8 @@ excerpt: useful git repository (研究篇)
 - [libafl - 用rust实现的afl库](https://github.com/AFLplusplus/LibAFL) [论文](https://www.s3.eurecom.fr/docs/ccs22_fioraldi.pdf)
 - [wasm runtime fuzzer](https://github.com/ha1vk/blackhat_wasm)
 - [cryptofuzz - fuzz加密库](https://github.com/guidovranken/cryptofuzz)
+- [SystemSan - 检测命令注入漏洞](https://github.com/google/oss-fuzz/tree/master/infra/experimental/SystemSan) [介绍](https://security.googleblog.com/2022/09/fuzzing-beyond-memory-corruption.html)
+- [SyzScope - 评估bug危害](https://github.com/plummm/SyzScope)
 
 ### Syzkaller系
 
@@ -402,6 +404,8 @@ excerpt: useful git repository (研究篇)
 - [rewind - Snapshot-based coverage-guided windows kernel fuzzer](https://github.com/quarkslab/rewind)
 - [内核fuzz为何低效](https://www.cs.ucr.edu/~zhiyunq/pub/icse22_dependency_measurement.pdf)
 - [sfuzz - 针对RISC-V二进制的覆盖度反馈fuzz](https://github.com/seal9055/sfuzz/) [blog](https://seal9055.com/blog/?p=sfuzz&d=fuzzing)
+- [silifuzz - cpu fuzzer](https://github.com/google/silifuzz)
+- [fuzzable - 使用静态分析判断程序的可fuzz性](https://github.com/ex0dus-0x/fuzzable)
 
 ## static analysis
 

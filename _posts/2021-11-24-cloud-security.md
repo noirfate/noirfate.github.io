@@ -35,6 +35,7 @@ excerpt: Cloud Security
 - [漏洞利用搜索](https://sploitus.com/)
 - [云服务商漏洞搜索引擎](https://www.cloudvulndb.org/results?q=)
 - [2022 top25漏洞类型](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html)
+- [osint框架](https://osintframework.com/)
 
 ## 云原生知识
 
@@ -160,6 +161,7 @@ excerpt: Cloud Security
 - [GCP mysql数据库导出注入代码实现RCE](https://www.ezequiel.tech/2020/08/dropping-shell-in.html)
 - [GCP Azure postgresql vulnerabilities](https://www.wiz.io/blog/the-cloud-has-an-isolation-problem-postgresql-vulnerabilities)
 - [postgresql使用security definer提权](https://www.cybertec-postgresql.com/en/abusing-security-definer-functions/)
+- [大于3/4的app内置了AWS的aksk](https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/mobile-supply-chain-aws)
 
 ## 云原生工具
 
@@ -191,6 +193,9 @@ excerpt: Cloud Security
 - [kubeeye - k8s审计工具](https://github.com/kubesphere/kubeeye)
 - [kubeclarity - 镜像sbom分析和漏洞扫描工具](https://github.com/openclarity/kubeclarity)
 - [rbac-police - k8s提权检查](https://github.com/PaloAltoNetworks/rbac-police)
+- [ScoutSuite - 云安全审计工具，支持亚马逊、微软、谷歌、阿里](https://github.com/nccgroup/ScoutSuite)
+- [Constellation - k8s加密](https://github.com/edgelesssys/constellation)
+- [cloudfox - 云环境攻击面分析](https://github.com/BishopFox/cloudfox)
 
 ## CVE
 
@@ -242,6 +247,9 @@ excerpt: Cloud Security
 - [HyperV攻击面](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Mobius-Band-Explore-Hyper-V-Attack-Interface-Through-Vulnerabilities-Internals.pdf)
 - [QEMU issues](https://gitlab.com/qemu-project/qemu/-/issues)
 - [HyperV vGPU漏洞](https://i.blackhat.com/USA-22/Thursday/US-22-Hong-DirectX-The-New-Hyper-V-Attack-Surface.pdf)
+- [windows容器通信](https://www.cyberark.com/resources/threat-research-blog/understanding-windows-containers-communication)
+- [firecracker内存破坏漏洞](https://www.graplsecurity.com/post/attacking-firecracker)
+- [使用virt-manager启动参数独立启动qemu](https://developers.redhat.com/blog/2020/03/06/configure-and-run-a-qemu-based-vm-outside-of-libvirt)
 
 ## 漏洞
 
@@ -265,6 +273,8 @@ excerpt: Cloud Security
 - [Alexander Popov](https://a13xp0p0v.github.io/)
 - [pwn2own 2021 ubuntu lpe](https://flatt.tech/assets/reports/210401_pwn2own/whitepaper.pdf)
 - [modprobe内核利用方法](https://sam4k.com/like-techniques-modprobe_path/)
+- [uprobe原理及绕过方法](https://blog.quarkslab.com/defeating-ebpf-uprobe-monitoring.html)
+- [linux dirty-pipe通用利用方法](https://github.com/veritas501/pipe-primitive)
 
 ## CVE
 

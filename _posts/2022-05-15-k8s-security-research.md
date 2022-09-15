@@ -416,6 +416,17 @@ kube-controller-manager是k8s集群的大脑，由一些列控制器组成，如
 ![](/assets/img/deployment_controller.svg)
 
 #### kube-scheduler
+Kube-scheduler是k8s的核心组件之一，其目的就是为每一个pod选择一个合适的node，整体流程可以概括为三步，获取未调度的podList，通过执行一系列调度算法为pod选择一个合适的node，提交数据到apiserver
+![](/assets/img/scheduler_brief.jpeg)
+##### scheduling framework
+调度框架是kube-schedler的一个插件式的调度架构，在调度周期（Scheduling Cycle）和绑定周期（Binding Cycle）中定义了一系列扩展点，用户可以编写插件注册到扩展点上实现更多的功能
+![](/assets/img/scheduling-framework.png)
+###### 调度周期
+在调度周期中会为pod选择一个node，它是顺序执行的，包含9个扩展点
+- Sort
+对调度队列中的pod进行排序
+- PreFilter
+对pod的信息进行预处理，或检视集群或pod必须满足的条件 
 
 #### kube-proxy
 
