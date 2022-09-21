@@ -416,17 +416,66 @@ kube-controller-manager是k8s集群的大脑，由一些列控制器组成，如
 ![](/assets/img/deployment_controller.svg)
 
 #### kube-scheduler
-Kube-scheduler是k8s的核心组件之一，其目的就是为每一个pod选择一个合适的node，整体流程可以概括为三步，获取未调度的podList，通过执行一系列调度算法为pod选择一个合适的node，提交数据到apiserver
+kube-scheduler是k8s的核心组件之一，其目的就是为每一个pod选择一个合适的node，整体流程可以概括为三步，获取未调度的podList，通过执行一系列调度算法为pod选择一个合适的node，提交数据到apiserver
 ![](/assets/img/scheduler_brief.jpeg)
 ##### scheduling framework
 调度框架是kube-schedler的一个插件式的调度架构，在调度周期（Scheduling Cycle）和绑定周期（Binding Cycle）中定义了一系列扩展点，用户可以编写插件注册到扩展点上实现更多的功能
 ![](/assets/img/scheduling-framework.png)
 ###### 调度周期
-在调度周期中会为pod选择一个node，它是顺序执行的，包含9个扩展点
-- Sort
-对调度队列中的pod进行排序
+在调度周期中会为pod选择一个node，它是顺序执行的，包含9个扩展点，每个扩展点上都可以挂载多个插件
+- queueSort
+对调度队列中的待调度的pod进行排序，一次只能启用一个队列排序插件
 - PreFilter
-对pod的信息进行预处理，或检视集群或pod必须满足的条件 
+对pod的信息进行预处理，或检视集群或pod必须满足的条件，可以将node标记为不可调度
+- Filter
+等价于之前的Predicate，过滤掉不能运行pod的node，过滤器的调用顺序可配，如果没有一个节点通过所有过滤器的筛选，Pod将会被标记为不可调度
+- PostFilter
+当没有合适的node时会执行，按照这些插件的配置顺序调用他们，如果任何postFilter插件将Pod标记为可调度，则不会调用其余插件，一般用于实现抢占，即挤掉其他pod
+- PreScore
+为之后的Score插件准备执行环境
+- Score
+等价于之前的Priority Function，为每个node进行打分
+- NormalizeScore
+为打分进行归一化处理，得出最终的node排名
+- Reserve
+为了防止在bind过程中的条件竞争问题，为pod预留node，如果本阶段或后续阶段执行失败，则取消预留
+- Permit
+阻止或推迟为pod绑定node，有approve、deny、wait三种选择
+- PreBind
+为bind执行预备动作，如网络、存储等
+- Bind
+在PreBind之后执行，把pod绑定到一个node上
+- PostBind
+在pod被成功绑定后执行，可以用来做一些清理工作
+###### 调度插件
+| 插件名称        |  插件描述    |  扩展点      |
+| :----------:    |   :-------:  |   :-------:  |
+| ImageLocality   | 选择已经存在Pod运行所需容器镜像的节点 | Score |
+| TaintToleration | 实现了污点和容忍 | filter、preScore、score |
+| NodeName        | 检查Pod指定的节点名称与当前节点是否匹配 | filter |
+| NodePorts       | 检查Pod请求的端口在节点上是否可用 | preFilter、filter |
+| NodeAffinity    | 实现了节点选择器和节点亲和性 | filter、score |
+| PodTopologySpread | 实现了 Pod 拓扑分布 | preFilter、filter、preScore、score |
+| NodeUnschedulable | 过滤.spec.unschedulable值为true的节点 | filter |
+| NodeResourcesFit  | 检查节点是否拥有Pod请求的所有资源，得分可以使用以下三种策略之一：LeastAllocated（默认）、MostAllocated和RequestedToCapacityRatio | preFilter、filter、score |
+| NodeResourcesBalancedAllocation | 调度Pod时，选择资源使用更为均衡的节点 | score |
+| VolumeBinding   | 检查节点是否有请求的卷，或是否可以绑定请求的卷 | preFilter、filter、reserve、preBind、score |
+| VolumeRestrictions | 检查挂载到节点上的卷是否满足卷提供程序的限制 | filter |
+| VolumeZone      | 检查请求的卷是否在任何区域都满足 | filter |
+| NodeVolumeLimits  | 检查该节点是否满足CSI卷限制 | filter |
+| EBSLimits       | 检查节点是否满足AWS EBS卷限制 | filter |
+| GCEPDLimits     | 检查该节点是否满足GCP-PD卷限制 | filter |
+| AzureDiskLimits | 检查该节点是否满足Azure卷限制  | filter |
+| InterPodAffinity   | 实现Pod间亲和性与反亲和性 | preFilter、filter、preScore、score |
+| PrioritySort    | 提供默认的基于优先级的排序 | queueSort |
+| DefaultBinder   | 提供默认的绑定机制 | bind |
+| DefaultPreemption  | 提供默认的抢占机制 | postFilter |
+| CinderLimits    | 检查是否可以满足节点的OpenStack Cinder卷限制，默认不启用 | filter |
+
+##### scheduling logic
+![](/assets/img/scheduling-one.jpg)
+##### run
+![](/assets/img/scheduler_run.svg)
 
 #### kube-proxy
 
