@@ -423,31 +423,33 @@ kube-scheduler是k8s的核心组件之一，其目的就是为每一个pod选择
 ![](/assets/img/scheduling-framework.png)
 ###### 调度周期
 在调度周期中会为pod选择一个node，它是顺序执行的，包含9个扩展点，每个扩展点上都可以挂载多个插件
-- queueSort
+- queueSort<br>
 对调度队列中的待调度的pod进行排序，一次只能启用一个队列排序插件
-- PreFilter
+- PreFilter<br>
 对pod的信息进行预处理，或检视集群或pod必须满足的条件，可以将node标记为不可调度
-- Filter
+- Filter<br>
 等价于之前的Predicate，过滤掉不能运行pod的node，过滤器的调用顺序可配，如果没有一个节点通过所有过滤器的筛选，Pod将会被标记为不可调度
-- PostFilter
+- PostFilter<br>
 当没有合适的node时会执行，按照这些插件的配置顺序调用他们，如果任何postFilter插件将Pod标记为可调度，则不会调用其余插件，一般用于实现抢占，即挤掉其他pod
-- PreScore
+- PreScore<br>
 为之后的Score插件准备执行环境
-- Score
+- Score<br>
 等价于之前的Priority Function，为每个node进行打分
-- NormalizeScore
+- NormalizeScore<br>
 为打分进行归一化处理，得出最终的node排名
-- Reserve
+- Reserve<br>
 为了防止在bind过程中的条件竞争问题，为pod预留node，如果本阶段或后续阶段执行失败，则取消预留
-- Permit
+- Permit<br>
 阻止或推迟为pod绑定node，有approve、deny、wait三种选择
-- PreBind
+- PreBind<br>
 为bind执行预备动作，如网络、存储等
-- Bind
+- Bind<br>
 在PreBind之后执行，把pod绑定到一个node上
-- PostBind
+- PostBind<br>
 在pod被成功绑定后执行，可以用来做一些清理工作
+
 ###### 调度插件
+
 | 插件名称        |  插件描述    |  扩展点      |
 | :----------:    |   :-------:  |   :-------:  |
 | ImageLocality   | 选择已经存在Pod运行所需容器镜像的节点 | Score |
