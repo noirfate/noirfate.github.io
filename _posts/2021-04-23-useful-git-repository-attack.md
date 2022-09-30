@@ -32,6 +32,7 @@ excerpt: useful git repository (攻防篇)
 - [escapture - 使用ebpf uprobe抓取ssl流量](https://github.com/ehids/ecapture)
 - [jfscan - 集成masscan,nmap,nuclei的扫描工具](https://github.com/nullt3r/jfscan)
 - [dirsearch - 发现webserver路径](https://github.com/maurosoria/dirsearch)
+- [nuclei模板集合](https://github.com/emadshanab/Nuclei-Templates-Collection)
 
 ### 本地扫描工具
 
@@ -100,6 +101,7 @@ excerpt: useful git repository (攻防篇)
 - [pamspy - 利用uprobe hook pam获取密码](https://github.com/citronneur/pamspy)
 - [reveng_rtkit - linux 5.11 rootkit](https://github.com/reveng007/reveng_rtkit)
 - [go-memexec - run binary in memory](https://github.com/amenzhinsky/go-memexec)
+- [Freeze - 绕过edr执行shellcode](https://github.com/optiv/Freeze)
 
 ### OSINT(开源情报)工具
 
@@ -120,6 +122,8 @@ excerpt: useful git repository (攻防篇)
 - [APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
 - [osint框架](https://osintframework.com/)
 - [安全rss](https://github.com/brant-ruan/infosec-feeds)
+- [从git commit信息中发现隐藏漏洞](https://github.com/cve-search/git-vuln-finder)
+- [dnsReaper - 子域名接管工具](https://github.com/punk-security/dnsReaper)
 
 ### 云原生渗透工具
 
@@ -186,6 +190,9 @@ excerpt: useful git repository (攻防篇)
 - [红队渗透日记](https://github.com/ihebski/A-Red-Teamer-diaries)
 - [python安全](https://github.com/bit4woo/python_sec)
 - [以太坊合约安全实验环境](https://capturetheether.com/)
+- [springboot actuator heapdump解析工具](https://github.com/wyzxxz/heapdump_tool)
+- [使用h2c协议绕过ACL](https://github.com/BishopFox/h2csmuggler)
+- [tty2web - 把终端映射到网页上，支持反代](https://github.com/kost/tty2web)
 
 ## POC
 
@@ -198,6 +205,7 @@ excerpt: useful git repository (攻防篇)
 - [web poc列表](https://github.com/EdgeSecurityTeam/Vulnerability)
 - [sploitus - exploit搜索引擎](https://sploitus.com/)
 - [区块链poc列表](https://github.com/Rivaill/CryptoVulhub)
+- [win内核漏洞集合](https://github.com/Ascotbe/Kernelhub)
 
 ### win
 
@@ -387,6 +395,7 @@ excerpt: useful git repository (攻防篇)
 - [NCCGroup Research](https://research.nccgroup.com/)
 - [智能合约安全研究资料](https://github.com/saeidshirazi/Awesome-Smart-Contract-Security)
 - [攻击者常用搜索引擎](https://github.com/edoardottt/awesome-hacker-search-engines)
+- [利用go语言进行渗透](https://cfp.balccon.org/media/go-offensive-building-blocks-final.pdf)
 
 ## 防护
 

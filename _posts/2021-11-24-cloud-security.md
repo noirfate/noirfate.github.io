@@ -36,6 +36,7 @@ excerpt: Cloud Security
 - [云服务商漏洞搜索引擎](https://www.cloudvulndb.org/results?q=)
 - [2022 top25漏洞类型](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html)
 - [osint框架](https://osintframework.com/)
+- [从git commit信息中发现隐藏漏洞](https://github.com/cve-search/git-vuln-finder)
 
 ## 云原生知识
 
