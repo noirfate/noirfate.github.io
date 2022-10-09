@@ -65,6 +65,7 @@ excerpt: useful git repository (研究篇)
 - [gdb使用技巧](https://wizardforcel.gitbooks.io/100-gdb-tips/content/show-version.html)
 - [堆分析工具heapinspect](https://github.com/matrix1001/heapinspect)
 - [gdbgui - 基于浏览器的gdb界面](https://github.com/cs01/gdbgui)
+- [seer - 基于qt5的图形化gdb](https://github.com/epasveer/seer)
 
 ### 逆向分析工具
 

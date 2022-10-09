@@ -56,6 +56,8 @@ excerpt: useful git repository (工具篇)
 - [magic-trace - 类似perf但使用intel pt跟踪程序](https://github.com/janestreet/magic-trace)
 - [excalidraw - 开源思维导图工具](https://excalidraw.com/)
 - [drawio - 开源流程图工具](https://github.com/jgraph/drawio) [docker](https://github.com/jgraph/docker-drawio) [desktop](https://github.com/jgraph/drawio-desktop/releases/tag/v19.0.3)
+- [webvm - 在浏览器中实现linux虚机](https://github.com/leaningtech/webvm)
+- [yq - portable command-line yaml/json/xml/cvs tool](https://github.com/mikefarah/yq/)
 
 ## 静态工具
 

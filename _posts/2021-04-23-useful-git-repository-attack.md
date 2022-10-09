@@ -59,6 +59,7 @@ excerpt: useful git repository (攻防篇)
 - [namedpipepth - 利用用户的NTLM-Hash以用户的身份执行命令](https://github.com/S3cur3Th1sSh1t/NamedPipePTH)
 - [ligolo - 反向代理内网穿透工具](https://github.com/sysdream/ligolo)
 - [reverse-tunnel - 反向代理内网穿透工具](https://github.com/snsinfu/reverse-tunnel)
+- [fileless-xec - 无文件执行RAT](https://github.com/ariary/fileless-xec)
 
 ### 渗透工具/框架
 
@@ -102,6 +103,7 @@ excerpt: useful git repository (攻防篇)
 - [reveng_rtkit - linux 5.11 rootkit](https://github.com/reveng007/reveng_rtkit)
 - [go-memexec - run binary in memory](https://github.com/amenzhinsky/go-memexec)
 - [Freeze - 绕过edr执行shellcode](https://github.com/optiv/Freeze)
+- [run embedded elf from memory](https://github.com/AXDOOMER/run-embedded-elf-from-memory)
 
 ### OSINT(开源情报)工具
 
@@ -343,6 +345,7 @@ excerpt: useful git repository (攻防篇)
 - [mysql利用](https://github.com/fnmsd/MySQL_Fake_Server) [读文件](https://m0d9.me/2021/04/20/Jdbc%E7%A2%8E%E7%A2%8E%E5%BF%B5/) [SSRF](https://blog.csdn.net/fnmsd/article/details/117436182) [反序列化](https://m0d9.me/2021/04/20/Jdbc-%E7%A2%8E%E7%A2%8E%E5%BF%B5%E4%BA%8C%EF%BC%9AMySQL-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/) [内存数据库](https://m0d9.me/2021/04/26/Jdbc%E7%A2%8E%E7%A2%8E%E5%BF%B5%E4%B8%89%EF%BC%9A%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93/) [JDBC Attack](https://github.com/su18/JDBC-Attack)
 - [java snakeyaml反序列化漏洞](https://tttang.com/archive/1591/)
 - [pyyaml反序列化漏洞](https://github.com/bit4woo/code2sec.com/blob/master/Python%20PyYAML%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C%E5%92%8Cpayload%E6%9E%84%E9%80%A0.md)
+- [CVE-2021-43798 - grafana路径穿越漏洞](https://github.com/hupe1980/CVE-2021-43798)
 
 ## 研究资料
 
