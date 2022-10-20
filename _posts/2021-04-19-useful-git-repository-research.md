@@ -50,6 +50,7 @@ excerpt: useful git repository (研究篇)
 - [ghostrings - 恢复go字符串](https://github.com/nccgroup/ghostrings) [文章](https://research.nccgroup.com/2022/05/20/tool-release-ghostrings/)
 - [用ghidra和semgrep对二进制做静态代码分析](https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/)
 - [Ghidrathon - 为Ghidra提供python3支持](https://github.com/mandiant/Ghidrathon)
+- [bindiff插件](https://github.com/ubfx/BinDiffHelper)
 
 ### GDB扩展
 
@@ -196,6 +197,7 @@ excerpt: useful git repository (研究篇)
 - [systemexplorer - win系统查看工具](https://github.com/zodiacon/SystemExplorer)
 - [hyperdbg - win下基于虚拟化辅助的用户、内核态调试工具](https://github.com/HyperDbg/HyperDbg)
 - [ropium - 通过语义查找rop](https://github.com/Boyan-MILANOV/ropium)
+- [btrace - 针对java的dtrace工具](https://github.com/btraceio/btrace)
 
 ### 其他
 
@@ -257,7 +259,7 @@ excerpt: useful git repository (研究篇)
 - [kleefl - 使用符号执行为afl生成样本](https://github.com/julieeen/kleefl)
 - [aflgo - 可以指定要fuzz的程序路径的afl](https://github.com/aflgo/aflgo)
 - [kafl - 基于qemu和intel pt的内核fuzzer](https://github.com/RUB-SysSec/kAFL)
-- [Nyx - 基于kafl支持快照的fuzzer](https://github.com/RUB-SysSec/Nyx)
+- [Nyx - 基于kafl支持快照的fuzzer](https://github.com/nyx-fuzz/Nyx)
 - [afl.rs - 使用afl来fuzz rust代码](https://github.com/rust-fuzz/afl.rs)
 - [honggfuzz - 与afl类似的fuzzer](https://github.com/google/honggfuzz)
 - [honeybee - 快速inter pt库，可集成进honggfuzz](https://github.com/trailofbits/Honeybee)
@@ -357,6 +359,7 @@ excerpt: useful git repository (研究篇)
 - [对内核历史bug进行分析找出出现最多的错误类型、bug最多的程序等](https://github.com/SergeyStaroletov/LinuxKernelAnalysis)
 - [codealchemist - 基于语法的js fuzzer](https://github.com/SoftSec-KAIST/CodeAlchemist)
 - [fuzzilli - 基于自定义的中间语言自动生成目标脚本代码，如js](https://github.com/googleprojectzero/fuzzilli)
+- [fuzzjit - 基于fuzzilli的js fuzzer](https://github.com/SpaceNaN/fuzzjit)
 - [neuzz - 基于神经网络的fuzzer](https://github.com/Dongdongshe/neuzz)
 - [kitty - 模块化fuzz框架](https://github.com/cisco-sas/kitty)
 - [halfempty - 样本精简工具](https://github.com/googleprojectzero/halfempty)

@@ -86,6 +86,7 @@ excerpt: useful git repository (攻防篇)
 - [Nebula - 公有云渗透框架](https://github.com/gl4ssesbo1/Nebula)
 - [faraday - 集成式渗透框架](https://github.com/infobyte/faraday)
 - [yakit - 网络安全单兵工具](https://github.com/yaklang/yakit)
+- [hetty - burpsuit开源替代](https://github.com/dstotijn/hetty)
 
 ### 持久化工具
 
@@ -126,6 +127,8 @@ excerpt: useful git repository (攻防篇)
 - [安全rss](https://github.com/brant-ruan/infosec-feeds)
 - [从git commit信息中发现隐藏漏洞](https://github.com/cve-search/git-vuln-finder)
 - [dnsReaper - 子域名接管工具](https://github.com/punk-security/dnsReaper)
+- [leakix - 数据泄露查询](https://leakix.net/)
+- [breached - 数据泄露市场](https://breached.to/)
 
 ### 云原生渗透工具
 
@@ -195,6 +198,7 @@ excerpt: useful git repository (攻防篇)
 - [springboot actuator heapdump解析工具](https://github.com/wyzxxz/heapdump_tool)
 - [使用h2c协议绕过ACL](https://github.com/BishopFox/h2csmuggler)
 - [tty2web - 把终端映射到网页上，支持反代](https://github.com/kost/tty2web)
+- [curl上传文件指定包含..的文件名](http://blog.nsfocus.net/curl/)
 
 ## POC
 
@@ -444,3 +448,4 @@ excerpt: useful git repository (攻防篇)
 
 - [linux加固手册](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
 - [linux版的procmon](https://github.com/microsoft/ProcMon-for-Linux)
+- [gitleaks - 检测git敏感信息](https://github.com/zricethezav/gitleaks)

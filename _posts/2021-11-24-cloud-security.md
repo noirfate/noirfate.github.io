@@ -38,6 +38,8 @@ excerpt: Cloud Security
 - [osint框架](https://osintframework.com/)
 - [从git commit信息中发现隐藏漏洞](https://github.com/cve-search/git-vuln-finder)
 - [AWS、AZure漏洞](https://github.com/CyberSecurityUP/Cloud-Security-Attacks)
+- [leakix - 数据泄露查询](https://leakix.net/)
+- [breached - 数据泄露市场](https://breached.to/)
 
 ## 云原生知识
 

@@ -432,6 +432,9 @@ git push --all --force
 ## 文本绘制流程图
 <https://asciiflow.com/#/>
 
+## 使powershell和cmd支持ansi颜色
+下载[ansicon](https://github.com/adoxa/ansicon/releases/download/v1.89/ansi189-bin.zip)，解压运行`ansicon.exe`后即可
+
 # 系统
 
 ## 编写独立内核模块

@@ -58,6 +58,7 @@ excerpt: useful git repository (工具篇)
 - [drawio - 开源流程图工具](https://github.com/jgraph/drawio) [docker](https://github.com/jgraph/docker-drawio) [desktop](https://github.com/jgraph/drawio-desktop/releases/tag/v19.0.3)
 - [webvm - 在浏览器中实现linux虚机](https://github.com/leaningtech/webvm)
 - [yq - portable command-line yaml/json/xml/cvs tool](https://github.com/mikefarah/yq/)
+- [WindTerm - 跨平台ssh客户端](https://github.com/kingToolbox/WindTerm)
 
 ## 静态工具
 
@@ -121,6 +122,7 @@ excerpt: useful git repository (工具篇)
 - [slidev - 用markdown写ppt](https://github.com/slidevjs/slidev)
 - [cypress - web自动化工具](https://github.com/cypress-io/cypress)
 - [tshtun - 加密反弹shell](https://github.com/Ridter/tshtun)
+- [exifLooter - 查看照片中的位置信息](https://github.com/aydinnyunus/exifLooter)
 
 
 
