@@ -435,6 +435,12 @@ git push --all --force
 ## 使powershell和cmd支持ansi颜色
 下载[ansicon](https://github.com/adoxa/ansicon/releases/download/v1.89/ansi189-bin.zip)，解压运行`ansicon.exe`后即可
 
+## 完整保存网页到单独的html文件
+> https://github.com/gildas-lormeau/SingleFile
+
+- chrome: https://chrome.google.com/extensions/detail/mpiodijhokgodhhofbcjdecpffjipkle
+- edge: https://microsoftedge.microsoft.com/addons/detail/efnbkdcfmcmnhlkaijjjmhjjgladedno
+
 # 系统
 
 ## 编写独立内核模块

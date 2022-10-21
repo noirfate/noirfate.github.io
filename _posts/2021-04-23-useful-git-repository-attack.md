@@ -25,7 +25,7 @@ excerpt: useful git repository (攻防篇)
 - [feroxbuster - web文本扫描工具](https://github.com/epi052/feroxbuster)
 - [xray - web漏洞扫描工具](https://github.com/chaitin/xray) [破解](https://github.com/TryHello/xray_free_crack)
 - [masscan-nmap - masscan扫描端口并用nmap识别服务](https://github.com/7dog7/masscan_to_nmap)
-- [nuclei - 漏洞扫描工具](https://github.com/projectdiscovery/nuclei)
+- [nuclei - 漏洞扫描工具](https://github.com/projectdiscovery/nuclei) [指南](https://blog.projectdiscovery.io/ultimate-nuclei-guide/)
 - [tsunami - 漏洞扫描工具](https://github.com/google/tsunami-security-scanner)
 - [cotopaxi - iot协议扫描工具](https://github.com/Samsung/cotopaxi)
 - [rengine - 网站漏洞扫描工具](https://github.com/yogeshojha/rengine)
@@ -33,6 +33,7 @@ excerpt: useful git repository (攻防篇)
 - [jfscan - 集成masscan,nmap,nuclei的扫描工具](https://github.com/nullt3r/jfscan)
 - [dirsearch - 发现webserver路径](https://github.com/maurosoria/dirsearch)
 - [nuclei模板集合](https://github.com/emadshanab/Nuclei-Templates-Collection)
+- [naabu - 网络扫描工具并集成了nmap](https://github.com/projectdiscovery/naabu)
 
 ### 本地扫描工具
 
@@ -50,6 +51,7 @@ excerpt: useful git repository (攻防篇)
 - [slither - 智能合约代码安全扫描工具](https://github.com/crytic/slither)
 - [snyk - 开源组件漏洞扫描工具](https://github.com/snyk/snyk)
 - [floss - 恶意软件字符串提取](https://github.com/mandiant/flare-floss)
+- [detect-secrets - 扫描文件中的密码](https://github.com/Yelp/detect-secrets)
 
 ### 远控工具
 
@@ -129,6 +131,7 @@ excerpt: useful git repository (攻防篇)
 - [dnsReaper - 子域名接管工具](https://github.com/punk-security/dnsReaper)
 - [leakix - 数据泄露查询](https://leakix.net/)
 - [breached - 数据泄露市场](https://breached.to/)
+- [nali - 离线ip地址地理信息查询工具](https://github.com/zu1k/nali)
 
 ### 云原生渗透工具
 
