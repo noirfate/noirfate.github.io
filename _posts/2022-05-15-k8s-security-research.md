@@ -305,6 +305,13 @@ subjects:
 ### 代码分析
 
 #### kubectl
+kubectl本身并不包含对其核心资源的访问与控制，而是通过http通信与apiserver进行交互实现资源的管理，所以从apiserver看，kubectl其实相当于高级定制版的curl工具
+![](/assets/img/kubernetes-kubectl-cheatsheet.png)
+
+##### init
+![](/assets/img/kubectl_init.svg)
+##### create
+![](/assets/img/kubectl_create.svg)
 
 #### kubelet
 ![](/assets/img/k8s_sec7.png)
@@ -502,6 +509,9 @@ kube-scheduler是k8s的核心组件之一，其目的就是为每一个pod选择
 - [go语言常见安全问题](https://www.elttam.com/blog/golang-codereview/)
 
 ### 风险
+
+#### trust boundaries
+![](/assets/img/trustboundaries.png)
 
 #### kubectl authentication helpers execute command
 > https://banzaicloud.com/blog/kubeconfig-security/

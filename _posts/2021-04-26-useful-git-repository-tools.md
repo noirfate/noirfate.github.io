@@ -24,6 +24,7 @@ excerpt: useful git repository (工具篇)
 - [deepo - 深度学习allinone镜像](https://github.com/ufoym/deepo)
 - [minigo - 开源的AlphaGo实现](https://github.com/tensorflow/minigo)
 - [cnocr - python ocr中文识别](https://github.com/breezedeus/cnocr)
+- [PaddleOCR - 开源OCR中英文识别工具](https://github.com/PaddlePaddle/PaddleOCR)
 
 ## 开发工具
 
@@ -59,6 +60,7 @@ excerpt: useful git repository (工具篇)
 - [webvm - 在浏览器中实现linux虚机](https://github.com/leaningtech/webvm)
 - [yq - portable command-line yaml/json/xml/cvs tool](https://github.com/mikefarah/yq/)
 - [WindTerm - 跨平台ssh客户端](https://github.com/kingToolbox/WindTerm)
+- [typora破解](https://github.com/WittonBell/typoraCracker)
 
 ## 静态工具
 
@@ -80,6 +82,7 @@ excerpt: useful git repository (工具篇)
 - [motrix - 下载工具](https://github.com/agalwood/Motrix)
 - [you-get - 视频下载工具](https://github.com/soimort/you-get)
 - [youtube-dl - 视频下载工具](https://github.com/ytdl-org/youtube-dl)
+- [katana - 爬虫工具](https://github.com/projectdiscovery/katana)
 
 ## 监控工具
 

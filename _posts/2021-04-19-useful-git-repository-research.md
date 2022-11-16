@@ -129,6 +129,7 @@ excerpt: useful git repository (研究篇)
 - [syzygy - win下插桩工具集](https://github.com/google/syzygy)
 - [LIEF - 分析修改多平台的binary](https://github.com/lief-project/LIEF)
 - [titan-dex - 安卓字节码修改工具](https://github.com/baidu/titan-dex)
+- [SaBRe - 动态修改syscall、vdso和命名函数](https://github.com/srg-imperial/SaBRe)
 
 ### 反编译工具
 

@@ -51,6 +51,7 @@ excerpt: Cloud Security
 - [kubernetes图书](https://lib.jimmysong.io/)
 - [kubernetes RBAC介绍](https://www.cncf.io/wp-content/uploads/2020/08/2020_04_Introduction-to-Kubernetes-RBAC.pdf) [AuthN](http://arthurchiao.art/blog/cracking-k8s-authn/) [AuthZ](http://arthurchiao.art/blog/cracking-k8s-authz-rbac/)
 - [kubernetes历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
+- [kubernetes历史漏洞 - git cve](https://github.com/kubernetes/kubernetes/issues?q=is%3Aclosed+label%3Aofficial-cve-feed+)
 - [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
 - [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
 - k8s pod安全策略
@@ -154,7 +155,8 @@ excerpt: Cloud Security
 - [GCP Dataflow虚机上JMX服务RCE](https://mbrancato.github.io/2021/12/28/rce-dataflow.html)
 - [GCP ASM Istio多集群部署时，control plane会使用istio-system中的secret，其中保存了集群的kubeconfig，通过修改kubeconfig增加exec即可在control plane执行任意代码](https://lf.lc/vrp/203177829/)
 - [GCP Cloud Shell命令注入](https://docs.google.com/document/d/1-TTCS6fS6kvFUkoJmX4Udr-czQ79lSUVXiWsiAED_bs/edit#) [另一个](https://bugra.ninja/posts/cloudshell-command-injection/)
-- [Azure synapse sudo提权](https://medium.com/tenable-techblog/microsoft-azure-synapse-pwnalytics-87c99c036291)
+- [Azure synapse sudo提权](https://medium.com/tenable-techblog/microsoft-azure-synapse-pwnalytics-87c99c036291) [另一种方法](https://orca.security/resources/blog/synapse-local-privilege-escalation-vulnerability-spark/)
+- [Azure Synapse Analytics ODBC RCE](https://orca.security/resources/blog/synlapse-critical-azure-synapse-analytics-service-vulnerability/)
 - [AWS Cognito错误配置，允许创建新用户，从而获取AWS凭证](https://notsosecure.com/hacking-aws-cognito-misconfigurations)
 - [Azure 利用docker remote api逃逸dynamics container sandbox](https://hencohen10.medium.com/microsoft-dynamics-container-sandbox-rce-via-unauthenticated-docker-remote-api-20-000-bounty-7f726340a93b)
 - [Azure Fabric服务利用其数据收集agent的读写文件TOCTOU漏洞写入主机任意文件导致容器逃逸](https://unit42.paloaltonetworks.com/fabricscape-cve-2022-30137/)
@@ -166,10 +168,11 @@ excerpt: Cloud Security
 - [GCP Azure postgresql vulnerabilities](https://www.wiz.io/blog/the-cloud-has-an-isolation-problem-postgresql-vulnerabilities)
 - [postgresql使用security definer提权](https://www.cybertec-postgresql.com/en/abusing-security-definer-functions/)
 - [大于3/4的app内置了AWS的aksk](https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/mobile-supply-chain-aws)
+- [Azure SFX XSS](https://orca.security/resources/blog/fabrixss-vulnerability-azure-fabric-explorer/)
 
 ## 云原生工具
 
-- [镜像扫描](https://github.com/aquasecurity/trivy)
+- [trivy - 云原生扫描工具](https://github.com/aquasecurity/trivy)
 - [k8s集群扫描](https://github.com/aquasecurity/starboard)
 - [tracee - 入侵检测](https://github.com/aquasecurity/tracee)
 - [CDK - 容器逃逸](https://github.com/cdk-team/CDK)
@@ -200,6 +203,7 @@ excerpt: Cloud Security
 - [ScoutSuite - 云安全审计工具，支持亚马逊、微软、谷歌、阿里](https://github.com/nccgroup/ScoutSuite)
 - [Constellation - k8s加密](https://github.com/edgelesssys/constellation)
 - [cloudfox - 云环境攻击面分析](https://github.com/BishopFox/cloudfox)
+- [prowler - aws安全检查监控工具](https://github.com/prowler-cloud/prowler)
 
 ## CVE
 

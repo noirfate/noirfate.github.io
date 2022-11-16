@@ -107,6 +107,8 @@ excerpt: useful git repository (攻防篇)
 - [go-memexec - run binary in memory](https://github.com/amenzhinsky/go-memexec)
 - [Freeze - 绕过edr执行shellcode](https://github.com/optiv/Freeze)
 - [run embedded elf from memory](https://github.com/AXDOOMER/run-embedded-elf-from-memory)
+- [ulexecve - 无需执行exec系统调用执行ELF](https://github.com/anvilsecure/ulexecve)
+- [MemoryModule - 在内存中加载或向进程注入DLL](https://github.com/YuriSizuku/MemoryModule)
 
 ### OSINT(开源情报)工具
 
@@ -132,6 +134,7 @@ excerpt: useful git repository (攻防篇)
 - [leakix - 数据泄露查询](https://leakix.net/)
 - [breached - 数据泄露市场](https://breached.to/)
 - [nali - 离线ip地址地理信息查询工具](https://github.com/zu1k/nali)
+- [天际友盟威胁情报资讯](https://redqueen.tj-un.com/AllInfoIntel.html)
 
 ### 云原生渗透工具
 
@@ -202,6 +205,8 @@ excerpt: useful git repository (攻防篇)
 - [使用h2c协议绕过ACL](https://github.com/BishopFox/h2csmuggler)
 - [tty2web - 把终端映射到网页上，支持反代](https://github.com/kost/tty2web)
 - [curl上传文件指定包含..的文件名](http://blog.nsfocus.net/curl/)
+- [DDOS工具](https://github.com/MatrixTM/MHDDoS)
+- [jwt利用工具](https://github.com/ticarpi/jwt_tool)
 
 ## POC
 
@@ -344,6 +349,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2021-21234 - springboot actuator logview任意文件读](https://github.com/xiaojiangxl/CVE-2021-21234)
 - [CVE-2022-22954 - VMware Workspace ONE Access Server-side Template Injection RCE](https://github.com/aniqfakhrul/CVE-2022-22954)
 - [Postgresql 渗透总结](https://tttang.com/archive/1547/)
+- [mssql提权总结](https://tttang.com/archive/1545/)
 - [CVE-2022-21449 - jdk15以上ECDSA签名验证漏洞，可任意伪造](https://github.com/khalednassar/CVE-2022-21449-TLS-PoC) [文章](https://neilmadden.blog/2022/04/19/psychic-signatures-in-java/)
 - [CVE-2022-0543 - redis Lua沙盒绕过命令执行](https://github.com/aodsec/CVE-2022-0543)
 - [python uaf利用](https://github.com/kn32/python-buffered-reader-exploit) [文章](https://pwn.win/2022/05/11/python-buffered-reader.html)
@@ -353,6 +359,7 @@ excerpt: useful git repository (攻防篇)
 - [java snakeyaml反序列化漏洞](https://tttang.com/archive/1591/)
 - [pyyaml反序列化漏洞](https://github.com/bit4woo/code2sec.com/blob/master/Python%20PyYAML%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C%E5%92%8Cpayload%E6%9E%84%E9%80%A0.md)
 - [CVE-2021-43798 - grafana路径穿越漏洞](https://github.com/hupe1980/CVE-2021-43798)
+- [CVE-2022-21724 - PostgresQL JDBC Drive 任意代码执行漏洞](https://xz.aliyun.com/t/11812)
 
 ## 研究资料
 
