@@ -135,6 +135,8 @@ excerpt: useful git repository (攻防篇)
 - [breached - 数据泄露市场](https://breached.to/)
 - [nali - 离线ip地址地理信息查询工具](https://github.com/zu1k/nali)
 - [天际友盟威胁情报资讯](https://redqueen.tj-un.com/AllInfoIntel.html)
+- [中文安全RSS](https://github.com/zhengjim/Chinese-Security-RSS)
+- [hacker search engines](https://github.com/edoardottt/awesome-hacker-search-engines)
 
 ### 云原生渗透工具
 

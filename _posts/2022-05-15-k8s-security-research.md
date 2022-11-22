@@ -487,6 +487,12 @@ kube-scheduler是k8s的核心组件之一，其目的就是为每一个pod选择
 ![](/assets/img/scheduler_run.svg)
 
 #### kube-proxy
+kube-proxy是负责services和endpoints 在各节点的具体实现，kube-proxy和kubelet一样会在每个节点都运行一个实例，为services提供做简单的TCP， UDP和SCTP流量转发，转发到对应的目标(endpoints)
+![](/assets/img/kubeproxy.jpg)
+
+##### init
+![](/assets/img/kube_proxy.svg)
+
 
 ## 配置安全
 

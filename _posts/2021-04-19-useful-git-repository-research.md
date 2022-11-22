@@ -411,6 +411,7 @@ excerpt: useful git repository (研究篇)
 - [sfuzz - 针对RISC-V二进制的覆盖度反馈fuzz](https://github.com/seal9055/sfuzz/) [blog](https://seal9055.com/blog/?p=sfuzz&d=fuzzing)
 - [silifuzz - cpu fuzzer](https://github.com/google/silifuzz)
 - [fuzzable - 使用静态分析判断程序的可fuzz性](https://github.com/ex0dus-0x/fuzzable)
+- [statefuzz - 使用静态分析识别程序中的状态变量并反馈新覆盖度](https://www.usenix.org/system/files/sec22-zhao-bodong.pdf)
 
 ## static analysis
 
