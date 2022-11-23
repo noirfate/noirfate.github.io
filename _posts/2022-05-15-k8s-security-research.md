@@ -493,6 +493,8 @@ kube-proxy是负责services和endpoints 在各节点的具体实现，kube-proxy
 ##### init
 ![](/assets/img/kube_proxy.svg)
 
+##### iptables mode
+![](/assets/img/kube_proxy_iptables.svg)
 
 ## 配置安全
 
