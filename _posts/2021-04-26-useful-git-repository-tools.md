@@ -75,6 +75,7 @@ excerpt: useful git repository (工具篇)
 - [vid.stab - ffmpeg视频稳定库](https://github.com/georgmartius/vid.stab)
 - [silk-decoder - 解码qq、微信音频文件](https://github.com/kn007/silk-v3-decoder)
 - [sacd-ripper - sacd提取工具](https://github.com/sacd-ripper/sacd-ripper)
+- [openshot - 跨平台视频编辑工具](https://github.com/OpenShot/openshot-qt)
 
 ## 下载工具
 

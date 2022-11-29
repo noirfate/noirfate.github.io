@@ -40,6 +40,7 @@ excerpt: Cloud Security
 - [AWS、AZure漏洞](https://github.com/CyberSecurityUP/Cloud-Security-Attacks)
 - [leakix - 数据泄露查询](https://leakix.net/)
 - [breached - 数据泄露市场](https://breached.to/)
+- [oss fuzz vulns](https://github.com/google/oss-fuzz-vulns)
 
 ## 云原生知识
 
@@ -109,6 +110,7 @@ excerpt: Cloud Security
 	- [cloudsplaining](https://github.com/salesforce/cloudsplaining/ )
 	- [aws-assessment-tools](https://labs.bishopfox.com/tech-blog/iam-vulnerable-assessing-the-aws-assessment-tools)
 - [Azure 容器逃逸](https://unit42.paloaltonetworks.com/azure-container-instances/)
+- [Azure cloudshell xterm RCE](https://twitter.com/_fel1x/status/1083085715565621250?lang=tr)
 - [在容器中偷取主机runc](https://github.com/twistlock/whoc)
 - [Azure omi agent rce](https://www.wiz.io/blog/secret-agent-exposes-azure-customers-to-unauthorized-code-execution)
 - [Azure omi LPE](https://www.wiz.io/blog/omi-returns-lpe-technical-analysis/)
@@ -208,6 +210,7 @@ excerpt: Cloud Security
 ## CVE
 
 - [CVE-2015-2925: 利用kernel bind mount漏洞逃逸](https://github.com/kagami/docker_cve-2015-2925)
+- [CVE-2018-6574: go get rce](https://github.com/neargle/Go-Get-RCE-CVE-2018-6574-POC)
 - [CVE-2017-1002101: k8s subpath mount符号链接逃逸](http://blog.nsfocus.net/cve-2017-1002101/) [POC](https://github.com/bgeesaman/subpath-exploit)
 - [CVE-2018-15664: docker cp symlink-race attack](http://mayoterry.com/index.php/archives/69.html) [POC](https://github.com/Metarget/cloud-native-security-book/tree/main/code/0302-%E5%BC%80%E5%8F%91%E4%BE%A7%E6%94%BB%E5%87%BB/02-CVE-2018-15664/symlink_race)
 - [CVE-2018-1002100 CVE-2019-1002101: kubectl cp路径穿越](https://unit42.paloaltonetworks.com/disclosing-directory-traversal-vulnerability-kubernetes-copy-cve-2019-1002101/) [CVE-2018-1002100](https://hansmi.ch/articles/2018-04-openshift-s2i-security)

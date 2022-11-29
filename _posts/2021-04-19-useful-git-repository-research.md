@@ -293,6 +293,7 @@ excerpt: useful git repository (研究篇)
 - [autoharness - 自动生成测试用例](https://github.com/parikhakshat/autoharness)
 - [wtf - 具有跨平台、覆盖度反馈、快照等特性的fuzzer](https://github.com/0vercl0k/wtf) [用例1](http://blog.ret2.io/2021/07/21/wtf-snapshot-fuzzing/) [用例2](https://doar-e.github.io/blog/2021/07/15/building-a-new-snapshot-fuzzer-fuzzing-ida/) [用例3](https://www.usmacd.com/2022/07/21/2022-07-21-When-Hypervisor-Met-Snapshot-Fuzzing/)
 - [hAFL1 - use kafl to fuzz hyper-v](https://github.com/SB-GC-Labs/hAFL1)
+- [hAFL2 - use kafl to fuzz hyper-v](https://github.com/SafeBreach-Labs/hAFL2)
 - [Igor - 利用fuzz的方法精简分类crash样本](https://github.com/HexHive/Igor)
 - [stateafl - afl网络协议fuzzer](https://github.com/stateafl/stateafl)
 - [aflsmart - afl结合peach模板](https://github.com/aflsmart/aflsmart)
@@ -316,6 +317,7 @@ excerpt: useful git repository (研究篇)
 - [cryptofuzz - fuzz加密库](https://github.com/guidovranken/cryptofuzz)
 - [SystemSan - 检测命令注入漏洞](https://github.com/google/oss-fuzz/tree/master/infra/experimental/SystemSan) [介绍](https://security.googleblog.com/2022/09/fuzzing-beyond-memory-corruption.html)
 - [SyzScope - 评估bug危害](https://github.com/plummm/SyzScope)
+- [EMS - 利用历史变异策略优化fuzz](https://github.com/puppet-meteor/EMS) [论文](https://nesa.zju.edu.cn/download/lcy_pdf_ems_ndss22.pdf)
 
 ### Syzkaller系
 
@@ -412,6 +414,7 @@ excerpt: useful git repository (研究篇)
 - [silifuzz - cpu fuzzer](https://github.com/google/silifuzz)
 - [fuzzable - 使用静态分析判断程序的可fuzz性](https://github.com/ex0dus-0x/fuzzable)
 - [statefuzz - 使用静态分析识别程序中的状态变量并反馈新覆盖度](https://www.usenix.org/system/files/sec22-zhao-bodong.pdf)
+- [fuzzer数据库](https://github.com/SoftSec-KAIST/Fuzzing-Survey) [web](https://fuzzing-survey.org/) [data](https://github.com/SoftSec-KAIST/Fuzzing-Survey/blob/master/data/fuzzers.json)
 
 ## static analysis
 
