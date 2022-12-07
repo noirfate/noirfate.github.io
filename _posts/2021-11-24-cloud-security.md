@@ -26,6 +26,7 @@ excerpt: Cloud Security
 - [awesome cloud security](https://github.com/teamssix/awesome-cloud-security)
 - [从0开始k8s攻防](https://github.com/neargle/my-re0-k8s-security)
 - [云安全知识库](https://cloudsec.huoxian.cn/docs/information)
+- [OffensiveClou - AWS、AZure、GCP渗透技巧](https://github.com/lutzenfried/OffensiveCloud)
 
 ## 开源情报
 
@@ -171,6 +172,7 @@ excerpt: Cloud Security
 - [postgresql使用security definer提权](https://www.cybertec-postgresql.com/en/abusing-security-definer-functions/)
 - [大于3/4的app内置了AWS的aksk](https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/mobile-supply-chain-aws)
 - [Azure SFX XSS](https://orca.security/resources/blog/fabrixss-vulnerability-azure-fabric-explorer/)
+- [AWS AppSync 跨租户assume role执行任意API](https://thehackernews.com/2022/11/researchers-detail-appsync-cross-tenant.html)
 
 ## 云原生工具
 
@@ -206,6 +208,7 @@ excerpt: Cloud Security
 - [Constellation - k8s加密](https://github.com/edgelesssys/constellation)
 - [cloudfox - 云环境攻击面分析](https://github.com/BishopFox/cloudfox)
 - [prowler - aws安全检查监控工具](https://github.com/prowler-cloud/prowler)
+- [cf - 云环境渗透框架](https://github.com/teamssix/cf)
 
 ## CVE
 
@@ -220,7 +223,7 @@ excerpt: Cloud Security
 - [CVE-2019-9946: k8s 利用hostport进行中间人攻击](http://blog.champtar.fr/CVE-2019-9946/)
 - [CVE-2019-13139: docker build exec](https://staaldraad.github.io/post/2019-07-16-cve-2019-13139-docker-build/)
 - [cve-2019-11247: 通过访问namespace api endpoint，越权增删改查全局CRD资源](https://www.stackrox.io/blog/how-to-remediate-kubernetes-security-vulnerability-cve-2019-11247/)
-- [CVE-2019-11250: Bearer tokens are revealed in logs](https://github.com/kubernetes/kubernetes/issues/81114)
+- [CVE-2019-11250: Bearer tokens are revealed in logs](https://github.com/kubernetes/kubernetes/issues/81114) [后续](https://hackerone.com/reports/952771)
 - [CVE-2019-11253: Kubernetes API Server YAML Parsing Remote DOS](https://gist.github.com/bgeesaman/0e0349e94cd22c48bf14d8a9b7d6b8f2)
 - [CVE-2019-14271: docker cp libnss_files.so escape](https://unit42.paloaltonetworks.com/docker-patched-the-most-severe-copy-vulnerability-to-date-with-cve-2019-14271/) [POC](https://github.com/Metarget/cloud-native-security-book/tree/main/code/0302-%E5%BC%80%E5%8F%91%E4%BE%A7%E6%94%BB%E5%87%BB/03-CVE-2019-14271)
 - [CVE-2019-16884: AppArmor bypass via malicious image](https://github.com/opencontainers/runc/issues/2128)
@@ -246,6 +249,7 @@ excerpt: Cloud Security
 - [CVE-2021-41091: 利用/var/lib/docker下setuid程序提权](https://nvd.nist.gov/vuln/detail/CVE-2021-41091) [公告](https://github.com/moby/moby/security/advisories/GHSA-3fwx-pjgw-3558) [利用](https://www.cyberark.com/resources/threat-research-blog/how-docker-made-me-more-capable-and-the-host-less-secure)
 - [CVE-2021-43784: runc netlink message int16 overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=2241)
 - [CVE-2022-0492: 利用unshare+cgroup逃逸](https://unit42.paloaltonetworks.com/cve-2022-0492-cgroups/) [分析](http://terenceli.github.io/%E6%8A%80%E6%9C%AF/2022/03/06/cve-2022-0492)
+- [CVE-2022-0847: dirty-pipe container escape](https://securitylabs.datadoghq.com/articles/dirty-pipe-container-escape-poc/) [POC](https://github.com/DataDog/security-labs-pocs/tree/main/proof-of-concept-exploits/dirtypipe-container-breakout)
 - [CVE-2022-21701: istio gateway提权不完全分析之模板覆盖](http://noahblog.360.cn/abuse-gateway-api-attack-kubernetes/) [yaml多行注释](https://yaml-multiline.info/)
 - [CVE-2022-23648: containerd cri plugin容器镜像路径穿越漏洞](https://bugs.chromium.org/p/project-zero/issues/detail?id=2244)
 

