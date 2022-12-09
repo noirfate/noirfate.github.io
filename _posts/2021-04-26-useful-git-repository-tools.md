@@ -127,6 +127,7 @@ excerpt: useful git repository (工具篇)
 - [cypress - web自动化工具](https://github.com/cypress-io/cypress)
 - [tshtun - 加密反弹shell](https://github.com/Ridter/tshtun)
 - [exifLooter - 查看照片中的位置信息](https://github.com/aydinnyunus/exifLooter)
+- [deepin-wine - deepin移植到ubuntu，包括微信QQ等](https://github.com/zq1997/deepin-wine)
 
 
 

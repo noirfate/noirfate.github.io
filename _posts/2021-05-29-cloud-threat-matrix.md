@@ -33,6 +33,11 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 *Fig. 1. 微软的[Threat matrix for Kubernetes](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)*
 {:.image-caption}
 
+![](/assets/img/ms-k8s-matrix.png)
+{: style="width: 100%;" class="center"}
+*Fig. 1. 微软新版的[Threat matrix for Kubernetes](https://microsoft.github.io/Threat-Matrix-for-Kubernetes/)*
+{:.image-caption}
+	
 ![](/assets/img/aliyun_matrix.png)
 {: style="width: 100%;" class="center"}
 *Fig. 2. 阿里云的[云上容器攻防矩阵](https://developer.aliyun.com/article/765449)*

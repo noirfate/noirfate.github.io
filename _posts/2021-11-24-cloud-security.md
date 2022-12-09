@@ -209,6 +209,7 @@ excerpt: Cloud Security
 - [cloudfox - 云环境攻击面分析](https://github.com/BishopFox/cloudfox)
 - [prowler - aws安全检查监控工具](https://github.com/prowler-cloud/prowler)
 - [cf - 云环境渗透框架](https://github.com/teamssix/cf)
+- [vesta - 云原生漏洞扫描工具](https://github.com/kvesta/vesta)
 
 ## CVE
 
