@@ -51,6 +51,7 @@ excerpt: useful git repository (研究篇)
 - [用ghidra和semgrep对二进制做静态代码分析](https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/)
 - [Ghidrathon - 为Ghidra提供python3支持](https://github.com/mandiant/Ghidrathon)
 - [bindiff插件](https://github.com/ubfx/BinDiffHelper)
+- [GhidraEmu - 模拟执行](https://github.com/Nalen98/GhidraEmu)
 
 ### GDB扩展
 

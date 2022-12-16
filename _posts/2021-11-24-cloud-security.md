@@ -27,6 +27,7 @@ excerpt: Cloud Security
 - [从0开始k8s攻防](https://github.com/neargle/my-re0-k8s-security)
 - [云安全知识库](https://cloudsec.huoxian.cn/docs/information)
 - [OffensiveClou - AWS、AZure、GCP渗透技巧](https://github.com/lutzenfried/OffensiveCloud)
+- [lightspin](https://blog.lightspin.io/)
 
 ## 开源情报
 
@@ -75,6 +76,7 @@ excerpt: Cloud Security
 - [kubelet认证流程](https://www.jianshu.com/p/bb973ab1029b)
 - [bridgecrew - 云平台安全配置规则](https://docs.bridgecrew.io/docs)
 - [kubernetes wiki](https://wiki.shileizcc.com/confluence/display/KUB/Kubernetes)
+- [NSA k8s加固指南](https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF)
 
 ## 云原生攻击
 
@@ -173,6 +175,8 @@ excerpt: Cloud Security
 - [大于3/4的app内置了AWS的aksk](https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/mobile-supply-chain-aws)
 - [Azure SFX XSS](https://orca.security/resources/blog/fabrixss-vulnerability-azure-fabric-explorer/)
 - [AWS AppSync 跨租户assume role执行任意API](https://thehackernews.com/2022/11/researchers-detail-appsync-cross-tenant.html)
+- [IBM cloud postgresql提权并控制集群](https://www.wiz.io/blog/hells-keychain-supply-chain-attack-in-ibm-cloud-databases-for-postgresql)
+- [AWS ECR Public服务可使用Cognito临时凭证访问未公开API修改任意租户的公开镜像](https://blog.lightspin.io/aws-ecr-public-vulnerability)
 
 ## 云原生工具
 

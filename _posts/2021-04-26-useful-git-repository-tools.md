@@ -61,6 +61,7 @@ excerpt: useful git repository (工具篇)
 - [yq - portable command-line yaml/json/xml/cvs tool](https://github.com/mikefarah/yq/)
 - [WindTerm - 跨平台ssh客户端](https://github.com/kingToolbox/WindTerm)
 - [typora破解](https://github.com/WittonBell/typoraCracker)
+- [codon - 高性能python编译器](https://github.com/exaloop/codon)
 
 ## 静态工具
 
@@ -128,26 +129,3 @@ excerpt: useful git repository (工具篇)
 - [tshtun - 加密反弹shell](https://github.com/Ridter/tshtun)
 - [exifLooter - 查看照片中的位置信息](https://github.com/aydinnyunus/exifLooter)
 - [deepin-wine - deepin移植到ubuntu，包括微信QQ等](https://github.com/zq1997/deepin-wine)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

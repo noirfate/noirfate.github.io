@@ -52,6 +52,7 @@ excerpt: useful git repository (攻防篇)
 - [snyk - 开源组件漏洞扫描工具](https://github.com/snyk/snyk)
 - [floss - 恶意软件字符串提取](https://github.com/mandiant/flare-floss)
 - [detect-secrets - 扫描文件中的密码](https://github.com/Yelp/detect-secrets)
+- [osv供应链漏洞扫描工具](https://github.com/google/osv-scanner)
 
 ### 远控工具
 

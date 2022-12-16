@@ -441,6 +441,14 @@ git push --all --force
 - chrome: https://chrome.google.com/extensions/detail/mpiodijhokgodhhofbcjdecpffjipkle
 - edge: https://microsoftedge.microsoft.com/addons/detail/efnbkdcfmcmnhlkaijjjmhjjgladedno
 
+## 将网页保存为pdf的命令行工具
+> https://github.com/wkhtmltopdf/wkhtmltopdf
+
+```
+#download from https://wkhtmltopdf.org/downloads.html
+wkhtmltopdf http://google.com google.pdf
+```
+
 # 系统
 
 ## 编写独立内核模块
