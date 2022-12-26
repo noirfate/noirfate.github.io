@@ -69,6 +69,7 @@ excerpt: useful git repository (攻防篇)
 - [fsociety - 渗透测试框架，包含多种渗透工具](https://github.com/Manisso/fsociety)
 - [commando-vm - win渗透虚拟机](https://github.com/fireeye/commando-vm)
 - [bloodhound - 域渗透工具](https://github.com/BloodHoundAD/BloodHound)
+- [autobloody - 根据bloodhound发现的路径自动利用](https://github.com/CravateRouge/autobloody)
 - [monkey - 扫描渗透框架](https://github.com/guardicore/monkey)
 - [nullsecurity的渗透工具集](https://github.com/nullsecuritynet/tools)
 - [metasploit - 渗透框架](https://github.com/rapid7/metasploit-framework)
@@ -90,6 +91,7 @@ excerpt: useful git repository (攻防篇)
 - [faraday - 集成式渗透框架](https://github.com/infobyte/faraday)
 - [yakit - 网络安全单兵工具](https://github.com/yaklang/yakit)
 - [hetty - burpsuit开源替代](https://github.com/dstotijn/hetty)
+- [jsf - jenkins渗透框架](https://github.com/Accenture/jenkins-attack-framework)
 
 ### 持久化工具
 
@@ -110,6 +112,7 @@ excerpt: useful git repository (攻防篇)
 - [run embedded elf from memory](https://github.com/AXDOOMER/run-embedded-elf-from-memory)
 - [ulexecve - 无需执行exec系统调用执行ELF](https://github.com/anvilsecure/ulexecve)
 - [MemoryModule - 在内存中加载或向进程注入DLL](https://github.com/YuriSizuku/MemoryModule)
+- [laZzzy - win shellcode loader](https://github.com/capt-meelo/laZzzy)
 
 ### OSINT(开源情报)工具
 
@@ -285,7 +288,9 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-0543 - redis沙箱逃逸只影响debian](https://github.com/z92g/CVE-2022-0543)
 - [CVE-2022-0847 - 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc) [自动提权](https://github.com/EagleTube/CVE-2022-0847)
 - [CVE-2022-0995 - watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
+- [CVE-2022-2602 - io_uring uaf本地提权](https://github.com/kiks7/CVE-2022-2602-Kernel-Exploit) [POC1](https://github.com/LukeGix/CVE-2022-2602)
 - [CVE-2022-2639 - openvswitch reserve_sfa_size越界访问](https://github.com/veritas501/CVE-2022-2639-PipeVersion)
+- [CVE-2022-4543: KASLR Leakage Achievable even with KPTI through Prefetch Side-Channel](https://www.openwall.com/lists/oss-security/2022/12/16/3)
 - [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 - [CVE-2022-25636 - netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636) [dirty-pipe版本](https://github.com/veritas501/CVE-2022-25636-PipeVersion)
 - [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)

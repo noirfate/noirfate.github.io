@@ -46,6 +46,12 @@ excerpt: Cloud Security
 
 ## 云原生知识
 
+- 漏洞信息
+	- [kubernetes历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
+	- [kubernetes历史漏洞 - git cve](https://github.com/kubernetes/kubernetes/issues?q=is%3Aclosed+label%3Aofficial-cve-feed+)
+	- [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
+	- [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
+	- [docker/moby安全公告](https://github.com/moby/moby/security/advisories)
 - k8s架构
 ![](/assets/img/cs2.png)
 ![](/assets/img/cs3.png)
@@ -53,10 +59,6 @@ excerpt: Cloud Security
 - [kubernetes中文指南](https://jimmysong.io/kubernetes-handbook)
 - [kubernetes图书](https://lib.jimmysong.io/)
 - [kubernetes RBAC介绍](https://www.cncf.io/wp-content/uploads/2020/08/2020_04_Introduction-to-Kubernetes-RBAC.pdf) [AuthN](http://arthurchiao.art/blog/cracking-k8s-authn/) [AuthZ](http://arthurchiao.art/blog/cracking-k8s-authz-rbac/)
-- [kubernetes历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
-- [kubernetes历史漏洞 - git cve](https://github.com/kubernetes/kubernetes/issues?q=is%3Aclosed+label%3Aofficial-cve-feed+)
-- [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
-- [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
 - k8s pod安全策略
 	- [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 	- [pod安全配置介绍](https://medium.com/kubernetes-tutorials/defining-privileges-and-access-control-settings-for-pods-and-containers-in-kubernetes-2cef08fc62b7) [其他](https://fuckcloudnative.io/posts/security-best-practices-for-kubernetes-pods/)
@@ -177,6 +179,7 @@ excerpt: Cloud Security
 - [AWS AppSync 跨租户assume role执行任意API](https://thehackernews.com/2022/11/researchers-detail-appsync-cross-tenant.html)
 - [IBM cloud postgresql提权并控制集群](https://www.wiz.io/blog/hells-keychain-supply-chain-attack-in-ibm-cloud-databases-for-postgresql)
 - [AWS ECR Public服务可使用Cognito临时凭证访问未公开API修改任意租户的公开镜像](https://blog.lightspin.io/aws-ecr-public-vulnerability)
+- [Azure Function容器逃逸](https://unit42.paloaltonetworks.com/azure-serverless-functions-security/)
 
 ## 云原生工具
 
@@ -214,6 +217,7 @@ excerpt: Cloud Security
 - [prowler - aws安全检查监控工具](https://github.com/prowler-cloud/prowler)
 - [cf - 云环境渗透框架](https://github.com/teamssix/cf)
 - [vesta - 云原生漏洞扫描工具](https://github.com/kvesta/vesta)
+- [docker-qemu - run qemu in docker](https://github.com/tianon/docker-qemu)
 
 ## CVE
 
@@ -257,6 +261,7 @@ excerpt: Cloud Security
 - [CVE-2022-0847: dirty-pipe container escape](https://securitylabs.datadoghq.com/articles/dirty-pipe-container-escape-poc/) [POC](https://github.com/DataDog/security-labs-pocs/tree/main/proof-of-concept-exploits/dirtypipe-container-breakout)
 - [CVE-2022-21701: istio gateway提权不完全分析之模板覆盖](http://noahblog.360.cn/abuse-gateway-api-attack-kubernetes/) [yaml多行注释](https://yaml-multiline.info/)
 - [CVE-2022-23648: containerd cri plugin容器镜像路径穿越漏洞](https://bugs.chromium.org/p/project-zero/issues/detail?id=2244)
+- [CVE-2022-39253: 利用git漏洞实现docker build读取宿主机任意文件](https://github.com/noirfate/docker-cve-2022-39253-poc)
 
 # QEMU/HyperV
 
@@ -321,11 +326,14 @@ excerpt: Cloud Security
 - [CVE-2022-0185: fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
 - [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc) [自动提权](https://github.com/EagleTube/CVE-2022-0847)
 - [CVE-2022-0995: watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
+- [CVE-2022-2602 - io_uring uaf本地提权](https://github.com/kiks7/CVE-2022-2602-Kernel-Exploit) [POC1](https://github.com/LukeGix/CVE-2022-2602)
 - [CVE-2022-2639: openvswitch reserve_sfa_size越界访问](https://github.com/veritas501/CVE-2022-2639-PipeVersion)
+- [CVE-2022-4543: KASLR Leakage Achievable even with KPTI through Prefetch Side-Channel](https://www.openwall.com/lists/oss-security/2022/12/16/3)
 - [CVE-2022-23222: ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 - [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666：ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 - [CVE-2022-29968: io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
+- [CVE-2022-32250: netfilter uaf漏洞](https://blog.exodusintel.com/2022/12/19/linux-kernel-exploiting-a-netfilter-use-after-free-in-kmalloc-cg/)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC) [USMA利用方法](https://tttang.com/archive/1706/) [USMA利用代码](https://github.com/veritas501/CVE-2022-34918/tree/master/poc_fs_context_cred_common/src)
 
 # APP
