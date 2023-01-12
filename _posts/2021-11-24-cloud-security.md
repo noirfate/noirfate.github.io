@@ -43,6 +43,7 @@ excerpt: Cloud Security
 - [leakix - 数据泄露查询](https://leakix.net/)
 - [breached - 数据泄露市场](https://breached.to/)
 - [oss fuzz vulns](https://github.com/google/oss-fuzz-vulns)
+- [hackernews - 安全快讯](https://hackernews.cc/)
 
 ## 云原生知识
 
@@ -180,6 +181,8 @@ excerpt: Cloud Security
 - [IBM cloud postgresql提权并控制集群](https://www.wiz.io/blog/hells-keychain-supply-chain-attack-in-ibm-cloud-databases-for-postgresql)
 - [AWS ECR Public服务可使用Cognito临时凭证访问未公开API修改任意租户的公开镜像](https://blog.lightspin.io/aws-ecr-public-vulnerability)
 - [Azure Function容器逃逸](https://unit42.paloaltonetworks.com/azure-serverless-functions-security/)
+- [Azure 使用CA证书进行驻留](https://posts.specterops.io/passwordless-persistence-and-privilege-escalation-in-azure-98a01310be3f)
+- [使用azure outlook作为C2](https://github.com/boku7/azureOutlookC2)
 
 ## 云原生工具
 
@@ -218,6 +221,8 @@ excerpt: Cloud Security
 - [cf - 云环境渗透框架](https://github.com/teamssix/cf)
 - [vesta - 云原生漏洞扫描工具](https://github.com/kvesta/vesta)
 - [docker-qemu - run qemu in docker](https://github.com/tianon/docker-qemu)
+- [kubeletmein - 利用云厂商的metadata服务获取kubelet凭证](https://github.com/4ARMED/kubeletmein)
+- [KubiScan - k8s安全扫描工具](https://github.com/cyberark/KubiScan)
 
 ## CVE
 
@@ -263,7 +268,7 @@ excerpt: Cloud Security
 - [CVE-2022-23648: containerd cri plugin容器镜像路径穿越漏洞](https://bugs.chromium.org/p/project-zero/issues/detail?id=2244)
 - [CVE-2022-39253: 利用git漏洞实现docker build读取宿主机任意文件](https://github.com/noirfate/docker-cve-2022-39253-poc)
 
-# QEMU/HyperV
+# QEMU/HyperV/VMWare
 
 ## 知识
 
@@ -284,6 +289,7 @@ excerpt: Cloud Security
 - [QEMU vGPU逃逸](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Another-Road-Leads-To-The-Host-From-A-Message-To-VM-Escape-On-Nvidia-VGPU.pdf)
 - [QEMU QMP migrate任意命令执行](https://cxsecurity.com/issue/WLB-2022020039)
 - [Matryoshka Trap: Recursive MMIO Flaws](https://qiuhao.org/Matryoshka_Trap.pdf) [poc](https://github.com/QiuhaoLi/CVE-2021-3929-3947) [blackhat](https://i.blackhat.com/Asia-22/Thursday-Materials/AS-22-Qiuhao-Recursive-MMIO-final.pdf)
+- [CVE-2022-31705: vmware ehci漏洞](https://github.com/s0duku/cve-2022-31705)
 
 # KERNEL
 
@@ -326,7 +332,8 @@ excerpt: Cloud Security
 - [CVE-2022-0185: fsconfig heap overflow](https://github.com/Crusaders-of-Rust/CVE-2022-0185) [文章](https://www.willsroot.io/2022/01/cve-2022-0185.html)
 - [CVE-2022-0847: 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc) [自动提权](https://github.com/EagleTube/CVE-2022-0847)
 - [CVE-2022-0995: watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
-- [CVE-2022-2602 - io_uring uaf本地提权](https://github.com/kiks7/CVE-2022-2602-Kernel-Exploit) [POC1](https://github.com/LukeGix/CVE-2022-2602)
+- [CVE-2022-2588: route4_change uaf本地提权](https://github.com/Markakd/CVE-2022-2588)
+- [CVE-2022-2602: io_uring uaf本地提权](https://github.com/kiks7/CVE-2022-2602-Kernel-Exploit) [POC1](https://github.com/LukeGix/CVE-2022-2602)
 - [CVE-2022-2639: openvswitch reserve_sfa_size越界访问](https://github.com/veritas501/CVE-2022-2639-PipeVersion)
 - [CVE-2022-4543: KASLR Leakage Achievable even with KPTI through Prefetch Side-Channel](https://www.openwall.com/lists/oss-security/2022/12/16/3)
 - [CVE-2022-23222: ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)

@@ -34,6 +34,7 @@ excerpt: useful git repository (攻防篇)
 - [dirsearch - 发现webserver路径](https://github.com/maurosoria/dirsearch)
 - [nuclei模板集合](https://github.com/emadshanab/Nuclei-Templates-Collection)
 - [naabu - 网络扫描工具并集成了nmap](https://github.com/projectdiscovery/naabu)
+- [ffuf - http fuzzer](https://github.com/ffuf/ffuf) [字典](https://github.com/danielmiessler/SecLists/) [使用](https://codingo.io/tools/ffuf/bounty/2020/09/17/everything-you-need-to-know-about-ffuf.html)
 
 ### 本地扫描工具
 
@@ -92,6 +93,7 @@ excerpt: useful git repository (攻防篇)
 - [yakit - 网络安全单兵工具](https://github.com/yaklang/yakit)
 - [hetty - burpsuit开源替代](https://github.com/dstotijn/hetty)
 - [jsf - jenkins渗透框架](https://github.com/Accenture/jenkins-attack-framework)
+- [shennina - 利用AI进行自动化渗透](https://github.com/mazen160/shennina)
 
 ### 持久化工具
 
@@ -141,6 +143,7 @@ excerpt: useful git repository (攻防篇)
 - [天际友盟威胁情报资讯](https://redqueen.tj-un.com/AllInfoIntel.html)
 - [中文安全RSS](https://github.com/zhengjim/Chinese-Security-RSS)
 - [hacker search engines](https://github.com/edoardottt/awesome-hacker-search-engines)
+- [git-hound - github敏感信息收集工具](https://github.com/tillson/git-hound)
 
 ### 云原生渗透工具
 
@@ -213,6 +216,7 @@ excerpt: useful git repository (攻防篇)
 - [curl上传文件指定包含..的文件名](http://blog.nsfocus.net/curl/)
 - [DDOS工具](https://github.com/MatrixTM/MHDDoS)
 - [jwt利用工具](https://github.com/ticarpi/jwt_tool)
+- [redteam tools合集](https://github.com/A-poc/RedTeam-Tools)
 
 ## POC
 
@@ -288,6 +292,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-0543 - redis沙箱逃逸只影响debian](https://github.com/z92g/CVE-2022-0543)
 - [CVE-2022-0847 - 利用管道越权写文件](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit) [覆盖容器镜像文件](https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability) [覆盖runc](https://github.com/DataDog/dirtypipe-container-breakout-poc) [自动提权](https://github.com/EagleTube/CVE-2022-0847)
 - [CVE-2022-0995 - watch_queue OOB本地提权](https://github.com/Bonfee/CVE-2022-0995)
+- [CVE-2022-2588 - route4_change uaf本地提权](https://github.com/Markakd/CVE-2022-2588)
 - [CVE-2022-2602 - io_uring uaf本地提权](https://github.com/kiks7/CVE-2022-2602-Kernel-Exploit) [POC1](https://github.com/LukeGix/CVE-2022-2602)
 - [CVE-2022-2639 - openvswitch reserve_sfa_size越界访问](https://github.com/veritas501/CVE-2022-2639-PipeVersion)
 - [CVE-2022-4543: KASLR Leakage Achievable even with KPTI through Prefetch Side-Channel](https://www.openwall.com/lists/oss-security/2022/12/16/3)
@@ -368,6 +373,7 @@ excerpt: useful git repository (攻防篇)
 - [pyyaml反序列化漏洞](https://github.com/bit4woo/code2sec.com/blob/master/Python%20PyYAML%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C%E5%92%8Cpayload%E6%9E%84%E9%80%A0.md)
 - [CVE-2021-43798 - grafana路径穿越漏洞](https://github.com/hupe1980/CVE-2021-43798)
 - [CVE-2022-21724 - PostgresQL JDBC Drive 任意代码执行漏洞](https://xz.aliyun.com/t/11812)
+- [ActuatorExploit - springboot actuator未授权利用](https://github.com/LFYSec/ActuatorExploit)
 
 ## 研究资料
 

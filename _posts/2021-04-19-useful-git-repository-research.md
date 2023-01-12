@@ -52,6 +52,7 @@ excerpt: useful git repository (研究篇)
 - [Ghidrathon - 为Ghidra提供python3支持](https://github.com/mandiant/Ghidrathon)
 - [bindiff插件](https://github.com/ubfx/BinDiffHelper)
 - [GhidraEmu - 模拟执行](https://github.com/Nalen98/GhidraEmu)
+- [gpt-wpre - 使用gpt3分析二级制文件](https://github.com/moyix/gpt-wpre)
 
 ### GDB扩展
 
@@ -417,6 +418,7 @@ excerpt: useful git repository (研究篇)
 - [fuzzable - 使用静态分析判断程序的可fuzz性](https://github.com/ex0dus-0x/fuzzable)
 - [statefuzz - 使用静态分析识别程序中的状态变量并反馈新覆盖度](https://www.usenix.org/system/files/sec22-zhao-bodong.pdf)
 - [fuzzer数据库](https://github.com/SoftSec-KAIST/Fuzzing-Survey) [web](https://fuzzing-survey.org/) [data](https://github.com/SoftSec-KAIST/Fuzzing-Survey/blob/master/data/fuzzers.json)
+- [fuzztruction - 通过对样本生成程序进行插桩来变异样本](https://github.com/fuzztruction/fuzztruction)
 
 ## static analysis
 
