@@ -80,6 +80,7 @@ excerpt: Cloud Security
 - [bridgecrew - 云平台安全配置规则](https://docs.bridgecrew.io/docs)
 - [kubernetes wiki](https://wiki.shileizcc.com/confluence/display/KUB/Kubernetes)
 - [NSA k8s加固指南](https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF)
+- [kubctl top15安全插件](https://malware.news/t/top-15-kubectl-plugins-for-security-engineers/66452)
 
 ## 云原生攻击
 
@@ -183,6 +184,7 @@ excerpt: Cloud Security
 - [Azure Function容器逃逸](https://unit42.paloaltonetworks.com/azure-serverless-functions-security/)
 - [Azure 使用CA证书进行驻留](https://posts.specterops.io/passwordless-persistence-and-privilege-escalation-in-azure-98a01310be3f)
 - [使用azure outlook作为C2](https://github.com/boku7/azureOutlookC2)
+- [Azure 4个服务的ssrf漏洞](https://orca.security/resources/blog/ssrf-vulnerabilities-in-four-azure-services/)
 
 ## 云原生工具
 

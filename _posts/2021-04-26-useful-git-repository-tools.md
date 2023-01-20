@@ -62,6 +62,9 @@ excerpt: useful git repository (工具篇)
 - [WindTerm - 跨平台ssh客户端](https://github.com/kingToolbox/WindTerm)
 - [typora破解](https://github.com/WittonBell/typoraCracker)
 - [codon - 高性能python编译器](https://github.com/exaloop/codon)
+- [youplot - 在终端中展示plot文件](https://github.com/red-data-tools/YouPlot)
+- [sshfs - 通过ssh共享目录](https://github.com/winfsp/sshfs-win)
+- [gsocket - 利用免费的GSRN网络互联](https://github.com/hackerschoice/gsocket)
 
 ## 静态工具
 
@@ -122,7 +125,7 @@ excerpt: useful git repository (工具篇)
 - [gobypass - go写的免杀loader](https://github.com/huadema/Gobypass)
 - [frp - 反代工具](https://github.com/fatedier/frp)
 - [reverse-tunnel - 反代工具](https://github.com/snsinfu/reverse-tunnel)
-- [playwright - web自动化工具](https://github.com/microsoft/playwright)
+- [playwright - web自动化工具](https://github.com/microsoft/playwright) [python版](https://github.com/microsoft/playwright-python)
 - [resh - shell历史搜索工具](https://github.com/curusarn/resh)
 - [slidev - 用markdown写ppt](https://github.com/slidevjs/slidev)
 - [cypress - web自动化工具](https://github.com/cypress-io/cypress)

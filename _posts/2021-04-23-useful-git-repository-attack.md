@@ -54,6 +54,7 @@ excerpt: useful git repository (攻防篇)
 - [floss - 恶意软件字符串提取](https://github.com/mandiant/flare-floss)
 - [detect-secrets - 扫描文件中的密码](https://github.com/Yelp/detect-secrets)
 - [osv供应链漏洞扫描工具](https://github.com/google/osv-scanner)
+- [sudo_killer - sudo漏洞扫描](https://github.com/TH3xACE/SUDO_KILLER)
 
 ### 远控工具
 
@@ -64,6 +65,7 @@ excerpt: useful git repository (攻防篇)
 - [ligolo - 反向代理内网穿透工具](https://github.com/sysdream/ligolo)
 - [reverse-tunnel - 反向代理内网穿透工具](https://github.com/snsinfu/reverse-tunnel)
 - [fileless-xec - 无文件执行RAT](https://github.com/ariary/fileless-xec)
+- [dns-shell - dns反弹shell工具](https://github.com/Eenki/DNS-Shell-Pro)
 
 ### 渗透工具/框架
 
@@ -144,6 +146,7 @@ excerpt: useful git repository (攻防篇)
 - [中文安全RSS](https://github.com/zhengjim/Chinese-Security-RSS)
 - [hacker search engines](https://github.com/edoardottt/awesome-hacker-search-engines)
 - [git-hound - github敏感信息收集工具](https://github.com/tillson/git-hound)
+- [中文ATT&CK矩阵](https://www.ddosi.org/att/)
 
 ### 云原生渗透工具
 
@@ -374,6 +377,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2021-43798 - grafana路径穿越漏洞](https://github.com/hupe1980/CVE-2021-43798)
 - [CVE-2022-21724 - PostgresQL JDBC Drive 任意代码执行漏洞](https://xz.aliyun.com/t/11812)
 - [ActuatorExploit - springboot actuator未授权利用](https://github.com/LFYSec/ActuatorExploit)
+- [svg利用方法汇总](https://github.com/allanlw/svg-cheatsheet)
 
 ## 研究资料
 
@@ -427,6 +431,7 @@ excerpt: useful git repository (攻防篇)
 - [智能合约安全研究资料](https://github.com/saeidshirazi/Awesome-Smart-Contract-Security)
 - [攻击者常用搜索引擎](https://github.com/edoardottt/awesome-hacker-search-engines)
 - [利用go语言进行渗透](https://cfp.balccon.org/media/go-offensive-building-blocks-final.pdf)
+- [APT报告](https://github.com/blackorbird/APT_REPORT)
 
 ## 防护
 
