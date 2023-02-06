@@ -35,6 +35,7 @@ excerpt: useful git repository (攻防篇)
 - [nuclei模板集合](https://github.com/emadshanab/Nuclei-Templates-Collection)
 - [naabu - 网络扫描工具并集成了nmap](https://github.com/projectdiscovery/naabu)
 - [ffuf - http fuzzer](https://github.com/ffuf/ffuf) [字典](https://github.com/danielmiessler/SecLists/) [使用](https://codingo.io/tools/ffuf/bounty/2020/09/17/everything-you-need-to-know-about-ffuf.html)
+- [nuclei burpsuit插件ui](https://github.com/bit4woo/Fiora)
 
 ### 本地扫描工具
 
@@ -220,6 +221,7 @@ excerpt: useful git repository (攻防篇)
 - [DDOS工具](https://github.com/MatrixTM/MHDDoS)
 - [jwt利用工具](https://github.com/ticarpi/jwt_tool)
 - [redteam tools合集](https://github.com/A-poc/RedTeam-Tools)
+- [jar-analyzer - jar包分析工具](https://github.com/4ra1n/jar-analyzer)
 
 ## POC
 
@@ -304,6 +306,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 - [CVE-2022-29799/29800 - Nimbuspwn，dbus提权](https://www.microsoft.com/security/blog/2022/04/26/microsoft-finds-new-elevation-of-privilege-linux-vulnerability-nimbuspwn/) [POC](https://github.com/Immersive-Labs-Sec/nimbuspwn) [检测](https://github.com/jfrog/nimbuspwn-tools)
 - [CVE-2022-29968 - io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
+- [CVE-2022-32250 - netfilter UAF提权漏洞](https://github.com/theori-io/CVE-2022-32250-exploit) [POC1](https://github.com/ysanatomic/CVE-2022-32250-LPE)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC) [USMA利用方法](https://tttang.com/archive/1706/) [USMA利用代码](https://github.com/veritas501/CVE-2022-34918/tree/master/poc_fs_context_cred_common/src)
 
 ### container
@@ -321,6 +324,7 @@ excerpt: useful git repository (攻防篇)
 - [virtualbox vgpu漏洞](https://github.com/niklasb/3dpwn)
 - [qemu nvme漏洞利用](https://github.com/hustdebug/scavenger)
 - [vcenter RCE - CVE-2021-22005](https://securityaffairs.co/wordpress/122686/hacking/cve-2021-22005-exploit-vmware-vcenter.html?utm_source=feedly&utm_medium=rss&utm_campaign=cve-2021-22005-exploit-vmware-vcenter)
+- [vRealizeLogInsight - CVE-2022-31706](https://github.com/horizon3ai/vRealizeLogInsightRCE)
 
 ### side channel
 
@@ -378,6 +382,8 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-21724 - PostgresQL JDBC Drive 任意代码执行漏洞](https://xz.aliyun.com/t/11812)
 - [ActuatorExploit - springboot actuator未授权利用](https://github.com/LFYSec/ActuatorExploit)
 - [svg利用方法汇总](https://github.com/allanlw/svg-cheatsheet)
+- [CVE-2023-21608 - Adobe Reader UaF RCE](https://github.com/hacksysteam/CVE-2023-21608)
+- [CVE-2022-44268 - ImageMagick任意文件读](https://github.com/agathanon/cve-2022-44268)
 
 ## 研究资料
 
@@ -432,6 +438,7 @@ excerpt: useful git repository (攻防篇)
 - [攻击者常用搜索引擎](https://github.com/edoardottt/awesome-hacker-search-engines)
 - [利用go语言进行渗透](https://cfp.balccon.org/media/go-offensive-building-blocks-final.pdf)
 - [APT报告](https://github.com/blackorbird/APT_REPORT)
+- [各类数据库利用整理](https://github.com/safe6Sec/PentestDB)
 
 ## 防护
 

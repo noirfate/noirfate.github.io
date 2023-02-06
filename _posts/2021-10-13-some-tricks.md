@@ -454,6 +454,11 @@ wkhtmltopdf http://google.com google.pdf
 
 启动后会自动最小化，按`Alt+c`开启后，会自动对鼠标所在位置进行取色，可直接进行画面选取，选取后可选择OCR或长截屏等功能。长截屏时在选择框右下角会出现一个小红点，选取完成后按小红点结束。
 
+## 下载B站视频（支持课程）
+> https://github.com/leiurayer/downkyi
+
+打开软件，扫描登录，下载
+
 # 系统
 
 ## 编写独立内核模块

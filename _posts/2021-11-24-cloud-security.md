@@ -81,6 +81,7 @@ excerpt: Cloud Security
 - [kubernetes wiki](https://wiki.shileizcc.com/confluence/display/KUB/Kubernetes)
 - [NSA k8s加固指南](https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF)
 - [kubctl top15安全插件](https://malware.news/t/top-15-kubectl-plugins-for-security-engineers/66452)
+- [GCP cloud storage威胁建模](https://research.nccgroup.com/2023/01/31/threat-modelling-cloud-platform-services-by-example-google-cloud-storage/)
 
 ## 云原生攻击
 
@@ -185,6 +186,11 @@ excerpt: Cloud Security
 - [Azure 使用CA证书进行驻留](https://posts.specterops.io/passwordless-persistence-and-privilege-escalation-in-azure-98a01310be3f)
 - [使用azure outlook作为C2](https://github.com/boku7/azureOutlookC2)
 - [Azure 4个服务的ssrf漏洞](https://orca.security/resources/blog/ssrf-vulnerabilities-in-four-azure-services/)
+- [AWS 使用内部API绕过cloudtrail监控](https://securitylabs.datadoghq.com/articles/iamadmin-cloudtrail-bypass/)
+- [GCP redteam notes](https://gitlab.com/gitlab-com/gl-security/threatmanagement/redteam/redteam-public/red-team-tech-notes/-/tree/master/)
+- [GCP SSH-in-browser sshkey注入](https://blog.stazot.com/ssh-key-injection-google-cloud/)
+- [GCP cloud workstation窃取用户jwt token](https://blog.stazot.com/auth-bypass-in-google-cloud-workstations/)
+- [bypass facebook 2FA](https://medium.com/pentesternepal/two-factor-authentication-bypass-on-facebook-3f4ac3ea139c)
 
 ## 云原生工具
 
@@ -342,7 +348,7 @@ excerpt: Cloud Security
 - [CVE-2022-25636：netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636)
 - [CVE-2022-27666：ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
 - [CVE-2022-29968: io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
-- [CVE-2022-32250: netfilter uaf漏洞](https://blog.exodusintel.com/2022/12/19/linux-kernel-exploiting-a-netfilter-use-after-free-in-kmalloc-cg/)
+- [CVE-2022-32250: netfilter uaf漏洞](https://blog.exodusintel.com/2022/12/19/linux-kernel-exploiting-a-netfilter-use-after-free-in-kmalloc-cg/) [POC1](https://github.com/theori-io/CVE-2022-32250-exploit) [POC2](https://github.com/ysanatomic/CVE-2022-32250-LPE)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC) [USMA利用方法](https://tttang.com/archive/1706/) [USMA利用代码](https://github.com/veritas501/CVE-2022-34918/tree/master/poc_fs_context_cred_common/src)
 
 # APP
