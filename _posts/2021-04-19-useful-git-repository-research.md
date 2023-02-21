@@ -119,7 +119,8 @@ excerpt: useful git repository (研究篇)
 - [imvirt - 虚拟化环境监测工具](https://github.com/DE-IBH/imvirt)
 - [emba - 固件漏洞分析工具](https://github.com/e-m-b-a/emba)
 - [magnifier - 交互式逆向软件](https://github.com/trailofbits/magnifier) [介绍](https://blog.trailofbits.com/2022/08/25/magnifier-an-experiment-with-interactive-decompilation/)
-- [medusa ](https://github.com/Ch0pin/medusa)
+- [medusa](https://github.com/Ch0pin/medusa)
+- [vmlinux-to-elf - 把vmlinux转换成elf文件用于分析](https://github.com/marin-m/vmlinux-to-elf) [使用](https://github.com/batteryshark/writeups/wiki/Go-to-Shell---Reverse-Engineering-Kernel-Modifications-with-QEMU-gdb)
 
 ### binary改写
 
@@ -419,6 +420,7 @@ excerpt: useful git repository (研究篇)
 - [statefuzz - 使用静态分析识别程序中的状态变量并反馈新覆盖度](https://www.usenix.org/system/files/sec22-zhao-bodong.pdf)
 - [fuzzer数据库](https://github.com/SoftSec-KAIST/Fuzzing-Survey) [web](https://fuzzing-survey.org/) [data](https://github.com/SoftSec-KAIST/Fuzzing-Survey/blob/master/data/fuzzers.json)
 - [fuzztruction - 通过对样本生成程序进行插桩来变异样本](https://github.com/fuzztruction/fuzztruction)
+- [lica - linux内核commit分析](https://github.com/sam4k/lica)
 
 ## static analysis
 
@@ -451,3 +453,4 @@ excerpt: useful git repository (研究篇)
 - [IncreLux - 发现linux内核UBI(Use Before Initialization)漏洞](https://github.com/seclab-ucr/IncreLux)
 - [tabby - java静态代码分析工具](https://github.com/wh1t3p1g/tabby)
 - [mate - 根据c/c++程序代码属性图发现漏洞](https://github.com/GaloisInc/MATE)
+- [grepmarx - 多语言源码静态分析工具](https://github.com/Orange-Cyberdefense/grepmarx)

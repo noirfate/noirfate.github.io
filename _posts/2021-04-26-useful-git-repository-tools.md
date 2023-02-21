@@ -25,6 +25,7 @@ excerpt: useful git repository (工具篇)
 - [minigo - 开源的AlphaGo实现](https://github.com/tensorflow/minigo)
 - [cnocr - python ocr中文识别](https://github.com/breezedeus/cnocr)
 - [PaddleOCR - 开源OCR中英文识别工具](https://github.com/PaddlePaddle/PaddleOCR)
+- [RapidOCR - 基于PaddleOCR封装的应用](https://github.com/RapidAI/RapidOCR)
 
 ## 开发工具
 
@@ -65,6 +66,8 @@ excerpt: useful git repository (工具篇)
 - [youplot - 在终端中展示plot文件](https://github.com/red-data-tools/YouPlot)
 - [sshfs - 通过ssh共享目录](https://github.com/winfsp/sshfs-win)
 - [gsocket - 利用免费的GSRN网络互联](https://github.com/hackerschoice/gsocket)
+- [markmap - 把markdown变成思维导图](https://github.com/markmap/markmap)
+- [gitea - 自建github](https://github.com/go-gitea/gitea)
 
 ## 静态工具
 
@@ -88,6 +91,7 @@ excerpt: useful git repository (工具篇)
 - [you-get - 视频下载工具](https://github.com/soimort/you-get)
 - [youtube-dl - 视频下载工具](https://github.com/ytdl-org/youtube-dl)
 - [katana - 爬虫工具](https://github.com/projectdiscovery/katana)
+- [N_m3u8DL-RE - 视频网站m3u下载工具](https://github.com/nilaoda/N_m3u8DL-RE) [提取m3u脚本](https://github.com/nilaoda/Blog/discussions/57)
 
 ## 监控工具
 
@@ -134,3 +138,4 @@ excerpt: useful git repository (工具篇)
 - [deepin-wine - deepin移植到ubuntu，包括微信QQ等](https://github.com/zq1997/deepin-wine)
 - [bottles - linux运行win程序](https://github.com/bottlesdevs/Bottles)
 - [fuse-archive - 挂载压缩包](https://github.com/google/fuse-archive)
+- [graftcp - 通过ptrace重定向tcp流到proxy](https://github.com/hmgle/graftcp)

@@ -56,6 +56,7 @@ excerpt: useful git repository (攻防篇)
 - [detect-secrets - 扫描文件中的密码](https://github.com/Yelp/detect-secrets)
 - [osv供应链漏洞扫描工具](https://github.com/google/osv-scanner)
 - [sudo_killer - sudo漏洞扫描](https://github.com/TH3xACE/SUDO_KILLER)
+- [敏感信息正则库 - 支持trufflehog和gitleaks](https://github.com/mazen160/secrets-patterns-db) [使用](https://mazinahmed.net/blog/secrets-patterns-db/)
 
 ### 远控工具
 
@@ -148,6 +149,10 @@ excerpt: useful git repository (攻防篇)
 - [hacker search engines](https://github.com/edoardottt/awesome-hacker-search-engines)
 - [git-hound - github敏感信息收集工具](https://github.com/tillson/git-hound)
 - [中文ATT&CK矩阵](https://www.ddosi.org/att/)
+- [安全相关情报集合](https://github.com/euphrat1ca/Security-List)
+- [hackdig安全信息流](http://www.hackdig.com/)
+- [APT攻击事件信息流](https://www.vx-underground.org/malware.html)
+- [f5.pm安全信息流](http://f5.pm/)
 
 ### 云原生渗透工具
 
@@ -222,6 +227,10 @@ excerpt: useful git repository (攻防篇)
 - [jwt利用工具](https://github.com/ticarpi/jwt_tool)
 - [redteam tools合集](https://github.com/A-poc/RedTeam-Tools)
 - [jar-analyzer - jar包分析工具](https://github.com/4ra1n/jar-analyzer)
+- [hackEmbedded - 生成多种嵌入式设备处理器架构的payload](https://github.com/doudoudedi/hackEmbedded)
+- [evilclippy - vba宏脚本混淆](https://github.com/outflanknl/EvilClippy)
+- [checkhooks-n-load - 动态绕过杀软检测](https://github.com/reveng007/CheckHooks-n-load)
+- [mqtt-pwn - mqtt攻击工具](https://github.com/akamai-threat-research/mqtt-pwn)
 
 ## POC
 
@@ -256,6 +265,7 @@ excerpt: useful git repository (攻防篇)
 - [Follina word命令执行](https://github.com/chvancooten/follina.py) [说明](https://gist.github.com/tothi/66290a42896a97920055e50128c9f040)
 - [利用callback执行shellcode](https://github.com/aahmad097/AlternativeShellcodeExec) [文章](https://marcoramilli.com/2022/06/15/running-shellcode-through-windows-callbacks/)
 - [warbird-hook - 使用warbird执行加密的shellcode，绕过patchguard](https://github.com/KiFilterFiberContext/warbird-hook)
+- [CVE-2022-44666 - Windows Contacts (VCF/Contact/LDAP) syslink control href attribute escape](https://github.com/j00sean/CVE-2022-44666)
 
 ### linux
 
@@ -437,8 +447,10 @@ excerpt: useful git repository (攻防篇)
 - [智能合约安全研究资料](https://github.com/saeidshirazi/Awesome-Smart-Contract-Security)
 - [攻击者常用搜索引擎](https://github.com/edoardottt/awesome-hacker-search-engines)
 - [利用go语言进行渗透](https://cfp.balccon.org/media/go-offensive-building-blocks-final.pdf)
-- [APT报告](https://github.com/blackorbird/APT_REPORT)
+- [APT报告合集](https://github.com/blackorbird/APT_REPORT) [合集1](https://github.com/aptnotes/data)
 - [各类数据库利用整理](https://github.com/safe6Sec/PentestDB)
+- [APT事件合集](https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections)
+- [APT样本](https://github.com/vxunderground/MalwareSourceCode) [样本1](https://github.com/cyber-research/APTMalware) [样本2](https://bazaar.abuse.ch/browse)
 
 ## 防护
 
