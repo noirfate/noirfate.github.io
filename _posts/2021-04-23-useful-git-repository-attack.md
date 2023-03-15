@@ -36,6 +36,7 @@ excerpt: useful git repository (攻防篇)
 - [naabu - 网络扫描工具并集成了nmap](https://github.com/projectdiscovery/naabu)
 - [ffuf - http fuzzer](https://github.com/ffuf/ffuf) [字典](https://github.com/danielmiessler/SecLists/) [使用](https://codingo.io/tools/ffuf/bounty/2020/09/17/everything-you-need-to-know-about-ffuf.html)
 - [nuclei burpsuit插件ui](https://github.com/bit4woo/Fiora)
+- [fscan - 网络扫描工具](https://github.com/shadow1ng/fscan)
 
 ### 本地扫描工具
 
@@ -68,6 +69,8 @@ excerpt: useful git repository (攻防篇)
 - [reverse-tunnel - 反向代理内网穿透工具](https://github.com/snsinfu/reverse-tunnel)
 - [fileless-xec - 无文件执行RAT](https://github.com/ariary/fileless-xec)
 - [dns-shell - dns反弹shell工具](https://github.com/Eenki/DNS-Shell-Pro)
+- [gmailc2 - 利用gmail作为C2](https://github.com/machine1337/gmailc2)
+- [google_socks - 利用google drive作为C2](https://github.com/lukebaggett/google_socks)
 
 ### 渗透工具/框架
 
@@ -153,6 +156,13 @@ excerpt: useful git repository (攻防篇)
 - [hackdig安全信息流](http://www.hackdig.com/)
 - [APT攻击事件信息流](https://www.vx-underground.org/malware.html)
 - [f5.pm安全信息流](http://f5.pm/)
+- [oss fuzz vulns](https://github.com/google/oss-fuzz-vulns)
+- [hackernews - 安全快讯](https://hackernews.cc/)
+- [dayzerosec - 安全资讯](https://dayzerosec.com)
+- [osv - 开源软件漏洞库](https://osv.dev/)
+- [漏洞信息搜索](https://sca.analysiscenter.veracode.com/vulnerability-database/search)
+- [漏洞利用搜索](https://sploitus.com/)
+- [云服务商漏洞搜索引擎](https://www.cloudvulndb.org/results?q=)
 
 ### 云原生渗透工具
 
@@ -451,6 +461,7 @@ excerpt: useful git repository (攻防篇)
 - [各类数据库利用整理](https://github.com/safe6Sec/PentestDB)
 - [APT事件合集](https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections)
 - [APT样本](https://github.com/vxunderground/MalwareSourceCode) [样本1](https://github.com/cyber-research/APTMalware) [样本2](https://bazaar.abuse.ch/browse)
+- [API安全](https://github.com/arainho/awesome-api-security)
 
 ## 防护
 

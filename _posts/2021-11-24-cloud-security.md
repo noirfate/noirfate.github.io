@@ -44,6 +44,7 @@ excerpt: Cloud Security
 - [breached - 数据泄露市场](https://breached.to/)
 - [oss fuzz vulns](https://github.com/google/oss-fuzz-vulns)
 - [hackernews - 安全快讯](https://hackernews.cc/)
+- [dayzerosec - 安全资讯](https://dayzerosec.com)
 
 ## 云原生知识
 
@@ -191,6 +192,8 @@ excerpt: Cloud Security
 - [GCP SSH-in-browser sshkey注入](https://blog.stazot.com/ssh-key-injection-google-cloud/)
 - [GCP cloud workstation窃取用户jwt token](https://blog.stazot.com/auth-bypass-in-google-cloud-workstations/)
 - [bypass facebook 2FA](https://medium.com/pentesternepal/two-factor-authentication-bypass-on-facebook-3f4ac3ea139c)
+- [Azure AD B2C使用RSA公钥进行加密，若能获取用户公钥即可进行凭据伪造](https://www.praetorian.com/blog/azure-b2c-crypto-misuse-and-account-compromise/)
+- [SCARLETEEL: 针对云环境的攻击](https://sysdig.com/blog/cloud-breach-terraform-data-theft/)
 
 ## 云原生工具
 
@@ -232,6 +235,7 @@ excerpt: Cloud Security
 - [kubeletmein - 利用云厂商的metadata服务获取kubelet凭证](https://github.com/4ARMED/kubeletmein)
 - [KubiScan - k8s安全扫描工具](https://github.com/cyberark/KubiScan)
 - [veinmind - 容器安全工具集](https://github.com/chaitin/veinmind-tools)
+- [tetragon - 基于ebpf的安全监控工具](https://github.com/cilium/tetragon)
 
 ## CVE
 

@@ -26,6 +26,7 @@ excerpt: useful git repository (工具篇)
 - [cnocr - python ocr中文识别](https://github.com/breezedeus/cnocr)
 - [PaddleOCR - 开源OCR中英文识别工具](https://github.com/PaddlePaddle/PaddleOCR)
 - [RapidOCR - 基于PaddleOCR封装的应用](https://github.com/RapidAI/RapidOCR)
+- [AI画图](https://stablediffusionweb.com/) [ControlNet精控](https://github.com/lllyasviel/ControlNet)
 
 ## 开发工具
 
@@ -68,6 +69,9 @@ excerpt: useful git repository (工具篇)
 - [gsocket - 利用免费的GSRN网络互联](https://github.com/hackerschoice/gsocket)
 - [markmap - 把markdown变成思维导图](https://github.com/markmap/markmap)
 - [gitea - 自建github](https://github.com/go-gitea/gitea)
+- [piping-server - 使用http传输一切](https://github.com/nwtgck/piping-server) [使用](https://dev.to/nwtgck/the-power-of-pure-http-screen-share-real-time-messaging-ssh-and-vnc-5ghc)
+- [文档转换神器](https://github.com/jgm/pandoc)
+- [curl-impersonate - curl模拟chrome、firefox、edge浏览器](https://github.com/lwthiker/curl-impersonate)
 
 ## 静态工具
 
@@ -83,6 +87,7 @@ excerpt: useful git repository (工具篇)
 - [silk-decoder - 解码qq、微信音频文件](https://github.com/kn007/silk-v3-decoder)
 - [sacd-ripper - sacd提取工具](https://github.com/sacd-ripper/sacd-ripper)
 - [openshot - 跨平台视频编辑工具](https://github.com/OpenShot/openshot-qt)
+- [Infinite-Storage-Glitch - 把任意文件转换为视频](https://github.com/DvorakDwarf/Infinite-Storage-Glitch)
 
 ## 下载工具
 
@@ -139,3 +144,4 @@ excerpt: useful git repository (工具篇)
 - [bottles - linux运行win程序](https://github.com/bottlesdevs/Bottles)
 - [fuse-archive - 挂载压缩包](https://github.com/google/fuse-archive)
 - [graftcp - 通过ptrace重定向tcp流到proxy](https://github.com/hmgle/graftcp)
+- [英文外刊电子书](https://github.com/hehonghui/awesome-english-ebooks)

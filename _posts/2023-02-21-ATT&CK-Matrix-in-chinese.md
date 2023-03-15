@@ -62,6 +62,55 @@ excerpt: ATT&CK Matrix 中英文对照表
 | T1593.003 | 代码仓库（Code Repositories）| 攻击者通过搜索公开的代码仓库来获取受害者相关的信息 | [链接](https://attack.mitre.org/techniques/T1593/003) |
 | T1594 | 搜索受害者网站（Search Victim-Owned Websites）| 攻击者在受害者拥有的网站中搜索数据 | [链接](https://attack.mitre.org/techniques/T1594) |
 
+## 资源开发（Resource Development）
+攻击者准备实施行动所需的资源
+
+| ID | 名称 | 描述 | Ref |
+| :-- | :-- | :-- | :-- |
+| T1583 | 基础设施获取（Acquire Infrastructure）| 攻击者通过购买、租借等方式获取用于攻击行动的基础设施资源，如DNS、云服务器等 | [链接](https://attack.mitre.org/techniques/T1583) |
+| T1583.001 | 域名（Domains）| 攻击者获取用于攻击的域名 | [链接](https://attack.mitre.org/techniques/T1583/001) |
+| T1583.002 | DNS服务器（DNS Server）| 攻击者搭建自己的DNS服务器用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1583/002) |
+| T1583.003 | 虚拟主机（Virtual Private Server）| 攻击者购买云服务商提供的虚机或容器用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1583/003) |
+| T1583.004 | 服务器（Server）| 攻击者购买物理服务器用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1583/004) |
+| T1583.005 | 僵尸网络（Botnet）| 攻击者购买僵尸网络用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1583/005) |
+| T1583.006 | Web服务（Web Services）| 攻击者注册web服务（如google、twitter等）用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1583/006) |
+| T1583.007 | 无服务器计算（Serverless）| 攻击者购买云厂商提供的Serverless服务用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1583/007) |
+| T1586 | 账户侵占（Compromise Accounts）| 攻击者通过侵占他人账户用于攻击行动，如伪装成他人在社工中获取受害者信任 | [链接](https://attack.mitre.org/techniques/T1586) |
+| T1586.001 | 社交媒体账户（Social Media Accounts）| 攻击者侵占他人的社交媒体账户用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1586/001) |
+| T1586.002 | 邮箱账户（Email Accounts）| 攻击者侵占他人的邮箱账户用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1586/002) |
+| T1586.003 | 云账户（Cloud Accounts）| 攻击者侵占他人的云账户用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1586/003) |
+| T1584 | 基础设施侵占（Compromise Infrastructure）| 攻击者侵占第三方基础设施用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1584) |
+| T1584.001 | 域名（Domains）| 攻击者劫持域名或子域名用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1584/001) |
+| T1584.002 | DNS服务器（DNS Server）| 攻击者劫持第三方DNS服务器用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1584/002) |
+| T1584.003 | 虚拟主机（Virtual Private Server）| 攻击者攻占第三方虚拟主机用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1584/003) |
+| T1584.004 | 服务器（Server）| 攻击者攻占第三方物理服务器用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1584/004) |
+| T1584.005 | 僵尸网络（Botnet）| 攻击者通过侵占大量的系统来构建僵尸网络用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1584/005) |
+| T1584.006 | Web服务（Web Services）| 攻击者通过攻占第三方web服务账户（如github、twitter等）用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1584/006) |
+| T1584.007 | 无服务器计算（Serverless）| 攻击者通过攻占第三方Serverless服务（如AWS Lambda）用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1584/007) |
+| T1587 | 能力开发（Develop Capabilities）| 攻击者构建自己的攻击技能用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1587) |
+| T1587.001 | 恶意软件（Malware）| 攻击者开发恶意软件用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1587/001) |
+| T1587.002 | 代码签名证书（Code Signing Certificates）| 攻击者创建自签名证书用于代码签名 | [链接](https://attack.mitre.org/techniques/T1587/002) |
+| T1587.003 | 数字证书（Digital Certificates）| 攻击者创建自签名证书用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1587/003) |
+| T1587.004 | 漏洞利用（Exploits）| 攻击者开发漏洞利用用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1587/004) |
+| T1585 | 账户建立（Establish Accounts）| 攻击者创建并培育账户用于将来的攻击行动 | [链接](https://attack.mitre.org/techniques/T1585) |
+| T1585.001 | 社交媒体账户（Social Media Accounts）| 攻击者建立社交媒体账户用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1585/001) |
+| T1585.002 | 邮箱账户（Email Accounts）| 攻击者建立邮箱账户用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1585/002) |
+| T1585.003 | 云账户（Cloud Accounts）| 攻击者建立云账户用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1585/003) |
+| T1588 | 能力获取（Obtain Capabilities）| 攻击者通过购买或窃取攻击技能来用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1588) |
+| T1588.001 | 恶意软件（Malware）| 攻击者通过购买、下载、窃取等方式获得恶意软件并用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1588/001) |
+| T1588.002 | 工具（Tool）| 攻击者通过购买、下载、窃取等方式获得软件工具（如PsExec、Cobalt Strike等）并用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1588/002) |
+| T1588.003 | 代码签名证书（Code Signing Certificates）| 攻击者通过购买、窃取等方式获取代码签名证书用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1588/003) |
+| T1588.004 | 数字证书（Digital Certificates）| 攻击者通过购买、窃取等方式获取数字证书用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1588/004) |
+| T1588.005 | 漏洞利用（Exploits）| 攻击者通过购买、下载、窃取等方式获得漏洞利用程序并用于攻击行动 | [链接](https://attack.mitre.org/techniques/T1588/005) |
+| T1588.006 | 漏洞（Vulnerabilities）| 攻击者购买攻击行动所需的漏洞信息 | [链接](https://attack.mitre.org/techniques/T1588/006) |
+| T1608 | 部署能力（Stage Capabilities）| 攻击者把自己开发或获取的技能工具部署到自己可控的基础设施或公开服务（github、pastbin等）上以便在行动中访问这些工具 | [链接](https://attack.mitre.org/techniques/T1608) |
+| T1608.001 | 上传恶意软件（Upload Malware）| 攻击者把恶意软件上传到第三方或自己可控的基础设施上以便在行动中访问 | [链接](https://attack.mitre.org/techniques/T1608/001) |
+| T1608.002 | 上传工具（Upload Tool）| 攻击者把工具软件上传到第三方或自己可控的基础设施上以便在行动中访问 | [链接](https://attack.mitre.org/techniques/T1608/002) |
+| T1608.003 | 安装数字证书（Install Digital Certificate）| 攻击者在自己可控的服务器上安装数字证书 | [链接](https://attack.mitre.org/techniques/T1608/003) |
+| T1608.004 | 搭建恶意网站（Drive-by Target）| 攻击者通过搭建恶意网站使得受害者在访问该站点时被攻击 | [链接](https://attack.mitre.org/techniques/T1608/004) |
+| T1608.005 | 部署恶意链接（Link Target）| 攻击者通过在网站上部署恶意链接使得受害者在点击之后跳转到恶意页面（如钓鱼页面）| [链接](https://attack.mitre.org/techniques/T1608/005) |
+| T1608.006 | SEO投毒（SEO Poisoning）| 攻击者利用SEO投毒技术污染搜索引擎的返回结果，从而诱导受害者点击恶意链接 | [链接](https://attack.mitre.org/techniques/T1608/006) |
+
 
 ## 初始访问（Initial Access）
 攻击者利用各种技术手段获取受害者网络中的一个初始据点
