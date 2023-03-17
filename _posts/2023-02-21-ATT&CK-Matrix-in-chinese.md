@@ -162,7 +162,7 @@ excerpt: ATT&CK Matrix 中英文对照表
 | T1106 | 原生API（Native API）| 攻击者利用系统底层API执行命令 | [链接](https://attack.mitre.org/techniques/T1106) |
 | T1053 | 定时任务（Scheduled Task/Job）| 攻击者利用系统中的定时任务来执行命令 | [链接](https://attack.mitre.org/techniques/T1053) |
 | T1053.002 | At（At）| 攻击者利用at定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/002) |
-| T053.003 | Cron（Cron）| 攻击者利用cron定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/003) |
+| T1053.003 | Cron（Cron）| 攻击者利用cron定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/003) |
 | T1053.005 | Windows定时任务（Scheduled Task）| 攻击者利用windows task scheduler定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/005) |
 | T1053.006 | Systemd计时器（Systemd Timers）| 攻击者利用systemd提供的timers执行命令（可用systemctl进行管理）| [链接](https://attack.mitre.org/techniques/T1053/006) |
 | T1053.007 | 容器定时任务（Container Orchestration Job）| 攻击者利用容器定时任务（docker的HEALTHCHECK、k8s的livenessProbe和CronJob等）执行命令 | [链接](https://attack.mitre.org/techniques/T1053/007) |
@@ -276,7 +276,7 @@ excerpt: ATT&CK Matrix 中英文对照表
 | T1542.005 | TFTP引导（TFTP Boot）| 攻击者通过网络引导的功能，利用tftp下载并启动恶意固件 | [链接](https://attack.mitre.org/techniques/T1542/005/) |
 | T1053 | 定时任务（Scheduled Task/Job）| 攻击者利用系统中的定时任务来执行命令 | [链接](https://attack.mitre.org/techniques/T1053) |
 | T1053.002 | At（At）| 攻击者利用at定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/002) |
-| T053.003 | Cron（Cron）| 攻击者利用cron定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/003) |
+| T1053.003 | Cron（Cron）| 攻击者利用cron定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/003) |
 | T1053.005 | Windows定时任务（Scheduled Task）| 攻击者利用windows task scheduler定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/005) |
 | T1053.006 | Systemd计时器（Systemd Timers）| 攻击者利用systemd提供的timers执行命令（可用systemctl进行管理）| [链接](https://attack.mitre.org/techniques/T1053/006) |
 | T1053.007 | 容器定时任务（Container Orchestration Job）| 攻击者利用容器定时任务（docker的HEALTHCHECK、k8s的livenessProbe和CronJob等）执行命令 | [链接](https://attack.mitre.org/techniques/T1053/007) |
@@ -363,7 +363,7 @@ excerpt: ATT&CK Matrix 中英文对照表
 | T1574.001 | DLL搜索顺序劫持（DLL Search Order Hijacking）| 攻击者利用程序搜索动态库路径的先后顺序，在优先搜索的路径中添加程序需要加载的动态库进行劫持 | [链接](https://attack.mitre.org/techniques/T1574/001) |
 | T1574.002 | DLL侧加载（DLL Side-Loading）| 攻击者通过直接替换合法程序或白名单程序运行所需的DLL库来执行恶意代码 | [链接](https://attack.mitre.org/techniques/T1574/002) |
 | T1574.004 | Dylib劫持（Dylib Hijacking）| 攻击者利用程序搜索动态库路径的先后顺序，在优先搜索的路径中添加程序需要加载的动态库进行劫持 | [链接](https://attack.mitre.org/techniques/T1574/004) |
-| T1574.005 | 助手程序权限设置缺陷（Executable Installer File Permissions Weakness）| 安装程序通常会执行其他的辅助程序来完成特定的功能，当这些助手程序的权限设置存在问题时，攻击者可以通过替换它们来执行命令 | [链接](https://attack.mitre.org/techniques/T1574/005) |
+| T1574.005 | 安装辅助程序权限设置缺陷（Executable Installer File Permissions Weakness）| 安装程序通常会执行其他的辅助程序来完成特定的功能，当这些助手程序的权限设置存在问题时，攻击者可以通过替换它们来执行命令 | [链接](https://attack.mitre.org/techniques/T1574/005) |
 | T1574.006 | 链接器劫持（Dynamic Linker Hijacking）| 通过修改链接器配置（如LD_PRELOAD、DYLD_INSERT_LIBRARIES等）来加载恶意动态库 | [链接](https://attack.mitre.org/techniques/T1574/006) |
 | T1574.007 | 利用Path环境变量进行路径拦截（Path Interception by PATH Environment Variable）| 攻击者通过修改Path环境变量，使得在执行时系统首先搜索攻击者指定的路径，从而拦截正常的命令执行 | [链接](https://attack.mitre.org/techniques/T1574/007) |
 | T1574.008 | 利用搜索顺序进行路径拦截（Path Interception by Search Order Hijacking）| 若程序调用其他程序时未指定绝对路径，则可通过在其搜索路径中添加指定的恶意程序来进行劫持执行 | [链接](https://attack.mitre.org/techniques/T1574/008) |
@@ -387,7 +387,7 @@ excerpt: ATT&CK Matrix 中英文对照表
 | T1055.015 | 列表视图控件植入（ListPlanting）| 攻击者通过修改windows窗口程序列表试图控件对象（SysListView32）的内存，把函数指针指向恶意代码 | [链接](https://attack.mitre.org/techniques/T1055/015) |
 | T1053 | 定时任务（Scheduled Task/Job）| 攻击者利用系统中的定时任务来执行命令 | [链接](https://attack.mitre.org/techniques/T1053) |
 | T1053.002 | At（At）| 攻击者利用at定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/002) |
-| T053.003 | Cron（Cron）| 攻击者利用cron定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/003) |
+| T1053.003 | Cron（Cron）| 攻击者利用cron定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/003) |
 | T1053.005 | Windows定时任务（Scheduled Task）| 攻击者利用windows task scheduler定时任务执行命令 | [链接](https://attack.mitre.org/techniques/T1053/005) |
 | T1053.006 | Systemd计时器（Systemd Timers）| 攻击者利用systemd提供的timers执行命令（可用systemctl进行管理）| [链接](https://attack.mitre.org/techniques/T1053/006) |
 | T1053.007 | 容器定时任务（Container Orchestration Job）| 攻击者利用容器定时任务（docker的HEALTHCHECK、k8s的livenessProbe和CronJob等）执行命令 | [链接](https://attack.mitre.org/techniques/T1053/007) |
@@ -435,15 +435,15 @@ excerpt: ATT&CK Matrix 中英文对照表
 | T1564.004 | NTFS文件属性（NTFS File Attributes）| 攻击者通过NTFS文件属性（存储在MFT中）来保存恶意代码 | [链接](https://attack.mitre.org/techniques/T1564/004) |
 | T1564.005 | 隐藏文件系统（Hidden File System）| 攻击者使用自己的文件系统存储恶意文件（如利用未使用的硬盘空间）| [链接](https://attack.mitre.org/techniques/T1564/005) |
 | T1564.006 | 虚拟化执行（Run Virtual Instance）| 攻击者通过在虚拟化环境中（qemu、hyper-v等）执行恶意代码去规避检测防御 | [链接](https://attack.mitre.org/techniques/T1564/006) |
-| T1546.007 | VBA混淆（VBA Stomping）| 攻击者利用Office显示的VBA宏源码和实际执行的p-code可以不同的特点，用正常的宏代码来隐藏实际执行的恶意p-code以迷惑用户 | [链接](https://attack.mitre.org/techniques/T1564/007) |
-| T1546.008 | 邮件隐藏（Email Hiding Rules）| 攻击者利用邮箱的邮件过滤功能来转移受害者收件箱中的邮件以实现隐藏 | [链接](https://attack.mitre.org/techniques/T1564/008) |
-| T1546.009 | 资源分离（Resource Forking）| 攻击者把恶意代码存放在文件的扩展属性或者文件包中的资源文件中 | [链接](https://attack.mitre.org/techniques/T1564/009) |
-| T1546.010 | 进程启动参数伪造（Process Argument Spoofing）| 攻击者通过修改进程的内存来修改进程启动参数，以隐藏实际的启动参数 | [链接](https://attack.mitre.org/techniques/T1564/010) |
+| T1564.007 | VBA混淆（VBA Stomping）| 攻击者利用Office显示的VBA宏源码和实际执行的p-code可以不同的特点，用正常的宏代码来隐藏实际执行的恶意p-code以迷惑用户 | [链接](https://attack.mitre.org/techniques/T1564/007) |
+| T1564.008 | 邮件隐藏（Email Hiding Rules）| 攻击者利用邮箱的邮件过滤功能来转移受害者收件箱中的邮件以实现隐藏 | [链接](https://attack.mitre.org/techniques/T1564/008) |
+| T1564.009 | 资源分离（Resource Forking）| 攻击者把恶意代码存放在文件的扩展属性或者文件包中的资源文件中 | [链接](https://attack.mitre.org/techniques/T1564/009) |
+| T1564.010 | 进程启动参数伪造（Process Argument Spoofing）| 攻击者通过修改进程的内存来修改进程启动参数，以隐藏实际的启动参数 | [链接](https://attack.mitre.org/techniques/T1564/010) |
 | T1574 | 劫持执行流（Hijack Execution Flow）| 攻击者通过劫持进程的执行流来执行恶意代码 | [链接](https://attack.mitre.org/techniques/T1574) |
 | T1574.001 | DLL搜索顺序劫持（DLL Search Order Hijacking）| 攻击者利用程序搜索动态库路径的先后顺序，在优先搜索的路径中添加程序需要加载的动态库进行劫持 | [链接](https://attack.mitre.org/techniques/T1574/001) |
 | T1574.002 | DLL侧加载（DLL Side-Loading）| 攻击者通过直接替换合法程序或白名单程序运行所需的DLL库来执行恶意代码 | [链接](https://attack.mitre.org/techniques/T1574/002) |
 | T1574.004 | Dylib劫持（Dylib Hijacking）| 攻击者利用程序搜索动态库路径的先后顺序，在优先搜索的路径中添加程序需要加载的动态库进行劫持 | [链接](https://attack.mitre.org/techniques/T1574/004) |
-| T1574.005 | 助手程序权限设置缺陷（Executable Installer File Permissions Weakness）| 安装程序通常会执行其他的辅助程序来完成特定的功能，当这些助手程序的权限设置存在问题时，攻击者可以通过替换它们来执行命令 | [链接](https://attack.mitre.org/techniques/T1574/005) |
+| T1574.005 | 安装辅助程序权限设置缺陷（Executable Installer File Permissions Weakness）| 安装程序通常会执行其他的辅助程序来完成特定的功能，当这些助手程序的权限设置存在问题时，攻击者可以通过替换它们来执行命令 | [链接](https://attack.mitre.org/techniques/T1574/005) |
 | T1574.006 | 链接器劫持（Dynamic Linker Hijacking）| 通过修改链接器配置（如LD_PRELOAD、DYLD_INSERT_LIBRARIES等）来加载恶意动态库 | [链接](https://attack.mitre.org/techniques/T1574/006) |
 | T1574.007 | 利用Path环境变量进行路径拦截（Path Interception by PATH Environment Variable）| 攻击者通过修改Path环境变量，使得在执行时系统首先搜索攻击者指定的路径，从而拦截正常的命令执行 | [链接](https://attack.mitre.org/techniques/T1574/007) |
 | T1574.008 | 利用搜索顺序进行路径拦截（Path Interception by Search Order Hijacking）| 若程序调用其他程序时未指定绝对路径，则可通过在其搜索路径中添加指定的恶意程序来进行劫持执行 | [链接](https://attack.mitre.org/techniques/T1574/008) |
