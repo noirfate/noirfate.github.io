@@ -26,7 +26,9 @@ excerpt: useful git repository (工具篇)
 - [cnocr - python ocr中文识别](https://github.com/breezedeus/cnocr)
 - [PaddleOCR - 开源OCR中英文识别工具](https://github.com/PaddlePaddle/PaddleOCR)
 - [RapidOCR - 基于PaddleOCR封装的应用](https://github.com/RapidAI/RapidOCR)
-- [AI画图](https://stablediffusionweb.com/) [ControlNet精控](https://github.com/lllyasviel/ControlNet)
+- [AI画图](https://stablediffusionweb.com/) [ControlNet精控](https://github.com/lllyasviel/ControlNet) [资料汇总](https://github.com/hua1995116/awesome-ai-painting)
+- [openai GPT](https://chat.openai.com/)
+- [openai dall-e](https://labs.openai.com/)
 
 ## 开发工具
 
@@ -72,6 +74,7 @@ excerpt: useful git repository (工具篇)
 - [piping-server - 使用http传输一切](https://github.com/nwtgck/piping-server) [使用](https://dev.to/nwtgck/the-power-of-pure-http-screen-share-real-time-messaging-ssh-and-vnc-5ghc)
 - [文档转换神器](https://github.com/jgm/pandoc)
 - [curl-impersonate - curl模拟chrome、firefox、edge浏览器](https://github.com/lwthiker/curl-impersonate)
+- [outline - 文档协作知识库](https://github.com/outline/outline)
 
 ## 静态工具
 

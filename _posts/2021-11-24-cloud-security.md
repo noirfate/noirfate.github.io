@@ -83,6 +83,7 @@ excerpt: Cloud Security
 - [NSA k8s加固指南](https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF)
 - [kubctl top15安全插件](https://malware.news/t/top-15-kubectl-plugins-for-security-engineers/66452)
 - [GCP cloud storage威胁建模](https://research.nccgroup.com/2023/01/31/threat-modelling-cloud-platform-services-by-example-google-cloud-storage/)
+- [k8s源码分析](https://github.com/rfyiamcool/notes)
 
 ## 云原生攻击
 
@@ -208,6 +209,7 @@ excerpt: Cloud Security
 - [kubeletctl](https://github.com/cyberark/kubeletctl)
 - [解密k8s etcd存储](https://github.com/jpbetz/auger)
 - [whaler - 从docker镜像推导出dockerfile](https://github.com/P3GLEG/Whaler)
+- [runlike - 从运行的容器反推出启动命令](https://github.com/lavie/runlike)
 - [dive - docker镜像分析工具](https://github.com/wagoodman/dive) [docker镜像分析](https://theartofmachinery.com/2021/03/18/reverse_engineering_a_docker_image.html)
 - [krew - kubectl插件管理工具](https://github.com/kubernetes-sigs/krew/)
 - [rakkess - kubectl权限检查工具](https://github.com/corneliusweig/rakkess)

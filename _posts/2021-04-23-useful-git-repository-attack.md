@@ -241,6 +241,8 @@ excerpt: useful git repository (攻防篇)
 - [evilclippy - vba宏脚本混淆](https://github.com/outflanknl/EvilClippy)
 - [checkhooks-n-load - 动态绕过杀软检测](https://github.com/reveng007/CheckHooks-n-load)
 - [mqtt-pwn - mqtt攻击工具](https://github.com/akamai-threat-research/mqtt-pwn)
+- [APTRS - 渗透测试报告系统](https://github.com/Anof-cyber/APTRS)
+- [attack-flow - 使用TTP绘制攻击流程](https://github.com/center-for-threat-informed-defense/attack-flow)
 
 ## POC
 
@@ -345,6 +347,7 @@ excerpt: useful git repository (攻防篇)
 - [qemu nvme漏洞利用](https://github.com/hustdebug/scavenger)
 - [vcenter RCE - CVE-2021-22005](https://securityaffairs.co/wordpress/122686/hacking/cve-2021-22005-exploit-vmware-vcenter.html?utm_source=feedly&utm_medium=rss&utm_campaign=cve-2021-22005-exploit-vmware-vcenter)
 - [vRealizeLogInsight - CVE-2022-31706](https://github.com/horizon3ai/vRealizeLogInsightRCE)
+- [CVE-2023-27326 - Parallels Desktop VM Escape](https://github.com/Impalabs/CVE-2023-27326)
 
 ### side channel
 
