@@ -332,6 +332,8 @@ excerpt: useful git repository (研究篇)
 - [vaultfuzzer - 基于syzkaller改进，cov过滤、pc权重等、llvm编译](https://hardenedvault.net/2021/09/13/vaultfuzzer.html)
 - [raw-gadget - use raw gadget to fuzz usb system](https://github.com/xairy/raw-gadget) [slides](https://docs.google.com/presentation/d/1sArf2cN5tAOaovlaL3KBPNDjYOk8P6tRrzfkclsbO_c/edit#slide=id.g1925acbbf3_0_0)
 - [GREBE - 通过对bug report的分析引导fuzzer发现新的漏洞](https://github.com/markakd/GREBE)
+- [healer - syzkaller改进版，使用syscall之间的影响关系生成call sequences](https://github.com/SunHao-0/healer)
+- [syzkaller样本库，可以提高fuzz效率](https://github.com/cmu-pasta/linux-kernel-enriched-corpus)
 
 ### sanitizer
 

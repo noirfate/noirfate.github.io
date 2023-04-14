@@ -53,6 +53,7 @@ excerpt: Cloud Security
 	- [kubernetes历史漏洞 - git cve](https://github.com/kubernetes/kubernetes/issues?q=is%3Aclosed+label%3Aofficial-cve-feed+)
 	- [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
 	- [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
+	- [kubernetes历史漏洞 - 官方feed](https://kubernetes.io/docs/reference/issues-security/official-cve-feed/)
 	- [docker/moby安全公告](https://github.com/moby/moby/security/advisories)
 - k8s架构
 ![](/assets/img/cs2.png)
@@ -195,6 +196,10 @@ excerpt: Cloud Security
 - [bypass facebook 2FA](https://medium.com/pentesternepal/two-factor-authentication-bypass-on-facebook-3f4ac3ea139c)
 - [Azure AD B2C使用RSA公钥进行加密，若能获取用户公钥即可进行凭据伪造](https://www.praetorian.com/blog/azure-b2c-crypto-misuse-and-account-compromise/)
 - [SCARLETEEL: 针对云环境的攻击](https://sysdig.com/blog/cloud-breach-terraform-data-theft/)
+- [Azure Super FabriXss](https://orca.security/resources/blog/super-fabrixss-azure-vulnerability/)
+- [Azure CI/CD pipelines通过修改代码提交信息改变流水线环境变量的值](https://www.legitsecurity.com/blog/remote-code-execution-vulnerability-in-azure-pipelines-can-lead-to-software-supply-chain-attack)
+- [AWS EKS集群从Pod提权到集群管理员](https://blog.calif.io/p/privilege-escalation-in-eks)
+- [Azure 使用Storage Account Contributor角色和共享密钥进行提权](https://orca.security/resources/blog/azure-shared-key-authorization-exploitation/)
 
 ## 云原生工具
 

@@ -37,6 +37,7 @@ excerpt: useful git repository (攻防篇)
 - [ffuf - http fuzzer](https://github.com/ffuf/ffuf) [字典](https://github.com/danielmiessler/SecLists/) [使用](https://codingo.io/tools/ffuf/bounty/2020/09/17/everything-you-need-to-know-about-ffuf.html)
 - [nuclei burpsuit插件ui](https://github.com/bit4woo/Fiora)
 - [fscan - 网络扫描工具](https://github.com/shadow1ng/fscan)
+- [burpgpt - 使用chatgpt检测网络流量](https://github.com/aress31/burpgpt)
 
 ### 本地扫描工具
 

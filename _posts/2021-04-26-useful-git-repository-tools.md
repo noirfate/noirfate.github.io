@@ -29,6 +29,7 @@ excerpt: useful git repository (工具篇)
 - [AI画图](https://stablediffusionweb.com/) [ControlNet精控](https://github.com/lllyasviel/ControlNet) [资料汇总](https://github.com/hua1995116/awesome-ai-painting)
 - [openai GPT](https://chat.openai.com/)
 - [openai dall-e](https://labs.openai.com/)
+- [tabby - 代码智能补全](https://github.com/TabbyML/tabby)
 
 ## 开发工具
 
