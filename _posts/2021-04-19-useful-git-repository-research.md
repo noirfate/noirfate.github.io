@@ -423,6 +423,7 @@ excerpt: useful git repository (研究篇)
 - [fuzzer数据库](https://github.com/SoftSec-KAIST/Fuzzing-Survey) [web](https://fuzzing-survey.org/) [data](https://github.com/SoftSec-KAIST/Fuzzing-Survey/blob/master/data/fuzzers.json)
 - [fuzztruction - 通过对样本生成程序进行插桩来变异样本](https://github.com/fuzztruction/fuzztruction)
 - [lica - linux内核commit分析](https://github.com/sam4k/lica)
+- [manticore - 符号执行工具](https://github.com/trailofbits/manticore)
 
 ## static analysis
 

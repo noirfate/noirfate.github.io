@@ -151,6 +151,8 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 	* 有些时候为了方便，会把内部网站开放到公网，通过IP扫描，可发现重定向头`Location`的内容为内部域名，修改host，绑定IP和内部域名，则可访问。进一步可以进行泛扫，把域名列表和IP列表一一绑定进行测试
 * 内部使用公网IP段
 	* 若云厂商把自己内部使用的IP地址设置为公网IP，则存在暴露风险，如租户设置SNAT网关，如果网关节点路由配置不当，则会把租户访问的公网IP路由到内部节点
+* 多网卡
+  * 服务在提供资源给用户使用时，通常会给虚机分配两张网卡，一张挂在用户的VPC中供用户访问，另一张用作服务管理，用户可通过设置VPC路由的方式，把访问另一张网卡所在网段的路由设置为挂在用户VPC上的网卡，则可访问到只监听在另一张网卡上的服务
 	
 ## 执行 (Execution)
 
@@ -206,6 +208,9 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 * 未授权访问
   * 很多未授权访问均可获得敏感信息，比如hadoop、hbase、zookeeper、SpringBoot Actuator、etcd、 Elasticsearch、环境变量等等
   * 如果可在服务提供的pod中执行代码，且pod没做安全加固，那么就可以得到k8s的security token，通过它便可进行容器逃逸或控制k8s集群
+* k8s secret
+  * [dockerconfigjson](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/pull-image-private-registry/)：由于k8s创建容器时需要从镜像仓库拉取镜像，所以通常会存在镜像仓库的认证凭据，如果该凭据具有push的权限，则可通过修改镜像实现供应链攻击
+  * AKSK或token：在secret中也可能存放有用户或服务的凭证
 
 ## 横向移动 (Lateral Movement)
 

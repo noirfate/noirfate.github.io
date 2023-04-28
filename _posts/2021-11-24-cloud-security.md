@@ -42,6 +42,7 @@ excerpt: Cloud Security
 - [AWS、AZure漏洞](https://github.com/CyberSecurityUP/Cloud-Security-Attacks)
 - [leakix - 数据泄露查询](https://leakix.net/)
 - [breached - 数据泄露市场](https://breached.to/)
+- [cracking - 数据泄露等](https://cracking.org/forums/databases.31)
 - [oss fuzz vulns](https://github.com/google/oss-fuzz-vulns)
 - [hackernews - 安全快讯](https://hackernews.cc/)
 - [dayzerosec - 安全资讯](https://dayzerosec.com)
@@ -55,6 +56,7 @@ excerpt: Cloud Security
 	- [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
 	- [kubernetes历史漏洞 - 官方feed](https://kubernetes.io/docs/reference/issues-security/official-cve-feed/)
 	- [docker/moby安全公告](https://github.com/moby/moby/security/advisories)
+	- [2022 k8s相关重点漏洞梳理](https://www.armosec.io/blog/kubernetes-vulnerabilities-2022/)
 - k8s架构
 ![](/assets/img/cs2.png)
 ![](/assets/img/cs3.png)
@@ -200,6 +202,7 @@ excerpt: Cloud Security
 - [Azure CI/CD pipelines通过修改代码提交信息改变流水线环境变量的值](https://www.legitsecurity.com/blog/remote-code-execution-vulnerability-in-azure-pipelines-can-lead-to-software-supply-chain-attack)
 - [AWS EKS集群从Pod提权到集群管理员](https://blog.calif.io/p/privilege-escalation-in-eks)
 - [Azure 使用Storage Account Contributor角色和共享密钥进行提权](https://orca.security/resources/blog/azure-shared-key-authorization-exploitation/)
+- [阿里云数据库服务容器逃逸](https://www.wiz.io/blog/brokensesame-accidental-write-permissions-to-private-registry-allowed-potential-r)
 
 ## 云原生工具
 

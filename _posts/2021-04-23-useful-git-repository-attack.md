@@ -147,6 +147,7 @@ excerpt: useful git repository (攻防篇)
 - [dnsReaper - 子域名接管工具](https://github.com/punk-security/dnsReaper)
 - [leakix - 数据泄露查询](https://leakix.net/)
 - [breached - 数据泄露市场](https://breached.to/)
+- [cracking - 数据泄露论坛](https://cracking.org/forums/databases.31)
 - [nali - 离线ip地址地理信息查询工具](https://github.com/zu1k/nali)
 - [天际友盟威胁情报资讯](https://redqueen.tj-un.com/AllInfoIntel.html)
 - [中文安全RSS](https://github.com/zhengjim/Chinese-Security-RSS)
@@ -164,6 +165,7 @@ excerpt: useful git repository (攻防篇)
 - [漏洞信息搜索](https://sca.analysiscenter.veracode.com/vulnerability-database/search)
 - [漏洞利用搜索](https://sploitus.com/)
 - [云服务商漏洞搜索引擎](https://www.cloudvulndb.org/results?q=)
+- [reconftw - 域名漏洞自动收集扫描工具](https://github.com/six2dez/reconftw)
 
 ### 云原生渗透工具
 
@@ -244,6 +246,7 @@ excerpt: useful git repository (攻防篇)
 - [mqtt-pwn - mqtt攻击工具](https://github.com/akamai-threat-research/mqtt-pwn)
 - [APTRS - 渗透测试报告系统](https://github.com/Anof-cyber/APTRS)
 - [attack-flow - 使用TTP绘制攻击流程](https://github.com/center-for-threat-informed-defense/attack-flow)
+- [patchelf - 修改elf文件的动态链接库配置](https://github.com/NixOS/patchelf)
 
 ## POC
 
@@ -257,6 +260,7 @@ excerpt: useful git repository (攻防篇)
 - [sploitus - exploit搜索引擎](https://sploitus.com/)
 - [区块链poc列表](https://github.com/Rivaill/CryptoVulhub)
 - [win内核漏洞集合](https://github.com/Ascotbe/Kernelhub)
+- [cve poc自动收集workflow(trickest)](https://github.com/trickest/cve)
 
 ### win
 
