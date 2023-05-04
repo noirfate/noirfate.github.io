@@ -345,6 +345,7 @@ excerpt: useful git repository (研究篇)
 - [bitype - 类型混淆检测](https://github.com/bin2415/Bitype)
 - [vzkernel - 集成asan的3.10内核](https://github.com/OpenVZ/vzkernel)
 - [FuZZan - 比ASAN占用内存更小](https://github.com/HexHive/FuZZan)
+- [struct_sanitizer - 保护结构体中的函数指针不被篡改](https://github.com/YunDingLab/struct_sanitizer)
 
 ### 其他
 

@@ -30,6 +30,7 @@ excerpt: useful git repository (工具篇)
 - [openai GPT](https://chat.openai.com/)
 - [openai dall-e](https://labs.openai.com/)
 - [tabby - 代码智能补全](https://github.com/TabbyML/tabby)
+- [gpt_academic - gpt学术优化](https://github.com/binary-husky/gpt_academic)
 
 ## 开发工具
 

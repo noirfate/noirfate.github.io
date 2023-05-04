@@ -38,6 +38,7 @@ excerpt: useful git repository (攻防篇)
 - [nuclei burpsuit插件ui](https://github.com/bit4woo/Fiora)
 - [fscan - 网络扫描工具](https://github.com/shadow1ng/fscan)
 - [burpgpt - 使用chatgpt检测网络流量](https://github.com/aress31/burpgpt)
+- [AutoRecon - 自动网络扫描利用工具](https://github.com/Tib3rius/AutoRecon)
 
 ### 本地扫描工具
 
