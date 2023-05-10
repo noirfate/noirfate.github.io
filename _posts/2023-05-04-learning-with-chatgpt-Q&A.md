@@ -293,6 +293,109 @@ kubectl apply -f <path-to-pod-yaml>
 
 请注意，对于有状态应用程序，重新部署可能会导致应用程序中断。在这种情况下，请确保应用程序能够处理重启，并在重新部署时遵循适当的策略以避免数据丢失或服务中断。
 
+#### kubernetes是如何处理`annotations`字段的，以`prometheus`为例，安装`prometheus`之后，可以通过在创建`deployment`时指定`annotations`，如`prometheus.io/port`，来配置`prometheus`
+在Kubernetes中，Annotations 是一种可以用来存储非标识性元数据的机制，用于工具、库等进行检索。Annotations 不会直接影响 Kubernetes 对对象的行为，但它们包含更大的数据容量，可以用来存储更丰富的信息，如时间戳、构建信息、git提交等。
+
+Prometheus 是一种广泛使用的开源监控和告警系统，它可以与 Kubernetes 集成，自动发现并监控 Kubernetes 中的服务。这是通过 Prometheus 的 Kubernetes 服务发现机制实现的，该机制会检查 Kubernetes API 以发现新的 Pod 和 Service，并更新 Prometheus 的监控目标。
+
+Prometheus 使用 Pod 和 Service 的 Annotations 来了解如何监控目标服务。例如，您可以在 Pod 或 Service 的 Annotations 中添加以下注解：
+
+- `prometheus.io/scrape`: 设置为 "true" 以启用监控。
+- `prometheus.io/path`: 如果 metrics 路径不是 "/metrics"，使用此字段进行更改。
+- `prometheus.io/por`t: 如果 metrics 端口不是默认的端口，使用此字段进行更改。
+Prometheus 会定期扫描 Kubernetes API，并读取这些 Annotations 来更新它的监控配置。例如，如果你有一个 Deployment，你可以在其 Pod 模板中添加这些 Annotations：
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/my-metrics"
+        prometheus.io/port: "8080"
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: my-app:1.0
+```
+然后，Prometheus 会自动开始监控这些 Pod，并从每个 Pod 的 "8080" 端口的 "/my-metrics" 路径收集 metrics。
+
+Prometheus的Kubernetes服务发现机制能够利用Kubernetes API来自动发现监控目标，并根据配置进行监控。
+
+Prometheus服务发现的工作方式如下：
+
+1. Prometheus会定期查询Kubernetes API，查找它需要监控的资源，如Pods，Services，Endpoints等。查询频率由Prometheus配置文件中的`scrape_interval`设置决定。
+
+2. Prometheus从这些资源的元数据（包括标签和注解）中获取信息，如监控目标的地址和端口，以及其他配置参数。例如，Prometheus可以从Pod的注解中读取`prometheus.io/scrape`，`prometheus.io/path`和`prometheus.io/port`，以确定是否要对Pod进行监控，以及如何进行监控。
+
+3. Prometheus根据获取到的信息，创建并更新其内部的监控目标列表。每个监控目标都与一个或多个Prometheus "scrape jobs"关联，这些"scrape jobs"负责定期收集监控目标的metrics数据。
+
+4. Prometheus执行这些"scrape jobs"，从监控目标收集metrics数据，并将这些数据存储在它的时间序列数据库中。
+
+以上就是Prometheus如何通过Kubernetes服务发现机制来实现自动发现和监控目标服务的。这个功能允许Prometheus动态地适应Kubernetes集群的变化，例如，新Pod的创建和旧Pod的删除。这种自动化程度使Prometheus非常适合在Kubernetes环境中进行监控。
+
+#### kubernetes是如何实现对resource状态的监控的，client-go是周期性的访问kube-apiserver来获取最新状态的吗？存不存在kube-apiserver主动通知状态变更的机制
+Kubernetes为了解决这个问题，使用了名为"watch"的机制。"watch"机制允许Kubernetes的客户端（如 client-go）监听Kubernetes API的资源变更，而不是定期查询最新状态。
+
+在"watch"机制中，客户端通过向Kubernetes API发送一个watch请求，请求特定类型的资源（如Pods）。这个请求会创建一个长期的HTTP连接。当资源发生变更（如新建、修改或删除）时，Kubernetes API会将这些变更作为消息通过这个连接发送给客户端。这样，客户端可以实时地获取到资源的最新状态。
+
+这种方式相比定期查询有很多优点。首先，它可以实时获取到资源的变更，而无需等待下一次查询。其次，它减少了网络流量和Kubernetes API的负载，因为只有在资源发生变更时才会发送消息。最后，它使得客户端的实现更为简单，因为客户端只需要处理接收到的消息，而无需定期发送查询请求。
+
+然而，值得注意的是，"watch"连接可能会由于各种原因（如网络问题、Kubernetes API的重启）断开。在这种情况下，客户端需要重新建立watch连接。为了避免错过在断开期间发生的变更，客户端在重新建立连接时，会提供上次接收到的消息的资源版本号（resource version），这样Kubernetes API就可以从这个版本开始，发送所有的变更。如果客户端错过了太多的变更，以至于Kubernetes API无法提供全部变更，那么客户端需要重新获取资源的全量状态，然后再开始新的watch。
+
+client-go库提供了一种名为"Informer"的机制，它抽象了watch的细节，并提供了一个易于使用的API，用于监听资源的变更。Informer还包括一个本地缓存，可以用于存储资源的当前状态，这样客户端就可以避免直接查询Kubernetes API。
+
+#### 资源版本号（resource version）是kubernetes内部分配的吗，每修改一次资源，自动生成一个版本号
+是的，资源版本号（resource version）是 Kubernetes 内部为每个资源自动生成的一个字符串。每次资源状态发生变化（创建、更新或删除）时，Kubernetes 都会为资源分配一个新的版本号。这使得 Kubernetes 可以跟踪资源的更改历史，并可以在分布式系统中处理并发更新。
+
+资源版本号是 Kubernetes 中一种重要的元数据，主要用于两个目的：
+
+1. **监听资源更改**：客户端可以使用资源版本号来监听资源更改。在向 Kubernetes API 发出 watch 请求时，客户端可以指定一个资源版本号，这样 Kubernetes API 就会返回从这个版本号开始的所有更改。这是 Kubernetes 实现实时资源状态更新的关键机制。
+
+2. **优化乐观并发控制**：Kubernetes 使用资源版本号来实现乐观并发控制。当客户端更新一个资源时，它需要提供资源的当前版本号。如果资源在客户端获取版本号后已经被其他客户端更改，那么 Kubernetes API 将拒绝这次更新，并返回一个冲突错误。这样，客户端就可以重新获取资源的最新状态，并尝试再次更新。
+
+注意，资源版本号是内部使用的，应避免在应用逻辑中直接依赖它。因为在不同的存储后端和集群配置中，资源版本号的具体形式和分配规则可能会有所不同。
+
+#### 客户端在修改资源时是如何知道这个资源版本号的
+当你使用Kubernetes API（包括kubectl命令行工具和client-go等库）获取一个资源（如Pod、Service、Deployment等）时，资源的版本号会包含在返回的资源对象中。
+
+在Kubernetes中，每个资源对象都有一个元数据（metadata）部分，其中包含了一些系统级的信息，如资源的名称、命名空间、标签、注解等。资源版本号就是这些信息之一，存储在`metadata.resourceVersion`字段中。
+
+例如，如果你使用kubectl命令行工具获取一个Pod，你会得到一个类似下面的输出：
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  namespace: my-namespace
+  resourceVersion: "12345"
+  ...
+spec:
+  ...
+status:
+  ...
+```
+在这个例子中，Pod的版本号是"12345"。
+
+同样，如果你使用client-go等库获取一个资源，你也可以从返回的资源对象中获取到资源版本号。
+
+请注意，当你更新一个资源时，你需要提供资源的当前版本号。这是因为Kubernetes使用乐观并发控制来处理并发更新。如果资源在你获取版本号后已经被其他客户端更新，那么Kubernetes API会拒绝你的更新请求，并返回一个冲突错误。在这种情况下，你需要重新获取资源的最新状态，并尝试再次更新。
+
+#### 客户端不提供资源版本号同样可以对其进行更新
+对，你完全正确。在实际使用中，当你使用`kubectl`或者客户端库进行资源更新操作时，并不是必须提供资源版本号。在大多数情况下，用户在进行资源更新操作时并不需要直接处理资源版本号。
+
+资源版本号主要用于Kubernetes内部的乐观并发控制和资源变更的监听机制。当发生资源冲突（例如，两个并发操作试图修改同一个资源）时，Kubernetes API服务器会使用资源版本号来检测和解决冲突。此外，资源版本号也被用于 watch 机制，允许客户端监听从特定版本号开始的资源变更。
+
+在进行更新操作时，Kubernetes的客户端通常使用"get-modify-update"模式，即首先获取当前资源的状态，然后修改资源的某些字段，最后将修改后的资源发送回API服务器。在这个过程中，资源版本号在后台自动地被客户端库处理。如果在"get"和"update"之间，资源的状态已经被其他客户端修改了，API服务器会检测到版本号的变化，并返回一个冲突错误，此时客户端通常会重试整个"get-modify-update"过程。
+
+总的来说，资源版本号是Kubernetes API的一个重要部分，但在大多数情况下，用户不需要直接处理它。
+
 ### 图灵机
 #### 图灵完备是什么意思
 图灵完备（Turing completeness）是计算理论中的一个概念，它用于描述一个计算模型或者编程语言是否具有解决任何可计算问题的能力。换句话说，一个图灵完备的系统能够模拟图灵机（Turing machine）的行为。图灵机是由英国数学家艾伦·图灵（Alan Turing）于1936年提出的一种抽象计算模型，被认为是计算理论的基础。

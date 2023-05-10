@@ -284,6 +284,7 @@ excerpt: useful git repository (攻防篇)
 - [利用callback执行shellcode](https://github.com/aahmad097/AlternativeShellcodeExec) [文章](https://marcoramilli.com/2022/06/15/running-shellcode-through-windows-callbacks/)
 - [warbird-hook - 使用warbird执行加密的shellcode，绕过patchguard](https://github.com/KiFilterFiberContext/warbird-hook)
 - [CVE-2022-44666 - Windows Contacts (VCF/Contact/LDAP) syslink control href attribute escape](https://github.com/j00sean/CVE-2022-44666)
+- [CVE-2023-23397 - outlook用户凭证窃取](https://github.com/vlad-a-man/CVE-2023-23397)
 
 ### linux
 
@@ -336,6 +337,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-29968 - io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
 - [CVE-2022-32250 - netfilter UAF提权漏洞](https://github.com/theori-io/CVE-2022-32250-exploit) [POC1](https://github.com/ysanatomic/CVE-2022-32250-LPE)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC) [USMA利用方法](https://tttang.com/archive/1706/) [USMA利用代码](https://github.com/veritas501/CVE-2022-34918/tree/master/poc_fs_context_cred_common/src)
+- [CVE-2023-0386 - ](https://github.com/xkaneiki/CVE-2023-0386)
 
 ### container
 

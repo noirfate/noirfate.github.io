@@ -46,6 +46,7 @@ excerpt: Cloud Security
 - [oss fuzz vulns](https://github.com/google/oss-fuzz-vulns)
 - [hackernews - 安全快讯](https://hackernews.cc/)
 - [dayzerosec - 安全资讯](https://dayzerosec.com)
+- [synk漏洞库](https://security.snyk.io/)
 
 ## 云原生知识
 
@@ -203,6 +204,7 @@ excerpt: Cloud Security
 - [AWS EKS集群从Pod提权到集群管理员](https://blog.calif.io/p/privilege-escalation-in-eks)
 - [Azure 使用Storage Account Contributor角色和共享密钥进行提权](https://orca.security/resources/blog/azure-shared-key-authorization-exploitation/)
 - [阿里云数据库服务容器逃逸](https://www.wiz.io/blog/brokensesame-accidental-write-permissions-to-private-registry-allowed-potential-r)
+- [SCARLETEEL: Operation leveraging Terraform, Kubernetes, and AWS for data theft](https://sysdig.com/blog/cloud-breach-terraform-data-theft/)
 
 ## 云原生工具
 
@@ -424,6 +426,6 @@ excerpt: Cloud Security
 
 # ATTACK
 
-- [ATTCK](https://attack.mitre.org/versions/v9/)
+- [ATTCK](https://attack.mitre.org/versions/v13)
 - [Microsoft Enterprise Cloud Red Teaming](https://download.microsoft.com/download/C/1/9/C1990DBA-502F-4C2A-848D-392B93D9B9C3/Microsoft_Enterprise_Cloud_Red_Teaming.pdf)
 - [Fireeye Redteam Operations](https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/pf/ms/ds-red-team-operations.pdf)
