@@ -396,6 +396,40 @@ status:
 
 总的来说，资源版本号是Kubernetes API的一个重要部分，但在大多数情况下，用户不需要直接处理它。
 
+#### 在kubernetes 1.21版本中引入了带有效期的service accout token，通过service account admission controller来实现，当BoundServiceAccountTokenVolume特性被启用时，会把service account volume迁移到projected volume中。请问作为用户应该如何使用该功能，在创建Pod时需要注意什么
+
+Kubernetes 1.21版本中引入了带有效期的 Service Account Token，这是一个对于安全性非常重要的特性。通过该特性，Service Account Token 不再是永久有效的，而是会在一段时间后过期，这大大提高了集群的安全性。
+
+这个特性默认是关闭的，你可以通过启用`BoundServiceAccountTokenVolume`特性标志来启用它。启用这个特性后，当你创建一个新的 Pod，并且该 Pod 使用了 Service Account，Kubernetes 就会自动为这个 Pod 创建一个带有效期的 Service Account Token，并将它挂载到 Pod 的文件系统中。
+
+在创建 Pod 时，你不需要做任何特殊的操作来使用这个特性。你只需要像以前一样指定 Pod 的 Service Account。Kubernetes 会自动处理所有与 Service Account Token 相关的操作，包括创建 Token、设置有效期、续期 Token 等。
+
+然而，你需要注意的一点是，带有效期的 Service Account Token 可能会在 Pod 运行时过期。你的应用需要能够处理这种情况。例如，如果你的应用使用 Service Account Token 来访问 Kubernetes API，那么当 Token 过期时，API 请求就会失败。在这种情况下，你的应用需要重新读取 Token 文件来获取新的 Token。这通常可以通过使用 Kubernetes 的客户端库（如 client-go）来自动处理。
+
+此外，你还需要注意，带有效期的 Service Account Token 与旧的 Service Account Token 不完全兼容。一些旧的应用可能无法正确处理带有效期的 Token。在这种情况下，你可能需要更新这些应用，或者在创建 Pod 时禁用 `BoundServiceAccountTokenVolume`特性。
+
+总的来说，`BoundServiceAccountTokenVolume`是一个非常重要的安全特性，但使用它时需要注意一些与兼容性和 Token 过期相关的问题。
+
+下面是创建Pod并指定Service Account的示例：
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  serviceAccountName: my-service-account  # 指定 Service Account
+  containers:
+  - name: my-container
+    image: my-image
+```
+在这个例子中，Pod`my-pod`将使用`my-service-account`这个 Service Account。如果你没有指定`serviceAccountName`，那么 Pod 将使用`default`这个 Service Account。
+
+至于禁用`BoundServiceAccountTokenVolume`特性，实际上无法在创建Pod时进行单独的配置。该特性是在集群级别启用或禁用的，一旦启用，会应用到所有的Pod。
+
+如果你需要禁用该特性，需要在API服务器的启动参数中移除或者禁用`BoundServiceAccountTokenVolume`特性标志。这通常需要修改API服务器的配置文件或命令行参数，具体取决于你的Kubernetes集群的设置方式。
+
+请注意，禁用这个特性可能会影响到集群的安全性，因为这会导致Service Account Token恢复到永久有效的状态。因此，你应该谨慎地考虑是否需要禁用这个特性。
+
 ### 图灵机
 #### 图灵完备是什么意思
 图灵完备（Turing completeness）是计算理论中的一个概念，它用于描述一个计算模型或者编程语言是否具有解决任何可计算问题的能力。换句话说，一个图灵完备的系统能够模拟图灵机（Turing machine）的行为。图灵机是由英国数学家艾伦·图灵（Alan Turing）于1936年提出的一种抽象计算模型，被认为是计算理论的基础。
