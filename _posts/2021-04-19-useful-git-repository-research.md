@@ -425,6 +425,8 @@ excerpt: useful git repository (研究篇)
 - [fuzztruction - 通过对样本生成程序进行插桩来变异样本](https://github.com/fuzztruction/fuzztruction)
 - [lica - linux内核commit分析](https://github.com/sam4k/lica)
 - [manticore - 符号执行工具](https://github.com/trailofbits/manticore)
+- [snapchange - snapshot fuzzer](https://github.com/awslabs/snapchange)
+- [gramfuzz - 根据定义的语法生成数据](https://github.com/d0c-s4vage/gramfuzz)
 
 ## static analysis
 

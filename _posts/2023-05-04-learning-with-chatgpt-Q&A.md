@@ -430,6 +430,55 @@ spec:
 
 请注意，禁用这个特性可能会影响到集群的安全性，因为这会导致Service Account Token恢复到永久有效的状态。因此，你应该谨慎地考虑是否需要禁用这个特性。
 
+#### 请写一个bash脚本，取出k8s集群中所有的service account token，并通过kubectl auth can-i来列出它们的权限
+```bash
+#!/bin/bash
+  
+# 待检查的权限列表
+verbs=("get" "list" "create" "update")
+resources=("pods" "secrets" "configmaps")
+server="https://192.168.0.85:5443"
+
+function check_verb()
+{
+    mv .kube/config .kube/bak
+    # 检查每个权限
+    for verb in ${verbs[@]}; do
+      for resource in ${resources[@]}; do
+        # 使用 Token 检查权限
+        result=$(kubectl auth can-i $verb $resource --server $server --token $1 --namespace $2 --insecure-skip-tls-verify=true)
+        echo "$verb $resource: $result"
+      done
+    done
+    mv .kube/bak .kube/config
+}
+
+function list_auth()
+{
+    mv .kube/config .kube/bak
+    kubectl auth can-i --server $server --token $1 --list --insecure-skip-tls-verify=true
+    mv .kube/bak .kube/config
+}
+
+# 获取所有命名空间
+namespaces=$(kubectl get ns -o jsonpath="{.items[*].metadata.name}")
+
+for ns in $namespaces; do
+  # 获取命名空间中的所有 Service Account
+  serviceaccounts=$(kubectl get serviceaccount -n $ns -o jsonpath="{.items[*].metadata.name}")
+
+  for sa in $serviceaccounts; do
+    # 获取 Service Account 的 Token
+    tokenName=$(kubectl get serviceaccount $sa -n $ns -o jsonpath='{.secrets[0].name}')
+    token=$(kubectl get secret $tokenName -n $ns -o jsonpath='{.data.token}' | base64 --decode)
+
+    echo -e "\033[34mService Account: $sa in namespace: $ns\033[0m"
+    #check_verb $token $ns
+    list_auth $token
+  done
+done
+```
+
 ### 图灵机
 #### 图灵完备是什么意思
 图灵完备（Turing completeness）是计算理论中的一个概念，它用于描述一个计算模型或者编程语言是否具有解决任何可计算问题的能力。换句话说，一个图灵完备的系统能够模拟图灵机（Turing machine）的行为。图灵机是由英国数学家艾伦·图灵（Alan Turing）于1936年提出的一种抽象计算模型，被认为是计算理论的基础。
@@ -814,6 +863,40 @@ spec:
 3. 柏拉图的学派传承以及柏拉图学院的存在也为柏拉图著作的传播提供了一定程度的支持。学派传承和学院的存在可以解释为什么柏拉图的著作可以在后世得到广泛传播和发扬。
 
 总之，在现有证据的基础上，虽然我们无法完全确定柏拉图著作的真实作者，但依据古代文献、学派传承以及学术共识，将这些著作归于柏拉图本人仍是目前最为可靠的解释。当然，这并不排除未来新的证据和研究可能改变这一认识。
+
+### AI文案
+#### 小红书文案生成
+```
+你是小红书爆款写作专家，请你用以下步骤来进行创作，首先产出5个标题（含适当的emoji表情），其次产出1个正文（每一个段落含有适当的emoji表情，文末有合适的tag标签）
+
+一、在小红书标题方面，你会以下技能：
+1. 采用二极管标题法进行创作
+2. 你善于使用标题吸引人的特点
+3. 你使用爆款关键词，写标题时，从这个列表中随机选1-2个
+4. 你了解小红书平台的标题特性
+5. 你懂得创作的规则
+
+二、在小红书正文方面，你会以下技能：
+1. 写作风格
+2. 写作开篇方法
+3. 文本结构
+4. 互动引导方法
+5. 一些小技巧
+6. 爆炸词
+7. 从你生成的稿子中，抽取3-6个seo关键词，生成#标签并放在文章最后
+8. 文章的每句话都尽量口语化、简短
+9. 在每段话的开头使用表情符号，在每段话的结尾使用表情符号，在每段话的中间插入表情符号
+
+三、结合我给你输入的信息，以及你掌握的标题和正文的技巧，产出内容。请按照如下格式输出内容，只需要格式描述的部分，如果产生其他内容则不输出：
+一. 标题
+[标题1到标题5]
+[换行]
+二. 正文
+[正文]
+标签：[标签]
+
+现在请介绍一下南京鸡鸣寺
+```
 
 ### 闲谈
 #### 德勒兹为什么自杀

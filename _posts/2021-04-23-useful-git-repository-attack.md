@@ -141,7 +141,6 @@ excerpt: useful git repository (攻防篇)
 - [每日安全信息](https://github.com/xqx12/daily-info)
 - [BugBountyScanner - 子域名、服务扫描](https://github.com/chvancooten/BugBountyScanner)
 - [开源情报工具收集汇总](https://dhiyaneshgeek.github.io/red/teaming/2022/04/28/reconnaissance-red-teaming/)
-- [APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
 - [osint框架](https://osintframework.com/)
 - [安全rss](https://github.com/brant-ruan/infosec-feeds)
 - [从git commit信息中发现隐藏漏洞](https://github.com/cve-search/git-vuln-finder)
@@ -157,7 +156,6 @@ excerpt: useful git repository (攻防篇)
 - [中文ATT&CK矩阵](https://www.ddosi.org/att/)
 - [安全相关情报集合](https://github.com/euphrat1ca/Security-List)
 - [hackdig安全信息流](http://www.hackdig.com/)
-- [APT攻击事件信息流](https://www.vx-underground.org/malware.html)
 - [f5.pm安全信息流](http://f5.pm/)
 - [oss fuzz vulns](https://github.com/google/oss-fuzz-vulns)
 - [hackernews - 安全快讯](https://hackernews.cc/)
@@ -167,6 +165,14 @@ excerpt: useful git repository (攻防篇)
 - [漏洞利用搜索](https://sploitus.com/)
 - [云服务商漏洞搜索引擎](https://www.cloudvulndb.org/results?q=)
 - [reconftw - 域名漏洞自动收集扫描工具](https://github.com/six2dez/reconftw)
+- [数据泄露分析报告](https://github.com/BushidoUK/Breach-Report-Collection)
+
+### APT情报
+- [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
+- [APT攻击事件信息流](https://www.vx-underground.org/malware.html)
+- [APT报告合集](https://github.com/blackorbird/APT_REPORT) [合集1](https://github.com/aptnotes/data)
+- [APT事件合集](https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections)
+- [APT样本](https://github.com/vxunderground/MalwareSourceCode) [样本1](https://github.com/cyber-research/APTMalware) [样本2](https://bazaar.abuse.ch/browse)
 
 ### 云原生渗透工具
 
@@ -248,6 +254,7 @@ excerpt: useful git repository (攻防篇)
 - [APTRS - 渗透测试报告系统](https://github.com/Anof-cyber/APTRS)
 - [attack-flow - 使用TTP绘制攻击流程](https://github.com/center-for-threat-informed-defense/attack-flow)
 - [patchelf - 修改elf文件的动态链接库配置](https://github.com/NixOS/patchelf)
+- [databasetools - 数据库利用工具](https://github.com/Hel10-Web/Databasetools)
 
 ## POC
 
@@ -262,6 +269,7 @@ excerpt: useful git repository (攻防篇)
 - [区块链poc列表](https://github.com/Rivaill/CryptoVulhub)
 - [win内核漏洞集合](https://github.com/Ascotbe/Kernelhub)
 - [cve poc自动收集workflow(trickest)](https://github.com/trickest/cve)
+- [各类POC合集](https://github.com/Threekiii/Awesome-POC)
 
 ### win
 
@@ -337,7 +345,8 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-29968 - io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
 - [CVE-2022-32250 - netfilter UAF提权漏洞](https://github.com/theori-io/CVE-2022-32250-exploit) [POC1](https://github.com/ysanatomic/CVE-2022-32250-LPE)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC) [USMA利用方法](https://tttang.com/archive/1706/) [USMA利用代码](https://github.com/veritas501/CVE-2022-34918/tree/master/poc_fs_context_cred_common/src)
-- [CVE-2023-0386 - ](https://github.com/xkaneiki/CVE-2023-0386)
+- [CVE-2023-0386 - overlayfs setuid file copy bug](https://github.com/xkaneiki/CVE-2023-0386)
+- [CVE-2023-32233 - Netfilter nf_tables batch requests uaf](https://github.com/Liuk3r/CVE-2023-32233)
 
 ### container
 
@@ -468,11 +477,9 @@ excerpt: useful git repository (攻防篇)
 - [智能合约安全研究资料](https://github.com/saeidshirazi/Awesome-Smart-Contract-Security)
 - [攻击者常用搜索引擎](https://github.com/edoardottt/awesome-hacker-search-engines)
 - [利用go语言进行渗透](https://cfp.balccon.org/media/go-offensive-building-blocks-final.pdf)
-- [APT报告合集](https://github.com/blackorbird/APT_REPORT) [合集1](https://github.com/aptnotes/data)
 - [各类数据库利用整理](https://github.com/safe6Sec/PentestDB)
-- [APT事件合集](https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections)
-- [APT样本](https://github.com/vxunderground/MalwareSourceCode) [样本1](https://github.com/cyber-research/APTMalware) [样本2](https://bazaar.abuse.ch/browse)
 - [API安全](https://github.com/arainho/awesome-api-security)
+- [blackhat asia 2023](https://github.com/Mr-xn/BLACKHAT_Asia2023)
 
 ## 防护
 

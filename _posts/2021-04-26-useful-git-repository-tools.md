@@ -31,6 +31,9 @@ excerpt: useful git repository (工具篇)
 - [openai dall-e](https://labs.openai.com/)
 - [tabby - 代码智能补全](https://github.com/TabbyML/tabby)
 - [gpt_academic - gpt学术优化](https://github.com/binary-husky/gpt_academic)
+- [whisper - 语音转文字](https://github.com/openai/whisper) [使用](https://www.kingname.info/2023/04/15/whisper/)
+- [gptfree - 免翻墙免费gpt](https://github.com/chatanywhere/GPT_API_free)
+- [quivr - 构建自己的AI大脑（支持多种文件和URL）](https://github.com/StanGirard/quivr)
 
 ## 开发工具
 

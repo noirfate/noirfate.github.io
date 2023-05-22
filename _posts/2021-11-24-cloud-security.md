@@ -47,6 +47,7 @@ excerpt: Cloud Security
 - [hackernews - 安全快讯](https://hackernews.cc/)
 - [dayzerosec - 安全资讯](https://dayzerosec.com)
 - [synk漏洞库](https://security.snyk.io/)
+- [数据泄露分析报告](https://github.com/BushidoUK/Breach-Report-Collection)
 
 ## 云原生知识
 
@@ -248,6 +249,7 @@ excerpt: Cloud Security
 - [KubiScan - k8s安全扫描工具](https://github.com/cyberark/KubiScan)
 - [veinmind - 容器安全工具集](https://github.com/chaitin/veinmind-tools)
 - [tetragon - 基于ebpf的安全监控工具](https://github.com/cilium/tetragon)
+- [GATOR - GCP利用工具](https://github.com/anrbn/GATOR)
 
 ## CVE
 
@@ -367,6 +369,8 @@ excerpt: Cloud Security
 - [CVE-2022-29968: io_uring子系统未初始化内存漏洞](https://github.com/jprx/CVE-2022-29968)
 - [CVE-2022-32250: netfilter uaf漏洞](https://blog.exodusintel.com/2022/12/19/linux-kernel-exploiting-a-netfilter-use-after-free-in-kmalloc-cg/) [POC1](https://github.com/theori-io/CVE-2022-32250-exploit) [POC2](https://github.com/ysanatomic/CVE-2022-32250-LPE)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC) [USMA利用方法](https://tttang.com/archive/1706/) [USMA利用代码](https://github.com/veritas501/CVE-2022-34918/tree/master/poc_fs_context_cred_common/src)
+- [CVE-2023-0386 - overlayfs setuid file copy bug](https://github.com/xkaneiki/CVE-2023-0386)
+- [CVE-2023-32233 - Netfilter nf_tables batch requests uaf](https://github.com/Liuk3r/CVE-2023-32233)
 
 # APP
 
