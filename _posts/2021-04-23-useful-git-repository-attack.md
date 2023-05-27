@@ -39,6 +39,7 @@ excerpt: useful git repository (攻防篇)
 - [fscan - 网络扫描工具](https://github.com/shadow1ng/fscan)
 - [burpgpt - 使用chatgpt检测网络流量](https://github.com/aress31/burpgpt)
 - [AutoRecon - 自动网络扫描利用工具](https://github.com/Tib3rius/AutoRecon)
+- [scan4all - 集成vscan、nuclei的自动化扫描工具](https://github.com/hktalent/scan4all)
 
 ### 本地扫描工具
 
@@ -270,6 +271,8 @@ excerpt: useful git repository (攻防篇)
 - [win内核漏洞集合](https://github.com/Ascotbe/Kernelhub)
 - [cve poc自动收集workflow(trickest)](https://github.com/trickest/cve)
 - [各类POC合集](https://github.com/Threekiii/Awesome-POC)
+- [Win提权POC合集](https://github.com/ycdxsb/WindowsPrivilegeEscalation)
+- [年度TOP30合集](https://github.com/hktalent/TOP)
 
 ### win
 

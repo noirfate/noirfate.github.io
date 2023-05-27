@@ -69,6 +69,7 @@ excerpt: useful git repository (研究篇)
 - [堆分析工具heapinspect](https://github.com/matrix1001/heapinspect)
 - [gdbgui - 基于浏览器的gdb界面](https://github.com/cs01/gdbgui)
 - [seer - 基于qt5的图形化gdb](https://github.com/epasveer/seer)
+- [libslub - 查看slub内存分配](https://github.com/nccgroup/libslub)
 
 ### 逆向分析工具
 
@@ -427,6 +428,7 @@ excerpt: useful git repository (研究篇)
 - [manticore - 符号执行工具](https://github.com/trailofbits/manticore)
 - [snapchange - snapshot fuzzer](https://github.com/awslabs/snapchange)
 - [gramfuzz - 根据定义的语法生成数据](https://github.com/d0c-s4vage/gramfuzz)
+- [fas - 安卓系统服务fuzzer](https://github.com/iromise/fans)
 
 ## static analysis
 

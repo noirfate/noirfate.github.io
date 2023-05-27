@@ -479,6 +479,368 @@ for ns in $namespaces; do
 done
 ```
 
+#### 什么是kubernetes中的Ephemeral Containers
+Ephemeral Containers 是 Kubernetes 中的一个特性，它允许你在一个已经存在的 Pod 中临时启动一个新的容器，进行调试或诊断的工作。这个容器会在 Pod 的生命周期内一直存在，但是不会影响 Pod 本身的状态。
+
+Ephemeral Containers 的主要用途是用于调试那些不能被重新启动或替换的 Pod。例如，如果你的应用在某个特定的 Pod 中遇到问题，你可能希望在那个 Pod 中启动一个新的容器，运行一些诊断工具或命令，而不是重新启动或替换这个 Pod。在调试完成后，你可以移除这个 Ephemeral Container。
+
+值得注意的是，Ephemeral Containers 有一些限制。比如，它们不能包含端口映射、不能有自己的存储卷，也不能设置 readinessProbe 或 livenessProbe。此外，Ephemeral Containers 在 Kubernetes 1.16 版本中被引入，但在那时还是一个 Alpha 特性，可能会有一些不稳定或未完成的地方。你需要检查你所使用的 Kubernetes 版本，以了解 Ephemeral Containers 的当前状态和具体使用方式。
+
+#### 修改pod定义会导致容器重启吗
+在 Kubernetes 中，当你修改 Pod 的定义时，通常会导致 Pod 里的容器重启。这是因为 Kubernetes 的 Pod 是不可变的，也就是说，一旦创建了一个 Pod，就不能对其进行直接的修改。这样做主要是为了保证容器的一致性和可预测性。
+
+例如，如果你更改了容器的环境变量，资源限制，镜像或其他与运行状态有关的设置，Kubernetes 通常会停止现有的 Pod，并根据新的定义创建一个新的 Pod。这样做会导致 Pod 里的容器重启。
+
+有一些例外的情况，比如你可以修改 Pod 的元数据，比如标签和注解，这不会导致 Pod 重启。你也可以通过 Kubernetes 的 Ephemeral Containers 功能在运行中的 Pod 中添加一个临时的容器，这也不会导致其他容器重启。
+
+总的来说，大多数 Pod 定义的修改都会导致容器重启，但也有一些例外。你应该尽量避免在生产环境中频繁修改 Pod 的定义，因为这可能会影响应用的可用性。
+
+#### 通过kubectl debug启动Ephemeral Containers可以直接共享ProcessNamespace吗
+是的，当你通过`kubectl debug`启动一个Ephemeral Container时，这个Ephemeral Container将默认共享Pod的进程命名空间(process namespace)，即使Pod的spec中`shareProcessNamespace`的值是`false`。
+
+在 Kubernetes 1.20 及以上版本中，kubectl 提供了 debug 命令，它可以创建 Ephemeral Containers。虽然默认情况下，Pod 中的各个容器都在自己的进程命名空间中运行，但是 Kubernetes 允许 Ephemeral Containers 与 Pod 中其他容器共享 PID 和 IPC 命名空间，这使得你能在 Ephemeral Containers 中查看和交互其他容器的进程。
+
+这就意味着，Ephemeral Container可以看到并与Pod中所有其他容器中的进程进行交互，这对于调试其他容器的运行进程十分有用。
+
+举例来说，你可以使用以下命令启动一个Ephemeral Container：
+```bash
+kubectl debug -it debug-pod --image=debug-image --target=app
+```
+在这个命令中，`debug-pod`是你想要调试的Pod的名字，`debug-image`是你的调试镜像（这个镜像应该包含了你的调试工具，例如strace、gdb等），`app`是Pod中你想要调试的容器的名字。
+
+然后你就可以在Ephemeral Container中使用例如`ps`这样的命令，来查看和调试其他容器的进程了。
+
+请注意，这种方法可能会降低你的容器的隔离性，你应该在了解可能的风险之后谨慎使用。
+
+#### 利用kubectl命令，帮我写个bash脚本来提取rolebinding中所有的User、Group 或 ServiceAccount
+```bash
+#!/bin/bash
+
+# 提取 RoleBinding
+kubectl get rolebindings --all-namespaces -o json | \
+jq -r '.items[] | {namespace: .metadata.namespace, name: .metadata.name, role: .roleRef.name, subjects: .subjects} | 
+    select(.subjects != null) | .subjects[] as $sub | [$sub.kind, $sub.name, .role, $sub.namespace] | @tsv'
+
+# 提取 ClusterRoleBinding
+kubectl get clusterrolebindings -o json | \
+jq -r '.items[] | {name: .metadata.name, role: .roleRef.name, subjects: .subjects} | 
+    select(.subjects != null) | .subjects[] as $sub | [$sub.kind, $sub.name, .role, $sub.namespace] | @tsv'
+```
+
+#### k8s使用声明式yaml来管理资源，如何知道都有多少种资源，每种资源又有哪些配置项
+你可以使用`kubectl api-resources`命令来列出所有可用的资源类型。这个命令会返回一个列表，其中包括API版本、单数和复数形式的名称、以及是否可以在集群范围内创建这些资源。
+
+每种资源都有特定的配置选项，你可以通过使用`kubectl explain`命令来获取更多关于资源的详细信息和配置选项。例如，要获取Deployment资源的详细信息，你可以运行以下命令：
+```bash
+kubectl explain deployment
+```
+这将显示`Deployment`资源的顶级字段。你还可以继续深入这些字段，查看更具体的信息。例如，要查看`spec`字段的详情，你可以运行：
+```bash
+kubectl explain deployment.spec
+```
+如果要显示所有字段，你可以运行：
+```bash
+kubectl explain deployment --recursive
+```
+
+#### 如何创建和使用crd
+在 Kubernetes 中，你可以使用 CustomResourceDefinition（CRD）来扩展 Kubernetes API，添加自己定义的资源类型。下面是一个创建和使用 CRD 的例子：
+
+首先，创建一个 CRD 的 yaml 文件，例如，我们创建一个名为`crontabs.stable.example.com`的 CRD：
+```yaml
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: crontabs.stable.example.com
+spec:
+  group: stable.example.com
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              cronSpec:
+                type: string
+              image:
+                type: string
+              replicas:
+                type: integer
+  scope: Namespaced
+  names:
+    plural: crontabs
+    singular: crontab
+    kind: CronTab
+    shortNames:
+    - ct
+```
+使用`kubectl apply`命令创建这个 CRD：
+```bash
+kubectl apply -f crontab-crd.yaml
+```
+现在你就可以在 Kubernetes 中创建`CronTab`资源了。下面是一个 CronTab 资源的例子：
+```yaml
+apiVersion: "stable.example.com/v1"
+kind: CronTab
+metadata:
+  name: my-new-cron-object
+spec:
+  cronSpec: "* * * * */5"
+  image: my-awesome-cron-image
+  replicas: 3
+```
+你可以使用`kubectl apply`命令创建这个`CronTab`资源：
+```bash
+kubectl apply -f my-crontab.yaml
+```
+然后，你就可以使用`kubectl`命令操作`CronTab`资源了，例如：
+```bash
+kubectl get crontab
+kubectl describe crontab my-new-cron-object
+```
+请注意，处理这些自定义资源（如 CronTab）的逻辑（如何实现）需要你自己编写和运行一个或多个控制器。这个控制器将监听 Kubernetes API 中的 CronTab 资源的更改，并做出相应的操作。
+
+#### 以上面这个crd为例，如何编写一个控制器实现其功能
+编写 Kubernetes 控制器涉及到编写 Go 代码，并使用 client-go 库与 Kubernetes API 进行交互。这个话题很大，因此我会给出一个概要，并提供一些更深入的学习资源。
+
+基本步骤如下：
+
+1. 设置开发环境。你需要安装 Go，并设置 GOPATH。你还需要下载 client-go 库。
+
+2. 创建一个新的 Go 项目，并在项目中引入 client-go 库。
+
+3. 创建一个控制器 Go 类型，该类型需要实现`Run()`方法以启动控制器。
+
+4. 在`Run()`方法中，设置一个事件处理函数，该函数将对你的 Custom Resource（如 CronTab）的添加、更新和删除事件做出响应。
+
+5. 使用 SharedInformer 来监听 Kubernetes API 中的 CronTab 对象的变化。你需要提供一个 event handler（事件处理器）来响应这些事件。
+
+6. 在你的事件处理函数中，编写代码来实现你的控制器的业务逻辑。例如，当一个新的 CronTab 对象被创建时，你可能需要在 Kubernetes 中启动一个新的 Cron Job。
+
+下面是一个高级示例，展示了如何设置一个简单的事件处理函数：
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+
+    "k8s.io/apimachinery/pkg/fields"
+    "k8s.io/client-go/tools/cache"
+    "k8s.io/client-go/util/workqueue"
+    "k8s.io/client-go/kubernetes"
+    "k8s.io/client-go/rest"
+
+    crontabv1 "yourpackage/crontab/v1"
+)
+
+type Controller struct {
+    indexer  cache.Indexer
+    queue    workqueue.RateLimitingInterface
+    informer cache.Controller
+}
+
+func NewController(queue workqueue.RateLimitingInterface, indexer cache.Indexer, informer cache.Controller) *Controller {
+    return &Controller{
+        queue:    queue,
+        indexer:  indexer,
+        informer: informer,
+    }
+}
+
+func (c *Controller) processNextItem() bool {
+    // Wait until there is a new item in the working queue
+    key, quit := c.queue.Get()
+    if quit {
+        return false
+    }
+    // Tell the queue that we are done with processing this key. This unblocks the key for other workers
+    defer c.queue.Done(key)
+
+    // Invoke the method containing the business logic
+    err := c.syncToStdout(key.(string))
+    // Handle the error if something went wrong during the execution of the business logic
+    c.handleErr(err, key)
+    return true
+}
+
+func (c *Controller) syncToStdout(key string) error {
+    obj, exists, err := c.indexer.GetByKey(key)
+    if err != nil {
+        fmt.Errorf("Fetching object with key %s from store failed with %v", key, err)
+    }
+
+    if !exists {
+        fmt.Printf("CronTab %s does not exist anymore\n", key)
+    } else {
+        fmt.Printf("Sync/Add/Update for CronTab %s\n", obj.(*crontabv1.CronTab).GetName())
+    }
+    return nil
+}
+
+func (c *Controller) handleErr(err error, key interface{}) {
+    if err == nil {
+        c.queue.Forget(key)
+        return
+    }
+
+    if c.queue.NumRequeues(key) < 5 {
+        c.queue.AddRateLimited(key)
+        return
+    }
+
+    c.queue.Forget(key)
+}
+
+func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
+    // Let the workers stop when we are done
+    defer c.queue.ShutDown()
+    fmt.Println("Starting CronTab controller")
+
+    go c.informer.Run(stopCh)
+
+    // Wait for all involved caches to be synced, before processing items from the queue is started
+    if !cache.WaitForCacheSync(stopCh, c.informer.HasSynced) {
+        fmt.Errorf("Timed out waiting for caches to sync")
+    }
+
+    for i := 0; i < threadiness; i++ {
+        go c.runWorker()
+    }
+
+    <-stopCh
+    fmt.Println("Stopping CronTab controller")
+}
+
+func (c *Controller) runWorker() {
+    for c.processNextItem() {
+    }
+}
+
+func main() {
+    config, err := rest.InClusterConfig()
+    if err != nil {
+        panic(err.Error())
+    }
+
+    clientset, err := kubernetes.NewForConfig(config)
+    if err != nil {
+        panic(err.Error())
+    }
+
+    cronTabClient := clientset.StableV1().CronTabs("default")
+    cronTabListWatcher := cache.NewListWatchFromClient(cronTabClient.RESTClient(), "crontabs", v1.NamespaceDefault, fields.Everything())
+
+    queue := workqueue.NewRateLimitingQueue(workqueue.DefaultControllerRateLimiter())
+
+    indexer, informer := cache.NewIndexerInformer(cronTabListWatcher, &crontabv1.CronTab{}, 0, cache.ResourceEventHandlerFuncs{
+        AddFunc: func(obj interface{}) {
+            key, err := cache.MetaNamespaceKeyFunc(obj)
+            queue.Add(key)
+        },
+        UpdateFunc: func(old interface{}, new interface{}) {
+            key, err := cache.MetaNamespaceKeyFunc(new)
+            queue.Add(key)
+        },
+        DeleteFunc: func(obj interface{}) {
+            key, err := cache.DeletionHandlingMetaNamespaceKeyFunc(obj)
+            queue.Add(key)
+        },
+    }, cache.Indexers{})
+
+    controller := NewController(queue, indexer, informer)
+
+    stop := make(chan struct{})
+    defer close(stop)
+    go controller.Run(1, stop)
+
+    // Wait forever
+    select {}
+}
+```
+这是一个高级的示例，并且在你的实际项目中可能需要调整以满足你的需求。为了更深入地理解这个代码，你可能需要了解 Go 编程，以及 Kubernetes API 和 client-go 库的使用。这些主题超出了这个回答的范围，但你可以查看 Kubernetes 官方文档的 [自定义控制器](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers) 部分，以及 [client-go](https://github.com/kubernetes/client-go) 库的文档和例子，以获取更多信息。
+
+同时，你也可以考虑使用 Operator SDK 或 Kubebuilder，这些工具可以帮助你更快地创建和开发 Kubernetes 控制器。
+
+#### 执行`cat .kube/config | jq > config`失败，原因在于jq命令，请帮我更正
+在这个情况下，你可能在使用`jq`命令来查看你的 Kubernetes 配置文件（`.kube/config`），并尝试将输出重定向到`config`文件。
+
+`jq`是一个强大的命令行 JSON 处理工具，它接受一个 JSON 格式的输入，并可以通过一个查询表达式来转换这个输入。
+
+如果你执行`cat .kube/config | jq > config`并且出现错误，这可能是因为`jq`没有找到任何的查询表达式。如果你只是想要把`.kube/config`文件转换为漂亮的 JSON 格式，你可以使用 '.' 作为查询表达式，如下：
+```bash
+cat .kube/config | jq '.' > config
+```
+这条命令将把`.kube/config`文件的内容以漂亮的 JSON 格式写入到`config`文件中。
+
+#### 帮我生成一个kubeconfig样例，其中包含两个用户，一个使用证书，一个使用token
+在这个例子中，我将创建一个 kubeconfig 文件样例，其中包含两个用户，一个使用客户端证书认证，另一个使用 bearer token 认证。
+```yaml
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: [base64-encoded-ca-certificate]
+    server: https://my-k8s-cluster.example.com:6443
+  name: my-cluster
+contexts:
+- context:
+    cluster: my-cluster
+    user: my-user-token
+  name: my-context-token
+- context:
+    cluster: my-cluster
+    user: my-user-certificate
+  name: my-context-certificate
+current-context: my-context-token
+kind: Config
+preferences: {}
+users:
+- name: my-user-token
+  user:
+    token: [token-value]
+- name: my-user-certificate
+  user:
+    client-certificate-data: [base64-encoded-client-certificate]
+    client-key-data: [base64-encoded-client-key]
+```
+在这个配置文件中，你需要用你的实际数据来替换以下的占位符：
+
+- `[base64-encoded-ca-certificate]`：这是你的 Kubernetes 集群的 CA 证书的 base64 编码值。
+- `https://my-k8s-cluster.example.com:6443`：这是你的 Kubernetes 集群的 API server 的地址。
+- `[token-value]`：这是使用 bearer token 认证的用户的 token 值。
+- `[base64-encoded-client-certificate]`：这是使用客户端证书认证的用户的客户端证书的 base64 编码值。
+- `[base64-encoded-client-key]`：这是使用客户端证书认证的用户的客户端密钥的 base64 编码值。
+
+在你有了这个 kubeconfig 文件之后，你就可以通过指定 --context 参数来使用 kubectl 切换用户了：
+```bash
+kubectl --context=my-context-token get pods
+kubectl --context=my-context-certificate get pods
+```
+
+#### 帮我写一个脚本，遍历clusterrolebindings，找出所有已绑定的clusterrole，然后查看其中是否有涉及nonResourceURLs的配置
+```bash
+#!/bin/bash
+# 遍历所有的ClusterRoleBindings
+for crb in $(kubectl get clusterrolebindings -o json | jq -r .items[].metadata.name); do
+  echo "Checking ClusterRoleBinding $crb..."
+
+  # 获取绑定的ClusterRole
+  role=$(kubectl get clusterrolebindings "$crb" -o json | jq -r .roleRef.name)
+
+  # 检查ClusterRole中是否有涉及nonResourceURLs的配置
+  nonResourceURLs=$(kubectl get clusterrole "$role" -o json | jq -r .rules[].nonResourceURLs[] 2>/dev/null)
+
+  if [ ! -z "$nonResourceURLs" ]; then
+    echo "ClusterRole $role bound by $crb contains nonResourceURLs: $nonResourceURLs"
+  fi
+done
+```
+
 ### 图灵机
 #### 图灵完备是什么意思
 图灵完备（Turing completeness）是计算理论中的一个概念，它用于描述一个计算模型或者编程语言是否具有解决任何可计算问题的能力。换句话说，一个图灵完备的系统能够模拟图灵机（Turing machine）的行为。图灵机是由英国数学家艾伦·图灵（Alan Turing）于1936年提出的一种抽象计算模型，被认为是计算理论的基础。
@@ -922,3 +1284,16 @@ done
 当活性炭燃烧时，其主要产物是二氧化碳（CO2），与普通碳燃烧产生的二氧化碳相同。然而，活性炭燃烧后，其内部微孔结构可能会发生变化，导致其比表面积减小，吸附能力下降。此外，活性炭在燃烧过程中可能还会释放出在其微孔中吸附的有机物或其他化学物质，这些物质在普通碳燃烧过程中不会产生。
 
 简而言之，活性炭和普通碳燃烧后的主要产物二氧化碳相同，但活性炭燃烧后可能会导致其微孔结构和吸附能力发生改变，以及释放出吸附在其内部的其他物质。
+
+#### 在ios上使用chrome，如何屏蔽网页广告
+在 iOS 设备上使用 Chrome 浏览器时，你可能会发现并没有内建的广告屏蔽功能。这是因为 Apple 对其 App Store 中应用的限制，阻止了浏览器应用进行广告屏蔽等一些特殊功能的实现。
+
+但你可以通过以下几种方式来尝试减少或屏蔽广告：
+
+1. **使用内容屏蔽器（Content Blockers）**: 在 iOS 中，有一些应用被设计为内容屏蔽器，可以与 Safari 浏览器集成，帮助屏蔽广告。然而，这些应用通常无法与 Chrome 直接集成。如果你不介意更换浏览器，可以考虑使用 Safari，并安装一款内容屏蔽器，如 "1Blocker" 或 "AdGuard"。
+
+2. **使用第三方浏览器**: 有些第三方浏览器，如 "Brave"，内建了广告屏蔽功能。你可以考虑下载并使用这类浏览器。
+
+3. **使用带广告屏蔽功能的VPN**: 有些 VPN 服务提供了广告屏蔽功能。这类服务可以在整个设备的级别上屏蔽广告，因此也包括了 Chrome 浏览器。
+
+请注意，广告是许多免费网站的主要收入来源，屏蔽广告可能会影响这些网站的收入。在屏蔽广告时，请考虑到这一点。

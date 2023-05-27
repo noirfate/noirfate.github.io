@@ -34,6 +34,9 @@ excerpt: useful git repository (工具篇)
 - [whisper - 语音转文字](https://github.com/openai/whisper) [使用](https://www.kingname.info/2023/04/15/whisper/)
 - [gptfree - 免翻墙免费gpt](https://github.com/chatanywhere/GPT_API_free)
 - [quivr - 构建自己的AI大脑（支持多种文件和URL）](https://github.com/StanGirard/quivr)
+- [privateGPT - 利用GPT4All+LangChain构建自己的AI大脑](https://github.com/imartinez/privateGPT)
+- [chatpdf - 通过AI分析pdf文档](https://www.chatpdf.com/)
+- [利用GPT翻译电子书](https://github.com/jesselau76/ebook-GPT-translator/tree/main)
 
 ## 开发工具
 
