@@ -250,6 +250,7 @@ excerpt: Cloud Security
 - [veinmind - 容器安全工具集](https://github.com/chaitin/veinmind-tools)
 - [tetragon - 基于ebpf的安全监控工具](https://github.com/cilium/tetragon)
 - [GATOR - GCP利用工具](https://github.com/anrbn/GATOR)
+- [rbac-tool - rbac分析可视化工具](https://github.com/alcideio/rbac-tool)
 
 ## CVE
 

@@ -104,6 +104,7 @@ excerpt: useful git repository (攻防篇)
 - [hetty - burpsuit开源替代](https://github.com/dstotijn/hetty)
 - [jsf - jenkins渗透框架](https://github.com/Accenture/jenkins-attack-framework)
 - [shennina - 利用AI进行自动化渗透](https://github.com/mazen160/shennina)
+- [PentestGPT - 利用chatgpt指导渗透](https://github.com/GreyDGL/PentestGPT/)
 
 ### 持久化工具
 
@@ -167,6 +168,7 @@ excerpt: useful git repository (攻防篇)
 - [云服务商漏洞搜索引擎](https://www.cloudvulndb.org/results?q=)
 - [reconftw - 域名漏洞自动收集扫描工具](https://github.com/six2dez/reconftw)
 - [数据泄露分析报告](https://github.com/BushidoUK/Breach-Report-Collection)
+- [uncover-turbo - 利用chatgpt生成fofa等网络空间测绘的查询语句](https://github.com/zt2/uncover-turbo)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -174,6 +176,7 @@ excerpt: useful git repository (攻防篇)
 - [APT报告合集](https://github.com/blackorbird/APT_REPORT) [合集1](https://github.com/aptnotes/data)
 - [APT事件合集](https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections)
 - [APT样本](https://github.com/vxunderground/MalwareSourceCode) [样本1](https://github.com/cyber-research/APTMalware) [样本2](https://bazaar.abuse.ch/browse)
+- [APT组织开源列表](https://docs.google.com/spreadsheets/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/edit#gid=1864660085)
 
 ### 云原生渗透工具
 
