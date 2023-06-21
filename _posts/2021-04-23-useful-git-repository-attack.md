@@ -40,6 +40,7 @@ excerpt: useful git repository (攻防篇)
 - [burpgpt - 使用chatgpt检测网络流量](https://github.com/aress31/burpgpt)
 - [AutoRecon - 自动网络扫描利用工具](https://github.com/Tib3rius/AutoRecon)
 - [scan4all - 集成vscan、nuclei的自动化扫描工具](https://github.com/hktalent/scan4all)
+- [wordpress nuclei模板](https://github.com/topscoder/nuclei-wordfence-cve)
 
 ### 本地扫描工具
 
@@ -74,6 +75,8 @@ excerpt: useful git repository (攻防篇)
 - [dns-shell - dns反弹shell工具](https://github.com/Eenki/DNS-Shell-Pro)
 - [gmailc2 - 利用gmail作为C2](https://github.com/machine1337/gmailc2)
 - [google_socks - 利用google drive作为C2](https://github.com/lukebaggett/google_socks)
+- [sshimpanzee - ssh反弹shell](https://github.com/lexfo/sshimpanzee)
+- [GCR-Google-Calendar-RAT - 利用google日历做远控通信](https://github.com/MrSaighnal/GCR-Google-Calendar-RAT)
 
 ### 渗透工具/框架
 
@@ -105,6 +108,7 @@ excerpt: useful git repository (攻防篇)
 - [jsf - jenkins渗透框架](https://github.com/Accenture/jenkins-attack-framework)
 - [shennina - 利用AI进行自动化渗透](https://github.com/mazen160/shennina)
 - [PentestGPT - 利用chatgpt指导渗透](https://github.com/GreyDGL/PentestGPT/)
+- [承影 - 一款安全工具箱,集成了目录扫描、JWT、Swagger 测试、编/解码、轻量级 BurpSuite、杀软辅助功能](https://github.com/yhy0/ChYing)
 
 ### 持久化工具
 
@@ -126,6 +130,7 @@ excerpt: useful git repository (攻防篇)
 - [ulexecve - 无需执行exec系统调用执行ELF](https://github.com/anvilsecure/ulexecve)
 - [MemoryModule - 在内存中加载或向进程注入DLL](https://github.com/YuriSizuku/MemoryModule)
 - [laZzzy - win shellcode loader](https://github.com/capt-meelo/laZzzy)
+- [Nidhogg - win rootkit](https://github.com/Idov31/Nidhogg)
 
 ### OSINT(开源情报)工具
 
@@ -259,6 +264,7 @@ excerpt: useful git repository (攻防篇)
 - [attack-flow - 使用TTP绘制攻击流程](https://github.com/center-for-threat-informed-defense/attack-flow)
 - [patchelf - 修改elf文件的动态链接库配置](https://github.com/NixOS/patchelf)
 - [databasetools - 数据库利用工具](https://github.com/Hel10-Web/Databasetools)
+- [drawio威胁建模图库](https://github.com/michenriksen/drawio-threatmodeling) [文章](https://michenriksen.com/blog/drawio-for-threat-modeling/)
 
 ## POC
 
@@ -532,3 +538,4 @@ excerpt: useful git repository (攻防篇)
 - [linux加固手册](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
 - [linux版的procmon](https://github.com/microsoft/ProcMon-for-Linux)
 - [gitleaks - 检测git敏感信息](https://github.com/zricethezav/gitleaks)
+- [cvss 4.0介绍](https://csrc.nist.gov/csrc/media/Presentations/2023/update-on-cvss-4-0/jan-25-2023-ssca-dugal-rich.pdf)

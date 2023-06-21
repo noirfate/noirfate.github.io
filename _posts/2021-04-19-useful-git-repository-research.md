@@ -122,6 +122,7 @@ excerpt: useful git repository (研究篇)
 - [magnifier - 交互式逆向软件](https://github.com/trailofbits/magnifier) [介绍](https://blog.trailofbits.com/2022/08/25/magnifier-an-experiment-with-interactive-decompilation/)
 - [medusa](https://github.com/Ch0pin/medusa)
 - [vmlinux-to-elf - 把vmlinux转换成elf文件用于分析](https://github.com/marin-m/vmlinux-to-elf) [使用](https://github.com/batteryshark/writeups/wiki/Go-to-Shell---Reverse-Engineering-Kernel-Modifications-with-QEMU-gdb)
+- [pefile - PE文件分析工具](https://github.com/erocarrera/pefile)
 
 ### binary改写
 
@@ -176,6 +177,7 @@ excerpt: useful git repository (研究篇)
 - [polytracker - 针对c/c++的数据流执行流分析工具](https://github.com/trailofbits/polytracker)
 - [medusa - 安卓应用分析工具](https://github.com/Ch0pin/medusa)
 - [appshark - 安卓应用污点追踪漏洞分析工具](https://github.com/bytedance/appshark)
+- [Qu1cksc0pe - 恶意软件静态分析工具](https://github.com/CYB3RMX/Qu1cksc0pe)
 
 ### 调试工具
 
@@ -335,6 +337,7 @@ excerpt: useful git repository (研究篇)
 - [GREBE - 通过对bug report的分析引导fuzzer发现新的漏洞](https://github.com/markakd/GREBE)
 - [healer - syzkaller改进版，使用syscall之间的影响关系生成call sequences](https://github.com/SunHao-0/healer)
 - [syzkaller样本库，可以提高fuzz效率](https://github.com/cmu-pasta/linux-kernel-enriched-corpus)
+- [KLAUS - 判断内核patch是否能够有效修复漏洞](https://github.com/wupco/KLAUS/tree/main)
 
 ### sanitizer
 

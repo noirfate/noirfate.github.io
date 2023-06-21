@@ -705,7 +705,7 @@ except:
 
 ## 不使用docker进入正在运行的容器
 ```shell
-PID=`docker inspect --format {{.State.Pid}} <container_name_or_ID>`
+PID=`docker inspect --format='{{.State.Pid}}' <container_name_or_ID>`
 nsenter --target $PID --mount --uts --ipc --net --pid
 ```
 
@@ -715,7 +715,7 @@ nsenter --target $PID --mount --uts --ipc --net --pid
 
 - 获取容器镜像信息
 ```shell
-docker image inspect --format {{.GraphDriver.Data}} [repo:tag]
+docker image inspect --format='{{.GraphDriver.Data}}' [repo:tag]
 map[LowerDir:/var/lib/docker/overlay2/0f1a95dcb730433fdf39479ae9432324f5d3fca511d048508293fb63a1c0d16c/diff:/var/lib/docker/overlay2/5dbb92d967da7c64af8b2deb40097ff9ed52035a6a80365f62c6e797b44a4ea9/diff:/var/lib/docker/overlay2/284bbc04dc3335d8d75cc15925e1a51ecf210233b5764227f724d0976fd5519b/diff:/var/lib/docker/overlay2/25b50be9ef6d49113adde05f128eae042d30f5273777e3e5702c5f455e086654/diff:/var/lib/docker/overlay2/3658c1afed9ac524ffe138a650010a59df786b68516131fb1d774f351f62b893/diff:/var/lib/docker/overlay2/fb359a756d79c757e151cc3a65f350eb4188dc6c5ff2597b98e89c7319002cb7/diff MergedDir:/var/lib/docker/overlay2/0526a9a9950160c12f0c493b345962c03fe1f05f1023f5692aa2ad7e8b36e15b/merged UpperDir:/var/lib/docker/overlay2/0526a9a9950160c12f0c493b345962c03fe1f05f1023f5692aa2ad7e8b36e15b/diff WorkDir:/var/lib/docker/overlay2/0526a9a9950160c12f0c493b345962c03fe1f05f1023f5692aa2ad7e8b36e15b/work]
 ```
 
@@ -724,11 +724,11 @@ map[LowerDir:/var/lib/docker/overlay2/0f1a95dcb730433fdf39479ae9432324f5d3fca511
 mount -t overlay overlay -o lowerdir=/var/lib/docker/overlay2/0f1a95dcb730433fdf39479ae9432324f5d3fca511d048508293fb63a1c0d16c/diff:/var/lib/docker/overlay2/5dbb92d967da7c64af8b2deb40097ff9ed52035a6a80365f62c6e797b44a4ea9/diff:/var/lib/docker/overlay2/284bbc04dc3335d8d75cc15925e1a51ecf210233b5764227f724d0976fd5519b/diff:/var/lib/docker/overlay2/25b50be9ef6d49113adde05f128eae042d30f5273777e3e5702c5f455e086654/diff:/var/lib/docker/overlay2/3658c1afed9ac524ffe138a650010a59df786b68516131fb1d774f351f62b893/diff:/var/lib/docker/overlay2/fb359a756d79c757e151cc3a65f350eb4188dc6c5ff2597b98e89c7319002cb7/diff,upperdir=/var/lib/docker/overlay2/0526a9a9950160c12f0c493b345962c03fe1f05f1023f5692aa2ad7e8b36e15b/diff,workdir=/var/lib/docker/overlay2/0526a9a9950160c12f0c493b345962c03fe1f05f1023f5692aa2ad7e8b36e15b/work /mnt/
 ```
 - 统一起来
-```
+```shell
 image = [repo:tag]
-lowerdir=`docker image inspect --format {{.GraphDriver.Data}} $image | awk -F 'LowerDir:' '{split($2,s," ");print s[1]}'`
-upperdir=`docker image inspect --format {{.GraphDriver.Data}} $image | awk -F 'UpperDir:' '{split($2,s," ");print s[1]}'`
-workdir=`docker image inspect --format {{.GraphDriver.Data}} $image | awk -F ']' '{print $1}' |awk -F 'WorkDir:' '{split($2,s," ");print s[1]}'`
+lowerdir=`docker image inspect --format='{{.GraphDriver.Data}}' $image | awk -F 'LowerDir:' '{split($2,s," ");print s[1]}'`
+upperdir=`docker image inspect --format='{{.GraphDriver.Data}}' $image | awk -F 'UpperDir:' '{split($2,s," ");print s[1]}'`
+workdir=`docker image inspect --format='{{.GraphDriver.Data}}' $image | awk -F ']' '{print $1}' |awk -F 'WorkDir:' '{split($2,s," ");print s[1]}'`
 mount -t overlay overlay -o lowerdir=$lowerdir,upperdir=$upperdir,workdir=$workdir /mnt
 ```
 
