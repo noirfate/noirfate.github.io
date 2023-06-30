@@ -174,6 +174,7 @@ excerpt: useful git repository (攻防篇)
 - [reconftw - 域名漏洞自动收集扫描工具](https://github.com/six2dez/reconftw)
 - [数据泄露分析报告](https://github.com/BushidoUK/Breach-Report-Collection)
 - [uncover-turbo - 利用chatgpt生成fofa等网络空间测绘的查询语句](https://github.com/zt2/uncover-turbo)
+- [cisa公布的已知被利用漏洞列表](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -235,7 +236,7 @@ excerpt: useful git repository (攻防篇)
 - [蓝牙BLE协议抓包篡改工具](https://github.com/virtualabs/btlejack)
 - [使用ssrf漏洞攻击java rmi](https://blog.tneitzel.eu/posts/01-attacking-java-rmi-via-ssrf/)
 - [jenkins密码破解工具](https://github.com/rabbitmask/Jenkins_Credentials_Crack)
-- [恶意mysql server](https://github.com/rmb122/rogue_mysql_server)
+- [恶意mysql server](https://github.com/rmb122/rogue_mysql_server) [高级版](https://github.com/4ra1n/mysql-fake-server)
 - [Linux内核保护机制绕过](https://mp.weixin.qq.com/s/gSTbXW6M72QYtVPoZswhyw)
 - [各种语言反弹shell生成器](https://github.com/0dayCTF/reverse-shell-generator) [网站](https://www.revshells.com/)
 - [Awesome-Redteam](https://github.com/Threekiii/Awesome-Redteam)
@@ -265,6 +266,7 @@ excerpt: useful git repository (攻防篇)
 - [patchelf - 修改elf文件的动态链接库配置](https://github.com/NixOS/patchelf)
 - [databasetools - 数据库利用工具](https://github.com/Hel10-Web/Databasetools)
 - [drawio威胁建模图库](https://github.com/michenriksen/drawio-threatmodeling) [文章](https://michenriksen.com/blog/drawio-for-threat-modeling/)
+- [python代码混淆](https://github.com/billythegoat356/Hyperion)
 
 ## POC
 
@@ -282,6 +284,7 @@ excerpt: useful git repository (攻防篇)
 - [各类POC合集](https://github.com/Threekiii/Awesome-POC)
 - [Win提权POC合集](https://github.com/ycdxsb/WindowsPrivilegeEscalation)
 - [年度TOP30合集](https://github.com/hktalent/TOP)
+- [google研究POC](https://github.com/google/security-research)
 
 ### win
 
