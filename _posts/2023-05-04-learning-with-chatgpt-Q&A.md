@@ -1210,6 +1210,141 @@ print(timestamp)
 
 执行这个脚本，你将会看到 "2023-05-18 14:30:00" 的 Unix 时间戳。注意，这个脚本将日期和时间当做本地时间处理，而不是 UTC 时间。
 
+#### 在调用`f.read()`时出现`UnicodeDecodeError: 'gbk'  codec can't decode`错误，应该如何解决
+这个错误通常发生在尝试读取非标准编码的文件时。在这种情况下，你可能需要明确指定文件的编码
+```python
+with open('sample.html', encoding='utf-8') as f:
+  content = f.read()
+```
+
+#### 使用`python`和`lxml`解析如下结构的`html`，如果`<h2>`下一个元素为`<div>`且其`class`为`table`，则`h2`为`table`的标题，输出所有`table`的标题和内容：`<div><h2></h2><div class="table"><table></table></div>`
+```python
+from lxml import html
+
+# HTML 字符串
+html_content = """
+<div>
+  <div class="html-article">
+  <h2>Table Title 1</h2>
+  <div class="table">
+    <table>
+      <!-- Table 1 content here -->
+    </table>
+  </div>
+  <h2>Table Title 2</h2>
+  <div class="table">
+    <table>
+      <!-- Table 2 content here -->
+    </table>
+  </div>
+</div>
+"""
+
+# 解析 HTML
+tree = html.fromstring(html_content)
+
+# 找到所有的 <h2> 标签，它们的下一个 <div> 元素的 class 属性是 "table"，它会匹配到隔了多个元素的兄弟节点，如果想只匹配下一个则用后面注释的代码
+h2_elements = tree.xpath('//h2[following-sibling::div[@class="doc-table-edit-scorll"][1]]')
+
+# 找到所有的 <h2> 标签，它们的下一个兄弟节点是一个 <div> 元素，其 class 属性是 "doc-table-edit-scorll"
+# h2_elements = tree.xpath('//h2[following-sibling::*[1][self::div and @class="doc-table-edit-scorll"]]')
+
+# 遍历所有的 <h2> 标签
+for h2 in h2_elements:
+    print(f"Table Title: {h2.text_content().strip()}")
+    
+    # 找到 <h2> 标签的下一个 <table> 标签
+    table = h2.xpath('following-sibling::div[@class="table"][1]/table')[0]
+    
+    # 获取所有的行
+    rows = table.xpath('.//tr')
+    
+    for row in rows:
+        # 获取行中的所有列
+        columns = row.xpath('.//td')
+        
+        # 获取每列的文本
+        column_texts = [column.text_content().strip() for column in columns]
+        
+        print(column_texts)
+    
+    print("\n---\n")
+```
+
+#### 解析`ATT&CK Matrix In Chinese`的markdown文档，提取其中的`section`和`table`，解析后存入`mangodb`
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import re, json, pymongo
+
+def extract_table(content):
+    pattern = r'\| T.*'
+    match = re.search(pattern, content, re.MULTILINE | re.DOTALL)
+    if match:
+        table = match.group(0)
+        return table
+    return None
+
+def extract_section(content, name, level):
+    pattern = r'^#{' + str(level) + r'}\s+' + name + r'.*?\n(.*?)\n(?:#{1,6}|\Z)'
+    match = re.search(pattern, content, re.MULTILINE | re.DOTALL)
+    if match:
+        section = match.group(1)
+        return section
+    return None
+
+def read_md(filename):
+    f = open(filename, 'r')
+    text = f.read()
+    f.close()
+    return text
+
+md = read_md("attck.md")
+section_list = ["侦察", "资源开发", "初始访问", "执行", "持久化", "权限提升", "防御绕过", "凭据访问", "信息发现", "横向移动", "信息收集", "命令与控制", "数据渗出", "影响"]
+attck = {}
+
+for title in section_list:
+    section = extract_section(md, title, 2)
+    if not section:
+        print("process section {} error".format(title))
+        break
+    table = extract_table(section)
+    if not table:
+        print("process section {} table error".format(title))
+        break
+    lines = table.splitlines()
+    for line in lines:
+        if len(line) < 5:
+            continue
+        rows = line.split("|")
+        code = rows[1].strip()
+        name = rows[2].strip()
+        desc = rows[3].strip()
+        link = rows[4].split("(")[1].split(")")[0]
+        tactic = [title]
+        if code not in attck:
+            id_arr = code.split(".")
+            fid = id_arr[0]
+            sid = ""
+            if len(id_arr) > 1:
+                sid = id_arr[1]
+            attck[code] = {
+                "id": fid,
+                "subid": sid,
+                "name": name,
+                "desc": desc,
+                "link": link,
+                "tactic": tactic
+            }
+        else:
+            attck[code]["tactic"].append(title)
+#print(json.dumps(attck, ensure_ascii=False, indent=2))
+
+client = pymongo.MongoClient("mongodb://[user]:[password]@[ip:port/]")
+col = client["attck"]["ttp"]
+for v in attck.values():
+    col.insert_one(v)
+```
 
 ## 日常
 ### 柏拉图著作真伪问题

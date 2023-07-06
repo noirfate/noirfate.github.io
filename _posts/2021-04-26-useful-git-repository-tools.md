@@ -37,6 +37,7 @@ excerpt: useful git repository (工具篇)
 - [privateGPT - 利用GPT4All+LangChain构建自己的AI大脑](https://github.com/imartinez/privateGPT)
 - [chatpdf - 通过AI分析pdf文档](https://www.chatpdf.com/)
 - [利用GPT翻译电子书](https://github.com/jesselau76/ebook-GPT-translator/tree/main)
+- [基于本地知识库的 ChatGLM 问答](https://github.com/imClumsyPanda/langchain-ChatGLM)
 
 ## 开发工具
 

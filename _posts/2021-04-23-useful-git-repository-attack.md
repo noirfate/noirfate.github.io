@@ -123,7 +123,7 @@ excerpt: useful git repository (攻防篇)
 - [mimic - 通过重命名进程进行隐藏](https://github.com/emptymonkey/mimic)
 - [TripleCross - ebpf rootkit](https://github.com/h3xduck/TripleCross)
 - [pamspy - 利用uprobe hook pam获取密码](https://github.com/citronneur/pamspy)
-- [reveng_rtkit - linux 5.11 rootkit](https://github.com/reveng007/reveng_rtkit)
+- [reveng_rtkit - linux 5.11 rootkit](https://github.com/reveng007/reveng_rtkit) [介绍](https://reveng007.github.io/blog/2022/03/08/reveng_rkit_detailed.html)
 - [go-memexec - run binary in memory](https://github.com/amenzhinsky/go-memexec)
 - [Freeze - 绕过edr执行shellcode](https://github.com/optiv/Freeze)
 - [run embedded elf from memory](https://github.com/AXDOOMER/run-embedded-elf-from-memory)
@@ -495,6 +495,7 @@ excerpt: useful git repository (攻防篇)
 - [各类数据库利用整理](https://github.com/safe6Sec/PentestDB)
 - [API安全](https://github.com/arainho/awesome-api-security)
 - [blackhat asia 2023](https://github.com/Mr-xn/BLACKHAT_Asia2023)
+- [内存马研究资料](https://github.com/Getshell/Mshell)
 
 ## 防护
 

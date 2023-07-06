@@ -146,7 +146,7 @@ excerpt: ATT&CK Matrix 中英文对照表
 | T1059 | 命令和脚本解释器（Command and Scripting Interpreter）| 攻击者利用二进制可执行程序或脚本来执行命令 | [链接](https://attack.mitre.org/techniques/T1059) |
 | T1059.001 | PowerShell（PowerShell）| 攻击者利用PowerShell命令或脚本来执行命令 | [链接](https://attack.mitre.org/techniques/T1059/001) |
 | T1059.002 | AppleScript（AppleScript）| 攻击者利用AppleScript来执行命令 | [链接](https://attack.mitre.org/techniques/T1059/002) |
-| T1509.003 | WindowsCMD（Windows Command Shell）| 攻击者利用windows系统中的cmd执行命令 | [链接](https://attack.mitre.org/techniques/T1059/003) |
+| T1059.003 | WindowsCMD（Windows Command Shell）| 攻击者利用windows系统中的cmd执行命令 | [链接](https://attack.mitre.org/techniques/T1059/003) |
 | T1059.004 | UnixShell（Unix Shell）| 攻击者利用类unix系统中的shell执行命令 | [链接](https://attack.mitre.org/techniques/T1059/004) |
 | T1059.005 | VisualBasic（Visual Basic）| 攻击者利用VB脚本执行命令 | [链接](https://attack.mitre.org/techniques/T1059/005) |
 | T1059.006 | Python（Python）| 攻击者利用python脚本执行命令 | [链接](https://attack.mitre.org/techniques/T1059/006) |
