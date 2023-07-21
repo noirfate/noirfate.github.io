@@ -38,6 +38,9 @@ excerpt: useful git repository (工具篇)
 - [chatpdf - 通过AI分析pdf文档](https://www.chatpdf.com/)
 - [利用GPT翻译电子书](https://github.com/jesselau76/ebook-GPT-translator/tree/main)
 - [基于本地知识库的 ChatGLM 问答](https://github.com/imClumsyPanda/langchain-ChatGLM)
+- [LLM微调](https://github.com/beyondguo/LLM-Tuning)
+- [SadTalker - 制作数字人](https://github.com/OpenTalker/SadTalker)
+- [中文Llama2大模型](https://github.com/FlagAlpha/Llama2-Chinese)
 
 ## 开发工具
 
@@ -109,6 +112,7 @@ excerpt: useful git repository (工具篇)
 - [youtube-dl - 视频下载工具](https://github.com/ytdl-org/youtube-dl)
 - [katana - 爬虫工具](https://github.com/projectdiscovery/katana)
 - [N_m3u8DL-RE - 视频网站m3u下载工具](https://github.com/nilaoda/N_m3u8DL-RE) [提取m3u脚本](https://github.com/nilaoda/Blog/discussions/57)
+- [bookget - 各大在线图书馆下载工具](https://github.com/deweizhu/bookget)
 
 ## 监控工具
 

@@ -206,6 +206,7 @@ excerpt: Cloud Security
 - [Azure 使用Storage Account Contributor角色和共享密钥进行提权](https://orca.security/resources/blog/azure-shared-key-authorization-exploitation/)
 - [阿里云数据库服务容器逃逸](https://www.wiz.io/blog/brokensesame-accidental-write-permissions-to-private-registry-allowed-potential-r)
 - [SCARLETEEL: Operation leveraging Terraform, Kubernetes, and AWS for data theft](https://sysdig.com/blog/cloud-breach-terraform-data-theft/)
+- [GCP cloudbuild纵向提权](https://rhinosecuritylabs.com/gcp/iam-privilege-escalation-gcp-cloudbuild/) [另一种方法](https://orca.security/resources/blog/bad-build-google-cloud-build-potential-supply-chain-attack-vulnerability/)
 
 ## 云原生工具
 
@@ -251,6 +252,7 @@ excerpt: Cloud Security
 - [tetragon - 基于ebpf的安全监控工具](https://github.com/cilium/tetragon)
 - [GATOR - GCP利用工具](https://github.com/anrbn/GATOR)
 - [rbac-tool - rbac分析可视化工具](https://github.com/alcideio/rbac-tool)
+- [RedCloud-OS - AWS,Azure,GCP渗透虚机](https://github.com/RedTeamOperations/RedCloud-OS)
 
 ## CVE
 

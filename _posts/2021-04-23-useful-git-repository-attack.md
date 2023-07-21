@@ -41,6 +41,7 @@ excerpt: useful git repository (攻防篇)
 - [AutoRecon - 自动网络扫描利用工具](https://github.com/Tib3rius/AutoRecon)
 - [scan4all - 集成vscan、nuclei的自动化扫描工具](https://github.com/hktalent/scan4all)
 - [wordpress nuclei模板](https://github.com/topscoder/nuclei-wordfence-cve)
+- [nuclei-plus - java实现的nuclei图形化界面](https://github.com/Yong-An-Dang/nuclei-plus)
 
 ### 本地扫描工具
 
@@ -131,6 +132,8 @@ excerpt: useful git repository (攻防篇)
 - [MemoryModule - 在内存中加载或向进程注入DLL](https://github.com/YuriSizuku/MemoryModule)
 - [laZzzy - win shellcode loader](https://github.com/capt-meelo/laZzzy)
 - [Nidhogg - win rootkit](https://github.com/Idov31/Nidhogg)
+- [BlackLotus - win UEFI bootkit](https://github.com/ldpreload/BlackLotus/tree/main)
+- [自动生成指定binary的无文件执行脚本](https://github.com/nnsee/fileless-elf-exec) [参考PyLoose](https://www.wiz.io/blog/pyloose-first-python-based-fileless-attack-on-cloud-workloads)
 
 ### OSINT(开源情报)工具
 
@@ -183,6 +186,8 @@ excerpt: useful git repository (攻防篇)
 - [APT事件合集](https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections)
 - [APT样本](https://github.com/vxunderground/MalwareSourceCode) [样本1](https://github.com/cyber-research/APTMalware) [样本2](https://bazaar.abuse.ch/browse)
 - [APT组织开源列表](https://docs.google.com/spreadsheets/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/edit#gid=1864660085)
+- [微软APT响应报告](https://www.microsoft.com/en-us/security/blog/author/microsoft-security-threat-intelligence/)
+- [利用AI提取报告中的TTP](https://github.com/Qihoo360/Luwak)
 
 ### 云原生渗透工具
 
@@ -352,7 +357,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-2588 - route4_change uaf本地提权](https://github.com/Markakd/CVE-2022-2588)
 - [CVE-2022-2602 - io_uring uaf本地提权](https://github.com/kiks7/CVE-2022-2602-Kernel-Exploit) [POC1](https://github.com/LukeGix/CVE-2022-2602)
 - [CVE-2022-2639 - openvswitch reserve_sfa_size越界访问](https://github.com/veritas501/CVE-2022-2639-PipeVersion)
-- [CVE-2022-4543: KASLR Leakage Achievable even with KPTI through Prefetch Side-Channel](https://www.openwall.com/lists/oss-security/2022/12/16/3)
+- [CVE-2022-4543 - KASLR Leakage Achievable even with KPTI through Prefetch Side-Channel](https://www.openwall.com/lists/oss-security/2022/12/16/3)
 - [CVE-2022-23222 - ebpf verify本地提权漏洞](https://github.com/tr3ee/CVE-2022-23222)
 - [CVE-2022-25636 - netfilter netdev OOB漏洞提权](https://github.com/Bonfee/CVE-2022-25636) [dirty-pipe版本](https://github.com/veritas501/CVE-2022-25636-PipeVersion)
 - [CVE-2022-27666 - ipsec esp6 OOB漏洞提权](https://github.com/plummm/CVE-2022-27666) [文章](https://etenal.me/archives/1825)
@@ -518,6 +523,7 @@ excerpt: useful git repository (攻防篇)
 - [VED - 内核加固及漏洞利用防护](https://github.com/hardenedvault/ved)
 - [OpenArk - win反rootkit工具](https://github.com/BlackINT3/OpenArk)
 - [Elkeid - 字节跳动开源的主机防护软件](https://github.com/bytedance/Elkeid)
+- [使用命令行发现可疑程序](https://sandflysecurity.com/linux-compromise-detection-presentation.pdf)
 
 ### 软件防护
 

@@ -298,7 +298,9 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 模型输出有害内容（参见以上内容）
 
 ### 信息泄露
-泄露用户或平台数据（参见以上内容）
+
+- [利用提示注入泄露会话信息](https://infosecwriteups.com/hacking-chat-gpt-and-infecting-a-conversation-history-6e6a2c9ec52c)
+- [利用redis-py漏洞泄露其他用户的会话缓存](https://openai.com/blog/march-20-chatgpt-outage)
 
 ### 系统安全
 对平台运行环境造成实际危害，如命令执行、SSRF、越权访问等

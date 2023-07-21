@@ -53,6 +53,7 @@ excerpt: useful git repository (研究篇)
 - [bindiff插件](https://github.com/ubfx/BinDiffHelper)
 - [GhidraEmu - 模拟执行](https://github.com/Nalen98/GhidraEmu)
 - [gpt-wpre - 使用gpt3分析二级制文件](https://github.com/moyix/gpt-wpre)
+- [ghidralligator - 基于ghidra进行模拟执行和fuzz](https://github.com/airbus-cyber/ghidralligator/tree/master)
 
 ### GDB扩展
 
