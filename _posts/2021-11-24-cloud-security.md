@@ -207,6 +207,7 @@ excerpt: Cloud Security
 - [阿里云数据库服务容器逃逸](https://www.wiz.io/blog/brokensesame-accidental-write-permissions-to-private-registry-allowed-potential-r)
 - [SCARLETEEL: Operation leveraging Terraform, Kubernetes, and AWS for data theft](https://sysdig.com/blog/cloud-breach-terraform-data-theft/)
 - [GCP cloudbuild纵向提权](https://rhinosecuritylabs.com/gcp/iam-privilege-escalation-gcp-cloudbuild/) [另一种方法](https://orca.security/resources/blog/bad-build-google-cloud-build-potential-supply-chain-attack-vulnerability/)
+- [利用Azure泄露的私钥伪造认证token](https://www.wiz.io/blog/storm-0558-compromised-microsoft-key-enables-authentication-of-countless-micr)
 
 ## 云原生工具
 
