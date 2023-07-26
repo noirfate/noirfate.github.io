@@ -90,6 +90,14 @@ do { yt-dlp --proxy 127.0.0.1:1081 --socket-timeout 10 --yes-playlist --embed-su
   - 下载yt-dlp.exe: https://github.com/yt-dlp/yt-dlp/releases
   - 用yt-dlp替换Axiom的youtube-dl
 
+## 下载telegram视频
+> 下载：https://github.com/iyear/tdl
+
+1. 安装telegram桌面版并登录
+2. .\tdl.exe login -n quickstart
+3. 复制telegram消息链接
+4. .\tdl.exe -n quickstart dl --proxy socks5://127.0.0.1:7890 -u URL
+
 ## Github Desktop配置代理
 配置文件在`C:\users\<username>\.gitconfig`
 ```
