@@ -54,6 +54,7 @@ excerpt: useful git repository (研究篇)
 - [GhidraEmu - 模拟执行](https://github.com/Nalen98/GhidraEmu)
 - [gpt-wpre - 使用gpt3分析二级制文件](https://github.com/moyix/gpt-wpre)
 - [ghidralligator - 基于ghidra进行模拟执行和fuzz](https://github.com/airbus-cyber/ghidralligator/tree/master)
+- [Cartographer - 覆盖度插件](https://github.com/nccgroup/Cartographer)
 
 ### GDB扩展
 
@@ -207,6 +208,7 @@ excerpt: useful git repository (研究篇)
 - [hyperdbg - win下基于虚拟化辅助的用户、内核态调试工具](https://github.com/HyperDbg/HyperDbg)
 - [ropium - 通过语义查找rop](https://github.com/Boyan-MILANOV/ropium)
 - [btrace - 针对java的dtrace工具](https://github.com/btraceio/btrace)
+- [安卓绕过root检测和ssl pinning](https://github.com/nicktplay/frida-for-android)
 
 ### 其他
 

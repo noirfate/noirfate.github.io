@@ -94,9 +94,17 @@ do { yt-dlp --proxy 127.0.0.1:1081 --socket-timeout 10 --yes-playlist --embed-su
 > 下载：https://github.com/iyear/tdl
 
 1. 安装telegram桌面版并登录
-2. .\tdl.exe login -n quickstart
+2. .\tdl.exe login -n qs
 3. 复制telegram消息链接
-4. .\tdl.exe -n quickstart dl --proxy socks5://127.0.0.1:7890 -u URL
+4. .\tdl.exe -n qs dl --proxy socks5://127.0.0.1:7890 -u URL
+
+## 下载视频网站视频
+> 老版带界面：https://github.com/nilaoda/N_m3u8DL-CLI/releases/download/3.0.2/N_m3u8DL-CLI_v3.0.2_with_ffmpeg_and_SimpleG.zip
+> 新版无界面：https://github.com/nilaoda/N_m3u8DL-RE
+> 其他：https://github.com/caorushizi/m3u8-downloader
+
+1. 找到视频的m3u8地址，对于腾讯视频、爱奇艺等网站需要写js提取m3u8
+2. 运行`N_m3u8DL-CLI-SimpleG.exe`，填入m3u8地址，点击`Go`下载即可
 
 ## Github Desktop配置代理
 配置文件在`C:\users\<username>\.gitconfig`

@@ -300,7 +300,7 @@ excerpt: ATT&CK Matrix 中英文对照表
 
 | ID | 名称 | 描述 | Ref |
 | :-- | :-- | :-- | :-- |
-| T1548 | 滥用提限机制（Abuse Elevation Control Mechanism）| 攻击者通过滥用系统提供的权限控制机制来进行提取 | [链接](https://attack.mitre.org/techniques/T1548) |
+| T1548 | 滥用提权机制（Abuse Elevation Control Mechanism）| 攻击者通过滥用系统提供的权限控制机制来进行提取 | [链接](https://attack.mitre.org/techniques/T1548) |
 | T1548.001 | Setuid和Setgid（Setuid and Setgid）| 攻击者利用linux和mac系统上的setuid和setgid程序提取 | [链接](https://attack.mitre.org/techniques/T1548/001) |
 | T1548.002 | 绕过UAC（Bypass User Account Control）| 攻击者通过绕过windows的UAC机制提权 | [链接](https://attack.mitre.org/techniques/T1548/002) |
 | T1548.003 | sudo和sudo缓存（Sudo and Sudo Caching）| 攻击者利用sudo缓存或者sudoers配置提权 | [链接](https://attack.mitre.org/techniques/T1548/003) |
@@ -402,7 +402,7 @@ excerpt: ATT&CK Matrix 中英文对照表
 
 | ID | 名称 | 描述 | Ref |
 | :-- | :-- | :-- | :-- |
-| T1548 | 滥用提限机制（Abuse Elevation Control Mechanism）| 攻击者通过滥用系统提供的权限控制机制来进行提取 | [链接](https://attack.mitre.org/techniques/T1548) |
+| T1548 | 滥用提权机制（Abuse Elevation Control Mechanism）| 攻击者通过滥用系统提供的权限控制机制来进行提取 | [链接](https://attack.mitre.org/techniques/T1548) |
 | T1548.001 | Setuid和Setgid（Setuid and Setgid）| 攻击者利用linux和mac系统上的setuid和setgid程序提取 | [链接](https://attack.mitre.org/techniques/T1548/001) |
 | T1548.002 | 绕过UAC（Bypass User Account Control）| 攻击者通过绕过windows的UAC机制提权 | [链接](https://attack.mitre.org/techniques/T1548/002) |
 | T1548.003 | sudo和sudo缓存（Sudo and Sudo Caching）| 攻击者利用sudo缓存或者sudoers配置提权 | [链接](https://attack.mitre.org/techniques/T1548/003) |

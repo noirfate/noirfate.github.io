@@ -42,6 +42,7 @@ excerpt: useful git repository (攻防篇)
 - [scan4all - 集成vscan、nuclei的自动化扫描工具](https://github.com/hktalent/scan4all)
 - [wordpress nuclei模板](https://github.com/topscoder/nuclei-wordfence-cve)
 - [nuclei-plus - java实现的nuclei图形化界面](https://github.com/Yong-An-Dang/nuclei-plus)
+- [Scanner-and-Patcher - web漏洞扫描与修复工具](https://github.com/Malwareman007/Scanner-and-Patcher)
 
 ### 本地扫描工具
 
@@ -272,6 +273,7 @@ excerpt: useful git repository (攻防篇)
 - [databasetools - 数据库利用工具](https://github.com/Hel10-Web/Databasetools)
 - [drawio威胁建模图库](https://github.com/michenriksen/drawio-threatmodeling) [文章](https://michenriksen.com/blog/drawio-for-threat-modeling/)
 - [python代码混淆](https://github.com/billythegoat356/Hyperion)
+- [安全攻防工具合集](https://github.com/guchangan1/All-Defense-Tool)
 
 ## POC
 
