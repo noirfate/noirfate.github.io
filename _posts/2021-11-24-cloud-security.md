@@ -255,6 +255,8 @@ excerpt: Cloud Security
 - [rbac-tool - rbac分析可视化工具](https://github.com/alcideio/rbac-tool)
 - [RedCloud-OS - AWS,Azure,GCP渗透虚机](https://github.com/RedTeamOperations/RedCloud-OS)
 - [Azure JWT token工具](https://github.com/rvrsh3ll/TokenTactics)
+- [云原生靶场](https://github.com/iknowjason/Awesome-CloudSec-Labs)
+- [vArmor - 字节开源的云原生加固组件](https://github.com/bytedance/vArmor)
 
 ## CVE
 

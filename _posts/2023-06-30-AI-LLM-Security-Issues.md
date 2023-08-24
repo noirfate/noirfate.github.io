@@ -357,6 +357,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 通过向模板注入指令数据，让LLM执行非预期的行为
 
 - [Indirect Prompt Injections Lab](https://colab.research.google.com/drive/1qGznuvmUj7dSQwS9A9L-M91jXwws-p7k) [视频](https://www.youtube.com/watch?v=AQNV5U48Pho) [博客](https://embracethered.com/blog/)
+- [jailbreak prompt](https://www.jailbreakchat.com/)
 
 #### 提示泄露
 通过向模板注入指令数据，泄露模板本身的内容
@@ -365,6 +366,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 ![](/assets/img/ai_sec13.png)
 
 ## 攻击方法
+> https://github.com/corca-ai/awesome-llm-security
+
 - 直接输入不当内容
 - 构造场景诱导AI回答不正当的内容
 - 利用忽略上述指令

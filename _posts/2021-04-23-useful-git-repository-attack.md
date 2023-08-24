@@ -79,6 +79,8 @@ excerpt: useful git repository (攻防篇)
 - [google_socks - 利用google drive作为C2](https://github.com/lukebaggett/google_socks)
 - [sshimpanzee - ssh反弹shell](https://github.com/lexfo/sshimpanzee)
 - [GCR-Google-Calendar-RAT - 利用google日历做远控通信](https://github.com/MrSaighnal/GCR-Google-Calendar-RAT)
+- [reverse_ssh - 基于ssh的远控](https://github.com/NHAS/reverse_ssh)
+- [Sukoshi - 利用MQTT协议作C2](https://github.com/shogunlab/Sukoshi)
 
 ### 渗透工具/框架
 
@@ -135,6 +137,7 @@ excerpt: useful git repository (攻防篇)
 - [Nidhogg - win rootkit](https://github.com/Idov31/Nidhogg)
 - [BlackLotus - win UEFI bootkit](https://github.com/ldpreload/BlackLotus/tree/main)
 - [自动生成指定binary的无文件执行脚本](https://github.com/nnsee/fileless-elf-exec) [参考PyLoose](https://www.wiz.io/blog/pyloose-first-python-based-fileless-attack-on-cloud-workloads)
+- [Forensia - win痕迹清除](https://github.com/PaulNorman01/Forensia)
 
 ### OSINT(开源情报)工具
 

@@ -41,6 +41,9 @@ excerpt: useful git repository (工具篇)
 - [LLM微调](https://github.com/beyondguo/LLM-Tuning)
 - [SadTalker - 制作数字人](https://github.com/OpenTalker/SadTalker)
 - [中文Llama2大模型](https://github.com/FlagAlpha/Llama2-Chinese)
+- [一分钟构建大模型UI](https://github.com/Chainlit/chainlit)
+- [FastChat - 集成多种大模型](https://github.com/lm-sys/FastChat)
+- [机器学习模型工具汇总](https://github.com/tensorchord/Awesome-LLMOps)
 
 ## 开发工具
 
@@ -87,6 +90,7 @@ excerpt: useful git repository (工具篇)
 - [文档转换神器](https://github.com/jgm/pandoc)
 - [curl-impersonate - curl模拟chrome、firefox、edge浏览器](https://github.com/lwthiker/curl-impersonate)
 - [outline - 文档协作知识库](https://github.com/outline/outline)
+- [makeself - 自提取执行包](https://github.com/megastep/makeself)
 
 ## 静态工具
 

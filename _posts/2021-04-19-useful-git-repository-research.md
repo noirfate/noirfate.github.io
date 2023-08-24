@@ -209,6 +209,7 @@ excerpt: useful git repository (研究篇)
 - [ropium - 通过语义查找rop](https://github.com/Boyan-MILANOV/ropium)
 - [btrace - 针对java的dtrace工具](https://github.com/btraceio/btrace)
 - [安卓绕过root检测和ssl pinning](https://github.com/nicktplay/frida-for-android)
+- [rop_rocket - win rop工具](https://github.com/Bw3ll/ROP_ROCKET)
 
 ### 其他
 
