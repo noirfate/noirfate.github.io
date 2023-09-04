@@ -138,6 +138,7 @@ excerpt: useful git repository (攻防篇)
 - [BlackLotus - win UEFI bootkit](https://github.com/ldpreload/BlackLotus/tree/main)
 - [自动生成指定binary的无文件执行脚本](https://github.com/nnsee/fileless-elf-exec) [参考PyLoose](https://www.wiz.io/blog/pyloose-first-python-based-fileless-attack-on-cloud-workloads)
 - [Forensia - win痕迹清除](https://github.com/PaulNorman01/Forensia)
+- [PythonMemoryModule - 内存加载/运行DLL或EXE](https://github.com/naksyn/PythonMemoryModule)
 
 ### OSINT(开源情报)工具
 
@@ -277,6 +278,7 @@ excerpt: useful git repository (攻防篇)
 - [drawio威胁建模图库](https://github.com/michenriksen/drawio-threatmodeling) [文章](https://michenriksen.com/blog/drawio-for-threat-modeling/)
 - [python代码混淆](https://github.com/billythegoat356/Hyperion)
 - [安全攻防工具合集](https://github.com/guchangan1/All-Defense-Tool)
+- [TTPForge - ttp模拟工具](https://github.com/facebookincubator/TTPForge)
 
 ## POC
 
