@@ -68,6 +68,11 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 *Fig. 6. 微软发布的[DevOps攻防矩阵](https://www.microsoft.com/en-us/security/blog/2023/04/06/devops-threat-matrix/)*
 {:.image-caption}
 
+![](/assets/img/ms_storage_matrix.png)
+{: style="width: 100%;" class="center"}
+*Fig. 6. 微软发布的[云存储安全矩阵](https://microsoft.github.io/Threat-matrix-for-storage-services/)*
+{:.image-caption}
+
 [红蓝对抗](https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/pf/ms/ds-red-team-operations.pdf)也是最近很火的一个概念，被很多企业采用。现在的企业基本上都认识到**漏洞是不可避免的，没有攻不破的系统**，那如何提升和检验企业目前的安全性呢？红蓝对抗就是一个很好的方式，红队行动(攻击方)在传统渗透测试的基础上更加注重模拟真实的攻击，比如使用一些隐藏手段等等，以此来检验蓝军的监测和防守能力，不仅仅是单纯的发现和利用漏洞。同样的，对企业而言，单纯利用红蓝对抗来修补漏洞并不能真正提高企业的防御能力，真正需要提升的是防守团队监测与阻断攻击的能力以及企业的安全架构。关于红蓝对抗的更多信息，可以参考[红队的进化](https://devco.re/conf/2019/slides/devcore-conf-2019-shaolin-DEVCORE%20%E7%B4%85%E9%9A%8A%E7%9A%84%E9%80%B2%E5%8C%96%EF%BC%8C%E8%88%87%E4%B8%8B%E4%B8%80%E6%AD%A5.pdf)和[红队成熟度评估矩阵](https://www.redteams.fyi/)
 
 **Kill Chain and TTPs**
@@ -153,7 +158,9 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 	* 若云厂商把自己内部使用的IP地址设置为公网IP，则存在暴露风险，如租户设置SNAT网关，如果网关节点路由配置不当，则会把租户访问的公网IP路由到内部节点
 * 多网卡
   * 服务在提供资源给用户使用时，通常会给虚机分配两张网卡，一张挂在用户的VPC中供用户访问，另一张用作服务管理，用户可通过设置VPC路由的方式，把访问另一张网卡所在网段的路由设置为挂在用户VPC上的网卡，则可访问到只监听在另一张网卡上的服务
-	
+* 钓鱼
+  * 如果云服务分配给租户的域名为主站域名或其子域名，或者租户控制了某个主站域名或其子域名，则可利用一键登录（SSO）链接进行钓鱼，当用户点击时会携带着自身凭证跳转到攻击者控制的主站域名或其子域名
+
 ## 执行 (Execution)
 
 * 云API

@@ -279,6 +279,7 @@ excerpt: useful git repository (攻防篇)
 - [python代码混淆](https://github.com/billythegoat356/Hyperion)
 - [安全攻防工具合集](https://github.com/guchangan1/All-Defense-Tool)
 - [TTPForge - ttp模拟工具](https://github.com/facebookincubator/TTPForge)
+- [520apkhook - 重新打包app并植入后门](https://github.com/ba0gu0/520apkhook)
 
 ## POC
 

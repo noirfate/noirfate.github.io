@@ -358,6 +358,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 
 - [Indirect Prompt Injections Lab](https://colab.research.google.com/drive/1qGznuvmUj7dSQwS9A9L-M91jXwws-p7k) [视频](https://www.youtube.com/watch?v=AQNV5U48Pho) [博客](https://embracethered.com/blog/)
 - [jailbreak prompt](https://www.jailbreakchat.com/)
+- [promptmap - 利用大模型构造提示注入并验证](https://github.com/utkusen/promptmap)
 
 #### 提示泄露
 通过向模板注入指令数据，泄露模板本身的内容

@@ -685,7 +685,7 @@ excerpt: ATT&CK Matrix 中英文对照表
 | T1518 | 软件发现（Software Discovery）| 攻击者收集当前环境中安装的软件列表和版本信息 | [链接](https://attack.mitre.org/techniques/T1518) |
 | T1518.001 | 安全软件发现（Security Software Discovery）| 攻击者收集当前环境中的安全配置和安装的安全软件信息 | [链接](https://attack.mitre.org/techniques/T1518/001) |
 | T1082 | 系统信息发现（System Information Discovery）| 攻击者收集系统的详细信息，如版本、补丁等信息 | [链接](https://attack.mitre.org/techniques/T1082) |
-| T1614 | 系统地址位置发现（System Location Discovery）| 攻击者找出受害者主机的地理位置信息 | [链接](https://attack.mitre.org/techniques/T1614) |
+| T1614 | 系统地理位置发现（System Location Discovery）| 攻击者找出受害者主机的地理位置信息 | [链接](https://attack.mitre.org/techniques/T1614) |
 | T1614.001 | 系统语言发现（System Language Discovery）| 攻击者找出当前系统所使用的语言信息 | [链接](https://attack.mitre.org/techniques/T1614/001) |
 | T1016 | 系统网络配置发现（System Network Configuration Discovery）| 攻击者找出当前系统的网络配置信息（如ip、arp、route等）| [链接](https://attack.mitre.org/techniques/T1016) |
 | T1016.001 | 网络连通性发现（Internet Connection Discovery）| 攻击者通过ping、traceroute等命令检查当前环境的网络连通性 | [链接](https://attack.mitre.org/techniques/T1016/001) |

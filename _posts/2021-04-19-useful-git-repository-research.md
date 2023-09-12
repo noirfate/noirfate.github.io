@@ -125,6 +125,7 @@ excerpt: useful git repository (研究篇)
 - [medusa](https://github.com/Ch0pin/medusa)
 - [vmlinux-to-elf - 把vmlinux转换成elf文件用于分析](https://github.com/marin-m/vmlinux-to-elf) [使用](https://github.com/batteryshark/writeups/wiki/Go-to-Shell---Reverse-Engineering-Kernel-Modifications-with-QEMU-gdb)
 - [pefile - PE文件分析工具](https://github.com/erocarrera/pefile)
+- [pyinstxtractor - 提取pyinstaller编译后的二进制中的pyc文件](https://github.com/extremecoders-re/pyinstxtractor)
 
 ### binary改写
 
