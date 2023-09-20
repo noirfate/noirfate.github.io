@@ -359,6 +359,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [Indirect Prompt Injections Lab](https://colab.research.google.com/drive/1qGznuvmUj7dSQwS9A9L-M91jXwws-p7k) [视频](https://www.youtube.com/watch?v=AQNV5U48Pho) [博客](https://embracethered.com/blog/)
 - [jailbreak prompt](https://www.jailbreakchat.com/)
 - [promptmap - 利用大模型构造提示注入并验证](https://github.com/utkusen/promptmap)
+- [提示注入破解游戏](https://doublespeak.chat/#/) [其他](https://gandalf.lakera.ai/)
+- [CipherChat - 利用加解密绕过模型安全防护](https://github.com/RobustNLP/CipherChat)
 
 #### 提示泄露
 通过向模板注入指令数据，泄露模板本身的内容
@@ -384,7 +386,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 
 - **在模型级别**，理解你将使用的模型以及模型开发者可能已经采取的微调步骤是非常重要的，这些步骤可以使模型更符合其预期的用途，并降低可能产生有害用途和结果的风险。例如，对于GPT-4，模型开发者已经能够使用强化学习方法作为一种负责任的AI工具，以更好地使模型符合设计者的预期目标。
 
-- **在安全系统级别**，你应该了解已经实施的平台级缓解措施，例如[Azure OpenAI的内容过滤器](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/content-filter)，它们有助于阻止有害内容的输出。
+- **在安全系统级别**，你应该了解已经实施的平台级缓解措施，例如[Azure OpenAI的内容过滤器](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/content-filter)、[rebuff](https://github.com/protectai/rebuff)，它们有助于阻止有害内容的输出。
 
 - **在应用级别**，应用开发者可以实施元提示和以用户为中心的设计和用户体验缓解措施。元提示是提供给模型的指令，用于指导其行为；使用元提示在引导系统按照你的期望行为方面可以产生关键的差异。以用户为中心的设计和用户体验（UX）干预也是防止滥用和过度依赖AI的关键缓解工具。
 

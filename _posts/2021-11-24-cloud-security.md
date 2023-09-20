@@ -208,6 +208,8 @@ excerpt: Cloud Security
 - [SCARLETEEL: Operation leveraging Terraform, Kubernetes, and AWS for data theft](https://sysdig.com/blog/cloud-breach-terraform-data-theft/)
 - [GCP cloudbuild纵向提权](https://rhinosecuritylabs.com/gcp/iam-privilege-escalation-gcp-cloudbuild/) [另一种方法](https://orca.security/resources/blog/bad-build-google-cloud-build-potential-supply-chain-attack-vulnerability/)
 - [利用Azure泄露的私钥伪造认证token](https://www.wiz.io/blog/storm-0558-compromised-microsoft-key-enables-authentication-of-countless-micr)
+- [Azure HDinsight XSS漏洞](https://orca.security/resources/blog/cross-site-scripting-vulnerabilities-in-apache-services-azure-hd-insight/)
+- [微软员工使用SAS Token分享Azure Storage中的数据，由于token权限过大导致泄露了38T隐私数据](https://www.wiz.io/blog/38-terabytes-of-private-data-accidentally-exposed-by-microsoft-ai-researchers)
 
 ## 云原生工具
 

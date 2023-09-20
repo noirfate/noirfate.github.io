@@ -47,6 +47,8 @@ excerpt: useful git repository (工具篇)
 - [codellama - 代码补全大模型](https://github.com/facebookresearch/codellama)
 - [refact - 代码补全大模型](https://github.com/smallcloudai/refact)
 - [LangGPT - 结构化题词](https://github.com/yzfly/LangGPT/)
+- [MetaGPT - 体验当老板的快乐](https://github.com/geekan/MetaGPT)
+- [AutoGPT - 基于思维链的自动化执行LLM](https://github.com/Significant-Gravitas/Auto-GPT)
 
 ## 开发工具
 
@@ -111,6 +113,7 @@ excerpt: useful git repository (工具篇)
 - [sacd-ripper - sacd提取工具](https://github.com/sacd-ripper/sacd-ripper)
 - [openshot - 跨平台视频编辑工具](https://github.com/OpenShot/openshot-qt)
 - [Infinite-Storage-Glitch - 把任意文件转换为视频](https://github.com/DvorakDwarf/Infinite-Storage-Glitch)
+- [DXcam - python实现的windows截屏录屏工具](https://github.com/ra1nty/DXcam)
 
 ## 下载工具
 
@@ -171,3 +174,4 @@ excerpt: useful git repository (工具篇)
 - [英文外刊电子书](https://github.com/hehonghui/awesome-english-ebooks)
 - [大麦网自动购票](https://github.com/ClassmateLin/dm-ticket)
 - [PyMuPDF - pdf处理库](https://github.com/pymupdf/PyMuPDF) [使用](https://www.kingname.info/2023/09/03/extract-table-from-pdf/)
+- [cenocipher - 加解密、隐写工具](https://gitlab.com/cenocipher/cenocipher)

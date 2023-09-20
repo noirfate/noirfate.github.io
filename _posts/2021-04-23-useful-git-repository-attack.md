@@ -113,6 +113,7 @@ excerpt: useful git repository (攻防篇)
 - [shennina - 利用AI进行自动化渗透](https://github.com/mazen160/shennina)
 - [PentestGPT - 利用chatgpt指导渗透](https://github.com/GreyDGL/PentestGPT/)
 - [承影 - 一款安全工具箱,集成了目录扫描、JWT、Swagger 测试、编/解码、轻量级 BurpSuite、杀软辅助功能](https://github.com/yhy0/ChYing)
+- [Periscope - C2平台](https://github.com/malcomvetter/Periscope)
 
 ### 持久化工具
 
@@ -192,7 +193,7 @@ excerpt: useful git repository (攻防篇)
 - [APT样本](https://github.com/vxunderground/MalwareSourceCode) [样本1](https://github.com/cyber-research/APTMalware) [样本2](https://bazaar.abuse.ch/browse)
 - [APT组织开源列表](https://docs.google.com/spreadsheets/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/edit#gid=1864660085)
 - [微软APT响应报告](https://www.microsoft.com/en-us/security/blog/author/microsoft-security-threat-intelligence/)
-- [利用AI提取报告中的TTP](https://github.com/Qihoo360/Luwak)
+- [利用AI提取报告中的TTP](https://github.com/Qihoo360/Luwak) [文章](https://blog.nsfocus.net/chatgptattck/) [tram](https://github.com/center-for-threat-informed-defense/tram/) [rcATT](https://github.com/vlegoy/rcATT) [MitreMap](https://github.com/Azure/Azure-Sentinel-Notebooks/tree/master/mitremap-notebook)
 
 ### 云原生渗透工具
 
@@ -298,6 +299,7 @@ excerpt: useful git repository (攻防篇)
 - [Win提权POC合集](https://github.com/ycdxsb/WindowsPrivilegeEscalation)
 - [年度TOP30合集](https://github.com/hktalent/TOP)
 - [google研究POC](https://github.com/google/security-research)
+- [TOP50 RCE漏洞](https://redteamrecipe.com/top-50-vulnerabilities-rce/)
 
 ### win
 

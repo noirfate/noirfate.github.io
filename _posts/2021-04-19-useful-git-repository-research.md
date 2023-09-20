@@ -437,6 +437,8 @@ excerpt: useful git repository (研究篇)
 - [snapchange - snapshot fuzzer](https://github.com/awslabs/snapchange)
 - [gramfuzz - 根据定义的语法生成数据](https://github.com/d0c-s4vage/gramfuzz)
 - [fas - 安卓系统服务fuzzer](https://github.com/iromise/fans)
+- [漏洞挖掘论文集](https://github.com/0xricksanchez/paper_collection)
+- [pbtk - protobuf逆向解析和fuzz工具](https://github.com/marin-m/pbtk)
 
 ## static analysis
 
