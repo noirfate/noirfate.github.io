@@ -534,6 +534,7 @@ excerpt: useful git repository (攻防篇)
 - [OpenArk - win反rootkit工具](https://github.com/BlackINT3/OpenArk)
 - [Elkeid - 字节跳动开源的主机防护软件](https://github.com/bytedance/Elkeid)
 - [使用命令行发现可疑程序](https://sandflysecurity.com/linux-compromise-detection-presentation.pdf)
+- [ebpf for windows](https://github.com/microsoft/ebpf-for-windows)
 
 ### 软件防护
 

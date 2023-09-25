@@ -49,6 +49,7 @@ excerpt: useful git repository (工具篇)
 - [LangGPT - 结构化题词](https://github.com/yzfly/LangGPT/)
 - [MetaGPT - 体验当老板的快乐](https://github.com/geekan/MetaGPT)
 - [AutoGPT - 基于思维链的自动化执行LLM](https://github.com/Significant-Gravitas/Auto-GPT)
+- [windows上docker desktop和wsl2支持gpu](https://medium.com/htc-research-engineering-blog/nvidia-docker-on-wsl2-f891dfe34ab)
 
 ## 开发工具
 

@@ -330,6 +330,7 @@ excerpt: useful git repository (研究篇)
 - [SystemSan - 检测命令注入漏洞](https://github.com/google/oss-fuzz/tree/master/infra/experimental/SystemSan) [介绍](https://security.googleblog.com/2022/09/fuzzing-beyond-memory-corruption.html)
 - [SyzScope - 评估bug危害](https://github.com/plummm/SyzScope)
 - [EMS - 利用历史变异策略优化fuzz](https://github.com/puppet-meteor/EMS) [论文](https://nesa.zju.edu.cn/download/lcy_pdf_ems_ndss22.pdf)
+- [afl-fuzz利用NFS并行fuzz](https://joshua.hu/fuzzing-multiple-servers-parallel-aflplusplus-nfs)
 
 ### Syzkaller系
 
