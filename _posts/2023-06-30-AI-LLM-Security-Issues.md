@@ -378,6 +378,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - 对AI进行反向诱导
 - 对不当内容打码，让AI根据情景进行界面
 - [以毒攻毒](https://github.com/traghav/auto-redteam/tree/main)
+- [GPTFuzz](https://github.com/sherdencooper/GPTFuzz)
 
 ## 防护方法
 > https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview

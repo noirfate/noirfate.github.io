@@ -98,6 +98,8 @@ excerpt: useful git repository (工具篇)
 - [outline - 文档协作知识库](https://github.com/outline/outline)
 - [makeself - 自提取执行包](https://github.com/megastep/makeself)
 - [支持单端口多协议代理工具](https://github.com/qwj/python-proxy) [go实现](https://github.com/ginuerzh/gost/)
+- [flameshow - 在终端上显示火焰图](https://github.com/laixintao/flameshow)
+- [tiny-rdm - redis管理UI](https://github.com/tiny-craft/tiny-rdm)
 
 ## 静态工具
 
