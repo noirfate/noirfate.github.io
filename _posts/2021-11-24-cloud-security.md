@@ -260,6 +260,7 @@ excerpt: Cloud Security
 - [云原生靶场](https://github.com/iknowjason/Awesome-CloudSec-Labs)
 - [vArmor - 字节开源的云原生加固组件](https://github.com/bytedance/vArmor)
 - [libkrun - 为oci runtime提供微虚机隔离支持](https://github.com/containers/libkrun)
+- [KubeHound - k8s集群攻击路径图](https://github.com/DataDog/KubeHound) [介绍](https://securitylabs.datadoghq.com/articles/kubehound-identify-kubernetes-attack-paths/)
 
 ## CVE
 

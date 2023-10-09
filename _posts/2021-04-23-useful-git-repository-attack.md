@@ -377,6 +377,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-34918 - netfilter类型混淆提权漏洞](https://github.com/trhacknon/CVE-2022-34918-LPE-PoC) [USMA利用方法](https://tttang.com/archive/1706/) [USMA利用代码](https://github.com/veritas501/CVE-2022-34918/tree/master/poc_fs_context_cred_common/src)
 - [CVE-2023-0386 - overlayfs setuid file copy bug](https://github.com/xkaneiki/CVE-2023-0386)
 - [CVE-2023-32233 - Netfilter nf_tables batch requests uaf](https://github.com/Liuk3r/CVE-2023-32233)
+- [CVE-2023-4911 - ld.so Looney Tunables本地提权漏洞](https://github.com/leesh3288/CVE-2023-4911/tree/main) [文章](https://www.qualys.com/2023/10/03/cve-2023-4911/looney-tunables-local-privilege-escalation-glibc-ld-so.txt)
 
 ### container
 
@@ -454,6 +455,7 @@ excerpt: useful git repository (攻防篇)
 - [svg利用方法汇总](https://github.com/allanlw/svg-cheatsheet)
 - [CVE-2023-21608 - Adobe Reader UaF RCE](https://github.com/hacksysteam/CVE-2023-21608)
 - [CVE-2022-44268 - ImageMagick任意文件读](https://github.com/agathanon/cve-2022-44268)
+- [sudo logrotate本地提权](https://joshua.hu/gaining-root-with-logrotate-sudo-ubuntu)
 
 ## 研究资料
 
@@ -511,6 +513,7 @@ excerpt: useful git repository (攻防篇)
 - [API安全](https://github.com/arainho/awesome-api-security)
 - [blackhat asia 2023](https://github.com/Mr-xn/BLACKHAT_Asia2023)
 - [内存马研究资料](https://github.com/Getshell/Mshell)
+- [NSA和CISA发布的网络安全错误配置Top10](https://media.defense.gov/2023/Oct/05/2003314578/-1/-1/0/JOINT_CSA_TOP_TEN_MISCONFIGURATIONS_TLP-CLEAR.PDF)
 
 ## 防护
 
