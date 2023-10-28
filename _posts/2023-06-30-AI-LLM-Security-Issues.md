@@ -14,6 +14,8 @@ excerpt: AI大模型安全研究
 # AI大模型安全研究
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
+> https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/blob/main/index.md
+> https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/index.md
 
 ### LLM01:2023 - 提示注入
 
@@ -357,7 +359,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 通过向模板注入指令数据，让LLM执行非预期的行为
 
 - [Indirect Prompt Injections Lab](https://colab.research.google.com/drive/1qGznuvmUj7dSQwS9A9L-M91jXwws-p7k) [视频](https://www.youtube.com/watch?v=AQNV5U48Pho) [博客](https://embracethered.com/blog/)
-- [jailbreak prompt](https://www.jailbreakchat.com/)
+- [jailbreak prompt](https://www.jailbreakchat.com/) [reddit channel](https://www.reddit.com/r/GPT_jailbreaks/)
 - [promptmap - 利用大模型构造提示注入并验证](https://github.com/utkusen/promptmap)
 - [提示注入破解游戏](https://doublespeak.chat/#/) [其他](https://gandalf.lakera.ai/)
 - [CipherChat - 利用加解密绕过模型安全防护](https://github.com/RobustNLP/CipherChat)

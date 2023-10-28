@@ -261,6 +261,7 @@ excerpt: Cloud Security
 - [vArmor - 字节开源的云原生加固组件](https://github.com/bytedance/vArmor)
 - [libkrun - 为oci runtime提供微虚机隔离支持](https://github.com/containers/libkrun)
 - [KubeHound - k8s集群攻击路径图](https://github.com/DataDog/KubeHound) [介绍](https://securitylabs.datadoghq.com/articles/kubehound-identify-kubernetes-attack-paths/)
+- [DockerRegistryGrabber - 列出docker registry中的镜像](https://github.com/Syzik/DockerRegistryGrabber)
 
 ## CVE
 
@@ -305,6 +306,8 @@ excerpt: Cloud Security
 - [CVE-2022-21701: istio gateway提权不完全分析之模板覆盖](http://noahblog.360.cn/abuse-gateway-api-attack-kubernetes/) [yaml多行注释](https://yaml-multiline.info/)
 - [CVE-2022-23648: containerd cri plugin容器镜像路径穿越漏洞](https://bugs.chromium.org/p/project-zero/issues/detail?id=2244)
 - [CVE-2022-39253: 利用git漏洞实现docker build读取宿主机任意文件](https://github.com/noirfate/docker-cve-2022-39253-poc)
+- [CVE-2022-4886: k8s ingress-nginx-controller pec.rules.http.paths.path RCE](https://hackerone.com/reports/1620702)
+- [CVE-2023-5044: k8s nginx.ingress.kubernetes.io/permanent-redirect RCE](https://hackerone.com/reports/2039464)
 
 # QEMU/HyperV/VMWare
 

@@ -56,7 +56,7 @@ excerpt: useful git repository (攻防篇)
 - [docker-bech-security - docker安全配置检查，类似CIS Docker Benchmark](https://github.com/docker/docker-bench-security)
 - [openssh-seseeion-key-recovery - openssh会话密钥恢复](https://github.com/fox-it/OpenSSH-Session-Key-Recovery)
 - [al-khaser - 使用各种病毒技术测试杀毒软件的检测能力](https://github.com/LordNoteworthy/al-khaser)
-- [pspy - 本地提权辅助工具](https://github.com/DominicBreuker/pspy)
+- [pspy - 仅用非root权限监控linux进程创建](https://github.com/DominicBreuker/pspy)
 - [slither - 智能合约代码安全扫描工具](https://github.com/crytic/slither)
 - [snyk - 开源组件漏洞扫描工具](https://github.com/snyk/snyk)
 - [floss - 恶意软件字符串提取](https://github.com/mandiant/flare-floss)
@@ -64,6 +64,7 @@ excerpt: useful git repository (攻防篇)
 - [osv供应链漏洞扫描工具](https://github.com/google/osv-scanner)
 - [sudo_killer - sudo漏洞扫描](https://github.com/TH3xACE/SUDO_KILLER)
 - [敏感信息正则库 - 支持trufflehog和gitleaks](https://github.com/mazen160/secrets-patterns-db) [使用](https://mazinahmed.net/blog/secrets-patterns-db/)
+- [SharpWeb - 导出浏览器密码cookie](https://github.com/StarfireLab/SharpWeb)
 
 ### 远控工具
 
@@ -114,6 +115,7 @@ excerpt: useful git repository (攻防篇)
 - [PentestGPT - 利用chatgpt指导渗透](https://github.com/GreyDGL/PentestGPT/)
 - [承影 - 一款安全工具箱,集成了目录扫描、JWT、Swagger 测试、编/解码、轻量级 BurpSuite、杀软辅助功能](https://github.com/yhy0/ChYing)
 - [Periscope - C2平台](https://github.com/malcomvetter/Periscope)
+- [curlshell - 利用curl反弹shell](https://github.com/SkyperTHC/curlshell)
 
 ### 持久化工具
 
@@ -184,6 +186,7 @@ excerpt: useful git repository (攻防篇)
 - [数据泄露分析报告](https://github.com/BushidoUK/Breach-Report-Collection)
 - [uncover-turbo - 利用chatgpt生成fofa等网络空间测绘的查询语句](https://github.com/zt2/uncover-turbo)
 - [cisa公布的已知被利用漏洞列表](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+- [centos软件补丁](https://gitlab.com/redhat/centos-stream/rpms)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -281,6 +284,7 @@ excerpt: useful git repository (攻防篇)
 - [安全攻防工具合集](https://github.com/guchangan1/All-Defense-Tool)
 - [TTPForge - ttp模拟工具](https://github.com/facebookincubator/TTPForge)
 - [520apkhook - 重新打包app并植入后门](https://github.com/ba0gu0/520apkhook)
+- [pwntools - ctf利用工具箱](https://github.com/Gallopsled/pwntools) [教程](https://github.com/Gallopsled/pwntools-tutorial)
 
 ## POC
 

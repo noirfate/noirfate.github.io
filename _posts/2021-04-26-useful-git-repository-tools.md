@@ -50,6 +50,9 @@ excerpt: useful git repository (工具篇)
 - [MetaGPT - 体验当老板的快乐](https://github.com/geekan/MetaGPT)
 - [AutoGPT - 基于思维链的自动化执行LLM](https://github.com/Significant-Gravitas/Auto-GPT)
 - [windows上docker desktop和wsl2支持gpu](https://medium.com/htc-research-engineering-blog/nvidia-docker-on-wsl2-f891dfe34ab)
+- [chatgpt科普](https://github.com/datawhalechina/hugging-llm)
+- [XAgent - 利用大模型的智能体](https://github.com/OpenBMB/XAgent/tree/main)
+- [Umi-OCR - OCR工具](https://github.com/hiroi-sora/Umi-OCR)
 
 ## 开发工具
 
@@ -100,6 +103,7 @@ excerpt: useful git repository (工具篇)
 - [支持单端口多协议代理工具](https://github.com/qwj/python-proxy) [go实现](https://github.com/ginuerzh/gost/)
 - [flameshow - 在终端上显示火焰图](https://github.com/laixintao/flameshow)
 - [tiny-rdm - redis管理UI](https://github.com/tiny-craft/tiny-rdm)
+- [wails - 使用go快速创建图形应用](https://github.com/wailsapp/wails)
 
 ## 静态工具
 
@@ -178,3 +182,4 @@ excerpt: useful git repository (工具篇)
 - [大麦网自动购票](https://github.com/ClassmateLin/dm-ticket)
 - [PyMuPDF - pdf处理库](https://github.com/pymupdf/PyMuPDF) [使用](https://www.kingname.info/2023/09/03/extract-table-from-pdf/)
 - [cenocipher - 加解密、隐写工具](https://gitlab.com/cenocipher/cenocipher)
+- [win&office激活工具](https://github.com/massgravel/Microsoft-Activation-Scripts)
