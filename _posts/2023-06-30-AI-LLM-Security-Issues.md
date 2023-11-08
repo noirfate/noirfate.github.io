@@ -17,6 +17,9 @@ excerpt: AI大模型安全研究
 > https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/blob/main/index.md
 > https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/index.md
 
+![](/assets/img/llm10.png)
+![](/assets/img/aisecthreatscountermeasures.png)
+
 ### LLM01:2023 - 提示注入
 
 **描述：**<br>
@@ -332,46 +335,30 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 不安全的公开部署的例子可能包括直接在未加保护的推理服务器上部署模型或直接可下载，也可能是推理API或Web服务存在漏洞，未打补丁且不是最新的，以及在推理服务器上为服务账户设置过多的权限
 
 ## 威胁类型
+> https://llmsecurity.net/
+
 ### 内容安全
 模型输出有害内容（参见以上内容）
 
-### 信息泄露
+### 提示注入
+通过直接或间接的方式注入指令，让LLM执行非预期的行为
 
 - [利用提示注入泄露会话信息](https://infosecwriteups.com/hacking-chat-gpt-and-infecting-a-conversation-history-6e6a2c9ec52c)
-- [利用redis-py漏洞泄露其他用户的会话缓存](https://openai.com/blog/march-20-chatgpt-outage)
-
-### 系统安全
-对平台运行环境造成实际危害，如命令执行、SSRF、越权访问等
-
-#### 平台安全
 - [让autogpt访问恶意网页后自动执行其中的代码](https://positive.security/blog/auto-gpt-rce)
-
-#### 插件安全
-用户可能使用插件去访问网页等外部资源，如果访问到恶意资源，则可能被攻击者利用
-
 - [利用webpilot和chatwithcode插件修改私有代码仓](https://embracethered.com/blog/posts/2023/chatgpt-plugin-vulns-chat-with-code/)
 - [利用恶意网页和webpilot窃取用户数据](https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./)
-
-### 应用安全
-很多应用可能把用户输入嵌入到自己预置的提示模板中发送给LLM模型，用户可以通过提供恶意输入让LLM执行其他的命令，或者泄露提示模板
-
-#### 提示注入
-通过向模板注入指令数据，让LLM执行非预期的行为
-
+- [Compromising LLMs using Indirect Prompt Injection](https://github.com/greshake/llm-security) [demo](https://greshake.github.io/)
 - [Indirect Prompt Injections Lab](https://colab.research.google.com/drive/1qGznuvmUj7dSQwS9A9L-M91jXwws-p7k) [视频](https://www.youtube.com/watch?v=AQNV5U48Pho) [博客](https://embracethered.com/blog/)
 - [jailbreak prompt](https://www.jailbreakchat.com/) [reddit channel](https://www.reddit.com/r/GPT_jailbreaks/)
-- [promptmap - 利用大模型构造提示注入并验证](https://github.com/utkusen/promptmap)
 - [提示注入破解游戏](https://doublespeak.chat/#/) [其他](https://gandalf.lakera.ai/)
-- [CipherChat - 利用加解密绕过模型安全防护](https://github.com/RobustNLP/CipherChat)
 
-#### 提示泄露
-通过向模板注入指令数据，泄露模板本身的内容
+### 供应链安全
 
-- 光点红提示泄露
-![](/assets/img/ai_sec13.png)
+- [利用redis-py漏洞泄露其他用户的会话缓存](https://openai.com/blog/march-20-chatgpt-outage)
 
 ## 攻击方法
 > https://github.com/corca-ai/awesome-llm-security
+> https://www.microsoft.com/en-us/msrc/aibugbar
 
 - 直接输入不当内容
 - 构造场景诱导AI回答不正当的内容
@@ -381,6 +368,9 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - 对不当内容打码，让AI根据情景进行界面
 - [以毒攻毒](https://github.com/traghav/auto-redteam/tree/main)
 - [GPTFuzz](https://github.com/sherdencooper/GPTFuzz)
+- [CipherChat - 利用加解密绕过模型安全防护](https://github.com/RobustNLP/CipherChat)
+- [promptmap - 利用大模型构造提示注入并验证](https://github.com/utkusen/promptmap)
+- [MasterKey - 自动化越狱攻击](https://arxiv.org/pdf/2307.08715.pdf) [website](https://sites.google.com/view/ndss-masterkey/masterkey)
 
 ## 防护方法
 > https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview

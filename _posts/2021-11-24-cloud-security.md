@@ -89,6 +89,7 @@ excerpt: Cloud Security
 - [kubctl top15安全插件](https://malware.news/t/top-15-kubectl-plugins-for-security-engineers/66452)
 - [GCP cloud storage威胁建模](https://research.nccgroup.com/2023/01/31/threat-modelling-cloud-platform-services-by-example-google-cloud-storage/)
 - [k8s源码分析](https://github.com/rfyiamcool/notes)
+- [k8s安全博客](https://raesene.github.io/)
 
 ## 云原生攻击
 
@@ -223,7 +224,7 @@ excerpt: Cloud Security
 - [kubernetes-goat - k8s靶场](https://github.com/madhuakula/kubernetes-goat)
 - [kubeletctl](https://github.com/cyberark/kubeletctl)
 - [解密k8s etcd存储](https://github.com/jpbetz/auger)
-- [whaler - 从docker镜像推导出dockerfile](https://github.com/P3GLEG/Whaler)
+- [whaler - 从docker镜像推导出dockerfile](https://github.com/P3GLEG/Whaler) [dfimage](https://github.com/LanikSJ/dfimage)
 - [runlike - 从运行的容器反推出启动命令](https://github.com/lavie/runlike)
 - [dive - docker镜像分析工具](https://github.com/wagoodman/dive) [docker镜像分析](https://theartofmachinery.com/2021/03/18/reverse_engineering_a_docker_image.html)
 - [krew - kubectl插件管理工具](https://github.com/kubernetes-sigs/krew/)
@@ -262,6 +263,9 @@ excerpt: Cloud Security
 - [libkrun - 为oci runtime提供微虚机隔离支持](https://github.com/containers/libkrun)
 - [KubeHound - k8s集群攻击路径图](https://github.com/DataDog/KubeHound) [介绍](https://securitylabs.datadoghq.com/articles/kubehound-identify-kubernetes-attack-paths/)
 - [DockerRegistryGrabber - 列出docker registry中的镜像](https://github.com/Syzik/DockerRegistryGrabber)
+- [MTKPI - k8s渗透镜像](https://github.com/r0binak/MTKPI)
+- [kubetcd - 通过修改etcd中的记录实施攻击](https://github.com/nccgroup/kubetcd) [文章](https://research.nccgroup.com/2023/11/07/post-exploiting-a-compromised-etcd-full-control-over-the-cluster-and-its-nodes/)
+- [auger - 解码etcd中的存储数据](https://github.com/jpbetz/auger)
 
 ## CVE
 

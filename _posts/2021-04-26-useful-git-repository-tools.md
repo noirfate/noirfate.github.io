@@ -53,6 +53,7 @@ excerpt: useful git repository (工具篇)
 - [chatgpt科普](https://github.com/datawhalechina/hugging-llm)
 - [XAgent - 利用大模型的智能体](https://github.com/OpenBMB/XAgent/tree/main)
 - [Umi-OCR - OCR工具](https://github.com/hiroi-sora/Umi-OCR)
+- [LaTex-OCR - 公式OCR](https://github.com/lukas-blecher/LaTeX-OCR)
 
 ## 开发工具
 
@@ -104,6 +105,7 @@ excerpt: useful git repository (工具篇)
 - [flameshow - 在终端上显示火焰图](https://github.com/laixintao/flameshow)
 - [tiny-rdm - redis管理UI](https://github.com/tiny-craft/tiny-rdm)
 - [wails - 使用go快速创建图形应用](https://github.com/wailsapp/wails)
+- [cosmopolitan - 把c程序编译为多平台可执行程序](https://github.com/jart/cosmopolitan)
 
 ## 静态工具
 
