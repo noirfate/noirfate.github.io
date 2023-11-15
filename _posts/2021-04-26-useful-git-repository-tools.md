@@ -54,6 +54,8 @@ excerpt: useful git repository (工具篇)
 - [XAgent - 利用大模型的智能体](https://github.com/OpenBMB/XAgent/tree/main)
 - [Umi-OCR - OCR工具](https://github.com/hiroi-sora/Umi-OCR)
 - [LaTex-OCR - 公式OCR](https://github.com/lukas-blecher/LaTeX-OCR)
+- [ProAgent - LLM智能工作流](https://github.com/OpenBMB/ProAgent/tree/main)
+- [网络安全GPTs](https://github.com/fr0gger/Awesome-GPT-Agents)
 
 ## 开发工具
 
@@ -185,3 +187,4 @@ excerpt: useful git repository (工具篇)
 - [PyMuPDF - pdf处理库](https://github.com/pymupdf/PyMuPDF) [使用](https://www.kingname.info/2023/09/03/extract-table-from-pdf/)
 - [cenocipher - 加解密、隐写工具](https://gitlab.com/cenocipher/cenocipher)
 - [win&office激活工具](https://github.com/massgravel/Microsoft-Activation-Scripts)
+- [ssr配置规则](https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever/)

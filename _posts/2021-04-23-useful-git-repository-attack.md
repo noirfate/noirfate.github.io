@@ -187,6 +187,7 @@ excerpt: useful git repository (攻防篇)
 - [uncover-turbo - 利用chatgpt生成fofa等网络空间测绘的查询语句](https://github.com/zt2/uncover-turbo)
 - [cisa公布的已知被利用漏洞列表](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 - [centos软件补丁](https://gitlab.com/redhat/centos-stream/rpms)
+- [网络安全GPTs](https://github.com/fr0gger/Awesome-GPT-Agents)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -197,6 +198,7 @@ excerpt: useful git repository (攻防篇)
 - [APT组织开源列表](https://docs.google.com/spreadsheets/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/edit#gid=1864660085)
 - [微软APT响应报告](https://www.microsoft.com/en-us/security/blog/author/microsoft-security-threat-intelligence/)
 - [利用AI提取报告中的TTP](https://github.com/Qihoo360/Luwak) [文章](https://blog.nsfocus.net/chatgptattck/) [tram](https://github.com/center-for-threat-informed-defense/tram/) [rcATT](https://github.com/vlegoy/rcATT) [MitreMap](https://github.com/Azure/Azure-Sentinel-Notebooks/tree/master/mitremap-notebook)
+- [checkpoint发布的每周威胁报告](https://research.checkpoint.com/intelligence-reports/)
 
 ### 云原生渗透工具
 
