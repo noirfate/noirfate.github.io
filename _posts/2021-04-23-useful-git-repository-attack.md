@@ -116,6 +116,7 @@ excerpt: useful git repository (攻防篇)
 - [承影 - 一款安全工具箱,集成了目录扫描、JWT、Swagger 测试、编/解码、轻量级 BurpSuite、杀软辅助功能](https://github.com/yhy0/ChYing)
 - [Periscope - C2平台](https://github.com/malcomvetter/Periscope)
 - [curlshell - 利用curl反弹shell](https://github.com/SkyperTHC/curlshell)
+- [cspm-gpt - 云上智能安全分析工具](https://github.com/samvas-codes/cspm-gpt/tree/main)
 
 ### 持久化工具
 
@@ -188,6 +189,7 @@ excerpt: useful git repository (攻防篇)
 - [cisa公布的已知被利用漏洞列表](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 - [centos软件补丁](https://gitlab.com/redhat/centos-stream/rpms)
 - [网络安全GPTs](https://github.com/fr0gger/Awesome-GPT-Agents)
+- [网络安全类公众号](https://github.com/DropsOfZut/awesome-security-weixin-official-accounts)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -462,6 +464,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2023-21608 - Adobe Reader UaF RCE](https://github.com/hacksysteam/CVE-2023-21608)
 - [CVE-2022-44268 - ImageMagick任意文件读](https://github.com/agathanon/cve-2022-44268)
 - [sudo logrotate本地提权](https://joshua.hu/gaining-root-with-logrotate-sudo-ubuntu)
+- [CVE-2023-4357 - chrome任意文件读XXE](https://github.com/xcanwin/CVE-2023-4357-Chrome-XXE)
 
 ## 研究资料
 
@@ -553,6 +556,7 @@ excerpt: useful git repository (攻防篇)
 - [linux内核加固地图](https://github.com/a13xp0p0v/linux-kernel-defence-map)
 - [nsjail - linux进程隔离工具](https://github.com/google/nsjail)
 - [chestnut - linux进程动态sandbox工具](https://github.com/chestnut-sandbox/Chestnut)
+- [支持多种语言的源码漏洞扫描工具](https://github.com/oxsecurity/codetotal)
 
 ### 集群防护
 

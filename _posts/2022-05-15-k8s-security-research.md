@@ -15,6 +15,15 @@ excerpt: Kubernetes Security Research
 > [安全公告](https://groups.google.com/g/kubernetes-security-announce)<br>
 > [NSA K8s加固指南](https://github.com/rootsongjc/kubernetes-hardening-guidance/blob/main/kubernetes-hardening-guidance-english.md)
 
+## 相关文章
+- [浅析CSI工作原理](https://mp.weixin.qq.com/s?__biz=MzIzNTU1MjIxMQ==&amp;mid=2247484129&amp;idx=1&amp;sn=6f907b541443198d6fc151c8b7347071&amp;chksm=e8e42e5ddf93a74bfa2d683f1bf259c406c0d01af76bf4df56179515a499a365b605781b2809&amp;scene=21#wechat_redirect)
+- [浅析Service工作原理](https://mp.weixin.qq.com/s?__biz=MzIzNTU1MjIxMQ==&mid=2247483761&idx=1&sn=8cb726e9297e992f1a733fa6652d880d&chksm=e8e42dcddf93a4db051138f95a10ba14f86c38252511fe7d0556de25d5eb0e30bbd5b1288ff5&scene=178&cur_album_id=1501047994182352897#rd)
+- [如何构建 Kubernetes CRD Controller](https://mp.weixin.qq.com/s?__biz=MzIzNTU1MjIxMQ==&mid=2247483858&idx=1&sn=e1f23c18af2008fc8d11f1aa3b5fa260&chksm=e8e42d6edf93a478acdeab1e78c227e376a97e9b973b9db86c939493ce76d978b8db87cc72c0&scene=178&cur_album_id=1501047994182352897#rd)
+- [Kubernetes Controller Manager 工作原理](https://mp.weixin.qq.com/s?__biz=MzIzNTU1MjIxMQ==&mid=2247483902&idx=1&sn=b19cfedd5b799d23045f4d6c23059370&chksm=e8e42d42df93a454a80a92146f5272f63e88e86b82eb6c9bcb6541337a45333fcbf07562b465&scene=178&cur_album_id=1501047994182352897#rd)
+- [图解 Deployment Controller 工作流程](https://mp.weixin.qq.com/s?__biz=MzIzNTU1MjIxMQ==&mid=2247483908&idx=1&sn=aff9250baa8fdec44f784e6971660445&chksm=e8e42eb8df93a7ae80d36decb52e2a4a50215ecb4d2cb0071368a35f49b228ba3621e43742fc&scene=178&cur_album_id=1501047994182352897#rd)
+- [Kubelet 创建 pod 工作流程](https://mp.weixin.qq.com/s?__biz=MzIzNTU1MjIxMQ==&mid=2247483954&idx=1&sn=9a04dae6bca5dc77db0e526e16d57870&chksm=e8e42e8edf93a798b3c0b5d8859ce3a7e1e5de8a9169d8f7ed8ed33d9724483d135c39ff29df&scene=178&cur_album_id=1501047994182352897#rd)
+- [Kubelet 对 Pod 的服务质量管理](https://mp.weixin.qq.com/s?__biz=MzIzNTU1MjIxMQ==&mid=2247483966&idx=1&sn=05a86f770a584ca70b249ede12ee16ce&chksm=e8e42e82df93a7944698f7d16f2c58d077baa9be7333d1ce5cb1c0167cb9518d9b631a98cc4f&scene=178&cur_album_id=1501047994182352897#rd)
+
 ## 基础架构
 > 以1.24.3为准
 

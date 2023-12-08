@@ -266,6 +266,8 @@ excerpt: Cloud Security
 - [MTKPI - k8s渗透镜像](https://github.com/r0binak/MTKPI)
 - [kubetcd - 通过修改etcd中的记录实施攻击](https://github.com/nccgroup/kubetcd) [文章](https://research.nccgroup.com/2023/11/07/post-exploiting-a-compromised-etcd-full-control-over-the-cluster-and-its-nodes/)
 - [auger - 解码etcd中的存储数据](https://github.com/jpbetz/auger)
+- [kubefuzz - 通过对资源yaml变异来验证admission controller](https://github.com/avolens/kubefuzz/tree/master)
+- [ADOKit - Azure DevOps渗透工具](https://github.com/rvrsh3ll/ADOKit)
 
 ## CVE
 
