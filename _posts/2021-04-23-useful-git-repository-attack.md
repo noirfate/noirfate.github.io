@@ -190,6 +190,7 @@ excerpt: useful git repository (攻防篇)
 - [centos软件补丁](https://gitlab.com/redhat/centos-stream/rpms)
 - [网络安全GPTs](https://github.com/fr0gger/Awesome-GPT-Agents)
 - [网络安全类公众号](https://github.com/DropsOfZut/awesome-security-weixin-official-accounts)
+- [在pypi仓库中搜索aws凭证](https://github.com/pypi-data/pypi-aws-secrets/) [文章](https://tomforb.es/blog/aws-keys-on-pypi/)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -289,6 +290,8 @@ excerpt: useful git repository (攻防篇)
 - [TTPForge - ttp模拟工具](https://github.com/facebookincubator/TTPForge)
 - [520apkhook - 重新打包app并植入后门](https://github.com/ba0gu0/520apkhook)
 - [pwntools - ctf利用工具箱](https://github.com/Gallopsled/pwntools) [教程](https://github.com/Gallopsled/pwntools-tutorial)
+- [pmdump - dump linux进程堆内存](https://github.com/friendlyJLee/pmdump/)
+- [TransferAttack - 对抗样本迁移学习攻击](https://github.com/Trustworthy-AI-Group/TransferAttack)
 
 ## POC
 

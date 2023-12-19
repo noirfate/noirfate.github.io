@@ -250,11 +250,12 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
 * API网关
   * 如果发现SSRF漏洞，但无法出网，可借助API网关作为跳板，大部分内部服务器都可以访问云上自建的API网关，创建一个API网关把后端指向自己的server即可让内网服务器访问到自己在外网的server
 
-## 防御逃逸 (Defense Evasion)
+## 防御绕过 (Defense Evasion)
 
 * HTTP请求
   * 利用`User-Agent`绕过ACL或监控
   * 利用`Host`绕过ACL或监控
+  * 利用`X-Forward-For`绕过ACL
 * 云服务
   * 利用云服务资源绕过ACL或监控，如API网关、Serverless服务等
   * 利用云上暴露的API代理（一些云服务为了方便会在租户可访问的区域搭建通向内部API的代理）绕过ACL或监控
@@ -262,3 +263,5 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   * 利用vpn、vpc endpoint等网络隧道服务伪造源IP绕过ACL
 * 域前置
 	* 可把攻击者的恶意服务器藏在WAF或CDN之后
+* TOA
+  * 在使用ELB、WAF、CDN等代理时，后端无法获取真实的客户端IP，通常会使用`TCP Option Address`字段来存储客户端的真实IP和端口，后端可以从TCP报文中将其取出。由于Linux内核不支持TOA，故需要安装内核模块来hook系统调用更改socket中的源地址，上层并无感知。客户端可以自行设置TOA来伪造任意IP地址，如果前端代理没有覆盖TOA设置，那么就会使后端得到伪造的源IP，绕过一些基于IP的防护措施
