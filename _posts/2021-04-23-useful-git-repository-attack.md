@@ -117,6 +117,7 @@ excerpt: useful git repository (攻防篇)
 - [Periscope - C2平台](https://github.com/malcomvetter/Periscope)
 - [curlshell - 利用curl反弹shell](https://github.com/SkyperTHC/curlshell)
 - [cspm-gpt - 云上智能安全分析工具](https://github.com/samvas-codes/cspm-gpt/tree/main)
+- [sliver - redteam framework](https://github.com/BishopFox/sliver)
 
 ### 持久化工具
 

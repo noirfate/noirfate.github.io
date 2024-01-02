@@ -15,6 +15,11 @@ excerpt: AI大模型安全研究
 
 ## LLM相关资料
 - [LLMSurvey](https://github.com/RUCAIBox/LLMSurvey)
+- [大模型能力评估SuperCLUE](https://github.com/CLUEbenchmark/SuperCLUE)
+- [大模型能力评估PromptBench](https://github.com/microsoft/promptbench)
+- [阿里云大模型攻防实践](https://xz.aliyun.com/t/13189)
+- [总结Prompt&LLM论文，开源数据&模型，AIGC应用](https://github.com/DSXiangLi/DecryptPrompt)
+- [PKU BeaverTails 大模型安全对齐数据集](https://github.com/PKU-Alignment/beavertails)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -357,6 +362,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [jailbreak prompt](https://www.jailbreakchat.com/) [reddit channel](https://www.reddit.com/r/GPT_jailbreaks/)
 - [提示注入破解游戏](https://doublespeak.chat/#/) [其他](https://gandalf.lakera.ai/)
 - [GPTs提示泄露](https://github.com/LouisShark/chatgpt_system_prompt) [其他](https://github.com/linexjlin/GPTs)
+- [利用GPT4的API击败安全防护](https://arxiv.org/pdf/2312.14302.pdf) [数据集](https://github.com/AlignmentResearch/gpt-4-novel-apis-attacks/)
+- [在野越狱prompt研究评估](https://jailbreak-llms.xinyueshen.me/) [data](https://github.com/verazuo/jailbreak_llms/tree/main)
 
 ### 供应链安全
 
