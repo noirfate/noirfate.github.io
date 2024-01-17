@@ -211,6 +211,8 @@ excerpt: Cloud Security
 - [利用Azure泄露的私钥伪造认证token](https://www.wiz.io/blog/storm-0558-compromised-microsoft-key-enables-authentication-of-countless-micr)
 - [Azure HDinsight XSS漏洞](https://orca.security/resources/blog/cross-site-scripting-vulnerabilities-in-apache-services-azure-hd-insight/)
 - [微软员工使用SAS Token分享Azure Storage中的数据，由于token权限过大导致泄露了38T隐私数据](https://www.wiz.io/blog/38-terabytes-of-private-data-accidentally-exposed-by-microsoft-ai-researchers)
+- [GKE默认安装的日志服务fluentbit挂载了主机路径，可获取其他Pod的token进而提权](https://unit42.paloaltonetworks.com/google-kubernetes-engine-privilege-escalation-fluentbit-anthos/)
+- [Google OAuth2 multilogin token无限续期](https://www.cloudsek.com/blog/compromising-google-accounts-malwares-exploiting-undocumented-oauth2-functionality-for-session-hijacking)
 
 ## 云原生工具
 

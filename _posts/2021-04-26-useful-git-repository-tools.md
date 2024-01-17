@@ -109,6 +109,8 @@ excerpt: useful git repository (工具篇)
 - [tiny-rdm - redis管理UI](https://github.com/tiny-craft/tiny-rdm)
 - [wails - 使用go快速创建图形应用](https://github.com/wailsapp/wails)
 - [cosmopolitan - 把c程序编译为多平台可执行程序](https://github.com/jart/cosmopolitan)
+- [markmap - 把markdown转化成脑图](https://markmap.js.org/repl)
+- [jumpserver - 好用的开源堡垒机](https://github.com/jumpserver/jumpserver)
 
 ## 静态工具
 
@@ -190,3 +192,4 @@ excerpt: useful git repository (工具篇)
 - [win&office激活工具](https://github.com/massgravel/Microsoft-Activation-Scripts)
 - [ssr配置规则](https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever/)
 - [Nvidia Docker on WSL2](https://medium.com/htc-research-engineering-blog/nvidia-docker-on-wsl2-f891dfe34ab)
+- [把图像转换成ascii表示](https://github.com/TheZoraiz/ascii-image-converter)

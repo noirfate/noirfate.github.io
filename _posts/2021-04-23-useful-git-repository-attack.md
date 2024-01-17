@@ -82,6 +82,7 @@ excerpt: useful git repository (攻防篇)
 - [GCR-Google-Calendar-RAT - 利用google日历做远控通信](https://github.com/MrSaighnal/GCR-Google-Calendar-RAT)
 - [reverse_ssh - 基于ssh的远控](https://github.com/NHAS/reverse_ssh)
 - [Sukoshi - 利用MQTT协议作C2](https://github.com/shogunlab/Sukoshi)
+- [PingRAT - ICMP远控](https://github.com/umutcamliyurt/PingRAT)
 
 ### 渗透工具/框架
 
@@ -118,6 +119,7 @@ excerpt: useful git repository (攻防篇)
 - [curlshell - 利用curl反弹shell](https://github.com/SkyperTHC/curlshell)
 - [cspm-gpt - 云上智能安全分析工具](https://github.com/samvas-codes/cspm-gpt/tree/main)
 - [sliver - redteam framework](https://github.com/BishopFox/sliver)
+- [hackingBuddyGPT - 渗透LLM](https://github.com/ipa-lab/hackingBuddyGPT/) [paper](https://arxiv.org/pdf/2310.11409.pdf)
 
 ### 持久化工具
 
@@ -144,6 +146,7 @@ excerpt: useful git repository (攻防篇)
 - [自动生成指定binary的无文件执行脚本](https://github.com/nnsee/fileless-elf-exec) [参考PyLoose](https://www.wiz.io/blog/pyloose-first-python-based-fileless-attack-on-cloud-workloads)
 - [Forensia - win痕迹清除](https://github.com/PaulNorman01/Forensia)
 - [PythonMemoryModule - 内存加载/运行DLL或EXE](https://github.com/naksyn/PythonMemoryModule)
+- [nysm - 隐藏ebpf,sockets,pid等](https://github.com/eeriedusk/nysm)
 
 ### OSINT(开源情报)工具
 
@@ -527,6 +530,7 @@ excerpt: useful git repository (攻防篇)
 - [blackhat asia 2023](https://github.com/Mr-xn/BLACKHAT_Asia2023)
 - [内存马研究资料](https://github.com/Getshell/Mshell)
 - [NSA和CISA发布的网络安全错误配置Top10](https://media.defense.gov/2023/Oct/05/2003314578/-1/-1/0/JOINT_CSA_TOP_TEN_MISCONFIGURATIONS_TLP-CLEAR.PDF)
+- [Fuzz论文](https://github.com/wcventure/FuzzingPaper)
 
 ## 防护
 

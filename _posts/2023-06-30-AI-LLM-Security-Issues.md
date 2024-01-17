@@ -13,13 +13,22 @@ excerpt: AI大模型安全研究
 
 # AI大模型安全研究
 
-## LLM相关资料
+## 相关资料
 - [LLMSurvey](https://github.com/RUCAIBox/LLMSurvey)
 - [大模型能力评估SuperCLUE](https://github.com/CLUEbenchmark/SuperCLUE)
 - [大模型能力评估PromptBench](https://github.com/microsoft/promptbench)
+- [大模型能力评估lm-evaluation-harness](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) [code](https://github.com/EleutherAI/lm-evaluation-harness)
 - [阿里云大模型攻防实践](https://xz.aliyun.com/t/13189)
 - [总结Prompt&LLM论文，开源数据&模型，AIGC应用](https://github.com/DSXiangLi/DecryptPrompt)
 - [PKU BeaverTails 大模型安全对齐数据集](https://github.com/PKU-Alignment/beavertails)
+- [LLM学习资料](https://github.com/mlabonne/llm-course)
+- [ArXiv Papers on LLM Alignment, Safety, Security](https://unispac.github.io/arxiv-llm-alignment-safety-security/)
+- [LLM提示技术](https://www.promptingguide.ai/)
+- [LLM安全论文](https://llmsecurity.net/)
+- [LLM应用STRIDE威胁分析](https://aivillage.org/large%20language%20models/threat-modeling-llm/)
+- [LLM攻防综述](https://arxiv.org/ftp/arxiv/papers/2312/2312.10982.pdf)
+- [LLM漏洞综述](https://arxiv.org/pdf/2310.10844.pdf)
+- [利用大模型评估大模型能力](https://github.com/GAIR-NLP/auto-j) [paper](https://arxiv.org/pdf/2310.05470.pdf)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -344,13 +353,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 不安全的公开部署的例子可能包括直接在未加保护的推理服务器上部署模型或直接可下载，也可能是推理API或Web服务存在漏洞，未打补丁且不是最新的，以及在推理服务器上为服务账户设置过多的权限
 
 ## 威胁类型
-> https://llmsecurity.net/
-> https://aivillage.org/large%20language%20models/threat-modeling-llm/
 
-### 内容安全
-模型输出有害内容（参见以上内容）
-
-### 提示注入
+### 劫持
 通过直接或间接的方式注入指令，让LLM执行非预期的行为
 
 - [利用提示注入泄露会话信息](https://infosecwriteups.com/hacking-chat-gpt-and-infecting-a-conversation-history-6e6a2c9ec52c)
@@ -359,21 +363,13 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [利用恶意网页和webpilot窃取用户数据](https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./)
 - [Compromising LLMs using Indirect Prompt Injection](https://github.com/greshake/llm-security) [demo](https://greshake.github.io/)
 - [Indirect Prompt Injections Lab](https://colab.research.google.com/drive/1qGznuvmUj7dSQwS9A9L-M91jXwws-p7k) [视频](https://www.youtube.com/watch?v=AQNV5U48Pho) [博客](https://embracethered.com/blog/)
-- [jailbreak prompt](https://www.jailbreakchat.com/) [reddit channel](https://www.reddit.com/r/GPT_jailbreaks/)
 - [提示注入破解游戏](https://doublespeak.chat/#/) [其他](https://gandalf.lakera.ai/)
 - [GPTs提示泄露](https://github.com/LouisShark/chatgpt_system_prompt) [其他](https://github.com/linexjlin/GPTs)
-- [利用GPT4的API击败安全防护](https://arxiv.org/pdf/2312.14302.pdf) [数据集](https://github.com/AlignmentResearch/gpt-4-novel-apis-attacks/)
-- [在野越狱prompt研究评估](https://jailbreak-llms.xinyueshen.me/) [data](https://github.com/verazuo/jailbreak_llms/tree/main)
+- [HouYi - 自动化提示注入攻击框架](https://github.com/LLMSecurity/HouYi/) [paper](https://arxiv.org/pdf/2306.05499.pdf)
+- [GPT的system prompt](https://github.com/spdustin/ChatGPT-AutoExpert/blob/main/System%20Prompts.md)
 
-### 供应链安全
-
-- [利用redis-py漏洞泄露其他用户的会话缓存](https://openai.com/blog/march-20-chatgpt-outage)
-- [模型安全扫描modelscan](https://github.com/protectai/modelscan)
-- [大模型prompt攻击扫描](https://github.com/leondz/garak/tree/main)
-
-## 攻击方法
-> https://github.com/corca-ai/awesome-llm-security
-> https://www.microsoft.com/en-us/msrc/aibugbar
+### 越狱
+绕过LLM的防护措施，产生恶意内容
 
 - 直接输入不当内容
 - 构造场景诱导AI回答不正当的内容
@@ -381,11 +377,36 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - 让AI扮演一个角色
 - 对AI进行反向诱导
 - 对不当内容打码，让AI根据情景进行界面
+- [jailbreak prompt](https://www.jailbreakchat.com/) [reddit channel](https://www.reddit.com/r/GPT_jailbreaks/)
 - [以毒攻毒](https://github.com/traghav/auto-redteam/tree/main)
 - [GPTFuzz](https://github.com/sherdencooper/GPTFuzz)
 - [CipherChat - 利用加解密绕过模型安全防护](https://github.com/RobustNLP/CipherChat)
 - [promptmap - 利用大模型构造提示注入并验证](https://github.com/utkusen/promptmap)
 - [MasterKey - 自动化越狱攻击](https://arxiv.org/pdf/2307.08715.pdf) [website](https://sites.google.com/view/ndss-masterkey/masterkey)
+- [RedInstruct - 基于COU话语链的攻击](https://github.com/declare-lab/red-instruct/)
+- [AdvPrompt - 针对LLM的通用对抗样本攻击](https://arxiv.org/pdf/2307.15043.pdf) [code](https://github.com/llm-attacks/llm-attacks)
+- [AutoDAN - 利用遗传算法自动生成新的越狱提示](https://arxiv.org/pdf/2310.04451.pdf) [code](https://github.com/SheltonLiu-N/AutoDAN/)
+- [latent-jailbreak - 潜在越狱鲁棒性评估](https://github.com/qiuhuachuan/latent-jailbreak)
+- [利用GPT4的API击败安全防护](https://arxiv.org/pdf/2312.14302.pdf) [数据集](https://github.com/AlignmentResearch/gpt-4-novel-apis-attacks/)
+- [在野越狱prompt研究评估](https://jailbreak-llms.xinyueshen.me/) [data](https://github.com/verazuo/jailbreak_llms/tree/main)
+- [LLM中文对齐评估](https://arxiv.org/pdf/2311.06899.pdf) [数据集](https://github.com/AIFlames/Flames)
+- [FigStep - 越狱文本图像多模态LLM](https://arxiv.org/pdf/2311.05608.pdf) [code](https://github.com/ThuCCSLab/FigStep/)
+- [基于文本变异的黑盒攻击方法](https://arxiv.org/pdf/2311.01873.pdf) [code](https://github.com/Lolya-cloud/adversarial-attacks-on-neural-text-detectors/tree/master)
+- [基于语言学变异的越狱评估](https://arxiv.org/pdf/2311.00286.pdf) [data](https://github.com/whitzard-ai/jade-db)
+- [embedding变异攻击开源大模型](https://arxiv.org/pdf/2310.19737.pdf) [code](https://github.com/SchwinnL/LLM_Embedding_Attack/tree/main)
+- [autodan - 生成可读的越狱对抗样本suffix](https://arxiv.org/pdf/2310.15140.pdf) [code](https://github.com/rotaryhammer/code-autodan)
+- [PromptAttack - 利用LLM生成对抗样本](https://arxiv.org/pdf/2310.13345.pdf) [code](https://github.com/GodXuxilie/PromptAttack)
+- [SAP - 利用大模型生成攻击提示](https://arxiv.org/pdf/2310.12505.pdf) [code](https://github.com/Aatrox103/SAP/tree/main)
+- [PromptInject - 指令劫持攻击框架，使用忽略xxx的技术](https://github.com/agencyenterprise/PromptInject/tree/main)
+- [DAN类越狱提示](https://github.com/0xk1h0/ChatGPT_DAN)
+
+### 代理/组件
+
+- [利用redis-py漏洞泄露其他用户的会话缓存](https://openai.com/blog/march-20-chatgpt-outage)
+
+### 投毒
+
+- [对数据集中失效域名和维基百科进行投毒](https://arxiv.org/pdf/2304.05197.pdf)
 
 ## 防护方法
 > https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
@@ -399,3 +420,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - **在应用级别**，应用开发者可以实施元提示和以用户为中心的设计和用户体验缓解措施。元提示是提供给模型的指令，用于指导其行为；使用元提示在引导系统按照你的期望行为方面可以产生关键的差异。以用户为中心的设计和用户体验（UX）干预也是防止滥用和过度依赖AI的关键缓解工具。
 
 - **在定位级别**，有许多方法可以教育将使用或受到你的系统影响的人们了解其能力和限制。
+
+### 漏洞扫描
+
+- [模型安全扫描modelscan](https://github.com/protectai/modelscan)
+- [大模型prompt攻击扫描](https://github.com/leondz/garak/tree/main)

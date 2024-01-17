@@ -332,6 +332,8 @@ excerpt: useful git repository (研究篇)
 - [SyzScope - 评估bug危害](https://github.com/plummm/SyzScope)
 - [EMS - 利用历史变异策略优化fuzz](https://github.com/puppet-meteor/EMS) [论文](https://nesa.zju.edu.cn/download/lcy_pdf_ems_ndss22.pdf)
 - [afl-fuzz利用NFS并行fuzz](https://joshua.hu/fuzzing-multiple-servers-parallel-aflplusplus-nfs)
+- [CarpetFuzz - 使用NLP技术分析程序文档指导afl对程序参数进行变异](https://github.com/waugustus/CarpetFuzz)
+- [NestFuzz - 输入格式感知的fuzzer](https://github.com/fdu-sec/NestFuzz)
 
 ### Syzkaller系
 
@@ -345,6 +347,7 @@ excerpt: useful git repository (研究篇)
 - [healer - syzkaller改进版，使用syscall之间的影响关系生成call sequences](https://github.com/SunHao-0/healer)
 - [syzkaller样本库，可以提高fuzz效率](https://github.com/cmu-pasta/linux-kernel-enriched-corpus)
 - [KLAUS - 判断内核patch是否能够有效修复漏洞](https://github.com/wupco/KLAUS/tree/main)
+- [SyzDescribe - 自动生成syzkaller需要的syscall描述](https://github.com/seclab-ucr/SyzDescribe)
 
 ### sanitizer
 
@@ -357,6 +360,7 @@ excerpt: useful git repository (研究篇)
 - [vzkernel - 集成asan的3.10内核](https://github.com/OpenVZ/vzkernel)
 - [FuZZan - 比ASAN占用内存更小](https://github.com/HexHive/FuZZan)
 - [struct_sanitizer - 保护结构体中的函数指针不被篡改](https://github.com/YunDingLab/struct_sanitizer)
+- [BoKASAN - 二进制插桩](https://github.com/seclab-yonsei/BoKASAN)
 
 ### 其他
 
@@ -441,6 +445,8 @@ excerpt: useful git repository (研究篇)
 - [fas - 安卓系统服务fuzzer](https://github.com/iromise/fans)
 - [漏洞挖掘论文集](https://github.com/0xricksanchez/paper_collection)
 - [pbtk - protobuf逆向解析和fuzz工具](https://github.com/marin-m/pbtk)
+- [MorFuzz - RISC-V处理器fuzz工具](https://github.com/sycuricon/MorFuzz)
+- [SaGe-Browser-Fuzzer - 自动分析语义生成合法的html进行浏览器fuzz](https://github.com/ChijinZ/SaGe-Browser-Fuzzer)
 
 ## static analysis
 
@@ -475,3 +481,4 @@ excerpt: useful git repository (研究篇)
 - [tabby - java静态代码分析工具](https://github.com/wh1t3p1g/tabby)
 - [mate - 根据c/c++程序代码属性图发现漏洞](https://github.com/GaloisInc/MATE)
 - [grepmarx - 多语言源码静态分析工具](https://github.com/Orange-Cyberdefense/grepmarx)
+- [pycg - python函数调用图](https://github.com/vitsalis/PyCG)
