@@ -57,6 +57,7 @@ excerpt: useful git repository (工具篇)
 - [ProAgent - LLM智能工作流](https://github.com/OpenBMB/ProAgent/tree/main)
 - [网络安全GPTs](https://github.com/fr0gger/Awesome-GPT-Agents)
 - [特征工程指引](https://github.com/dair-ai/Prompt-Engineering-Guide)
+- [DeepSeek-Coder 代码补全](https://github.com/deepseek-ai/DeepSeek-Coder)
 
 ## 开发工具
 

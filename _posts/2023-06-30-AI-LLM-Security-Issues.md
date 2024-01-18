@@ -18,6 +18,7 @@ excerpt: AI大模型安全研究
 - [大模型能力评估SuperCLUE](https://github.com/CLUEbenchmark/SuperCLUE)
 - [大模型能力评估PromptBench](https://github.com/microsoft/promptbench)
 - [大模型能力评估lm-evaluation-harness](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) [code](https://github.com/EleutherAI/lm-evaluation-harness)
+- [大模型能力评估awesome-LLM-benchmarks](https://github.com/wgwang/awesome-LLM-benchmarks)
 - [阿里云大模型攻防实践](https://xz.aliyun.com/t/13189)
 - [总结Prompt&LLM论文，开源数据&模型，AIGC应用](https://github.com/DSXiangLi/DecryptPrompt)
 - [PKU BeaverTails 大模型安全对齐数据集](https://github.com/PKU-Alignment/beavertails)
