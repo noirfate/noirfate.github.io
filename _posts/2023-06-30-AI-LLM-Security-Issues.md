@@ -368,6 +368,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [GPTs提示泄露](https://github.com/LouisShark/chatgpt_system_prompt) [其他](https://github.com/linexjlin/GPTs)
 - [HouYi - 自动化提示注入攻击框架](https://github.com/LLMSecurity/HouYi/) [paper](https://arxiv.org/pdf/2306.05499.pdf)
 - [GPT的system prompt](https://github.com/spdustin/ChatGPT-AutoExpert/blob/main/System%20Prompts.md)
+- [GPTs文件泄露](https://mp.weixin.qq.com/s/Bklnu0RhF8bnK1Irx14S5g)
 
 ### 越狱
 绕过LLM的防护措施，产生恶意内容
@@ -401,9 +402,10 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [PromptInject - 指令劫持攻击框架，使用忽略xxx的技术](https://github.com/agencyenterprise/PromptInject/tree/main)
 - [DAN类越狱提示](https://github.com/0xk1h0/ChatGPT_DAN)
 
-### 代理/组件
+### 供应链
 
 - [利用redis-py漏洞泄露其他用户的会话缓存](https://openai.com/blog/march-20-chatgpt-outage)
+- [利用github selfhost runner污染pytorch](https://johnstawinski.com/2024/01/11/playing-with-fire-how-we-executed-a-critical-supply-chain-attack-on-pytorch/)
 
 ### 投毒
 
