@@ -1770,3 +1770,283 @@ print(json_object)
 ```
 
 生成的代码看起来像是可以工作的代码。然而，输出中缺少一个重要的导入语句，即`import json`。虽然这些模型生成的是可工作的代码，但你必须密切注意这样的小细节，并始终确保测试你的代码。
+
+#### 补全函数或下一行代码
+这些大型语言模型（LLM）也已经被整合到像GitHub Copilot这样的工具中，使它们对开发者很有帮助。一个有用的特性是模型完成函数的能力。
+
+Prompt:
+```python
+# function to multiply two numbers and add 75 to it
+ 
+def multiply(
+```
+
+Output:
+```python
+a, b):
+    result = a * b
+    result += 75
+    return result
+```
+
+#### MySQL查询生成
+除了上面的基本代码生成示例，你还可以使用模型生成可用于编程的其他方面的有用代码，比如创建和测试MySQL查询。
+
+假设你有一个包含一些信息的数据集，你可以将这些信息作为提示的一部分，然后指示它生成特定的查询。例如：
+
+Prompt:
+```
+"""
+Table departments, columns = [DepartmentId, DepartmentName]
+Table students, columns = [DepartmentId, StudentId, StudentName]
+Create a MySQL query for all students in the Computer Science department
+"""
+```
+
+Output:
+```sql
+SELECT students.StudentId, students.StudentName
+FROM students
+INNER JOIN departments
+ON students.DepartmentId = departments.DepartmentId
+WHERE departments.DepartmentName = 'Computer Science';
+```
+
+模型生成了一个查询语句！然而，在这个例子中，我们构造了一个数据库，所以我们没有数据库来测试生成的查询语句。如果你正在测试这个示例，创建这个数据库可能会很有用。幸运的是，你也可以使用ChatGPT为你生成这个数据库。一种方法是使用上面提示的修改版本，并给出略有不同的指令来生成数据库：
+
+Prompt：
+```
+Table departments, columns = [DepartmentId, DepartmentName]
+Table students, columns = [DepartmentId, StudentId, StudentName]
+Create a valid database schema with the above tables and columns
+```
+
+Output:
+```sql
+CREATE TABLE departments (
+  DepartmentId INT PRIMARY KEY,
+  DepartmentName VARCHAR(50)
+);
+CREATE TABLE students (
+  DepartmentId INT,
+  StudentId INT PRIMARY KEY,
+  StudentName VARCHAR(50),
+  FOREIGN KEY (DepartmentId) REFERENCES departments(DepartmentId)
+);
+```
+
+你可以使用诸如[sqliteonline.com](https://sqliteonline.com/)来在线创建一个临时数据库。
+
+你还需要一些虚拟数据来测试最初生成的查询是否有效。让我们也用ChatGPT来做这件事！提示可能看起来像下面这样：
+
+Prompt：
+```
+CREATE TABLE departments (
+  DepartmentId INT PRIMARY KEY,
+  DepartmentName VARCHAR(50)
+);
+CREATE TABLE students (
+  DepartmentId INT,
+  StudentId INT PRIMARY KEY,
+  StudentName VARCHAR(50),
+  FOREIGN KEY (DepartmentId) REFERENCES departments(DepartmentId)
+);
+Given the database schema above, generate valid insert statements include 4 rows for each table.
+```
+
+Output:
+```sql
+INSERT INTO departments (DepartmentId, DepartmentName)
+VALUES (1, 'Computer Science'), (2, 'Mathematics'), (3, 'Physics'), (4, 'Biology');
+INSERT INTO students (DepartmentId, StudentId, StudentName)
+VALUES (1, 101, 'John Doe'), (1, 102, 'Jane Doe'), (2, 201, 'Alice Smith'), (2, 202, 'Bob Johnson');
+```
+
+现在你拥有了数据库和虚拟数据，你可以测试原始的查询语句了。根据虚拟数据，结果应该是两行，包含`Jane Doe`和`John Doe`。
+
+#### 解释代码
+如果你正在学习某种编程语言，提示模型解释某些代码片段可能会很有帮助。让我们重用上面生成的查询，并要求模型解释它。
+
+如果你使用的是之前的系统提示，要小心你指导模型的方式。例如，如果我们使用以下示例，模型会抱怨它是一个Python代码助手，但它仍然提供了解释。有时候模型会拒绝生成你指导的内容，因为它被设计为遵循系统提示。
+
+Prompt:
+```
+SELECT students.StudentId, students.StudentName
+FROM students
+INNER JOIN departments
+ON students.DepartmentId = departments.DepartmentId
+WHERE departments.DepartmentName = 'Computer Science';
+Explain the above SQL statement.
+```
+
+Output:
+```
+Sorry, as a code assistant in Python, I cannot generate SQL code. However, I can explain the purpose of the SQL statement provided. 
+This SQL statement selects the `StudentId` and `StudentName` columns from the `students` table, where the `DepartmentName` column in the `departments` table is equal to 'Computer Science'. To achieve this, the statement performs an inner join on the `DepartmentId` column between the `students` and `departments` tables. 
+In simpler terms, it is selecting the names and IDs of students who are enrolled in the Computer Science department.
+```
+
+### 毕业生工作分类案例研究
+[Clavié et al., 2023](https://arxiv.org/abs/2303.07142)提供了一个关于提示工程在生产系统中应用于中等规模文本分类用例的案例研究。他们使用GPT-3.5（gpt-3.5-turbo）来判断一个工作是否是适合应届毕业生的“入门级工作”，并评估了一系列的提示工程技术。
+
+研究表明，LLM在所有测试的模型中都有最好的表现，包括在DeBERTa-V3中的一个非常强的基线。gpt-3.5-turbo在所有关键指标上也显著优于旧的GPT3版本，但需要额外的输出解析，因为它遵循模板的能力似乎比其他变体要差。
+
+他们的提示工程方法的关键发现是：
+
+- 对于这类不需要专家知识的任务，少数示例CoT提示在所有实验中的表现都不如零示例提示。
+- 提示对引出正确推理的影响是巨大的。
+- 简单地要求模型分类一个给定的工作，结果是F1分数为65.6，而经过提示工程后的模型达到了91.7的F1分数。
+- 试图强迫模型遵循一个模板在所有情况下都会降低性能（这种行为在使用GPT-4的早期测试中消失了，这些测试在论文之后）。
+- 许多小的修改对性能有巨大的影响。
+    - 以下表格显示了测试的所有完整修改。
+    - 适当地给出指令并重复关键点似乎是最大的性能驱动因素。
+    - 像给模型一个（人类）名字并称呼之，这样简单的做法就能使F1分数提高0.6个百分点。
+
+#### 提示修改测试用例
+| Short name | Description |
+| ---- | ---- |
+| Baseline | Provide a a job posting and asking if it is fit for a graduate. |
+| CoT | Give a few examples of accurate classification before querying. |
+| Zero-CoT | Ask the model to reason step-by-step before providing its answer. |
+| rawinst | Give instructions about its role and the task by adding to the user msg. |
+| sysinst | Give instructions about its role and the task as a system msg. |
+| bothinst | Split instructions with role as a system msg and task as a user msg. |
+| mock | Give task instructions by mocking a discussion where it acknowledges them. |
+| reit | Reinforce key elements in the instructions by repeating them. |
+| strict | Ask the model to answer by strictly following a given template. |
+| loose | Ask for just the final answer to be given following a given template. |
+| right | Asking the model to reach the right conclusion. |
+| info | Provide additional information to address common reasoning failures. |
+| name | Give the model a name by which we refer to it in conversation. |
+| pos | Provide the model with positive feedback before querying it. |
+
+#### 测试性能影响
+#### Precision（准确率）
+准确率是指正确预测的正例与预测为正例总数的比率：Precision = TP / (TP + FP)
+##### Recall（召回率）
+召回率是指正确预测的正例与实际正例总数的比率：Recall = TP / (TP + FN)
+##### F1 Score（F1分数）
+F1分数是精确率和召回率的调和平均值，是一个综合考虑了精确率和召回率的指标：F1 = 2 * (Precision * Recall) / (Precision + Recall)
+##### 模板粘性（Template Stickiness）
+指的是模型按照期望格式回答的频率。
+
+| | Precision | Recall | F1 | Template Stickiness |
+| --- | --- | --- | --- | --- |
+| Baseline | 61.2 |	70.6 | 65.6 | 79% |
+| CoT | 72.6 | 85.1 | 78.4 | 87% |
+| Zero-CoT | 75.5 | 88.3 | 81.4 | 65% |
+| +rawinst | 80 | 92.4 | 85.8 | 68% |
+| +sysinst | 77.7 | 90.9 | 83.8 | 69% |
+| +bothinst | 81.9 | 93.9 | 87.5 | 71% |
+| +bothinst+mock | 83.3 | 95.1 | 88.8 | 74% |
+| +bothinst+mock+reit | 83.8 | 95.5 | 89.3 | 75% |
+| +bothinst+mock+reit+strict | 79.9 | 93.7 | 86.3 | 98% |
+| +bothinst+mock+reit+loose | 80.5 | 94.8 | 87.1 | 95% |
+| +bothinst+mock+reit+right | 84 | 95.9 | 89.6 | 77% |
+| +bothinst+mock+reit+right+info | 84.9 | 96.5 | 90.3 | 77% |
+| +bothinst+mock+reit+right+info+name | 85.7 | 96.8 | 90.9 | 79% |
+| +bothinst+mock+reit+right+info+name+pos | 86.9 | 97 | 91.7 | 81% |
+
+### 提示函数
+#### 引言
+当我们把GPT的对话界面和编程语言的shell进行类比时，可以把封装的提示看作是一个函数。这个函数有一个唯一的名称，当我们用输入文本调用这个名称时，它根据设定的内部规则生成结果。简而言之，我们构建了一个具有名称的可复用提示，使得与GPT的交互变得简单。这就像拥有一个方便的工具，让GPT代表我们执行特定的任务——我们只需要给出输入，就能收到想要的输出。
+
+通过将提示封装成函数，你可以创建一系列函数来建立一个工作流。每个函数代表一个特定的步骤或任务，当以特定的顺序组合在一起时，它们可以自动化复杂的过程或更有效地解决问题。这种方法允许与GPT的交互更加结构化和流水线化，最终提升其能力，使其成为完成广泛任务的强大工具。
+
+所以在我们能使用一个函数之前，我们需要让GPT知道它。这里是一个定义函数的提示，我们称这类提示为元提示，它已在GPT3.5上进行测试，并且在GPT4上的表现更佳。
+
+Prompt：
+
+```
+你好，ChatGPT！希望你一切都好。我联系你是为了寻求一个特定功能的帮助。我知道你有处理信息和根据提供的指令执行各种任务的能力。为了帮助你更容易地理解我的请求，我将使用一个模板来描述功能、输入以及如何处理输入的指令。请查看下面的详细信息：
+function_name: [Function Name]
+input: [Input]
+rule: [Instructions on how to process the input]
+我恳请你根据我提供的细节为这个功能提供输出。非常感谢你的帮助。谢谢！
+我将用我希望你执行的功能的相关信息替换括号内的文本。这个详细的介绍应该能帮助你更有效地理解我的请求并提供所需的输出。格式是function_name(input)。如果你理解了，请只回答“好的”。
+```
+
+#### 示例
+##### 英语学习助手
+例如，假设我们想使用GPT来帮助我们学习英语。我们可以通过创建一系列函数来简化这个过程。
+
+我们需要粘贴上面的元提示。
+
+然后我们开始创建函数：
+
+- `trans_word`把中文翻译为英文
+```
+function_name: [trans_word]
+input: ["text"]
+rule: [我希望你充当英语翻译员、拼写校正员和改善者。我将提供给你包含“text”的任何语言的输入形式，你将检测语言，翻译它，并用纠正过的英语回答我的文本。]
+```
+
+- `expand_word`扩展文本
+```
+function_name: [expand_word]
+input: ["text"]
+rule: [请担任聊天机器人、拼写校正员和语言增强者。我将向你提供包含“text”的任何语言的输入形式，并输出原始语言。我希望你保持原意不变，但使它们更具文学性。]
+```
+
+- `fix_english`校正文本
+```
+function_name: [fix_english]
+input: ["text"]
+rule: [请作为英语大师、拼写校正员和语言增强者。我将向你提供包含“text”的输入形式，我希望你用更自然优雅的词汇和句子改善文本。保持原意不变。]
+```
+
+最后我们可以调用这些函数
+```
+trans_word('婆罗摩火山处于享有“千岛之国”美称的印度尼西亚. 多岛之国印尼有4500座之多的火山, 世界著名的十大活火山有三座在这里.')
+fix_english('Finally, you can run the function independently or chain them together.')
+fix_english(expand_word(trans_word('婆罗摩火山处于享有“千岛之国”美称的印度尼西亚. 多岛之国印尼有4500座之多的火山, 世界著名的十大活火山有三座在这里.')))
+```
+
+通过以这种格式表示函数，您可以清楚地看到每个函数的名称、输入以及处理输入的规则。它提供了一种有组织的方式来理解工作流中每个步骤的功能和目的。
+
+Output:
+```
+trans_word('婆罗摩火山处于享有“千岛之国”美称的印度尼西亚. 多岛之国印尼有4500座之多的火山, 世界著名的十大活火山有三座在这里.')
+Translation: Bromo Volcano is located in Indonesia, which is known as the "Country of a Thousand Islands". The archipelagic nation of Indonesia has more than 4,500 volcanoes, and three of the world's famous top ten active volcanoes are located here.
+
+fix_english('Finally, you can run the function independently or chain them together.')
+Correction: Ultimately, you have the option to execute the function independently or to link them sequentially.
+
+fix_english(expand_word(trans_word('婆罗摩火山处于享有“千岛之国”美称的印度尼西亚. 多岛之国印尼有4500座之多的火山, 世界著名的十大活火山有三座在这里.')))
+First, let me translate and then expand the sentence while keeping it in English:
+
+Translation: Bromo Volcano is situated in Indonesia, renowned as the "Country of a Thousand Islands". Indonesia, the country of numerous islands, boasts over 4,500 volcanoes, with three of the world's prominent top ten active volcanoes found there.
+
+Expansion (to enhance literary expression): Nestled within the verdant landscape of Indonesia, celebrated as the "Country of a Thousand Islands", the majestic Bromo Volcano stands. This nation, a mosaic of over 4,500 volcanic crowns, cradles within its embrace three of the globe's most illustrious active volcanoes, jewels in the planet's fiery diadem.
+```
+
+提示：如果您不希望ChatGPT输出过多信息，您可以在定义函数规则后简单地添加一句话。
+```
+如果理解，请只回复“好的”
+```
+
+##### 多参数函数
+让我们创建一个函数，通过接收五个输入参数来生成一个密码，并输出生成的密码。
+
+Prompt:
+```
+function_name: [pg]
+input: ["length", "capitalized", "lowercase", "numbers", "special"]
+rule: [我希望你扮演密码生成器的角色，为需要安全密码的个人服务。我会向你提供包括“长度”、“大写”、“小写”、“数字”和“特殊”字符的输入形式。你的任务是使用这些输入形式生成一个复杂的密码，并将其提供给我。在你的回应中不要包含任何解释或额外信息，只需提供生成的密码。例如，如果输入形式是length = 9, capitalized = 1, lowercase = 5, numbers = 2, special = 1, 你需要回复一个类似这样的密码"D5%t9bbgf"]
+```
+
+调用
+```
+pg(length = 10, capitalized = 2, lowercase = 5, numbers = 2, special = 1)
+pg(10,2,5,2,1)
+```
+
+#### 延申
+现在已有很多项目工作在GPT编程之上，例如：
+- [GitHub Copilot](https://github.com/features/copilot)
+- [Microsoft AI](https://www.microsoft.com/en-us/ai)
+- [chatgpt-plugins](https://openai.com/blog/chatgpt-plugins)
+- [LangChain](https://github.com/hwchase17/langchain)
+- [marvin](https://github.com/PrefectHQ/marvin)
+
+但这些项目要么是为了产品客户设计的，要么是为了那些能够使用Python或其他编程语言编码的用户设计的。对于普通用户，使用这个简单的模板进行日常工作，并进行几次迭代。使用笔记应用程序来记录函数，甚至可以将其更新为库。或者，可以使用一些开源的ChatGPT工具，如[ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web)、[chatbox](https://github.com/Bin-Huang/chatbox)、[PromptAppGPT](https://github.com/mleoking/PromptAppGPT)和[ChatGPT-Desktop](https://github.com/lencx/ChatGPT)。目前，ChatGPT-Next-Web允许在初始化新聊天之前添加一些内容。而PromptAppGPT支持基于提示模板的低代码开发Web应用程序，使任何人都可以通过几行提示开发类似AutoGPT的应用程序。我们可以使用这个功能来添加我们的函数，然后可以使用它。
