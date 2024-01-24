@@ -3,7 +3,7 @@ title: Prompt Engineering Guide
 layout: post
 categories: chatgpt
 tags: chatgpt
-date: 2024-01-26 18:00
+date: 2024-01-24 18:00
 excerpt: Prompt Engineering Guide
 ---
 
