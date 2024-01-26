@@ -48,6 +48,7 @@ excerpt: Cloud Security
 - [dayzerosec - 安全资讯](https://dayzerosec.com)
 - [synk漏洞库](https://security.snyk.io/)
 - [数据泄露分析报告](https://github.com/BushidoUK/Breach-Report-Collection)
+- [wiz云威胁情报](https://threats.wiz.io/all-incidents)
 
 ## 云原生知识
 
