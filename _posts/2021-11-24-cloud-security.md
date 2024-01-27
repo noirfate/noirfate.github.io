@@ -214,6 +214,7 @@ excerpt: Cloud Security
 - [微软员工使用SAS Token分享Azure Storage中的数据，由于token权限过大导致泄露了38T隐私数据](https://www.wiz.io/blog/38-terabytes-of-private-data-accidentally-exposed-by-microsoft-ai-researchers)
 - [GKE默认安装的日志服务fluentbit挂载了主机路径，可获取其他Pod的token进而提权](https://unit42.paloaltonetworks.com/google-kubernetes-engine-privilege-escalation-fluentbit-anthos/)
 - [Google OAuth2 multilogin token无限续期](https://www.cloudsek.com/blog/compromising-google-accounts-malwares-exploiting-undocumented-oauth2-functionality-for-session-hijacking)
+- [GKE权限配置错误（system:authenticated）导致集群被控](https://orca.security/resources/blog/sys-all-google-kubernetes-engine-risk-example/)
 
 ## 云原生工具
 

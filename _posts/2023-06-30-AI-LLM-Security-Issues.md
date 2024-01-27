@@ -30,6 +30,7 @@ excerpt: AI大模型安全研究
 - [LLM攻防综述](https://arxiv.org/ftp/arxiv/papers/2312/2312.10982.pdf)
 - [LLM漏洞综述](https://arxiv.org/pdf/2310.10844.pdf)
 - [利用大模型评估大模型能力](https://github.com/GAIR-NLP/auto-j) [paper](https://arxiv.org/pdf/2310.05470.pdf)
+- [大模型安全能力评估](https://github.com/XuanwuAI/SecEval)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
