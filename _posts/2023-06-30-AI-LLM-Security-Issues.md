@@ -31,6 +31,8 @@ excerpt: AI大模型安全研究
 - [LLM漏洞综述](https://arxiv.org/pdf/2310.10844.pdf)
 - [利用大模型评估大模型能力](https://github.com/GAIR-NLP/auto-j) [paper](https://arxiv.org/pdf/2310.05470.pdf)
 - [大模型安全能力评估](https://github.com/XuanwuAI/SecEval)
+- [awesome-llm-security](https://github.com/corca-ai/awesome-llm-security)
+- [llm安全论文汇总](https://github.com/chawins/llm-sp)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -402,6 +404,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [SAP - 利用大模型生成攻击提示](https://arxiv.org/pdf/2310.12505.pdf) [code](https://github.com/Aatrox103/SAP/tree/main)
 - [PromptInject - 指令劫持攻击框架，使用忽略xxx的技术](https://github.com/agencyenterprise/PromptInject/tree/main)
 - [DAN类越狱提示](https://github.com/0xk1h0/ChatGPT_DAN)
+- [PAIR - 用LLM自动化越狱LLM](https://github.com/patrickrchao/JailbreakingLLMs) [paper](https://arxiv.org/abs/2310.08419)
 
 ### 供应链
 
