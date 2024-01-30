@@ -447,6 +447,7 @@ excerpt: useful git repository (研究篇)
 - [pbtk - protobuf逆向解析和fuzz工具](https://github.com/marin-m/pbtk)
 - [MorFuzz - RISC-V处理器fuzz工具](https://github.com/sycuricon/MorFuzz)
 - [SaGe-Browser-Fuzzer - 自动分析语义生成合法的html进行浏览器fuzz](https://github.com/ChijinZ/SaGe-Browser-Fuzzer)
+- [Fuzz论文](https://github.com/wcventure/FuzzingPaper)
 
 ## static analysis
 

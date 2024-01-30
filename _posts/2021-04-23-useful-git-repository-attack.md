@@ -532,6 +532,7 @@ excerpt: useful git repository (攻防篇)
 - [内存马研究资料](https://github.com/Getshell/Mshell)
 - [NSA和CISA发布的网络安全错误配置Top10](https://media.defense.gov/2023/Oct/05/2003314578/-1/-1/0/JOINT_CSA_TOP_TEN_MISCONFIGURATIONS_TLP-CLEAR.PDF)
 - [Fuzz论文](https://github.com/wcventure/FuzzingPaper)
+- [redteam guide](https://redteam.guide/) [pdf](/assets/pdf/Red Team Development and Operations A Practical Guide.pdf)
 
 ## 防护
 

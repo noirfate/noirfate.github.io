@@ -33,6 +33,7 @@ excerpt: AI大模型安全研究
 - [大模型安全能力评估](https://github.com/XuanwuAI/SecEval)
 - [awesome-llm-security](https://github.com/corca-ai/awesome-llm-security)
 - [llm安全论文汇总](https://github.com/chawins/llm-sp)
+- [AI论文代码汇总](https://paperswithcode.com/)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
