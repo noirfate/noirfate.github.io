@@ -196,6 +196,7 @@ excerpt: useful git repository (攻防篇)
 - [网络安全类公众号](https://github.com/DropsOfZut/awesome-security-weixin-official-accounts)
 - [在pypi仓库中搜索aws凭证](https://github.com/pypi-data/pypi-aws-secrets/) [文章](https://tomforb.es/blog/aws-keys-on-pypi/)
 - [wiz云威胁情报](https://threats.wiz.io/all-incidents)
+- [gsd漏洞库](https://github.com/cloudsecurityalliance/gsd-database/)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)

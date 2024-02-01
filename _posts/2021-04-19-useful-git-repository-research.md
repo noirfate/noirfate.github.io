@@ -465,6 +465,7 @@ excerpt: useful git repository (研究篇)
 - [使用codeql寻找CVE-2022-22980的利用路径](https://infosecwriteups.com/analyzing-cve-2022-22980-to-discover-a-real-exploitable-path-in-the-source-code-review-process-with-145d97717656)
 - [CodeQLpy - java程序漏洞扫描工具](https://github.com/webraybtl/CodeQLpy)
 - [trailofbits发布的一些针对c和go的codeql](https://github.com/trailofbits/codeql-queries/tree/main)
+- [通过补丁生成漏洞模式ql](https://arxiv.org/pdf/2401.12443.pdf) [codeql](https://github.com/fullwaywang/QlRules)
 
 ### 源码分析工具
 

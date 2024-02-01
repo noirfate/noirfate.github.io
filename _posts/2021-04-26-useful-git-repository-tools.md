@@ -58,6 +58,7 @@ excerpt: useful git repository (工具篇)
 - [网络安全GPTs](https://github.com/fr0gger/Awesome-GPT-Agents)
 - [特征工程指引](https://github.com/dair-ai/Prompt-Engineering-Guide)
 - [DeepSeek-Coder 代码补全](https://github.com/deepseek-ai/DeepSeek-Coder)
+- [InstantID - 头像生成](https://github.com/InstantID/InstantID) [demo](https://huggingface.co/spaces/InstantX/InstantID)
 
 ## 开发工具
 

@@ -319,6 +319,7 @@ excerpt: Cloud Security
 - [CVE-2022-39253: 利用git漏洞实现docker build读取宿主机任意文件](https://github.com/noirfate/docker-cve-2022-39253-poc)
 - [CVE-2022-4886: k8s ingress-nginx-controller pec.rules.http.paths.path RCE](https://hackerone.com/reports/1620702)
 - [CVE-2023-5044: k8s nginx.ingress.kubernetes.io/permanent-redirect RCE](https://hackerone.com/reports/2039464)
+- [CVE-2024-21626: runc leak fd workdir escape](https://github.com/opencontainers/runc/security/advisories/GHSA-xr7r-f8xq-vfvv)
 
 # QEMU/HyperV/VMWare
 
