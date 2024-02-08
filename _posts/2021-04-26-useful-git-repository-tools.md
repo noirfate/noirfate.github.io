@@ -113,6 +113,7 @@ excerpt: useful git repository (工具篇)
 - [cosmopolitan - 把c程序编译为多平台可执行程序](https://github.com/jart/cosmopolitan)
 - [markmap - 把markdown转化成脑图](https://markmap.js.org/repl)
 - [jumpserver - 好用的开源堡垒机](https://github.com/jumpserver/jumpserver)
+- [llvm-tutor - LLVM Pass教学](https://github.com/banach-space/llvm-tutor/tree/main)
 
 ## 静态工具
 
@@ -197,3 +198,4 @@ excerpt: useful git repository (工具篇)
 - [把图像转换成ascii表示](https://github.com/TheZoraiz/ascii-image-converter)
 - [把html转成pdf或图片](https://wkhtmltopdf.org/)
 - [微信公众号markdown编辑器](https://github.com/doocs/md) [其他](https://md.openwrite.cn/)
+- [在github上搜索openai apikey](https://gist.github.com/win3zz/0a1c70589fcbea64dba4588b93095855)
