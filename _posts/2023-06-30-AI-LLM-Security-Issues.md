@@ -34,6 +34,7 @@ excerpt: AI大模型安全研究
 - [awesome-llm-security](https://github.com/corca-ai/awesome-llm-security)
 - [llm安全论文汇总](https://github.com/chawins/llm-sp)
 - [AI论文代码汇总](https://paperswithcode.com/)
+- [大模型内容安全：敢问路在何方？](https://mp.weixin.qq.com/s/YrZpiBV2rqVWYHQsOj3oDg)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -383,7 +384,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - 让AI扮演一个角色
 - 对AI进行反向诱导
 - 对不当内容打码，让AI根据情景进行界面
-- [jailbreak prompt](https://www.jailbreakchat.com/) [reddit channel](https://www.reddit.com/r/GPT_jailbreaks/)
+- [jailbreak prompt](https://www.jailbreakchat.com/) [reddit channel](https://www.reddit.com/r/GPT_jailbreaks/) [ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts) [jailbreak-chatgpt](https://www.greataiprompts.com/guide/jailbreak-chatgpt/)
 - [以毒攻毒](https://github.com/traghav/auto-redteam/tree/main)
 - [GPTFuzz](https://github.com/sherdencooper/GPTFuzz)
 - [CipherChat - 利用加解密绕过模型安全防护](https://github.com/RobustNLP/CipherChat)
