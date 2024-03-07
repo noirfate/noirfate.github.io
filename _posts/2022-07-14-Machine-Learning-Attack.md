@@ -124,6 +124,8 @@ c.load('./malicious.yml')
 ## Reproduced Results from ML Attack Literature
 
 ### Misclassification via Blackbox method
+> https://www.cnblogs.com/bonelee/p/17797484.html
+
 A pseudocode description of the algorithm is as follows. In this case we are choosing "confidence in class Y" as our objective, and transforming an image that classifies as “X” into an image with >= 99% confidence in class "Y"
 ```
 base_image = input

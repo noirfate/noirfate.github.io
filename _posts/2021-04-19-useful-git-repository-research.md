@@ -349,6 +349,7 @@ excerpt: useful git repository (研究篇)
 - [syzkaller样本库，可以提高fuzz效率](https://github.com/cmu-pasta/linux-kernel-enriched-corpus)
 - [KLAUS - 判断内核patch是否能够有效修复漏洞](https://github.com/wupco/KLAUS/tree/main)
 - [SyzDescribe - 自动生成syzkaller需要的syscall描述](https://github.com/seclab-ucr/SyzDescribe)
+- [SyzBridge - 自动把syzbot生成的POC适配到Linux发行版上](https://github.com/seclab-ucr/SyzBridge)
 
 ### sanitizer
 

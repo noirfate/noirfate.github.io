@@ -35,6 +35,7 @@ excerpt: AI大模型安全研究
 - [llm安全论文汇总](https://github.com/chawins/llm-sp)
 - [AI论文代码汇总](https://paperswithcode.com/)
 - [大模型内容安全：敢问路在何方？](https://mp.weixin.qq.com/s/YrZpiBV2rqVWYHQsOj3oDg)
+- [Microsoft AI Red Team](https://learn.microsoft.com/en-us/security/ai-red-team/)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -407,6 +408,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [PromptInject - 指令劫持攻击框架，使用忽略xxx的技术](https://github.com/agencyenterprise/PromptInject/tree/main)
 - [DAN类越狱提示](https://github.com/0xk1h0/ChatGPT_DAN)
 - [PAIR - 用LLM自动化越狱LLM](https://github.com/patrickrchao/JailbreakingLLMs) [paper](https://arxiv.org/abs/2310.08419)
+- [PyRIT - 微软发布的自动化生成式AI红队工具](https://github.com/Azure/PyRIT/tree/main)
 
 ### 供应链
 
@@ -416,6 +418,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 ### 投毒
 
 - [对数据集中失效域名和维基百科进行投毒](https://arxiv.org/pdf/2304.05197.pdf)
+- [Unleashing Zero-click Worms that Target GenAI-Powered Applications](https://github.com/StavC/ComPromptMized)
 
 ## 防护方法
 > https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview

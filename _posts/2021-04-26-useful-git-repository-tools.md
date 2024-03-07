@@ -131,6 +131,7 @@ excerpt: useful git repository (工具篇)
 - [openshot - 跨平台视频编辑工具](https://github.com/OpenShot/openshot-qt)
 - [Infinite-Storage-Glitch - 把任意文件转换为视频](https://github.com/DvorakDwarf/Infinite-Storage-Glitch)
 - [DXcam - python实现的windows截屏录屏工具](https://github.com/ra1nty/DXcam)
+- [gotranscript - 字幕格式转换](https://gotranscript.com/subtitle-converter)
 
 ## 下载工具
 

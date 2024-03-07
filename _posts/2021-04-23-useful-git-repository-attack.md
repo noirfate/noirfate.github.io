@@ -43,6 +43,8 @@ excerpt: useful git repository (攻防篇)
 - [wordpress nuclei模板](https://github.com/topscoder/nuclei-wordfence-cve)
 - [nuclei-plus - java实现的nuclei图形化界面](https://github.com/Yong-An-Dang/nuclei-plus)
 - [Scanner-and-Patcher - web漏洞扫描与修复工具](https://github.com/Malwareman007/Scanner-and-Patcher)
+- [Burp-GAP - Burp的url路径、参数扫描插件](https://github.com/xnl-h4ck3r/GAP-Burp-Extension)
+- [cariddi - 网站敏感信息扫描工具](https://github.com/edoardottt/cariddi)
 
 ### 本地扫描工具
 
