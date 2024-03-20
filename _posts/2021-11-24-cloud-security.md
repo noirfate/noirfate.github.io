@@ -216,6 +216,7 @@ excerpt: Cloud Security
 - [Google OAuth2 multilogin token无限续期](https://www.cloudsek.com/blog/compromising-google-accounts-malwares-exploiting-undocumented-oauth2-functionality-for-session-hijacking)
 - [GKE权限配置错误（system:authenticated）导致集群被控](https://orca.security/resources/blog/sys-all-google-kubernetes-engine-risk-example/)
 - [GCP Dataproc使用default vpc导致可被同vpc的虚机访问泄露数据](https://orca.security/resources/blog/unauthenticated-access-to-google-cloud-dataproc/)
+- [通过爆破攻入Azure租户并渗透进其企业账户](https://posts.specterops.io/microsoft-breach-what-happened-what-should-azure-admins-do-da2b7e674ebc)
 
 ## 云原生工具
 
@@ -273,6 +274,9 @@ excerpt: Cloud Security
 - [auger - 解码etcd中的存储数据](https://github.com/jpbetz/auger)
 - [kubefuzz - 通过对资源yaml变异来验证admission controller](https://github.com/avolens/kubefuzz/tree/master)
 - [ADOKit - Azure DevOps渗透工具](https://github.com/rvrsh3ll/ADOKit)
+- [kyverno - k8s细粒度安全规则配置插件](https://github.com/kyverno/kyverno)
+- [cloudsploit - 云安全态势分析工具，根据账户凭证分析在使用云服务时出现的不安全配置](https://github.com/aquasecurity/cloudsploit)
+- [kubesec - k8s资源安全扫描](https://github.com/controlplaneio/kubesec)
 
 ## CVE
 

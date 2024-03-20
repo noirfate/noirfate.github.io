@@ -127,6 +127,7 @@ excerpt: useful git repository (研究篇)
 - [pefile - PE文件分析工具](https://github.com/erocarrera/pefile)
 - [pyinstxtractor - 提取pyinstaller编译后的二进制中的pyc文件](https://github.com/extremecoders-re/pyinstxtractor)
 - [GoReSym - go符号恢复工具](https://github.com/mandiant/GoReSym)
+- [LLM4Decompile - 利用大模型进行反汇编](https://github.com/albertan017/LLM4Decompile)
 
 ### binary改写
 

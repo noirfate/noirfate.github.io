@@ -341,6 +341,15 @@ Message-ID是{msg_id}，主题是{subject}。请从安然电子邮件数据集�
 
 #### [数据集](https://github.com/whitzard-ai/jade-db)
 
+### ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs
+作者提出了一种结合ascii艺术字的越狱方法，首先通过few-shot教会模型识别又ascii字符组成的字母，之后把敏感词用ascii字符重构，让模型进行回答
+![](/assets/img/llm_sec/llm_survey64.png)
+
+### DeepInception: Hypnotize Large Language Model to Be Jailbreaker
+作者提出了一种类似电影《盗梦空间》的越狱方法，通过让大模型创建n层场景，并在每一层完成一个环节，最终在最后一层把前面所有的措施总结提炼出来，形成一个完整的回答
+![](/assets/img/llm_sec/llm_survey65.png)
+#### [代码](https://github.com/tmlr-group/DeepInception)
+
 ![](/assets/img/llm_sec/jailbreak_multi.png)
 以下三篇论文研究了在大模型支持图文的情况下，如何利用图文结合的方式进行越狱。这里主要有两种思路，一种是把在图像领域里面的对抗样本攻击方式迁移到支持图像的大模型上来，另一种是类似上面提到过的利用编程越狱，可以对越狱提示进行拆分，把其中一部分放入图片中，利用大模型的OCR功能识别图中文字。
 

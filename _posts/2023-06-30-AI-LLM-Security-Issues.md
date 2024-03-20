@@ -408,7 +408,9 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [PromptInject - 指令劫持攻击框架，使用忽略xxx的技术](https://github.com/agencyenterprise/PromptInject/tree/main)
 - [DAN类越狱提示](https://github.com/0xk1h0/ChatGPT_DAN)
 - [PAIR - 用LLM自动化越狱LLM](https://github.com/patrickrchao/JailbreakingLLMs) [paper](https://arxiv.org/abs/2310.08419)
-- [PyRIT - 微软发布的自动化生成式AI红队工具](https://github.com/Azure/PyRIT/tree/main)
+- [PyRIT - 微软发布的自动化生成式AI红队工具](https://github.com/Azure/PyRIT)
+- [越狱Google的Gemini](https://hiddenlayer.com/research/new-google-gemini-content-manipulation-vulns-found/)
+- [DeepInception - 利用多层场景嵌套实施越狱](https://github.com/tmlr-group/DeepInception)
 
 ### 供应链
 
