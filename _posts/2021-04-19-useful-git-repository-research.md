@@ -488,3 +488,6 @@ excerpt: useful git repository (研究篇)
 - [mate - 根据c/c++程序代码属性图发现漏洞](https://github.com/GaloisInc/MATE)
 - [grepmarx - 多语言源码静态分析工具](https://github.com/Orange-Cyberdefense/grepmarx)
 - [pycg - python函数调用图](https://github.com/vitsalis/PyCG)
+
+### LLM
+- [llm漏洞挖掘近期论文总结](https://blog.wohin.me/posts/recent-llm-for-vuln-detection/)

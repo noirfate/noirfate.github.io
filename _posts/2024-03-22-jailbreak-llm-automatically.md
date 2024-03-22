@@ -421,7 +421,7 @@ template: |
 
 #### 越狱技术
 | Attack Recipes | Selector | Mutator | Constraint | Evaluator |
-| :---： | :---： | :---： | :---： | :---：|
+| :---: | :---: | :---: | :---: | :---: |
 | ReNeLLM | N/A | ChangeStyle<br>InsertMeaninglessCharacters<br>MisspellSensitiveWords<br>Rephrase<br>GenerateSimilar<br>AlterSentenceStructure | DeleteHarmLess | Evaluator_GenerativeJudge |
 | GPTFuzz | MCTSExploreSelectPolicy<br>RandomSelector<br>EXP3SelectPolicy<br>RoundRobinSelectPolicy<br>UCBSelectPolicy | ChangeStyle<br>Expand<br>Rephrase<br>Crossover<br>Translation<br>Shorten | N/A | Evaluator_ClassificationJudge |
 | ICA | N/A | N/A | N/A | Evaluator_PatternJudge |
