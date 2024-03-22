@@ -349,20 +349,20 @@ template: |
 ![](/assets/img/llm_sec/llm_jailbreak11.png)
 
 #### 越狱技术
-| Attack\nRecipes | Selector | Mutator | Constraint | Evaluator |
-|----|----|----|----|----|
-| **ReNeLLM** | N/A | ChangeStyle\nInsertMeaninglessCharacters\nMisspellSensitiveWords\nRephrase\nGenerateSimilar\nAlterSentenceStructure | DeleteHarmLess | Evaluator_GenerativeJudge |
-| **GPTFuzz** | MCTSExploreSelectPolicy\nRandomSelector\nEXP3SelectPolicy\nRoundRobinSelectPolicy\nUCBSelectPolicy | ChangeStyle\nExpand\nRephrase\nCrossover\nTranslation\nShorten | N/A | Evaluator_ClassificationJudge |
+| Attack Recipes | Selector | Mutator | Constraint | Evaluator |
+| :---- | :---- | :---- | :---- | :---- |
+| **ReNeLLM** | N/A | ChangeStyle<br>InsertMeaninglessCharacters<br>MisspellSensitiveWords<br>Rephrase<br>GenerateSimilar<br>AlterSentenceStructure | DeleteHarmLess | Evaluator_GenerativeJudge |
+| **GPTFuzz** | MCTSExploreSelectPolicy<br>RandomSelector<br>EXP3SelectPolicy<br>RoundRobinSelectPolicy<br>UCBSelectPolicy | ChangeStyle<br>Expand<br>Rephrase<br>Crossover<br>Translation<br>Shorten | N/A | Evaluator_ClassificationJudge |
 | **ICA** | N/A | N/A | N/A | Evaluator_PatternJudge |
-| **AutoDAN** | N/A | Rephrase\nCrossOver\nReplaceWordsWithSynonyms | N/A | Evaluator_PatternJudge |
+| **AutoDAN** | N/A | Rephrase<br>CrossOver<br>ReplaceWordsWithSynonyms | N/A | Evaluator_PatternJudge |
 | **PAIR** | N/A | HistoricalInsight | N/A | Evaluator_GenerativeGetScore |
-| **JailBroken** | N/A | Artificial\nAuto_obfuscation\nAuto_payload_splitting\nBase64_input_only\nBase64_raw\nBase64\nCombination_1\nCombination_2\nCombination_3\nDisemovowel\nLeetspeak\nRot13 | N/A | Evaluator_GenerativeJudge |
-| **Cipher** | N/A | AsciiExpert\nCaserExpert\nMorseExpert\nSelfDefineCipher | N/A | Evaluator_GenerativeJudge |
+| **JailBroken** | N/A | Artificial<br>Auto_obfuscation<br>Auto_payload_splitting<br>Base64_input_only<br>Base64_raw<br>Base64<br>Combination_1<br>Combination_2<br>Combination_3<br>Disemovowel<br>Leetspeak<br>Rot13 | N/A | Evaluator_GenerativeJudge |
+| **Cipher** | N/A | AsciiExpert<br>CaserExpert<br>MorseExpert<br>SelfDefineCipher | N/A | Evaluator_GenerativeJudge |
 | **DeepInception** | N/A | Inception | N/A | Evaluator_GenerativeJudge |
 | **MultiLingual** | N/A | Translate | N/A | Evaluator_GenerativeJudge |
 | **GCG** | ReferenceLossSelector | MutationTokenGradient | N/A | Evaluator_PrefixExactMatch |
 | **TAP** | SelectBasedOnScores | IntrospectGeneration | DeleteOffTopic | Evaluator_GenerativeGetScore |
-| **CodeChameleon** | N/A | BinaryTree\nLength\nReverse\nOddEven | N/A | Evaluator_GenerativeGetScore |
+| **CodeChameleon** | N/A | BinaryTree<br>Length<br>Reverse<br>OddEven | N/A | Evaluator_GenerativeGetScore |
 
 #### 示例
 ```python

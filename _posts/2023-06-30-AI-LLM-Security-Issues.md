@@ -414,6 +414,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [persuasive_jailbreaker - 指导大模型利用说服技巧进行越狱攻击](https://github.com/CHATS-lab/persuasive_jailbreaker)
 - [HarmBench - 自动化越狱评估框架](https://github.com/centerforaisafety/HarmBench)
 - [EasyJailbreak - 集成多种越狱技术的越狱攻击框架](https://github.com/EasyJailbreak/EasyJailbreak)
+- [TAP - 基于思维树的自动化越狱工具](https://github.com/RICommunity/TAP)
 
 ### 供应链
 
