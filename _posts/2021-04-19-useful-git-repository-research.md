@@ -336,6 +336,7 @@ excerpt: useful git repository (研究篇)
 - [CarpetFuzz - 使用NLP技术分析程序文档指导afl对程序参数进行变异](https://github.com/waugustus/CarpetFuzz)
 - [NestFuzz - 输入格式感知的fuzzer](https://github.com/fdu-sec/NestFuzz)
 - [oss-fuzz-gen - 利用LLM生成c/c++语言的fuzz target](https://github.com/google/oss-fuzz-gen)
+- [datAFLow - 基于afl的数据流覆盖度引导的fuzzer](https://github.com/HexHive/datAFLow)
 
 ### Syzkaller系
 

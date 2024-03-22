@@ -411,6 +411,9 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [PyRIT - 微软发布的自动化生成式AI红队工具](https://github.com/Azure/PyRIT)
 - [越狱Google的Gemini](https://hiddenlayer.com/research/new-google-gemini-content-manipulation-vulns-found/)
 - [DeepInception - 利用多层场景嵌套实施越狱](https://github.com/tmlr-group/DeepInception)
+- [persuasive_jailbreaker - 指导大模型利用说服技巧进行越狱攻击](https://github.com/CHATS-lab/persuasive_jailbreaker)
+- [HarmBench - 自动化越狱评估框架](https://github.com/centerforaisafety/HarmBench)
+- [EasyJailbreak - 集成多种越狱技术的越狱攻击框架](https://github.com/EasyJailbreak/EasyJailbreak)
 
 ### 供应链
 
