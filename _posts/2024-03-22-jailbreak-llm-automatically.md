@@ -420,6 +420,7 @@ template: |
 ![](/assets/img/llm_sec/llm_jailbreak11.png)
 
 #### 越狱技术
+
 | Attack Recipes | Selector | Mutator | Constraint | Evaluator |
 | :---: | :---: | :---: | :---: | :---: |
 | ReNeLLM | N/A | ChangeStyle<br>InsertMeaninglessCharacters<br>MisspellSensitiveWords<br>Rephrase<br>GenerateSimilar<br>AlterSentenceStructure | DeleteHarmLess | Evaluator_GenerativeJudge |
