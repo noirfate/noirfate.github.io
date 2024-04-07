@@ -149,6 +149,7 @@ excerpt: useful git repository (攻防篇)
 - [Forensia - win痕迹清除](https://github.com/PaulNorman01/Forensia)
 - [PythonMemoryModule - 内存加载/运行DLL或EXE](https://github.com/naksyn/PythonMemoryModule)
 - [nysm - 隐藏ebpf,sockets,pid等](https://github.com/eeriedusk/nysm)
+- [elf - 不依赖libc的elf loader](https://github.com/MikhailProg/elf/)
 
 ### OSINT(开源情报)工具
 

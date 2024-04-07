@@ -452,6 +452,7 @@ excerpt: useful git repository (研究篇)
 - [MorFuzz - RISC-V处理器fuzz工具](https://github.com/sycuricon/MorFuzz)
 - [SaGe-Browser-Fuzzer - 自动分析语义生成合法的html进行浏览器fuzz](https://github.com/ChijinZ/SaGe-Browser-Fuzzer)
 - [Fuzz论文](https://github.com/wcventure/FuzzingPaper)
+- [利用大模型反汇编、分析patch、生成fuzzer](https://fuzzing.io/Presentations/The%20DL%20on%20LLM%20Code%20Analysis%20-%20CanSecWest24%20-%20rjohnson.pdf)
 
 ## static analysis
 

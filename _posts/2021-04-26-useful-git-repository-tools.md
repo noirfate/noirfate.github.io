@@ -59,6 +59,8 @@ excerpt: useful git repository (工具篇)
 - [特征工程指引](https://github.com/dair-ai/Prompt-Engineering-Guide)
 - [DeepSeek-Coder 代码补全](https://github.com/deepseek-ai/DeepSeek-Coder)
 - [InstantID - 头像生成](https://github.com/InstantID/InstantID) [demo](https://huggingface.co/spaces/InstantX/InstantID)
+- [openai模型对齐评估工具](https://github.com/openai/evals/tree/main)
+- [claude使用指南](https://github.com/anthropics/anthropic-cookbook)
 
 ## 开发工具
 
@@ -114,6 +116,9 @@ excerpt: useful git repository (工具篇)
 - [markmap - 把markdown转化成脑图](https://markmap.js.org/repl)
 - [jumpserver - 好用的开源堡垒机](https://github.com/jumpserver/jumpserver)
 - [llvm-tutor - LLVM Pass教学](https://github.com/banach-space/llvm-tutor/tree/main)
+- [freeze - 为代码生成图片](https://github.com/charmbracelet/freeze)
+- [pyinstaller-docer - pyinstaller的win和linux的docker镜像](https://github.com/cdrx/docker-pyinstaller)
+- [datamodel-code-generator - python数据定义如yaml转代码](https://github.com/koxudaxi/datamodel-code-generator)
 
 ## 静态工具
 

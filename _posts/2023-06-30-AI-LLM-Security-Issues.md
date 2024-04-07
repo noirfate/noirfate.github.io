@@ -415,11 +415,13 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [HarmBench - 自动化越狱评估框架](https://github.com/centerforaisafety/HarmBench)
 - [EasyJailbreak - 集成多种越狱技术的越狱攻击框架](https://github.com/EasyJailbreak/EasyJailbreak)
 - [TAP - 基于思维树的自动化越狱工具](https://github.com/RICommunity/TAP)
+- [PAL - 类似GCG的对抗性后缀方法，使用白盒模型作为代理攻击黑盒模型](https://github.com/chawins/pal)
 
 ### 供应链
 
 - [利用redis-py漏洞泄露其他用户的会话缓存](https://openai.com/blog/march-20-chatgpt-outage)
 - [利用github selfhost runner污染pytorch](https://johnstawinski.com/2024/01/11/playing-with-fire-how-we-executed-a-critical-supply-chain-attack-on-pytorch/)
+- [shadowray - AI框架Ray未授权RCE漏洞](https://www.oligo.security/blog/shadowray-attack-ai-workloads-actively-exploited-in-the-wild)
 
 ### 投毒
 

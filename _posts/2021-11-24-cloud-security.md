@@ -217,6 +217,7 @@ excerpt: Cloud Security
 - [GKE权限配置错误（system:authenticated）导致集群被控](https://orca.security/resources/blog/sys-all-google-kubernetes-engine-risk-example/)
 - [GCP Dataproc使用default vpc导致可被同vpc的虚机访问泄露数据](https://orca.security/resources/blog/unauthenticated-access-to-google-cloud-dataproc/)
 - [通过爆破攻入Azure租户并渗透进其企业账户](https://posts.specterops.io/microsoft-breach-what-happened-what-should-azure-admins-do-da2b7e674ebc)
+- [flowfixation：利用AWS的MWAA在未认证的情况下可获得session cookie的漏洞和cookie tossing利用技术劫持MWAA服务](https://www.tenable.com/blog/flowfixation-aws-apache-airflow-service-takeover-vulnerability-and-why-neglecting-guardrails)
 
 ## 云原生工具
 
