@@ -61,6 +61,7 @@ excerpt: useful git repository (工具篇)
 - [InstantID - 头像生成](https://github.com/InstantID/InstantID) [demo](https://huggingface.co/spaces/InstantX/InstantID)
 - [openai模型对齐评估工具](https://github.com/openai/evals/tree/main)
 - [claude使用指南](https://github.com/anthropics/anthropic-cookbook)
+- [OCRmyPDF - 为扫描的PDF添加文本层可复制搜索](https://github.com/ocrmypdf/OCRmyPDF)
 
 ## 开发工具
 
@@ -203,6 +204,8 @@ excerpt: useful git repository (工具篇)
 - [Nvidia Docker on WSL2](https://medium.com/htc-research-engineering-blog/nvidia-docker-on-wsl2-f891dfe34ab)
 - [把图像转换成ascii表示](https://github.com/TheZoraiz/ascii-image-converter)
 - [把html转成pdf或图片](https://wkhtmltopdf.org/)
-- [微信公众号markdown编辑器](https://github.com/doocs/md) [其他](https://md.openwrite.cn/)
+- [微信公众号markdown编辑器](https://github.com/doocs/md) [其他](https://md.openwrite.cn/) [其他1](https://github.com/jaywcjlove/wxmp)
 - [在github上搜索openai apikey](https://gist.github.com/win3zz/0a1c70589fcbea64dba4588b93095855)
 - [pdf-guru - pdf编辑软件](https://github.com/kevin2li/PDF-Guru)
+- [图片水印注入和提取工具](https://github.com/guofei9987/blind_watermark)
+- [wstunnel - 使用websocket实现代理](https://github.com/erebe/wstunnel)

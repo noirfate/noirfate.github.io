@@ -200,6 +200,7 @@ excerpt: useful git repository (攻防篇)
 - [在pypi仓库中搜索aws凭证](https://github.com/pypi-data/pypi-aws-secrets/) [文章](https://tomforb.es/blog/aws-keys-on-pypi/)
 - [wiz云威胁情报](https://threats.wiz.io/all-incidents)
 - [gsd漏洞库](https://github.com/cloudsecurityalliance/gsd-database/)
+- [puncia - 漏洞利用搜索工具](https://github.com/ARPSyndicate/puncia) [API](https://api.exploit.observer/?keyword=CVE-2024-21626)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -301,6 +302,7 @@ excerpt: useful git repository (攻防篇)
 - [pwntools - ctf利用工具箱](https://github.com/Gallopsled/pwntools) [教程](https://github.com/Gallopsled/pwntools-tutorial)
 - [pmdump - dump linux进程堆内存](https://github.com/friendlyJLee/pmdump/)
 - [TransferAttack - 对抗样本迁移学习攻击](https://github.com/Trustworthy-AI-Group/TransferAttack)
+- [counterfit - 机器学习自动化攻击框架](https://github.com/Azure/counterfit)
 
 ## POC
 
@@ -320,6 +322,8 @@ excerpt: useful git repository (攻防篇)
 - [年度TOP30合集](https://github.com/hktalent/TOP)
 - [google研究POC](https://github.com/google/security-research)
 - [TOP50 RCE漏洞](https://redteamrecipe.com/top-50-vulnerabilities-rce/)
+- [Poc-Monitor - 持续更新github上的poc](https://github.com/sari3l/Poc-Monitor)
+- [puncia - 漏洞利用搜索工具](https://github.com/ARPSyndicate/puncia)
 
 ### win
 
@@ -398,6 +402,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2023-0386 - overlayfs setuid file copy bug](https://github.com/xkaneiki/CVE-2023-0386)
 - [CVE-2023-32233 - Netfilter nf_tables batch requests uaf](https://github.com/Liuk3r/CVE-2023-32233)
 - [CVE-2023-4911 - ld.so Looney Tunables本地提权漏洞](https://github.com/leesh3288/CVE-2023-4911/tree/main) [文章](https://www.qualys.com/2023/10/03/cve-2023-4911/looney-tunables-local-privilege-escalation-glibc-ld-so.txt)
+- [CVE-2023-6546 - GSM LPE](https://github.com/Nassim-Asrir/ZDI-24-020/) [POC1](https://github.com/jmpe4x/GSM_Linux_Kernel_LPE_Nday_Exploit/tree/main) [POC2](https://github.com/YuriiCrimson/ExploitGSM)
 
 ### container
 
