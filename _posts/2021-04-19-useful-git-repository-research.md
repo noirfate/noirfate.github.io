@@ -337,6 +337,7 @@ excerpt: useful git repository (研究篇)
 - [NestFuzz - 输入格式感知的fuzzer](https://github.com/fdu-sec/NestFuzz)
 - [oss-fuzz-gen - 利用LLM生成c/c++语言的fuzz target](https://github.com/google/oss-fuzz-gen)
 - [datAFLow - 基于afl的数据流覆盖度引导的fuzzer](https://github.com/HexHive/datAFLow)
+- [Grammar-Mutator - 为afl++添加语法变异模块](https://github.com/AFLplusplus/Grammar-Mutator)
 
 ### Syzkaller系
 
@@ -453,6 +454,7 @@ excerpt: useful git repository (研究篇)
 - [SaGe-Browser-Fuzzer - 自动分析语义生成合法的html进行浏览器fuzz](https://github.com/ChijinZ/SaGe-Browser-Fuzzer)
 - [Fuzz论文](https://github.com/wcventure/FuzzingPaper)
 - [利用大模型反汇编、分析patch、生成fuzzer](https://fuzzing.io/Presentations/The%20DL%20on%20LLM%20Code%20Analysis%20-%20CanSecWest24%20-%20rjohnson.pdf)
+- [EFuzz - 利用rr记录和重放，fuzz各种程序](https://github.com/GJDuck/RRFuzz)
 
 ## static analysis
 
@@ -492,3 +494,4 @@ excerpt: useful git repository (研究篇)
 
 ### LLM
 - [llm漏洞挖掘近期论文总结](https://blog.wohin.me/posts/recent-llm-for-vuln-detection/)
+- [llm for security综述](https://github.com/tmylla/Awesome-LLM4Cybersecurity)

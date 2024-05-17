@@ -122,6 +122,7 @@ excerpt: useful git repository (攻防篇)
 - [cspm-gpt - 云上智能安全分析工具](https://github.com/samvas-codes/cspm-gpt/tree/main)
 - [sliver - redteam framework](https://github.com/BishopFox/sliver)
 - [hackingBuddyGPT - 渗透LLM](https://github.com/ipa-lab/hackingBuddyGPT/) [paper](https://arxiv.org/pdf/2310.11409.pdf)
+- [SaaS app ATT&CK](https://github.com/pushsecurity/saas-attacks)
 
 ### 持久化工具
 
@@ -201,6 +202,7 @@ excerpt: useful git repository (攻防篇)
 - [wiz云威胁情报](https://threats.wiz.io/all-incidents)
 - [gsd漏洞库](https://github.com/cloudsecurityalliance/gsd-database/)
 - [puncia - 漏洞利用搜索工具](https://github.com/ARPSyndicate/puncia) [API](https://api.exploit.observer/?keyword=CVE-2024-21626)
+- [vulnrichment - cisa漏洞补完](https://github.com/cisagov/vulnrichment)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -212,6 +214,7 @@ excerpt: useful git repository (攻防篇)
 - [微软APT响应报告](https://www.microsoft.com/en-us/security/blog/author/microsoft-security-threat-intelligence/)
 - [利用AI提取报告中的TTP](https://github.com/Qihoo360/Luwak) [文章](https://blog.nsfocus.net/chatgptattck/) [tram](https://github.com/center-for-threat-informed-defense/tram/) [rcATT](https://github.com/vlegoy/rcATT) [MitreMap](https://github.com/Azure/Azure-Sentinel-Notebooks/tree/master/mitremap-notebook)
 - [checkpoint发布的每周威胁报告](https://research.checkpoint.com/intelligence-reports/)
+- [cisa dev - 在野漏洞利用列表](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 
 ### 云原生渗透工具
 
@@ -303,6 +306,7 @@ excerpt: useful git repository (攻防篇)
 - [pmdump - dump linux进程堆内存](https://github.com/friendlyJLee/pmdump/)
 - [TransferAttack - 对抗样本迁移学习攻击](https://github.com/Trustworthy-AI-Group/TransferAttack)
 - [counterfit - 机器学习自动化攻击框架](https://github.com/Azure/counterfit)
+- [使用ART进行对抗样本攻击](https://www.cnblogs.com/bonelee/p/17797484.html)
 
 ## POC
 
@@ -482,6 +486,7 @@ excerpt: useful git repository (攻防篇)
 - [CVE-2022-44268 - ImageMagick任意文件读](https://github.com/agathanon/cve-2022-44268)
 - [sudo logrotate本地提权](https://joshua.hu/gaining-root-with-logrotate-sudo-ubuntu)
 - [CVE-2023-4357 - chrome任意文件读XXE](https://github.com/xcanwin/CVE-2023-4357-Chrome-XXE)
+- [CVE-2024-3661 - TunnelVision利用伪造的dhcp服务器获取vpn流量](https://github.com/leviathansecurity/TunnelVision)
 
 ## 研究资料
 

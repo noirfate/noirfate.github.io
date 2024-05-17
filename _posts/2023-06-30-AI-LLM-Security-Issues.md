@@ -417,6 +417,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [TAP - 基于思维树的自动化越狱工具](https://github.com/RICommunity/TAP)
 - [PAL - 类似GCG的对抗性后缀方法，使用白盒模型作为代理攻击黑盒模型](https://github.com/chawins/pal)
 - [利用模型API返回的logprob进行对抗后缀攻击](https://github.com/tml-epfl/llm-adaptive-attacks/)
+- [AdvPrompter - 黑盒advprompt生成模型](https://github.com/facebookresearch/advprompter)
 
 ### 供应链
 
