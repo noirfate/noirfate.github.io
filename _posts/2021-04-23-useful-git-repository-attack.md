@@ -45,6 +45,7 @@ excerpt: useful git repository (攻防篇)
 - [Scanner-and-Patcher - web漏洞扫描与修复工具](https://github.com/Malwareman007/Scanner-and-Patcher)
 - [Burp-GAP - Burp的url路径、参数扫描插件](https://github.com/xnl-h4ck3r/GAP-Burp-Extension)
 - [cariddi - 网站敏感信息扫描工具](https://github.com/edoardottt/cariddi)
+- [kscan - 快速的网络扫描工具](https://github.com/lcvvvv/kscan)
 
 ### 本地扫描工具
 
