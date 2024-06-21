@@ -308,6 +308,7 @@ excerpt: useful git repository (攻防篇)
 - [TransferAttack - 对抗样本迁移学习攻击](https://github.com/Trustworthy-AI-Group/TransferAttack)
 - [counterfit - 机器学习自动化攻击框架](https://github.com/Azure/counterfit)
 - [使用ART进行对抗样本攻击](https://www.cnblogs.com/bonelee/p/17797484.html)
+- [安全会议合集](https://github.com/cryptax/confsec)
 
 ## POC
 

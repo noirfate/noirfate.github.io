@@ -375,6 +375,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [HouYi - 自动化提示注入攻击框架](https://github.com/LLMSecurity/HouYi/) [paper](https://arxiv.org/pdf/2306.05499.pdf)
 - [GPT的system prompt](https://github.com/spdustin/ChatGPT-AutoExpert/blob/main/System%20Prompts.md)
 - [GPTs文件泄露](https://mp.weixin.qq.com/s/Bklnu0RhF8bnK1Irx14S5g)
+- [Github Copilot提示注入造成信息泄露](https://embracethered.com/blog/posts/2024/github-copilot-chat-prompt-injection-data-exfiltration/)
 
 ### 越狱
 绕过LLM的防护措施，产生恶意内容
@@ -426,6 +427,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [利用github selfhost runner污染pytorch](https://johnstawinski.com/2024/01/11/playing-with-fire-how-we-executed-a-critical-supply-chain-attack-on-pytorch/)
 - [shadowray - AI框架Ray未授权RCE漏洞](https://www.oligo.security/blog/shadowray-attack-ai-workloads-actively-exploited-in-the-wild)
 - [Wiz Research finds architecture risks that may compromise AI-as-a-Service providers and consequently risk customer data; works with Hugging Face on mitigations](https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure)
+- [The risk in malicious AI models: Wiz Research discovers critical vulnerability in AI-as-a-Service provider, Replicate](https://www.wiz.io/blog/wiz-research-discovers-critical-vulnerability-in-replicate)
+- [huntr - AI/ML漏洞赏金计划](https://huntr.com/bounties/hacktivity)
 
 ### 投毒
 

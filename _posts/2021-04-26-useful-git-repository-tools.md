@@ -120,6 +120,7 @@ excerpt: useful git repository (工具篇)
 - [freeze - 为代码生成图片](https://github.com/charmbracelet/freeze)
 - [pyinstaller-docer - pyinstaller的win和linux的docker镜像](https://github.com/cdrx/docker-pyinstaller)
 - [datamodel-code-generator - python数据定义如yaml转代码](https://github.com/koxudaxi/datamodel-code-generator)
+- [plotext - python library for drawing picture on terminal](https://github.com/piccolomo/plotext/)
 
 ## 静态工具
 
