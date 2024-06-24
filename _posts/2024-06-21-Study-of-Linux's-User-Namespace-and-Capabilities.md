@@ -118,6 +118,7 @@ int cap_capable(const struct cred *cred, struct user_namespace *targ_ns,
 CAP_NET_RAW是Linux能力（capability）系统中的一个特权，允许持有该能力的进程执行以下操作：
 - 创建原始套接字（RAW sockets）
 原始套接字允许直接访问底层协议，如ICMP等。通过原始套接字，进程可以构建自定义的网络包，接收和发送的消息包含完整的协议报头
+
 #### 以inet为例
 - 向`inetsw`中注册`SOCK_RAW`类型的`socket`
 ```
@@ -201,6 +202,7 @@ static int raw_sendmsg(struct sock *sk, struct msghdr *msg, size_t len) {
     ...
 }
 ```
+
 - 接收报文
 ```
 int inet_recvmsg(struct socket *sock, struct msghdr *msg, size_t size, int flags) {
@@ -213,7 +215,9 @@ static int raw_recvmsg(struct sock *sk, struct msghdr *msg, size_t len, int nobl
     ...
 }
 ```
+
 #### 支持SOCK_RAW的协议
+
 ```
 root@localhost:~/linux-4.19.315# grep -r --exclude='*.o' 'SOCK_RAW' net/ | awk -F: '{print $1}' | xargs -n1 dirname | sort -u
 net/appletalk
@@ -234,7 +238,9 @@ net/packet
 net/unix (虽然包含但实际不支持)
 net/xdp
 ```
+
 #### 对CAP_NET_RAW鉴权的协议
+
 ```
 root@localhost:~/linux-4.19.315# grep -r --exclude='*.o' 'CAP_NET_RAW' net/ | awk -F: '{print $1}' | xargs -n1 dirname | sort -u
 net/appletalk
@@ -249,6 +255,7 @@ net/nfc
 net/packet
 net/xdp
 ```
+
 #### 支持RAW但未使用CAP_NET_RAW鉴权的协议
 - can
 PF_CAN是Linux内核中用于Controller Area Network (CAN)的协议族。CAN是一种用于汽车和工业自动化中的通信协议，允许微控制器和设备直接通信而无需主机计算机。
@@ -291,6 +298,7 @@ PF_KEY是一个用于密钥管理的协议族，通常与IPsec（Internet Protoc
 这是一个整数溢出漏洞，可导致越界写，漏洞触发需要创建RAW套接字`socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL))`，凡是具备操作RAW套接字权限的用户均可触发
 
 包含漏洞的代码如下：
+
 ```
 static int tpacket_rcv(struct sk_buff *skb, struct net_device *dev,
                struct packet_type *pt, struct net_device *orig_dev)
