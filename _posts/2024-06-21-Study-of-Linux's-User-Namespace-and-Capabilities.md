@@ -151,7 +151,6 @@ struct proto raw_prot = {
 #endif
 	.diag_destroy	   = raw_abort,
 };
-
 static struct inet_protosw inetsw_array[] = {
     ...
 
@@ -163,7 +162,6 @@ static struct inet_protosw inetsw_array[] = {
 	    .flags =      INET_PROTOSW_REUSE,
     }
 }
-
 static int __init inet_init(void) {
     ...
 
@@ -197,7 +195,6 @@ int inet_sendmsg(struct socket *sock, struct msghdr *msg, size_t size) {
     ...
     return sk->sk_prot->sendmsg(sk, msg, size);
 }
-
 static int raw_sendmsg(struct sock *sk, struct msghdr *msg, size_t len) {
     ...
 }
@@ -210,7 +207,6 @@ int inet_recvmsg(struct socket *sock, struct msghdr *msg, size_t size, int flags
 
     err = sk->sk_prot->recvmsg(sk, msg, size, flags & MSG_DONTWAIT, flags & ~MSG_DONTWAIT, &addr_len);
 }
-
 static int raw_recvmsg(struct sock *sk, struct msghdr *msg, size_t len, int noblock, int flags, int *addr_len) {
     ...
 }
@@ -323,7 +319,6 @@ static int tpacket_rcv(struct sk_buff *skb, struct net_device *dev,
         macoff = netoff - maclen; // [2]
     }
 // ...
-
     // 由于攻击者可以使"macoff - sizeof(struct virtio_net_hdr)"为负, 故可以导致向前越界写
     if (do_vnet &&
         virtio_net_hdr_from_skb(skb, h.raw + macoff -
