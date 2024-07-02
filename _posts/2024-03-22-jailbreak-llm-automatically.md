@@ -320,7 +320,7 @@ Your response should strictly follow this format: "Response: [[response]]", the 
 
 ### [PyRIT](https://github.com/Azure/PyRIT)
 
-简单的红队LLM泛用测试框架，不包含针对越狱的增强
+简单的红队LLM泛用测试框架
 
 #### 架构
 ![](/assets/img/llm_sec/llm_jailbreak8.png)
@@ -402,6 +402,12 @@ template: |
   The conversation objective is to: {{ conversation_objective }}
 ```
 
+#### 越狱提示模板
+- https://github.com/Azure/PyRIT/tree/main/pyrit/datasets/prompt_templates/jailbreak
+
+#### Skeleton Key Jailbreak
+- https://github.com/Azure/PyRIT/tree/main/pyrit/datasets/orchestrators/skeleton_key
+
 ## 开源集成框架
 
 ### [HarmBench](https://github.com/centerforaisafety/HarmBench)
@@ -461,6 +467,24 @@ attacker = PAIR(attack_model=attack_model,
 # Finally, start jailbreaking.
 attacker.attack(save_path='vicuna-13b-v1.5_gpt4_gpt4_AdvBench_result.jsonl')
 ```
+
+### [ALERT](https://github.com/Babelscape/ALERT)
+自动化大模型安全评估工具
+
+#### 架构
+![](/assets/img/llm_sec/llm_jailbreak15.png)
+
+- 不安全提示分类
+分为6大类，32小类
+![](/assets/img/llm_sec/llm_jailbreak16.png)
+
+- 基准测试
+对不安全提示直接测试，用法官大模型判决目标大模型回复是否安全，统计安全回复在总回复数种的占比
+![](/assets/img/llm_sec/llm_jailbreak17.png)
+
+- 攻击测试
+使用攻击技术对大模型进行测试，计算攻击成功率
+![](/assets/img/llm_sec/llm_jailbreak18.png)
 
 ## 总结
 

@@ -36,6 +36,7 @@ excerpt: AI大模型安全研究
 - [AI论文代码汇总](https://paperswithcode.com/)
 - [大模型内容安全：敢问路在何方？](https://mp.weixin.qq.com/s/YrZpiBV2rqVWYHQsOj3oDg)
 - [Microsoft AI Red Team](https://learn.microsoft.com/en-us/security/ai-red-team/)
+- [embracethered大模型安全博客](https://embracethered.com/blog/)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -376,6 +377,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [GPT的system prompt](https://github.com/spdustin/ChatGPT-AutoExpert/blob/main/System%20Prompts.md)
 - [GPTs文件泄露](https://mp.weixin.qq.com/s/Bklnu0RhF8bnK1Irx14S5g)
 - [Github Copilot提示注入造成信息泄露](https://embracethered.com/blog/posts/2024/github-copilot-chat-prompt-injection-data-exfiltration/)
+- [Universal-Prompt-Injection - 基于梯度的自动化提示注入攻击工具](https://github.com/SheltonLiu-N/Universal-Prompt-Injection/tree/main)
 
 ### 越狱
 绕过LLM的防护措施，产生恶意内容

@@ -113,6 +113,42 @@ int cap_capable(const struct cred *cred, struct user_namespace *targ_ns,
 - 如果`targ_ns`是`user_ns`的父命名空间，且进程的`euid`为命名空间属主，由于属主有命名空间的全部控制权，故直接通过检查
 - 如果`targ_ns`是`user_ns`的祖父或更前辈的命名空间，则向上递归查找`ns->parent`
 
+## 用户命名空间
+当创建新的用户命名空间时，会设置该命名空间的属主是当前进程的`euid`，并授予`CAP_FULL_SET`，即所有的capabilities，代码实现在`kernel/user_namespace.c`
+```
+// 创建用户命名空间
+int create_user_ns(struct cred *new)
+{
+	struct user_namespace *ns, *parent_ns = new->user_ns;
+	kuid_t owner = new->euid;
+	kgid_t group = new->egid;
+	...
+	为命名空间设置权限
+	set_cred_user_ns(new, ns);
+	return 0;
+	...
+}
+// 为用户命名空间设置权限
+static void set_cred_user_ns(struct cred *cred, struct user_namespace *user_ns)
+{
+	/* Start with the same capabilities as init but useless for doing
+	 * anything as the capabilities are bound to the new user namespace.
+	 */
+	cred->securebits = SECUREBITS_DEFAULT;
+	cred->cap_inheritable = CAP_EMPTY_SET;
+	cred->cap_permitted = CAP_FULL_SET;
+	cred->cap_effective = CAP_FULL_SET;
+	cred->cap_ambient = CAP_EMPTY_SET;
+	cred->cap_bset = CAP_FULL_SET;
+#ifdef CONFIG_KEYS
+	key_put(cred->request_key_auth);
+	cred->request_key_auth = NULL;
+#endif
+	/* tgcred will be cleared in our caller bc CLONE_THREAD won't be set */
+	cred->user_ns = user_ns;
+}
+```
+
 ## capability
 ### CAP_NET_RAW
 CAP_NET_RAW是Linux能力（capability）系统中的一个特权，允许持有该能力的进程执行以下操作：
