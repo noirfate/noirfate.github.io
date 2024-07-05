@@ -422,6 +422,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [利用模型API返回的logprob进行对抗后缀攻击](https://github.com/tml-epfl/llm-adaptive-attacks/)
 - [AdvPrompter - 黑盒advprompt生成模型](https://github.com/facebookresearch/advprompter)
 - [jailbreak-evaluation - 越狱成功评估工具](https://github.com/controllability/jailbreak-evaluation)
+- [DrAttack - prompt自动重组越狱](https://github.com/xirui-li/DrAttack/tree/main)
+- [JailBreakV-28k - 多模态大模型越狱评估数据集](https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k)
 
 ### 供应链
 
@@ -449,6 +451,9 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - **在应用级别**，应用开发者可以实施元提示和以用户为中心的设计和用户体验缓解措施。元提示是提供给模型的指令，用于指导其行为；使用元提示在引导系统按照你的期望行为方面可以产生关键的差异。以用户为中心的设计和用户体验（UX）干预也是防止滥用和过度依赖AI的关键缓解工具。
 
 - **在定位级别**，有许多方法可以教育将使用或受到你的系统影响的人们了解其能力和限制。
+
+### 安全护栏
+- [Llama Guard](https://huggingface.co/meta-llama/Meta-Llama-Guard-2-8B) [论文](https://arxiv.org/pdf/2312.06674) [使用指南](https://medium.com/emalpha/safeguarding-llm-conversations-using-llama-guard-a1652da1d2de)
 
 ### 漏洞扫描
 

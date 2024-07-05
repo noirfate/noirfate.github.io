@@ -46,6 +46,7 @@ excerpt: useful git repository (攻防篇)
 - [Burp-GAP - Burp的url路径、参数扫描插件](https://github.com/xnl-h4ck3r/GAP-Burp-Extension)
 - [cariddi - 网站敏感信息扫描工具](https://github.com/edoardottt/cariddi)
 - [kscan - 快速的网络扫描工具](https://github.com/lcvvvv/kscan)
+- [baddns - dns域名劫持扫描工具](https://github.com/blacklanternsecurity/baddns)
 
 ### 本地扫描工具
 
@@ -68,6 +69,7 @@ excerpt: useful git repository (攻防篇)
 - [sudo_killer - sudo漏洞扫描](https://github.com/TH3xACE/SUDO_KILLER)
 - [敏感信息正则库 - 支持trufflehog和gitleaks](https://github.com/mazen160/secrets-patterns-db) [使用](https://mazinahmed.net/blog/secrets-patterns-db/)
 - [SharpWeb - 导出浏览器密码cookie](https://github.com/StarfireLab/SharpWeb)
+- [ELFieScanner - 进程内存扫描检测恶意行为](https://github.com/JanielDary/ELFieScanner)
 
 ### 远控工具
 
