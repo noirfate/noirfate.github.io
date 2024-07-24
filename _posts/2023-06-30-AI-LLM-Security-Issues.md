@@ -37,6 +37,7 @@ excerpt: AI大模型安全研究
 - [大模型内容安全：敢问路在何方？](https://mp.weixin.qq.com/s/YrZpiBV2rqVWYHQsOj3oDg)
 - [Microsoft AI Red Team](https://learn.microsoft.com/en-us/security/ai-red-team/)
 - [embracethered大模型安全博客](https://embracethered.com/blog/)
+- [大模型安全论文汇总](https://github.com/ThuCCSLab/Awesome-LM-SSP/)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -424,6 +425,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [jailbreak-evaluation - 越狱成功评估工具](https://github.com/controllability/jailbreak-evaluation)
 - [DrAttack - prompt自动重组越狱](https://github.com/xirui-li/DrAttack/tree/main)
 - [JailBreakV-28k - 多模态大模型越狱评估数据集](https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k)
+- [中文prompt攻击数据集CPAD](https://github.com/liuchengyuan123/CPAD)
 
 ### 供应链
 

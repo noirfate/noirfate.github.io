@@ -154,6 +154,31 @@ static void set_cred_user_ns(struct cred *cred, struct user_namespace *user_ns)
 CAP_NET_RAW是Linux能力（capability）系统中的一个特权，允许持有该能力的进程执行以下操作：
 - 创建原始套接字（RAW sockets）
 原始套接字允许直接访问底层协议，如ICMP等。通过原始套接字，进程可以构建自定义的网络包，接收和发送的消息包含完整的协议报头
+- 创建AF_PACKET类型套接字
+AF_PACKET用于数据链路层收发数据包，设置为SOCK_RAW时会包括链路层包头，设置为SOCK_DGRAM时会把链路层包头去掉，一般用于捕获网络接口上的所有数据包
+- 绑定任意地址
+允许套接字绑定任意IP地址，可以截获发往该IP地址的数据包，实现透明代理
+```
+static int do_ip_setsockopt(struct sock *sk, int level, int optname, char __user *optval, unsigned int optlen)
+{
+	...
+	switch (optname) {
+		...
+		case IP_TRANSPARENT:
+			if (!!val && !ns_capable(sock_net(sk)->user_ns, CAP_NET_RAW) &&
+		    	!ns_capable(sock_net(sk)->user_ns, CAP_NET_ADMIN)) {
+				err = -EPERM;
+				break;
+			}
+			if (optlen < 1)
+				goto e_inval;
+			inet->transparent = !!val;
+			break;
+		...
+	}
+	...
+}
+```
 
 #### 以inet为例
 - 向`inetsw`中注册`SOCK_RAW`类型的`socket`

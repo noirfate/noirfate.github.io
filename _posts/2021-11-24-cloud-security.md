@@ -56,6 +56,7 @@ excerpt: Cloud Security
 	- [kubernetes历史漏洞 - git issue](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fsecurity+is%3Aclosed)
 	- [kubernetes历史漏洞 - git cve](https://github.com/kubernetes/kubernetes/issues?q=is%3Aclosed+label%3Aofficial-cve-feed+)
 	- [kubernetes历史漏洞 - git changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG)
+	- [kubernetes历史漏洞 - git sig](https://github.com/kubernetes/kubernetes/issues?q=label%3Asig%2Fsecurity+)
 	- [kubernetes历史漏洞 - hackerone](https://hackerone.com/kubernetes/hacktivity?type=team)
 	- [kubernetes历史漏洞 - 官方feed](https://kubernetes.io/docs/reference/issues-security/official-cve-feed/)
 	- [docker/moby安全公告](https://github.com/moby/moby/security/advisories)
@@ -327,6 +328,7 @@ excerpt: Cloud Security
 - [CVE-2022-4886: k8s ingress-nginx-controller pec.rules.http.paths.path RCE](https://hackerone.com/reports/1620702)
 - [CVE-2023-5044: k8s nginx.ingress.kubernetes.io/permanent-redirect RCE](https://hackerone.com/reports/2039464)
 - [CVE-2024-21626: runc leak fd workdir escape](https://github.com/opencontainers/runc/security/advisories/GHSA-xr7r-f8xq-vfvv)
+- [gitRepo容器逃逸漏洞](https://irsl.medium.com/sneaky-write-hook-git-clone-to-root-on-k8s-node-e38236205d54)
 
 # QEMU/HyperV/VMWare
 
