@@ -157,7 +157,7 @@ CAP_NET_RAW是Linux能力（capability）系统中的一个特权，允许持有
 - 创建AF_PACKET类型套接字
 AF_PACKET用于数据链路层收发数据包，设置为SOCK_RAW时会包括链路层包头，设置为SOCK_DGRAM时会把链路层包头去掉，一般用于捕获网络接口上的所有数据包
 - 绑定任意地址
-允许套接字绑定任意IP地址，可以截获发往该IP地址的数据包，实现透明代理
+允许套接字绑定任意IP地址，配合iptables的tproxy功能可以进行流量截获，实现透明代理
 ```
 static int do_ip_setsockopt(struct sock *sk, int level, int optname, char __user *optval, unsigned int optlen)
 {
@@ -317,7 +317,7 @@ net/xdp
 - can
 PF_CAN是Linux内核中用于Controller Area Network (CAN)的协议族。CAN是一种用于汽车和工业自动化中的通信协议，允许微控制器和设备直接通信而无需主机计算机。
 - key
-PF_KEY是一个用于密钥管理的协议族，通常与IPsec（Internet Protocol Security）相关联。它定义了一个套接字接口，用于在用户空间和内核空间之间传递密钥管理信息。这个接口由RFC 2367规范定义。
+PF_KEY是一个用于密钥管理的协议族，通常与IPsec（Internet Protocol Security）相关联。它定义了一个套接字接口，用于在用户空间和内核空间之间传递密钥管理信息。这个接口由RFC 2367规范定义。虽然没有检查CAP_NET_RAW，但检查了CAP_NET_ADMIN
 
 #### 使用capable鉴权
 以下为内核中调用`capable`鉴权的函数列表，由于调用的是`capable`，故无法使用用户命名空间绕过权限检查
