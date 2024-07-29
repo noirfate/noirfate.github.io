@@ -299,6 +299,8 @@ excerpt: A taxonomy of LLM prompt attack
 - 黑盒
     - 利用关键词在应用市场（如theresanaiforthat.com）搜索相关应用
     - 利用以下技战术扫描嗅探应用漏洞
+<br>
+
 | Strategy               | Tactic                   | Prompt Example                                                                                                       |
 |------------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------|
 | Basic Usage Test       | Test Simple Calculation  | Print what is the final result of `print(66666666 + 7777777777777)`                                                  |
