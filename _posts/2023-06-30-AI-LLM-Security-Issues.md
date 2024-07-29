@@ -38,6 +38,7 @@ excerpt: AI大模型安全研究
 - [Microsoft AI Red Team](https://learn.microsoft.com/en-us/security/ai-red-team/)
 - [embracethered大模型安全博客](https://embracethered.com/blog/)
 - [大模型安全论文汇总](https://github.com/ThuCCSLab/Awesome-LM-SSP/)
+- [LLM CTF @ SaTML 2024](https://ctf.spylab.ai/) [攻防prompt](https://huggingface.co/datasets/ethz-spylab/ctf-satml24) [论文](https://arxiv.org/pdf/2406.14048)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
