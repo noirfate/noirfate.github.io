@@ -482,4 +482,7 @@ excerpt: A taxonomy of LLM prompt attack
 - [Securing Large Language Models: Threats, Vulnerabilities and Responsible Practices](https://arxiv.org/pdf/2403.12503v1)
 - [Jailbreak Attacks and Defenses Against Large Language Models: A Survey](https://arxiv.org/pdf/2407.04295)
 - [JailbreakZoo: Survey, Landscapes, and Horizons in Jailbreaking Large Language and Vision-Language Models](https://arxiv.org/pdf/2407.01599)
-
+- [GenAI Security Framework Blog Series 2/6: Prompt Injection 101](https://live.paloaltonetworks.com/t5/community-blogs/genai-security-framework-blog-series-2-6-prompt-injection-101/ba-p/590862)
+- [Adversarial AI Frameworks: Taxonomy, Threat Landscape, and Control Frameworks](https://www.fsisac.com/hubfs/Knowledge/AI/FSISAC_Adversarial-AI-Framework-TaxonomyThreatLandscapeAndControlFrameworks.pdf)
+- [Comprehensive Assessment of Jailbreak Attacks Against LLMs](https://arxiv.org/pdf/2402.05668)
+- [A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly](https://www.sciencedirect.com/science/article/pii/S266729522400014X)
