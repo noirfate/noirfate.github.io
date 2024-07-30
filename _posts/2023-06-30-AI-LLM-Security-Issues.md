@@ -427,6 +427,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [DrAttack - prompt自动重组越狱](https://github.com/xirui-li/DrAttack/tree/main)
 - [JailBreakV-28k - 多模态大模型越狱评估数据集](https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k)
 - [中文prompt攻击数据集CPAD](https://github.com/liuchengyuan123/CPAD)
+- [JailbreakEval - 越狱结果成功判定工具](https://github.com/ThuCCSLab/JailbreakEval)
 
 ### 供应链
 

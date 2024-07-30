@@ -205,6 +205,10 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种基于话语链的越狱方式，首先构造回复恶意问题的话语链，然后抛出另一个恶意问题并让LLM进行补全。[数据集](https://github.com/declare-lab/red-instruct/)
 ![](/assets/img/llm_sec/prompt_attack56.png)
 
+##### [ICLAttack](https://arxiv.org/pdf/2401.05949)
+本文作者提出了一种利用大模型上下文学习能力进行后门植入的方法，通过构造的示例对大模型进行投毒植入后门，之后在大模型执行相关任务时通过特定提示触发后门
+![](/assets/img/llm_sec/prompt_attack67.png)
+
 #### 基于规则
 ![](/assets/img/llm_sec/prompt_attack4.png)
 
@@ -436,6 +440,9 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者使用的方法与Shadow Alignment类似，区别在于Shadow Alignment主要测试的是开源模型，而本文测试的是GPT-4
 ![](/assets/img/llm_sec/prompt_attack21.png)
 
+##### [BadAgent](https://arxiv.org/pdf/2406.03007)
+本文作者提出了一种利用模型微调植入后门的方法，与以往后门注入的目标不同，作者尝试对agent任务进行后门植入，在模型执行任务时利用触发词激活后门，让agent执行恶意任务。[代码](https://github.com/DPamK/BadAgent)
+![](/assets/img/llm_sec/prompt_attack69.png)
 
 ### 间接提示注入
 攻击者作为第三方，通过嵌入在提示中的不受信任内容（如第三方文档、插件结果、网页或电子邮件）进入系统，通过让大模型相信其内容是来自用户的有效命令，而不是第三方的内容，从而获取用户凭证、大模型、智能体等功能的控制权
@@ -474,6 +481,22 @@ excerpt: A taxonomy of LLM prompt attack
 攻击者期望LLM在生成与用户输入相关的响应的同时，保持包含恶意内容
 ![](/assets/img/llm_sec/prompt_attack61.png)
 
+#### [Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](https://arxiv.org/pdf/2302.12173v2)
+本文作者对间接注入攻击进行了威胁建模，特别的提出了一种利用模型记忆进行注入持久化的攻击方式，文章把注入方法分为以下四种：
+- 被动注入
+攻击者把注入提示放在公开资源中（如网站、社交媒体、代码仓），当被搜索引擎或大模型检索到的时候，即产生注入攻击
+- 主动注入
+攻击者主动向大模型发送注入提示，如发送邮件到集成了LLM的邮件系统中
+- 用户驱动注入
+用户主动访问攻击者部署在公开资源中注入提示，如访问攻击者的网站
+- 隐蔽注入
+攻击者试图对提示注入进行隐藏，如多阶段注入、使用编解码、使用图片注入等
+![](/assets/img/llm_sec/prompt_attack66.png)
+
+#### [BadChain](https://openreview.net/pdf?id=c93SBwz1Ma)
+本文作者提出了一种通过在思维链（Chain of Thoughts）中注入恶意示例来实现后门的方法，利用大模型的上下文学习能力，攻击者可在提示中嵌入触发短语激活之前在思维链中植入的后门，偏离模型的行为。[代码](https://github.com/Django-Jiang/BadChain)
+![](/assets/img/llm_sec/prompt_attack68.png)
+
 ## 参考文献
 - [Survey of Vulnerabilities in Large Language Models Revealed by Adversarial Attacks](https://arxiv.org/pdf/2310.10844)
 - [Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs through a Global Scale Prompt Hacking Competition](https://arxiv.org/pdf/2311.16119)
@@ -486,3 +509,11 @@ excerpt: A taxonomy of LLM prompt attack
 - [Adversarial AI Frameworks: Taxonomy, Threat Landscape, and Control Frameworks](https://www.fsisac.com/hubfs/Knowledge/AI/FSISAC_Adversarial-AI-Framework-TaxonomyThreatLandscapeAndControlFrameworks.pdf)
 - [Comprehensive Assessment of Jailbreak Attacks Against LLMs](https://arxiv.org/pdf/2402.05668)
 - [A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly](https://www.sciencedirect.com/science/article/pii/S266729522400014X)
+- [Operationalizing a Threat Model for Red-Teaming Large Language Models (LLMs)](https://arxiv.org/pdf/2407.14937)
+- [Unique Security and Privacy Threats of Large Language Model: A Comprehensive Survey](https://arxiv.org/pdf/2406.07973)
+- [Safeguarding Large Language Models: A Survey](https://arxiv.org/pdf/2406.02622)
+- [Breaking Down the Defenses: A Comparative Survey of Attacks on Large Language Models](https://arxiv.org/pdf/2403.04786)
+- [On Protecting the Data Privacy of Large Language Models (LLMs): A Survey](https://arxiv.org/pdf/2403.05156)
+- [Safety of Multimodal Large Language Models on Images and Texts](https://arxiv.org/pdf/2402.00357)
+- [Security and Privacy Challenges of Large Language Models: A Survey](https://arxiv.org/pdf/2402.00888)
+- [Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems](https://arxiv.org/pdf/2401.05778)
