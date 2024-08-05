@@ -314,9 +314,104 @@ net/xdp
 ```
 
 #### 支持RAW但未使用CAP_NET_RAW鉴权的协议
-- can
-PF_CAN是Linux内核中用于Controller Area Network (CAN)的协议族。CAN是一种用于汽车和工业自动化中的通信协议，允许微控制器和设备直接通信而无需主机计算机。
-- key
+##### can
+PF_CAN是Linux内核中用于Controller Area Network (CAN)的协议族。CAN是一种用于汽车和工业自动化中的通信协议，允许微控制器和设备直接通信而无需主机计算机。由于CAN协议本身是一个广播协议，且CAN设备没有类似网卡物理地址的标识，仅靠协议中的CAN-ID来做标识，所以任何使用CAN设备的程序都能够收发报文，这也可能是内核未对SOCK_RAW做鉴权的原因，[参考](https://docs.kernel.org/networking/can.html)
+
+以下是在ubuntu上的复现步骤：
+- 启用can设备
+```
+apt-get install can-utils
+modprobe vcan
+ip link add dev vcan0 type vcan
+ip link set up vcan0
+```
+- 编写RAW套接字抓包程序
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <net/if.h>
+#include <linux/can.h>
+#include <linux/can/raw.h>
+
+int main() {
+    int s;
+    struct sockaddr_can addr;
+    struct ifreq ifr;
+    struct can_frame frame;
+
+    // 创建套接字
+    if ((s = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
+        perror("Error while opening socket");
+        return -1;
+    }
+
+    // 指定CAN接口（例如vcan0）
+    strcpy(ifr.ifr_name, "vcan0");
+    ioctl(s, SIOCGIFINDEX, &ifr);
+
+    addr.can_family = AF_CAN;
+    addr.can_ifindex = ifr.ifr_ifindex;
+
+    // 绑定套接字到CAN接口
+    if (bind(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+        perror("Error in socket bind");
+        return -1;
+    }
+
+    printf("Listening on vcan0...\n");
+
+    // 循环读取CAN帧
+    while (1) {
+        int nbytes = read(s, &frame, sizeof(struct can_frame));
+
+        if (nbytes < 0) {
+            perror("CAN raw socket read");
+            return -1;
+        }
+
+        if (nbytes < sizeof(struct can_frame)) {
+            fprintf(stderr, "Read: incomplete CAN frame\n");
+            return -1;
+        }
+
+        // 打印CAN帧数据
+        printf("ID: %03X, DLC: %d, Data:", frame.can_id, frame.can_dlc);
+        for (int i = 0; i < frame.can_dlc; i++) {
+            printf(" %02X", frame.data[i]);
+        }
+        printf("\n");
+    }
+
+    close(s);
+    return 0;
+}
+```
+- 编译抓包程序
+```
+gcc canraw.c -o canraw
+```
+- 使用普通用户启动抓包程序，cap如下
+```
+CapInh: 0000000000000000
+CapPrm: 0000000000000000
+CapEff: 0000000000000000
+CapBnd: 000001ffffffffff
+CapAmb: 0000000000000000
+```
+- 发送can帧
+```
+cansend vcan0 123#DEADBEEF
+```
+- 检查是否能够嗅探到
+```
+Listening on vcan0...
+ID: 123, DLC: 4, Data: DE AD BE EF
+```
+##### key
 PF_KEY是一个用于密钥管理的协议族，通常与IPsec（Internet Protocol Security）相关联。它定义了一个套接字接口，用于在用户空间和内核空间之间传递密钥管理信息。这个接口由RFC 2367规范定义。虽然没有检查CAP_NET_RAW，但检查了CAP_NET_ADMIN
 
 #### 使用capable鉴权
