@@ -106,6 +106,8 @@ The term “AI red-teaming” means a structured testing effort to find flaws an
 - 分析内置于核心系统的新人工智能检测和预防能力的韧性，并探讨攻击者可能如何绕过它们
 - 利用红队结果改善检测能力，以便早期发现攻击，事件响应团队可以适当地做出反应。红队演练还为防御团队提供了一个机会，练习他们如何处理真实攻击
 - 提高相关利益相关者的意识：1）帮助使用人工智能的开发者理解关键风险；2）根据需要，倡导组织基于风险驱动和充分知情的原则，对安全控制措施进行投资
+<br>
+
 ##### 技战术
 以下技战术是AI红队所特有的，需要与传统红队的技战术结合使用，而不是替代它们。
 - 提示攻击
@@ -114,21 +116,26 @@ The term “AI red-teaming” means a structured testing effort to find flaws an
 - 对抗样本
 - 数据投毒
 - 模型萃取
+
 ##### 经验
 - 传统红队是用来构建AI红队的一个很好的起点，但随着AI系统攻击的日趋复杂，与AI专家合作会得到很多益处
 - 解决红队的发现可能具有挑战性，一些攻击可能没有简单的解决方案
 - 针对许多攻击，传统的安全防护措施可以显著降低风险，在保护AI整个生命周期中的完整性，防止数据投毒和后门攻击中尤其如此
 
 #### [Microsoft](https://www.microsoft.com/en-us/security/blog/2023/08/07/microsoft-ai-red-team-building-future-of-safer-ai/)
+
 ##### 定义
 随着AI系统变得更加普遍，微软于2018年就成立了AI红队，它是一个由跨学科专家组成的团队，致力于像攻击者一样思考并探测AI系统的故障。如今AI红队的实践已经演变为一个更广泛的含义：它不仅涵盖了对安全漏洞的探测,还包括了对其他系统故障的探测，例如生成有害内容。AI系统带来了新的风险，而红队是了解这些新风险（如提示注入和生成有害内容）的核心。AI红队在微软不仅仅是锦上添花，它是负责任AI设计的基石。
 ![](/assets/img/llm_sec/ms_redteam.png)
+
 ##### 技战术
 AI红队测试通常在以下两个层面进行：
 - 模型层面
 对模型进行红队测试有助于在过程的早期识别模型如何被滥用，确定模型的能力范围，并了解模型的局限性。这些见解可以反馈到模型开发过程中，以改进未来的模型版本，同时也可以快速确定模型最适合哪些应用程序
 - 应用层面
 在此层面上，AI红队测试采用系统视角，其中基础模型只是整个系统中的一部分，有助于识别超出模型级安全机制的问题，如系统漏洞、应用漏洞等
+<br>
+
 ##### 经验
 GenAI红队测试是一个复杂的多步骤过程，与传统AI系统或传统软件的红队测试有很大不同。
 - 负责任AI
@@ -210,5 +217,5 @@ OpenAI向社会招募各领域专家组成红队网络以测试模型在使用�
 在网络安全领域，红队测试是一种模拟对系统进行真实攻击的技术,用于测试漏洞并了解可能的对手能力和目标。然而，在AI领域，该术语已经演变为通常是指测试LLM的有害输出，即模型的安全对齐问题，如Anthropic、OpenAI和Meta。但这个定义显然是不够的，FMF（Frontier Model Forum）将红队测试定义为一个结构化的测试过程，用于探测AI系统和产品，以识别有害的能力、输出或基础设施威胁。与传统的"红队测试"类似，AI红队测试通常需要在整个系统(包括数据、基础设施、应用程序)中主动识别缺陷和漏洞，而不仅仅是模型输出。它是推进安全、可靠的AI的重要工具，帮助团队识别系统的潜在风险，以便可以应用安全防护措施。这也是一个迭代的过程，利用演习的结果和洞察来指导风险的大规模测量和缓解措施的实施，然后重新进行评估以确定缓解措施的有效性。
 
 ### 参考案例
-[Red-Teaming GenAI - Case Studies](https://docs.google.com/spreadsheets/d/1cZPc6Alkf8sqOFMsEvZgI2PzX2tHTIbemMa6sq4J2Qk)
-[Frontier Model Forum: What is Red Teaming?](https://www.frontiermodelforum.org/uploads/2023/10/FMF-AI-Red-Teaming.pdf)
+- [Red-Teaming GenAI - Case Studies](https://docs.google.com/spreadsheets/d/1cZPc6Alkf8sqOFMsEvZgI2PzX2tHTIbemMa6sq4J2Qk)
+- [Frontier Model Forum: What is Red Teaming?](https://www.frontiermodelforum.org/uploads/2023/10/FMF-AI-Red-Teaming.pdf)
