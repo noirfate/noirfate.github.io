@@ -27,6 +27,7 @@ excerpt: What's AI Red-teaming
 在陆军教育系统内建立所谓的红队大学，即外国军事与文化研究大学（UFMCS），退役陆军上校格雷戈里·方特诺（Gregory Fontenot）被任命为UFMCS的主任，其目标是“永久性地改变陆军未来领导者的思维方式”。[The Red Team Handbook](https://usacac.army.mil/sites/default/files/documents/ufmcs/The_Red_Team_Handbook.pdf)
 - 2015年4月
 CNSS（Committee on National Security Systems 国家安全系统委员会）在其发布的文件`CNSSI 4009-2015`术语表中增加了对`red team`的定义，将其用于网络空间
+
 ```
 A group of people authorized and organized to emulate a potential adversary’s attack or exploitation capabilities against an enterprise’s security posture. The Red Team’s objective is to improve enterprise cybersecurity by demonstrating the impacts of successful attacks and by demonstrating what works for the defenders (i.e., the Blue Team) in an operational environment. Also known as Cyber Red Team.
 
@@ -98,8 +99,8 @@ The term “AI red-teaming” means a structured testing effort to find flaws an
 #### [Google](https://services.google.com/fh/files/blogs/google_ai_red_team_digital_final.pdf)
 ##### 定义
 为了应对潜在的挑战，谷歌创建了一个专门的人工智能红队。它与传统的红队密切相关，但也具备必要的人工智能专业知识，以对人工智能系统进行复杂的技术攻击。
-##### 目标
-模拟针对人工智能部署的威胁行为者
+
+红队模拟针对人工智能部署的威胁行为者
 - 评估模拟攻击对用户和产品的影响，并确定增强和抵御这些攻击的方法
 - 分析内置于核心系统的新人工智能检测和预防能力的韧性，并探讨攻击者可能如何绕过它们
 - 利用红队结果改善检测能力，以便早期发现攻击，事件响应团队可以适当地做出反应。红队演练还为防御团队提供了一个机会，练习他们如何处理真实攻击
