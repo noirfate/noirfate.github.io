@@ -55,6 +55,7 @@ excerpt: useful git repository (研究篇)
 - [gpt-wpre - 使用gpt3分析二级制文件](https://github.com/moyix/gpt-wpre)
 - [ghidralligator - 基于ghidra进行模拟执行和fuzz](https://github.com/airbus-cyber/ghidralligator/tree/master)
 - [Cartographer - 覆盖度插件](https://github.com/nccgroup/Cartographer)
+- [Bsim - 根据数据库自动识别未知函数](https://www.pentestpartners.com/security-blog/fuzzy-matching-with-ghidra-bsim-a-guide/)
 
 ### GDB扩展
 
@@ -353,6 +354,7 @@ excerpt: useful git repository (研究篇)
 - [KLAUS - 判断内核patch是否能够有效修复漏洞](https://github.com/wupco/KLAUS/tree/main)
 - [SyzDescribe - 自动生成syzkaller需要的syscall描述](https://github.com/seclab-ucr/SyzDescribe)
 - [SyzBridge - 自动把syzbot生成的POC适配到Linux发行版上](https://github.com/seclab-ucr/SyzBridge)
+- [buzzer - ebpf fuzzer](https://github.com/google/buzzer)
 
 ### sanitizer
 
@@ -456,6 +458,7 @@ excerpt: useful git repository (研究篇)
 - [Fuzz论文](https://github.com/wcventure/FuzzingPaper)
 - [利用大模型反汇编、分析patch、生成fuzzer](https://fuzzing.io/Presentations/The%20DL%20on%20LLM%20Code%20Analysis%20-%20CanSecWest24%20-%20rjohnson.pdf)
 - [EFuzz - 利用rr记录和重放，fuzz各种程序](https://github.com/GJDuck/RRFuzz)
+- [SLUBStick - 内核堆漏洞利用方法](https://github.com/IAIK/SLUBStick) [论文](https://www.stefangast.eu/papers/slubstick.pdf)
 
 ## static analysis
 

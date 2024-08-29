@@ -1,8 +1,8 @@
 ---
 title: A taxonomy of LLM prompt attack
 layout: post
-categories: ai
-tags: ai, llm
+categories: AI
+tags: security
 date: 2024-07-30 18:00
 excerpt: A taxonomy of LLM prompt attack
 ---

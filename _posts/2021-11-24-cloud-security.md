@@ -28,6 +28,7 @@ excerpt: Cloud Security
 - [云安全知识库](https://cloudsec.huoxian.cn/docs/information)
 - [OffensiveClou - AWS、AZure、GCP渗透技巧](https://github.com/lutzenfried/OffensiveCloud)
 - [lightspin](https://blog.lightspin.io/)
+- [oligo](https://www.oligo.security/resources/blog?category=All)
 
 ## 开源情报
 
@@ -221,6 +222,14 @@ excerpt: Cloud Security
 - [flowfixation：利用AWS的MWAA在未认证的情况下可获得session cookie的漏洞和cookie tossing利用技术劫持MWAA服务](https://www.tenable.com/blog/flowfixation-aws-apache-airflow-service-takeover-vulnerability-and-why-neglecting-guardrails)
 - [使用恶意Pickle模型文件攻击huggingface并获取k8s集群权限](https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure)
 - [云上VM攻击路径](https://unit42.paloaltonetworks.com/cloud-virtual-machine-attack-vectors/)
+- [aws多个云服务在自动创建存储桶时未检查是否已经存在，可被攻击者抢占实施攻击](https://i.blackhat.com/BH-US-24/Presentations/US24-Kadkoda-Breaching-AWS-Accounts-Through-Shadow-Resources-Wednesday.pdf)
+- [aws amplify服务错误配置导致账户接管](https://securitylabs.datadoghq.com/articles/amplified-exposure-how-aws-flaws-made-amplify-iam-roles-vulnerable-to-takeover/)
+- [Azure microsofts ai healthcare chatbot service SSRF漏洞从metadata中获取token](https://www.tenable.com/blog/compromising-microsofts-ai-healthcare-chatbot-service)
+- [github ci/cd构建产出物和日志中泄露token](https://unit42.paloaltonetworks.com/github-repo-artifacts-leak-tokens/)
+- [azure WireServer和HostGAPlugin中的敏感信息](https://cybercx.co.nz/blog/azure-ssrf-metadata/)
+- [利用azure WireServer和HostGAPlugin中的敏感信息从pod中进行逃逸](https://cloud.google.com/blog/topics/threat-intelligence/escalating-privileges-azure-kubernetes-services)
+- [AWS多个云服务存在对象存储桶抢占的问题；Breaching AWS Accounts Through Shadow Resources](https://i.blackhat.com/BH-US-24/Presentations/US24-Kadkoda-Breaching-AWS-Accounts-Through-Shadow-Resources-Wednesday.pdf)
+- [利用GCP CloudBuild使用的pip安装参数--extra-index-url的安全缺陷实施供应链攻击 - The GCP Jenga Tower: Hacking Millions of Google’s Servers With a Single Package](https://vimeo.com/998899530)
 
 ## 云原生工具
 

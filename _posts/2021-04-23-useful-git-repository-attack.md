@@ -206,6 +206,9 @@ excerpt: useful git repository (攻防篇)
 - [gsd漏洞库](https://github.com/cloudsecurityalliance/gsd-database/)
 - [puncia - 漏洞利用搜索工具](https://github.com/ARPSyndicate/puncia) [API](https://api.exploit.observer/?keyword=CVE-2024-21626)
 - [vulnrichment - cisa漏洞补完](https://github.com/cisagov/vulnrichment)
+- [每日安全资讯](https://github.com/Vu1nT0tal/yarb/blob/main/today.md)
+- [源码搜索](https://sourcegraph.com/search)
+- [snyk漏洞信息检索](https://security.snyk.io/vuln)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)

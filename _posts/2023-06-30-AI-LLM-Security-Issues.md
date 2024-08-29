@@ -39,6 +39,8 @@ excerpt: AI大模型安全研究
 - [embracethered大模型安全博客](https://embracethered.com/blog/)
 - [大模型安全论文汇总](https://github.com/ThuCCSLab/Awesome-LM-SSP/)
 - [LLM CTF @ SaTML 2024](https://ctf.spylab.ai/) [攻防prompt](https://huggingface.co/datasets/ethz-spylab/ctf-satml24) [论文](https://arxiv.org/pdf/2406.14048)
+- [Practical LLM Security](https://i.blackhat.com/BH-US-24/Presentations/US24-Harang-Practical-LLM-Security-Takeaways-From-Wednesday.pdf)
+- [Red Teaming for GenAI Harms](https://www.ofcom.org.uk/siteassets/resources/documents/consultations/discussion-papers/red-teaming/red-teaming-for-gen-ai-harms.pdf)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
