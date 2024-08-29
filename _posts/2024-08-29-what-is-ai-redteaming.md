@@ -88,7 +88,7 @@ A group of people authorized and organized to emulate a potential adversary’s 
 
 ## AI红队
 ### 定义
-随着生成式AI的广泛应用，对它安全性的担忧也日益增长，为了应对这一状况，实践者和政策制定者们都将红队视为其识别和解决相关风险的战略中不可或缺的一部分，旨在确保与人类和社会价值观的一定程度的对齐。值得注意的是，美国总统拜登2023年10月在关于[安全、可靠和可信的人工智能开发与使用的行政命令](https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/)）中提到红队八次，并对其进行了如下定义：
+随着生成式AI的广泛应用，对它安全性的担忧也日益增长，为了应对这一状况，实践者和政策制定者们都将红队视为其识别和解决相关风险的战略中不可或缺的一部分，旨在确保与人类和社会价值观的一定程度的对齐。值得注意的是，美国总统拜登2023年10月在关于[安全、可靠和可信的人工智能开发与使用的行政命令](https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/)中提到红队八次，并对其进行了如下定义：
 
 ```
 The term “AI red-teaming” means a structured testing effort to find flaws and vulnerabilities in an AI system, often in a controlled environment and in collaboration with developers of AI.  Artificial Intelligence red-teaming is most often performed by dedicated “red teams” that adopt adversarial methods to identify flaws and vulnerabilities, such as harmful or discriminatory outputs from an AI system, unforeseen or undesirable system behaviors, limitations, or potential risks associated with the misuse of the system.
