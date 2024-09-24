@@ -25,6 +25,7 @@ excerpt: Kubernetes Ephemeral Containers
 - 定义一个可供准入控制器检查的v1.Container结构
 
 ## 历史
+
 | Feature | Default | Stage | From | To |
 | ---- | ---- | ---- | ---- | ---- |
 | EphemeralContainers | false | Alpha | 1.16 | 1.22 |
