@@ -314,6 +314,7 @@ excerpt: useful git repository (攻防篇)
 - [counterfit - 机器学习自动化攻击框架](https://github.com/Azure/counterfit)
 - [使用ART进行对抗样本攻击](https://www.cnblogs.com/bonelee/p/17797484.html)
 - [安全会议合集](https://github.com/cryptax/confsec)
+- [静态工具static binary](https://serverless.industries/2023/07/02/static-binaries.en.html)
 
 ## POC
 

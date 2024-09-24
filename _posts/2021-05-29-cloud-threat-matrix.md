@@ -25,6 +25,7 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   ![](/assets/img/attck_pro.jpg)
 
 [ATT&CK框架各个技术点对应测试样例](https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/Indexes/Indexes-Markdown/index.md)
+[Purple Practice](https://ipurple.team/2024/09/10/browser-stored-credentials/)
 
 **知识梳理的好处就是可交流、可复制、可分解，伴随着ATT&CK的普及，越来越多的人或企业也开始使用它来描述攻击威胁，如：**
 

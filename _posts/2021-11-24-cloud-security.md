@@ -29,6 +29,7 @@ excerpt: Cloud Security
 - [OffensiveClou - AWS、AZure、GCP渗透技巧](https://github.com/lutzenfried/OffensiveCloud)
 - [lightspin](https://blog.lightspin.io/)
 - [oligo](https://www.oligo.security/resources/blog?category=All)
+- [Hacking the Cloud](https://github.com/Hacking-the-Cloud/hackingthe.cloud)
 
 ## 开源情报
 
@@ -230,6 +231,7 @@ excerpt: Cloud Security
 - [利用azure WireServer和HostGAPlugin中的敏感信息从pod中进行逃逸](https://cloud.google.com/blog/topics/threat-intelligence/escalating-privileges-azure-kubernetes-services)
 - [AWS多个云服务存在对象存储桶抢占的问题；Breaching AWS Accounts Through Shadow Resources](https://i.blackhat.com/BH-US-24/Presentations/US24-Kadkoda-Breaching-AWS-Accounts-Through-Shadow-Resources-Wednesday.pdf)
 - [利用GCP CloudBuild使用的pip安装参数--extra-index-url的安全缺陷实施供应链攻击 - The GCP Jenga Tower: Hacking Millions of Google’s Servers With a Single Package](https://vimeo.com/998899530)
+- [aws和azure默认安全比较](https://securitycafe.ro/2024/09/03/aws-vs-azure-a-secure-by-default-comparison/)
 
 ## 云原生工具
 

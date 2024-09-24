@@ -41,6 +41,7 @@ excerpt: AI大模型安全研究
 - [LLM CTF @ SaTML 2024](https://ctf.spylab.ai/) [攻防prompt](https://huggingface.co/datasets/ethz-spylab/ctf-satml24) [论文](https://arxiv.org/pdf/2406.14048)
 - [Practical LLM Security](https://i.blackhat.com/BH-US-24/Presentations/US24-Harang-Practical-LLM-Security-Takeaways-From-Wednesday.pdf)
 - [Red Teaming for GenAI Harms](https://www.ofcom.org.uk/siteassets/resources/documents/consultations/discussion-papers/red-teaming/red-teaming-for-gen-ai-harms.pdf)
+- [promptarmor LLM安全博客](https://promptarmor.substack.com/)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -430,6 +431,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [JailBreakV-28k - 多模态大模型越狱评估数据集](https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k)
 - [中文prompt攻击数据集CPAD](https://github.com/liuchengyuan123/CPAD)
 - [JailbreakEval - 越狱结果成功判定工具](https://github.com/ThuCCSLab/JailbreakEval)
+- [多轮对话越狱数据集](https://huggingface.co/datasets/tom-gibbs/multi-turn_jailbreak_attack_datasets)
 
 ### 供应链
 

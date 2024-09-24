@@ -748,9 +748,14 @@ workdir=`docker image inspect --format='{{.GraphDriver.Data}}' $image | awk -F '
 mount -t overlay overlay -o lowerdir=$lowerdir,upperdir=$upperdir,workdir=$workdir /mnt
 ```
 
+## docker镜像加速
+2024年6月，大部分原来可用的国内镜像源纷纷关闭，现可用的如下：
+- https://github.com/DaoCloud/public-image-mirror
+
 # 网站
 
-- <https://data.stats.gov.cn> (国家数据)
-- <https://apps.evozi.com/apk-downloader/>  (从google play上下载apk)
-- <https://medium.com/marketingdatascience/selenium%E6%95%99%E5%AD%B8-%E4%B8%80-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webdriver-send-keys-988816ce9bed> (使用webdriver模拟网页操作）
-- <https://chaipip.com/>（ip地址位置查询）
+- [https://data.stats.gov.cn](国家数据)
+- [https://apps.evozi.com/apk-downloader/](从google play上下载apk)
+- [https://medium.com/marketingdatascience/selenium%E6%95%99%E5%AD%B8-%E4%B8%80-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webdriver-send-keys-988816ce9bed](使用webdriver模拟网页操作)
+- [https://chaipip.com/](ip地址位置查询)
+- [https://langgptai.feishu.cn/wiki/RXdbwRyASiShtDky381ciwFEnpe](LangGPT结构化提示词)
