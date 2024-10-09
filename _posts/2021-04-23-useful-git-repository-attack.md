@@ -209,6 +209,7 @@ excerpt: useful git repository (攻防篇)
 - [每日安全资讯](https://github.com/Vu1nT0tal/yarb/blob/main/today.md)
 - [源码搜索](https://sourcegraph.com/search)
 - [snyk漏洞信息检索](https://security.snyk.io/vuln)
+- [玄武每日安全资讯](https://sectoday.tencent.com/)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
@@ -315,6 +316,7 @@ excerpt: useful git repository (攻防篇)
 - [使用ART进行对抗样本攻击](https://www.cnblogs.com/bonelee/p/17797484.html)
 - [安全会议合集](https://github.com/cryptax/confsec)
 - [静态工具static binary](https://serverless.industries/2023/07/02/static-binaries.en.html)
+- [将网络流量还原成openapi接口文档](https://github.com/alufers/mitmproxy2swagger)
 
 ## POC
 

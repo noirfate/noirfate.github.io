@@ -277,6 +277,39 @@ done
 if [ $# -eq 0 ];then print_help;fi
 ```
 
+## 使用bash导出进程内存
+```shell
+#!/bin/bash
+
+PID=$1
+OUTPUT_DIR=$2
+
+if [ -z "$PID" ] || [ -z "$OUTPUT_DIR" ]; then
+    echo "用法：$0 <pid> <输出目录>"
+    exit 1
+fi
+
+if [ ! -d "$OUTPUT_DIR" ]; then
+    mkdir -p "$OUTPUT_DIR"
+fi
+
+# 确保具有 sudo 权限
+sudo true
+
+cat /proc/$PID/maps | while read line; do
+    START=$(echo $line | awk '{print $1}' | cut -d'-' -f1)
+    END=$(echo $line | awk '{print $1}' | cut -d'-' -f2)
+    PERMS=$(echo $line | awk '{print $2}')
+
+    # 仅转储可读的区域
+    if [[ $PERMS == *"r"* ]]; then
+        FILE_NAME="$OUTPUT_DIR/${START}-${END}_${PERMS//-/}.dump"
+        echo "正在转储 $START-$END ($PERMS) 到 $FILE_NAME"
+        sudo dd if=/proc/$PID/mem of="$FILE_NAME" bs=1 skip=$((0x$START)) count=$((0x$END - 0x$START)) 2>/dev/null
+    fi
+done
+```
+
 ## 查看所有namespace下的连接
 ```
 REL: https://unix.stackexchange.com/questions/203723/how-can-i-list-all-connections-to-my-host-including-those-to-lxc-guests

@@ -139,6 +139,8 @@ excerpt: useful git repository (工具篇)
 - [Infinite-Storage-Glitch - 把任意文件转换为视频](https://github.com/DvorakDwarf/Infinite-Storage-Glitch)
 - [DXcam - python实现的windows截屏录屏工具](https://github.com/ra1nty/DXcam)
 - [gotranscript - 字幕格式转换](https://gotranscript.com/subtitle-converter)
+- [VideoLingo - 视频字幕生成](https://github.com/Huanshere/VideoLingo)
+- [subtitleedit - 字幕编辑软件支持AI字幕生成](https://github.com/SubtitleEdit/subtitleedit)
 
 ## 下载工具
 
