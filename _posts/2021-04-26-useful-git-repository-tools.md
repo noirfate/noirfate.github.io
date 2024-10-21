@@ -62,6 +62,7 @@ excerpt: useful git repository (工具篇)
 - [openai模型对齐评估工具](https://github.com/openai/evals/tree/main)
 - [claude使用指南](https://github.com/anthropics/anthropic-cookbook)
 - [OCRmyPDF - 为扫描的PDF添加文本层可复制搜索](https://github.com/ocrmypdf/OCRmyPDF)
+- [MinerU - OCR文本提取](https://github.com/opendatalab/MinerU)
 
 ## 开发工具
 
@@ -141,6 +142,7 @@ excerpt: useful git repository (工具篇)
 - [gotranscript - 字幕格式转换](https://gotranscript.com/subtitle-converter)
 - [VideoLingo - 视频字幕生成](https://github.com/Huanshere/VideoLingo)
 - [subtitleedit - 字幕编辑软件支持AI字幕生成](https://github.com/SubtitleEdit/subtitleedit)
+- [BilibiliDown - B站视频下载工具](https://github.com/nICEnnnnnnnLee/BilibiliDown)
 
 ## 下载工具
 

@@ -432,6 +432,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [中文prompt攻击数据集CPAD](https://github.com/liuchengyuan123/CPAD)
 - [JailbreakEval - 越狱结果成功判定工具](https://github.com/ThuCCSLab/JailbreakEval)
 - [多轮对话越狱数据集](https://huggingface.co/datasets/tom-gibbs/multi-turn_jailbreak_attack_datasets)
+- [AutoDAN-Turbo - 自动生成和改进越狱策略并为特定的提示选择最合适的越狱策略进行攻击](https://github.com/SaFoLab-WISC/AutoDAN-Turbo)
+- [wildteaming - 自动化越狱工具能够自动总结提取越狱策略](https://github.com/allenai/wildteaming/)
 
 ### 供应链
 

@@ -129,6 +129,10 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种基于语法树变异的越狱方法，首先根据乔姆斯基的生成语法理论分析出恶意提示的语法树，然后通过生成转换规则增加句法结构的复杂性，并基于评估结果自动对规则进行优化，直到能够成功越狱目标模型。[数据集](https://github.com/whitzard-ai/jade-db)
 ![](/assets/img/llm_sec/prompt_attack57.png)
 
+##### [BlackDAN](https://arxiv.org/pdf/2410.09804)
+本文作者提出了一种名为BlackDAN的新型黑盒多目标优化框架，旨在对大型语言模型（LLM）进行有效且上下文相关的“越狱”攻击。论文采用非支配排序遗传算法 II（NSGA-II）进行多目标优化，使得生成的提示在多个目标上达到平衡，不仅要提高攻击成功率（Attack Success Rate，ASR），还要确保生成的攻击响应与原始有害提示之间具有语义一致性，同时降低被检测到的可能性。
+![](/assets/img/llm_sec/prompt_attack71.png)
+
 #### 基于场景
 ![](/assets/img/llm_sec/prompt_attack3.png)
 
@@ -424,6 +428,10 @@ excerpt: A taxonomy of LLM prompt attack
 ##### [SASP](https://arxiv.org/pdf/2311.09127)
 本文作者提出了一种名为Self-Adversarial Attack via System Prompt (SASP)的越狱GPT4-V的方法，该方法首先泄露系统提示，然后让大模型自己分析系统提示的弱点并构造能够绕过系统提示限制的提示，再通过前缀注入、拒绝抑制、假设场景、情感吸引的方式进行增强，最终实现越狱
 ![](/assets/img/llm_sec/prompt_attack63.png)
+
+##### [AutoDAN-Turbo](https://arxiv.org/pdf/2410.05295)
+本文作者提出了一种针对规则或场景越狱的自动化方法，首先攻击大模型根据恶意提示从越狱策略库种选择最合适的越狱模板生成越狱提示，接着打分大模型根据攻击结果进行打分，然后分数高的越狱提示再经过总结大模型进行总结生成越狱策略，最后把新的或改进后的越狱策略放入策略库中。[代码](https://github.com/SaFoLab-WISC/AutoDAN-Turbo)
+![](/assets/img/llm_sec/prompt_attack70.png)
 
 #### 基于微调
 此类方法利用恶意的问答数据集对目标大模型进行微调，从而绕过模型内置的安全对齐
