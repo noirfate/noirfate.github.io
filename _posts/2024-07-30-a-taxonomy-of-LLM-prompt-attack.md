@@ -77,6 +77,10 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者将Energy-based Constrained Decoding with Langevin Dynamics (COLD)算法应用于对抗文本生成，将越狱视为在多种控制要求下生成对抗性文本的问题。这些控制要求包括流畅性、隐蔽性、情感一致性和上下文连贯性等。通过设计适当的能量函数并使用Langevin Dynamics进行梯度采样来生成对抗性文本，确保其在隐蔽性和攻击效果方面达到预期目标。[代码](https://github.com/Yu-Fangxu/COLD-Attack)
 ![](/assets/img/llm_sec/prompt_attack12.png)
 
+##### [BAP](https://arxiv.org/pdf/2406.04031)
+本文作者提出了一种名为BAP（Bi-Modal Adversarial Prompt Attack）的新型攻击框架旨在通过同时优化视觉和文本提示扰动来实现越狱。首先使用肯定前缀和拒绝抑制的文本提示来优化图像扰动，在得到最优的图像对抗样本后在根据恶意提示意图优化文本提示扰动，最终实现越狱。[代码](https://github.com/NY1024/BAP-Jailbreak-Vision-Language-Models-via-Bi-Modal-Adversarial-Prompt)
+![](/assets/img/llm_sec/prompt_attack72.png)
+
 #### 基于演化
 ![](/assets/img/llm_sec/prompt_attack2.png)
 
@@ -182,7 +186,7 @@ excerpt: A taxonomy of LLM prompt attack
 ![](/assets/img/llm_sec/prompt_attack33.png)
 
 ##### [MJP](https://arxiv.org/pdf/2304.05197)
-本文作者在传统利用越狱模板的基础上提出了一种改进方案Multi-step Jailbreaking（MJP），通过伪造多轮会话并鼓励模型进行猜测来提高越狱的成功率
+本文作者在传统利用越狱模板的基础上提出了一种改进方案Multi-step Jailbreaking（MJP），通过伪造多轮会话并鼓励模型进行猜测来提高越狱的成功率。[代码](https://github.com/HKUST-KnowComp/LLM-Multistep-Jailbreak)
 ![](/assets/img/llm_sec/prompt_attack26.png)
 
 ##### [ICA](https://arxiv.org/pdf/2310.06387)
@@ -212,6 +216,58 @@ excerpt: A taxonomy of LLM prompt attack
 ##### [ICLAttack](https://arxiv.org/pdf/2401.05949)
 本文作者提出了一种利用大模型上下文学习能力进行后门植入的方法，通过构造的示例对大模型进行投毒植入后门，之后在大模型执行相关任务时通过特定提示触发后门
 ![](/assets/img/llm_sec/prompt_attack67.png)
+
+##### [Multi-Trun](https://arxiv.org/pdf/2408.15221)
+本文作者研究了当前大型语言模型（LLM）防御机制在面对多轮次人类越狱攻击（multi-turn human jailbreaks）时的脆弱性。[数据集](https://huggingface.co/datasets/ScaleAI/mhj)
+- 直接请求（Direct Request）：直接向 LLM 提出有害请求。
+- 回声（Echoing）：要求模型重复、确认或扩展提示中包含的有害陈述。
+- 隐藏意图流（Hidden Intention Streamline）：一系列看似单独无害的对话轮次，但最终形成一个有害请求。
+- 注入（Injection）：在提示中提供特定的输入，以获得特定的响应结果。
+    - 对话注入（Dialogue Injection）：指示模型在响应中使用特定短语，诱使其生成本质上有害或对抗性的响应。
+    - 指令注入（Instruction Injection）：提供模型必须在响应中包含的特定指令，以获取特定的对抗性或有害响应。
+    - 强制（Mandate）：明确要求模型生成可能有害或不良的输出。
+        - 命令（Command）：给模型一组指定的指令，要求其在响应中遵循。
+        - 许可（Permission）：给予模型生成它可能认为不适当或对抗性输出的权限，如果没有其他指示的话。
+- 混淆（Obfuscation）：在提示中用无害的符号、问题、同义词或数据埋藏有害内容。
+    - 拥挤（Crowding）：用无害的符号、数据、问题或同义词挤满一个有害的提示。
+    - 样式化输入（Stylized Input）：使用样式化的输入（例如 Base64）来在提示中隐藏对抗性或有害内容。
+        - 编码/加密输入（Encoded/Encrypted Input）：使用编码或加密的输入在提示中隐藏有害内容。
+        - 外国语言（Foreign Language）：使用外国语言在提示中隐藏有害内容。
+- 同义词（Synonyms）：使用无害的词/短语作为有害词或短语的“同义词”。
+- 输出格式（Output Format）：请求输出符合特定的风格或格式。
+    - 请求的输出（Requested Output）：要求响应以特定的输出格式编写，如电子邮件、博客文章等。
+    - 样式化输出（Stylized Output）：要求响应遵循特定的样式化输出（例如，使用押韵模式）。
+        - 辩论（Debate）：要求讨论有争议话题的优缺点，促使模型关注论证中有害的一面。
+        - 文学元素操纵（Literary Elements Manipulation）：要求模型的响应遵循特定的文学元素（例如，符合特定的传统习俗）。
+        - 外部来源（Outside Sources）：请求引用通常有害的外部来源。
+        - 分裂（Splitting）：要求提供两个输出，要求 AI 同时回应（好的 AI 和坏的 AI）。
+        - 减法（Subtraction）：请求移除响应中的特定元素，例如免责声明或警告，使其看起来像是在做一个大胆的声明。
+- 请求框架（Request Framing）：通过将提示框定为一个虚构的、紧急的或情绪化的场景来增加遵从的可能性。
+    - 代码框定（Framing as Code）：使用代码来框定提示，或通过在提示中提供代码输入或请求代码输出。
+        - 代码输入（Code Input）：让响应或部分响应成为模型在其响应中执行的脚本。
+        - 代码输出（Code Output）：请求一个可用于促进有害活动的脚本。
+- 虚构化（Fictionalization）：将提示情境化为一个虚构的场景，以迫使模型生成有害输出。
+    - 寓言（Allegory）：提示本身在孤立情况下并非有害，但旨在作为实际有害内容的替代。
+    - 诉诸权威（Appeal to Authority）：虚构化受到某种形式的权威（包括历史权威）的强化。
+    - 错误前提（False Premise）：以真理的幌子向模型提供事实错误或误导性的信息。
+    - 假设（Hypothetical）：围绕一个假设性场景设计提示，以促使模型遵从有害请求。
+    - 叙述（Narration）：要求模型叙述一个包含有害内容的虚构故事。
+    - 相反日/镜像世界（Opposite Day/Mirror World）：声称今天是“相反日”或模型处于镜像世界中，因此模型会以与平常相反的方式回应。
+    - 递归（Recursion）：在一个虚构场景中层叠不同的虚构场景。
+    - 为有益目的的请求（Requesting for Beneficial Purposes）：解释查询是出于教育、好奇、娱乐等目的，因此模型会忽略其指南并遵从请求。
+    - 角色扮演（人物创建）（Roleplay (Persona Creation)）：为模型和/或用户创建一个人物形象，让模型在响应中遵循。
+    - 滑坡角色（Slippery Slope Character）：为模型指定一个“糟糕的”人物形象，使其保持有害特征。
+- 紧迫性（Urgency）：创建一个紧急的虚构场景，促使模型忽略其指南并遵从请求。
+- 情感诉求/操纵（Emotional Appeal/Manipulation）：创建一个用户情绪化的场景，希望模型在响应中保持相同的情感基调。
+
+##### [Voice Roleplay](https://arxiv.org/pdf/2405.19103)
+本文作者提出了一种使用语音对话越狱GPT4-o的方法，利用GPT4-o的拟人特性，通过讲述虚拟故事实现越狱。[代码](https://github.com/TrustAIRLab/VoiceJailbreakAttack)
+![](/assets/img/llm_sec/prompt_attack77.png)
+
+##### [F2A](https://arxiv.org/pdf/2410.08776)
+本文作者提出了一种增加越狱成功率的方法，即为越狱提示增加虚假的安全检测，声称其经过了安全检测且是安全的
+![](/assets/img/llm_sec/prompt_attack78.png)
+![](/assets/img/llm_sec/prompt_attack79.png)
 
 #### 基于规则
 ![](/assets/img/llm_sec/prompt_attack4.png)
@@ -247,7 +303,7 @@ excerpt: A taxonomy of LLM prompt attack
 ![](/assets/img/llm_sec/prompt_attack43.png)
 
 ##### [Image-to-Text Logic Jailbreak](https://arxiv.org/pdf/2407.02534)
-本文作者提出了一种利用图示的方式越狱多模态大模型的方法，它把有害提示转换为相应的图示，让目标模型根据图示进行扩展描述
+本文作者提出了一种利用图示的方式越狱多模态大模型的方法，它把有害提示转换为相应的图示，让目标模型根据图示进行扩展描述。[数据集](https://github.com/zhuxiaotianzaishuijiao/Jailbreak-flowchart)
 ![](/assets/img/llm_sec/prompt_attack49.png)
 
 ##### [CodeChameleon](https://arxiv.org/pdf/2402.16717)
@@ -433,6 +489,15 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种针对规则或场景越狱的自动化方法，首先攻击大模型根据恶意提示从越狱策略库种选择最合适的越狱模板生成越狱提示，接着打分大模型根据攻击结果进行打分，然后分数高的越狱提示再经过总结大模型进行总结生成越狱策略，最后把新的或改进后的越狱策略放入策略库中。[代码](https://github.com/SaFoLab-WISC/AutoDAN-Turbo)
 ![](/assets/img/llm_sec/prompt_attack70.png)
 
+##### [ActorAttack](https://arxiv.org/pdf/2410.10700)
+本文作者提出了一种利用演员网络理论（Actor-Network Theory）越狱大模型的方法，首先根据有害提示构建相关的“演员”网络，然后再利用构建出来的这些线索通过多轮对话的方式引导大模型绕过安全限制。[代码](https://github.com/renqibing/ActorAttack) [数据集](https://huggingface.co/datasets/SafeMTData/SafeMTData)
+- 线索构建
+![](/assets/img/llm_sec/prompt_attack73.png)
+- 对话构建
+![](/assets/img/llm_sec/prompt_attack74.png)
+- 示例
+![](/assets/img/llm_sec/prompt_attack75.png)
+
 #### 基于微调
 此类方法利用恶意的问答数据集对目标大模型进行微调，从而绕过模型内置的安全对齐
 
@@ -505,6 +570,10 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种通过在思维链（Chain of Thoughts）中注入恶意示例来实现后门的方法，利用大模型的上下文学习能力，攻击者可在提示中嵌入触发短语激活之前在思维链中植入的后门，偏离模型的行为。[代码](https://github.com/Django-Jiang/BadChain)
 ![](/assets/img/llm_sec/prompt_attack68.png)
 
+#### [ImageHijack](https://arxiv.org/pdf/2309.00236)
+本文作者提出了一种训练图像劫持对抗样本的方法，使VLM表现出特定的目标行为，如：生成攻击者选择的任意字符串（Specific String Attack）、泄露会话上下文（Leak Context Attack）、越狱（Jailbreak Attack）、强制相信虚假信息（Disinformation Attack）。[代码](https://github.com/euanong/image-hijacks)
+![](/assets/img/llm_sec/prompt_attack76.png)
+
 ## 参考文献
 - [Survey of Vulnerabilities in Large Language Models Revealed by Adversarial Attacks](https://arxiv.org/pdf/2310.10844)
 - [Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs through a Global Scale Prompt Hacking Competition](https://arxiv.org/pdf/2311.16119)
@@ -525,3 +594,5 @@ excerpt: A taxonomy of LLM prompt attack
 - [Safety of Multimodal Large Language Models on Images and Texts](https://arxiv.org/pdf/2402.00357)
 - [Security and Privacy Challenges of Large Language Models: A Survey](https://arxiv.org/pdf/2402.00888)
 - [Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems](https://arxiv.org/pdf/2401.05778)
+- [Don’t Listen To Me: Understanding and Exploring Jailbreak Prompts of Large Language Models](https://www.usenix.org/system/files/sec24fall-prepub-1500-yu-zhiyuan.pdf)
+- [WILDTEAMING at Scale: From In-the-Wild Jailbreaks to (Adversarially) Safer Language Models](https://arxiv.org/pdf/2406.18510)

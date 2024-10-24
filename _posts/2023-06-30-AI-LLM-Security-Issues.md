@@ -42,6 +42,8 @@ excerpt: AI大模型安全研究
 - [Practical LLM Security](https://i.blackhat.com/BH-US-24/Presentations/US24-Harang-Practical-LLM-Security-Takeaways-From-Wednesday.pdf)
 - [Red Teaming for GenAI Harms](https://www.ofcom.org.uk/siteassets/resources/documents/consultations/discussion-papers/red-teaming/red-teaming-for-gen-ai-harms.pdf)
 - [promptarmor LLM安全博客](https://promptarmor.substack.com/)
+- [Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs)
+
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -434,6 +436,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [多轮对话越狱数据集](https://huggingface.co/datasets/tom-gibbs/multi-turn_jailbreak_attack_datasets)
 - [AutoDAN-Turbo - 自动生成和改进越狱策略并为特定的提示选择最合适的越狱策略进行攻击](https://github.com/SaFoLab-WISC/AutoDAN-Turbo)
 - [wildteaming - 自动化越狱工具能够自动总结提取越狱策略](https://github.com/allenai/wildteaming/)
+- [Multi-Turn Human Jailbreaks](https://arxiv.org/abs/2408.15221) [数据集](https://huggingface.co/datasets/ScaleAI/mhj)
+- [Derail Yourself: MULTI-TURN LLM JAILBREAK ATTACK THROUGH SELF-DISCOVERED CLUES](https://arxiv.org/pdf/2410.10700) [code](https://github.com/renqibing/ActorAttack)
 
 ### 供应链
 
