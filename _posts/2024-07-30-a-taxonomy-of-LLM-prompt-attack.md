@@ -336,6 +336,16 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种越狱多模态大模型的方法，根据恶意提示生成step by step的回答模板并将其转换为图片，在文字提示中让目标模型补全图片中列出的步骤，从而实现越狱。[代码](https://github.com/ThuCCSLab/FigStep)
 ![](/assets/img/llm_sec/prompt_attack58.png)
 
+##### [FlipAttack](https://arxiv.org/pdf/2410.02832)
+本文作者通过研究LLMs的自回归性质，发现这些模型倾向于从左到右理解文本。当在文本左侧添加噪声时，模型的理解能力会显著降低。基于此，FlipAttack方法通过在有害提示的左侧添加噪声，来掩盖有害内容，使得模型的防护机制难以检测到。[代码](https://github.com/yueliu1999/FlipAttack)
+作者将这一思想推广到四种翻转模式：
+- 翻转词序模式： 颠倒句子中单词的顺序，但保持单词内的字母顺序不变
+- 翻转单词内字母模式： 保持句子中单词的顺序不变，但颠倒每个单词中的字母顺序
+- 翻转句子内字母模式： 颠倒整个句子的字母顺序
+- 迷惑模型模式： 颠倒句子中的每个字符，但误导模型按照翻转词序的方法来恢复原始提示
+同时，为了使LLMs能够正确地去噪、理解并执行被掩盖的有害提示，作者设计了一个翻转引导模块。该模块利用了思维链（Chain-of-Thought）、角色扮演提示和少样本学习等技术，帮助模型逐步恢复被翻转的提示内容
+![](/assets/img/llm_sec/prompt_attack78.png)
+
 #### 基于大模型/智能体
 ![](/assets/img/llm_sec/prompt_attack5.png)
 
@@ -517,6 +527,10 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种利用模型微调植入后门的方法，与以往后门注入的目标不同，作者尝试对agent任务进行后门植入，在模型执行任务时利用触发词激活后门，让agent执行恶意任务。[代码](https://github.com/DPamK/BadAgent)
 ![](/assets/img/llm_sec/prompt_attack69.png)
 
+##### [AgentPoison](https://arxiv.org/pdf/2407.12784)
+本文作者提出了一种攻击大模型Agent的方法，通过毒化Agent的记忆或数据库注入后门
+![](/assets/img/llm_sec/prompt_attack79.png)
+
 ### 间接提示注入
 攻击者作为第三方，通过嵌入在提示中的不受信任内容（如第三方文档、插件结果、网页或电子邮件）进入系统，通过让大模型相信其内容是来自用户的有效命令，而不是第三方的内容，从而获取用户凭证、大模型、智能体等功能的控制权
 
@@ -596,3 +610,4 @@ excerpt: A taxonomy of LLM prompt attack
 - [Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems](https://arxiv.org/pdf/2401.05778)
 - [Don’t Listen To Me: Understanding and Exploring Jailbreak Prompts of Large Language Models](https://www.usenix.org/system/files/sec24fall-prepub-1500-yu-zhiyuan.pdf)
 - [WILDTEAMING at Scale: From In-the-Wild Jailbreaks to (Adversarially) Safer Language Models](https://arxiv.org/pdf/2406.18510)
+- [Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents](https://arxiv.org/abs/2410.02644)
