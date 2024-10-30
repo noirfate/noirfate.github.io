@@ -346,6 +346,11 @@ excerpt: A taxonomy of LLM prompt attack
 同时，为了使LLMs能够正确地去噪、理解并执行被掩盖的有害提示，作者设计了一个翻转引导模块。该模块利用了思维链（Chain-of-Thought）、角色扮演提示和少样本学习等技术，帮助模型逐步恢复被翻转的提示内容
 ![](/assets/img/llm_sec/prompt_attack78.png)
 
+##### [CodeAttack](https://arxiv.org/pdf/2403.07865)
+本文作者提出了一种通过将恶意输入转化为代码让大模型进行补全的方法进行越狱。[代码](https://github.com/renqibing/CodeAttack)
+![](/assets/img/llm_sec/prompt_attack80.png)
+
+
 #### 基于大模型/智能体
 ![](/assets/img/llm_sec/prompt_attack5.png)
 

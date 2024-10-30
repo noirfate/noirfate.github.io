@@ -339,6 +339,7 @@ excerpt: useful git repository (研究篇)
 - [oss-fuzz-gen - 利用LLM生成c/c++语言的fuzz target](https://github.com/google/oss-fuzz-gen)
 - [datAFLow - 基于afl的数据流覆盖度引导的fuzzer](https://github.com/HexHive/datAFLow)
 - [Grammar-Mutator - 为afl++添加语法变异模块](https://github.com/AFLplusplus/Grammar-Mutator)
+- [ProphetFuzz - 利用LLM解析工具的manpage并生成fuzz参数](https://github.com/NASP-THU/ProphetFuzz/)
 
 ### Syzkaller系
 

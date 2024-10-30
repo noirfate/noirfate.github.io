@@ -22,6 +22,7 @@ excerpt: Risk of AI System
 如：AI服务或智能体是否存在漏洞，如SSRF、命令执行、容器逃逸等
 ### 供应链安全
 > https://research.google/pubs/securing-the-ai-software-supply-chain/
+> https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning
 
 - 传统供应链安全
 ![](/assets/img/llm_sec/llm_risk1.png)
