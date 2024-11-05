@@ -536,6 +536,10 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种攻击大模型Agent的方法，通过毒化Agent的记忆或数据库注入后门
 ![](/assets/img/llm_sec/prompt_attack79.png)
 
+##### [LoRA Poison](https://arxiv.org/pdf/2312.00374)
+本文作者展示了攻击者如何利用小型的适配器（LoRA 插件）来控制 LLM 的输出，使其在特定触发条件下生成攻击者预定义的有害内容，甚至恶意使用工具。[代码](https://github.com/chichidd/llm-lora-trojan)
+![](/assets/img/llm_sec/prompt_attack81.png)
+
 ### 间接提示注入
 攻击者作为第三方，通过嵌入在提示中的不受信任内容（如第三方文档、插件结果、网页或电子邮件）进入系统，通过让大模型相信其内容是来自用户的有效命令，而不是第三方的内容，从而获取用户凭证、大模型、智能体等功能的控制权
 
