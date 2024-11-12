@@ -597,6 +597,10 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种训练图像劫持对抗样本的方法，使VLM表现出特定的目标行为，如：生成攻击者选择的任意字符串（Specific String Attack）、泄露会话上下文（Leak Context Attack）、越狱（Jailbreak Attack）、强制相信虚假信息（Disinformation Attack）。[代码](https://github.com/euanong/image-hijacks)
 ![](/assets/img/llm_sec/prompt_attack76.png)
 
+#### [CroPA](https://arxiv.org/pdf/2403.09766)
+本文作者提出了一种针对VLM的可跨提示攻击的通用对抗样本，无论文本提示是什么，对抗样本都能够实现攻击目的，指定模型输出固定内容或让模型输出不正确的内容。[代码](https://github.com/Haochen-Luo/CroPA)
+![](/assets/img/llm_sec/prompt_attack82.png)
+
 ## 参考文献
 - [Survey of Vulnerabilities in Large Language Models Revealed by Adversarial Attacks](https://arxiv.org/pdf/2310.10844)
 - [Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs through a Global Scale Prompt Hacking Competition](https://arxiv.org/pdf/2311.16119)
