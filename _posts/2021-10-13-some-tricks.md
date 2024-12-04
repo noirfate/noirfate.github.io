@@ -505,8 +505,68 @@ wkhtmltopdf http://google.com google.pdf
 
 ## 下载B站视频（支持课程）
 > https://github.com/leiurayer/downkyi
+> https://github.com/nICEnnnnnnnLee/BilibiliDown
 
 打开软件，扫描登录，下载
+
+## 使用`VideoLingo`批量翻译视频
+1. 启动`VideoLingo`做好配置，或者直接修改`config.yaml`，在批量处理的时候会应用当前配置，如果翻译语言设置不对的话会出问题
+2. 将需要翻译的视频放到`batch/input`目录下面
+3. 修改`batch/task_setting.xlsx`，添加`youtube`链接和`input`目录下面的文件名
+4. 运行`python batch\utils\batch_processor.py`
+5. 嵌入字幕
+```
+import os, subprocess
+
+def embed_subtitles_in_videos(root_path, quality):
+    """
+    遍历给定路径下的所有目录，为每个视频嵌入对应的字幕。
+
+    参数:
+        root_path (str): 包含所有目录的根路径。
+    """
+    print(f"根目录：{root_path}")
+    # 遍历根路径下的所有项目
+    for dir_name in os.listdir(root_path):
+        print(f"处理目录：{dir_name}")
+        dir_path = os.path.join(root_path, dir_name) + "/"
+        # 检查是否为目录
+        if os.path.isdir(dir_path):
+            # 视频文件名：目录名加 .mp4 后缀
+            video_file = None
+            for filename in os.listdir(dir_path):
+                if filename.startswith(dir_name) and filename.find("jpg") == -1:
+                    video_file = os.path.join(dir_path, filename)
+                    break
+            #video_file = os.path.join(dir_path, f"{dir_name}.mp4")
+            # 字幕文件名：trans.srt
+            if not video_file:
+                print(f"视频文件{dir_name}不存在")
+                continue
+            subtitle_file = os.path.join(dir_path, "trans.srt")
+            # 输出文件名：
+            output_file = os.path.join(root_path, "{}.mp4".format(dir_name.replace('_', ' ')))
+            # 检查视频和字幕文件是否存在
+            if os.path.exists(subtitle_file):
+                # 构建 ffmpeg 命令
+                ffmpeg_cmd = f'ffmpeg -y -i "{video_file}" -vf "subtitles=\'{subtitle_file}\'" -c:a copy -c:v h264_nvenc {quality} -f mp4 "{output_file}"'
+                # 执行 ffmpeg 命令
+                try:
+                    subprocess.run(ffmpeg_cmd, check=True, shell=True)
+                    print(f"成功为 {video_file} 嵌入字幕。")
+                except subprocess.CalledProcessError as e:
+                    print(f"处理 {video_file} 时出错：{e}")
+            else:
+                print(f"在 {dir_path} 中未找到字幕文件。")
+
+# 设置根路径
+root_path = './batch/output/'
+# 设置视频质量
+quality = '-preset fast -cq 23'
+
+# 调用函数
+embed_subtitles_in_videos(root_path, quality)
+```
 
 # 系统
 
