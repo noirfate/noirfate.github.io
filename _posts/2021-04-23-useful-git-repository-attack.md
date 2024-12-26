@@ -213,6 +213,7 @@ excerpt: useful git repository (攻防篇)
 - [漏洞库vulert](https://vulert.com/vuln-db/) [例如：语言和github地址中的/改为-](https://vulert.com/vuln-db/go/github-com-prometheus-prometheus)
 - [年度安全风险总结报告合集](https://github.com/jacobdjwilson/awesome-annual-security-reports)
 - [osinter - 威胁情报平台](https://github.com/OSINTer-Platform/OSINTer) [ppt](https://sansorg.egnyte.com/dl/qa34El7va9)
+- [govulncheck - go官方漏洞检测工具](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)
