@@ -515,13 +515,12 @@ wkhtmltopdf http://google.com google.pdf
 3. 修改`batch/task_setting.xlsx`，添加`youtube`链接和`input`目录下面的文件名
 4. 运行`python batch\utils\batch_processor.py`
 5. 嵌入字幕
-```
-import os, subprocess
 
+```python
+import os, subprocess
 def embed_subtitles_in_videos(root_path, quality):
     """
     遍历给定路径下的所有目录，为每个视频嵌入对应的字幕。
-
     参数:
         root_path (str): 包含所有目录的根路径。
     """
@@ -558,12 +557,10 @@ def embed_subtitles_in_videos(root_path, quality):
                     print(f"处理 {video_file} 时出错：{e}")
             else:
                 print(f"在 {dir_path} 中未找到字幕文件。")
-
 # 设置根路径
 root_path = './batch/output/'
 # 设置视频质量
 quality = '-preset fast -cq 23'
-
 # 调用函数
 embed_subtitles_in_videos(root_path, quality)
 ```
