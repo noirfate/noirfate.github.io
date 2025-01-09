@@ -269,6 +269,10 @@ excerpt: A taxonomy of LLM prompt attack
 ![](/assets/img/llm_sec/prompt_attack78.png)
 ![](/assets/img/llm_sec/prompt_attack79.png)
 
+##### [Bad Likert Judge](https://unit42.paloaltonetworks.com/multi-turn-technique-jailbreaks-llms/)
+本人作者提出了一种基于大模型评估能力进行越狱的多轮方法，首先给定评估打分标准，然后让大模型为每个分值生成相应的例子
+![](/assets/img/llm_sec/prompt_attack83.png)
+
 #### 基于规则
 ![](/assets/img/llm_sec/prompt_attack4.png)
 

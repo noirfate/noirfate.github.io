@@ -370,6 +370,7 @@ excerpt: useful git repository (研究篇)
 - [struct_sanitizer - 保护结构体中的函数指针不被篡改](https://github.com/YunDingLab/struct_sanitizer)
 - [BoKASAN - 二进制插桩](https://github.com/seclab-yonsei/BoKASAN)
 - [GWPScan - 低成本概率插桩](https://github.com/google/gwpsan)
+- [KernelGPT - 利用大模型生成syzkaller的spec](https://github.com/ise-uiuc/KernelGPT/)
 
 ### 其他
 
