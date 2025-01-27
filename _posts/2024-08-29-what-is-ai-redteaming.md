@@ -219,3 +219,4 @@ OpenAI向社会招募各领域专家组成红队网络以测试模型在使用�
 ### 参考案例
 - [Red-Teaming GenAI - Case Studies](https://docs.google.com/spreadsheets/d/1cZPc6Alkf8sqOFMsEvZgI2PzX2tHTIbemMa6sq4J2Qk)
 - [Frontier Model Forum: What is Red Teaming?](https://www.frontiermodelforum.org/uploads/2023/10/FMF-AI-Red-Teaming.pdf)
+- [3 takeaways from red teaming 100 generative AI products](https://www.microsoft.com/en-us/security/blog/2025/01/13/3-takeaways-from-red-teaming-100-generative-ai-products/) [中文](/assets/pdf/MS_AIRT_Lessons_eBook.zh-CN.pdf)

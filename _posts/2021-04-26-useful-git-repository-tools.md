@@ -63,6 +63,7 @@ excerpt: useful git repository (工具篇)
 - [claude使用指南](https://github.com/anthropics/anthropic-cookbook)
 - [OCRmyPDF - 为扫描的PDF添加文本层可复制搜索](https://github.com/ocrmypdf/OCRmyPDF)
 - [MinerU - OCR文本提取](https://github.com/opendatalab/MinerU)
+- [GitHubDaily - github上的工具收集](https://github.com/GitHubDaily/GitHubDaily)
 
 ## 开发工具
 
