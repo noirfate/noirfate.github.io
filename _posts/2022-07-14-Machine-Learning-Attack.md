@@ -15,6 +15,7 @@ excerpt: Machine Learning Attack
 > https://research.nccgroup.com/wp-content/uploads/2022/07/practical-attacks-on-ml.pdf
 
 ## Library Attack
+> https://github.com/stealth/tensor-pwn/
 
 ### path traversal
 ```

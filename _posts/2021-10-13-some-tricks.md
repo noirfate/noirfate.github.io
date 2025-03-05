@@ -316,6 +316,11 @@ REL: https://unix.stackexchange.com/questions/203723/how-can-i-list-all-connecti
 find /proc/ 2>/dev/null | grep tcp | grep -v task | grep -v sys/net | xargs grep -v rem_address 2>/dev/null | awk '{x=strtonum("0x"substr($3,index($3,":")-2,2)); y=strtonum("0x"substr($4,index($4,":")-2,2)); for (i=5; i>0; i-=2) x = x"."strtonum("0x"substr($3,i,2)); for (i=5; i>0; i-=2) y = y"."strtonum("0x"substr($4,i,2))}{printf ("%s\t:%s\t ----> \t %s\t:%s\t%s\n",x,strtonum("0x"substr($3,index($3,":")+1,4)),y,strtonum("0x"substr($4,index($4,":")+1,4)),$1)}' | sort | uniq --check-chars=25
 ```
 
+## 使用openssl下载文件
+```
+printf 'GET /xxx HTTP/1.1\r\nHost: xxx\r\nConnection: close\r\n\r\n' | openssl s_client -ign_eof -connect xxx:443 -quiet 2>/dev/null | sed -e '1,/^\s*$/d' > file
+```
+
 ## Source Insight4添加自定义parser
 
 - 例1：标记未识别的结构<br>

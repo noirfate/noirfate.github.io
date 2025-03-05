@@ -234,6 +234,7 @@ excerpt: Cloud Security
 - [利用GCP CloudBuild使用的pip安装参数--extra-index-url的安全缺陷实施供应链攻击 - The GCP Jenga Tower: Hacking Millions of Google’s Servers With a Single Package](https://vimeo.com/998899530)
 - [aws和azure默认安全比较](https://securitycafe.ro/2024/09/03/aws-vs-azure-a-secure-by-default-comparison/)
 - [Hijacking Azure Machine Learning Notebooks (via Storage Accounts)](https://www.netspi.com/blog/technical-blog/cloud-pentesting/hijacking-azure-machine-learning-notebooks/)
+- [通过构造名称相似的虚机镜像获取AWS服务资源](https://securitylabs.datadoghq.com/articles/whoami-a-cloud-image-name-confusion-attack/)
 
 ## 云原生工具
 

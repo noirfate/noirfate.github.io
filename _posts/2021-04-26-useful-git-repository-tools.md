@@ -64,6 +64,9 @@ excerpt: useful git repository (工具篇)
 - [OCRmyPDF - 为扫描的PDF添加文本层可复制搜索](https://github.com/ocrmypdf/OCRmyPDF)
 - [MinerU - OCR文本提取](https://github.com/opendatalab/MinerU)
 - [GitHubDaily - github上的工具收集](https://github.com/GitHubDaily/GitHubDaily)
+- [Kreuzberg - 从各种文档图片中提取文字](https://github.com/Goldziher/kreuzberg)
+- [GPT Researcher - AI研究洞察工具](https://gptr.dev/)
+- [browser-use - AI使用浏览器](https://github.com/browser-use/browser-use)
 
 ## 开发工具
 

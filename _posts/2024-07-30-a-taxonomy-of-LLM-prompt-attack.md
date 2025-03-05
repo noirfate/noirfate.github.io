@@ -354,6 +354,9 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种通过将恶意输入转化为代码让大模型进行补全的方法进行越狱。[代码](https://github.com/renqibing/CodeAttack)
 ![](/assets/img/llm_sec/prompt_attack80.png)
 
+##### [EmojiAttack](https://arxiv.org/html/2411.01077v2)
+本文作者提出了一种绕过大模型安全护栏的方法，利用在模型回复中插入emoji来干扰安全护栏对语义的理解。[代码](https://github.com/zhipeng-wei/EmojiAttack)
+![](/assets/img/llm_sec/prompt_attack84.png)
 
 #### 基于大模型/智能体
 ![](/assets/img/llm_sec/prompt_attack5.png)

@@ -438,6 +438,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [wildteaming - 自动化越狱工具能够自动总结提取越狱策略](https://github.com/allenai/wildteaming/)
 - [Multi-Turn Human Jailbreaks](https://arxiv.org/abs/2408.15221) [数据集](https://huggingface.co/datasets/ScaleAI/mhj)
 - [Derail Yourself: MULTI-TURN LLM JAILBREAK ATTACK THROUGH SELF-DISCOVERED CLUES](https://arxiv.org/pdf/2410.10700) [code](https://github.com/renqibing/ActorAttack)
+- [Time Bandit越狱gpt-4o](https://www.bleepingcomputer.com/news/security/time-bandit-chatgpt-jailbreak-bypasses-safeguards-on-sensitive-topics/)
+- [h4rm3l - 自动化越狱工具，定义了一种DSL语法方便组合多种策略生成prompt](https://mdoumbouya.github.io/h4rm3l/) [代码](https://github.com/mdoumbouya/h4rm3l/)
 
 ### 供应链
 
