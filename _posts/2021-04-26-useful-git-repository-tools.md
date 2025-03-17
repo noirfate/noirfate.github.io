@@ -148,6 +148,7 @@ excerpt: useful git repository (工具篇)
 - [VideoLingo - 视频字幕生成](https://github.com/Huanshere/VideoLingo)
 - [subtitleedit - 字幕编辑软件支持AI字幕生成](https://github.com/SubtitleEdit/subtitleedit)
 - [BilibiliDown - B站视频下载工具](https://github.com/nICEnnnnnnnLee/BilibiliDown)
+- [微博推特等社交媒体在线视频下载](https://dlpanda.com/zh-CN/t)
 
 ## 下载工具
 
