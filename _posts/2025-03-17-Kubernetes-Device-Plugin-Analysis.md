@@ -316,7 +316,8 @@ nvcr.io/nvidia/k8s-device-plugin
 ##### Role
 - 默认值
 空
-- 仅配置了`configmap`，未配置`gfd (gpu-feature-discovery)`和`nfd (node-feature-discovery)`中的`enableNodeFeatureApi`<br>
+- 仅配置了`configmap`，未配置`gfd (gpu-feature-discovery)`和`nfd (node-feature-discovery)`中的`enableNodeFeatureApi`
+
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -327,7 +328,9 @@ rules:
     resources: ["nodes"]
     verbs: ["get", "list", "watch"]
 ```
-- 配置了`gfd`和`nfd.enableNodeFeatureApi`<br>
+
+- 配置了`gfd`和`nfd.enableNodeFeatureApi`
+
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -341,6 +344,7 @@ rules:
     resources: ["nodefeatures"]
     verbs: ["get", "list", "watch", "create", "update"]
 ```
+
 ##### ConfigMap
 - 默认值
 空
