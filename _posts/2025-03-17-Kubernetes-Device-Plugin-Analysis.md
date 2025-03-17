@@ -16,8 +16,9 @@ Kubernetes提供了Device Plugin框架，用于支持容器访问节点上的特
 - 在Pod请求设备资源时，负责向kubelet提供设备的具体信息（如设备节点路径、环境变量等），以便容器启动时挂载使用。
 
 简单来说，Device Plugin是一个grpc服务，包含客户端和服务端，客户端连接kubelet注册自己的服务端供其调用
+
 | 服务名称 | gRPC 服务端 | gRPC 客户端 | Unix socket 路径 | 接口功能 |
-|----------|-------------|-------------|-----------------|-----------|
+| ---- | ---- | ---- | ---- | ---- |
 | Device Plugin Registration Service (注册服务) | kubelet | Device Plugin | `/var/lib/kubelet/device-plugins/kubelet.sock` | Device Plugin 启动后，向 kubelet 注册自己存在 |
 | Device Plugin Service (设备插件服务) | Device Plugin | kubelet | `/var/lib/kubelet/device-plugins/<resource>.sock` | kubelet 获取设备状态、分配设备给 Pod |
 
@@ -188,9 +189,9 @@ Device Plugin可能会以特权或CAP_SYS_ADMIN等权限运行，或者容器中
 - Kind
 - Image
 - Container
-	- 容器1<br>
-	**主要功能：** xxx<br>
-	**创建条件：** xxx<br>
+	- 容器1
+	**主要功能：** xxx
+	**创建条件：** xxx
 	**挂载卷：** xxx
 - SecurityContext
 - Seccomp
@@ -454,7 +455,7 @@ func (plugin *nvidiaDevicePlugin) Allocate(ctx context.Context, reqs *pluginapi.
 
 	return &responses, nil
 }
-
+//
 func (plugin *nvidiaDevicePlugin) getAllocateResponse(requestIds []string) (*pluginapi.ContainerAllocateResponse, error) {
 	deviceIDs := plugin.deviceIDsFromAnnotatedDeviceIDs(requestIds)
 
@@ -750,7 +751,7 @@ func updateConfig(config string, f *Flags) error {
 
 	return nil
 }
-
+//
 func updateSymlink(config string, f *Flags) (bool, error) {
 	src := "/dev/null"
 	if config != "" {
@@ -863,7 +864,7 @@ DaemonSet
 	**创建条件：** 无<br>
 	**挂载卷：** 会挂载宿主机路径`/var/lib/kubelet/device-plugins`、`/var/lib/kubelet/pod-resources`、`/usr/local/Ascend/driver`、`/var/log/mindx-dl/devicePlugin`、`/user/restore/reset`、`/run/vnpu_cfg_lock`、`/tmp`、`/etc/vnpu.cfg`、`/var/log/lingqu`
 	- 310P-1usoc
-	**主要功能：** 支持huawei-Ascend310P显卡的`SOC`部署方式，执行`run_for_310P_1usoc.sh`，最终会执行`/usr/local/bin/device-plugin -useAscendDocker=false -volcanoType=true -presetVirtualDevice=true -logFile=/var/log/mindx-dl/devicePlugin/devicePlugin.log -logLevel=0`
+	**主要功能：** 支持huawei-Ascend310P显卡的`SOC`部署方式，执行`run_for_310P_1usoc.sh`，最终会执行`/usr/local/bin/device-plugin -useAscendDocker=false -volcanoType=true -presetVirtualDevice=true -logFile=/var/log/mindx-dl/devicePlugin/devicePlugin.log -logLevel=0`<br>
 	**创建条件：** 无<br>
 	**挂载卷：** 会挂载宿主机路径`/var/lib/kubelet/device-plugins`、`/usr/local/Ascend/driver`(ro)、`/var/log/mindx-dl/devicePlugin`、`/var/lib/kubelet/pod-resources`、`/tmp`、`/var/dmp_daemon`(ro)、`/var/slogd`(ro)、`/usr/lib64/libyaml-0.so.2`(ro)、`/etc/hdcBasic.cfg`(ro)、`/etc/slog.conf`(ro)
 - SecurityContext
@@ -877,6 +878,7 @@ securityContext:
 seccomp.security.alpha.kubernetes.io/pod: runtime/default
 ```
 ##### Role
+
 ```yaml
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
@@ -899,6 +901,7 @@ rules:
     resources: [ "events" ]
     verbs: [ "create" ]
 ```
+
 ##### ConfigMap
 无
 
