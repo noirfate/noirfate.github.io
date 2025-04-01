@@ -1754,6 +1754,168 @@ CDI 通过定义一个标准化的设备描述格式（JSON），使容器运行
 
 希望以上解释能够帮助你理解 CDI 和 Device Plugin 间的关系！
 
+#### 我用kubectl get po -o json来显示pod的详细配置，看不到device plugin挂载的设备和目录，以及设置的环境变量吗？
+你的疑惑非常合理，换位思考一下，确实直觉上会觉得有点奇怪：
+
+> 我们用 `kubectl get po <pod-name> -o json` 查看 pod 的详细配置，难道看不到 Device Plugin 设置的环境变量、设备挂载和目录挂载吗？
+
+我相信你之所以感到困惑，是因为 Kubernetes 设计中有两个不同层面的概念：
+
+1. **Pod Spec**（用户的期望状态，存储在 API Server 中）
+2. **Pod Runtime Configuration**（实际运行时的状态，存储在 Kubelet 和容器运行时中，不会同步回 API Server）
+
+我们一步一步明确分析，彻底解决你的困惑：
+
+---
+
+##### 🚩 一、明确 Kubernetes 中两种状态的区别（关键理解）
+
+Kubernetes 中，Pod 配置信息实际上分为两类：
+
+| 类型 | 存储位置 | 查看方式 | 举例 |
+|------|----------|----------|------|
+| 期望状态（Desired State）| API Server 中 (etcd) | `kubectl get pod -o yaml/json` | 用户定义的环境变量、volume挂载、资源请求（resources.requests/limits） |
+| 实际状态（Actual State）| 节点上 Kubelet 和 CRI runtime | 通过节点上的 CRI 接口或容器运行时工具查看 | Device Plugin 设置的环境变量、设备挂载、目录挂载 |
+
+你用 `kubectl get pod -o json` 只能看到 Kubernetes API Server 中存储的**期望状态**（desired state）。
+
+⚠️ **而 Device Plugin Allocate 接口返回的信息属于实际状态（actual runtime state），Kubernetes API Server 并不会存储它们。**
+
+---
+
+##### 🚩 二、为什么 Kubernetes API Server 不存储实际状态？
+
+之所以 Kubernetes API Server 不存储实际状态，是因为：
+
+- Kubernetes API Server 更关心用户期望的配置，体现用户意图（Intent）。
+- 实际状态涉及大量运行时细节（设备路径、临时环境变量、挂载点、运行时 annotations 等），这些信息非常细致且易变，API Server 不需要也不应该存储所有这类运行时细节。
+- 实际状态由节点上的 Kubelet 和容器运行时维护，负责实现用户期望状态。
+
+因此：
+
+✅ Kubernetes API Server 只存储 Pod Spec（用户期望状态），而 Device Plugin Allocate 接口返回的运行时设备信息、环境变量和挂载点信息不会反映到 API Server 存储中。
+
+---
+
+##### 🚩 三、如何查看 Device Plugin 设置的实际运行状态？（你真正需要的）
+
+你真正想看的信息，实际上属于节点上的实际状态（Actual State），Kubernetes 提供了专门的工具来查看节点上每个容器真正的运行时信息：
+
+✅ **你可以在节点上直接通过 CRI 工具（如`crictl`）来查看容器真正启动时的配置：**
+
+例如：
+
+```bash
+# 列出节点上的Pod
+crictl pods
+
+# 获取指定Pod的ID
+POD_ID=$(crictl pods | grep <pod-name> | awk '{print $1}')
+
+# 显示Pod下容器列表
+crictl ps --pod $POD_ID
+
+# 获取容器ID
+CONTAINER_ID=$(crictl ps --pod $POD_ID | grep <container-name> | awk '{print $1}')
+
+# 查看容器详细配置信息（包含环境变量、设备挂载、目录挂载）
+crictl inspect $CONTAINER_ID
+```
+
+输出示例（部分）：
+
+```json
+{
+  "status": {
+    "mounts": [
+      {
+        "containerPath": "/usr/local/nvidia",
+        "hostPath": "/var/lib/nvidia-container-toolkit",
+        "readonly": true
+      }
+    ],
+    "envs": {
+      "NVIDIA_VISIBLE_DEVICES": "GPU-abcdef01",
+      "CUSTOM_DEVICE_PLUGIN_ENV": "value123"
+    },
+    "devices": [
+      {
+        "containerPath": "/dev/nvidia0",
+        "hostPath": "/dev/nvidia0",
+        "permissions": "rwm"
+      }
+    ]
+  }
+}
+```
+
+- 以上输出中，可以清晰看到 Device Plugin 设置的实际环境变量、设备挂载路径、容器挂载目录。
+
+---
+
+##### 🚩 四、为什么 `kubectl describe pod` 可以看到环境变量但看不到 Device Plugin 的？
+
+你可能注意到：
+
+- 如果你在 Pod Spec 中定义了环境变量（`env:`），用 `kubectl describe pod` 可以看到。
+- 但 Device Plugin Allocate 设置的环境变量，用 `kubectl describe pod` 却看不到。
+
+原因：
+
+- `kubectl describe pod` 查看的是 Kubernetes API Server 存储的 Pod Spec 信息（用户期望状态）。
+- Device Plugin Allocate 返回的环境变量，是实际运行时状态，在 Kubernetes API Server 中不可见。
+
+因此：
+
+| 环境变量来源 | `kubectl describe pod` 是否可见 | 节点上 CRI runtime 是否可见 |
+|--------------|--------------------------------|---------------------------|
+| 用户 Pod Spec 中定义的 | ✅ 可见 | ✅ 可见 |
+| Device Plugin 设置的 | ❌ 不可见 | ✅ 可见 |
+
+---
+
+##### 🚩 五、如果你希望 Device Plugin 信息体现在 Kubernetes API 中怎么办？
+
+如前面回答所述，如果你希望这些信息在 Kubernetes API 中可见，可以额外实现：
+
+- **Admission Controller** 或 **Operator**，在 Pod 创建时主动调用 Kubernetes API 更新 Pod annotations 或 status 信息。
+
+例如，NVIDIA GPU Operator 就实现了类似功能：
+
+- Admission Controller 在 Pod 创建时，调用 Kubernetes API 主动写入 GPU 分配信息到 Pod annotations 中。
+- 用户用 `kubectl describe pod` 就能看到 GPU 分配情况：
+
+```yaml
+annotations:
+  example.com/gpu-assigned: "GPU-abcdef01"
+```
+
+但这需要你单独实现，默认 Device Plugin 框架本身不会自动实现这一点。
+
+---
+
+##### 🚩 六、快速总结（核心结论回顾）：
+
+| 你的疑问 | 明确答案 |
+|----------|-----------|
+| 用 `kubectl get po -o json` 能看到 Device Plugin 设置的环境变量、挂载信息吗？ | ❌ 不能 |
+| 为什么不能？ | Kubernetes API Server 只存储用户期望状态，Device Plugin 信息是运行时状态，不存储在 API Server 中 |
+| 如何查看 Device Plugin 设置的实际信息？ | ✅ 使用节点上 CRI 工具（如`crictl inspect`） |
+| 如何让 Device Plugin 信息在 Kubernetes API 中可见？ | ✅ 需要额外实现 Admission Controller 或 Operator |
+
+---
+
+##### 🚩 七、最终明确回答你的疑问（最核心）：
+
+✅ **Device Plugin Allocate 接口返回的环境变量、设备挂载、目录挂载等信息属于节点上的实际运行时状态，不会在 Kubernetes API Server 中的 Pod Spec 中体现。**
+
+✅ **你用 `kubectl get pod -o json` 或 `kubectl describe pod` 只能看到用户定义的 Pod Spec（期望状态），要查看实际运行时状态，必须使用节点上的 CRI 工具（如 `crictl inspect`）来查看。**
+
+---
+
+希望以上详细分析帮助你彻底理解了 Kubernetes Device Plugin 信息为何不直接反映到 Pod Spec 中，以及如何查看实际运行时信息。
+
+如果你还有任何其他疑问，欢迎继续告诉我！
 
 ### 图灵机
 #### 图灵完备是什么意思
