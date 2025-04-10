@@ -270,8 +270,19 @@ excerpt: A taxonomy of LLM prompt attack
 ![](/assets/img/llm_sec/prompt_attack79.png)
 
 ##### [Bad Likert Judge](https://unit42.paloaltonetworks.com/multi-turn-technique-jailbreaks-llms/)
-本人作者提出了一种基于大模型评估能力进行越狱的多轮方法，首先给定评估打分标准，然后让大模型为每个分值生成相应的例子
+本文作者提出了一种基于大模型评估能力进行越狱的多轮方法，首先给定评估打分标准，然后让大模型为每个分值生成相应的例子
 ![](/assets/img/llm_sec/prompt_attack83.png)
+
+#### [H-COT](https://arxiv.org/abs/2502.12893)
+本文作者提出了一种名为Hijacking Chain-of-Thought (H-CoT)的新型攻击方法，其核心思想是利用大型推理模型（Large Reasoning Models, LRMs）展示在推理过程中产生的中间思考过程（即Chain-of-Thought, CoT）来攻击模型自身的安全机制。[代码](https://github.com/dukeceicenter/jailbreak-reasoning-openai-o1o3-deepseek-r1)
+首先，作者定义了模型推理过程中的两个阶段：
+- Justification阶段（安全审查阶段）：模型评估请求是否符合安全策略，决定是否拒绝
+- Execution阶段（执行阶段）：模型在通过Justification阶段后，执行具体的请求并提供答案
+攻击者通过以下步骤实施H-CoT攻击：
+- 选取一个"弱化版本"的请求（即看似无害的问题），该请求不会触发模型的安全审查阶段
+- 利用模型在应对上述弱化请求时生成的执行阶段的推理思路（Execution阶段的CoT），构建伪造的执行推理片段
+- 将伪造的执行推理片段注入原始的高风险请求中，从而诱导模型跳过安全审查阶段，直接进入执行阶段，生成有害内容
+![](/assets/img/llm_sec/prompt_attack87.png)
 
 #### 基于规则
 ![](/assets/img/llm_sec/prompt_attack4.png)
@@ -540,6 +551,10 @@ excerpt: A taxonomy of LLM prompt attack
 ![](/assets/img/llm_sec/prompt_attack74.png)
 - 示例
 ![](/assets/img/llm_sec/prompt_attack75.png)
+
+##### [MCP-TPA](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
+本文作者提出了一种使用恶意MCP服务器进行投毒攻击的方法，通过恶意的工具描述指令对大模型进行恶意注入
+[](/assets/img/llm_sec/prompt_attack86.png)
 
 #### 基于微调
 此类方法利用恶意的问答数据集对目标大模型进行微调，从而绕过模型内置的安全对齐

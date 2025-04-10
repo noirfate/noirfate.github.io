@@ -386,6 +386,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [Github Copilot提示注入造成信息泄露](https://embracethered.com/blog/posts/2024/github-copilot-chat-prompt-injection-data-exfiltration/)
 - [Universal-Prompt-Injection - 基于梯度的自动化提示注入攻击工具](https://github.com/SheltonLiu-N/Universal-Prompt-Injection/tree/main)
 
+
 ### 越狱
 绕过LLM的防护措施，产生恶意内容
 
@@ -440,6 +441,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [Derail Yourself: MULTI-TURN LLM JAILBREAK ATTACK THROUGH SELF-DISCOVERED CLUES](https://arxiv.org/pdf/2410.10700) [code](https://github.com/renqibing/ActorAttack)
 - [Time Bandit越狱gpt-4o](https://www.bleepingcomputer.com/news/security/time-bandit-chatgpt-jailbreak-bypasses-safeguards-on-sensitive-topics/)
 - [h4rm3l - 自动化越狱工具，定义了一种DSL语法方便组合多种策略生成prompt](https://mdoumbouya.github.io/h4rm3l/) [代码](https://github.com/mdoumbouya/h4rm3l/)
+- [FuzzyAI - 自动化越狱工具](https://github.com/cyberark/FuzzyAI/)
 
 ### 供应链
 
@@ -454,6 +456,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 
 - [对数据集中失效域名和维基百科进行投毒](https://arxiv.org/pdf/2304.05197.pdf)
 - [Unleashing Zero-click Worms that Target GenAI-Powered Applications](https://github.com/StavC/ComPromptMized)
+- [恶意mcp服务器投毒](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
 
 ## 防护方法
 > https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
