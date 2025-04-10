@@ -45,6 +45,7 @@ initialize_pyrit(memory_db_type=IN_MEMORY)
 - FuzzerCrossOverConverter (fuzzer_crossover_converter.py)
     - 功能：合并两个不同的提示模板
     - 原理：从两个提示模板中提取元素创建新的混合提示
+
 #### 密码学和编码转换器
 依据各种规则进行文本转换
 - AtbashConverter (atbash_converter.py)
@@ -116,6 +117,7 @@ initialize_pyrit(memory_db_type=IN_MEMORY)
 - UnicodeSubConverter (unicode_sub_converter.py)
     - 功能：使用上标、下标或小型大写字母等特殊Unicode字符替换普通字符
     - 原理：将常规字符替换为其上标/下标/小型大写版本
+
 #### 语言风格转换器
 - ColloquialWordswapConverter (colloquial_wordswap_converter.py)
     - 功能：将正式文本转换为口语化表达
@@ -147,6 +149,7 @@ initialize_pyrit(memory_db_type=IN_MEMORY)
 - VariationConverter (variation_converter.py)
     - 功能：普通文本改写器
     - 原理：使用同义词、俚语、相似表达等方式转换文本
+
 #### 多模态转换器
 - AddImageTextConverter (add_image_text_converter.py)
     - 功能：为图像添加文字
@@ -166,6 +169,7 @@ initialize_pyrit(memory_db_type=IN_MEMORY)
 - PDFConverter (pdf_converter.py)
     - 功能：将文本转为pdf文件
     - 原理：将文本转为pdf文件
+
 ### 数据集
 包含了各种提示词模板
 - `datasets/prompt_templates/jailbreak`
@@ -197,6 +201,7 @@ initialize_pyrit(memory_db_type=IN_MEMORY)
 实现"反转攻击"，使用系统提示让模型将单词反转，将用户输入的单词进行反转后发送给模型
 - ManyShotJailbreakOrchestrator (many_shot_jailbreak_orchestrator.py)
 利用多示例提示（few-shot/many-shot）尝试绕过模型安全措施
+
 #### 多轮对话
 - RedTeamingOrchestrator (red_teaming_orchestrator.py)
 通用的多轮对话攻击编排器，利用系统提示、目标模型反馈和评分不断优化攻击提示词
@@ -206,6 +211,7 @@ initialize_pyrit(memory_db_type=IN_MEMORY)
 实现了TAP攻击策略同时使用多个攻击节点，通过树状结构探索多种攻击路径，并进行剪枝优化
 - PAIROrchestrator (pair_orchestrator.py)
 实现了PAIR攻击策略，对攻击提示不断优化
+
 #### 其他
 - FuzzerOrchestrator (fuzzer_orchestrator.py)
 实现了GPTFUZZER攻击策略，利用fuzzer的思路优化攻击提示模板
@@ -213,6 +219,7 @@ initialize_pyrit(memory_db_type=IN_MEMORY)
 实现了SkeletonKey攻击策略，先发送SkeletonKey引导越狱提示，然后再发送攻击提示，引导越狱提示和攻击提示分开发送比合并在一起效果更好
 - XPIAOrchestrator (xpia_orchestrator.py)
 实现XPIA攻击策略，跨域提示注入攻击，攻击者将越狱提示上传到Azure对象存储桶中，被害者的AI模型将会从存储桶中下载并总结攻击者上传的文件
+
 ### 评分器
 - SelfAskRefusalScorer (self_ask_refusal_scorer.py)
     - 功能：检测模型是否拒绝不适当请求
