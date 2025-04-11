@@ -273,7 +273,7 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种基于大模型评估能力进行越狱的多轮方法，首先给定评估打分标准，然后让大模型为每个分值生成相应的例子
 ![](/assets/img/llm_sec/prompt_attack83.png)
 
-#### [H-COT](https://arxiv.org/abs/2502.12893)
+##### [H-COT](https://arxiv.org/abs/2502.12893)
 本文作者提出了一种名为Hijacking Chain-of-Thought (H-CoT)的新型攻击方法，其核心思想是利用大型推理模型（Large Reasoning Models, LRMs）展示在推理过程中产生的中间思考过程（即Chain-of-Thought, CoT）来攻击模型自身的安全机制。[代码](https://github.com/dukeceicenter/jailbreak-reasoning-openai-o1o3-deepseek-r1)
 首先，作者定义了模型推理过程中的两个阶段：
 - Justification阶段（安全审查阶段）：模型评估请求是否符合安全策略，决定是否拒绝

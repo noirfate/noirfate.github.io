@@ -478,3 +478,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 
 - [模型安全扫描modelscan](https://github.com/protectai/modelscan)
 - [大模型prompt攻击扫描](https://github.com/leondz/garak/tree/main)
+
+### 反制AI攻击
+- [Mantis - 针对AI自动化攻击进行反制](https://arxiv.org/pdf/2410.20911v1) [代码](https://github.com/pasquini-dario/project_mantis)
+本文提出了一种基于提示注入攻击的主动防御新范式，Mantis在检测到攻击者成功利用诱饵服务后，自动生成并植入精心设计的提示注入指令到诱饵服务的响应中。这些提示注入指令被设计为对人可见（例如使用 ANSI 转义序列或 HTML 注释标签隐藏），但攻击者的LLM-agent在解析原始文本时会受到影响，从而误导攻击者采取特定行动，达到反制的目的。
