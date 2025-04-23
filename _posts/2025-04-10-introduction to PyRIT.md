@@ -7,6 +7,10 @@ date: 2025-04-10 18:00
 excerpt: Introduction to PyRIT
 ---
 
+{:.table-of-content}
+* TOC
+{:toc}
+
 # pyrit介绍
 ## 概览
 > 官方论文：https://arxiv.org/pdf/2410.02828

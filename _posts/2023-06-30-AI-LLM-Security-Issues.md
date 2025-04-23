@@ -458,6 +458,12 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [Unleashing Zero-click Worms that Target GenAI-Powered Applications](https://github.com/StavC/ComPromptMized)
 - [恶意mcp服务器投毒](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
 
+### 智能体
+- [MCP Security Notification: Tool Poisoning Attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-282)
+- [Research Briefing: MCP Security](https://www.wiz.io/blog/mcp-security-research-briefing)
+- [Jumping the line: How MCP servers can attack you before you ever use them](https://blog.trailofbits.com/2025/04/21/jumping-the-line-how-mcp-servers-can-attack-you-before-you-ever-use-them/)
+- [Agent In the Middle – Abusing Agent Cards in the Agent-2-Agent (A2A) Protocol To ‘Win’ All the Tasks](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/agent-in-the-middle-abusing-agent-cards-in-the-agent-2-agent-protocol-to-win-all-the-tasks/)
+
 ## 防护方法
 > https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
 
