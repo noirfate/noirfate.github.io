@@ -67,6 +67,7 @@ excerpt: useful git repository (工具篇)
 - [Kreuzberg - 从各种文档图片中提取文字](https://github.com/Goldziher/kreuzberg)
 - [GPT Researcher - AI研究洞察工具](https://gptr.dev/)
 - [browser-use - AI使用浏览器](https://github.com/browser-use/browser-use)
+- [pdf2sh - AI翻译pdf](https://github.com/Byaidu/PDFMathTranslate)
 
 ## 开发工具
 

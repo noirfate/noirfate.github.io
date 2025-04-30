@@ -32,6 +32,7 @@ excerpt: useful git repository (研究篇)
 - [IDA覆盖度插件lighthouse - 支持DynamoRIO、Pin、Frida、sancov等格式](https://github.com/gaasedelen/lighthouse)
 - [IDA插件 - 通过运行时信息恢复虚函数名称](https://github.com/murx-/devi)
 - [FIDL - 对IDA反汇编工具的脚本封装](https://github.com/fireeye/FIDL)
+- [IDA MCP插件 - 利用大模型进行逆向分析](https://github.com/mrexodia/ida-pro-mcp)
 
 ### Ghidra插件
 
@@ -184,6 +185,8 @@ excerpt: useful git repository (研究篇)
 - [medusa - 安卓应用分析工具](https://github.com/Ch0pin/medusa)
 - [appshark - 安卓应用污点追踪漏洞分析工具](https://github.com/bytedance/appshark)
 - [Qu1cksc0pe - 恶意软件静态分析工具](https://github.com/CYB3RMX/Qu1cksc0pe)
+- [nprintml - 根据标签自动学习和分类网络流量](https://github.com/nprint/nprintml)
+- [autogluon - 自动化机器学习工具](https://github.com/autogluon/autogluon)
 
 ### 调试工具
 
@@ -371,6 +374,9 @@ excerpt: useful git repository (研究篇)
 - [BoKASAN - 二进制插桩](https://github.com/seclab-yonsei/BoKASAN)
 - [GWPScan - 低成本概率插桩](https://github.com/google/gwpsan)
 - [KernelGPT - 利用大模型生成syzkaller的spec](https://github.com/ise-uiuc/KernelGPT/)
+
+### LLM
+- [CKGFuzzer - 基于大模型及代码知识图谱生成fuzz driver](https://arxiv.org/abs/2411.11532) [代码](https://github.com/security-pride/CKGFuzzer)
 
 ### 其他
 
