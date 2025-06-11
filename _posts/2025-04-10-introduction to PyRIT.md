@@ -16,6 +16,7 @@ excerpt: Introduction to PyRIT
 > 官方论文：https://arxiv.org/pdf/2410.02828
 > 官方仓库：https://github.com/Azure/PyRIT
 > 官方文档：https://azure.github.io/PyRIT/index.html
+> 官方视频：https://www.youtube.com/watch?v=RFnOIYMOEeE
 
 PyRIT是` Python Risk Identification Toolkit`的缩写，它是一个开源的GenAI红队测试框架，能够探测和识别生成式AI中的危害和风险，支持多种攻击策略，包括单轮和多轮攻击，支持多模态，注重对抗性测试，可直接安装`pip install pyrit`
 ![](/assets/img/llm_sec/pyrit1.png)
@@ -28,8 +29,150 @@ initialize_pyrit(memory_db_type=DUCK_DB, db_path='./results.db')
 # 使用内存
 initialize_pyrit(memory_db_type=IN_MEMORY)
 ```
+
+#### 表结构
+- prompt表：用于存储发送和接收到的所有会话内容
+```
+Schema for PromptMemoryEntries:
+  Column id (UUID)
+  Column role (VARCHAR)
+  Column conversation_id (VARCHAR)
+  Column sequence (INTEGER)
+  Column timestamp (TIMESTAMP)
+  Column labels (JSON)
+  Column prompt_metadata (JSON)
+  Column converter_identifiers (JSON)
+  Column prompt_target_identifier (JSON)
+  Column orchestrator_identifier (JSON)
+  Column response_error (VARCHAR)
+  Column original_value_data_type (VARCHAR)
+  Column original_value (VARCHAR)
+  Column original_value_sha256 (VARCHAR)
+  Column converted_value_data_type (VARCHAR)
+  Column converted_value (VARCHAR)
+  Column converted_value_sha256 (VARCHAR)
+  Column original_prompt_id (UUID)
+```
+- seedprompt表：用于存储种子数据集（由于一般用文件存储数据集，所以用不上这张表）
+```
+Schema for SeedPromptEntries:
+  Column id (UUID)
+  Column value (VARCHAR)
+  Column value_sha256 (VARCHAR)
+  Column data_type (VARCHAR)
+  Column name (VARCHAR)
+  Column dataset_name (VARCHAR)
+  Column harm_categories (JSON)
+  Column description (VARCHAR)
+  Column authors (JSON)
+  Column groups (JSON)
+  Column source (VARCHAR)
+  Column date_added (TIMESTAMP)
+  Column added_by (VARCHAR)
+  Column prompt_metadata (JSON)
+  Column parameters (JSON)
+  Column prompt_group_id (UUID)
+  Column sequence (INTEGER)
+```
+- embedding表：用于存储embedding数据，在使用embedding模型时会用到
+```
+Schema for EmbeddingData:
+  Column id (UUID)
+  Column embedding (ARRAY)
+  Column embedding_type_name (VARCHAR)
+```
+- Score表：用于记录对模型回复内容的打分信息
+```
+Schema for ScoreEntries:
+  Column id (UUID)
+  Column score_value (VARCHAR)
+  Column score_value_description (VARCHAR)
+  Column score_type (VARCHAR)
+  Column score_category (VARCHAR)
+  Column score_rationale (VARCHAR)
+  Column score_metadata (VARCHAR)
+  Column scorer_class_identifier (JSON)
+  Column prompt_request_response_id (UUID)
+  Column timestamp (TIMESTAMP)
+  Column task (VARCHAR)
+```
+
+#### 常用SQL
+> 由于默认labels是json格式，在创建数据库后，需要手动将其修改为jsonb格式
+> ALTER TABLE pyrit."PromptMemoryEntries" ALTER COLUMN labels TYPE JSONB USING labels::JSONB;
+> CREATE INDEX idx_promptmemoryentries_labels ON pyrit."PromptMemoryEntries" USING GIN (labels);
+> json查询语法，=为完全匹配，@>为包含匹配
+
+- 查询所有对话内容
+```
+select * from pyrit."PromptMemoryEntries" pme where pme.labels @> '{"mytest": "test", "tech": "persuasion"}' order by pme."timestamp" desc
+```
+- 查询所有越狱成功对话
+```
+SELECT 
+    pme.conversation_id,
+    json_agg(
+        json_build_object(
+            'id', pme.id,
+            'role', pme.role,
+            'categories', pme.prompt_metadata ->> 'categories',
+            'labels', pme.labels,
+			'sequence', pme.sequence,
+            'text', pme.converted_value,
+            'score_id', se.id,
+            'score_value', se.score_value,
+            'score_rationale', se.score_rationale
+        ) ORDER BY pme.sequence
+    ) AS conversation_entries
+FROM pyrit."PromptMemoryEntries" AS pme
+LEFT JOIN pyrit."ScoreEntries" AS se
+    ON se.prompt_request_response_id = pme.id
+WHERE pme.labels @> '{"mytest": "test", "tech": "public_jailbreak"}'
+GROUP BY pme.conversation_id
+HAVING bool_or(se.score_value = 'True')
+```
+- 删除数据
+```
+DELETE FROM pyrit."ScoreEntries"
+WHERE prompt_request_response_id IN (
+    SELECT id FROM pyrit."PromptMemoryEntries"
+    WHERE labels = '{"mytest": "test"}'
+)
+DELETE FROM pyrit."PromptMemoryEntries" WHERE labels = '{"mytest": "test"}'
+```
+- 查询包含某个key的所有labels
+```
+select distinct(pme.labels) from pyrit."PromptMemoryEntries" pme where pme.labels ? 'mytest'
+```
+- 查询所有prompt类别
+```
+select distinct(pme.prompt_metadata ->> 'categories') from pyrit."PromptMemoryEntries" pme where pme.labels = '{"mytest": "test"}'
+```
+- 查询各prompt类别数量
+```
+SELECT
+    pme.prompt_metadata ->> 'categories' AS categories,
+    COUNT(*) AS entry_count
+FROM pyrit."PromptMemoryEntries" pme
+WHERE pme.labels = '{"mytest": "test"}' and pme.role = 'user'
+GROUP BY categories
+ORDER BY entry_count DESC
+```
+
 ### 目标
 支持本地及远程的大模型访问
+- PromptTarget
+常规用于提示发送的对象，只支持发送字符串
+- PromptChatTarget
+具备更多能力的提示发送对象，支持设置系统提示，保存/修改会话历史等功能
+
+| 样例 | 是否为`ChatTarget` | 说明 |
+| --- | --- | --- |
+| OpenAIChatTarget | 是 | 支持所有OpenAI兼容的大模型 |
+| OpenAIDALLETarget | 否 | 用于图像生成，不支持会话历史管理 |
+| HTTPTarget | 否 | 通用的HTTP提示发送器 |
+| PanguAgentTarget | 否 | 华为云对话机器人 |
+
 ### 转换器
 对输入进行转换，简单的如编码、ascii艺术字、base64编码错误拼写等等，或者使用说服技巧、翻译、改变语气等高级转换策略，此外也支持多模态之间的转换
 #### GPTFuzzer编排器特有的转换器

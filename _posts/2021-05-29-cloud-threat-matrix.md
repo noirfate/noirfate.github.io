@@ -232,6 +232,7 @@ ATT&CK框架主要包括的三个部分，上图中直接显示出来了两个�
   	* Service nature should be of high value, used by many and contain sensitive information
 * k8s
   * 利用k8s的证书、token等控制整个集群
+  * 利用pod间容器共享目录、共享网络等特点，影响其他容器，如：读取其他容器中的文件、在其他容器中执行代码等
 
 ## 信息收集 (Collection)
 

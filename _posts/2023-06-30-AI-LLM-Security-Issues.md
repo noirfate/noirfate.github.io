@@ -43,7 +43,8 @@ excerpt: AI大模型安全研究
 - [Red Teaming for GenAI Harms](https://www.ofcom.org.uk/siteassets/resources/documents/consultations/discussion-papers/red-teaming/red-teaming-for-gen-ai-harms.pdf)
 - [promptarmor LLM安全博客](https://promptarmor.substack.com/)
 - [Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs)
-
+- [maestro - 智能体威胁分析框架](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro#)
+- [atfaa - 智能体威胁分析框架](https://arxiv.org/pdf/2504.19956)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
