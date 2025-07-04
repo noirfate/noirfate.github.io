@@ -58,6 +58,9 @@ excerpt: SmolAgents Introduction
 ### 阶段性回顾
 在agent执行过程中可配置阶段性回顾，每执行若干步骤之后，大模型会总结当前进展并重新规划，降低跑偏率
 
+## 执行流程
+![](/assets/img/smolagents04.png)
+
 ## 案例
 
 ### 集成MCP
