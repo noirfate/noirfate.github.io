@@ -57,6 +57,7 @@ excerpt: useful git repository (研究篇)
 - [ghidralligator - 基于ghidra进行模拟执行和fuzz](https://github.com/airbus-cyber/ghidralligator/tree/master)
 - [Cartographer - 覆盖度插件](https://github.com/nccgroup/Cartographer)
 - [Bsim - 根据数据库自动识别未知函数](https://www.pentestpartners.com/security-blog/fuzzy-matching-with-ghidra-bsim-a-guide/)
+- [GhidraMCP - ghidra mcp插件](https://github.com/LaurieWired/GhidraMCP)
 
 ### GDB扩展
 
@@ -343,6 +344,7 @@ excerpt: useful git repository (研究篇)
 - [datAFLow - 基于afl的数据流覆盖度引导的fuzzer](https://github.com/HexHive/datAFLow)
 - [Grammar-Mutator - 为afl++添加语法变异模块](https://github.com/AFLplusplus/Grammar-Mutator)
 - [ProphetFuzz - 利用LLM解析工具的manpage并生成fuzz参数](https://github.com/NASP-THU/ProphetFuzz/)
+- [afl-cov-fast - afl覆盖度生成工具](https://github.com/airbus-seclab/afl-cov-fast)
 
 ### Syzkaller系
 

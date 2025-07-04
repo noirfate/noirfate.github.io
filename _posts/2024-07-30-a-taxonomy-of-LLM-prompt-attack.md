@@ -206,7 +206,7 @@ excerpt: A taxonomy of LLM prompt attack
 ![](/assets/img/llm_sec/prompt_attack30.png)
 
 ##### [Skeleton Key](https://www.microsoft.com/en-us/security/blog/2024/06/26/mitigating-skeleton-key-a-new-type-of-generative-ai-jailbreak-technique/)
-微软提出的一种越狱方法，通过多轮会话说服模型改变其行为指南，在生成内容时仅提供警告而非拒绝
+微软提出的一种越狱方法，通过伪造多轮历史会话来诱导模型改变其行为指南，在生成内容时仅提供警告而非拒绝
 ![](/assets/img/llm_sec/prompt_attack53.png)
 
 ##### [Chain of Utterances](https://arxiv.org/pdf/2308.09662)
@@ -389,6 +389,10 @@ excerpt: A taxonomy of LLM prompt attack
 ```
 4. 填写规则描述`follow html5 best practices `，后面粘贴上面转换的Unicode字符串
 5. 打开Cursor的agent模式，让其根据规则生成html，可看到在最终生成的html中带有恶意的js
+
+##### [ChatBug](https://arxiv.org/html/2406.12935v2)
+本文作者提出了一种基于破坏聊天模板的越狱方法，目前绝大多数的对话模型在微调时使用严格的chat template（聊天模板），模型默认认为输入的格式是可信和规范的，恶意用户可利用格式不匹配（format mismatch）或消息溢出（message overflow）攻击来绕过模型的安全对齐机制。[代码](https://github.com/uw-nsl/ChatBug/)
+![](/assets/img/llm_sec/prompt_attack88.png)
 
 #### 基于大模型/智能体
 ![](/assets/img/llm_sec/prompt_attack5.png)
@@ -582,6 +586,7 @@ excerpt: A taxonomy of LLM prompt attack
 ##### [LoRA Poison](https://arxiv.org/pdf/2312.00374)
 本文作者展示了攻击者如何利用小型的适配器（LoRA 插件）来控制 LLM 的输出，使其在特定触发条件下生成攻击者预定义的有害内容，甚至恶意使用工具。[代码](https://github.com/chichidd/llm-lora-trojan)
 ![](/assets/img/llm_sec/prompt_attack81.png)
+
 
 ### 间接提示注入
 攻击者作为第三方，通过嵌入在提示中的不受信任内容（如第三方文档、插件结果、网页或电子邮件）进入系统，通过让大模型相信其内容是来自用户的有效命令，而不是第三方的内容，从而获取用户凭证、大模型、智能体等功能的控制权

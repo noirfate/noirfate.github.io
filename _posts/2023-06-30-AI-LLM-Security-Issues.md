@@ -45,6 +45,7 @@ excerpt: AI大模型安全研究
 - [Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs)
 - [maestro - 智能体威胁分析框架](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro#)
 - [atfaa - 智能体威胁分析框架](https://arxiv.org/pdf/2504.19956)
+- [llm漏洞数据库](https://www.promptfoo.dev/lm-security-db/)
 
 ## OWASP Top 10
 > https://owasp.org/www-project-top-10-for-large-language-model-applications/descriptions/
@@ -386,6 +387,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [GPTs文件泄露](https://mp.weixin.qq.com/s/Bklnu0RhF8bnK1Irx14S5g)
 - [Github Copilot提示注入造成信息泄露](https://embracethered.com/blog/posts/2024/github-copilot-chat-prompt-injection-data-exfiltration/)
 - [Universal-Prompt-Injection - 基于梯度的自动化提示注入攻击工具](https://github.com/SheltonLiu-N/Universal-Prompt-Injection/tree/main)
+- [echoleak - microsoft 365 copilot间接注入攻击](https://www.aim.security/lp/aim-labs-echoleak-blogpost)
 
 
 ### 越狱
@@ -452,6 +454,8 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [Wiz Research finds architecture risks that may compromise AI-as-a-Service providers and consequently risk customer data; works with Hugging Face on mitigations](https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure)
 - [The risk in malicious AI models: Wiz Research discovers critical vulnerability in AI-as-a-Service provider, Replicate](https://www.wiz.io/blog/wiz-research-discovers-critical-vulnerability-in-replicate)
 - [huntr - AI/ML漏洞赏金计划](https://huntr.com/bounties/hacktivity)
+- [Understanding Vulnerabilities in the Large Language Model Supply Chain](https://arxiv.org/abs/2502.12497)
+- [CVE-2025-3248 - Langflow validate/code api rce](https://www.trendmicro.com/en_hk/research/25/f/langflow-vulnerability-flodric-botnet.html) [POC](https://github.com/verylazytech/CVE-2025-3248)
 
 ### 投毒
 

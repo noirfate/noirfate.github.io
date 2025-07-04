@@ -31,6 +31,7 @@ excerpt: Cloud Security
 - [oligo](https://www.oligo.security/resources/blog?category=All)
 - [Hacking the Cloud](https://github.com/Hacking-the-Cloud/hackingthe.cloud)
 - [The Open Cloud Vulnerability & Security Issue Database](https://www.cloudvulndb.org/)
+- [kubenomicon - k8s ATT&CK](https://kubenomicon.com/Kubenomicon.html)
 
 ## 开源情报
 
@@ -235,6 +236,7 @@ excerpt: Cloud Security
 - [aws和azure默认安全比较](https://securitycafe.ro/2024/09/03/aws-vs-azure-a-secure-by-default-comparison/)
 - [Hijacking Azure Machine Learning Notebooks (via Storage Accounts)](https://www.netspi.com/blog/technical-blog/cloud-pentesting/hijacking-azure-machine-learning-notebooks/)
 - [通过构造名称相似的虚机镜像获取AWS服务资源](https://securitylabs.datadoghq.com/articles/whoami-a-cloud-image-name-confusion-attack/)
+- [AWS、GCP、Azure无服务函数凭据窃取攻击](https://unit42.paloaltonetworks.com/serverless-authentication-cloud/)
 
 ## 云原生工具
 
