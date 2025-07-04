@@ -19,6 +19,7 @@ excerpt: SmolAgents Introduction
 ## 特点
 ### 轻量
 代码少，项目结构简单
+
 ### CodeAgent
 `Thinking in Code`，与以往通过`json`调用工具不同，`CodeAgent`通过编写`python`代码来完成任务、调用工具，可实现多种工具的组合调用。国内知道创宇近期也推出了他们的Agent框架（AiPy），使用所谓`Python-Use`范式，比`CodeAgent`更进一步，不需要工具（虽然也支持MCP），所有一切都用`python`代码实现
 - 支持多种大模型
@@ -31,12 +32,15 @@ excerpt: SmolAgents Introduction
     - OpenAIServerModel: Provides access to any provider that implements an OpenAI-compatible API
     - AzureOpenAIServerModel: Uses Azure’s OpenAI service
     - AmazonBedrockServerModel: Connects to AWS Bedrock’s API
+
 ### 支持MCP
 可为agent添加mcp服务，支持`stdio`、`http stream`和`sse`
+
 ### 多模态支持
 可以发送多模态消息（需要大模型支持）
     - `vision_web_browser.py`：它实现了一个简单的大模型操作浏览器的代理，利用`helium`操作浏览器并截图发送给大模型
     - `default_tools.py`：在内置工具集里面实现了一个`SpeechToTextTool`的工具，调用`whisper`模型将语音转为文字
+
 ### 多智能体
 支持集成多个子agent，主agent可像调用工具一样调用子agent，子agent中可以调用工具执行复杂任务，而不会干扰到主agent的会话历史记录
 - 支持多种代码执行方式
@@ -44,10 +48,13 @@ excerpt: SmolAgents Introduction
     - docker：在docker容器中执行
     - e2b：在e2b沙箱中执行
     - wasm：在wasm环境中执行（Pyodide + Deno）
+
 ### 观测支持
 使用`Phoenix`和`OpenTelemetry`对大模型的执行进行观测
-- ReAct推理框架
+
+### ReAct推理框架
 使用`ReAct`多步推理行动框架，将智能体的行为明确划分为“推理”（Reasoning）和“行动”（Acting）两个阶段，清晰地展现智能体在决策过程中的内部思考过程。在每一步中，智能体首先输出一个明确的“Thought”（思考过程），接着输出一个具体的“Action”（执行的动作），agent执行这个动作并返回“Observation”（观察结果），这一过程不断重复，通过交替的推理和行动过程逐步逼近最终答案
+
 ### 阶段性回顾
 在agent执行过程中可配置阶段性回顾，每执行若干步骤之后，大模型会总结当前进展并重新规划，降低跑偏率
 
@@ -74,7 +81,6 @@ python -m phoenix.server.main serve
 ```python
 from phoenix.otel import register
 from openinference.instrumentation.smolagents import SmolagentsInstrumentor
-
 register()
 SmolagentsInstrumentor().instrument()
 ```
