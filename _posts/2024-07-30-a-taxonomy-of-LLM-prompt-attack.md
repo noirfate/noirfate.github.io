@@ -672,3 +672,9 @@ excerpt: A taxonomy of LLM prompt attack
 - [Don’t Listen To Me: Understanding and Exploring Jailbreak Prompts of Large Language Models](https://www.usenix.org/system/files/sec24fall-prepub-1500-yu-zhiyuan.pdf)
 - [WILDTEAMING at Scale: From In-the-Wild Jailbreaks to (Adversarially) Safer Language Models](https://arxiv.org/pdf/2406.18510)
 - [Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents](https://arxiv.org/abs/2410.02644)
+- 合集
+    - [Awesome-LM-SSP](https://github.com/ThuCCSLab/Awesome-LM-SSP)
+    - [awesome-llm-security](https://github.com/corca-ai/awesome-llm-security)
+    - [awesome-llm-supply-chain-security](https://github.com/ShenaoW/awesome-llm-supply-chain-security)
+    - [Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs)
+    - [Awesome-Multimodal-Jailbreak](https://github.com/liuxuannan/Awesome-Multimodal-Jailbreak)

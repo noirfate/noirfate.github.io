@@ -237,6 +237,7 @@ excerpt: Cloud Security
 - [Hijacking Azure Machine Learning Notebooks (via Storage Accounts)](https://www.netspi.com/blog/technical-blog/cloud-pentesting/hijacking-azure-machine-learning-notebooks/)
 - [通过构造名称相似的虚机镜像获取AWS服务资源](https://securitylabs.datadoghq.com/articles/whoami-a-cloud-image-name-confusion-attack/)
 - [AWS、GCP、Azure无服务函数凭据窃取攻击](https://unit42.paloaltonetworks.com/serverless-authentication-cloud/)
+- [Azure Machine Learning (AML) 在训练任务时从存储桶拉取脚本可能存在权限提升漏洞](https://orca.security/resources/blog/azure-machine-learning-privilege-escalation/)
 
 ## 云原生工具
 

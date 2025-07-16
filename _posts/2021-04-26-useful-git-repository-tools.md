@@ -68,6 +68,7 @@ excerpt: useful git repository (工具篇)
 - [GPT Researcher - AI研究洞察工具](https://gptr.dev/)
 - [browser-use - AI使用浏览器](https://github.com/browser-use/browser-use)
 - [pdf2sh - AI翻译pdf](https://github.com/Byaidu/PDFMathTranslate)
+- [MonkeyOCR - 最好的OCR工具](https://github.com/Yuliang-Liu/MonkeyOCR)
 
 ## 开发工具
 

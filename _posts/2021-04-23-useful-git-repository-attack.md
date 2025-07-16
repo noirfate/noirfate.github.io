@@ -343,6 +343,7 @@ excerpt: useful git repository (攻防篇)
 - [Poc-Monitor - 持续更新github上的poc](https://github.com/sari3l/Poc-Monitor)
 - [puncia - 漏洞利用搜索工具](https://github.com/ARPSyndicate/puncia)
 - [cvereports - CVE分析报告](https://cvereports.com/)
+- [cvemapping - CVE POC自动收集](https://github.com/rix4uni/cvemapping)
 
 ### win
 
