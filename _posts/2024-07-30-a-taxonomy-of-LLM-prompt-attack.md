@@ -266,8 +266,7 @@ excerpt: A taxonomy of LLM prompt attack
 
 ##### [F2A](https://arxiv.org/pdf/2410.08776)
 本文作者提出了一种增加越狱成功率的方法，即为越狱提示增加虚假的安全检测，声称其经过了安全检测且是安全的
-![](/assets/img/llm_sec/prompt_attack78.png)
-![](/assets/img/llm_sec/prompt_attack79.png)
+![](/assets/img/llm_sec/prompt_attack89.png)
 
 ##### [Bad Likert Judge](https://unit42.paloaltonetworks.com/multi-turn-technique-jailbreaks-llms/)
 本文作者提出了一种基于大模型评估能力进行越狱的多轮方法，首先给定评估打分标准，然后让大模型为每个分值生成相应的例子
@@ -474,8 +473,8 @@ excerpt: A taxonomy of LLM prompt attack
 本文作者提出了一种利用思维树生成越狱提示的方法，攻击模型针对有害提示生成多种越狱提示，评估模型对这些越狱提示进行评估，把不符合攻击目的的越狱提示剪除，之后攻击模型再对剩下的越狱提示进行新一轮的变换，不断迭代直至成功越狱，同时论文作者还发现使用参数较少的模型（如Vicuna-13B）就可越狱像GPT-4这类的大模型。[代码](https://github.com/RICommunity/TAP)
 ![](/assets/img/llm_sec/prompt_attack47.png)
 
-##### [SOP](https://arxiv.org/pdf/2407.01902)
-本文作者提出了一种利用社会助长效应（Social facilitation）来生成越狱提示的方法，首先让攻击大模型生成多个不同类型的角色，然后把这些角色的信息和有害提示嵌入到事先准备好的越狱模板中，指示目标模型模拟这些角色在实施有害提示时的行为，最后使用评估模型对目标模型的响应进行评估，为每个角色的越狱效果进行打分并反馈给攻击大模型用于优化角色生成。[代码](https://github.com/Yang-Yan-Yang-Yan/SoP)
+##### [SeqAR](https://arxiv.org/pdf/2407.01902)
+本文作者提出了一种利用社会助长效应（Social facilitation）来生成越狱提示的方法，首先让攻击大模型生成多个不同类型的角色，然后把这些角色的信息和有害提示嵌入到事先准备好的越狱模板中，指示目标模型模拟这些角色在实施有害提示时的行为，最后使用评估模型对目标模型的响应进行评估，为每个角色的越狱效果进行打分并反馈给攻击大模型用于优化角色生成。[代码](https://github.com/sufenlp/SeqAR)
 ![](/assets/img/llm_sec/prompt_attack48.png)
 
 ##### [WildJailbreak](https://arxiv.org/pdf/2406.18510)

@@ -388,6 +388,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [Github Copilot提示注入造成信息泄露](https://embracethered.com/blog/posts/2024/github-copilot-chat-prompt-injection-data-exfiltration/)
 - [Universal-Prompt-Injection - 基于梯度的自动化提示注入攻击工具](https://github.com/SheltonLiu-N/Universal-Prompt-Injection/tree/main)
 - [echoleak - microsoft 365 copilot间接注入攻击](https://www.aim.security/lp/aim-labs-echoleak-blogpost)
+- [ShadowLeak: A Zero-Click, Service-Side Attack Exfiltrating Sensitive Data Using ChatGPT’s Deep Research Agent](https://www.radware.com/blog/threat-intelligence/shadowleak/)
 
 
 ### 越狱
@@ -462,12 +463,22 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [对数据集中失效域名和维基百科进行投毒](https://arxiv.org/pdf/2304.05197.pdf)
 - [Unleashing Zero-click Worms that Target GenAI-Powered Applications](https://github.com/StavC/ComPromptMized)
 - [恶意mcp服务器投毒](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
+- [BadSeek - How to Backdoor Large Language Models](https://blog.sshh.io/p/how-to-backdoor-large-language-models) [代码](https://github.com/sshh12/llm_backdoor/tree/main)
 
 ### 智能体
 - [MCP Security Notification: Tool Poisoning Attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-282)
 - [Research Briefing: MCP Security](https://www.wiz.io/blog/mcp-security-research-briefing)
 - [Jumping the line: How MCP servers can attack you before you ever use them](https://blog.trailofbits.com/2025/04/21/jumping-the-line-how-mcp-servers-can-attack-you-before-you-ever-use-them/)
 - [Agent In the Middle – Abusing Agent Cards in the Agent-2-Agent (A2A) Protocol To ‘Win’ All the Tasks](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/agent-in-the-middle-abusing-agent-cards-in-the-agent-2-agent-protocol-to-win-all-the-tasks/)
+- [how hidden prompt injections can hijack ai code assistants like cursor](https://hiddenlayer.com/innovation-hub/how-hidden-prompt-injections-can-hijack-ai-code-assistants-like-cursor/)
+- [When Public Prompts Turn Into Local Shells: ‘CurXecute’ – RCE in Cursor via MCP Auto‑Start](https://www.aim.security/lp/aim-labs-curxecute-blogpost)
+- [EscapeRoute: Breaking the Scope of Anthropic’s Filesystem MCP Server](https://cymulate.com/blog/cve-2025-53109-53110-escaperoute-anthropic/)
+- [Code Execution Through Deception: Gemini AI CLI Hijack](https://tracebit.com/blog/code-exec-deception-gemini-ai-cli-hijack) [代码](https://github.com/tracebit-com/gemini-cli-injection-example)
+- [Salesforce Einstein AI助手间接注入](https://labs.zenity.io/p/prompt-mines-0-click-data-corruption-in-salesforce-einstein-1cfb)
+- [MCP vulnerability case study: SQL injection in the Postgres MCP server](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/)
+- [cursor mcp 间接注入命令执行](https://www.lakera.ai/blog/zero-click-remote-code-execution-exploiting-mcp-agentic-ides)
+- [mcp安全指导](https://semgrep.dev/blog/2025/a-security-engineers-guide-to-mcp/)
+- [mcp攻防建议](https://www.elastic.co/security-labs/mcp-tools-attack-defense-recommendations)
 
 ## 防护方法
 > https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview

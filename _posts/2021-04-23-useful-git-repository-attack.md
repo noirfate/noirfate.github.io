@@ -47,6 +47,7 @@ excerpt: useful git repository (攻防篇)
 - [cariddi - 网站敏感信息扫描工具](https://github.com/edoardottt/cariddi)
 - [kscan - 快速的网络扫描工具](https://github.com/lcvvvv/kscan)
 - [baddns - dns域名劫持扫描工具](https://github.com/blacklanternsecurity/baddns)
+- [hexstrike-ai - AI渗透MCP](https://github.com/0x4m4/hexstrike-ai)
 
 ### 本地扫描工具
 
@@ -126,6 +127,7 @@ excerpt: useful git repository (攻防篇)
 - [sliver - redteam framework](https://github.com/BishopFox/sliver)
 - [hackingBuddyGPT - 渗透LLM](https://github.com/ipa-lab/hackingBuddyGPT/) [paper](https://arxiv.org/pdf/2310.11409.pdf)
 - [SaaS app ATT&CK](https://github.com/pushsecurity/saas-attacks)
+- [cai - 网络安全AI框架](https://github.com/aliasrobotics/cai)
 
 ### 持久化工具
 
@@ -214,6 +216,7 @@ excerpt: useful git repository (攻防篇)
 - [年度安全风险总结报告合集](https://github.com/jacobdjwilson/awesome-annual-security-reports)
 - [osinter - 威胁情报平台](https://github.com/OSINTer-Platform/OSINTer) [ppt](https://sansorg.egnyte.com/dl/qa34El7va9)
 - [govulncheck - go官方漏洞检测工具](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck)
+- [供应链组件版本依赖查询](https://socket.dev/)
 
 ### APT情报
 - [奇安信APT组织情报](https://ti.qianxin.com/apt/?type=map) [红雨滴](https://github.com/RedDrip7/APT_Digital_Weapon)

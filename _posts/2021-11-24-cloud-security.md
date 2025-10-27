@@ -238,6 +238,8 @@ excerpt: Cloud Security
 - [通过构造名称相似的虚机镜像获取AWS服务资源](https://securitylabs.datadoghq.com/articles/whoami-a-cloud-image-name-confusion-attack/)
 - [AWS、GCP、Azure无服务函数凭据窃取攻击](https://unit42.paloaltonetworks.com/serverless-authentication-cloud/)
 - [Azure Machine Learning (AML) 在训练任务时从存储桶拉取脚本可能存在权限提升漏洞](https://orca.security/resources/blog/azure-machine-learning-privilege-escalation/)
+- [Oracle Cloud Infrastructure (OCI) Code Editor CSRF文件上传](https://www.tenable.com/blog/remote-code-execution-on-oracle-cloud-shell-and-code-editor-integrated-services)
+- [ECScape - aws ecs容器利用ecs agent获取IAM凭据](https://thehackernews.com/2025/08/researchers-uncover-ecscape-flaw-in.html) [代码](https://github.com/naorhaziz/ecscape/tree/main)
 
 ## 云原生工具
 
