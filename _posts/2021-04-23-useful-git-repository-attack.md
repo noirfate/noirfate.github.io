@@ -324,6 +324,7 @@ excerpt: useful git repository (攻防篇)
 - [安全会议合集](https://github.com/cryptax/confsec)
 - [静态工具static binary](https://serverless.industries/2023/07/02/static-binaries.en.html)
 - [将网络流量还原成openapi接口文档](https://github.com/alufers/mitmproxy2swagger)
+- [年度安全报告](https://github.com/jacobdjwilson/awesome-annual-security-reports)
 
 ## POC
 

@@ -403,6 +403,7 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [jailbreak prompt](https://www.jailbreakchat.com/) [reddit channel](https://www.reddit.com/r/GPT_jailbreaks/) [ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts) [jailbreak-chatgpt](https://www.greataiprompts.com/guide/jailbreak-chatgpt/)
 - [以毒攻毒](https://github.com/traghav/auto-redteam/tree/main)
 - [GPTFuzz](https://github.com/sherdencooper/GPTFuzz)
+- [TurboFuzzLLM](https://github.com/amazon-science/TurboFuzzLLM/tree/main)
 - [CipherChat - 利用加解密绕过模型安全防护](https://github.com/RobustNLP/CipherChat)
 - [promptmap - 利用大模型构造提示注入并验证](https://github.com/utkusen/promptmap)
 - [MasterKey - 自动化越狱攻击](https://arxiv.org/pdf/2307.08715.pdf) [website](https://sites.google.com/view/ndss-masterkey/masterkey)
@@ -479,6 +480,13 @@ GPT-4对经济和劳动力的影响应成为政策制定者和其他利益相关
 - [cursor mcp 间接注入命令执行](https://www.lakera.ai/blog/zero-click-remote-code-execution-exploiting-mcp-agentic-ides)
 - [mcp安全指导](https://semgrep.dev/blog/2025/a-security-engineers-guide-to-mcp/)
 - [mcp攻防建议](https://www.elastic.co/security-labs/mcp-tools-attack-defense-recommendations)
+- [绕过gemini图像防护措施](https://buganizer.cc/hacking-gemini-a-multi-layered-approach-md)
+- [hashjack - 利用url井号对AI浏览器实施间接注入攻击](https://www.catonetworks.com/blog/cato-ctrl-hashjack-first-known-indirect-prompt-injection/)
+- [mcp sample指令攻击](https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/)
+- [GeminiJack](https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/)
+- [AI Agent失效场景分析](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Taxonomy-of-Failure-Mode-in-Agentic-AI-Systems-Whitepaper.pdf)
+- [AI Agents Under Threat: A Survey of Key Security Challenges and Future Pathways](https://dl.acm.org/doi/10.1145/3716628#core-collateral-Bib0052)
+- [mcp a2a 攻击向量](https://www.solo.io/blog/deep-dive-mcp-and-a2a-attack-vectors-for-ai-agents)
 
 ## 防护方法
 > https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
